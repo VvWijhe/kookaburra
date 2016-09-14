@@ -1,2 +1,0 @@
-#!/bin/sh
-exec ddd --debugger "/cygdrive/c/Program\ Files/GNU\ Tools\ ARM\ Embedded/4.8\ 2014q3/bin/arm-none-eabi-gdb" -x "$1/jlinkstm32f405gdbinit.gdb" $2
