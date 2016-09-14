@@ -10,6 +10,8 @@ int main(){
     cout << "It finally works" << endl;
     // halo
     cout << "Ik wil gewoon een buurthuis" << endl;
+    cout << "Waarom hebben jullie zonnebrillen op?" << endl;
+    cout << "Omdat wij geen emotie willen tonen" << endl;
     return 0;
 }
 
