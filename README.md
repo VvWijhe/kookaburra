@@ -1,5 +1,3 @@
 **Kookaburra**
 
 Hello World!
-
-sdfdgh
