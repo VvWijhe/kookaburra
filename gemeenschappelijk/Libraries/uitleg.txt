@@ -1,4 +1,0 @@
-
-USB Device Library + USB OTG Libraty is voor F105,F107, F2, F4 families.
-USB FS Device Library is voor F102,F103,L1 en F3 families.
-
