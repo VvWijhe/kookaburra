@@ -1,6 +1,0 @@
-#! /bin/sh
-# Usage : stm32f207 <target file.elf>
-# please note that the path /opt/local used below is specific to ddd (MacPorts) on Apple Mac OS X. Please alter accordingly if necessary.
-# Ewout Boks, Hogeschool van Arnhem en Nijmegen. 
-exec /opt/local/bin/ddd --debugger "/usr/local/arm-none-eabi/bin/arm-none-eabi-gdb -x ./jlinkstm32f207gdbinit" $1
-
