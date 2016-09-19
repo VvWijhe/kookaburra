@@ -12,26 +12,26 @@
       <sourceFolder url="file://$MODULE_DIR$/../gemeenschappelijk/Libraries/CMSIS/Device/ST/STM32F0xx/Source/Templates/gcc/startup_stm32f0xx.s" isTestSource="false" />
     </content>
     <content url="file://$MODULE_DIR$/../gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver">
-      <sourceFolder url="file://$MODULE_DIR$/../gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_misc.c" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_gpio.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_crc.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_rcc.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_spi.c" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_pwr.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_cec.c" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_crc.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_misc.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_i2c.c" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_dbgmcu.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_pwr.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_rtc.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_adc.c" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_dma.c" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_usart.c" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_exti.c" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_flash.c" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_wwdg.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_iwdg.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_dma.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_gpio.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_exti.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_wwdg.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_dbgmcu.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_flash.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_comp.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_tim.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_dac.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_usart.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_syscfg.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/CMakeLists.txt" isTestSource="false" />
     </content>
