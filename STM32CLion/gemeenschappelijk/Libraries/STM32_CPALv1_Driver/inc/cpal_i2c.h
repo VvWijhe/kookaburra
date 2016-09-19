@@ -32,18 +32,18 @@
  || defined (STM32F10X_HD) || defined (STM32F10X_HD_VL) || defined (STM32F10X_XL) || defined (STM32F10X_CL)
 #include "cpal_i2c_hal_stm32f10x.h"
 #endif
-
+   
 /* If STM32L1XX family is used */
 #if defined (STM32L1XX_MD) || defined (STM32L1XX_HD)
 #include "cpal_i2c_hal_stm32l1xx.h"
 #endif
 
-/* If STM32F2XX family is used */
+/* If STM32F2XX family is used */   
 #ifdef STM32F2XX
 #include "cpal_i2c_hal_stm32f2xx.h"
 #endif
 
-/* If STM32F4XX family is used */
+/* If STM32F4XX family is used */   
 #ifdef STM32F4XX
 #include "cpal_i2c_hal_stm32f4xx.h"
 #endif
@@ -59,17 +59,18 @@
 /* Includes ------------------------------------------------------------------*/
 
 /* Exported types ------------------------------------------------------------*/
-
-/*========= CPAL_I2CError_TypeDef =========*/
+   
+/*========= CPAL_I2CError_TypeDef =========*/ 
 /* I2C Errors TypeDef */
+   
+typedef enum
+{
+  CPAL_I2C_ERR_NONE      = 0x0000, /*!<No Error: This is the default state for an Idle peripheral */
 
-typedef enum {
-    CPAL_I2C_ERR_NONE = 0x0000, /*!<No Error: This is the default state for an Idle peripheral */
-
-    CPAL_I2C_ERR_TIMEOUT = 0x00FF, /*!<Timeout error: The specified timeout has been elapsed without
+  CPAL_I2C_ERR_TIMEOUT   = 0x00FF, /*!<Timeout error: The specified timeout has been elapsed without 
                                          any response (expected flag or data didn't happen at expected time). */
 
-    CPAL_I2C_ERR_BERR = 0x0100, /*!<Bus error: This error occurs when I2C peripheral detects an external
+  CPAL_I2C_ERR_BERR      = 0x0100, /*!<Bus error: This error occurs when I2C peripheral detects an external
                                        Stop or Start condition during address or data transfer. In this case:
                                           - The BERR bit is set and an interrupt is generated if the ITERREN bit is set.
                                        In Slave mode: 
@@ -84,9 +85,9 @@ typedef enum {
                                        
                                        Software Clearing sequence for the BERR bit:      
                                          1. Writing '0' to this bit  */
-
-
-    CPAL_I2C_ERR_ARLO = 0x0200, /*!<Arbitration Lost error: This error occurs when the I2C interface detects
+                                            
+                                                      
+  CPAL_I2C_ERR_ARLO        = 0x0200, /*!<Arbitration Lost error: This error occurs when the I2C interface detects 
                                          an arbitration lost condition. In this case:
                                           - The ARLO bit is set by hardware (and an interrupt is generated if the 
                                             ITERREN bit is set).
@@ -99,8 +100,8 @@ typedef enum {
                                               
                                          Software Clearing sequence for the BERR bit:      
                                           1. Writing '0' to this bit  */
-
-    CPAL_I2C_ERR_AF = 0x0400, /*!<Acknowledge Failure : This error occurs when the interface detects
+                                                  
+  CPAL_I2C_ERR_AF          = 0x0400, /*!<Acknowledge Failure : This error occurs when the interface detects 
                                          a non-acknowledge bit. In this case:
                                           - The AF bit is set and an interrupt is generated if the ITERREN bit 
                                             is set.
@@ -110,9 +111,9 @@ typedef enum {
                                             by software.
                                                  
                                          Software Clearing sequence for the ARLO bit:
-                                         1. Writing '0' to this bit */
-
-    CPAL_I2C_ERR_OVR = 0x0800, /*!<Overrun/Underrun error: An overrun error can occur in slave mode when clock
+                                         1. Writing '0' to this bit */                                        
+                                                      
+  CPAL_I2C_ERR_OVR          = 0x0800, /*!<Overrun/Underrun error: An overrun error can occur in slave mode when clock 
                                           stretching is disabled and the I2C interface is receiving data. The interface has
                                           received a byte (RxNE=1) and the data in DR has not been read, before the next 
                                           byte is received by the interface. 
@@ -134,10 +135,10 @@ typedef enum {
                                       
                                        Software Clearing sequence for the ARLO bit:
                                         1. Writing '0' to this bit */
-
-} CPAL_I2CErrorTypeDef;
-
-
+                                                  
+ }CPAL_I2CErrorTypeDef;
+ 
+ 
 /* Exported constants --------------------------------------------------------*/
 /* Exported macro ------------------------------------------------------------*/
 
@@ -148,15 +149,15 @@ typedef enum {
 /* These functions constitute the main CPAL API interface. All functions take as argument the 
    CPAL_InitTypeDef structure defined in @ref CPAL_Dev_TypeDef. */
 
-uint32_t CPAL_I2C_Init(CPAL_InitTypeDef *pDevInitStruct); /*<!This function Initializes the selected I2C device
+uint32_t  CPAL_I2C_Init         (CPAL_InitTypeDef* pDevInitStruct); /*<!This function Initializes the selected I2C device 
                                                                         and all needed resources (GPIOs, clocks, DMA, 
-                                                                        interrupts ï¿½) */
-
-uint32_t CPAL_I2C_DeInit(CPAL_InitTypeDef *pDevInitStruct); /*<!This function free the resources used by the I2C
-                                                                        device (GPIOs, clocks, DMA, interrupts ï¿½) and 
+                                                                        interrupts …) */
+                                                       
+uint32_t  CPAL_I2C_DeInit       (CPAL_InitTypeDef* pDevInitStruct); /*<!This function free the resources used by the I2C 
+                                                                        device (GPIOs, clocks, DMA, interrupts …) and 
                                                                         deinitialize the device itself */
-
-uint32_t CPAL_I2C_StructInit(CPAL_InitTypeDef *pDevInitStruct); /*<!This function Initializes I2C device structure
+                                                       
+uint32_t  CPAL_I2C_StructInit   (CPAL_InitTypeDef* pDevInitStruct); /*<!This function Initializes I2C device structure 
                                                                         by filling all fields with their default values.
                                                                         Warning: Pointer fields are filled with CPAL local variables
                                                                         pointer. To avoid all risks, it is recommended to declare
@@ -164,34 +165,33 @@ uint32_t CPAL_I2C_StructInit(CPAL_InitTypeDef *pDevInitStruct); /*<!This functio
                                                                         pointers. */
 
 
-#if defined (CPAL_I2C_MASTER_MODE) || !defined (CPAL_I2C_LISTEN_MODE)
-
-uint32_t CPAL_I2C_Write(CPAL_InitTypeDef *pDevInitStruct); /*<!This function Writes data to the specified I2C device.
+#if defined (CPAL_I2C_MASTER_MODE) || ! defined (CPAL_I2C_LISTEN_MODE) 
+uint32_t  CPAL_I2C_Write        (CPAL_InitTypeDef* pDevInitStruct); /*<!This function Writes data to the specified I2C device.
                                                                         All information relative to the write transfer parameters and
                                                                         current status are extracted from pCPAL_TransferTx field defined
-                                                                        in @ref CPAL_Transfer_TypeDef */
+                                                                        in @ref CPAL_Transfer_TypeDef */ 
 
-uint32_t CPAL_I2C_Read(CPAL_InitTypeDef *pDevInitStruct); /*<!This function Read data from the specified I2C device
+uint32_t  CPAL_I2C_Read         (CPAL_InitTypeDef* pDevInitStruct); /*<!This function Read data from the specified I2C device 
                                                                         All information relative to the read transfer parameters and
                                                                         current status are extracted from pCPAL_TransferTx field defined
-                                                                        in @ref CPAL_Transfer_TypeDef */
+                                                                        in @ref CPAL_Transfer_TypeDef */ 
 
 #endif /* CPAL_I2C_MASTER_MODE || ! CPAL_I2C_LISTEN_MODE */ 
 
 
 #if defined (CPAL_I2C_LISTEN_MODE) && defined (CPAL_I2C_SLAVE_MODE)
-uint32_t  CPAL_I2C_Listen       (CPAL_InitTypeDef* pDevInitStruct); /*<!This function allows the specified I2C device to enter listen mode
+uint32_t  CPAL_I2C_Listen       (CPAL_InitTypeDef* pDevInitStruct); /*<!This function allows the specified I2C device to enter listen mode 
                                                                         All information relative to the read or write transfer parameters and
                                                                         current status are extracted from fields defined in @ref CPAL_Transfer_TypeDef */
 #endif /* CPAL_I2C_LISTEN_MODE && CPAL_I2C_SLAVE_MODE */
 
-uint32_t CPAL_I2C_IsDeviceReady(CPAL_InitTypeDef *pDevInitStruct); /*<!This function can be used to wait until target device is ready
+uint32_t  CPAL_I2C_IsDeviceReady(CPAL_InitTypeDef* pDevInitStruct); /*<!This function can be used to wait until target device is ready 
                                                                         for communication (ie. for memories after write operations) */
 
 
-uint32_t CPAL_I2C_EV_IRQHandler(CPAL_InitTypeDef *pDevInitStruct); /*<!This function manages all I2C device events */
+uint32_t CPAL_I2C_EV_IRQHandler(CPAL_InitTypeDef* pDevInitStruct); /*<!This function manages all I2C device events */ 
 
-uint32_t CPAL_I2C_ER_IRQHandler(CPAL_InitTypeDef *pDevInitStruct); /*<!This function manages all I2C device errors  */
+uint32_t CPAL_I2C_ER_IRQHandler(CPAL_InitTypeDef* pDevInitStruct); /*<!This function manages all I2C device errors  */ 
 
 #ifdef CPAL_I2C_DMA_PROGMODEL
 uint32_t CPAL_I2C_DMA_TX_IRQHandler(CPAL_InitTypeDef* pDevInitStruct); /*<!This function Handles DMA TX Interrupts */
@@ -202,7 +202,7 @@ uint32_t CPAL_I2C_DMA_RX_IRQHandler(CPAL_InitTypeDef* pDevInitStruct); /*<!This 
 
 /*========= Local DMA and IT Manager =========*/
 
-uint32_t CPAL_I2C_Enable_DMA_IT(CPAL_InitTypeDef *pDevInitStruct, CPAL_DirectionTypeDef Direction); /* This function Configure I2C DMA
+uint32_t CPAL_I2C_Enable_DMA_IT (CPAL_InitTypeDef* pDevInitStruct, CPAL_DirectionTypeDef Direction); /* This function Configure I2C DMA 
                                                                                                     and Interrupts before starting 
                                                                                                     transfer phase */
 
@@ -212,94 +212,80 @@ uint32_t CPAL_I2C_Enable_DMA_IT(CPAL_InitTypeDef *pDevInitStruct, CPAL_Direction
    Each callback is called in a particular situation detailed in the callback description. */
 
 #ifndef CPAL_I2C_TX_UserCallback
-
-void CPAL_I2C_TX_UserCallback(CPAL_InitTypeDef *pDevInitStruct); /*<!This function is called when (in Interrupt mode)
-                                                                        the peripheral is preparing to send data */
+void CPAL_I2C_TX_UserCallback   (CPAL_InitTypeDef* pDevInitStruct); /*<!This function is called when (in Interrupt mode) 
+                                                                        the peripheral is preparing to send data */ 
 #endif
 
 #ifndef CPAL_I2C_RX_UserCallback
-
-void CPAL_I2C_RX_UserCallback(CPAL_InitTypeDef *pDevInitStruct); /*<!This function is called when (in Interrupt mode)
-                                                                        the peripheral has received data */
+void CPAL_I2C_RX_UserCallback   (CPAL_InitTypeDef* pDevInitStruct); /*<!This function is called when (in Interrupt mode) 
+                                                                        the peripheral has received data */ 
 #endif
 
 #ifndef CPAL_I2C_TXTC_UserCallback
-
-void CPAL_I2C_TXTC_UserCallback(CPAL_InitTypeDef *pDevInitStruct); /*<!This function is called when (in DMA or Interrupt mode)
+void CPAL_I2C_TXTC_UserCallback(CPAL_InitTypeDef* pDevInitStruct); /*<!This function is called when (in DMA or Interrupt mode)
                                                                       TX Transfer is complete (to use in DMA mode, Transfer complete 
-                                                                      interrupt must be enabled) */
+                                                                      interrupt must be enabled) */ 
 #endif
 
 #ifndef CPAL_I2C_RXTC_UserCallback
-
-void CPAL_I2C_RXTC_UserCallback(CPAL_InitTypeDef *pDevInitStruct); /*<!This function is called when (in DMA or Interrupt mode)
+void CPAL_I2C_RXTC_UserCallback(CPAL_InitTypeDef* pDevInitStruct); /*<!This function is called when (in DMA or Interrupt mode)
                                                                        RX Transfer is complete (to use in DMA mode, Transfer complete 
-                                                                       interrupt must be enabled) */
+                                                                       interrupt must be enabled) */ 
 #endif
 
 #ifndef CPAL_I2C_DMATXTC_UserCallback
-
-void CPAL_I2C_DMATXTC_UserCallback(CPAL_InitTypeDef *pDevInitStruct); /*<!This function is called (in DMA mode) when
+void CPAL_I2C_DMATXTC_UserCallback(CPAL_InitTypeDef* pDevInitStruct); /*<!This function is called (in DMA mode) when 
                                                                           DMA Transmission is finished (If Transfer Complete 
                                                                           interrupt is enabled) */
 #endif
 
 #ifndef CPAL_I2C_DMATXHT_UserCallback
-
-void CPAL_I2C_DMATXHT_UserCallback(CPAL_InitTypeDef *pDevInitStruct); /*<!This function is called (in DMA mode) when the
+void CPAL_I2C_DMATXHT_UserCallback(CPAL_InitTypeDef* pDevInitStruct); /*<!This function is called (in DMA mode) when the 
                                                                           DMA Transmission has reached the half of the 
                                                                           buffer (If Half Transfer interrupt is enabled) */
 #endif
 
 #ifndef CPAL_I2C_DMATXTE_UserCallback
-
-void CPAL_I2C_DMATXTE_UserCallback(CPAL_InitTypeDef *pDevInitStruct); /*<!This function is called when (in DMA mode) a
+void CPAL_I2C_DMATXTE_UserCallback(CPAL_InitTypeDef* pDevInitStruct); /*<!This function is called when (in DMA mode) a 
                                                                           DMA Transmission transfer error has occurred 
                                                                           (If Transfer Error interrupt is enabled ) */
 #endif
 
 #ifndef CPAL_I2C_DMARXTC_UserCallback
-
-void CPAL_I2C_DMARXTC_UserCallback(CPAL_InitTypeDef *pDevInitStruct); /*<!This function is called when (in DMA mode) when
+void CPAL_I2C_DMARXTC_UserCallback(CPAL_InitTypeDef* pDevInitStruct); /*<!This function is called when (in DMA mode) when 
                                                                           DMA Reception is finished (If Transfer Complete 
                                                                           interrupt is enabled) */
 #endif
 
 #ifndef CPAL_I2C_DMARXHT_UserCallback
-
-void CPAL_I2C_DMARXHT_UserCallback(CPAL_InitTypeDef *pDevInitStruct); /*<!This function is called when (in DMA mode) the
+void CPAL_I2C_DMARXHT_UserCallback(CPAL_InitTypeDef* pDevInitStruct); /*<!This function is called when (in DMA mode) the
                                                                           DMA Reception has reached the half of the 
                                                                           buffer (If Half Transfer interrupt is enabled) */
 #endif
 
 #ifndef CPAL_I2C_DMARXTE_UserCallback
-
-void CPAL_I2C_DMARXTE_UserCallback(CPAL_InitTypeDef *pDevInitStruct); /*<!This function is called when (in DMA mode) a
+void CPAL_I2C_DMARXTE_UserCallback(CPAL_InitTypeDef* pDevInitStruct); /*<!This function is called when (in DMA mode) a 
                                                                           DMA Reception transfer error has occurred 
                                                                           (If Transfer Error interrupt is enabled ) */
 #endif
 
 #ifndef CPAL_I2C_GENCALL_UserCallback
-
-void CPAL_I2C_GENCALL_UserCallback(CPAL_InitTypeDef *pDevInitStruct); /*<!This function is called when General Call flag
+void CPAL_I2C_GENCALL_UserCallback(CPAL_InitTypeDef* pDevInitStruct); /*<!This function is called when General Call flag
                                                                           is set (used in General Call Mode only ) */
 #endif
 
 #ifndef CPAL_I2C_DUALF_UserCallback
-
-void CPAL_I2C_DUALF_UserCallback(CPAL_InitTypeDef *pDevInitStruct); /*<!This function is called when Dual Address flag
+void CPAL_I2C_DUALF_UserCallback(CPAL_InitTypeDef* pDevInitStruct); /*<!This function is called when Dual Address flag
                                                                         is set (used in Dual Address Mode only ) */
 #endif
 
 #ifndef CPAL_I2C_SLAVE_READ_UserCallback
-
-void CPAL_I2C_SLAVE_READ_UserCallback(CPAL_InitTypeDef *pDevInitStruct); /*<!This function is called when a read operation is
+void CPAL_I2C_SLAVE_READ_UserCallback(CPAL_InitTypeDef* pDevInitStruct); /*<!This function is called when a read operation is
                                                                              requested in Listen mode only */
 #endif
 
 #ifndef CPAL_I2C_SLAVE_WRITE_UserCallback
-
-void CPAL_I2C_SLAVE_WRITE_UserCallback(CPAL_InitTypeDef *pDevInitStruct); /*<!This function is called when a write operation is
+void CPAL_I2C_SLAVE_WRITE_UserCallback(CPAL_InitTypeDef* pDevInitStruct); /*<!This function is called when a write operation is
                                                                               requested in Listen mode only */
 #endif
 
@@ -308,48 +294,48 @@ void CPAL_I2C_SLAVE_WRITE_UserCallback(CPAL_InitTypeDef *pDevInitStruct); /*<!Th
     - Single Error Callback : All error are handled by one Callback (CPAL_I2C_ERR_UserCallback()).
     - Multiple Error Callback : Each error has its own Callback ( CPAL_I2C_ERRTYPE_UserCallback () , 
         ERRTYPE : can be one of I2C Errors (BERR, ARLO, OVR and AF)).
-   To select one of this type, user should comment or uncomment adequate defines in cpal_conf.h file. */
+   To select one of this type, user should comment or uncomment adequate defines in cpal_conf.h file. */  
 
 #ifdef USE_SINGLE_ERROR_CALLBACK
 
-#ifndef CPAL_I2C_ERR_UserCallback
-void  CPAL_I2C_ERR_UserCallback(CPAL_DevTypeDef pDevInstance, uint32_t DeviceError); /*<!This callback is called when an error
+  #ifndef CPAL_I2C_ERR_UserCallback
+  void  CPAL_I2C_ERR_UserCallback(CPAL_DevTypeDef pDevInstance, uint32_t DeviceError); /*<!This callback is called when an error 
                                                                                            occurred on the peripheral while transferring
-                                                                                           (If I2C Error interrupt is enabled). Device
-                                                                                           instance and error type (DeviceError) are
+                                                                                           (If I2C Error interrupt is enabled). Device 
+                                                                                           instance and error type (DeviceError) are 
                                                                                            passed as argument. Device_Error value can be
                                                                                            one of CPAL_I2CErrorTypeDef enumeration */
-#endif
+  #endif
 #endif /* USE_SINGLE_ERROR_CALLBACK */
-
+  
 #ifdef USE_MULTIPLE_ERROR_CALLBACK
 
-#ifndef CPAL_I2C_BERR_UserCallback
-void  CPAL_I2C_BERR_UserCallback(CPAL_DevTypeDef pDevInstance); /*<!This callback is called when an Bus ERROR
+  #ifndef CPAL_I2C_BERR_UserCallback
+   void  CPAL_I2C_BERR_UserCallback(CPAL_DevTypeDef pDevInstance); /*<!This callback is called when an Bus ERROR
                                                                        occurred on the peripheral while transferring
                                                                        (If I2C Error interrupt is enabled) */
-#endif
-
-#ifndef CPAL_I2C_ARLO_UserCallback
-void  CPAL_I2C_ARLO_UserCallback(CPAL_DevTypeDef pDevInstance); /*<!This callback is called when an Arbitration Lost
-                                                                       ERROR occurred on the peripheral while transferring
+  #endif  
+ 
+  #ifndef CPAL_I2C_ARLO_UserCallback 
+   void  CPAL_I2C_ARLO_UserCallback(CPAL_DevTypeDef pDevInstance); /*<!This callback is called when an Arbitration Lost 
+                                                                       ERROR occurred on the peripheral while transferring 
                                                                        (If I2C Error interrupt is enabled) */
-#endif
-
-#ifndef CPAL_I2C_OVR_UserCallback
-void  CPAL_I2C_OVR_UserCallback(CPAL_DevTypeDef pDevInstance); /*<!This callback is called when an Overrun/Underrun
-                                                                      ERROR occurred on the peripheral while transferring
+  #endif    
+ 
+  #ifndef CPAL_I2C_OVR_UserCallback 
+   void  CPAL_I2C_OVR_UserCallback(CPAL_DevTypeDef pDevInstance); /*<!This callback is called when an Overrun/Underrun 
+                                                                      ERROR occurred on the peripheral while transferring 
                                                                       (If I2C Error interrupt is enabled) */
-#endif
-
-#ifndef CPAL_I2C_AF_UserCallback
-void  CPAL_I2C_AF_UserCallback(CPAL_DevTypeDef pDevInstance); /*<!This callback is called when an Acknowledge
-                                                                     Failure occurred on the peripheral while transferring
+  #endif   
+ 
+  #ifndef CPAL_I2C_AF_UserCallback
+   void  CPAL_I2C_AF_UserCallback(CPAL_DevTypeDef pDevInstance); /*<!This callback is called when an Acknowledge 
+                                                                     Failure occurred on the peripheral while transferring 
                                                                      (If I2C Error interrupt is enabled) */
-#endif
-
+  #endif 
+ 
 #endif /* USE_SINGLE_ERROR_CALLBACK */
-
+   
 
 // #ifdef __cplusplus
 // }

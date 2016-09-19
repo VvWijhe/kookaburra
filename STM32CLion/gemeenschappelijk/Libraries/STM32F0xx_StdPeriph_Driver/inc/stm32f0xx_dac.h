@@ -31,12 +31,12 @@
 #define __STM32F0XX_DAC_H
 
 #ifdef __cplusplus
-extern "C" {
+ extern "C" {
 #endif
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f0xx.h"
-
+ 
 /** @addtogroup STM32F0xx_StdPeriph_Driver
   * @{
   */
@@ -50,14 +50,15 @@ extern "C" {
 /** 
   * @brief  DAC Init structure definition
   */
-
-typedef struct {
-    uint32_t DAC_Trigger;                      /*!< Specifies the external trigger for the selected DAC channel.
+  
+typedef struct
+{
+  uint32_t DAC_Trigger;                      /*!< Specifies the external trigger for the selected DAC channel.
                                                   This parameter can be a value of @ref DAC_Trigger */
 
-    uint32_t DAC_OutputBuffer;                 /*!< Specifies whether the DAC channel output buffer is enabled or disabled.
+  uint32_t DAC_OutputBuffer;                 /*!< Specifies whether the DAC channel output buffer is enabled or disabled.
                                                   This parameter can be a value of @ref DAC_OutputBuffer */
-} DAC_InitTypeDef;
+}DAC_InitTypeDef;
 
 /* Exported constants --------------------------------------------------------*/
 
@@ -68,7 +69,7 @@ typedef struct {
 /** @defgroup DAC_Trigger 
   * @{
   */
-
+  
 #define DAC_Trigger_None                   ((uint32_t)0x00000000) /*!< Conversion is automatic once the DAC1_DHRxxxx register 
                                                                        has been loaded, and not by external trigger */
 #define DAC_Trigger_T6_TRGO                ((uint32_t)0x00000004) /*!< TIM6 TRGO selected as external conversion trigger for DAC channel */
@@ -85,7 +86,7 @@ typedef struct {
                                  ((TRIGGER) == DAC_Trigger_T2_TRGO) || \
                                  ((TRIGGER) == DAC_Trigger_Ext_IT9) || \
                                  ((TRIGGER) == DAC_Trigger_Software))
-
+                                 
 /**
   * @}
   */
@@ -101,7 +102,7 @@ typedef struct {
 /**
   * @}
   */
-
+  
 /** @defgroup DAC_Channel_selection 
   * @{
   */
@@ -131,7 +132,7 @@ typedef struct {
   * @{
   */
 
-#define IS_DAC_DATA(DATA) ((DATA) <= 0xFFF0)
+#define IS_DAC_DATA(DATA) ((DATA) <= 0xFFF0) 
 
 /**
   * @}
@@ -139,31 +140,31 @@ typedef struct {
 
 /** @defgroup DAC_interrupts_definition 
   * @{
-  */
-
+  */ 
+  
 #define DAC_IT_DMAUDR                      DAC_SR_DMAUDR1
-#define IS_DAC_IT(IT) (((IT) == DAC_IT_DMAUDR))
+#define IS_DAC_IT(IT) (((IT) == DAC_IT_DMAUDR)) 
 
 /**
   * @}
-  */
+  */ 
 
 
 /** @defgroup DAC_flags_definition 
   * @{
-  */
-
+  */ 
+  
 #define DAC_FLAG_DMAUDR                    DAC_SR_DMAUDR1
-
+  
 #define IS_DAC_FLAG(FLAG) (((FLAG) == DAC_FLAG_DMAUDR))
 
 /**
   * @}
-  */
+  */ 
 
 /**
   * @}
-  */
+  */ 
 
 /* Exported macro ------------------------------------------------------------*/
 /* Exported functions ------------------------------------------------------- */
@@ -172,16 +173,11 @@ typedef struct {
 void DAC_DeInit(void);
 
 /*  DAC channels configuration: trigger, output buffer, data format functions */
-void DAC_Init(uint32_t DAC_Channel, DAC_InitTypeDef *DAC_InitStruct);
-
-void DAC_StructInit(DAC_InitTypeDef *DAC_InitStruct);
-
+void DAC_Init(uint32_t DAC_Channel, DAC_InitTypeDef* DAC_InitStruct);
+void DAC_StructInit(DAC_InitTypeDef* DAC_InitStruct);
 void DAC_Cmd(uint32_t DAC_Channel, FunctionalState NewState);
-
 void DAC_SoftwareTriggerCmd(uint32_t DAC_Channel, FunctionalState NewState);
-
 void DAC_SetChannel1Data(uint32_t DAC_Align, uint16_t Data);
-
 uint16_t DAC_GetDataOutputValue(uint32_t DAC_Channel);
 
 /* DMA management functions ***************************************************/
@@ -189,13 +185,9 @@ void DAC_DMACmd(uint32_t DAC_Channel, FunctionalState NewState);
 
 /* Interrupts and flags management functions **********************************/
 void DAC_ITConfig(uint32_t DAC_Channel, uint32_t DAC_IT, FunctionalState NewState);
-
 FlagStatus DAC_GetFlagStatus(uint32_t DAC_Channel, uint32_t DAC_FLAG);
-
 void DAC_ClearFlag(uint32_t DAC_Channel, uint32_t DAC_FLAG);
-
 ITStatus DAC_GetITStatus(uint32_t DAC_Channel, uint32_t DAC_IT);
-
 void DAC_ClearITPendingBit(uint32_t DAC_Channel, uint32_t DAC_IT);
 
 #ifdef __cplusplus
@@ -206,10 +198,10 @@ void DAC_ClearITPendingBit(uint32_t DAC_Channel, uint32_t DAC_IT);
 
 /**
   * @}
-  */
+  */ 
 
 /**
   * @}
-  */
+  */ 
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

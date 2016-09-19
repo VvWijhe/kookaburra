@@ -76,28 +76,31 @@
   *         the configuration information for the specified NVIC peripheral.
   * @retval None
   */
-void NVIC_Init(NVIC_InitTypeDef *NVIC_InitStruct) {
-    uint32_t tmppriority = 0x00;
-
-    /* Check the parameters */
-    assert_param(IS_FUNCTIONAL_STATE(NVIC_InitStruct->NVIC_IRQChannelCmd));
-    assert_param(IS_NVIC_PRIORITY(NVIC_InitStruct->NVIC_IRQChannelPriority));
-
-    if (NVIC_InitStruct->NVIC_IRQChannelCmd != DISABLE) {
-        /* Compute the Corresponding IRQ Priority --------------------------------*/
-        tmppriority = NVIC->IP[NVIC_InitStruct->NVIC_IRQChannel >> 0x02];
-        tmppriority &= (uint32_t)(~(((uint32_t) 0xFF) << ((NVIC_InitStruct->NVIC_IRQChannel & 0x03) * 8)));
-        tmppriority |= (uint32_t)((((uint32_t) NVIC_InitStruct->NVIC_IRQChannelPriority << 6) & 0xFF)
-                                          << ((NVIC_InitStruct->NVIC_IRQChannel & 0x03) * 8));
-
-        NVIC->IP[NVIC_InitStruct->NVIC_IRQChannel >> 0x02] = tmppriority;
-
-        /* Enable the Selected IRQ Channels --------------------------------------*/
-        NVIC->ISER[0] = (uint32_t) 0x01 << (NVIC_InitStruct->NVIC_IRQChannel & (uint8_t) 0x1F);
-    } else {
-        /* Disable the Selected IRQ Channels -------------------------------------*/
-        NVIC->ICER[0] = (uint32_t) 0x01 << (NVIC_InitStruct->NVIC_IRQChannel & (uint8_t) 0x1F);
-    }
+void NVIC_Init(NVIC_InitTypeDef* NVIC_InitStruct)
+{
+  uint32_t tmppriority = 0x00;
+  
+  /* Check the parameters */
+  assert_param(IS_FUNCTIONAL_STATE(NVIC_InitStruct->NVIC_IRQChannelCmd));
+  assert_param(IS_NVIC_PRIORITY(NVIC_InitStruct->NVIC_IRQChannelPriority));  
+    
+  if (NVIC_InitStruct->NVIC_IRQChannelCmd != DISABLE)
+  {
+    /* Compute the Corresponding IRQ Priority --------------------------------*/    
+    tmppriority = NVIC->IP[NVIC_InitStruct->NVIC_IRQChannel >> 0x02];
+    tmppriority &= (uint32_t)(~(((uint32_t)0xFF) << ((NVIC_InitStruct->NVIC_IRQChannel & 0x03) * 8)));
+    tmppriority |= (uint32_t)((((uint32_t)NVIC_InitStruct->NVIC_IRQChannelPriority << 6) & 0xFF) << ((NVIC_InitStruct->NVIC_IRQChannel & 0x03) * 8));    
+    
+    NVIC->IP[NVIC_InitStruct->NVIC_IRQChannel >> 0x02] = tmppriority;
+    
+    /* Enable the Selected IRQ Channels --------------------------------------*/
+    NVIC->ISER[0] = (uint32_t)0x01 << (NVIC_InitStruct->NVIC_IRQChannel & (uint8_t)0x1F);
+  }
+  else
+  {
+    /* Disable the Selected IRQ Channels -------------------------------------*/
+    NVIC->ICER[0] = (uint32_t)0x01 << (NVIC_InitStruct->NVIC_IRQChannel & (uint8_t)0x1F);
+  }
 }
 
 /**
@@ -111,17 +114,21 @@ void NVIC_Init(NVIC_InitTypeDef *NVIC_InitStruct) {
   *          This parameter can be: ENABLE or DISABLE.
   * @retval None
   */
-void NVIC_SystemLPConfig(uint8_t LowPowerMode, FunctionalState NewState) {
-    /* Check the parameters */
-    assert_param(IS_NVIC_LP(LowPowerMode));
-
-    assert_param(IS_FUNCTIONAL_STATE(NewState));
-
-    if (NewState != DISABLE) {
-        SCB->SCR |= LowPowerMode;
-    } else {
-        SCB->SCR &= (uint32_t)(~(uint32_t) LowPowerMode);
-    }
+void NVIC_SystemLPConfig(uint8_t LowPowerMode, FunctionalState NewState)
+{
+  /* Check the parameters */
+  assert_param(IS_NVIC_LP(LowPowerMode));
+  
+  assert_param(IS_FUNCTIONAL_STATE(NewState));  
+  
+  if (NewState != DISABLE)
+  {
+    SCB->SCR |= LowPowerMode;
+  }
+  else
+  {
+    SCB->SCR &= (uint32_t)(~(uint32_t)LowPowerMode);
+  }
 }
 
 /**
@@ -132,15 +139,19 @@ void NVIC_SystemLPConfig(uint8_t LowPowerMode, FunctionalState NewState) {
   *            @arg SysTick_CLKSource_HCLK: AHB clock selected as SysTick clock source.
   * @retval None
   */
-void SysTick_CLKSourceConfig(uint32_t SysTick_CLKSource) {
-    /* Check the parameters */
-    assert_param(IS_SYSTICK_CLK_SOURCE(SysTick_CLKSource));
-
-    if (SysTick_CLKSource == SysTick_CLKSource_HCLK) {
-        SysTick->CTRL |= SysTick_CLKSource_HCLK;
-    } else {
-        SysTick->CTRL &= SysTick_CLKSource_HCLK_Div8;
-    }
+void SysTick_CLKSourceConfig(uint32_t SysTick_CLKSource)
+{
+  /* Check the parameters */
+  assert_param(IS_SYSTICK_CLK_SOURCE(SysTick_CLKSource));
+  
+  if (SysTick_CLKSource == SysTick_CLKSource_HCLK)
+  {
+    SysTick->CTRL |= SysTick_CLKSource_HCLK;
+  }
+  else
+  {
+    SysTick->CTRL &= SysTick_CLKSource_HCLK_Div8;
+  }
 }
 
 /**

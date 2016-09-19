@@ -44,9 +44,10 @@
   * @param  pDevInitStruct .
   * @retval None.
   */
-uint32_t CPAL_TIMEOUT_UserCallback(CPAL_InitTypeDef *pDevInitStruct) {
-
-    return CPAL_PASS;
+uint32_t CPAL_TIMEOUT_UserCallback(CPAL_InitTypeDef* pDevInitStruct)
+{
+ 
+  return CPAL_PASS;
 }
 
 
@@ -68,7 +69,7 @@ uint32_t CPAL_TIMEOUT_UserCallback(CPAL_InitTypeDef *pDevInitStruct) {
   * @brief  Manages the End of Rx transfer event.
   * @param  pDevInitStruct 
   * @retval None
-  */
+  */ 
 /*void CPAL_I2C_RXTC_UserCallback(CPAL_InitTypeDef* pDevInitStruct)
 {
   
@@ -90,7 +91,7 @@ uint32_t CPAL_TIMEOUT_UserCallback(CPAL_InitTypeDef *pDevInitStruct) {
   * @brief  Manages Rx transfer event.
   * @param  pDevInitStruct 
   * @retval None
-  */
+  */ 
 /*void CPAL_I2C_RX_UserCallback(CPAL_InitTypeDef* pDevInitStruct)
 {
  
@@ -145,7 +146,7 @@ uint32_t CPAL_TIMEOUT_UserCallback(CPAL_InitTypeDef *pDevInitStruct) {
   * @brief  Manages the Half of DMA Rx transfer event.
   * @param  pDevInitStruct 
   * @retval None
-  */
+  */ 
 /*void CPAL_I2C_DMARXHT_UserCallback(CPAL_InitTypeDef* pDevInitStruct)
 {
    
@@ -156,7 +157,7 @@ uint32_t CPAL_TIMEOUT_UserCallback(CPAL_InitTypeDef *pDevInitStruct) {
   * @brief  Manages Error of DMA Rx transfer event.
   * @param  pDevInitStruct 
   * @retval None
-  */
+  */ 
 /*void CPAL_I2C_DMARXTE_UserCallback(CPAL_InitTypeDef* pDevInitStruct)
 {
    
@@ -173,7 +174,7 @@ uint32_t CPAL_TIMEOUT_UserCallback(CPAL_InitTypeDef *pDevInitStruct) {
   * @param  pDevInitStruct. 
   * @param  DeviceError.
   * @retval None
-  */
+  */ 
 /*void CPAL_I2C_ERR_UserCallback(CPAL_DevTypeDef pDevInstance, uint32_t DeviceError)
 {
  
@@ -186,7 +187,7 @@ uint32_t CPAL_TIMEOUT_UserCallback(CPAL_InitTypeDef *pDevInitStruct) {
   *         the cpal_conf.h file, otherwise this callback will not be functional.
   * @param  pDevInstance.
   * @retval None
-  */
+  */  
 /*void CPAL_I2C_BERR_UserCallback(CPAL_DevTypeDef pDevInstance)
 {
    
@@ -225,7 +226,7 @@ uint32_t CPAL_TIMEOUT_UserCallback(CPAL_InitTypeDef *pDevInitStruct) {
   *         the cpal_conf.h file, otherwise this callback will not be functional.
   * @param  pDevInstance.
   * @retval None
-  */
+  */ 
 /*void CPAL_I2C_AF_UserCallback(CPAL_DevTypeDef pDevInstance)
 {
    
@@ -239,7 +240,7 @@ uint32_t CPAL_TIMEOUT_UserCallback(CPAL_InitTypeDef *pDevInitStruct) {
   * @brief  User callback that manage General Call Addressing mode.
   * @param  pDevInitStruct 
   * @retval None
-  */
+  */ 
 /*void CPAL_I2C_GENCALL_UserCallback(CPAL_InitTypeDef* pDevInitStruct)
 {
    
@@ -250,11 +251,11 @@ uint32_t CPAL_TIMEOUT_UserCallback(CPAL_InitTypeDef *pDevInitStruct) {
   * @brief  User callback that manage Dual Address Addressing mode.
   * @param  pDevInitStruct 
   * @retval None
-  */
+  */  
 /*void CPAL_I2C_DUALF_UserCallback(CPAL_InitTypeDef* pDevInitStruct)
 {
    
 }*/
-
+ 
 
 /******************* (C) COPYRIGHT 2011 STMicroelectronics *****END OF FILE****/

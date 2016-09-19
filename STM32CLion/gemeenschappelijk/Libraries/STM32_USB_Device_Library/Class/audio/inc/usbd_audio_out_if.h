@@ -23,7 +23,7 @@
   * limitations under the License.
   *
   ******************************************************************************
-  */
+  */ 
 
 /* Includes ------------------------------------------------------------------*/
 
@@ -31,32 +31,33 @@
 #define __USB_AUDIO_OUT_IF_H_
 
 #ifdef STM32F2XX
-#include "stm322xg_usb_audio_codec.h"
+ #include "stm322xg_usb_audio_codec.h"
 #elif defined(STM32F4XX)
-#include "stm324xg_usb_audio_codec.h"
+ #include "stm324xg_usb_audio_codec.h"
 #elif defined(STM32F10X_CL)
-#include "stm3210c_usb_audio_codec.h"
+ #include "stm3210c_usb_audio_codec.h"
 #endif /* STM32F2XX */
 
 /** @addtogroup STM32_USB_OTG_DEVICE_LIBRARY
   * @{
   */
-
+  
 /** @defgroup usbd_audio
   * @brief This file is the Header file for USBD_audio.c
   * @{
-  */
+  */ 
 
 
 /** @defgroup usbd_audio_Exported_Defines
   * @{
-  */
+  */ 
 /* Audio Commands enmueration */
-typedef enum {
-    AUDIO_CMD_PLAY = 1,
-    AUDIO_CMD_PAUSE,
-    AUDIO_CMD_STOP,
-} AUDIO_CMD_TypeDef;
+typedef enum
+{
+  AUDIO_CMD_PLAY = 1,
+  AUDIO_CMD_PAUSE,
+  AUDIO_CMD_STOP,
+}AUDIO_CMD_TypeDef;
 
 /* Mute commands */
 #define AUDIO_MUTE                      0x01
@@ -76,7 +77,7 @@ typedef enum {
 
 /**
   * @}
-  */
+  */ 
 
 
 /** @defgroup USBD_CORE_Exported_TypesDefinitions
@@ -84,41 +85,41 @@ typedef enum {
   */
 /**
   * @}
-  */
+  */ 
 
 
 
 /** @defgroup USBD_CORE_Exported_Macros
   * @{
-  */
+  */ 
 /**
   * @}
-  */
+  */ 
 
 /** @defgroup USBD_CORE_Exported_Variables
   * @{
-  */
+  */ 
 
-extern AUDIO_FOPS_TypeDef AUDIO_OUT_fops;
+extern AUDIO_FOPS_TypeDef  AUDIO_OUT_fops;
 
 /**
   * @}
-  */
+  */ 
 
 /** @defgroup USB_CORE_Exported_Functions
   * @{
   */
 /**
   * @}
-  */
+  */ 
 
 #endif  /* __USB_AUDIO_OUT_IF_H_ */
 /**
   * @}
-  */
+  */ 
 
 /**
   * @}
-  */
-
+  */ 
+  
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

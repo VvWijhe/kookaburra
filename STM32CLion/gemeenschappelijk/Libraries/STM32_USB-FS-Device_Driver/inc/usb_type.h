@@ -40,8 +40,9 @@
 #endif
 
 #ifndef __cplusplus           /* in geval een c++ compiler */
-typedef enum {
-    FALSE = 0, TRUE = !FALSE
+typedef enum
+{
+  FALSE = 0, TRUE  = !FALSE
 }
 bool;
 #endif
