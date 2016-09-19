@@ -24,14 +24,14 @@
   * limitations under the License.
   *
   ******************************************************************************
-  */
+  */ 
 
 /* Define to prevent recursive inclusion -------------------------------------*/
 #ifndef __STM32F30x_EXTI_H
 #define __STM32F30x_EXTI_H
 
 #ifdef __cplusplus
-extern "C" {
+ extern "C" {
 #endif
 
 /* Includes ------------------------------------------------------------------*/
@@ -51,10 +51,11 @@ extern "C" {
   * @brief  EXTI mode enumeration  
   */
 
-typedef enum {
-    EXTI_Mode_Interrupt = 0x00,
-    EXTI_Mode_Event = 0x04
-} EXTIMode_TypeDef;
+typedef enum
+{
+  EXTI_Mode_Interrupt = 0x00,
+  EXTI_Mode_Event = 0x04
+}EXTIMode_TypeDef;
 
 #define IS_EXTI_MODE(MODE) (((MODE) == EXTI_Mode_Interrupt) || ((MODE) == EXTI_Mode_Event))
 
@@ -62,11 +63,12 @@ typedef enum {
   * @brief  EXTI Trigger enumeration  
   */
 
-typedef enum {
-    EXTI_Trigger_Rising = 0x08,
-    EXTI_Trigger_Falling = 0x0C,
-    EXTI_Trigger_Rising_Falling = 0x10
-} EXTITrigger_TypeDef;
+typedef enum
+{
+  EXTI_Trigger_Rising = 0x08,
+  EXTI_Trigger_Falling = 0x0C,
+  EXTI_Trigger_Rising_Falling = 0x10
+}EXTITrigger_TypeDef;
 
 #define IS_EXTI_TRIGGER(TRIGGER) (((TRIGGER) == EXTI_Trigger_Rising) || \
                                   ((TRIGGER) == EXTI_Trigger_Falling) || \
@@ -75,25 +77,26 @@ typedef enum {
   * @brief  EXTI Init Structure definition  
   */
 
-typedef struct {
-    uint32_t EXTI_Line;               /*!< Specifies the EXTI lines to be enabled or disabled.
+typedef struct
+{
+  uint32_t EXTI_Line;               /*!< Specifies the EXTI lines to be enabled or disabled.
                                          This parameter can be any combination of @ref EXTI_Lines */
-
-    EXTIMode_TypeDef EXTI_Mode;       /*!< Specifies the mode for the EXTI lines.
+   
+  EXTIMode_TypeDef EXTI_Mode;       /*!< Specifies the mode for the EXTI lines.
                                          This parameter can be a value of @ref EXTIMode_TypeDef */
 
-    EXTITrigger_TypeDef EXTI_Trigger; /*!< Specifies the trigger signal active edge for the EXTI lines.
+  EXTITrigger_TypeDef EXTI_Trigger; /*!< Specifies the trigger signal active edge for the EXTI lines.
                                          This parameter can be a value of @ref EXTITrigger_TypeDef */
 
-    FunctionalState EXTI_LineCmd;     /*!< Specifies the new state of the selected EXTI lines.
+  FunctionalState EXTI_LineCmd;     /*!< Specifies the new state of the selected EXTI lines.
                                          This parameter can be set either to ENABLE or DISABLE */
-} EXTI_InitTypeDef;
+}EXTI_InitTypeDef;
 
 /* Exported constants --------------------------------------------------------*/
 
 /** @defgroup EXTI_Exported_Constants
   * @{
-  */
+  */ 
 /** @defgroup EXTI_Lines 
   * @{
   */
@@ -127,7 +130,7 @@ typedef struct {
                                                       and Time Stamp events */
 #define EXTI_Line20      ((uint32_t)0x14)  /*!< Internal interrupt line 20
                                                       Connected to the RTC wakeup
-                                                      event */
+                                                      event */                                                      
 #define EXTI_Line21      ((uint32_t)0x15)  /*!< Internal interrupt line 21
                                                       Connected to the Comparator 1
                                                       event */
@@ -172,7 +175,7 @@ typedef struct {
 #define EXTI_Line35      ((uint32_t)0x23)  /*!< Internal interrupt line 35
                                                       Connected to the USART5 wakeup
                                                       event */
-
+                                                                                                                                                                                                                                                                                                                                                                                                                                                
 #define IS_EXTI_LINE_ALL(LINE) ((LINE) <= 0x23)
 #define IS_EXTI_LINE_EXT(LINE) (((LINE) <= 0x16) || (((LINE) == EXTI_Line29) || ((LINE) == EXTI_Line30) || \
                                ((LINE) == EXTI_Line31) || ((LINE) == EXTI_Line32) || ((LINE) == EXTI_Line33)))
@@ -194,7 +197,7 @@ typedef struct {
 /**
   * @}
   */
-
+ 
 /**
   * @}
   */
@@ -205,19 +208,14 @@ typedef struct {
 void EXTI_DeInit(void);
 
 /* Initialization and Configuration functions *********************************/
-void EXTI_Init(EXTI_InitTypeDef *EXTI_InitStruct);
-
-void EXTI_StructInit(EXTI_InitTypeDef *EXTI_InitStruct);
-
+void EXTI_Init(EXTI_InitTypeDef* EXTI_InitStruct);
+void EXTI_StructInit(EXTI_InitTypeDef* EXTI_InitStruct);
 void EXTI_GenerateSWInterrupt(uint32_t EXTI_Line);
 
 /* Interrupts and flags management functions **********************************/
 FlagStatus EXTI_GetFlagStatus(uint32_t EXTI_Line);
-
 void EXTI_ClearFlag(uint32_t EXTI_Line);
-
 ITStatus EXTI_GetITStatus(uint32_t EXTI_Line);
-
 void EXTI_ClearITPendingBit(uint32_t EXTI_Line);
 
 #ifdef __cplusplus
@@ -227,7 +225,7 @@ void EXTI_ClearITPendingBit(uint32_t EXTI_Line);
 #endif /* __STM32F30x_EXTI_H */
 /**
   * @}
-  */
+  */ 
 
 /**
   * @}

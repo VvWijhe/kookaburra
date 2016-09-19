@@ -16,7 +16,7 @@
   * CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
   *
   * <h2><center>&copy; COPYRIGHT 2010 STMicroelectronics</center></h2>
-  */
+  */ 
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f10x_dbgmcu.h"
@@ -28,7 +28,7 @@
 /** @defgroup DBGMCU 
   * @brief DBGMCU driver modules
   * @{
-  */
+  */ 
 
 /** @defgroup DBGMCU_Private_TypesDefinitions
   * @{
@@ -80,8 +80,9 @@
   * @param  None
   * @retval Device revision identifier
   */
-uint32_t DBGMCU_GetREVID(void) {
-    return (DBGMCU->IDCODE >> 16);
+uint32_t DBGMCU_GetREVID(void)
+{
+   return(DBGMCU->IDCODE >> 16);
 }
 
 /**
@@ -89,8 +90,9 @@ uint32_t DBGMCU_GetREVID(void) {
   * @param  None
   * @retval Device identifier
   */
-uint32_t DBGMCU_GetDEVID(void) {
-    return (DBGMCU->IDCODE & IDCODE_DEVID_Mask);
+uint32_t DBGMCU_GetDEVID(void)
+{
+   return(DBGMCU->IDCODE & IDCODE_DEVID_Mask);
 }
 
 /**
@@ -128,16 +130,20 @@ uint32_t DBGMCU_GetDEVID(void) {
   *   This parameter can be: ENABLE or DISABLE.
   * @retval None
   */
-void DBGMCU_Config(uint32_t DBGMCU_Periph, FunctionalState NewState) {
-    /* Check the parameters */
-    assert_param(IS_DBGMCU_PERIPH(DBGMCU_Periph));
-    assert_param(IS_FUNCTIONAL_STATE(NewState));
+void DBGMCU_Config(uint32_t DBGMCU_Periph, FunctionalState NewState)
+{
+  /* Check the parameters */
+  assert_param(IS_DBGMCU_PERIPH(DBGMCU_Periph));
+  assert_param(IS_FUNCTIONAL_STATE(NewState));
 
-    if (NewState != DISABLE) {
-        DBGMCU->CR |= DBGMCU_Periph;
-    } else {
-        DBGMCU->CR &= ~DBGMCU_Periph;
-    }
+  if (NewState != DISABLE)
+  {
+    DBGMCU->CR |= DBGMCU_Periph;
+  }
+  else
+  {
+    DBGMCU->CR &= ~DBGMCU_Periph;
+  }
 }
 
 /**

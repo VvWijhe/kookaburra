@@ -28,6 +28,7 @@
   */
 
 /* Includes ------------------------------------------------------------------*/
+#include "stm32f0xx_it.h"
 
 /** @addtogroup STM32F0xx_StdPeriph_Examples
   * @{
@@ -41,8 +42,7 @@
 /* Private define ------------------------------------------------------------*/
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
-__IO uint32_t
-TimingDelay = 0;
+__IO uint32_t TimingDelay = 0;
 
 /* Private function prototypes -----------------------------------------------*/
 /* Private functions ---------------------------------------------------------*/
@@ -56,7 +56,8 @@ TimingDelay = 0;
   * @param  None
   * @retval None
   */
-void NMI_Handler(void) {
+void NMI_Handler(void)
+{
 }
 
 /**
@@ -64,10 +65,12 @@ void NMI_Handler(void) {
   * @param  None
   * @retval None
   */
-void HardFault_Handler(void) {
-    /* Go to infinite loop when Hard Fault exception occurs */
-    while (1) {
-    }
+void HardFault_Handler(void)
+{
+  /* Go to infinite loop when Hard Fault exception occurs */
+  while (1)
+  {
+  }
 }
 
 /**
@@ -75,7 +78,8 @@ void HardFault_Handler(void) {
   * @param  None
   * @retval None
   */
-void SVC_Handler(void) {
+void SVC_Handler(void)
+{
 }
 
 /**
@@ -83,7 +87,8 @@ void SVC_Handler(void) {
   * @param  None
   * @retval None
   */
-void PendSV_Handler(void) {
+void PendSV_Handler(void)
+{
 }
 
 /**
@@ -91,9 +96,10 @@ void PendSV_Handler(void) {
   * @param  None
   * @retval None
   */
-void SysTick_Handler(void) {
-
-    TimingDelay--;
+void SysTick_Handler(void)
+{
+ 
+  TimingDelay--;
 }
 
 /******************************************************************************/
@@ -108,17 +114,19 @@ void SysTick_Handler(void) {
   * @param  None
   * @retval None
   */
-void RTC_IRQHandler(void) {
-    if (RTC_GetITStatus(RTC_IT_ALRA) != RESET) {
-        /* LED4 on */
-        STM_EVAL_LEDOn(LED4);
+void RTC_IRQHandler(void)
+{
+  if (RTC_GetITStatus(RTC_IT_ALRA) != RESET)
+  {
+    /* LED4 on */
+    STM_EVAL_LEDOn(LED4);
 
-        /* Clear the Alarm A Pending Bit */
-        RTC_ClearITPendingBit(RTC_IT_ALRA);
-
-        /* Clear EXTI line17 pending bit */
-        EXTI_ClearITPendingBit(EXTI_Line17);
-    }
+    /* Clear the Alarm A Pending Bit */
+    RTC_ClearITPendingBit(RTC_IT_ALRA);
+    
+    /* Clear EXTI line17 pending bit */
+    EXTI_ClearITPendingBit(EXTI_Line17);    
+  }  
 }
 
 /**
@@ -126,14 +134,16 @@ void RTC_IRQHandler(void) {
   * @param  None
   * @retval None
   */
-void EXTI4_15_IRQHandler(void) {
-    if (EXTI_GetITStatus(TAMPER_BUTTON_EXTI_LINE) != RESET) {
-        /* Clear the TAMPER Button EXTI line pending bit */
-        EXTI_ClearITPendingBit(TAMPER_BUTTON_EXTI_LINE);
+void EXTI4_15_IRQHandler(void)
+{
+  if(EXTI_GetITStatus(TAMPER_BUTTON_EXTI_LINE) != RESET)
+  { 
+    /* Clear the TAMPER Button EXTI line pending bit */
+    EXTI_ClearITPendingBit(TAMPER_BUTTON_EXTI_LINE);
 
-        /* LED2 on */
-        STM_EVAL_LEDOn(LED2);
-    }
+    /* LED2 on */
+    STM_EVAL_LEDOn(LED2);
+  }
 }
 
 /**
@@ -147,10 +157,10 @@ void EXTI4_15_IRQHandler(void) {
 
 /**
   * @}
-  */
+  */ 
 
 /**
   * @}
-  */
+  */ 
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

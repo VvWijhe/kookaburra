@@ -21,21 +21,21 @@
 
 //............................................................................
 void *operator new(size_t size) throw() {
-    return malloc(size);
+	return malloc(size);
 }
-
 //............................................................................
 void operator delete(void *p) throw() {
-    free(p);
+	free(p);
 }
 //............................................................................
 extern "C" int __aeabi_atexit(void *object,
                               void (*destructor)(void *),
-                              void *dso_handle) {
-    // avoid "unused" warnings (mthomas):
+                              void *dso_handle)
+{
+	// avoid "unused" warnings (mthomas):
 /*	(void)object;
 	(void)destructor=destructor;
 	(void)dso_handle=dso_handle;
 */
-    return 0;
+	return 0;
 }

@@ -31,7 +31,7 @@
 #define __STM32F30x_SYSCFG_H
 
 #ifdef __cplusplus
-extern "C" {
+ extern "C" {
 #endif
 
 /*!< Includes ----------------------------------------------------------------*/
@@ -50,11 +50,11 @@ extern "C" {
 
 /** @defgroup SYSCFG_Exported_Constants
   * @{
-  */
-
+  */ 
+  
 /** @defgroup SYSCFG_EXTI_Port_Sources 
   * @{
-  */
+  */ 
 #define EXTI_PortSourceGPIOA       ((uint8_t)0x00)
 #define EXTI_PortSourceGPIOB       ((uint8_t)0x01)
 #define EXTI_PortSourceGPIOC       ((uint8_t)0x02)
@@ -67,14 +67,14 @@ extern "C" {
                                          ((PORTSOURCE) == EXTI_PortSourceGPIOC) || \
                                          ((PORTSOURCE) == EXTI_PortSourceGPIOD) || \
                                          ((PORTSOURCE) == EXTI_PortSourceGPIOE) || \
-                                         ((PORTSOURCE) == EXTI_PortSourceGPIOF))
+                                         ((PORTSOURCE) == EXTI_PortSourceGPIOF)) 
 /**
   * @}
   */
 
 /** @defgroup SYSCFG_EXTI_Pin_sources 
   * @{
-  */
+  */ 
 #define EXTI_PinSource0            ((uint8_t)0x00)
 #define EXTI_PinSource1            ((uint8_t)0x01)
 #define EXTI_PinSource2            ((uint8_t)0x02)
@@ -114,7 +114,7 @@ extern "C" {
 
 /** @defgroup SYSCFG_Memory_Remap_Config 
   * @{
-  */
+  */ 
 #define SYSCFG_MemoryRemap_Flash                ((uint8_t)0x00)
 #define SYSCFG_MemoryRemap_SystemMemory         ((uint8_t)0x01)
 #define SYSCFG_MemoryRemap_SRAM                 ((uint8_t)0x03)
@@ -130,7 +130,7 @@ extern "C" {
 
 /** @defgroup SYSCFG_DMA_Remap_Config 
   * @{
-  */
+  */ 
 #define SYSCFG_DMARemap_TIM17              SYSCFG_CFGR1_TIM17_DMA_RMP        /*!< Remap TIM17 DMA requests from channel1 to channel2 */
 #define SYSCFG_DMARemap_TIM16              SYSCFG_CFGR1_TIM16_DMA_RMP        /*!< Remap TIM16 DMA requests from channel3 to channel4 */
 #define SYSCFG_DMARemap_TIM6DAC1           SYSCFG_CFGR1_TIM6DAC1_DMA_RMP     /*!< Remap TIM6/DAC1 DMA requests from DMA2 channel3 to DMA1 channel3 */
@@ -149,7 +149,7 @@ extern "C" {
 
 /** @defgroup SYSCFG_Trigger_Remap_Config 
   * @{
-  */
+  */ 
 #define SYSCFG_TriggerRemap_DACTIM3              SYSCFG_CFGR1_DAC_TRIG_RMP     /*!< Remap DAC trigger to TIM3 */
 #define SYSCFG_TriggerRemap_TIM1TIM17            SYSCFG_CFGR1_TIM1_ITR3_RMP    /*!< Remap TIM1 ITR3 to TIM17 OC */
 
@@ -162,7 +162,7 @@ extern "C" {
 
 /** @defgroup SYSCFG_EncoderRemap_Config 
   * @{
-  */
+  */ 
 #define SYSCFG_EncoderRemap_No              ((uint32_t)0x00000000)      /*!< No redirection */
 #define SYSCFG_EncoderRemap_TIM2            SYSCFG_CFGR1_ENCODER_MODE_0 /*!< Timer 2 IC1 and IC2 connected to TIM15 IC1 and IC2 */
 #define SYSCFG_EncoderRemap_TIM3            SYSCFG_CFGR1_ENCODER_MODE_1 /*!< Timer 3 IC1 and IC2 connected to TIM15 IC1 and IC2 */
@@ -179,7 +179,7 @@ extern "C" {
 
 /** @defgroup SYSCFG_I2C_FastModePlus_Config 
   * @{
-  */
+  */ 
 #define SYSCFG_I2CFastModePlus_PB6       SYSCFG_CFGR1_I2C_PB6_FMP  /*!< Enable Fast Mode Plus on PB6 */
 #define SYSCFG_I2CFastModePlus_PB7       SYSCFG_CFGR1_I2C_PB7_FMP  /*!< Enable Fast Mode Plus on PB7 */
 #define SYSCFG_I2CFastModePlus_PB8       SYSCFG_CFGR1_I2C_PB8_FMP  /*!< Enable Fast Mode Plus on PB8 */
@@ -200,7 +200,7 @@ extern "C" {
 
 /** @defgroup SYSCFG_FPU_Interrupt_Config 
   * @{
-  */
+  */ 
 #define SYSCFG_IT_IXC              SYSCFG_CFGR1_FPU_IE_5  /*!< Inexact Interrupt enable (interrupt disabled by default) */
 #define SYSCFG_IT_IDC              SYSCFG_CFGR1_FPU_IE_4  /*!< Input denormal Interrupt enable */
 #define SYSCFG_IT_OFC              SYSCFG_CFGR1_FPU_IE_3  /*!< Overflow Interrupt enable */
@@ -269,31 +269,19 @@ extern "C" {
 /*  Function used to set the SYSCFG configuration to the default reset state **/
 void SYSCFG_DeInit(void);
 
-/* SYSCFG configuration functions *********************************************/
+/* SYSCFG configuration functions *********************************************/ 
 void SYSCFG_MemoryRemapConfig(uint32_t SYSCFG_MemoryRemap);
-
 void SYSCFG_DMAChannelRemapConfig(uint32_t SYSCFG_DMARemap, FunctionalState NewState);
-
 void SYSCFG_TriggerRemapConfig(uint32_t SYSCFG_TriggerRemap, FunctionalState NewState);
-
 void SYSCFG_EncoderRemapConfig(uint32_t SYSCFG_EncoderRemap);
-
 void SYSCFG_USBInterruptLineRemapCmd(FunctionalState NewState);
-
 void SYSCFG_I2CFastModePlusConfig(uint32_t SYSCFG_I2CFastModePlus, FunctionalState NewState);
-
 void SYSCFG_ITConfig(uint32_t SYSCFG_IT, FunctionalState NewState);
-
 void SYSCFG_EXTILineConfig(uint8_t EXTI_PortSourceGPIOx, uint8_t EXTI_PinSourcex);
-
 void SYSCFG_BreakConfig(uint32_t SYSCFG_Break);
-
 void SYSCFG_BypassParityCheckDisable(void);
-
 void SYSCFG_SRAMWRPEnable(uint32_t SYSCFG_SRAMWRP);
-
 FlagStatus SYSCFG_GetFlagStatus(uint32_t SYSCFG_Flag);
-
 void SYSCFG_ClearFlag(uint32_t SYSCFG_Flag);
 
 #ifdef __cplusplus
@@ -304,10 +292,10 @@ void SYSCFG_ClearFlag(uint32_t SYSCFG_Flag);
 
 /**
   * @}
-  */
+  */ 
 
 /**
   * @}
-  */
+  */ 
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

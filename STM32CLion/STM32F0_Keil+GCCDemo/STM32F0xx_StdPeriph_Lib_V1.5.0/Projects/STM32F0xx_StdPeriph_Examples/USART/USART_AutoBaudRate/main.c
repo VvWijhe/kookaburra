@@ -26,6 +26,7 @@
   */
 
 /* Includes ------------------------------------------------------------------*/
+#include "main.h"
 
 /** @addtogroup STM32F0xx_StdPeriph_Examples
   * @{
@@ -41,7 +42,6 @@
 /* Private variables ---------------------------------------------------------*/
 /* Private function prototypes -----------------------------------------------*/
 static void USART_Config(void);
-
 static void AutoBauRate_StartBitMethod(void);
 
 /* Private functions ---------------------------------------------------------*/
@@ -51,30 +51,31 @@ static void AutoBauRate_StartBitMethod(void);
   * @param  None
   * @retval None
   */
-int main(void) {
-    /*!< At this stage the microcontroller clock setting is already configured,
-         this is done through SystemInit() function which is called from startup
-         file (startup_stm32f0xx.s) before to branch to application main.
-         To reconfigure the default setting of SystemInit() function, refer to
-         system_stm32f0xx.c file
-    */
-
-    /* Initialize LEDs available on STM320518-EVAL board ************************/
-    STM_EVAL_LEDInit(LED1);
-    STM_EVAL_LEDInit(LED2);
-    STM_EVAL_LEDInit(LED3);
-    STM_EVAL_LEDInit(LED4);
-
-    /* Configure and enable the systick timer to generate an interrupt each 1 ms */
-    SysTick_Config((SystemCoreClock / 1000));
-
-    /* USART configuration */
-    USART_Config();
-
-    /* AutoBaudRate for USART by Start bit Method */
-    AutoBauRate_StartBitMethod();
-
-    while (1);
+int main(void)
+{ 
+  /*!< At this stage the microcontroller clock setting is already configured, 
+       this is done through SystemInit() function which is called from startup
+       file (startup_stm32f0xx.s) before to branch to application main.
+       To reconfigure the default setting of SystemInit() function, refer to
+       system_stm32f0xx.c file
+  */
+  
+  /* Initialize LEDs available on STM320518-EVAL board ************************/
+  STM_EVAL_LEDInit(LED1);
+  STM_EVAL_LEDInit(LED2);
+  STM_EVAL_LEDInit(LED3);
+  STM_EVAL_LEDInit(LED4);
+  
+  /* Configure and enable the systick timer to generate an interrupt each 1 ms */
+  SysTick_Config((SystemCoreClock / 1000));
+  
+  /* USART configuration */
+  USART_Config();
+  
+  /* AutoBaudRate for USART by Start bit Method */
+  AutoBauRate_StartBitMethod();
+  
+  while(1);
 }
 
 /**
@@ -82,24 +83,25 @@ int main(void) {
   * @param  None
   * @retval None
   */
-static void USART_Config(void) {
-    USART_InitTypeDef USART_InitStructure;
-
-    /* USARTx configured as follow:
-    - BaudRate = 115200 baud
-    - Word Length = 8 Bits
-    - Stop Bit = 1 Stop Bit
-    - Parity = No Parity
-    - Hardware flow control disabled (RTS and CTS signals)
-    - Receive and transmit enabled
-    */
-    USART_InitStructure.USART_BaudRate = 115200;
-    USART_InitStructure.USART_WordLength = USART_WordLength_8b;
-    USART_InitStructure.USART_StopBits = USART_StopBits_1;
-    USART_InitStructure.USART_Parity = USART_Parity_No;
-    USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None;
-    USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;
-    STM_EVAL_COMInit(COM1, &USART_InitStructure);
+static void USART_Config(void)
+{ 
+  USART_InitTypeDef USART_InitStructure;
+  
+  /* USARTx configured as follow:
+  - BaudRate = 115200 baud  
+  - Word Length = 8 Bits
+  - Stop Bit = 1 Stop Bit
+  - Parity = No Parity
+  - Hardware flow control disabled (RTS and CTS signals)
+  - Receive and transmit enabled
+  */
+  USART_InitStructure.USART_BaudRate = 115200;
+  USART_InitStructure.USART_WordLength = USART_WordLength_8b;
+  USART_InitStructure.USART_StopBits = USART_StopBits_1;
+  USART_InitStructure.USART_Parity = USART_Parity_No;
+  USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None;
+  USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;
+  STM_EVAL_COMInit(COM1, &USART_InitStructure);
 }
 
 /**
@@ -107,52 +109,62 @@ static void USART_Config(void) {
   * @param  None
   * @retval None
   */
-static void AutoBauRate_StartBitMethod(void) {
-    /* USART enable */
-    USART_Cmd(EVAL_COM1, ENABLE);
-
-    /* Configure the AutoBaudRate method */
-    USART_AutoBaudRateConfig(EVAL_COM1, USART_AutoBaudRate_StartBit);
-
-    /* Enable AutoBaudRate feature */
-    USART_AutoBaudRateCmd(EVAL_COM1, ENABLE);
-
-    /* Wait until Receive enable acknowledge flag is set */
-    while (USART_GetFlagStatus(EVAL_COM1, USART_FLAG_REACK) == RESET) {}
-
-    /* Wait until Transmit enable acknowledge flag is set */
-    while (USART_GetFlagStatus(EVAL_COM1, USART_FLAG_TEACK) == RESET) {}
-
-    /* Loop until the end of Autobaudrate phase */
-    while (USART_GetFlagStatus(EVAL_COM1, USART_FLAG_ABRF) == RESET) {}
-
-    /* If AutoBaudBate error occurred */
-    if (USART_GetFlagStatus(EVAL_COM1, USART_FLAG_ABRE) != RESET) {
-        /* Turn on LED3 */
-        STM_EVAL_LEDOn(LED3);
-    } else {
-        /* Turn on LED2 */
-        STM_EVAL_LEDOn(LED2);
-
-        /* Wait until RXNE flag is set */
-        while (USART_GetFlagStatus(EVAL_COM1, USART_FLAG_RXNE) == RESET) {}
-
-        /* Wait until TXE flag is set */
-        while (USART_GetFlagStatus(EVAL_COM1, USART_FLAG_TXE) == RESET) {}
-
-        /* Send received character */
-        USART_SendData(EVAL_COM1, USART_ReceiveData(EVAL_COM1));
-
-        /* clear the TE bit (if a transmission is on going or a data is in the TDR, it will be sent before
-        efectivelly disabling the transmission) */
-        USART_DirectionModeCmd(EVAL_COM1, USART_Mode_Tx, DISABLE);
-
-        /* Check the Transfer Complete Flag */
-        while (USART_GetFlagStatus(EVAL_COM1, USART_FLAG_TC) == RESET) {}
-    }
-
-    /* USART Disable */
-    USART_Cmd(EVAL_COM1, DISABLE);
+static void AutoBauRate_StartBitMethod(void)
+{ 
+  /* USART enable */
+  USART_Cmd(EVAL_COM1, ENABLE);
+  
+  /* Configure the AutoBaudRate method */
+  USART_AutoBaudRateConfig(EVAL_COM1, USART_AutoBaudRate_StartBit);
+  
+  /* Enable AutoBaudRate feature */
+  USART_AutoBaudRateCmd(EVAL_COM1, ENABLE);
+  
+  /* Wait until Receive enable acknowledge flag is set */
+  while(USART_GetFlagStatus(EVAL_COM1, USART_FLAG_REACK) == RESET)
+  {}  
+  
+  /* Wait until Transmit enable acknowledge flag is set */  
+  while(USART_GetFlagStatus(EVAL_COM1, USART_FLAG_TEACK) == RESET)
+  {}  
+  
+  /* Loop until the end of Autobaudrate phase */
+  while(USART_GetFlagStatus(EVAL_COM1, USART_FLAG_ABRF) == RESET)
+  {}  
+  
+  /* If AutoBaudBate error occurred */
+  if (USART_GetFlagStatus(EVAL_COM1, USART_FLAG_ABRE) != RESET)
+  {
+    /* Turn on LED3 */
+    STM_EVAL_LEDOn(LED3);
+  }
+  else
+  {
+    /* Turn on LED2 */
+    STM_EVAL_LEDOn(LED2);
+    
+    /* Wait until RXNE flag is set */
+    while(USART_GetFlagStatus(EVAL_COM1, USART_FLAG_RXNE) == RESET)
+    {}
+    
+    /* Wait until TXE flag is set */    
+    while(USART_GetFlagStatus(EVAL_COM1, USART_FLAG_TXE) == RESET)
+    {}
+    
+    /* Send received character */
+    USART_SendData(EVAL_COM1, USART_ReceiveData(EVAL_COM1)); 
+    
+    /* clear the TE bit (if a transmission is on going or a data is in the TDR, it will be sent before
+    efectivelly disabling the transmission) */
+    USART_DirectionModeCmd(EVAL_COM1, USART_Mode_Tx, DISABLE);
+    
+    /* Check the Transfer Complete Flag */
+    while (USART_GetFlagStatus(EVAL_COM1, USART_FLAG_TC) == RESET)
+    {}
+  }
+  
+  /* USART Disable */
+  USART_Cmd(EVAL_COM1, DISABLE);
 }
 
 #ifdef  USE_FULL_ASSERT

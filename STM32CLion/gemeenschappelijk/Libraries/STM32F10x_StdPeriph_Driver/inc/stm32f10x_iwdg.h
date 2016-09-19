@@ -17,14 +17,14 @@
   * CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
   *
   * <h2><center>&copy; COPYRIGHT 2010 STMicroelectronics</center></h2>
-  */
+  */ 
 
 /* Define to prevent recursive inclusion -------------------------------------*/
 #ifndef __STM32F10x_IWDG_H
 #define __STM32F10x_IWDG_H
 
 #ifdef __cplusplus
-extern "C" {
+ extern "C" {
 #endif
 
 /* Includes ------------------------------------------------------------------*/
@@ -113,15 +113,10 @@ extern "C" {
   */
 
 void IWDG_WriteAccessCmd(uint16_t IWDG_WriteAccess);
-
 void IWDG_SetPrescaler(uint8_t IWDG_Prescaler);
-
 void IWDG_SetReload(uint16_t Reload);
-
 void IWDG_ReloadCounter(void);
-
 void IWDG_Enable(void);
-
 FlagStatus IWDG_GetFlagStatus(uint16_t IWDG_FLAG);
 
 #ifdef __cplusplus

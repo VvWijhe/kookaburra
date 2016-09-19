@@ -26,11 +26,12 @@
   */
 
 /* Includes ------------------------------------------------------------------*/
+#include "main.h"
 
 /** @addtogroup STM32F0xx_StdPeriph_Examples
   * @{
   */
-
+ 
 /** @addtogroup NVIC_WFI_Mode
   * @{
   */
@@ -39,8 +40,7 @@
 /* Private define ------------------------------------------------------------*/
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
-__IO uint32_t
-LowPowerMode = 0;
+__IO uint32_t LowPowerMode = 0;
 
 /* Private function prototypes -----------------------------------------------*/
 void Delay(__IO uint32_t nCount);
@@ -53,31 +53,34 @@ void Delay(__IO uint32_t nCount);
   * @param  None
   * @retval None
   */
-int main(void) {
-    /*!< At this stage the microcontroller clock setting is already configured,
-         this is done through SystemInit() function which is called from startup
-         file (startup_stm32f0xx.s) before to branch to application main.
-         To reconfigure the default setting of SystemInit() function, refer to
-         system_stm32f0xx.c file
-       */
-    /* Initialize Led and KEY Button mounted on STM320518-EVAL */
-    STM_EVAL_LEDInit(LED3);
+int main(void)
+{
+  /*!< At this stage the microcontroller clock setting is already configured, 
+       this is done through SystemInit() function which is called from startup
+       file (startup_stm32f0xx.s) before to branch to application main.
+       To reconfigure the default setting of SystemInit() function, refer to
+       system_stm32f0xx.c file
+     */ 
+  /* Initialize Led and KEY Button mounted on STM320518-EVAL */       
+  STM_EVAL_LEDInit(LED3);
+  
+  STM_EVAL_PBInit(BUTTON_TAMPER, BUTTON_MODE_EXTI); 
+    
+  while (1)
+  {
+    if(LowPowerMode == 1)
+    {
+      /* Turn Off LED3 */
+      STM_EVAL_LEDOff(LED3);
 
-    STM_EVAL_PBInit(BUTTON_TAMPER, BUTTON_MODE_EXTI);
-
-    while (1) {
-        if (LowPowerMode == 1) {
-            /* Turn Off LED3 */
-            STM_EVAL_LEDOff(LED3);
-
-            /* Request to enter WFI mode */
-            __WFI();
-            LowPowerMode = 0;
-        }
-
-        Delay(0xFFFFF);
-        STM_EVAL_LEDToggle(LED3);
+      /* Request to enter WFI mode */
+      __WFI();
+      LowPowerMode = 0;
     }
+
+    Delay(0xFFFFF);
+    STM_EVAL_LEDToggle(LED3);
+  }
 }
 
 /**
@@ -85,8 +88,9 @@ int main(void) {
   * @param  nCount: specifies the delay time length.
   * @retval None
   */
-void Delay(__IO uint32_t nCount) {
-    for (; nCount != 0; nCount--);
+void Delay(__IO uint32_t nCount)
+{
+  for(; nCount != 0; nCount--);
 }
 
 #ifdef  USE_FULL_ASSERT

@@ -31,7 +31,7 @@
 #define __STM32F0XX_COMP_H
 
 #ifdef __cplusplus
-extern "C" {
+ extern "C" {
 #endif
 
 /* Includes ------------------------------------------------------------------*/
@@ -50,32 +50,33 @@ extern "C" {
 /** 
   * @brief  COMP Init structure definition  
   */
+  
+typedef struct
+{
 
-typedef struct {
-
-    uint32_t COMP_InvertingInput;     /*!< Selects the inverting input of the comparator.
+  uint32_t COMP_InvertingInput;     /*!< Selects the inverting input of the comparator.
                                           This parameter can be a value of @ref COMP_InvertingInput */
 
-    uint32_t COMP_Output;             /*!< Selects the output redirection of the comparator.
+  uint32_t COMP_Output;             /*!< Selects the output redirection of the comparator.
                                           This parameter can be a value of @ref COMP_Output */
 
-    uint32_t COMP_OutputPol;           /*!< Selects the output polarity of the comparator.
+  uint32_t COMP_OutputPol;           /*!< Selects the output polarity of the comparator.
                                           This parameter can be a value of @ref COMP_OutputPolarity */
 
-    uint32_t COMP_Hysteresis;         /*!< Selects the hysteresis voltage of the comparator.
+  uint32_t COMP_Hysteresis;         /*!< Selects the hysteresis voltage of the comparator.
                                           This parameter can be a value of @ref COMP_Hysteresis */
 
-    uint32_t COMP_Mode;               /*!< Selects the operating mode of the comparator
+  uint32_t COMP_Mode;               /*!< Selects the operating mode of the comparator
                                          and allows to adjust the speed/consumption.
                                           This parameter can be a value of @ref COMP_Mode */
 
-} COMP_InitTypeDef;
+}COMP_InitTypeDef;
 
 /* Exported constants --------------------------------------------------------*/
-
+   
 /** @defgroup COMP_Exported_Constants
   * @{
-  */
+  */ 
 
 /** @defgroup COMP_Selection
   * @{
@@ -86,10 +87,10 @@ typedef struct {
 
 #define IS_COMP_ALL_PERIPH(PERIPH) (((PERIPH) == COMP_Selection_COMP1) || \
                                     ((PERIPH) == COMP_Selection_COMP2))
-
+ 
 /**
   * @}
-  */
+  */ 
 
 /** @defgroup COMP_InvertingInput
   * @{
@@ -111,8 +112,8 @@ typedef struct {
                                         ((INPUT) == COMP_InvertingInput_IO))
 /**
   * @}
-  */
-
+  */ 
+  
 /** @defgroup COMP_Output
   * @{
   */
@@ -137,7 +138,7 @@ typedef struct {
                                 ((OUTPUT) == COMP_Output_TIM3OCREFCLR))
 /**
   * @}
-  */
+  */ 
 
 /** @defgroup COMP_OutputPolarity
   * @{
@@ -150,7 +151,7 @@ typedef struct {
 
 /**
   * @}
-  */
+  */ 
 
 /** @defgroup COMP_Hysteresis
   * @{
@@ -190,7 +191,7 @@ typedef struct {
 
 /** @defgroup COMP_OutputLevel
   * @{
-  */
+  */ 
 /* When output polarity is not inverted, comparator output is high when
    the non-inverting input is at a higher voltage than the inverting input */
 #define COMP_OutputLevel_High                   COMP_CSR_COMP1OUT
@@ -200,11 +201,11 @@ typedef struct {
 
 /**
   * @}
-  */
+  */ 
 
 /**
   * @}
-  */
+  */ 
 
 /* Exported macro ------------------------------------------------------------*/
 /* Exported functions ------------------------------------------------------- */
@@ -213,14 +214,10 @@ typedef struct {
 void COMP_DeInit(void);
 
 /* Initialization and Configuration functions *********************************/
-void COMP_Init(uint32_t COMP_Selection, COMP_InitTypeDef *COMP_InitStruct);
-
-void COMP_StructInit(COMP_InitTypeDef *COMP_InitStruct);
-
+void COMP_Init(uint32_t COMP_Selection, COMP_InitTypeDef* COMP_InitStruct);
+void COMP_StructInit(COMP_InitTypeDef* COMP_InitStruct);
 void COMP_Cmd(uint32_t COMP_Selection, FunctionalState NewState);
-
 void COMP_SwitchCmd(FunctionalState NewState);
-
 uint32_t COMP_GetOutputLevel(uint32_t COMP_Selection);
 
 /* Window mode control function ***********************************************/
@@ -237,7 +234,7 @@ void COMP_LockConfig(uint32_t COMP_Selection);
 
 /**
   * @}
-  */
+  */ 
 
 /**
   * @}

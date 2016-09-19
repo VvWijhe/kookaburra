@@ -27,6 +27,7 @@
 
 
 /* Includes ------------------------------------------------------------------*/
+#include "main.h"
 
 /** @addtogroup STM32F0xx_StdPeriph_Examples
   * @{
@@ -51,8 +52,7 @@ uint8_t ExpectedCRC = 0xAF; /* The expected CRC value of CRCBuffer using the
 
 /* Private function prototypes -----------------------------------------------*/
 static void CRC_Config(uint8_t poly);
-
-static uint8_t CRC_8BitsCompute(uint8_t *data, uint32_t size);
+static uint8_t CRC_8BitsCompute(uint8_t* data, uint32_t size);
 
 /* Private functions ---------------------------------------------------------*/
 
@@ -61,36 +61,41 @@ static uint8_t CRC_8BitsCompute(uint8_t *data, uint32_t size);
   * @param  None
   * @retval None
   */
-int main(void) {
-    /*!< At this stage the microcontroller clock setting is already configured,
-         this is done through SystemInit() function which is called from startup
-         file (startup_stm32f0xx.s) before to branch to application main.
-         To reconfigure the default setting of SystemInit() function, refer to
-         system_stm32f0xx.c file
-       */
+int main(void)
+{
+  /*!< At this stage the microcontroller clock setting is already configured, 
+       this is done through SystemInit() function which is called from startup
+       file (startup_stm32f0xx.s) before to branch to application main.
+       To reconfigure the default setting of SystemInit() function, refer to
+       system_stm32f0xx.c file
+     */
 
-    /* Initialize LEDs available on STM32072B-EVAL board */
-    STM_EVAL_LEDInit(LED1);
-    STM_EVAL_LEDInit(LED3);
+  /* Initialize LEDs available on STM32072B-EVAL board */
+  STM_EVAL_LEDInit(LED1);
+  STM_EVAL_LEDInit(LED3);
 
-    /* Configure the CRC peripheral to use the polynomial x8 + x7 + x6 + x4 + x2 + 1 */
-    CRC_Config(0xD5);
+  /* Configure the CRC peripheral to use the polynomial x8 + x7 + x6 + x4 + x2 + 1 */
+  CRC_Config(0xD5);
 
-    /* Compute the CRC value of the 8-bit buffer: CRCBuffer */
-    ComputedCRC = CRC_8BitsCompute(CRCBuffer, BUFFER_SIZE);
+  /* Compute the CRC value of the 8-bit buffer: CRCBuffer */
+  ComputedCRC = CRC_8BitsCompute(CRCBuffer, BUFFER_SIZE);
 
-    /* Check if the computed CRC matches the expected one */
-    if (ComputedCRC != ExpectedCRC) {
-        /* Turn on LD3 */
-        STM_EVAL_LEDOn(LED3);
-    } else {
-        /* Turn on LD1 */
-        STM_EVAL_LEDOn(LED1);
-    }
-
-    /* Infinite loop */
-    while (1) {
-    }
+  /* Check if the computed CRC matches the expected one */
+  if (ComputedCRC != ExpectedCRC)
+  {
+    /* Turn on LD3 */
+    STM_EVAL_LEDOn(LED3);
+  }
+  else
+  {
+    /* Turn on LD1 */
+    STM_EVAL_LEDOn(LED1);
+  }
+  
+  /* Infinite loop */
+  while(1)
+  {
+  }
 }
 
 /**
@@ -98,21 +103,22 @@ int main(void) {
   * @param  poly: the CRC polynomial
   * @retval None
   */
-static void CRC_Config(uint8_t poly) {
-    /* Enable CRC AHB clock interface */
-    RCC_AHBPeriphClockCmd(RCC_AHBPeriph_CRC, ENABLE);
+static void CRC_Config(uint8_t poly)
+{
+  /* Enable CRC AHB clock interface */
+  RCC_AHBPeriphClockCmd(RCC_AHBPeriph_CRC, ENABLE);
 
-    /* DeInit CRC peripheral */
-    CRC_DeInit();
-
-    /* Init the INIT register */
-    CRC_SetInitRegister(0);
-
-    /* Select 8-bit polynomial size */
-    CRC_PolynomialSizeSelect(CRC_PolSize_8);
-
-    /* Set the polynomial coefficients */
-    CRC_SetPolynomial(poly);
+  /* DeInit CRC peripheral */
+  CRC_DeInit();
+  
+  /* Init the INIT register */
+  CRC_SetInitRegister(0);
+  
+  /* Select 8-bit polynomial size */
+  CRC_PolynomialSizeSelect(CRC_PolSize_8);
+  
+  /* Set the polynomial coefficients */
+  CRC_SetPolynomial(poly);
 }
 
 /**
@@ -121,18 +127,20 @@ static void CRC_Config(uint8_t poly) {
   * @param  size: the size of the input message
   * @retval The computed CRC value
   */
-static uint8_t CRC_8BitsCompute(uint8_t *data, uint32_t size) {
-    uint8_t *dataEnd = data + size;
+static uint8_t CRC_8BitsCompute(uint8_t* data, uint32_t size)
+{
+  uint8_t* dataEnd = data+size;
 
-    /* Reset CRC data register to avoid overlap when computing new data stream */
-    CRC_ResetDR();
+  /* Reset CRC data register to avoid overlap when computing new data stream */
+  CRC_ResetDR();
 
-    while (data < dataEnd) {
-        /* Write the input data in the CRC data register */
-        CRC_CalcCRC8bits(*data++);
-    }
-    /* Return the CRC value */
-    return (uint8_t) CRC_GetCRC();
+  while(data < dataEnd)
+  {
+    /* Write the input data in the CRC data register */
+    CRC_CalcCRC8bits(*data++);
+  }
+  /* Return the CRC value */
+  return (uint8_t)CRC_GetCRC();
 }
 
 #ifdef  USE_FULL_ASSERT

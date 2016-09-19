@@ -38,31 +38,31 @@
 
 /*========= Local Structures declaration =========*/
 
-CPAL_InitTypeDef *I2C_DevStructures[CPAL_I2C_DEV_NUM] =
-        {
+CPAL_InitTypeDef* I2C_DevStructures[CPAL_I2C_DEV_NUM] =
+{
 #ifdef CPAL_USE_I2C1
-                &I2C1_DevStructure,
+  &I2C1_DevStructure,
 #else
-                pNULL,
+  pNULL,
 #endif
 
 #ifdef CPAL_USE_I2C2
-                &I2C2_DevStructure,
+  &I2C2_DevStructure,
 #else
-                pNULL,
+  pNULL,
 #endif
-        };
+};
 
 
-#ifdef CPAL_USE_I2C1
+#ifdef CPAL_USE_I2C1 
 CPAL_InitTypeDef I2C1_DevStructure = {  CPAL_I2C1,                          /* I2C1 device number */
                                         CPAL_DIRECTION_TXRX,                /* Transmitter and Receiver direction selected */
                                         CPAL_MODE_MASTER,                   /* Mode Master selected */
-#ifdef CPAL_I2C_DMA_PROGMODEL
+                                        #ifdef CPAL_I2C_DMA_PROGMODEL
                                         CPAL_PROGMODEL_DMA,                 /* DMA Programming Model selected */
-#else
+                                        #else
                                         CPAL_PROGMODEL_INTERRUPT,           /* IT Programming Model selected */
-#endif /* CPAL_I2C_DMA_PROGMODEL */
+                                        #endif /* CPAL_I2C_DMA_PROGMODEL */
                                         (CPAL_TransferTypeDef*) pNULL,       /* Point pCPAL_TransferTx to a Null pointer */
                                         (CPAL_TransferTypeDef*) pNULL,       /* Point pCPAL_TransferRx to a Null pointer */
                                         CPAL_STATE_DISABLED,                 /* Device Disabled */
@@ -73,15 +73,15 @@ CPAL_InitTypeDef I2C1_DevStructure = {  CPAL_I2C1,                          /* I
 
 #endif /* CPAL_USE_I2C1 */
 
-#ifdef CPAL_USE_I2C2
+#ifdef CPAL_USE_I2C2 
 CPAL_InitTypeDef I2C2_DevStructure = {  CPAL_I2C2,                          /* I2C2 device number */
                                         CPAL_DIRECTION_TXRX,                /* Transmitter and Receiver direction selected */
                                         CPAL_MODE_MASTER,                   /* Mode Master selected */
-#ifdef CPAL_I2C_DMA_PROGMODEL
+                                        #ifdef CPAL_I2C_DMA_PROGMODEL
                                         CPAL_PROGMODEL_DMA,                 /* DMA Programming Model selected */
-#else
+                                        #else
                                         CPAL_PROGMODEL_INTERRUPT,           /* IT Programming Model selected */
-#endif /* CPAL_I2C_DMA_PROGMODEL */
+                                        #endif /* CPAL_I2C_DMA_PROGMODEL */
                                         (CPAL_TransferTypeDef*) pNULL,       /* Point pCPAL_TransferTx to a Null pointer */
                                         (CPAL_TransferTypeDef*) pNULL,       /* Point pCPAL_TransferRx to a Null pointer */
                                         CPAL_STATE_DISABLED,                 /* Device Disabled */
@@ -94,27 +94,27 @@ CPAL_InitTypeDef I2C2_DevStructure = {  CPAL_I2C2,                          /* I
 
 DMA_InitTypeDef CPAL_DMA_InitStructure;
 
-I2C_TypeDef *CPAL_I2C_DEVICE[2] = {I2C1, I2C2};
+I2C_TypeDef* CPAL_I2C_DEVICE[2] = {I2C1,I2C2};
 
-const uint32_t CPAL_I2C_CLK[2] = {CPAL_I2C1_CLK, CPAL_I2C2_CLK};
-const uint32_t CPAL_I2C_TXDR[2] = {CPAL_I2C1_TXDR, CPAL_I2C2_TXDR};
-const uint32_t CPAL_I2C_RXDR[2] = {CPAL_I2C1_RXDR, CPAL_I2C2_RXDR};
-const uint32_t CPAL_I2C_AF[2] = {CPAL_I2C1_AF, CPAL_I2C2_AF};
+const uint32_t CPAL_I2C_CLK[2] = {CPAL_I2C1_CLK,CPAL_I2C2_CLK};
+const uint32_t CPAL_I2C_TXDR[2] = {CPAL_I2C1_TXDR,CPAL_I2C2_TXDR};
+const uint32_t CPAL_I2C_RXDR[2] = {CPAL_I2C1_RXDR,CPAL_I2C2_RXDR};
+const uint32_t CPAL_I2C_AF[2] = {CPAL_I2C1_AF,CPAL_I2C2_AF};
 
-const GPIO_TypeDef *CPAL_I2C_SCL_GPIO_PORT[2] = {CPAL_I2C1_SCL_GPIO_PORT, CPAL_I2C2_SCL_GPIO_PORT};
-const uint16_t CPAL_I2C_SCL_GPIO_PIN[2] = {CPAL_I2C1_SCL_GPIO_PIN, CPAL_I2C2_SCL_GPIO_PIN};
-const uint32_t CPAL_I2C_SCL_GPIO_CLK[2] = {CPAL_I2C1_SCL_GPIO_CLK, CPAL_I2C2_SCL_GPIO_CLK};
-const uint16_t CPAL_I2C_SCL_GPIO_PINSOURCE[2] = {CPAL_I2C1_SCL_GPIO_PINSOURCE, CPAL_I2C2_SCL_GPIO_PINSOURCE};
+const GPIO_TypeDef* CPAL_I2C_SCL_GPIO_PORT[2] = {CPAL_I2C1_SCL_GPIO_PORT,CPAL_I2C2_SCL_GPIO_PORT};
+const uint16_t CPAL_I2C_SCL_GPIO_PIN[2] = {CPAL_I2C1_SCL_GPIO_PIN,CPAL_I2C2_SCL_GPIO_PIN};
+const uint32_t CPAL_I2C_SCL_GPIO_CLK[2] = {CPAL_I2C1_SCL_GPIO_CLK,CPAL_I2C2_SCL_GPIO_CLK};
+const uint16_t CPAL_I2C_SCL_GPIO_PINSOURCE[2] = {CPAL_I2C1_SCL_GPIO_PINSOURCE,CPAL_I2C2_SCL_GPIO_PINSOURCE};
 
-const GPIO_TypeDef *CPAL_I2C_SDA_GPIO_PORT[2] = {CPAL_I2C1_SDA_GPIO_PORT, CPAL_I2C2_SDA_GPIO_PORT};
-const uint16_t CPAL_I2C_SDA_GPIO_PIN[2] = {CPAL_I2C1_SDA_GPIO_PIN, CPAL_I2C2_SDA_GPIO_PIN};
-const uint32_t CPAL_I2C_SDA_GPIO_CLK[2] = {CPAL_I2C1_SDA_GPIO_CLK, CPAL_I2C2_SDA_GPIO_CLK};
-const uint16_t CPAL_I2C_SDA_GPIO_PINSOURCE[2] = {CPAL_I2C1_SDA_GPIO_PINSOURCE, CPAL_I2C2_SDA_GPIO_PINSOURCE};
+const GPIO_TypeDef* CPAL_I2C_SDA_GPIO_PORT[2] = {CPAL_I2C1_SDA_GPIO_PORT,CPAL_I2C2_SDA_GPIO_PORT};
+const uint16_t CPAL_I2C_SDA_GPIO_PIN[2] = {CPAL_I2C1_SDA_GPIO_PIN,CPAL_I2C2_SDA_GPIO_PIN};
+const uint32_t CPAL_I2C_SDA_GPIO_CLK[2] = {CPAL_I2C1_SDA_GPIO_CLK,CPAL_I2C2_SDA_GPIO_CLK};
+const uint16_t CPAL_I2C_SDA_GPIO_PINSOURCE[2] = {CPAL_I2C1_SDA_GPIO_PINSOURCE,CPAL_I2C2_SDA_GPIO_PINSOURCE};
 
-const uint32_t CPAL_I2C_DMA_CLK[2] = {CPAL_I2C1_DMA_CLK, CPAL_I2C2_DMA_CLK};
+const uint32_t CPAL_I2C_DMA_CLK[2] = {CPAL_I2C1_DMA_CLK,CPAL_I2C2_DMA_CLK};
 
-DMA_Channel_TypeDef *CPAL_I2C_DMA_TX_Channel[2] = {CPAL_I2C1_DMA_TX_Channel, CPAL_I2C2_DMA_TX_Channel};
-DMA_Channel_TypeDef *CPAL_I2C_DMA_RX_Channel[2] = {CPAL_I2C1_DMA_RX_Channel, CPAL_I2C2_DMA_RX_Channel};
+DMA_Channel_TypeDef* CPAL_I2C_DMA_TX_Channel[2] = {CPAL_I2C1_DMA_TX_Channel, CPAL_I2C2_DMA_TX_Channel};
+DMA_Channel_TypeDef* CPAL_I2C_DMA_RX_Channel[2] = {CPAL_I2C1_DMA_RX_Channel, CPAL_I2C2_DMA_RX_Channel};
 
 const IRQn_Type CPAL_I2C_DMA_IRQn[2] = {CPAL_I2C1_DMA_IRQn, CPAL_I2C2_DMA_IRQn};
 
@@ -124,7 +124,7 @@ const uint8_t I2C_IT_PRIO[2] = {I2C1_IT_PRIO, I2C2_IT_PRIO};
 
 const uint8_t I2C_IT_DMA_PRIO[2] = {I2C1_IT_DMA_PRIO, I2C2_IT_DMA_PRIO};
 
-DMA_TypeDef *CPAL_I2C_DMA[2] = {CPAL_I2C1_DMA, CPAL_I2C2_DMA};
+DMA_TypeDef* CPAL_I2C_DMA[2] = {CPAL_I2C1_DMA,CPAL_I2C2_DMA}; 
 
 const uint32_t CPAL_I2C_DMA_TX_TC_FLAG[2] = {CPAL_I2C1_DMA_TX_TC_FLAG, CPAL_I2C2_DMA_TX_TC_FLAG};
 const uint32_t CPAL_I2C_DMA_TX_HT_FLAG[2] = {CPAL_I2C1_DMA_TX_HT_FLAG, CPAL_I2C2_DMA_TX_HT_FLAG};
@@ -146,12 +146,13 @@ const uint32_t CPAL_I2C_DMA_RX_TE_FLAG[2] = {CPAL_I2C1_DMA_RX_TE_FLAG, CPAL_I2C2
   * @param  Device : I2C Device instance.
   * @retval None
   */
-void CPAL_I2C_HAL_CLKInit(CPAL_DevTypeDef Device) {
-    /* Reset I2Cx device clock in order to avoid non-cleared error flags */
-    __I2C_RCC_RESET(CPAL_I2C_CLK[Device]);
+void CPAL_I2C_HAL_CLKInit(CPAL_DevTypeDef Device)
+{
+  /* Reset I2Cx device clock in order to avoid non-cleared error flags */
+  __I2C_RCC_RESET(CPAL_I2C_CLK [Device]);
 
-    /* Enable I2Cx device clock */
-    __I2C_CLK_CMD(CPAL_I2C_CLK[Device], ENABLE);
+  /* Enable I2Cx device clock */
+  __I2C_CLK_CMD(CPAL_I2C_CLK [Device], ENABLE);
 }
 
 
@@ -160,12 +161,13 @@ void CPAL_I2C_HAL_CLKInit(CPAL_DevTypeDef Device) {
   * @param  Device : I2C Device instance
   * @retval None.
   */
-void CPAL_I2C_HAL_CLKDeInit(CPAL_DevTypeDef Device) {
-    /* Reset I2Cx device clock in order to avoid non-cleared error flags */
-    __I2C_RCC_RESET(CPAL_I2C_CLK[Device]);
+void CPAL_I2C_HAL_CLKDeInit(CPAL_DevTypeDef Device)
+{
+  /* Reset I2Cx device clock in order to avoid non-cleared error flags */
+  __I2C_RCC_RESET(CPAL_I2C_CLK[Device]);
 
-    /* Disable I2Cx device clock */
-    __I2C_CLK_CMD(CPAL_I2C_CLK[Device], DISABLE);
+  /* Disable I2Cx device clock */
+  __I2C_CLK_CMD(CPAL_I2C_CLK[Device], DISABLE);
 }
 
 
@@ -174,39 +176,38 @@ void CPAL_I2C_HAL_CLKDeInit(CPAL_DevTypeDef Device) {
   * @param  Device : I2C Device instance.
   * @retval None.
   */
-void CPAL_I2C_HAL_GPIOInit(CPAL_DevTypeDef Device) {
-    GPIO_InitTypeDef GPIO_InitStructure;
-
-    /* Enable I2Cx SCL and SDA Pin Clock */
-    __I2C_GPIO_CLK_CMD((CPAL_I2C_SCL_GPIO_CLK[Device] | CPAL_I2C_SDA_GPIO_CLK[Device]), ENABLE);
-
-    /* Connect PXx to I2C_SCL */
-    GPIO_PinAFConfig((GPIO_TypeDef *) CPAL_I2C_SCL_GPIO_PORT[Device], CPAL_I2C_SCL_GPIO_PINSOURCE[Device],
-                     CPAL_I2C_AF[Device]);
-
-    /* Connect PXx to I2C_SDA */
-    GPIO_PinAFConfig((GPIO_TypeDef *) CPAL_I2C_SDA_GPIO_PORT[Device], CPAL_I2C_SDA_GPIO_PINSOURCE[Device],
-                     CPAL_I2C_AF[Device]);
-
-    /* Set GPIO frequency to 50MHz */
-    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-
-    /* Select Alternate function mode */
-    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;
-
-    /* Select output Open Drain type */
-    GPIO_InitStructure.GPIO_OType = GPIO_OType_OD;
-
-    /* Disable internal Pull-up */
-    GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
-
-    /* Initialize I2Cx SCL Pin */
-    GPIO_InitStructure.GPIO_Pin = CPAL_I2C_SCL_GPIO_PIN[Device];
-    GPIO_Init((GPIO_TypeDef *) CPAL_I2C_SCL_GPIO_PORT[Device], &GPIO_InitStructure);
-
-    /* Initialize I2Cx SDA Pin */
-    GPIO_InitStructure.GPIO_Pin = CPAL_I2C_SDA_GPIO_PIN[Device];
-    GPIO_Init((GPIO_TypeDef *) CPAL_I2C_SDA_GPIO_PORT[Device], &GPIO_InitStructure);
+void CPAL_I2C_HAL_GPIOInit(CPAL_DevTypeDef Device)
+{
+  GPIO_InitTypeDef GPIO_InitStructure;
+ 
+  /* Enable I2Cx SCL and SDA Pin Clock */
+  __I2C_GPIO_CLK_CMD((CPAL_I2C_SCL_GPIO_CLK[Device] | CPAL_I2C_SDA_GPIO_CLK[Device]), ENABLE);
+ 
+  /* Connect PXx to I2C_SCL */
+  GPIO_PinAFConfig((GPIO_TypeDef*)CPAL_I2C_SCL_GPIO_PORT[Device],CPAL_I2C_SCL_GPIO_PINSOURCE[Device],CPAL_I2C_AF[Device]);
+  
+  /* Connect PXx to I2C_SDA */
+  GPIO_PinAFConfig((GPIO_TypeDef*)CPAL_I2C_SDA_GPIO_PORT[Device],CPAL_I2C_SDA_GPIO_PINSOURCE[Device],CPAL_I2C_AF[Device]);  
+     
+  /* Set GPIO frequency to 50MHz */
+  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+  
+  /* Select Alternate function mode */
+  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;
+  
+  /* Select output Open Drain type */
+  GPIO_InitStructure.GPIO_OType = GPIO_OType_OD;
+  
+  /* Disable internal Pull-up */
+  GPIO_InitStructure.GPIO_PuPd  = GPIO_PuPd_NOPULL;
+  
+  /* Initialize I2Cx SCL Pin */
+  GPIO_InitStructure.GPIO_Pin = CPAL_I2C_SCL_GPIO_PIN[Device];
+  GPIO_Init((GPIO_TypeDef*)CPAL_I2C_SCL_GPIO_PORT[Device], &GPIO_InitStructure);
+  
+  /* Initialize I2Cx SDA Pin */
+  GPIO_InitStructure.GPIO_Pin = CPAL_I2C_SDA_GPIO_PIN[Device];
+  GPIO_Init((GPIO_TypeDef*)CPAL_I2C_SDA_GPIO_PORT[Device], &GPIO_InitStructure); 
 }
 
 
@@ -216,29 +217,31 @@ void CPAL_I2C_HAL_GPIOInit(CPAL_DevTypeDef Device) {
   * @param  Device : I2C Device instance.
   * @retval None. 
   */
-void CPAL_I2C_HAL_GPIODeInit(CPAL_DevTypeDef Device) {
-    GPIO_InitTypeDef GPIO_InitStructure;
+void CPAL_I2C_HAL_GPIODeInit(CPAL_DevTypeDef Device)
+{
+  GPIO_InitTypeDef GPIO_InitStructure;
 
-    /* Set GPIO frequency to 50MHz */
-    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+  /* Set GPIO frequency to 50MHz */
+  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
 
-    /* Select Input floating mode */
-    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN;
+  /* Select Input floating mode */
+  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN;
 
-    /* Select output Open Drain type */
-    GPIO_InitStructure.GPIO_OType = GPIO_OType_OD;
+  /* Select output Open Drain type */
+  GPIO_InitStructure.GPIO_OType = GPIO_OType_OD;
 
-    /* Disable internal Pull-up */
-    GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
+  /* Disable internal Pull-up */
+  GPIO_InitStructure.GPIO_PuPd  = GPIO_PuPd_NOPULL;
 
-    /* Deinitialize I2Cx SCL Pin */
-    GPIO_InitStructure.GPIO_Pin = CPAL_I2C_SCL_GPIO_PIN[Device];
-    GPIO_Init((GPIO_TypeDef *) CPAL_I2C_SCL_GPIO_PORT[Device], &GPIO_InitStructure);
+  /* Deinitialize I2Cx SCL Pin */
+  GPIO_InitStructure.GPIO_Pin = CPAL_I2C_SCL_GPIO_PIN[Device];
+  GPIO_Init((GPIO_TypeDef*)CPAL_I2C_SCL_GPIO_PORT[Device], &GPIO_InitStructure);
 
-    /* Deinitialize I2Cx SDA Pin */
-    GPIO_InitStructure.GPIO_Pin = CPAL_I2C_SDA_GPIO_PIN[Device];
-    GPIO_Init((GPIO_TypeDef *) CPAL_I2C_SDA_GPIO_PORT[Device], &GPIO_InitStructure);
+  /* Deinitialize I2Cx SDA Pin */
+  GPIO_InitStructure.GPIO_Pin = CPAL_I2C_SDA_GPIO_PIN[Device];
+  GPIO_Init((GPIO_TypeDef*)CPAL_I2C_SDA_GPIO_PORT[Device], &GPIO_InitStructure);
 }
+
 
 
 #ifdef CPAL_I2C_DMA_PROGMODEL
@@ -404,74 +407,76 @@ void CPAL_I2C_HAL_DMADeInit(CPAL_DevTypeDef Device, CPAL_DirectionTypeDef Direct
   * @param  Options : I2C Transfer Options.
   * @retval None. 
   */
-void CPAL_I2C_HAL_ITInit(CPAL_DevTypeDef Device, uint32_t Options) {
-    NVIC_InitTypeDef NVIC_InitStructure;
+void CPAL_I2C_HAL_ITInit(CPAL_DevTypeDef Device, uint32_t Options)
+{
+  NVIC_InitTypeDef NVIC_InitStructure;
 
-    /* Enable the IRQ channel */
-    NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+  /* Enable the IRQ channel */
+  NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
 
-    /* Configure NVIC for I2Cx Interrupt */
-    NVIC_InitStructure.NVIC_IRQChannel = CPAL_I2C_IT_IRQn[Device];
-    NVIC_InitStructure.NVIC_IRQChannelPriority = I2C_IT_PRIO[Device];
-    NVIC_Init(&NVIC_InitStructure);
+  /* Configure NVIC for I2Cx Interrupt */
+  NVIC_InitStructure.NVIC_IRQChannel = CPAL_I2C_IT_IRQn [Device] ;
+  NVIC_InitStructure.NVIC_IRQChannelPriority = I2C_IT_PRIO[Device];
+  NVIC_Init(&NVIC_InitStructure);
 
-    /* If I2C ERR Interrupt Option Bit not selected */
-    if ((Options & CPAL_OPT_I2C_ERRIT_DISABLE) == 0) {
-        /* Enable I2C Error Interrupts */
-        __CPAL_I2C_HAL_ENABLE_ERRIT(Device);
-    }
+  /* If I2C ERR Interrupt Option Bit not selected */
+  if ((Options & CPAL_OPT_I2C_ERRIT_DISABLE) == 0)
+  {            
+    /* Enable I2C Error Interrupts */
+    __CPAL_I2C_HAL_ENABLE_ERRIT(Device);
+  }
 
 #ifdef CPAL_I2C_DMA_PROGMODEL
-    /* If one or more DMA Interrupt option Bits selected */
-    if (((Options & CPAL_OPT_I2C_DMA_TX_IT_MASK) != 0) || ((Options & CPAL_OPT_I2C_DMA_RX_IT_MASK) != 0))
+  /* If one or more DMA Interrupt option Bits selected */
+  if (((Options & CPAL_OPT_I2C_DMA_TX_IT_MASK) != 0) || ((Options & CPAL_OPT_I2C_DMA_RX_IT_MASK) != 0))
+  {
+    /* Configure NVIC for DMA TX channel interrupt */
+    NVIC_InitStructure.NVIC_IRQChannel = CPAL_I2C_DMA_IRQn [Device];
+    NVIC_InitStructure.NVIC_IRQChannelPriority = I2C_IT_DMA_PRIO[Device];
+    NVIC_Init(&NVIC_InitStructure);
+
+    /* If DMA TX TC interrupt Option Bits Selected */
+    if ((Options & CPAL_OPT_DMATX_TCIT) != 0)
     {
-      /* Configure NVIC for DMA TX channel interrupt */
-      NVIC_InitStructure.NVIC_IRQChannel = CPAL_I2C_DMA_IRQn [Device];
-      NVIC_InitStructure.NVIC_IRQChannelPriority = I2C_IT_DMA_PRIO[Device];
-      NVIC_Init(&NVIC_InitStructure);
-
-      /* If DMA TX TC interrupt Option Bits Selected */
-      if ((Options & CPAL_OPT_DMATX_TCIT) != 0)
-      {
-        /* Enable DMA TX Channel TCIT */
-        __I2C_HAL_ENABLE_DMATX_TCIT(Device);
-      }
-
-      /* If DMA TX HT interrupt Option Bits Selected */
-      if ((Options & CPAL_OPT_DMATX_HTIT) != 0)
-      {
-        /* Enable DMA TX Channel HTIT */
-        __I2C_HAL_ENABLE_DMATX_HTIT(Device);
-      }
-
-      /* If DMA TX TE interrupt Option Bits Selected */
-      if ((Options & CPAL_OPT_DMATX_TEIT) != 0)
-      {
-        /* Enable DMA TX Channel TEIT */
-        __I2C_HAL_ENABLE_DMATX_TEIT(Device);
-      }
-
-      /* If DMA RX TC interrupt Option Bits Selected */
-      if ((Options & CPAL_OPT_DMARX_TCIT) != 0)
-      {
-        /* Enable DMA RX Channel TCIT */
-        __I2C_HAL_ENABLE_DMARX_TCIT(Device);
-      }
-
-      /* If DMA RX HT interrupt Option Bits Selected */
-      if ((Options & CPAL_OPT_DMARX_HTIT) != 0)
-      {
-        /* Enable DMA RX Channel HTIT */
-        __I2C_HAL_ENABLE_DMARX_HTIT(Device);
-      }
-
-      /* If DMA RX TE interrupt Option Bits Selected */
-      if ((Options & CPAL_OPT_DMARX_TEIT) != 0)
-      {
-        /* Enable DMA RX Channel TEIT */
-        __I2C_HAL_ENABLE_DMARX_TEIT(Device);
-      }
+      /* Enable DMA TX Channel TCIT */
+      __I2C_HAL_ENABLE_DMATX_TCIT(Device);
     }
+
+    /* If DMA TX HT interrupt Option Bits Selected */
+    if ((Options & CPAL_OPT_DMATX_HTIT) != 0)
+    {
+      /* Enable DMA TX Channel HTIT */
+      __I2C_HAL_ENABLE_DMATX_HTIT(Device);
+    }
+
+    /* If DMA TX TE interrupt Option Bits Selected */
+    if ((Options & CPAL_OPT_DMATX_TEIT) != 0)
+    {
+      /* Enable DMA TX Channel TEIT */
+      __I2C_HAL_ENABLE_DMATX_TEIT(Device);
+    }
+
+    /* If DMA RX TC interrupt Option Bits Selected */
+    if ((Options & CPAL_OPT_DMARX_TCIT) != 0)
+    {
+      /* Enable DMA RX Channel TCIT */
+      __I2C_HAL_ENABLE_DMARX_TCIT(Device);
+    }
+
+    /* If DMA RX HT interrupt Option Bits Selected */
+    if ((Options & CPAL_OPT_DMARX_HTIT) != 0)
+    {
+      /* Enable DMA RX Channel HTIT */
+      __I2C_HAL_ENABLE_DMARX_HTIT(Device);
+    }
+
+    /* If DMA RX TE interrupt Option Bits Selected */
+    if ((Options & CPAL_OPT_DMARX_TEIT) != 0)
+    {
+      /* Enable DMA RX Channel TEIT */
+      __I2C_HAL_ENABLE_DMARX_TEIT(Device);
+    }
+  }
 #endif /* CPAL_I2C_DMA_PROGMODEL */
 }
 
@@ -483,30 +488,31 @@ void CPAL_I2C_HAL_ITInit(CPAL_DevTypeDef Device, uint32_t Options) {
   * @param  Options : I2C Transfer Options.
   * @retval None. 
   */
-void CPAL_I2C_HAL_ITDeInit(CPAL_DevTypeDef Device, uint32_t Options) {
-    NVIC_InitTypeDef NVIC_InitStructure;
+void CPAL_I2C_HAL_ITDeInit(CPAL_DevTypeDef Device, uint32_t Options )
+{
+  NVIC_InitTypeDef NVIC_InitStructure; 
 
-    NVIC_InitStructure.NVIC_IRQChannelPriority = 0;
+  NVIC_InitStructure.NVIC_IRQChannelPriority = 0;
 
-    /* Disable the IRQ channel */
-    NVIC_InitStructure.NVIC_IRQChannelCmd = DISABLE;
+  /* Disable the IRQ channel */
+  NVIC_InitStructure.NVIC_IRQChannelCmd = DISABLE;
 
-    /* Disable I2Cx EVT IRQn */
-    NVIC_InitStructure.NVIC_IRQChannel = CPAL_I2C_IT_IRQn[Device];
-    NVIC_Init(&NVIC_InitStructure);
+  /* Disable I2Cx EVT IRQn */
+  NVIC_InitStructure.NVIC_IRQChannel = CPAL_I2C_IT_IRQn [Device];
+  NVIC_Init(&NVIC_InitStructure);
 
 #ifdef CPAL_I2C_DMA_PROGMODEL
-    /* If one or more DMA It option Bits selected */
-    if (((Options & CPAL_OPT_I2C_DMA_TX_IT_MASK) != 0) || ((Options & CPAL_OPT_I2C_DMA_RX_IT_MASK) != 0))
-    {
-      /* Disable I2Cx DMA TX IRQn */
-      NVIC_InitStructure.NVIC_IRQChannel = CPAL_I2C_DMA_IRQn [Device];
-      NVIC_Init(&NVIC_InitStructure);
-    }
+  /* If one or more DMA It option Bits selected */
+  if (((Options & CPAL_OPT_I2C_DMA_TX_IT_MASK) != 0) || ((Options & CPAL_OPT_I2C_DMA_RX_IT_MASK) != 0))
+  {
+    /* Disable I2Cx DMA TX IRQn */
+    NVIC_InitStructure.NVIC_IRQChannel = CPAL_I2C_DMA_IRQn [Device];
+    NVIC_Init(&NVIC_InitStructure);
+  }
 #endif /* CPAL_I2C_DMA_PROGMODEL */
 }
 
-
+  
 /*================== CPAL_I2C1_IRQhandler ==================*/
 
 #ifdef CPAL_USE_I2C1
@@ -533,7 +539,7 @@ uint32_t I2C1_IRQHandler(void)
   }
 }
 
-#ifdef CPAL_I2C_DMA_PROGMODEL
+ #ifdef CPAL_I2C_DMA_PROGMODEL
 /**
   * @brief  This function handles I2C1 DMA interrupt request.
   * @param  None.
@@ -548,12 +554,12 @@ uint32_t CPAL_I2C1_DMA_IRQHandler(void)
     return CPAL_I2C_DMA_RX_IRQHandler(&I2C1_DevStructure);
   }
   else
-  {
+  {  
     /* Call the Common DMA TX handler function */
     return CPAL_I2C_DMA_TX_IRQHandler(&I2C1_DevStructure);
   }
 }
-#endif /* CPAL_I2C_DMA_PROGMODEL */
+ #endif /* CPAL_I2C_DMA_PROGMODEL */
 #endif /* CPAL_USE_I2C1 */
 
 
@@ -583,7 +589,7 @@ uint32_t I2C2_IRQHandler(void)
   }
 }
 
-#ifdef CPAL_I2C_DMA_PROGMODEL
+ #ifdef CPAL_I2C_DMA_PROGMODEL
 /**
   * @brief  This function handles I2C2 DMA interrupt request.
   * @param  None.
@@ -598,12 +604,12 @@ uint32_t CPAL_I2C2_DMA_IRQHandler(void)
     return CPAL_I2C_DMA_RX_IRQHandler(&I2C2_DevStructure);
   }
   else
-  {
+  {  
     /* Call the Common DMA TX handler function */
     return CPAL_I2C_DMA_TX_IRQHandler(&I2C2_DevStructure);
   }
 }
-#endif /* CPAL_I2C_DMA_PROGMODEL */
+ #endif /* CPAL_I2C_DMA_PROGMODEL */
 #endif /* CPAL_USE_I2C2 */
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

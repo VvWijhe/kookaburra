@@ -28,6 +28,7 @@
   */
 
 /* Includes ------------------------------------------------------------------*/
+#include "stm32f0xx_it.h"
 
 /** @addtogroup STM32F0xx_StdPeriph_Examples
   * @{
@@ -41,8 +42,7 @@
 /* Private define ------------------------------------------------------------*/
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
-extern __IO uint8_t
-SMbusAlertOccurred;
+extern __IO uint8_t SMbusAlertOccurred;
 
 /* Private function prototypes -----------------------------------------------*/
 /* Private functions ---------------------------------------------------------*/
@@ -56,7 +56,8 @@ SMbusAlertOccurred;
   * @param  None
   * @retval None
   */
-void NMI_Handler(void) {
+void NMI_Handler(void)
+{
 }
 
 /**
@@ -64,10 +65,12 @@ void NMI_Handler(void) {
   * @param  None
   * @retval None
   */
-void HardFault_Handler(void) {
-    /* Go to infinite loop when Hard Fault exception occurs */
-    while (1) {
-    }
+void HardFault_Handler(void)
+{
+  /* Go to infinite loop when Hard Fault exception occurs */
+  while (1)
+  {
+  }
 }
 
 /**
@@ -75,7 +78,8 @@ void HardFault_Handler(void) {
   * @param  None
   * @retval None
   */
-void SVC_Handler(void) {
+void SVC_Handler(void)
+{
 }
 
 /**
@@ -83,7 +87,8 @@ void SVC_Handler(void) {
   * @param  None
   * @retval None
   */
-void PendSV_Handler(void) {
+void PendSV_Handler(void)
+{
 }
 
 /**
@@ -91,7 +96,8 @@ void PendSV_Handler(void) {
   * @param  None
   * @retval None
   */
-void SysTick_Handler(void) {
+void SysTick_Handler(void)
+{
 }
 
 /******************************************************************************/
@@ -106,36 +112,44 @@ void SysTick_Handler(void) {
   * @param  None
   * @retval None
   */
-void I2C1_IRQHandler(void) {
-    /* Check on I2C1 SMBALERT flag and clear it */
-    if (I2C_GetITStatus(I2C1, I2C_IT_ALERT)) {
-        I2C_ClearITPendingBit(I2C1, I2C_IT_ALERT);
-        SMbusAlertOccurred++;
-    }
-    /* Check on I2C1 Time out flag and clear it */
-    if (I2C_GetITStatus(I2C1, I2C_IT_TIMEOUT)) {
-        I2C_ClearITPendingBit(I2C1, I2C_IT_TIMEOUT);
-    }
-    /* Check on I2C1 Arbitration Lost flag and clear it */
-    if (I2C_GetITStatus(I2C1, I2C_IT_ARLO)) {
-        I2C_ClearITPendingBit(I2C1, I2C_IT_ARLO);
-    }
-    /* Check on I2C1 PEC error flag and clear it */
-    if (I2C_GetITStatus(I2C1, I2C_IT_PECERR)) {
-        I2C_ClearITPendingBit(I2C1, I2C_IT_PECERR);
-    }
-    /* Check on I2C1 Overrun/Underrun error flag and clear it */
-    if (I2C_GetITStatus(I2C1, I2C_IT_OVR)) {
-        I2C_ClearITPendingBit(I2C1, I2C_IT_OVR);
-    }
-    /* Check on I2C1 Acknowledge failure error flag and clear it */
-    if (I2C_GetITStatus(I2C1, I2C_IT_NACKF)) {
-        I2C_ClearITPendingBit(I2C1, I2C_IT_NACKF);
-    }
-    /* Check on I2C1 Bus error flag and clear it */
-    if (I2C_GetITStatus(I2C1, I2C_IT_BERR)) {
-        I2C_ClearITPendingBit(I2C1, I2C_IT_BERR);
-    }
+void I2C1_IRQHandler(void)
+{
+  /* Check on I2C1 SMBALERT flag and clear it */
+  if (I2C_GetITStatus(I2C1, I2C_IT_ALERT))
+  {
+    I2C_ClearITPendingBit(I2C1, I2C_IT_ALERT);
+    SMbusAlertOccurred++;
+  }
+  /* Check on I2C1 Time out flag and clear it */
+  if (I2C_GetITStatus(I2C1, I2C_IT_TIMEOUT))
+  {
+    I2C_ClearITPendingBit(I2C1, I2C_IT_TIMEOUT);
+  }
+  /* Check on I2C1 Arbitration Lost flag and clear it */
+  if (I2C_GetITStatus(I2C1, I2C_IT_ARLO))
+  {
+    I2C_ClearITPendingBit(I2C1, I2C_IT_ARLO);
+  }   
+  /* Check on I2C1 PEC error flag and clear it */
+  if (I2C_GetITStatus(I2C1, I2C_IT_PECERR))
+  {
+    I2C_ClearITPendingBit(I2C1, I2C_IT_PECERR);
+  } 
+  /* Check on I2C1 Overrun/Underrun error flag and clear it */
+  if (I2C_GetITStatus(I2C1, I2C_IT_OVR))
+  {
+    I2C_ClearITPendingBit(I2C1, I2C_IT_OVR);
+  } 
+  /* Check on I2C1 Acknowledge failure error flag and clear it */
+  if (I2C_GetITStatus(I2C1, I2C_IT_NACKF))
+  {
+    I2C_ClearITPendingBit(I2C1, I2C_IT_NACKF);
+  }
+  /* Check on I2C1 Bus error flag and clear it */
+  if (I2C_GetITStatus(I2C1, I2C_IT_BERR))
+  {
+    I2C_ClearITPendingBit(I2C1, I2C_IT_BERR);
+  }   
 }
 
 /**
@@ -149,7 +163,7 @@ void I2C1_IRQHandler(void) {
 
 /**
   * @}
-  */
+  */ 
 
 /**
   * @}

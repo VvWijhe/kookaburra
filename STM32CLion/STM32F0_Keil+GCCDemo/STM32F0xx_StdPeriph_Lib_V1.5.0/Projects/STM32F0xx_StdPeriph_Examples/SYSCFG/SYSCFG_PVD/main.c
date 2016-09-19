@@ -26,6 +26,7 @@
   */
 
 /* Includes ------------------------------------------------------------------*/
+#include "main.h"
 
 /** @addtogroup STM32F0xx_StdPeriph_Examples
   * @{
@@ -48,39 +49,41 @@ static void TIM_Config(void);
   * @param  None
   * @retval None
   */
-int main(void) {
-    /*!< At this stage the microcontroller clock setting is already configured,
-         this is done through SystemInit() function which is called from startup
-         file (startup_stm32f0xx.s) before to branch to application main.
-         To reconfigure the default setting of SystemInit() function, refer to
-         system_stm32f0xx.c file
-       */
+int main(void)
+{
+  /*!< At this stage the microcontroller clock setting is already configured, 
+       this is done through SystemInit() function which is called from startup
+       file (startup_stm32f0xx.s) before to branch to application main.
+       To reconfigure the default setting of SystemInit() function, refer to
+       system_stm32f0xx.c file
+     */ 
+  
+  /* PWR clock enable */
+  RCC_APB1PeriphClockCmd(RCC_APB1Periph_PWR, ENABLE);
+  
+  /* PVD configuration: Level 5 */
+  PWR_PVDLevelConfig(PWR_PVDLevel_5);
+  
+  /* Enable the Power Voltage Detector(PVD) */
+  PWR_PVDCmd(ENABLE);
 
-    /* PWR clock enable */
-    RCC_APB1PeriphClockCmd(RCC_APB1Periph_PWR, ENABLE);
+  /* Enable SYSCFG clock */
+  RCC_APB2PeriphClockCmd(RCC_APB2Periph_SYSCFG, ENABLE);
+  
+  /* Connect PVD event with BKIN: when a PVD event (VDD lower than the threshold)
+     is detected a break event is generated */
+  SYSCFG_BreakConfig(SYSCFG_Break_PVD);
+  
+  /* TIM1 channels Configuration in PWM mode */
+  TIM_Config();
 
-    /* PVD configuration: Level 5 */
-    PWR_PVDLevelConfig(PWR_PVDLevel_5);
-
-    /* Enable the Power Voltage Detector(PVD) */
-    PWR_PVDCmd(ENABLE);
-
-    /* Enable SYSCFG clock */
-    RCC_APB2PeriphClockCmd(RCC_APB2Periph_SYSCFG, ENABLE);
-
-    /* Connect PVD event with BKIN: when a PVD event (VDD lower than the threshold)
-       is detected a break event is generated */
-    SYSCFG_BreakConfig(SYSCFG_Break_PVD);
-
-    /* TIM1 channels Configuration in PWM mode */
-    TIM_Config();
-
-    /* Wait till a PVD event is detected */
-    while (PWR_GetFlagStatus(PWR_FLAG_PVDO) == RESET);
-
-    /* Infinite loop */
-    while (1) {
-    }
+  /* Wait till a PVD event is detected */
+  while(PWR_GetFlagStatus(PWR_FLAG_PVDO) == RESET);
+  
+  /* Infinite loop */
+  while (1)
+  {
+  }
 }
 
 /**
@@ -88,70 +91,71 @@ int main(void) {
   * @param  None
   * @retval None
   */
-static void TIM_Config(void) {
+static void TIM_Config(void)
+{
+ 
+  TIM_BDTRInitTypeDef     TIM_BDTRInitStructure;
+  TIM_OCInitTypeDef       TIM_OCInitStructure;
+  TIM_TimeBaseInitTypeDef TIM_TimeBaseStructure;
+  GPIO_InitTypeDef        GPIO_InitStructure;
 
-    TIM_BDTRInitTypeDef TIM_BDTRInitStructure;
-    TIM_OCInitTypeDef TIM_OCInitStructure;
-    TIM_TimeBaseInitTypeDef TIM_TimeBaseStructure;
-    GPIO_InitTypeDef GPIO_InitStructure;
+  /* GPIOA clock enable */
+  RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOA, ENABLE);
 
-    /* GPIOA clock enable */
-    RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOA, ENABLE);
+  /* TIM1 channels pin configuration:
+       TIM1_CH1 -> PA8
+  */
+  GPIO_StructInit(&GPIO_InitStructure);
+  GPIO_InitStructure.GPIO_Mode  = GPIO_Mode_AF;
+  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+  GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
+  GPIO_InitStructure.GPIO_PuPd  = GPIO_PuPd_UP;
+  GPIO_InitStructure.GPIO_Pin   = GPIO_Pin_8;
+  GPIO_Init(GPIOA, &GPIO_InitStructure);
 
-    /* TIM1 channels pin configuration:
-         TIM1_CH1 -> PA8
-    */
-    GPIO_StructInit(&GPIO_InitStructure);
-    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;
-    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-    GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
-    GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;
-    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_8;
-    GPIO_Init(GPIOA, &GPIO_InitStructure);
+  /* Enable Alternate function on PA8 to be controlled by TIM1 */
+  GPIO_PinAFConfig(GPIOA, GPIO_PinSource8, GPIO_AF_2);
 
-    /* Enable Alternate function on PA8 to be controlled by TIM1 */
-    GPIO_PinAFConfig(GPIOA, GPIO_PinSource8, GPIO_AF_2);
+  /* TIM1 clock enable */
+  RCC_APB2PeriphClockCmd(RCC_APB2Periph_TIM1, ENABLE);
 
-    /* TIM1 clock enable */
-    RCC_APB2PeriphClockCmd(RCC_APB2Periph_TIM1, ENABLE);
+  /* Time Base configuration */
+  TIM_TimeBaseStructInit(&TIM_TimeBaseStructure);
+  TIM_TimeBaseStructure.TIM_Prescaler = 0;
+  TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;
+  TIM_TimeBaseStructure.TIM_Period = 100;
+  TIM_TimeBaseStructure.TIM_ClockDivision = 0;
+  TIM_TimeBaseStructure.TIM_RepetitionCounter = 0;
+  TIM_TimeBaseInit(TIM1, &TIM_TimeBaseStructure);
 
-    /* Time Base configuration */
-    TIM_TimeBaseStructInit(&TIM_TimeBaseStructure);
-    TIM_TimeBaseStructure.TIM_Prescaler = 0;
-    TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;
-    TIM_TimeBaseStructure.TIM_Period = 100;
-    TIM_TimeBaseStructure.TIM_ClockDivision = 0;
-    TIM_TimeBaseStructure.TIM_RepetitionCounter = 0;
-    TIM_TimeBaseInit(TIM1, &TIM_TimeBaseStructure);
+  /* Channel 1 Configuration in PWM mode */
+  TIM_OCStructInit(&TIM_OCInitStructure);
+  TIM_OCInitStructure.TIM_OCMode = TIM_OCMode_PWM2;
+  TIM_OCInitStructure.TIM_OutputState = TIM_OutputState_Enable;
+  TIM_OCInitStructure.TIM_OutputNState = TIM_OutputNState_Enable;
+  TIM_OCInitStructure.TIM_Pulse = 50;
+  TIM_OCInitStructure.TIM_OCPolarity = TIM_OCPolarity_Low;
+  TIM_OCInitStructure.TIM_OCNPolarity = TIM_OCNPolarity_Low;
+  TIM_OCInitStructure.TIM_OCIdleState = TIM_OCIdleState_Set;
+  TIM_OCInitStructure.TIM_OCNIdleState = TIM_OCIdleState_Reset;
+  TIM_OC1Init(TIM1, &TIM_OCInitStructure);
 
-    /* Channel 1 Configuration in PWM mode */
-    TIM_OCStructInit(&TIM_OCInitStructure);
-    TIM_OCInitStructure.TIM_OCMode = TIM_OCMode_PWM2;
-    TIM_OCInitStructure.TIM_OutputState = TIM_OutputState_Enable;
-    TIM_OCInitStructure.TIM_OutputNState = TIM_OutputNState_Enable;
-    TIM_OCInitStructure.TIM_Pulse = 50;
-    TIM_OCInitStructure.TIM_OCPolarity = TIM_OCPolarity_Low;
-    TIM_OCInitStructure.TIM_OCNPolarity = TIM_OCNPolarity_Low;
-    TIM_OCInitStructure.TIM_OCIdleState = TIM_OCIdleState_Set;
-    TIM_OCInitStructure.TIM_OCNIdleState = TIM_OCIdleState_Reset;
-    TIM_OC1Init(TIM1, &TIM_OCInitStructure);
+  /* Automatic Output enable, Break, dead time and lock configuration*/
+  TIM_BDTRStructInit(&TIM_BDTRInitStructure);
+  TIM_BDTRInitStructure.TIM_OSSRState = TIM_OSSRState_Enable;
+  TIM_BDTRInitStructure.TIM_OSSIState = TIM_OSSIState_Enable;
+  TIM_BDTRInitStructure.TIM_LOCKLevel = TIM_LOCKLevel_1;
+  TIM_BDTRInitStructure.TIM_DeadTime = 11;
+  TIM_BDTRInitStructure.TIM_Break = TIM_Break_Enable;
+  TIM_BDTRInitStructure.TIM_BreakPolarity = TIM_BreakPolarity_High;
+  TIM_BDTRInitStructure.TIM_AutomaticOutput = TIM_AutomaticOutput_Enable;
+  TIM_BDTRConfig(TIM1, &TIM_BDTRInitStructure);
 
-    /* Automatic Output enable, Break, dead time and lock configuration*/
-    TIM_BDTRStructInit(&TIM_BDTRInitStructure);
-    TIM_BDTRInitStructure.TIM_OSSRState = TIM_OSSRState_Enable;
-    TIM_BDTRInitStructure.TIM_OSSIState = TIM_OSSIState_Enable;
-    TIM_BDTRInitStructure.TIM_LOCKLevel = TIM_LOCKLevel_1;
-    TIM_BDTRInitStructure.TIM_DeadTime = 11;
-    TIM_BDTRInitStructure.TIM_Break = TIM_Break_Enable;
-    TIM_BDTRInitStructure.TIM_BreakPolarity = TIM_BreakPolarity_High;
-    TIM_BDTRInitStructure.TIM_AutomaticOutput = TIM_AutomaticOutput_Enable;
-    TIM_BDTRConfig(TIM1, &TIM_BDTRInitStructure);
+  /* Main Output Enable */
+  TIM_CtrlPWMOutputs(TIM1, ENABLE);
 
-    /* Main Output Enable */
-    TIM_CtrlPWMOutputs(TIM1, ENABLE);
-
-    /* TIM1 counter enable */
-    TIM_Cmd(TIM1, ENABLE);
+  /* TIM1 counter enable */
+  TIM_Cmd(TIM1, ENABLE);
 }
 
 #ifdef  USE_FULL_ASSERT

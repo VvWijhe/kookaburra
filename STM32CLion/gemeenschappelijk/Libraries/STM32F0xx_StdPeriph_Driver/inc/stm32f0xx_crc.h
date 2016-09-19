@@ -31,7 +31,7 @@
 #define __STM32F0XX_CRC_H
 
 #ifdef __cplusplus
-extern "C" {
+ extern "C" {
 #endif
 
 /*!< Includes ----------------------------------------------------------------*/
@@ -69,25 +69,18 @@ extern "C" {
 /* Exported functions ------------------------------------------------------- */
 /* Configuration of the CRC computation unit **********************************/
 void CRC_DeInit(void);
-
 void CRC_ResetDR(void);
-
 void CRC_ReverseInputDataSelect(uint32_t CRC_ReverseInputData);
-
 void CRC_ReverseOutputDataCmd(FunctionalState NewState);
-
 void CRC_SetInitRegister(uint32_t CRC_InitValue);
 
 /* CRC computation ************************************************************/
 uint32_t CRC_CalcCRC(uint32_t CRC_Data);
-
 uint32_t CRC_CalcBlockCRC(uint32_t pBuffer[], uint32_t BufferLength);
-
 uint32_t CRC_GetCRC(void);
 
 /* Independent register (IDR) access (write/read) *****************************/
 void CRC_SetIDRegister(uint8_t CRC_IDValue);
-
 uint8_t CRC_GetIDRegister(void);
 
 #ifdef __cplusplus

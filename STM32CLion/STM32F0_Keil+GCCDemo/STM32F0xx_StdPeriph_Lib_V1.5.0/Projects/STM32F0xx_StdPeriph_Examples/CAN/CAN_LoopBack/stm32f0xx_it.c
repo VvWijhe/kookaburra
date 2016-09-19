@@ -28,6 +28,7 @@
   */
 
 /* Includes ------------------------------------------------------------------*/
+#include "stm32f0xx_it.h"
 
 /** @addtogroup STM32F0xx_StdPeriph_Examples
   * @{
@@ -35,14 +36,13 @@
 
 /** @addtogroup CAN_LoopBack
   * @{
-  */
+  */ 
 
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
-extern __IO uint32_t
-ret;
+extern __IO uint32_t ret;
 
 /* Private function prototypes -----------------------------------------------*/
 /* Private functions ---------------------------------------------------------*/
@@ -56,7 +56,8 @@ ret;
   * @param  None
   * @retval None
   */
-void NMI_Handler(void) {
+void NMI_Handler(void)
+{
 }
 
 /**
@@ -64,10 +65,12 @@ void NMI_Handler(void) {
   * @param  None
   * @retval None
   */
-void HardFault_Handler(void) {
-    /* Go to infinite loop when Hard Fault exception occurs */
-    while (1) {
-    }
+void HardFault_Handler(void)
+{
+  /* Go to infinite loop when Hard Fault exception occurs */
+  while (1)
+  {
+  }
 }
 
 /**
@@ -75,10 +78,12 @@ void HardFault_Handler(void) {
   * @param  None
   * @retval None
   */
-void MemManage_Handler(void) {
-    /* Go to infinite loop when Memory Manage exception occurs */
-    while (1) {
-    }
+void MemManage_Handler(void)
+{
+  /* Go to infinite loop when Memory Manage exception occurs */
+  while (1)
+  {
+  }
 }
 
 /**
@@ -86,10 +91,12 @@ void MemManage_Handler(void) {
   * @param  None
   * @retval None
   */
-void BusFault_Handler(void) {
-    /* Go to infinite loop when Bus Fault exception occurs */
-    while (1) {
-    }
+void BusFault_Handler(void)
+{
+  /* Go to infinite loop when Bus Fault exception occurs */
+  while (1)
+  {
+  }
 }
 
 /**
@@ -97,10 +104,12 @@ void BusFault_Handler(void) {
   * @param  None
   * @retval None
   */
-void UsageFault_Handler(void) {
-    /* Go to infinite loop when Usage Fault exception occurs */
-    while (1) {
-    }
+void UsageFault_Handler(void)
+{
+  /* Go to infinite loop when Usage Fault exception occurs */
+  while (1)
+  {
+  }
 }
 
 /**
@@ -108,7 +117,8 @@ void UsageFault_Handler(void) {
   * @param  None
   * @retval None
   */
-void SVC_Handler(void) {
+void SVC_Handler(void)
+{
 }
 
 /**
@@ -116,7 +126,8 @@ void SVC_Handler(void) {
   * @param  None
   * @retval None
   */
-void DebugMon_Handler(void) {
+void DebugMon_Handler(void)
+{
 }
 
 /**
@@ -124,7 +135,8 @@ void DebugMon_Handler(void) {
   * @param  None
   * @retval None
   */
-void PendSV_Handler(void) {
+void PendSV_Handler(void)
+{
 }
 
 /**
@@ -132,7 +144,8 @@ void PendSV_Handler(void) {
   * @param  None
   * @retval None
   */
-void SysTick_Handler(void) {
+void SysTick_Handler(void)
+{
 }
 
 /******************************************************************************/
@@ -146,27 +159,32 @@ void SysTick_Handler(void) {
   * @param  None
   * @retval None
   */
-void CEC_CAN_IRQHandler(void) {
-    if (CAN_GetITStatus(CAN, CAN_IT_FMP0) != RESET) {
-        CanRxMsg RxMessage;
-
-        RxMessage.StdId = 0x00;
-        RxMessage.ExtId = 0x00;
-        RxMessage.IDE = 0;
-        RxMessage.DLC = 0;
-        RxMessage.FMI = 0;
-        RxMessage.Data[0] = 0x00;
-        RxMessage.Data[1] = 0x00;
-
-        CAN_Receive(CAN, CAN_FIFO0, &RxMessage);
-
-        if ((RxMessage.ExtId == 0x1234) && (RxMessage.IDE == CAN_ID_EXT)
-            && (RxMessage.DLC == 2) && ((RxMessage.Data[1] | (RxMessage.Data[0] << 8)) == 0xDECA)) {
-            ret = 1;
-        } else {
-            ret = 0;
-        }
+void CEC_CAN_IRQHandler(void)
+{
+  if(CAN_GetITStatus(CAN, CAN_IT_FMP0) != RESET)
+  {
+    CanRxMsg RxMessage;
+    
+    RxMessage.StdId = 0x00;
+    RxMessage.ExtId = 0x00;
+    RxMessage.IDE = 0;
+    RxMessage.DLC = 0;
+    RxMessage.FMI = 0;
+    RxMessage.Data[0] = 0x00;
+    RxMessage.Data[1] = 0x00;
+    
+    CAN_Receive(CAN, CAN_FIFO0, &RxMessage);
+    
+    if((RxMessage.ExtId == 0x1234) && (RxMessage.IDE == CAN_ID_EXT)
+       && (RxMessage.DLC == 2) && ((RxMessage.Data[1]|(RxMessage.Data[0]<<8)) == 0xDECA))
+    {
+      ret = 1; 
     }
+    else
+    {
+      ret = 0; 
+    }
+  }
 }
 
 /**
@@ -180,10 +198,10 @@ void CEC_CAN_IRQHandler(void) {
 
 /**
   * @}
-  */
+  */ 
 
 /**
   * @}
-  */
+  */ 
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

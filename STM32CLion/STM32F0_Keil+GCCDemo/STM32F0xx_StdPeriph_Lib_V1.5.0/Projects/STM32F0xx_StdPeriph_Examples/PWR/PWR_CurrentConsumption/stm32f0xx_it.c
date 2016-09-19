@@ -28,6 +28,7 @@
   */
 
 /* Includes ------------------------------------------------------------------*/
+#include "stm32f0xx_it.h"
 
 /** @addtogroup STM32F0xx_StdPeriph_Examples
   * @{
@@ -53,7 +54,8 @@
   * @param  None
   * @retval None
   */
-void NMI_Handler(void) {
+void NMI_Handler(void)
+{
 }
 
 /**
@@ -61,10 +63,12 @@ void NMI_Handler(void) {
   * @param  None
   * @retval None
   */
-void HardFault_Handler(void) {
-    /* Go to infinite loop when Hard Fault exception occurs */
-    while (1) {
-    }
+void HardFault_Handler(void)
+{
+  /* Go to infinite loop when Hard Fault exception occurs */
+  while (1)
+  {
+  }
 }
 
 /**
@@ -72,7 +76,8 @@ void HardFault_Handler(void) {
   * @param  None
   * @retval None
   */
-void SVC_Handler(void) {
+void SVC_Handler(void)
+{
 }
 
 /**
@@ -80,7 +85,8 @@ void SVC_Handler(void) {
   * @param  None
   * @retval None
   */
-void PendSV_Handler(void) {
+void PendSV_Handler(void)
+{
 }
 
 /**
@@ -88,7 +94,8 @@ void PendSV_Handler(void) {
   * @param  None
   * @retval None
   */
-void SysTick_Handler(void) {
+void SysTick_Handler(void)
+{
 }
 
 /******************************************************************************/
@@ -103,11 +110,13 @@ void SysTick_Handler(void) {
   * @param  None
   * @retval None
   */
-void EXTI0_1_IRQHandler(void) {
-    if (EXTI_GetITStatus(SEL_BUTTON_EXTI_LINE) != RESET) {
-        /* Clear the Joystick SEL Button EXTI line pending bit */
-        EXTI_ClearITPendingBit(SEL_BUTTON_EXTI_LINE);
-    }
+void EXTI0_1_IRQHandler(void)
+{ 
+  if(EXTI_GetITStatus(SEL_BUTTON_EXTI_LINE) != RESET)
+  {    
+    /* Clear the Joystick SEL Button EXTI line pending bit */
+    EXTI_ClearITPendingBit(SEL_BUTTON_EXTI_LINE);
+  }
 }
 
 /**
@@ -115,17 +124,19 @@ void EXTI0_1_IRQHandler(void) {
   * @param  None
   * @retval None
   */
-void RTC_IRQHandler(void) {
-    if (RTC_GetITStatus(RTC_IT_ALRA) != RESET) {
-        /* LED4 on */
-        STM_EVAL_LEDOff(LED4);
+void RTC_IRQHandler(void)
+{
+  if (RTC_GetITStatus(RTC_IT_ALRA) != RESET)
+  {
+    /* LED4 on */
+    STM_EVAL_LEDOff(LED4);
 
-        /* Clear the Alarm A Pending Bit */
-        RTC_ClearITPendingBit(RTC_IT_ALRA);
-
-        /* Clear EXTI line17 pending bit */
-        EXTI_ClearITPendingBit(EXTI_Line17);
-    }
+    /* Clear the Alarm A Pending Bit */
+    RTC_ClearITPendingBit(RTC_IT_ALRA);
+    
+    /* Clear EXTI line17 pending bit */
+    EXTI_ClearITPendingBit(EXTI_Line17);    
+  }  
 }
 
 /**
@@ -139,7 +150,7 @@ void RTC_IRQHandler(void) {
 
 /**
   * @}
-  */
+  */ 
 
 /**
   * @}

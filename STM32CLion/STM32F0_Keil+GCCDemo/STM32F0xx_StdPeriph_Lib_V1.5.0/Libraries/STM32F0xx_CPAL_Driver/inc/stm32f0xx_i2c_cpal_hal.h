@@ -200,19 +200,19 @@ extern "C" {
 
 /*-----------------------------------------------------------------------------------------------------------------------*/
 /*-----------------------------------------------------------------------------------------------------------------------*/
-
+ 
 /*****END OF CPAL Hardware Configuration***************************************************************************************************/
 
-/* !WARNING!:
-   ---------
-   The following code should not be modified by user.
-   Any modification may cause Library dysfunction.
-*/
+  /* !WARNING!:
+     --------- 
+     The following code should not be modified by user.
+     Any modification may cause Library dysfunction.
+  */
 
-/*========= Common Defines =========*/
-
+/*========= Common Defines =========*/  
+  
 /* This define set the number of I2C devices that can be used with this product family */
-#define CPAL_I2C_DEV_NUM     2
+#define CPAL_I2C_DEV_NUM     2   
 
 /* This define is used to enable DMA Channel */
 #define CPAL_DMA_CCR_EN                 DMA_CCR_EN
@@ -232,7 +232,7 @@ extern "C" {
 /* This define is used to check if DMA RX interrupt are selected */
 #define CPAL_OPT_I2C_DMA_RX_IT_MASK     ((uint32_t)0x00003800)
 
-/* I2C Event Defines */
+ /* I2C Event Defines */
 #define CPAL_I2C_EVT_ADDR               I2C_ISR_ADDR     /*!<Address matched */
 #define CPAL_I2C_EVT_STOP               I2C_ISR_STOPF    /*!<Stop detection */
 #define CPAL_I2C_EVT_NACK               I2C_ISR_NACKF    /*!<NACK received */
@@ -241,7 +241,7 @@ extern "C" {
 #define CPAL_I2C_EVT_TCR                I2C_ISR_TCR      /*!<Transfer Complete Reload */
 #define CPAL_I2C_EVT_TC                 I2C_ISR_TC       /*!<Transfer Complete */
 
-/*========= I2C1 specific defines (GPIO, PINs, Clocks and DMA) =========*/
+/*========= I2C1 specific defines (GPIO, PINs, Clocks and DMA) =========*/   
 
 #define CPAL_I2C1_CLK                   RCC_APB1Periph_I2C1
 #define CPAL_I2C1_TXDR                  ((uint32_t)0x40005428)
@@ -276,12 +276,13 @@ extern "C" {
 
 #define CPAL_I2C2_IT_IRQn               I2C2_IRQn
 #ifdef STM32F072
-#define CPAL_I2C2_DMA_IRQn              DMA1_Channel4_5_6_7_IRQn
-#define CPAL_I2C2_DMA_IRQHandler        DMA1_Channel4_5_6_7IRQHandler
+ #define CPAL_I2C2_DMA_IRQn              DMA1_Channel4_5_6_7_IRQn
+ #define CPAL_I2C2_DMA_IRQHandler        DMA1_Channel4_5_6_7IRQHandler
 #else
-#define CPAL_I2C2_DMA_IRQn              DMA1_Channel4_5_IRQn
-#define CPAL_I2C2_DMA_IRQHandler        DMA1_Channel4_5_IRQHandler
+ #define CPAL_I2C2_DMA_IRQn              DMA1_Channel4_5_IRQn
+ #define CPAL_I2C2_DMA_IRQHandler        DMA1_Channel4_5_IRQHandler
 #endif /* STM32F072 */ 
+
 
 
 #define CPAL_I2C2_DMA_TX_TC_FLAG        DMA1_FLAG_TC4
@@ -297,20 +298,20 @@ extern "C" {
 
 /*========= Peripheral Clock Command =========*/
 
-#define __I2C_CLK_CMD(clk, cmd)                          RCC_APB1PeriphClockCmd((clk),(cmd))
+#define __I2C_CLK_CMD(clk,cmd)                          RCC_APB1PeriphClockCmd((clk),(cmd))
 
 #define __I2C_RCC_RESET(clk)                            RCC_APB1PeriphResetCmd((clk),ENABLE);\
                                                         RCC_APB1PeriphResetCmd((clk),DISABLE)
 
-#define __I2C_GPIO_CLK_CMD(clk, cmd)                     RCC_AHBPeriphClockCmd((clk),(cmd))
+#define __I2C_GPIO_CLK_CMD(clk,cmd)                     RCC_AHBPeriphClockCmd((clk),(cmd))
 
-#define __DMA_CLK_CMD(clk, cmd)                          RCC_AHBPeriphClockCmd((clk),(cmd))
+#define __DMA_CLK_CMD(clk,cmd)                          RCC_AHBPeriphClockCmd((clk),(cmd))
 
-#define __DMA_RESET_CMD(clk, cmd)                        RCC_AHBPeriphResetCmd((clk),(cmd))
+#define __DMA_RESET_CMD(clk,cmd)                        RCC_AHBPeriphResetCmd((clk),(cmd))
 
 
 /*========= DMA =========*/
-
+  
 /* DMA channels enable/disable */
 
 #define __CPAL_I2C_HAL_ENABLE_DMATX(device)             CPAL_I2C_DMA_TX_Channel[(device)]->CCR |= CPAL_DMA_CCR_EN
@@ -336,19 +337,19 @@ extern "C" {
 #define __I2C_HAL_ENABLE_DMARX_TEIT(device)             CPAL_I2C_DMA_RX_Channel[(device)]->CCR |= DMA_IT_TE
 
 /* DMA interrupts flag management */
-
+  
 #define __CPAL_I2C_HAL_GET_DMATX_IT(device)             (uint32_t)(CPAL_I2C_DMA[(device)]->ISR & (CPAL_I2C_DMA_TX_TC_FLAG[(device)] \
                                                         | CPAL_I2C_DMA_TX_HT_FLAG[(device)] | CPAL_I2C_DMA_TX_TE_FLAG[(device)]))
-
+  
 #define __CPAL_I2C_HAL_GET_DMATX_TCIT(device)           (uint32_t)(CPAL_I2C_DMA[(device)]->ISR & CPAL_I2C_DMA_TX_TC_FLAG [(device)])
 
 #define __CPAL_I2C_HAL_GET_DMATX_HTIT(device)           (uint32_t)(CPAL_I2C_DMA[(device)]->ISR & CPAL_I2C_DMA_TX_HT_FLAG [(device)])
 
 #define __CPAL_I2C_HAL_GET_DMATX_TEIT(device)           (uint32_t)(CPAL_I2C_DMA[(device)]->ISR & CPAL_I2C_DMA_TX_TE_FLAG [(device)])
-
+  
 #define __CPAL_I2C_HAL_GET_DMARX_IT(device)             (uint32_t)(CPAL_I2C_DMA[(device)]->ISR & (CPAL_I2C_DMA_RX_TC_FLAG[(device)] \
-                                                        | CPAL_I2C_DMA_RX_HT_FLAG[(device)] | CPAL_I2C_DMA_RX_TE_FLAG[(device)]))
-
+                                                        | CPAL_I2C_DMA_RX_HT_FLAG[(device)] | CPAL_I2C_DMA_RX_TE_FLAG[(device)]))  
+  
 #define __CPAL_I2C_HAL_GET_DMARX_TCIT(device)           (uint32_t)(CPAL_I2C_DMA[(device)]->ISR & CPAL_I2C_DMA_RX_TC_FLAG [(device)])
 
 #define __CPAL_I2C_HAL_GET_DMARX_HTIT(device)           (uint32_t)(CPAL_I2C_DMA[(device)]->ISR & CPAL_I2C_DMA_RX_HT_FLAG [(device)])
@@ -386,26 +387,26 @@ extern "C" {
 #define __CPAL_I2C_HAL_ENABLE_WAKEUP(device)               CPAL_I2C_DEVICE[(device)]->CR1 |= I2C_CR1_WUPEN
 
 #define __CPAL_I2C_HAL_DISABLE_WAKEUP(device)              CPAL_I2C_DEVICE[(device)]->CR1 &= ~I2C_CR1_WUPEN
-
+  
 /* I2C interrupts enable/disable */
-
+  
 #define __CPAL_I2C_HAL_DISABLE_ALLIT(device)            CPAL_I2C_DEVICE[(device)]->CR1 &= ~(I2C_CR1_TXIE | I2C_CR1_RXIE | I2C_CR1_ADDRIE | \
                                                         I2C_CR1_STOPIE | I2C_CR1_TCIE | I2C_CR1_ERRIE | I2C_CR1_NACKIE)
-
+  
 #define __CPAL_I2C_HAL_ENABLE_ERRIT(device)             CPAL_I2C_DEVICE[(device)]->CR1 |= (I2C_CR1_ERRIE | I2C_CR1_NACKIE)
 
 #define __CPAL_I2C_HAL_DISABLE_ERRIT(device)            CPAL_I2C_DEVICE[(device)]->CR1 &= ~(I2C_CR1_ERRIE | I2C_CR1_NACKIE)
 
-
+  
 #define __CPAL_I2C_HAL_ENABLE_MASTER_IT(device)         CPAL_I2C_DEVICE[(device)]->CR1 |= (I2C_CR1_TCIE | I2C_CR1_STOPIE)
 
 #define __CPAL_I2C_HAL_DISABLE_MASTER_IT(device)        CPAL_I2C_DEVICE[(device)]->CR1 &= ~(I2C_CR1_TCIE | I2C_CR1_STOPIE)
-
+  
 #define __CPAL_I2C_HAL_ENABLE_MASTER_TXIT(device)       CPAL_I2C_DEVICE[(device)]->CR1 |= (I2C_CR1_TCIE | I2C_CR1_STOPIE | I2C_CR1_TXIE)
 
 #define __CPAL_I2C_HAL_ENABLE_MASTER_RXIT(device)       CPAL_I2C_DEVICE[(device)]->CR1 |= (I2C_CR1_TCIE | I2C_CR1_STOPIE | I2C_CR1_RXIE)
-
-
+  
+  
 #define __CPAL_I2C_HAL_ENABLE_SLAVE_IT(device)          CPAL_I2C_DEVICE[(device)]->CR1 |= (I2C_CR1_ADDRIE | I2C_CR1_STOPIE)
 
 #define __CPAL_I2C_HAL_DISABLE_SLAVE_IT(device)         CPAL_I2C_DEVICE[(device)]->CR1 &= ~(I2C_CR1_ADDRIE | I2C_CR1_STOPIE)
@@ -413,8 +414,8 @@ extern "C" {
 #define __CPAL_I2C_HAL_ENABLE_SLAVE_TXIT(device)        CPAL_I2C_DEVICE[(device)]->CR1 |= (I2C_CR1_ADDRIE | I2C_CR1_STOPIE | I2C_CR1_TXIE)
 
 #define __CPAL_I2C_HAL_ENABLE_SLAVE_RXIT(device)        CPAL_I2C_DEVICE[(device)]->CR1 |= (I2C_CR1_ADDRIE | I2C_CR1_STOPIE | I2C_CR1_RXIE)
-
-
+  
+  
 #define __CPAL_I2C_HAL_ENABLE_STOPIE_IT(device)         CPAL_I2C_DEVICE[(device)]->CR1 |= I2C_CR1_STOPIE
 
 #define __CPAL_I2C_HAL_DISABLE_STOPIE_IT(device)        CPAL_I2C_DEVICE[(device)]->CR1 &= ~I2C_CR1_STOPIE
@@ -422,11 +423,11 @@ extern "C" {
 #define __CPAL_I2C_HAL_ENABLE_ADDRIE_IT(device)         CPAL_I2C_DEVICE[(device)]->CR1 |= I2C_CR1_ADDRIE
 
 #define __CPAL_I2C_HAL_DISABLE_ADDRIE_IT(device)        CPAL_I2C_DEVICE[(device)]->CR1 &= ~I2C_CR1_ADDRIE
-
+ 
 #define __CPAL_I2C_HAL_ENABLE_TCIE_IT(device)           CPAL_I2C_DEVICE[(device)]->CR1 |= I2C_CR1_TCIE
 
 #define __CPAL_I2C_HAL_DISABLE_TCIE_IT(device)          CPAL_I2C_DEVICE[(device)]->CR1 &= ~I2C_CR1_TCIE
-
+  
 #define __CPAL_I2C_HAL_ENABLE_TXIE_IT(device)           CPAL_I2C_DEVICE[(device)]->CR1 |= I2C_CR1_TXIE
 
 #define __CPAL_I2C_HAL_DISABLE_TXIE_IT(device)          CPAL_I2C_DEVICE[(device)]->CR1 &= ~I2C_CR1_TXIE
@@ -434,17 +435,17 @@ extern "C" {
 #define __CPAL_I2C_HAL_ENABLE_RXIE_IT(device)           CPAL_I2C_DEVICE[(device)]->CR1 |= I2C_CR1_RXIE
 
 #define __CPAL_I2C_HAL_DISABLE_RXIE_IT(device)          CPAL_I2C_DEVICE[(device)]->CR1 &= ~I2C_CR1_RXIE
-
+    
 
 /* I2C Addressing configuration */
 
-#define __CPAL_I2C_HAL_SADD_CONF(device, value)          CPAL_I2C_DEVICE[(device)]->CR2 &= ~I2C_CR2_SADD; \
+#define __CPAL_I2C_HAL_SADD_CONF(device,value)          CPAL_I2C_DEVICE[(device)]->CR2 &= ~I2C_CR2_SADD; \
                                                         CPAL_I2C_DEVICE[(device)]->CR2 |= (uint32_t)((value) & 0x000003FF)
 
-#define __CPAL_I2C_HAL_OA2_CONF(device, value)           CPAL_I2C_DEVICE[(device)]->OAR2 &= ~I2C_OAR2_OA2; \
+#define __CPAL_I2C_HAL_OA2_CONF(device,value)           CPAL_I2C_DEVICE[(device)]->OAR2 &= ~I2C_OAR2_OA2; \
                                                         CPAL_I2C_DEVICE[(device)]->OAR2 |= (uint32_t)((value) & 0x000000FE)
 
-#define __CPAL_I2C_HAL_OA2_MASK_CONF(device, value)      CPAL_I2C_DEVICE[(device)]->OAR2 &= ~I2C_OAR2_OA2MSK; \
+#define __CPAL_I2C_HAL_OA2_MASK_CONF(device,value)      CPAL_I2C_DEVICE[(device)]->OAR2 &= ~I2C_OAR2_OA2MSK; \
                                                         CPAL_I2C_DEVICE[(device)]->OAR2 |= (uint32_t)((value) << 8)
 
 #define __CPAL_I2C_HAL_ENABLE_OA2(device)               CPAL_I2C_DEVICE[(device)]->OAR2 |= I2C_OAR2_OA2EN
@@ -466,17 +467,17 @@ extern "C" {
 #define __CPAL_I2C_HAL_GET_OA1(device)                  (uint32_t)(CPAL_I2C_DEVICE[(device)]->ISR & I2C_OAR1_OA1)
 
 #define __CPAL_I2C_HAL_GET_OA2(device)                  (uint32_t)(CPAL_I2C_DEVICE[(device)]->ISR & I2C_OAR2_OA2)
-
+  
 #define __CPAL_I2C_HAL_GET_OA2_MASK(device)             (uint32_t)((CPAL_I2C_DEVICE[(device)]->ISR & I2C_OAR2_OA2MSK) >> 8)
 
 #define __CPAL_I2C_HAL_GET_ADDCODE(device)              (uint32_t)((CPAL_I2C_DEVICE[(device)]->ISR & I2C_ISR_ADDCODE) >> 17)
-
+  
 #define __CPAL_I2C_HAL_GET_DIR(device)                  (uint32_t)(CPAL_I2C_DEVICE[(device)]->ISR & I2C_ISR_DIR)
 
 /* I2C misc configuration */
-
-#define __CPAL_I2C_HAL_CR2_UPDATE(device, value)         CPAL_I2C_DEVICE[(device)]->CR2 = value
-
+  
+#define __CPAL_I2C_HAL_CR2_UPDATE(device,value)         CPAL_I2C_DEVICE[(device)]->CR2 = value
+  
 #define __CPAL_I2C_HAL_ENABLE_TXDMAREQ(device)          CPAL_I2C_DEVICE[(device)]->CR1 |= I2C_CR1_TXDMAEN
 
 #define __CPAL_I2C_HAL_DISABLE_TXDMAREQ(device)         CPAL_I2C_DEVICE[(device)]->CR1 &= ~I2C_CR1_TXDMAEN
@@ -509,14 +510,14 @@ extern "C" {
 
 #define __CPAL_I2C_HAL_RECEIVE(device)                  (uint8_t)(CPAL_I2C_DEVICE[(device)]->RXDR)
 
-#define __CPAL_I2C_HAL_SEND(device, value)               CPAL_I2C_DEVICE[(device)]->TXDR = (uint8_t)((value))
+#define __CPAL_I2C_HAL_SEND(device,value)               CPAL_I2C_DEVICE[(device)]->TXDR = (uint8_t)((value))
 
-#define __CPAL_I2C_HAL_SET_NBYTES(device, value)         CPAL_I2C_DEVICE[(device)]->CR2 &= ~I2C_CR2_NBYTES; \
+#define __CPAL_I2C_HAL_SET_NBYTES(device,value)         CPAL_I2C_DEVICE[(device)]->CR2 &= ~I2C_CR2_NBYTES; \
                                                         CPAL_I2C_DEVICE[(device)]->CR2 |= (uint32_t)((uint32_t)(value) << 16)
+  
+#define __CPAL_I2C_HAL_GET_NBYTES(device,value)         (uint32_t)((CPAL_I2C_DEVICE[(device)]->CR2 & I2C_CR2_NBYTES) >> 16)
 
-#define __CPAL_I2C_HAL_GET_NBYTES(device, value)         (uint32_t)((CPAL_I2C_DEVICE[(device)]->CR2 & I2C_CR2_NBYTES) >> 16)
-
-#define __CPAL_I2C_HAL_CLEAR_NBYTES(device)             CPAL_I2C_DEVICE[(device)]->CR2 &= ~I2C_CR2_NBYTES
+#define __CPAL_I2C_HAL_CLEAR_NBYTES(device)             CPAL_I2C_DEVICE[(device)]->CR2 &= ~I2C_CR2_NBYTES  
 
 /* I2C flags management */
 
@@ -559,18 +560,18 @@ extern "C" {
 #define __CPAL_I2C_HAL_CLEAR_ARLO(device)               CPAL_I2C_DEVICE[(device)]->ICR = I2C_ICR_ARLOCF
 
 #define __CPAL_I2C_HAL_CLEAR_OVR(device)                CPAL_I2C_DEVICE[(device)]->ICR = I2C_ICR_OVRCF
-
+  
 /* Exported functions --------------------------------------------------------*/
 
 /*========= I2CX IRQHandler =========*/
 
 #ifdef CPAL_USE_I2C1
-uint32_t I2C1_IRQHandler(void); /*<!I2C1 Interrupt Handler : handle Communication and errors of I2C1 Device */
+   uint32_t I2C1_IRQHandler(void); /*<!I2C1 Interrupt Handler : handle Communication and errors of I2C1 Device */
 
 #endif /* CPAL_USE_I2C1 */
 
 #ifdef CPAL_USE_I2C2
-uint32_t I2C2_IRQHandler(void); /*<!I2C1 Interrupt Handler : handle Communication and errors of I2C2 Device */
+   uint32_t I2C2_IRQHandler(void); /*<!I2C1 Interrupt Handler : handle Communication and errors of I2C2 Device */
 #endif /* CPAL_USE_I2C2 */
 
 
@@ -590,34 +591,34 @@ uint32_t I2C2_IRQHandler(void); /*<!I2C1 Interrupt Handler : handle Communicatio
 
 /*========= Hardware Abstraction Layer local =========*/
 
-void CPAL_I2C_HAL_CLKInit(CPAL_DevTypeDef Device);    /*<!This function resets then enable the I2C device clock */
+  void CPAL_I2C_HAL_CLKInit(CPAL_DevTypeDef Device);    /*<!This function resets then enable the I2C device clock */
 
-void CPAL_I2C_HAL_CLKDeInit(CPAL_DevTypeDef Device);  /*<!This function resets then disable the I2C device clock */
+  void CPAL_I2C_HAL_CLKDeInit(CPAL_DevTypeDef Device);  /*<!This function resets then disable the I2C device clock */
 
-void CPAL_I2C_HAL_GPIOInit(CPAL_DevTypeDef Device);   /*<!This function configures the IO pins used by the I2C device */
+  void CPAL_I2C_HAL_GPIOInit(CPAL_DevTypeDef Device);   /*<!This function configures the IO pins used by the I2C device */
 
-void CPAL_I2C_HAL_GPIODeInit(CPAL_DevTypeDef Device); /*<!This function deinitialize the IO pins used by the I2C device
+  void CPAL_I2C_HAL_GPIODeInit(CPAL_DevTypeDef Device); /*<!This function deinitialize the IO pins used by the I2C device
                                                             (configured to their default state) */
 
 #ifdef CPAL_I2C_DMA_PROGMODEL
-void CPAL_I2C_HAL_DMAInit(CPAL_DevTypeDef Device, CPAL_DirectionTypeDef Direction, uint32_t Options); /*<!This function enable the DMA clock and initialize
+  void CPAL_I2C_HAL_DMAInit(CPAL_DevTypeDef Device, CPAL_DirectionTypeDef Direction, uint32_t Options); /*<!This function enable the DMA clock and initialize
                                                                                                             needed DMA Channels used by the I2C device*/
 
-void CPAL_I2C_HAL_DMATXConfig(CPAL_DevTypeDef Device,CPAL_TransferTypeDef* TransParameter, uint32_t Options); /*<!This function configures the DMA channel specific
+  void CPAL_I2C_HAL_DMATXConfig(CPAL_DevTypeDef Device,CPAL_TransferTypeDef* TransParameter, uint32_t Options); /*<!This function configures the DMA channel specific
                                                                                                                     for TX transfer */
 
-void CPAL_I2C_HAL_DMARXConfig(CPAL_DevTypeDef Device,CPAL_TransferTypeDef* TransParameter, uint32_t Options); /*<!This function configures the DMA channel specific
+  void CPAL_I2C_HAL_DMARXConfig(CPAL_DevTypeDef Device,CPAL_TransferTypeDef* TransParameter, uint32_t Options); /*<!This function configures the DMA channel specific
                                                                                                                     for RX transfer */
 
-void CPAL_I2C_HAL_DMADeInit(CPAL_DevTypeDef Device, CPAL_DirectionTypeDef Direction); /*<!This function deinitialize the DMA channel used
+  void CPAL_I2C_HAL_DMADeInit(CPAL_DevTypeDef Device, CPAL_DirectionTypeDef Direction); /*<!This function deinitialize the DMA channel used
                                                                                             by I2C Device (Configure them to their default
                                                                                             values). DMA clock is not disabled */
 #endif /* CPAL_I2C_DMA_PROGMODEL */
 
-void CPAL_I2C_HAL_ITInit(CPAL_DevTypeDef Device, uint32_t Options); /*<!This function configures NVIC and interrupts used
+  void CPAL_I2C_HAL_ITInit(CPAL_DevTypeDef Device, uint32_t Options); /*<!This function configures NVIC and interrupts used
                                                                           by I2C Device according to enabled options */
 
-void CPAL_I2C_HAL_ITDeInit(CPAL_DevTypeDef Device, uint32_t Options); /*<!This function deinitialize NVIC and interrupts used
+  void CPAL_I2C_HAL_ITDeInit(CPAL_DevTypeDef Device, uint32_t Options); /*<!This function deinitialize NVIC and interrupts used
                                                                           by I2C Device  */
 
 

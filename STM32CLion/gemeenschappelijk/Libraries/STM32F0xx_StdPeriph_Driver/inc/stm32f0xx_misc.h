@@ -31,7 +31,7 @@
 #define __STM32F0XX_MISC_H
 
 #ifdef __cplusplus
-extern "C" {
+ extern "C" {
 #endif
 
 /* Includes ------------------------------------------------------------------*/
@@ -51,19 +51,20 @@ extern "C" {
   * @brief  NVIC Init Structure definition  
   */
 
-typedef struct {
-    uint8_t NVIC_IRQChannel;             /*!< Specifies the IRQ channel to be enabled or disabled.
+typedef struct
+{
+  uint8_t NVIC_IRQChannel;             /*!< Specifies the IRQ channel to be enabled or disabled.
                                             This parameter can be a value of @ref IRQn_Type 
                                             (For the complete STM32 Devices IRQ Channels list, 
                                             please refer to stm32f0xx.h file) */
 
-    uint8_t NVIC_IRQChannelPriority;     /*!< Specifies the priority level for the IRQ channel specified
+  uint8_t NVIC_IRQChannelPriority;     /*!< Specifies the priority level for the IRQ channel specified
                                             in NVIC_IRQChannel. This parameter can be a value
                                             between 0 and 3.  */
 
-    FunctionalState NVIC_IRQChannelCmd;  /*!< Specifies whether the IRQ channel defined in NVIC_IRQChannel
+  FunctionalState NVIC_IRQChannelCmd;  /*!< Specifies whether the IRQ channel defined in NVIC_IRQChannel
                                             will be enabled or disabled. 
-                                            This parameter can be set either to ENABLE or DISABLE */
+                                            This parameter can be set either to ENABLE or DISABLE */   
 } NVIC_InitTypeDef;
 
 /**  
@@ -119,12 +120,10 @@ typedef struct {
   */
 
 /* Exported macro ------------------------------------------------------------*/
-/* Exported functions ------------------------------------------------------- */
+/* Exported functions ------------------------------------------------------- */ 
 
-void NVIC_Init(NVIC_InitTypeDef *NVIC_InitStruct);
-
+void NVIC_Init(NVIC_InitTypeDef* NVIC_InitStruct);
 void NVIC_SystemLPConfig(uint8_t LowPowerMode, FunctionalState NewState);
-
 void SysTick_CLKSourceConfig(uint32_t SysTick_CLKSource);
 
 #ifdef __cplusplus

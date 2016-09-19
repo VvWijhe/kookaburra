@@ -17,14 +17,14 @@
   * CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
   *
   * <h2><center>&copy; COPYRIGHT 2010 STMicroelectronics</center></h2>
-  */
+  */ 
 
 /* Define to prevent recursive inclusion -------------------------------------*/
 #ifndef __STM32F10x_GPIO_H
 #define __STM32F10x_GPIO_H
 
 #ifdef __cplusplus
-extern "C" {
+ extern "C" {
 #endif
 
 /* Includes ------------------------------------------------------------------*/
@@ -49,16 +49,17 @@ extern "C" {
                                     ((PERIPH) == GPIOE) || \
                                     ((PERIPH) == GPIOF) || \
                                     ((PERIPH) == GPIOG))
-
+                                     
 /** 
   * @brief  Output Maximum frequency selection  
   */
 
-typedef enum {
-    GPIO_Speed_10MHz = 1,
-    GPIO_Speed_2MHz,
-    GPIO_Speed_50MHz
-} GPIOSpeed_TypeDef;
+typedef enum
+{ 
+  GPIO_Speed_10MHz = 1,
+  GPIO_Speed_2MHz, 
+  GPIO_Speed_50MHz
+}GPIOSpeed_TypeDef;
 #define IS_GPIO_SPEED(SPEED) (((SPEED) == GPIO_Speed_10MHz) || ((SPEED) == GPIO_Speed_2MHz) || \
                               ((SPEED) == GPIO_Speed_50MHz))
 
@@ -66,16 +67,16 @@ typedef enum {
   * @brief  Configuration Mode enumeration  
   */
 
-typedef enum {
-    GPIO_Mode_AIN = 0x0,
-    GPIO_Mode_IN_FLOATING = 0x04,
-    GPIO_Mode_IPD = 0x28,
-    GPIO_Mode_IPU = 0x48,
-    GPIO_Mode_Out_OD = 0x14,
-    GPIO_Mode_Out_PP = 0x10,
-    GPIO_Mode_AF_OD = 0x1C,
-    GPIO_Mode_AF_PP = 0x18
-} GPIOMode_TypeDef;
+typedef enum
+{ GPIO_Mode_AIN = 0x0,
+  GPIO_Mode_IN_FLOATING = 0x04,
+  GPIO_Mode_IPD = 0x28,
+  GPIO_Mode_IPU = 0x48,
+  GPIO_Mode_Out_OD = 0x14,
+  GPIO_Mode_Out_PP = 0x10,
+  GPIO_Mode_AF_OD = 0x1C,
+  GPIO_Mode_AF_PP = 0x18
+}GPIOMode_TypeDef;
 
 #define IS_GPIO_MODE(MODE) (((MODE) == GPIO_Mode_AIN) || ((MODE) == GPIO_Mode_IN_FLOATING) || \
                             ((MODE) == GPIO_Mode_IPD) || ((MODE) == GPIO_Mode_IPU) || \
@@ -86,26 +87,27 @@ typedef enum {
   * @brief  GPIO Init structure definition  
   */
 
-typedef struct {
-    uint16_t GPIO_Pin;             /*!< Specifies the GPIO pins to be configured.
+typedef struct
+{
+  uint16_t GPIO_Pin;             /*!< Specifies the GPIO pins to be configured.
                                       This parameter can be any value of @ref GPIO_pins_define */
 
-    GPIOSpeed_TypeDef GPIO_Speed;  /*!< Specifies the speed for the selected pins.
+  GPIOSpeed_TypeDef GPIO_Speed;  /*!< Specifies the speed for the selected pins.
                                       This parameter can be a value of @ref GPIOSpeed_TypeDef */
 
-    GPIOMode_TypeDef GPIO_Mode;    /*!< Specifies the operating mode for the selected pins.
+  GPIOMode_TypeDef GPIO_Mode;    /*!< Specifies the operating mode for the selected pins.
                                       This parameter can be a value of @ref GPIOMode_TypeDef */
-} GPIO_InitTypeDef;
+}GPIO_InitTypeDef;
 
 
 /** 
   * @brief  Bit_SET and Bit_RESET enumeration  
   */
 
-typedef enum {
-    Bit_RESET = 0,
-    Bit_SET
-} BitAction;
+typedef enum
+{ Bit_RESET = 0,
+  Bit_SET
+}BitAction;
 
 #define IS_GPIO_BIT_ACTION(ACTION) (((ACTION) == Bit_RESET) || ((ACTION) == Bit_SET))
 
@@ -211,7 +213,7 @@ typedef enum {
 #define GPIO_Remap_TIM13            ((uint32_t)0x80000100)  /*!< TIM13 Alternate Function mapping (only for XL-density devices) */
 #define GPIO_Remap_TIM14            ((uint32_t)0x80000200)  /*!< TIM14 Alternate Function mapping (only for XL-density devices) */
 #define GPIO_Remap_FSMC_NADV        ((uint32_t)0x80000400)  /*!< FSMC_NADV Alternate Function mapping (only for XL-density devices) */
-
+                                                       
 
 #define IS_GPIO_REMAP(REMAP) (((REMAP) == GPIO_Remap_SPI1) || ((REMAP) == GPIO_Remap_I2C1) || \
                               ((REMAP) == GPIO_Remap_USART1) || ((REMAP) == GPIO_Remap_USART2) || \
@@ -234,10 +236,10 @@ typedef enum {
                               ((REMAP) == GPIO_Remap_TIM10) || ((REMAP) == GPIO_Remap_TIM11) || \
                               ((REMAP) == GPIO_Remap_TIM13) || ((REMAP) == GPIO_Remap_TIM14) || \
                               ((REMAP) == GPIO_Remap_FSMC_NADV))
-
+                              
 /**
   * @}
-  */
+  */ 
 
 /** @defgroup GPIO_Port_Sources 
   * @{
@@ -312,16 +314,16 @@ typedef enum {
 
 /** @defgroup Ethernet_Media_Interface 
   * @{
-  */
-#define GPIO_ETH_MediaInterface_MII    ((u32)0x00000000)
-#define GPIO_ETH_MediaInterface_RMII   ((u32)0x00000001)
+  */ 
+#define GPIO_ETH_MediaInterface_MII    ((u32)0x00000000) 
+#define GPIO_ETH_MediaInterface_RMII   ((u32)0x00000001)                                       
 
 #define IS_GPIO_ETH_MEDIA_INTERFACE(INTERFACE) (((INTERFACE) == GPIO_ETH_MediaInterface_MII) || \
                                                 ((INTERFACE) == GPIO_ETH_MediaInterface_RMII))
 
 /**
   * @}
-  */
+  */                                                
 /**
   * @}
   */
@@ -338,40 +340,23 @@ typedef enum {
   * @{
   */
 
-void GPIO_DeInit(GPIO_TypeDef *GPIOx);
-
+void GPIO_DeInit(GPIO_TypeDef* GPIOx);
 void GPIO_AFIODeInit(void);
-
-void GPIO_Init(GPIO_TypeDef *GPIOx, GPIO_InitTypeDef *GPIO_InitStruct);
-
-void GPIO_StructInit(GPIO_InitTypeDef *GPIO_InitStruct);
-
-uint8_t GPIO_ReadInputDataBit(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin);
-
-uint16_t GPIO_ReadInputData(GPIO_TypeDef *GPIOx);
-
-uint8_t GPIO_ReadOutputDataBit(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin);
-
-uint16_t GPIO_ReadOutputData(GPIO_TypeDef *GPIOx);
-
-void GPIO_SetBits(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin);
-
-void GPIO_ResetBits(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin);
-
-void GPIO_WriteBit(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin, BitAction BitVal);
-
-void GPIO_Write(GPIO_TypeDef *GPIOx, uint16_t PortVal);
-
-void GPIO_PinLockConfig(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin);
-
+void GPIO_Init(GPIO_TypeDef* GPIOx, GPIO_InitTypeDef* GPIO_InitStruct);
+void GPIO_StructInit(GPIO_InitTypeDef* GPIO_InitStruct);
+uint8_t GPIO_ReadInputDataBit(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin);
+uint16_t GPIO_ReadInputData(GPIO_TypeDef* GPIOx);
+uint8_t GPIO_ReadOutputDataBit(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin);
+uint16_t GPIO_ReadOutputData(GPIO_TypeDef* GPIOx);
+void GPIO_SetBits(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin);
+void GPIO_ResetBits(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin);
+void GPIO_WriteBit(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, BitAction BitVal);
+void GPIO_Write(GPIO_TypeDef* GPIOx, uint16_t PortVal);
+void GPIO_PinLockConfig(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin);
 void GPIO_EventOutputConfig(uint8_t GPIO_PortSource, uint8_t GPIO_PinSource);
-
 void GPIO_EventOutputCmd(FunctionalState NewState);
-
 void GPIO_PinRemapConfig(uint32_t GPIO_Remap, FunctionalState NewState);
-
 void GPIO_EXTILineConfig(uint8_t GPIO_PortSource, uint8_t GPIO_PinSource);
-
 void GPIO_ETH_MediaInterfaceConfig(uint32_t GPIO_ETH_MediaInterface);
 
 #ifdef __cplusplus

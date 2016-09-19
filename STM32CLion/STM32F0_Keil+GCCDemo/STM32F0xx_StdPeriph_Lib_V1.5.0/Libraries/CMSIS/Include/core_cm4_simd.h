@@ -36,7 +36,7 @@
 
 
 #ifdef __cplusplus
-extern "C" {
+ extern "C" {
 #endif
 
 #ifndef __CORE_CM4_SIMD_H

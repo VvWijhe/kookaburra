@@ -28,11 +28,12 @@
   */
 
 /* Includes ------------------------------------------------------------------*/
+#include "stm32f0xx_it.h"
 
 /** @addtogroup STM32F0xx_StdPeriph_Examples
   * @{
   */
-
+  
 /** @addtogroup RTC_Timer
   * @{
   */
@@ -41,8 +42,7 @@
 /* Private define ------------------------------------------------------------*/
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
-extern __IO uint8_t
-ALARM_Occured;
+extern __IO uint8_t ALARM_Occured;
 
 /* Private function prototypes -----------------------------------------------*/
 /* Private functions ---------------------------------------------------------*/
@@ -56,7 +56,8 @@ ALARM_Occured;
   * @param  None
   * @retval None
   */
-void NMI_Handler(void) {
+void NMI_Handler(void)
+{
 }
 
 /**
@@ -64,10 +65,12 @@ void NMI_Handler(void) {
   * @param  None
   * @retval None
   */
-void HardFault_Handler(void) {
-    /* Go to infinite loop when Hard Fault exception occurs */
-    while (1) {
-    }
+void HardFault_Handler(void)
+{
+  /* Go to infinite loop when Hard Fault exception occurs */
+  while (1)
+  {
+  }
 }
 
 /**
@@ -75,10 +78,12 @@ void HardFault_Handler(void) {
   * @param  None
   * @retval None
   */
-void MemManage_Handler(void) {
-    /* Go to infinite loop when Memory Manage exception occurs */
-    while (1) {
-    }
+void MemManage_Handler(void)
+{
+  /* Go to infinite loop when Memory Manage exception occurs */
+  while (1)
+  {
+  }
 }
 
 /**
@@ -86,10 +91,12 @@ void MemManage_Handler(void) {
   * @param  None
   * @retval None
   */
-void BusFault_Handler(void) {
-    /* Go to infinite loop when Bus Fault exception occurs */
-    while (1) {
-    }
+void BusFault_Handler(void)
+{
+  /* Go to infinite loop when Bus Fault exception occurs */
+  while (1)
+  {
+  }
 }
 
 /**
@@ -97,10 +104,12 @@ void BusFault_Handler(void) {
   * @param  None
   * @retval None
   */
-void UsageFault_Handler(void) {
-    /* Go to infinite loop when Usage Fault exception occurs */
-    while (1) {
-    }
+void UsageFault_Handler(void)
+{
+  /* Go to infinite loop when Usage Fault exception occurs */
+  while (1)
+  {
+  }
 }
 
 /**
@@ -108,7 +117,8 @@ void UsageFault_Handler(void) {
   * @param  None
   * @retval None
   */
-void SVC_Handler(void) {
+void SVC_Handler(void)
+{
 }
 
 /**
@@ -116,7 +126,8 @@ void SVC_Handler(void) {
   * @param  None
   * @retval None
   */
-void DebugMon_Handler(void) {
+void DebugMon_Handler(void)
+{
 }
 
 /**
@@ -124,7 +135,8 @@ void DebugMon_Handler(void) {
   * @param  None
   * @retval None
   */
-void PendSV_Handler(void) {
+void PendSV_Handler(void)
+{
 }
 
 /**
@@ -132,7 +144,8 @@ void PendSV_Handler(void) {
   * @param  None
   * @retval None
   */
-void SysTick_Handler(void) {
+void SysTick_Handler(void)
+{
 }
 
 /******************************************************************************/
@@ -143,17 +156,19 @@ void SysTick_Handler(void) {
   * @param  None
   * @retval None
   */
-void EXTI4_15_IRQHandler(void) {
-    if ((EXTI_GetITStatus(TAMPER_BUTTON_EXTI_LINE) != RESET)) {
-        /* Disable the RTC Clock */
-        RCC_RTCCLKCmd(DISABLE);
-
-        /* Wait for RTC APB registers synchronisation */
-        RTC_WaitForSynchro();
-
-        /* Clear the TAMPER EXTI pending bit */
-        EXTI_ClearITPendingBit(TAMPER_BUTTON_EXTI_LINE);
-    }
+void EXTI4_15_IRQHandler(void)
+{
+  if((EXTI_GetITStatus(TAMPER_BUTTON_EXTI_LINE) != RESET))
+  {
+    /* Disable the RTC Clock */
+    RCC_RTCCLKCmd(DISABLE);
+    
+    /* Wait for RTC APB registers synchronisation */
+    RTC_WaitForSynchro();
+    
+    /* Clear the TAMPER EXTI pending bit */
+    EXTI_ClearITPendingBit(TAMPER_BUTTON_EXTI_LINE);  
+  }
 }
 
 /**
@@ -161,23 +176,25 @@ void EXTI4_15_IRQHandler(void) {
   * @param  None
   * @retval None
   */
-void EXTI0_1_IRQHandler(void) {
-    if ((EXTI_GetITStatus(SEL_BUTTON_EXTI_LINE) != RESET)) {
-        /* Set the LCD Back Color */
-        LCD_SetBackColor(White);
-
-        /* Enable the RTC Clock */
-        RCC_RTCCLKCmd(ENABLE);
-
-        /* Wait for RTC APB registers synchronisation */
-        RTC_WaitForSynchro();
-
-        /* Enable the alarmA */
-        RTC_AlarmCmd(RTC_Alarm_A, ENABLE);
-
-        /* Clear the WAKEUP EXTI  pending bit */
-        EXTI_ClearITPendingBit(SEL_BUTTON_EXTI_LINE);
-    }
+void EXTI0_1_IRQHandler(void)
+{
+  if((EXTI_GetITStatus(SEL_BUTTON_EXTI_LINE) != RESET))
+  {
+    /* Set the LCD Back Color */
+    LCD_SetBackColor(White);
+    
+    /* Enable the RTC Clock */
+    RCC_RTCCLKCmd(ENABLE);
+    
+    /* Wait for RTC APB registers synchronisation */
+    RTC_WaitForSynchro();
+    
+    /* Enable the alarmA */
+    RTC_AlarmCmd(RTC_Alarm_A, ENABLE);
+    
+    /* Clear the WAKEUP EXTI  pending bit */
+    EXTI_ClearITPendingBit(SEL_BUTTON_EXTI_LINE);  
+  }
 
 }
 
@@ -186,18 +203,20 @@ void EXTI0_1_IRQHandler(void) {
   * @param  None
   * @retval None
   */
-void RTC_IRQHandler(void) {
-    /* Check on the AlarmA flag and on the number of interrupts per Second (60*8) */
-    if (RTC_GetITStatus(RTC_IT_ALRA) != RESET) {
-        /* ALARM is enabled */
-        ALARM_Occured = 1;
-
-        /* Clear RTC AlarmA Flags */
-        RTC_ClearITPendingBit(RTC_IT_ALRA);
-    }
-    /* Clear the EXTIL line 17 */
-    EXTI_ClearITPendingBit(EXTI_Line17);
-
+void RTC_IRQHandler(void)
+{
+  /* Check on the AlarmA flag and on the number of interrupts per Second (60*8) */
+  if(RTC_GetITStatus(RTC_IT_ALRA) != RESET) 
+  { 
+    /* ALARM is enabled */
+    ALARM_Occured = 1;
+    
+    /* Clear RTC AlarmA Flags */
+    RTC_ClearITPendingBit(RTC_IT_ALRA);
+  }
+  /* Clear the EXTIL line 17 */
+  EXTI_ClearITPendingBit(EXTI_Line17);
+  
 }
 
 /**

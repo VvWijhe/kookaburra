@@ -48,9 +48,10 @@
   * @param  pDevInitStruct
   * @retval None.
   */
-uint32_t CPAL_TIMEOUT_UserCallback(CPAL_InitTypeDef *pDevInitStruct) {
-
-    return CPAL_PASS;
+uint32_t CPAL_TIMEOUT_UserCallback(CPAL_InitTypeDef* pDevInitStruct)
+{
+ 
+  return CPAL_PASS;
 }
 
 

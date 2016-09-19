@@ -17,14 +17,14 @@
   * CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
   *
   * <h2><center>&copy; COPYRIGHT 2010 STMicroelectronics</center></h2>
-  */
+  */ 
 
 /* Define to prevent recursive inclusion -------------------------------------*/
 #ifndef __STM32F10x_FLASH_H
 #define __STM32F10x_FLASH_H
 
 #ifdef __cplusplus
-extern "C" {
+ extern "C" {
 #endif
 
 /* Includes ------------------------------------------------------------------*/
@@ -46,13 +46,14 @@ extern "C" {
   * @brief  FLASH Status  
   */
 
-typedef enum {
-    FLASH_BUSY = 1,
-    FLASH_ERROR_PG,
-    FLASH_ERROR_WRP,
-    FLASH_COMPLETE,
-    FLASH_TIMEOUT
-} FLASH_Status;
+typedef enum
+{ 
+  FLASH_BUSY = 1,
+  FLASH_ERROR_PG,
+  FLASH_ERROR_WRP,
+  FLASH_COMPLETE,
+  FLASH_TIMEOUT
+}FLASH_Status;
 
 /**
   * @}
@@ -83,7 +84,7 @@ typedef enum {
 #define FLASH_HalfCycleAccess_Enable   ((uint32_t)0x00000008)  /*!< FLASH Half Cycle Enable */
 #define FLASH_HalfCycleAccess_Disable  ((uint32_t)0x00000000)  /*!< FLASH Half Cycle Disable */
 #define IS_FLASH_HALFCYCLEACCESS_STATE(STATE) (((STATE) == FLASH_HalfCycleAccess_Enable) || \
-                                               ((STATE) == FLASH_HalfCycleAccess_Disable))
+                                               ((STATE) == FLASH_HalfCycleAccess_Disable)) 
 /**
   * @}
   */
@@ -95,7 +96,7 @@ typedef enum {
 #define FLASH_PrefetchBuffer_Enable    ((uint32_t)0x00000010)  /*!< FLASH Prefetch Buffer Enable */
 #define FLASH_PrefetchBuffer_Disable   ((uint32_t)0x00000000)  /*!< FLASH Prefetch Buffer Disable */
 #define IS_FLASH_PREFETCHBUFFER_STATE(STATE) (((STATE) == FLASH_PrefetchBuffer_Enable) || \
-                                              ((STATE) == FLASH_PrefetchBuffer_Disable))
+                                              ((STATE) == FLASH_PrefetchBuffer_Disable)) 
 /**
   * @}
   */
@@ -333,11 +334,11 @@ typedef enum {
 #define FLASH_FLAG_BANK1_EOP                 FLASH_FLAG_EOP       /*!< FLASH BANK1 End of Operation flag */
 #define FLASH_FLAG_BANK1_PGERR               FLASH_FLAG_PGERR     /*!< FLASH BANK1 Program error flag */
 #define FLASH_FLAG_BANK1_WRPRTERR            FLASH_FLAG_WRPRTERR  /*!< FLASH BANK1 Write protected error flag */
-
+ 
 #define IS_FLASH_CLEAR_FLAG(FLAG) ((((FLAG) & (uint32_t)0xFFFFFFCA) == 0x00000000) && ((FLAG) != 0x00000000))
 #define IS_FLASH_GET_FLAG(FLAG)  (((FLAG) == FLASH_FLAG_BSY) || ((FLAG) == FLASH_FLAG_EOP) || \
                                   ((FLAG) == FLASH_FLAG_PGERR) || ((FLAG) == FLASH_FLAG_WRPRTERR) || \
-                                  ((FLAG) == FLASH_FLAG_BANK1_BSY) || ((FLAG) == FLASH_FLAG_BANK1_EOP) || \
+								  ((FLAG) == FLASH_FLAG_BANK1_BSY) || ((FLAG) == FLASH_FLAG_BANK1_EOP) || \
                                   ((FLAG) == FLASH_FLAG_BANK1_PGERR) || ((FLAG) == FLASH_FLAG_BANK1_WRPRTERR) || \
                                   ((FLAG) == FLASH_FLAG_OPTERR))
 #endif
@@ -364,60 +365,34 @@ typedef enum {
 
 /*------------ Functions used for all STM32F10x devices -----*/
 void FLASH_SetLatency(uint32_t FLASH_Latency);
-
 void FLASH_HalfCycleAccessCmd(uint32_t FLASH_HalfCycleAccess);
-
 void FLASH_PrefetchBufferCmd(uint32_t FLASH_PrefetchBuffer);
-
 void FLASH_Unlock(void);
-
 void FLASH_Lock(void);
-
 FLASH_Status FLASH_ErasePage(uint32_t Page_Address);
-
 FLASH_Status FLASH_EraseAllPages(void);
-
 FLASH_Status FLASH_EraseOptionBytes(void);
-
 FLASH_Status FLASH_ProgramWord(uint32_t Address, uint32_t Data);
-
 FLASH_Status FLASH_ProgramHalfWord(uint32_t Address, uint16_t Data);
-
 FLASH_Status FLASH_ProgramOptionByteData(uint32_t Address, uint8_t Data);
-
 FLASH_Status FLASH_EnableWriteProtection(uint32_t FLASH_Pages);
-
 FLASH_Status FLASH_ReadOutProtection(FunctionalState NewState);
-
 FLASH_Status FLASH_UserOptionByteConfig(uint16_t OB_IWDG, uint16_t OB_STOP, uint16_t OB_STDBY);
-
 uint32_t FLASH_GetUserOptionByte(void);
-
 uint32_t FLASH_GetWriteProtectionOptionByte(void);
-
 FlagStatus FLASH_GetReadOutProtectionStatus(void);
-
 FlagStatus FLASH_GetPrefetchBufferStatus(void);
-
 void FLASH_ITConfig(uint32_t FLASH_IT, FunctionalState NewState);
-
 FlagStatus FLASH_GetFlagStatus(uint32_t FLASH_FLAG);
-
 void FLASH_ClearFlag(uint32_t FLASH_FLAG);
-
 FLASH_Status FLASH_GetStatus(void);
-
 FLASH_Status FLASH_WaitForLastOperation(uint32_t Timeout);
 
 /*------------ New function used for all STM32F10x devices -----*/
 void FLASH_UnlockBank1(void);
-
 void FLASH_LockBank1(void);
-
 FLASH_Status FLASH_EraseAllBank1Pages(void);
-
 FLASH_Status FLASH_GetBank1Status(void);
-
 FLASH_Status FLASH_WaitForLastBank1Operation(uint32_t Timeout);
 
 #ifdef STM32F10X_XL

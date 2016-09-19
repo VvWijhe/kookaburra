@@ -136,18 +136,18 @@
 /** @defgroup HASH 
   * @brief HASH driver modules
   * @{
-  */
+  */ 
 
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
 /* Private function prototypes -----------------------------------------------*/
-/* Private functions ---------------------------------------------------------*/
+/* Private functions ---------------------------------------------------------*/ 
 
 /** @defgroup HASH_Private_Functions
   * @{
-  */
+  */ 
 
 /** @defgroup HASH_Group1 Initialization and Configuration functions
  *  @brief    Initialization and Configuration functions 
@@ -168,17 +168,18 @@
 @endverbatim
   * @{
   */
-
+  
 /**
   * @brief  Deinitializes the HASH peripheral registers to their default reset values
   * @param  None
   * @retval None
   */
-void HASH_DeInit(void) {
-    /* Enable HASH reset state */
-    RCC_AHB2PeriphResetCmd(RCC_AHB2Periph_HASH, ENABLE);
-    /* Release HASH from reset state */
-    RCC_AHB2PeriphResetCmd(RCC_AHB2Periph_HASH, DISABLE);
+void HASH_DeInit(void)
+{
+  /* Enable HASH reset state */
+  RCC_AHB2PeriphResetCmd(RCC_AHB2Periph_HASH, ENABLE);
+  /* Release HASH from reset state */
+  RCC_AHB2PeriphResetCmd(RCC_AHB2Periph_HASH, DISABLE);
 }
 
 /**
@@ -193,28 +194,30 @@ void HASH_DeInit(void) {
   *          if the algorithm mode is HMAC.       
   * @retval None
   */
-void HASH_Init(HASH_InitTypeDef *HASH_InitStruct) {
-    /* Check the parameters */
-    assert_param(IS_HASH_ALGOSELECTION(HASH_InitStruct->HASH_AlgoSelection));
-    assert_param(IS_HASH_DATATYPE(HASH_InitStruct->HASH_DataType));
-    assert_param(IS_HASH_ALGOMODE(HASH_InitStruct->HASH_AlgoMode));
-
-    /* Configure the Algorithm used, algorithm mode and the datatype */
-    HASH->CR &= ~(HASH_CR_ALGO | HASH_CR_DATATYPE | HASH_CR_MODE);
-    HASH->CR |= (HASH_InitStruct->HASH_AlgoSelection | \
+void HASH_Init(HASH_InitTypeDef* HASH_InitStruct)
+{
+  /* Check the parameters */
+  assert_param(IS_HASH_ALGOSELECTION(HASH_InitStruct->HASH_AlgoSelection));
+  assert_param(IS_HASH_DATATYPE(HASH_InitStruct->HASH_DataType));
+  assert_param(IS_HASH_ALGOMODE(HASH_InitStruct->HASH_AlgoMode));
+  
+  /* Configure the Algorithm used, algorithm mode and the datatype */
+  HASH->CR &= ~ (HASH_CR_ALGO | HASH_CR_DATATYPE | HASH_CR_MODE);
+  HASH->CR |= (HASH_InitStruct->HASH_AlgoSelection | \
                HASH_InitStruct->HASH_DataType | \
                HASH_InitStruct->HASH_AlgoMode);
+  
+  /* if algorithm mode is HMAC, set the Key */  
+  if(HASH_InitStruct->HASH_AlgoMode == HASH_AlgoMode_HMAC) 
+  {
+    assert_param(IS_HASH_HMAC_KEYTYPE(HASH_InitStruct->HASH_HMACKeyType));
+    HASH->CR &= ~HASH_CR_LKEY;
+    HASH->CR |= HASH_InitStruct->HASH_HMACKeyType;
+  }
 
-    /* if algorithm mode is HMAC, set the Key */
-    if (HASH_InitStruct->HASH_AlgoMode == HASH_AlgoMode_HMAC) {
-        assert_param(IS_HASH_HMAC_KEYTYPE(HASH_InitStruct->HASH_HMACKeyType));
-        HASH->CR &= ~HASH_CR_LKEY;
-        HASH->CR |= HASH_InitStruct->HASH_HMACKeyType;
-    }
-
-    /* Reset the HASH processor core, so that the HASH will be ready to compute
-       the message digest of a new message */
-    HASH->CR |= HASH_CR_INIT;
+  /* Reset the HASH processor core, so that the HASH will be ready to compute 
+     the message digest of a new message */
+  HASH->CR |= HASH_CR_INIT;  
 }
 
 /**
@@ -225,18 +228,19 @@ void HASH_Init(HASH_InitTypeDef *HASH_InitStruct) {
   *          Data type selected is 32b and HMAC Key Type is short key.  
   * @retval None
   */
-void HASH_StructInit(HASH_InitTypeDef *HASH_InitStruct) {
-    /* Initialize the HASH_AlgoSelection member */
-    HASH_InitStruct->HASH_AlgoSelection = HASH_AlgoSelection_SHA1;
+void HASH_StructInit(HASH_InitTypeDef* HASH_InitStruct)
+{
+  /* Initialize the HASH_AlgoSelection member */
+  HASH_InitStruct->HASH_AlgoSelection = HASH_AlgoSelection_SHA1;
 
-    /* Initialize the HASH_AlgoMode member */
-    HASH_InitStruct->HASH_AlgoMode = HASH_AlgoMode_HASH;
+  /* Initialize the HASH_AlgoMode member */
+  HASH_InitStruct->HASH_AlgoMode = HASH_AlgoMode_HASH;
 
-    /* Initialize the HASH_DataType member */
-    HASH_InitStruct->HASH_DataType = HASH_DataType_32b;
+  /* Initialize the HASH_DataType member */
+  HASH_InitStruct->HASH_DataType = HASH_DataType_32b;
 
-    /* Initialize the HASH_HMACKeyType member */
-    HASH_InitStruct->HASH_HMACKeyType = HASH_HMACKeyType_ShortKey;
+  /* Initialize the HASH_HMACKeyType member */
+  HASH_InitStruct->HASH_HMACKeyType = HASH_HMACKeyType_ShortKey;
 }
 
 /**
@@ -248,14 +252,15 @@ void HASH_StructInit(HASH_InitTypeDef *HASH_InitStruct) {
   * @param  None
   * @retval None
   */
-void HASH_Reset(void) {
-    /* Reset the HASH processor core */
-    HASH->CR |= HASH_CR_INIT;
+void HASH_Reset(void)
+{
+  /* Reset the HASH processor core */
+  HASH->CR |= HASH_CR_INIT;
 }
 /**
   * @}
   */
-
+ 
 /** @defgroup HASH_Group2 Message Digest generation functions
  *  @brief    Message Digest generation functions
  *
@@ -289,13 +294,14 @@ void HASH_Reset(void) {
   *         digest competition (in Hash and HMAC) and key treatment(in HMAC).    
   * @retval None
   */
-void HASH_SetLastWordValidBitsNbr(uint16_t ValidNumber) {
-    /* Check the parameters */
-    assert_param(IS_HASH_VALIDBITSNUMBER(ValidNumber));
-
-    /* Configure the Number of valid bits in last word of the message */
-    HASH->STR &= ~(HASH_STR_NBW);
-    HASH->STR |= ValidNumber;
+void HASH_SetLastWordValidBitsNbr(uint16_t ValidNumber)
+{
+  /* Check the parameters */
+  assert_param(IS_HASH_VALIDBITSNUMBER(ValidNumber));
+  
+  /* Configure the Number of valid bits in last word of the message */
+  HASH->STR &= ~(HASH_STR_NBW);
+  HASH->STR |= ValidNumber;
 }
 
 /**
@@ -303,9 +309,10 @@ void HASH_SetLastWordValidBitsNbr(uint16_t ValidNumber) {
   * @param  Data: new data of the message to be processed.
   * @retval None
   */
-void HASH_DataIn(uint32_t Data) {
-    /* Write in the DIN register a new data */
-    HASH->DIN = Data;
+void HASH_DataIn(uint32_t Data)
+{
+  /* Write in the DIN register a new data */
+  HASH->DIN = Data;
 }
 
 /**
@@ -313,9 +320,10 @@ void HASH_DataIn(uint32_t Data) {
   * @param  None
   * @retval The value of words already pushed into the IN FIFO.
   */
-uint8_t HASH_GetInFIFOWordsNbr(void) {
-    /* Return the value of NBW bits */
-    return ((HASH->CR & HASH_CR_NBW) >> 8);
+uint8_t HASH_GetInFIFOWordsNbr(void)
+{
+  /* Return the value of NBW bits */
+  return ((HASH->CR & HASH_CR_NBW) >> 8);
 }
 
 /**
@@ -326,13 +334,14 @@ uint8_t HASH_GetInFIFOWordsNbr(void) {
   *         hold the message digest result 
   * @retval None
   */
-void HASH_GetDigest(HASH_MsgDigest *HASH_MessageDigest) {
-    /* Get the data field */
-    HASH_MessageDigest->Data[0] = HASH->HR[0];
-    HASH_MessageDigest->Data[1] = HASH->HR[1];
-    HASH_MessageDigest->Data[2] = HASH->HR[2];
-    HASH_MessageDigest->Data[3] = HASH->HR[3];
-    HASH_MessageDigest->Data[4] = HASH->HR[4];
+void HASH_GetDigest(HASH_MsgDigest* HASH_MessageDigest)
+{
+  /* Get the data field */
+  HASH_MessageDigest->Data[0] = HASH->HR[0];
+  HASH_MessageDigest->Data[1] = HASH->HR[1];
+  HASH_MessageDigest->Data[2] = HASH->HR[2];
+  HASH_MessageDigest->Data[3] = HASH->HR[3];
+  HASH_MessageDigest->Data[4] = HASH->HR[4];
 }
 
 /**
@@ -340,9 +349,10 @@ void HASH_GetDigest(HASH_MsgDigest *HASH_MessageDigest) {
   * @param  None
   * @retval None
   */
-void HASH_StartDigest(void) {
-    /* Start the Digest calculation */
-    HASH->STR |= HASH_STR_DCAL;
+void HASH_StartDigest(void)
+{
+  /* Start the Digest calculation */
+  HASH->STR |= HASH_STR_DCAL;
 }
 /**
   * @}
@@ -371,7 +381,7 @@ void HASH_StartDigest(void) {
 @endverbatim
   * @{
   */
-
+  
 /**
   * @brief  Save the Hash peripheral Context. 
   * @note   The context can be saved only when no block is currently being 
@@ -382,16 +392,18 @@ void HASH_StartDigest(void) {
   *         the repository for current context.
   * @retval None
   */
-void HASH_SaveContext(HASH_Context *HASH_ContextSave) {
-    uint8_t i = 0;
-
-    /* save context registers */
-    HASH_ContextSave->HASH_IMR = HASH->IMR;
-    HASH_ContextSave->HASH_STR = HASH->STR;
-    HASH_ContextSave->HASH_CR = HASH->CR;
-    for (i = 0; i <= 50; i++) {
-        HASH_ContextSave->HASH_CSR[i] = HASH->CSR[i];
-    }
+void HASH_SaveContext(HASH_Context* HASH_ContextSave)
+{
+  uint8_t i = 0;
+  
+  /* save context registers */
+  HASH_ContextSave->HASH_IMR = HASH->IMR;  
+  HASH_ContextSave->HASH_STR = HASH->STR;      
+  HASH_ContextSave->HASH_CR  = HASH->CR;     
+  for(i=0; i<=50;i++)
+  {
+     HASH_ContextSave->HASH_CSR[i] = HASH->CSR[i];
+  }   
 }
 
 /**
@@ -402,21 +414,23 @@ void HASH_SaveContext(HASH_Context *HASH_ContextSave) {
   *         the repository for saved context.
   * @retval None
   */
-void HASH_RestoreContext(HASH_Context *HASH_ContextRestore) {
-    uint8_t i = 0;
-
-    /* restore context registers */
-    HASH->IMR = HASH_ContextRestore->HASH_IMR;
-    HASH->STR = HASH_ContextRestore->HASH_STR;
-    HASH->CR = HASH_ContextRestore->HASH_CR;
-
-    /* Initialize the hash processor */
-    HASH->CR |= HASH_CR_INIT;
-
-    /* continue restoring context registers */
-    for (i = 0; i <= 50; i++) {
-        HASH->CSR[i] = HASH_ContextRestore->HASH_CSR[i];
-    }
+void HASH_RestoreContext(HASH_Context* HASH_ContextRestore)  
+{
+  uint8_t i = 0;
+  
+  /* restore context registers */
+  HASH->IMR = HASH_ContextRestore->HASH_IMR;   
+  HASH->STR = HASH_ContextRestore->HASH_STR;     
+  HASH->CR = HASH_ContextRestore->HASH_CR;
+  
+  /* Initialize the hash processor */
+  HASH->CR |= HASH_CR_INIT; 
+  
+   /* continue restoring context registers */     
+  for(i=0; i<=50;i++)
+  {
+     HASH->CSR[i] = HASH_ContextRestore->HASH_CSR[i];
+  }   
 }
 /**
   * @}
@@ -441,7 +455,7 @@ void HASH_RestoreContext(HASH_Context *HASH_ContextRestore) {
 @endverbatim
   * @{
   */
-
+  
 /**
   * @brief  Enables or disables the HASH DMA interface.
   * @note   The DMA is disabled by hardware after the end of transfer.
@@ -449,17 +463,21 @@ void HASH_RestoreContext(HASH_Context *HASH_ContextRestore) {
   *          This parameter can be: ENABLE or DISABLE.
   * @retval None
   */
-void HASH_DMACmd(FunctionalState NewState) {
-    /* Check the parameters */
-    assert_param(IS_FUNCTIONAL_STATE(NewState));
+void HASH_DMACmd(FunctionalState NewState)
+{
+  /* Check the parameters */
+  assert_param(IS_FUNCTIONAL_STATE(NewState));
 
-    if (NewState != DISABLE) {
-        /* Enable the HASH DMA request */
-        HASH->CR |= HASH_CR_DMAE;
-    } else {
-        /* Disable the HASH DMA request */
-        HASH->CR &= ~HASH_CR_DMAE;
-    }
+  if (NewState != DISABLE)
+  {
+    /* Enable the HASH DMA request */
+    HASH->CR |= HASH_CR_DMAE;
+  }
+  else
+  {
+    /* Disable the HASH DMA request */
+    HASH->CR &= ~HASH_CR_DMAE;
+  }
 }
 /**
   * @}
@@ -528,8 +546,8 @@ void HASH_DMACmd(FunctionalState NewState) {
 
 @endverbatim
   * @{
-  */
-
+  */ 
+  
 /**
   * @brief  Enables or disables the specified HASH interrupts.
   * @param  HASH_IT: specifies the HASH interrupt source to be enabled or disabled.
@@ -540,19 +558,22 @@ void HASH_DMACmd(FunctionalState NewState) {
   *           This parameter can be: ENABLE or DISABLE.
   * @retval None
   */
-void HASH_ITConfig(uint8_t HASH_IT, FunctionalState NewState) {
-    /* Check the parameters */
-    assert_param(IS_HASH_IT(HASH_IT));
-    assert_param(IS_FUNCTIONAL_STATE(NewState));
+void HASH_ITConfig(uint8_t HASH_IT, FunctionalState NewState)
+{
+  /* Check the parameters */
+  assert_param(IS_HASH_IT(HASH_IT));
+  assert_param(IS_FUNCTIONAL_STATE(NewState));
 
-    if (NewState != DISABLE) {
-        /* Enable the selected HASH interrupt */
-        HASH->IMR |= HASH_IT;
-    } else {
-        /* Disable the selected HASH interrupt */
-        HASH->IMR &= (uint8_t)
-        ~HASH_IT;
-    }
+  if (NewState != DISABLE)
+  {
+    /* Enable the selected HASH interrupt */
+    HASH->IMR |= HASH_IT;
+  }
+  else
+  {
+    /* Disable the selected HASH interrupt */
+    HASH->IMR &= (uint8_t) ~HASH_IT;
+  }
 }
 
 /**
@@ -566,34 +587,39 @@ void HASH_ITConfig(uint8_t HASH_IT, FunctionalState NewState) {
   *            @arg HASH_FLAG_DINNE: Data Input register (DIN) not empty status flag
   * @retval The new state of HASH_FLAG (SET or RESET)
   */
-FlagStatus HASH_GetFlagStatus(uint16_t HASH_FLAG) {
-    FlagStatus bitstatus = RESET;
-    uint32_t tempreg = 0;
+FlagStatus HASH_GetFlagStatus(uint16_t HASH_FLAG)
+{
+  FlagStatus bitstatus = RESET;
+  uint32_t tempreg = 0;
 
-    /* Check the parameters */
-    assert_param(IS_HASH_GET_FLAG(HASH_FLAG));
+  /* Check the parameters */
+  assert_param(IS_HASH_GET_FLAG(HASH_FLAG));
 
-    /* check if the FLAG is in CR register */
-    if ((HASH_FLAG & HASH_FLAG_DINNE) != (uint16_t) RESET) {
-        tempreg = HASH->CR;
-    } else /* The FLAG is in SR register */
-    {
-        tempreg = HASH->SR;
-    }
+  /* check if the FLAG is in CR register */
+  if ((HASH_FLAG & HASH_FLAG_DINNE) != (uint16_t)RESET ) 
+  {
+    tempreg = HASH->CR;
+  }
+  else /* The FLAG is in SR register */
+  {
+    tempreg = HASH->SR;
+  }
 
-    /* Check the status of the specified HASH flag */
-    if ((tempreg & HASH_FLAG) != (uint16_t) RESET) {
-        /* HASH is set */
-        bitstatus = SET;
-    } else {
-        /* HASH_FLAG is reset */
-        bitstatus = RESET;
-    }
+  /* Check the status of the specified HASH flag */
+  if ((tempreg & HASH_FLAG) != (uint16_t)RESET)
+  {
+    /* HASH is set */
+    bitstatus = SET;
+  }
+  else
+  {
+    /* HASH_FLAG is reset */
+    bitstatus = RESET;
+  }
 
-    /* Return the HASH_FLAG status */
-    return bitstatus;
+  /* Return the HASH_FLAG status */
+  return  bitstatus;
 }
-
 /**
   * @brief  Clears the HASH flags.
   * @param  HASH_FLAG: specifies the flag to clear. 
@@ -602,14 +628,14 @@ FlagStatus HASH_GetFlagStatus(uint16_t HASH_FLAG) {
   *            @arg HASH_FLAG_DCIS: Digest Calculation Completion Flag                       
   * @retval None
   */
-void HASH_ClearFlag(uint16_t HASH_FLAG) {
-    /* Check the parameters */
-    assert_param(IS_HASH_CLEAR_FLAG(HASH_FLAG));
-
-    /* Clear the selected HASH flags */
-    HASH->SR = ~(uint32_t) HASH_FLAG;
+void HASH_ClearFlag(uint16_t HASH_FLAG)
+{
+  /* Check the parameters */
+  assert_param(IS_HASH_CLEAR_FLAG(HASH_FLAG));
+  
+  /* Clear the selected HASH flags */
+  HASH->SR = ~(uint32_t)HASH_FLAG;
 }
-
 /**
   * @brief  Checks whether the specified HASH interrupt has occurred or not.
   * @param  HASH_IT: specifies the HASH interrupt source to check.
@@ -618,26 +644,30 @@ void HASH_ClearFlag(uint16_t HASH_FLAG) {
   *            @arg HASH_IT_DCI: Digest Calculation Completion Interrupt
   * @retval The new state of HASH_IT (SET or RESET).
   */
-ITStatus HASH_GetITStatus(uint8_t HASH_IT) {
-    ITStatus bitstatus = RESET;
-    uint32_t tmpreg = 0;
+ITStatus HASH_GetITStatus(uint8_t HASH_IT)
+{
+  ITStatus bitstatus = RESET;
+  uint32_t tmpreg = 0;
 
-    /* Check the parameters */
-    assert_param(IS_HASH_GET_IT(HASH_IT));
+  /* Check the parameters */
+  assert_param(IS_HASH_GET_IT(HASH_IT));  
 
 
-    /* Check the status of the specified HASH interrupt */
-    tmpreg = HASH->SR;
+  /* Check the status of the specified HASH interrupt */
+  tmpreg =  HASH->SR;
 
-    if (((HASH->IMR & tmpreg) & HASH_IT) != RESET) {
-        /* HASH_IT is set */
-        bitstatus = SET;
-    } else {
-        /* HASH_IT is reset */
-        bitstatus = RESET;
-    }
-    /* Return the HASH_IT status */
-    return bitstatus;
+  if (((HASH->IMR & tmpreg) & HASH_IT) != RESET)
+  {
+    /* HASH_IT is set */
+    bitstatus = SET;
+  }
+  else
+  {
+    /* HASH_IT is reset */
+    bitstatus = RESET;
+  }
+  /* Return the HASH_IT status */
+  return bitstatus;
 }
 
 /**
@@ -648,29 +678,29 @@ ITStatus HASH_GetITStatus(uint8_t HASH_IT) {
   *            @arg HASH_IT_DCI: Digest Calculation Completion Interrupt
   * @retval None
   */
-void HASH_ClearITPendingBit(uint8_t HASH_IT) {
-    /* Check the parameters */
-    assert_param(IS_HASH_IT(HASH_IT));
+void HASH_ClearITPendingBit(uint8_t HASH_IT)
+{
+  /* Check the parameters */
+  assert_param(IS_HASH_IT(HASH_IT));
 
-    /* Clear the selected HASH interrupt pending bit */
-    HASH->SR = (uint8_t)
-    ~HASH_IT;
+  /* Clear the selected HASH interrupt pending bit */
+  HASH->SR = (uint8_t)~HASH_IT;
 }
 
 /**
   * @}
-  */
+  */ 
 
 /**
   * @}
-  */
+  */ 
 
 /**
   * @}
-  */
+  */ 
 
 /**
   * @}
-  */
+  */ 
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

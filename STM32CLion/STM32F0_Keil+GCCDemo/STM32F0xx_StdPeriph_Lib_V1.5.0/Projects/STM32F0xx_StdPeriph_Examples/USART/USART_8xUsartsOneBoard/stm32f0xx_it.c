@@ -43,8 +43,7 @@
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
 extern uint8_t aRxBuffer[8][BUFFER_SIZE];
-__IO uint8_t
-RxCounter = 0, ReceiveState = 0;
+__IO uint8_t RxCounter= 0, ReceiveState = 0;
 /* Private function prototypes -----------------------------------------------*/
 /* Private functions ---------------------------------------------------------*/
 
@@ -57,7 +56,8 @@ RxCounter = 0, ReceiveState = 0;
   * @param  None
   * @retval None
   */
-void NMI_Handler(void) {
+void NMI_Handler(void)
+{
 }
 
 /**
@@ -65,10 +65,12 @@ void NMI_Handler(void) {
   * @param  None
   * @retval None
   */
-void HardFault_Handler(void) {
-    /* Go to infinite loop when Hard Fault exception occurs */
-    while (1) {
-    }
+void HardFault_Handler(void)
+{
+  /* Go to infinite loop when Hard Fault exception occurs */
+  while (1)
+  {
+  }
 }
 
 /**
@@ -76,7 +78,8 @@ void HardFault_Handler(void) {
   * @param  None
   * @retval None
   */
-void SVC_Handler(void) {
+void SVC_Handler(void)
+{
 }
 
 /**
@@ -84,7 +87,8 @@ void SVC_Handler(void) {
   * @param  None
   * @retval None
   */
-void PendSV_Handler(void) {
+void PendSV_Handler(void)
+{
 }
 
 /**
@@ -92,7 +96,8 @@ void PendSV_Handler(void) {
   * @param  None
   * @retval None
   */
-void SysTick_Handler(void) {
+void SysTick_Handler(void)
+{
     TimingDelay_Decrement();
 }
 
@@ -107,16 +112,19 @@ void SysTick_Handler(void) {
   * @param  None
   * @retval None
   */
-void USART1_IRQHandler(void) {
-    if (USART_GetITStatus(USART1, USART_IT_RXNE) != RESET) {
-        /* Read one byte from the receive data register */
-        aRxBuffer[0][RxCounter++] = USART_ReceiveData(USART1);
+void USART1_IRQHandler(void)
+{
+  if(USART_GetITStatus(USART1, USART_IT_RXNE) != RESET)
+  {
+    /* Read one byte from the receive data register */
+    aRxBuffer[0][RxCounter++] = USART_ReceiveData(USART1);
 
-        if (RxCounter == BUFFER_SIZE) {
-            ReceiveState = 1;
-            RxCounter = 0;
-        }
+    if(RxCounter == BUFFER_SIZE)
+    {
+      ReceiveState = 1;
+      RxCounter = 0;
     }
+  }
 }
 
 /**
@@ -124,16 +132,19 @@ void USART1_IRQHandler(void) {
   * @param  None
   * @retval None
   */
-void USART2_IRQHandler(void) {
-    if (USART_GetITStatus(USART2, USART_IT_RXNE) != RESET) {
-        /* Read one byte from the receive data register */
-        aRxBuffer[1][RxCounter++] = USART_ReceiveData(USART2);
+void USART2_IRQHandler(void)
+{
+  if(USART_GetITStatus(USART2, USART_IT_RXNE) != RESET)
+  {
+    /* Read one byte from the receive data register */
+    aRxBuffer[1][RxCounter++] = USART_ReceiveData(USART2);
 
-        if (RxCounter == BUFFER_SIZE) {
-            ReceiveState = 1;
-            RxCounter = 0;
-        }
+    if(RxCounter == BUFFER_SIZE)
+    {
+      ReceiveState = 1;
+      RxCounter=0;
     }
+  }
 }
 
 /**
@@ -141,67 +152,80 @@ void USART2_IRQHandler(void) {
   * @param  None
   * @retval None
   */
-void USART3_8_IRQHandler(void) {
-    if (USART_GetITStatus(USART3, USART_IT_RXNE) != RESET) {
-        /* Read one byte from the receive data register */
-        aRxBuffer[2][RxCounter++] = USART_ReceiveData(USART3);
-
-        if (RxCounter == BUFFER_SIZE) {
-            ReceiveState = 1;
-            RxCounter = 0;
-        }
+void USART3_8_IRQHandler(void)
+{
+  if(USART_GetITStatus(USART3, USART_IT_RXNE) != RESET)
+  {
+    /* Read one byte from the receive data register */
+    aRxBuffer[2][RxCounter++] = USART_ReceiveData(USART3);
+    
+    if(RxCounter == BUFFER_SIZE)
+    {
+      ReceiveState = 1;
+      RxCounter = 0;
     }
-
-    if (USART_GetITStatus(USART4, USART_IT_RXNE) != RESET) {
-        /* Read one byte from the receive data register */
-        aRxBuffer[3][RxCounter++] = USART_ReceiveData(USART4);
-
-        if (RxCounter == BUFFER_SIZE) {
-            ReceiveState = 1;
-            RxCounter = 0;
-        }
+  }
+  
+  if(USART_GetITStatus(USART4, USART_IT_RXNE) != RESET)
+  {
+    /* Read one byte from the receive data register */
+    aRxBuffer[3][RxCounter++] = USART_ReceiveData(USART4);
+    
+    if(RxCounter == BUFFER_SIZE)
+    {
+      ReceiveState = 1;
+      RxCounter = 0;
     }
-
-    if (USART_GetITStatus(USART5, USART_IT_RXNE) != RESET) {
-
-        /* Read one byte from the receive data register */
-        aRxBuffer[4][RxCounter++] = USART_ReceiveData(USART5);
-
-        if (RxCounter == BUFFER_SIZE) {
-            ReceiveState = 1;
-            RxCounter = 0;
-        }
+  }
+  
+  if(USART_GetITStatus(USART5, USART_IT_RXNE) != RESET)
+  {
+      
+    /* Read one byte from the receive data register */
+    aRxBuffer[4][RxCounter++] = USART_ReceiveData(USART5);
+    
+    if(RxCounter == BUFFER_SIZE)
+    {  
+      ReceiveState = 1;
+      RxCounter = 0;
     }
-
-    if (USART_GetITStatus(USART6, USART_IT_RXNE) != RESET) {
-        /* Read one byte from the receive data register */
-        aRxBuffer[5][RxCounter++] = USART_ReceiveData(USART6);
-
-        if (RxCounter == BUFFER_SIZE) {
-            ReceiveState = 1;
-            RxCounter = 0;
-        }
+  }
+  
+  if(USART_GetITStatus(USART6, USART_IT_RXNE) != RESET)
+  {
+    /* Read one byte from the receive data register */
+    aRxBuffer[5][RxCounter++] = USART_ReceiveData(USART6);
+    
+    if(RxCounter == BUFFER_SIZE)
+    {
+      ReceiveState = 1;      
+      RxCounter = 0;
     }
-
-    if (USART_GetITStatus(USART7, USART_IT_RXNE) != RESET) {
-        /* Read one byte from the receive data register */
-        aRxBuffer[6][RxCounter++] = USART_ReceiveData(USART7);
-
-        if (RxCounter == BUFFER_SIZE) {
-            ReceiveState = 1;
-            RxCounter = 0;
-        }
+  }
+  
+  if(USART_GetITStatus(USART7, USART_IT_RXNE) != RESET)
+  {
+    /* Read one byte from the receive data register */
+    aRxBuffer[6][RxCounter++] = USART_ReceiveData(USART7);
+    
+    if(RxCounter == BUFFER_SIZE)
+    { 
+      ReceiveState = 1;
+      RxCounter = 0;
     }
-
-    if (USART_GetITStatus(USART8, USART_IT_RXNE) != RESET) {
-        /* Read one byte from the receive data register */
-        aRxBuffer[7][RxCounter++] = USART_ReceiveData(USART8);
-
-        if (RxCounter == BUFFER_SIZE) {
-            ReceiveState = 1;
-            RxCounter = 0;
-        }
+  }
+  
+  if(USART_GetITStatus(USART8, USART_IT_RXNE) != RESET)
+  {
+    /* Read one byte from the receive data register */
+    aRxBuffer[7][RxCounter++] = USART_ReceiveData(USART8);
+    
+    if(RxCounter == BUFFER_SIZE)
+    { 
+      ReceiveState = 1;
+      RxCounter = 0;
     }
+  }
 }
 
 /**
@@ -215,10 +239,10 @@ void USART3_8_IRQHandler(void) {
 
 /**
   * @}
-  */
+  */ 
 
 /**
   * @}
-  */
+  */ 
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

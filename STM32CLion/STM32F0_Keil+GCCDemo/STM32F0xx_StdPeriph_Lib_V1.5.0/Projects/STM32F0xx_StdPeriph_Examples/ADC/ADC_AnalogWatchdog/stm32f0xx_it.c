@@ -28,6 +28,7 @@
   */
 
 /* Includes ------------------------------------------------------------------*/
+#include "stm32f0xx_it.h"
 
 /** @addtogroup STM32F0xx_StdPeriph_Examples
   * @{
@@ -53,7 +54,8 @@
   * @param  None
   * @retval None
   */
-void NMI_Handler(void) {
+void NMI_Handler(void)
+{
 }
 
 /**
@@ -61,10 +63,12 @@ void NMI_Handler(void) {
   * @param  None
   * @retval None
   */
-void HardFault_Handler(void) {
-    /* Go to infinite loop when Hard Fault exception occurs */
-    while (1) {
-    }
+void HardFault_Handler(void)
+{
+  /* Go to infinite loop when Hard Fault exception occurs */
+  while (1)
+  {
+  }
 }
 
 /**
@@ -72,7 +76,8 @@ void HardFault_Handler(void) {
   * @param  None
   * @retval None
   */
-void SVC_Handler(void) {
+void SVC_Handler(void)
+{
 }
 
 /**
@@ -80,7 +85,8 @@ void SVC_Handler(void) {
   * @param  None
   * @retval None
   */
-void PendSV_Handler(void) {
+void PendSV_Handler(void)
+{
 }
 
 /**
@@ -88,7 +94,8 @@ void PendSV_Handler(void) {
   * @param  None
   * @retval None
   */
-void SysTick_Handler(void) {
+void SysTick_Handler(void)
+{
 }
 
 /******************************************************************************/
@@ -99,17 +106,19 @@ void SysTick_Handler(void) {
   * @param  None
   * @retval None
   */
-void ADC1_COMP_IRQHandler(void) {
-    if (ADC_GetITStatus(ADC1, ADC_IT_AWD) != RESET) {
-        /*  Turn on LED4 */
-        STM_EVAL_LEDOn(LED4);
+void ADC1_COMP_IRQHandler(void)
+{
+  if(ADC_GetITStatus(ADC1, ADC_IT_AWD) != RESET)
+  {
+    /*  Turn on LED4 */
+    STM_EVAL_LEDOn(LED4);
 
-        /* Clear ADC1 AWD pending interrupt bit */
-        ADC_ClearITPendingBit(ADC1, ADC_IT_AWD);
+    /* Clear ADC1 AWD pending interrupt bit */
+    ADC_ClearITPendingBit(ADC1, ADC_IT_AWD);
 
-        /*  Turn Off LED4 */
-        STM_EVAL_LEDOff(LED4);
-    }
+    /*  Turn Off LED4 */
+    STM_EVAL_LEDOff(LED4);
+  }
 }
 
 /******************************************************************************/

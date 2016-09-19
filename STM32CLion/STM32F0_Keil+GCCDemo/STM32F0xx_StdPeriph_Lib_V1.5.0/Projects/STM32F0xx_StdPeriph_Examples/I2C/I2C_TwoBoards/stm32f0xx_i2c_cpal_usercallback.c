@@ -33,22 +33,17 @@
 extern const uint8_t tStateSignal[];
 extern const uint8_t tSignal1[];
 extern const uint8_t tSignal2[];
-extern CPAL_TransferTypeDef sRxStructure, sTxStructure;
+extern CPAL_TransferTypeDef  sRxStructure, sTxStructure;
 extern uint8_t tRxBuffer[];
 extern uint32_t BufferSize;
-extern __IO uint32_t
-ActionState;
-extern __IO uint32_t
-RecieverMode;
+extern __IO uint32_t ActionState;
+extern __IO uint32_t RecieverMode;
 
 /* Private macro -------------------------------------------------------------*/
 /* Private function prototypes -----------------------------------------------*/
-extern void Switch_Color(void);
-
+extern void Switch_Color(void); 
 extern void Switch_ErrorColor(void);
-
-extern uint8_t
-Buffer_Check(uint8_t *pBuffer, uint8_t *pBuffer1, uint8_t *pBuffer2, uint8_t *pBuffer3, uint16_t BufferLength);
+extern uint8_t Buffer_Check(uint8_t* pBuffer, uint8_t* pBuffer1, uint8_t* pBuffer2,  uint8_t* pBuffer3, uint16_t BufferLength);
 
 /* Private functions ---------------------------------------------------------*/
 
@@ -67,26 +62,27 @@ Buffer_Check(uint8_t *pBuffer, uint8_t *pBuffer1, uint8_t *pBuffer2, uint8_t *pB
   * @param  pDevInitStruct
   * @retval None.
   */
-uint32_t CPAL_TIMEOUT_UserCallback(CPAL_InitTypeDef *pDevInitStruct) {
-    /* Update CPAL states */
-    pDevInitStruct->CPAL_State = CPAL_STATE_READY;
-    pDevInitStruct->wCPAL_DevError = CPAL_I2C_ERR_NONE;
-    pDevInitStruct->wCPAL_Timeout = CPAL_I2C_TIMEOUT_DEFAULT;
-
-    /* DeInitialize CPAL device */
-    CPAL_I2C_DeInit(pDevInitStruct);
-
-    /* Initialize CPAL device with the selected parameters */
-    CPAL_I2C_Init(pDevInitStruct);
-
-    /* Switch the LCD write color */
-    Switch_ErrorColor();
-
-    LCD_DisplayStringLine(Line9, (uint8_t *) "  Timeout Recovered ");
-
-    ActionState = ACTION_NONE;
-
-    return CPAL_PASS;
+uint32_t CPAL_TIMEOUT_UserCallback(CPAL_InitTypeDef* pDevInitStruct)
+{
+  /* Update CPAL states */
+  pDevInitStruct->CPAL_State = CPAL_STATE_READY;
+  pDevInitStruct->wCPAL_DevError = CPAL_I2C_ERR_NONE ;
+  pDevInitStruct->wCPAL_Timeout  = CPAL_I2C_TIMEOUT_DEFAULT;
+  
+  /* DeInitialize CPAL device */
+  CPAL_I2C_DeInit(pDevInitStruct);  
+  
+  /* Initialize CPAL device with the selected parameters */
+  CPAL_I2C_Init(pDevInitStruct);    
+    
+  /* Switch the LCD write color */
+  Switch_ErrorColor();
+  
+  LCD_DisplayStringLine(Line9, (uint8_t*)"  Timeout Recovered ");
+  
+  ActionState = ACTION_NONE; 
+  
+  return CPAL_PASS;  
 }
 
 
@@ -98,18 +94,19 @@ uint32_t CPAL_TIMEOUT_UserCallback(CPAL_InitTypeDef *pDevInitStruct) {
   * @param  pDevInitStruct 
   * @retval None
   */
-void CPAL_I2C_TXTC_UserCallback(CPAL_InitTypeDef *pDevInitStruct) {
-    STM_EVAL_LEDOff(LED3);
-    STM_EVAL_LEDToggle(LED2);
-
-    /* Switch the LCD write color */
-    Switch_Color();
-
-    LCD_DisplayStringLine(Line3, (uint8_t *) "TRANSMIT MODE ACTIVE");
-    LCD_DisplayStringLine(Line5, (uint8_t *) "   Signal Sent OK   ");
-    LCD_DisplayStringLine(Line9, MEASSAGE_EMPTY);
-
-    ActionState = ACTION_NONE;
+void CPAL_I2C_TXTC_UserCallback(CPAL_InitTypeDef* pDevInitStruct)
+{
+  STM_EVAL_LEDOff(LED3);  
+  STM_EVAL_LEDToggle(LED2);
+     
+  /* Switch the LCD write color */
+  Switch_Color(); 
+  
+  LCD_DisplayStringLine(Line3, (uint8_t*)"TRANSMIT MODE ACTIVE");
+  LCD_DisplayStringLine(Line5, (uint8_t*)"   Signal Sent OK   ");
+  LCD_DisplayStringLine(Line9, MEASSAGE_EMPTY);
+  
+  ActionState  = ACTION_NONE;
 }
 
 
@@ -117,55 +114,57 @@ void CPAL_I2C_TXTC_UserCallback(CPAL_InitTypeDef *pDevInitStruct) {
   * @brief  Manages the End of Rx transfer event.
   * @param  pDevInitStruct 
   * @retval None
-  */
-void CPAL_I2C_RXTC_UserCallback(CPAL_InitTypeDef *pDevInitStruct) {
-    uint8_t result = 0xFF, i = 0;
-
-    /* Activate the mode receiver only */
-    RecieverMode = 1;
-
-    /* Switch the LCD write color */
-    Switch_Color();
-
-    LCD_DisplayStringLine(Line3, (uint8_t *) "RECEIVER MODE ACTIVE");
-    LCD_DisplayStringLine(Line5, MEASSAGE_EMPTY);
-    LCD_DisplayStringLine(Line9, MEASSAGE_EMPTY);
-
-    STM_EVAL_LEDOff(LED2);
-    STM_EVAL_LEDToggle(LED3);
-
-    /* Initialize local Reception structures */
-    sRxStructure.wNumData = BufferSize;       /* Maximum Number of data to be received */
-    sRxStructure.pbBuffer = tRxBuffer;        /* Common Rx buffer for all received data */
-
-    /* Check the Received Buffer */
-    result = Buffer_Check(tRxBuffer, (uint8_t *) tStateSignal, (uint8_t *) tSignal1, (uint8_t *) tSignal2,
-                          (uint16_t) BufferSize);
-
-    switch (result) {
-        case 0:
-            LCD_DisplayStringLine(Line7, (uint8_t *) "  State message OK  ");
-            break;
-
-        case 1:
-            /* Display Reception Complete */
-            LCD_DisplayStringLine(Line5, (uint8_t *) " Signal1 message OK ");
-            break;
-
-        case 2:
-            /* Display Reception Complete */
-            LCD_DisplayStringLine(Line5, (uint8_t *) " Signal2 message OK ");
-            break;
-
-        default:
-            LCD_DisplayStringLine(Line7, (uint8_t *) "       Failure     ");
-            break;
-    }
-
-    /* Reinitialize RXBuffer */
-    for (i = 0; i < MAX_BUFF_SIZE; i++) {
-        tRxBuffer[i] = 0;
-    }
+  */  
+void CPAL_I2C_RXTC_UserCallback(CPAL_InitTypeDef* pDevInitStruct)
+{
+  uint8_t result = 0xFF, i = 0;
+  
+  /* Activate the mode receiver only */
+  RecieverMode = 1;
+  
+  /* Switch the LCD write color */
+  Switch_Color(); 
+  
+  LCD_DisplayStringLine(Line3, (uint8_t*)"RECEIVER MODE ACTIVE");
+  LCD_DisplayStringLine(Line5, MEASSAGE_EMPTY);
+  LCD_DisplayStringLine(Line9, MEASSAGE_EMPTY);
+  
+  STM_EVAL_LEDOff(LED2);  
+  STM_EVAL_LEDToggle(LED3);
+    
+  /* Initialize local Reception structures */
+  sRxStructure.wNumData = BufferSize;       /* Maximum Number of data to be received */
+  sRxStructure.pbBuffer = tRxBuffer;        /* Common Rx buffer for all received data */
+      
+  /* Check the Received Buffer */
+  result = Buffer_Check(tRxBuffer, (uint8_t*)tStateSignal, (uint8_t*)tSignal1,(uint8_t*)tSignal2, (uint16_t)BufferSize);
+    
+  switch(result)
+  {
+    case 0: 
+      LCD_DisplayStringLine(Line7, (uint8_t*)"  State message OK  ");
+      break;
+      
+    case 1: 
+      /* Display Reception Complete */
+      LCD_DisplayStringLine(Line5, (uint8_t*)" Signal1 message OK ");
+      break;
+    
+    case 2:
+      /* Display Reception Complete */
+      LCD_DisplayStringLine(Line5, (uint8_t*)" Signal2 message OK ");
+      break;
+    
+    default:  
+      LCD_DisplayStringLine(Line7, (uint8_t*)"       Failure     ");
+      break;
+  }
+  
+  /* Reinitialize RXBuffer */
+  for(i = 0; i < MAX_BUFF_SIZE; i++)
+  {
+    tRxBuffer[i]=0;
+  }
 }
 
 
@@ -267,29 +266,33 @@ void CPAL_I2C_RXTC_UserCallback(CPAL_InitTypeDef *pDevInitStruct) {
   * @param  pDevInitStruct. 
   * @param  DeviceError.
   * @retval None
-  */
-void CPAL_I2C_ERR_UserCallback(CPAL_DevTypeDef pDevInstance, uint32_t DeviceError) {
-    /* if an Acknowledge failure error occurred */
-    if (DeviceError == CPAL_I2C_ERR_AF) {
-        LCD_DisplayStringLine(Line9, (uint8_t *) " Slave Not yet Ready");
-    } else {
-        LCD_DisplayStringLine(Line9, (uint8_t *) " Device Err occurred ");
-    }
-
-    /* Update CPAL states */
-    I2C_DevStructures[pDevInstance]->CPAL_State = CPAL_STATE_READY;
-    I2C_DevStructures[pDevInstance]->wCPAL_DevError = CPAL_I2C_ERR_NONE;
-
-    /* Deinitialize CPAL device */
-    CPAL_I2C_DeInit(I2C_DevStructures[pDevInstance]);
-
-    /* Initialize CPAL device with the selected parameters */
-    CPAL_I2C_Init(I2C_DevStructures[pDevInstance]);
-
-    /* Switch the LCD write color */
-    Switch_ErrorColor();
-
-    ActionState = ACTION_NONE;
+  */ 
+void CPAL_I2C_ERR_UserCallback(CPAL_DevTypeDef pDevInstance, uint32_t DeviceError)
+{
+  /* if an Acknowledge failure error occurred */
+  if (DeviceError == CPAL_I2C_ERR_AF )
+  {
+    LCD_DisplayStringLine(Line9, (uint8_t*)" Slave Not yet Ready");
+  } 
+  else
+  {
+    LCD_DisplayStringLine(Line9, (uint8_t*)" Device Err occurred ");
+  }
+  
+  /* Update CPAL states */
+  I2C_DevStructures[pDevInstance]->CPAL_State = CPAL_STATE_READY;
+  I2C_DevStructures[pDevInstance]->wCPAL_DevError = CPAL_I2C_ERR_NONE;
+  
+  /* Deinitialize CPAL device */
+  CPAL_I2C_DeInit(I2C_DevStructures[pDevInstance]);
+  
+  /* Initialize CPAL device with the selected parameters */
+  CPAL_I2C_Init(I2C_DevStructures[pDevInstance]);    
+  
+  /* Switch the LCD write color */
+  Switch_ErrorColor();
+  
+  ActionState = ACTION_NONE;
 }
 
 

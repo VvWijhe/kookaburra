@@ -17,7 +17,7 @@
   *
   * <h2><center>&copy; COPYRIGHT 2011 STMicroelectronics</center></h2>
   ******************************************************************************  
-  */
+  */ 
 
 /* Includes ------------------------------------------------------------------*/
 #include <main.h>
@@ -37,13 +37,14 @@ GPIO_InitTypeDef GPIO_InitStructure;
   * @param  None
   * @retval None
   */
-int main(void) {
-    /*!< At this stage the microcontroller clock setting is already configured,
-         this is done through SystemInit() function which is called from startup
-         file (startup_stm32f3xx.s) before to branch to application main.
-         To reconfigure the default setting of SystemInit() function, refer to
-          system_stm32f3xx.c file
-       */
+int main(void)
+{
+  /*!< At this stage the microcontroller clock setting is already configured, 
+       this is done through SystemInit() function which is called from startup
+       file (startup_stm32f3xx.s) before to branch to application main.
+       To reconfigure the default setting of SystemInit() function, refer to
+        system_stm32f3xx.c file
+     */     
     LEDController ledController;
 
     ledController.tim3Demo();
@@ -74,10 +75,10 @@ void assert_failed(uint8_t* file, uint32_t line)
 
 /**
   * @}
-  */
+  */ 
 
 /**
   * @}
-  */
+  */ 
 
 /******************* (C) COPYRIGHT 2011 STMicroelectronics *****END OF FILE****/

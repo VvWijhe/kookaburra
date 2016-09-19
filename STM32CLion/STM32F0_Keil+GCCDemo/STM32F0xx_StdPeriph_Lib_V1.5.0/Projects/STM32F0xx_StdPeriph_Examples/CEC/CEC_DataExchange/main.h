@@ -24,35 +24,32 @@
   *
   ******************************************************************************
   */
-
+  
 /* Define to prevent recursive inclusion -------------------------------------*/
 #ifndef __MAIN_H
 #define __MAIN_H
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f0xx.h"
-
 #ifdef USE_STM320518_EVAL
-#include "stm320518_eval.h"
-#include "stm320518_eval_lcd.h"
-#else
-
-#include "stm32072b_eval.h"
-#include "stm32072b_eval_lcd.h"
-
+  #include "stm320518_eval.h"
+  #include "stm320518_eval_lcd.h"
+#else 
+  #include "stm32072b_eval.h"
+  #include "stm32072b_eval_lcd.h" 
 #endif /* USE_STM320518_EVAL */
 
 /* Exported types ------------------------------------------------------------*/
 /* Exported constants --------------------------------------------------------*/
 /* Uncomment the line below if you will use the CEC peripheral as a Device1 */
 //#define DEVICE_1
-/* Uncomment the line below if you will use the CEC peripheral as a Device2 */
-#define DEVICE_2
+/* Uncomment the line below if you will use the CEC peripheral as a Device2 */ 
+#define DEVICE_2 
 
 #define DEVICE_ADDRESS_1               0x01  /* CEC device 1 address   */
 #define DEVICE_ADDRESS_2               0x03  /* CEC device 2 address   */
 
-/* Uncomment the define to use LCD */
+ /* Uncomment the define to use LCD */
 #define LCD_DISPLAY
 /* Exported macro ------------------------------------------------------------*/
 /* Exported functions ------------------------------------------------------- */

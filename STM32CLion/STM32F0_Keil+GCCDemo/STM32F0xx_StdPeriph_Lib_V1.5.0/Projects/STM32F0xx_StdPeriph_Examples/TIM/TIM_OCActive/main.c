@@ -26,6 +26,7 @@
   */
 
 /* Includes ------------------------------------------------------------------*/
+#include "main.h"
 
 /** @addtogroup STM32F0xx_StdPeriph_Examples
   * @{
@@ -55,23 +56,25 @@ static void TIM_Config(void);
   * @param  None
   * @retval None
   */
-int main(void) {
-    /*!< At this stage the microcontroller clock setting is already configured,
-         this is done through SystemInit() function which is called from startup
-         file (startup_stm32f0xx.s) before to branch to application main.
-         To reconfigure the default setting of SystemInit() function, refer to
-         system_stm32f0xx.c file
-       */
+int main(void)
+{
+  /*!< At this stage the microcontroller clock setting is already configured, 
+       this is done through SystemInit() function which is called from startup
+       file (startup_stm32f0xx.s) before to branch to application main.
+       To reconfigure the default setting of SystemInit() function, refer to
+       system_stm32f0xx.c file
+     */ 
 
-    /* TIM Configuration */
-    TIM_Config();
+  /* TIM Configuration */
+  TIM_Config();
 
-    /* Turn on LED1 */
-    STM_EVAL_LEDOn(LED1);
+  /* Turn on LED1 */
+  STM_EVAL_LEDOn(LED1);
 
-    /* Infinite loop */
-    while (1) {
-    }
+  /* Infinite loop */
+  while (1)
+  {
+  }
 }
 
 /**
@@ -79,109 +82,110 @@ int main(void) {
   * @param  None
   * @retval None
   */
-static void TIM_Config(void) {
-    TIM_TimeBaseInitTypeDef TIM_TimeBaseStructure;
-    TIM_OCInitTypeDef TIM_OCInitStructure;
-    GPIO_InitTypeDef GPIO_InitStructure;
+static void TIM_Config(void)
+{
+  TIM_TimeBaseInitTypeDef  TIM_TimeBaseStructure;
+  TIM_OCInitTypeDef  TIM_OCInitStructure;
+  GPIO_InitTypeDef GPIO_InitStructure;
 
-    /* TIM3 clock enable */
-    RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3, ENABLE);
+  /* TIM3 clock enable */
+  RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3, ENABLE);
 
-    /* GPIOC clock enable */
-    RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOA | RCC_AHBPeriph_GPIOB, ENABLE);
+  /* GPIOC clock enable */
+  RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOA | RCC_AHBPeriph_GPIOB, ENABLE);
+   
+  /* GPIOA Configuration: TIM3 CH1 (PA6) and TIM3 CH2 (PA7) */
+  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_6 | GPIO_Pin_7;
+  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;
+  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+  GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
+  GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;
+  GPIO_Init(GPIOA, &GPIO_InitStructure); 
 
-    /* GPIOA Configuration: TIM3 CH1 (PA6) and TIM3 CH2 (PA7) */
-    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_6 | GPIO_Pin_7;
-    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;
-    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-    GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
-    GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;
-    GPIO_Init(GPIOA, &GPIO_InitStructure);
+  /* GPIOB Configuration: TIM3 CH3 (PB0) and TIM3 CH4 (PB1) */
+  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0 | GPIO_Pin_1;
+  GPIO_Init(GPIOB, &GPIO_InitStructure);
+    
+  /* Connect TIM Channels to AF2 */
+  GPIO_PinAFConfig(GPIOA, GPIO_PinSource6, GPIO_AF_1);
+  GPIO_PinAFConfig(GPIOA, GPIO_PinSource7, GPIO_AF_1); 
+  GPIO_PinAFConfig(GPIOB, GPIO_PinSource0, GPIO_AF_1);
+  GPIO_PinAFConfig(GPIOB, GPIO_PinSource1, GPIO_AF_1);
 
-    /* GPIOB Configuration: TIM3 CH3 (PB0) and TIM3 CH4 (PB1) */
-    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0 | GPIO_Pin_1;
-    GPIO_Init(GPIOB, &GPIO_InitStructure);
+  /* Initialize Leds mounted on STM320518-EVAL board */
+  STM_EVAL_LEDInit(LED1);  
+  
+  TIM_TimeBaseStructInit(&TIM_TimeBaseStructure);
 
-    /* Connect TIM Channels to AF2 */
-    GPIO_PinAFConfig(GPIOA, GPIO_PinSource6, GPIO_AF_1);
-    GPIO_PinAFConfig(GPIOA, GPIO_PinSource7, GPIO_AF_1);
-    GPIO_PinAFConfig(GPIOB, GPIO_PinSource0, GPIO_AF_1);
-    GPIO_PinAFConfig(GPIOB, GPIO_PinSource1, GPIO_AF_1);
+  TIM_OCStructInit(&TIM_OCInitStructure);
 
-    /* Initialize Leds mounted on STM320518-EVAL board */
-    STM_EVAL_LEDInit(LED1);
+  /* ---------------------------------------------------------------------------
+    TIM3 Configuration: Output Compare Active Mode:
+    In this example TIM3 input clock (TIM3CLK) is set to APB1 clock (PCLK1)    
+      TIM3CLK = PCLK1  
+      PCLK1 = HCLK 
+      => TIM3CLK = HCLK = SystemCoreClock 
+          
+    To get TIM3 counter clock at 1 KHz, the prescaler is computed as follows:
+       Prescaler = (TIM3CLK / TIM3 counter clock) - 1
+       Prescaler = (SystemCoreClock /1 KHz) - 1
+       
+    Generate 4 signals with 4 different delays:
+    TIM3_CH1 delay = CCR1_Val/TIM3 counter clock = 1000 ms
+    TIM3_CH2 delay = CCR2_Val/TIM3 counter clock = 500 ms
+    TIM3_CH3 delay = CCR3_Val/TIM3 counter clock = 250 ms
+    TIM3_CH4 delay = CCR4_Val/TIM3 counter clock = 125 ms
 
-    TIM_TimeBaseStructInit(&TIM_TimeBaseStructure);
+    Note: 
+     SystemCoreClock variable holds HCLK frequency and is defined in system_stm32f0xx.c file.
+     Each time the core clock (HCLK) changes, user had to call SystemCoreClockUpdate()
+     function to update SystemCoreClock variable value. Otherwise, any configuration
+     based on this variable will be incorrect. 
+     
+  --------------------------------------------------------------------------- */
+  
+  /*Compute the prescaler value */
+  PrescalerValue = (uint16_t) (SystemCoreClock / 1000) - 1;
 
-    TIM_OCStructInit(&TIM_OCInitStructure);
+  /* Time base configuration */
+  TIM_TimeBaseStructure.TIM_Period = 65535;
+  TIM_TimeBaseStructure.TIM_Prescaler = PrescalerValue;
+  TIM_TimeBaseStructure.TIM_ClockDivision = 0;
+  TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;
 
-    /* ---------------------------------------------------------------------------
-      TIM3 Configuration: Output Compare Active Mode:
-      In this example TIM3 input clock (TIM3CLK) is set to APB1 clock (PCLK1)
-        TIM3CLK = PCLK1
-        PCLK1 = HCLK
-        => TIM3CLK = HCLK = SystemCoreClock
+  TIM_TimeBaseInit(TIM3, &TIM_TimeBaseStructure);
 
-      To get TIM3 counter clock at 1 KHz, the prescaler is computed as follows:
-         Prescaler = (TIM3CLK / TIM3 counter clock) - 1
-         Prescaler = (SystemCoreClock /1 KHz) - 1
+  /* Output Compare Active Mode configuration: Channel1 */
+  TIM_OCInitStructure.TIM_OCMode = TIM_OCMode_Active;
+  TIM_OCInitStructure.TIM_OutputState = TIM_OutputState_Enable;
+  TIM_OCInitStructure.TIM_OCPolarity = TIM_OCPolarity_High;
+  TIM_OCInitStructure.TIM_Pulse = CCR1_Val;
+  TIM_OC1Init(TIM3, &TIM_OCInitStructure);
 
-      Generate 4 signals with 4 different delays:
-      TIM3_CH1 delay = CCR1_Val/TIM3 counter clock = 1000 ms
-      TIM3_CH2 delay = CCR2_Val/TIM3 counter clock = 500 ms
-      TIM3_CH3 delay = CCR3_Val/TIM3 counter clock = 250 ms
-      TIM3_CH4 delay = CCR4_Val/TIM3 counter clock = 125 ms
+  TIM_OC1PreloadConfig(TIM3, TIM_OCPreload_Disable);
+  TIM_ARRPreloadConfig(TIM3, DISABLE); 
+  /* Output Compare Active Mode configuration: Channel2 */
+  TIM_OCInitStructure.TIM_Pulse = CCR2_Val;
+  TIM_OC2Init(TIM3, &TIM_OCInitStructure);
 
-      Note:
-       SystemCoreClock variable holds HCLK frequency and is defined in system_stm32f0xx.c file.
-       Each time the core clock (HCLK) changes, user had to call SystemCoreClockUpdate()
-       function to update SystemCoreClock variable value. Otherwise, any configuration
-       based on this variable will be incorrect.
+  TIM_OC2PreloadConfig(TIM3, TIM_OCPreload_Disable);
 
-    --------------------------------------------------------------------------- */
+  /* Output Compare Active Mode configuration: Channel3 */
+  TIM_OCInitStructure.TIM_Pulse = CCR3_Val;
+  TIM_OC3Init(TIM3, &TIM_OCInitStructure);
 
-    /*Compute the prescaler value */
-    PrescalerValue = (uint16_t)(SystemCoreClock / 1000) - 1;
+  TIM_OC3PreloadConfig(TIM3, TIM_OCPreload_Disable);
 
-    /* Time base configuration */
-    TIM_TimeBaseStructure.TIM_Period = 65535;
-    TIM_TimeBaseStructure.TIM_Prescaler = PrescalerValue;
-    TIM_TimeBaseStructure.TIM_ClockDivision = 0;
-    TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;
+  /* Output Compare Active Mode configuration: Channel4 */
+  TIM_OCInitStructure.TIM_Pulse = CCR4_Val;
+  TIM_OC4Init(TIM3, &TIM_OCInitStructure);
 
-    TIM_TimeBaseInit(TIM3, &TIM_TimeBaseStructure);
-
-    /* Output Compare Active Mode configuration: Channel1 */
-    TIM_OCInitStructure.TIM_OCMode = TIM_OCMode_Active;
-    TIM_OCInitStructure.TIM_OutputState = TIM_OutputState_Enable;
-    TIM_OCInitStructure.TIM_OCPolarity = TIM_OCPolarity_High;
-    TIM_OCInitStructure.TIM_Pulse = CCR1_Val;
-    TIM_OC1Init(TIM3, &TIM_OCInitStructure);
-
-    TIM_OC1PreloadConfig(TIM3, TIM_OCPreload_Disable);
-    TIM_ARRPreloadConfig(TIM3, DISABLE);
-    /* Output Compare Active Mode configuration: Channel2 */
-    TIM_OCInitStructure.TIM_Pulse = CCR2_Val;
-    TIM_OC2Init(TIM3, &TIM_OCInitStructure);
-
-    TIM_OC2PreloadConfig(TIM3, TIM_OCPreload_Disable);
-
-    /* Output Compare Active Mode configuration: Channel3 */
-    TIM_OCInitStructure.TIM_Pulse = CCR3_Val;
-    TIM_OC3Init(TIM3, &TIM_OCInitStructure);
-
-    TIM_OC3PreloadConfig(TIM3, TIM_OCPreload_Disable);
-
-    /* Output Compare Active Mode configuration: Channel4 */
-    TIM_OCInitStructure.TIM_Pulse = CCR4_Val;
-    TIM_OC4Init(TIM3, &TIM_OCInitStructure);
-
-    TIM_OC4PreloadConfig(TIM3, TIM_OCPreload_Disable);
-
-    /* TIM3 enable counter */
-    TIM_Cmd(TIM3, ENABLE);
-
-    TIM_GenerateEvent(TIM3, TIM_EventSource_Update);
+  TIM_OC4PreloadConfig(TIM3, TIM_OCPreload_Disable);
+ 
+  /* TIM3 enable counter */
+  TIM_Cmd(TIM3, ENABLE);
+  
+  TIM_GenerateEvent(TIM3, TIM_EventSource_Update);
 }
 
 #ifdef  USE_FULL_ASSERT

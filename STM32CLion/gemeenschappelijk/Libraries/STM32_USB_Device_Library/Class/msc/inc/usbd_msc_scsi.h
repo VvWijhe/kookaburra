@@ -23,7 +23,7 @@
   * limitations under the License.
   *
   ******************************************************************************
-  */
+  */ 
 
 /* Define to prevent recursive inclusion -------------------------------------*/
 #ifndef __USBD_MSC_SCSI_H
@@ -35,15 +35,15 @@
 /** @addtogroup STM32_USB_OTG_DEVICE_LIBRARY
   * @{
   */
-
+  
 /** @defgroup USBD_SCSI
   * @brief header file for the storage disk file
   * @{
-  */
+  */ 
 
 /** @defgroup USBD_SCSI_Exported_Defines
   * @{
-  */
+  */ 
 
 #define SENSE_LIST_DEEPTH                          4
 
@@ -101,9 +101,9 @@
 #define ADDRESS_OUT_OF_RANGE                        0x21
 #define MEDIUM_NOT_PRESENT                          0x3A
 #define MEDIUM_HAVE_CHANGED                         0x28
-#define WRITE_PROTECTED                             0x27
-#define UNRECOVERED_READ_ERROR                0x11
-#define WRITE_FAULT                    0x03
+#define WRITE_PROTECTED                             0x27 
+#define UNRECOVERED_READ_ERROR			    0x11
+#define WRITE_FAULT				    0x03 
 
 #define READ_FORMAT_CAPACITY_DATA_LEN               0x0C
 #define READ_CAPACITY10_DATA_LEN                    0x08
@@ -113,83 +113,83 @@
 #define STANDARD_INQUIRY_DATA_LEN                   0x24
 #define BLKVFY                                      0x04
 
-extern uint8_t Page00_Inquiry_Data[];
-extern uint8_t Standard_Inquiry_Data[];
-extern uint8_t Standard_Inquiry_Data2[];
-extern uint8_t Mode_Sense6_data[];
-extern uint8_t Mode_Sense10_data[];
-extern uint8_t Scsi_Sense_Data[];
-extern uint8_t ReadCapacity10_Data[];
-extern uint8_t ReadFormatCapacity_Data[];
+extern  uint8_t Page00_Inquiry_Data[];
+extern  uint8_t Standard_Inquiry_Data[];
+extern  uint8_t Standard_Inquiry_Data2[];
+extern  uint8_t Mode_Sense6_data[];
+extern  uint8_t Mode_Sense10_data[];
+extern  uint8_t Scsi_Sense_Data[];
+extern  uint8_t ReadCapacity10_Data[];
+extern  uint8_t ReadFormatCapacity_Data [];
 /**
   * @}
-  */
+  */ 
 
 
 /** @defgroup USBD_SCSI_Exported_TypesDefinitions
   * @{
   */
 
-typedef struct _SENSE_ITEM {
-    char Skey;
-    union {
-        struct _ASCs {
-            char ASC;
-            char ASCQ;
-        } b;
-        unsigned int ASC;
-        char *pData;
-    } w;
-} SCSI_Sense_TypeDef;
+typedef struct _SENSE_ITEM {                
+  char Skey;
+  union {
+    struct _ASCs {
+      char ASC;
+      char ASCQ;
+    }b;
+    unsigned int	ASC;
+    char *pData;
+  } w;
+} SCSI_Sense_TypeDef; 
 /**
   * @}
-  */
+  */ 
 
 /** @defgroup USBD_SCSI_Exported_Macros
   * @{
-  */
+  */ 
 
 /**
   * @}
-  */
+  */ 
 
 /** @defgroup USBD_SCSI_Exported_Variables
   * @{
-  */
-extern SCSI_Sense_TypeDef SCSI_Sense[SENSE_LIST_DEEPTH];
-extern uint8_t SCSI_Sense_Head;
-extern uint8_t SCSI_Sense_Tail;
+  */ 
+extern SCSI_Sense_TypeDef     SCSI_Sense [SENSE_LIST_DEEPTH]; 
+extern uint8_t   SCSI_Sense_Head;
+extern uint8_t   SCSI_Sense_Tail;
 
 /**
   * @}
-  */
+  */ 
 /** @defgroup USBD_SCSI_Exported_FunctionsPrototype
   * @{
-  */
-int8_t SCSI_ProcessCmd(USB_OTG_CORE_HANDLE *pdev,
-                       uint8_t lun,
-                       uint8_t *cmd);
+  */ 
+int8_t SCSI_ProcessCmd(USB_OTG_CORE_HANDLE  *pdev,
+                           uint8_t lun, 
+                           uint8_t *cmd);
 
-void SCSI_SenseCode(uint8_t lun,
-                    uint8_t sKey,
+void   SCSI_SenseCode(uint8_t lun, 
+                    uint8_t sKey, 
                     uint8_t ASC);
 
 /**
   * @}
-  */
+  */ 
 
 #endif /* __USBD_MSC_SCSI_H */
 /**
   * @}
-  */
+  */ 
 
 /**
   * @}
-  */
+  */ 
 
 /**
 * @}
-*/
+*/ 
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
 

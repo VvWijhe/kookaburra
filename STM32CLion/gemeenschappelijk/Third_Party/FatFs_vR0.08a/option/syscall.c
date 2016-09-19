@@ -19,14 +19,14 @@
 */
 
 BOOL ff_cre_syncobj (	/* TRUE:Function succeeded, FALSE:Could not create due to any error */
-    BYTE vol,			/* Corresponding logical drive being processed */
-    _SYNC_t *sobj		/* Pointer to return the created sync object */
+	BYTE vol,			/* Corresponding logical drive being processed */
+	_SYNC_t *sobj		/* Pointer to return the created sync object */
 )
 {
-    BOOL ret;
+	BOOL ret;
 
-    *sobj = CreateMutex(NULL, FALSE, NULL);					/* Win32 */
-    ret = (*sobj != INVALID_HANDLE_VALUE) ? TRUE : FALSE;
+	*sobj = CreateMutex(NULL, FALSE, NULL);					/* Win32 */
+	ret = (*sobj != INVALID_HANDLE_VALUE) ? TRUE : FALSE;
 
 //	*sobj = SyncObjects[vol];	/* uITRON (give a static created sync object) */
 //	ret = TRUE;					/* The initial value of the semaphore must be 1. */
@@ -37,7 +37,7 @@ BOOL ff_cre_syncobj (	/* TRUE:Function succeeded, FALSE:Could not create due to 
 //	*sobj = xSemaphoreCreateMutex();			/* FreeRTOS */
 //	ret = (*sobj != NULL) ? TRUE : FALSE;
 
-    return ret;
+	return ret;
 }
 
 
@@ -51,12 +51,12 @@ BOOL ff_cre_syncobj (	/* TRUE:Function succeeded, FALSE:Could not create due to 
 */
 
 BOOL ff_del_syncobj (	/* TRUE:Function succeeded, FALSE:Could not delete due to any error */
-    _SYNC_t sobj		/* Sync object tied to the logical drive to be deleted */
+	_SYNC_t sobj		/* Sync object tied to the logical drive to be deleted */
 )
 {
-    BOOL ret;
+	BOOL ret;
 
-    ret = CloseHandle(sobj);	/* Win32 *
+	ret = CloseHandle(sobj);	/* Win32 *
 
 //	ret = TRUE;					/* uITRON (nothing to do) *
 
@@ -65,7 +65,7 @@ BOOL ff_del_syncobj (	/* TRUE:Function succeeded, FALSE:Could not delete due to 
 
 //	ret = TRUE;					/* FreeRTOS (nothing to do) */
 
-    return ret;
+	return ret;
 }
 
 
@@ -78,12 +78,12 @@ BOOL ff_del_syncobj (	/* TRUE:Function succeeded, FALSE:Could not delete due to 
 */
 
 BOOL ff_req_grant (	/* TRUE:Got a grant to access the volume, FALSE:Could not get a grant */
-    _SYNC_t sobj	/* Sync object to wait */
+	_SYNC_t sobj	/* Sync object to wait */
 )
 {
-    BOOL ret;
+	BOOL ret;
 
-    ret = (WaitForSingleObject(sobj, _FS_TIMEOUT) == WAIT_OBJECT_0) ? TRUE : FALSE;	/* Win32 */
+	ret = (WaitForSingleObject(sobj, _FS_TIMEOUT) == WAIT_OBJECT_0) ? TRUE : FALSE;	/* Win32 */
 
 //	ret = (wai_sem(sobj) == E_OK) ? TRUE : FALSE;	/* uITRON */
 
@@ -92,7 +92,7 @@ BOOL ff_req_grant (	/* TRUE:Got a grant to access the volume, FALSE:Could not ge
 
 //	ret = (xSemaphoreTake(sobj, _FS_TIMEOUT) == pdTRUE) ? TRUE : FALSE;	/* FreeRTOS */
 
-    return ret;
+	return ret;
 }
 
 
@@ -104,10 +104,10 @@ BOOL ff_req_grant (	/* TRUE:Got a grant to access the volume, FALSE:Could not ge
 */
 
 void ff_rel_grant (
-    _SYNC_t sobj	/* Sync object to be signaled */
+	_SYNC_t sobj	/* Sync object to be signaled */
 )
 {
-    ReleaseMutex(sobj);		/* Win32 */
+	ReleaseMutex(sobj);		/* Win32 */
 
 //	sig_sem(sobj);			/* uITRON */
 
@@ -120,7 +120,9 @@ void ff_rel_grant (
 #endif
 
 
-#if _USE_LFN == 3    /* LFN with a working buffer on the heap */
+
+
+#if _USE_LFN == 3	/* LFN with a working buffer on the heap */
 /*------------------------------------------------------------------------*/
 /* Allocate a memory block                                                */
 /*------------------------------------------------------------------------*/
@@ -128,10 +130,10 @@ void ff_rel_grant (
 */
 
 void* ff_memalloc (	/* Returns pointer to the allocated memory block */
-    UINT size		/* Number of bytes to allocate */
+	UINT size		/* Number of bytes to allocate */
 )
 {
-    return malloc(size);
+	return malloc(size);
 }
 
 
@@ -140,10 +142,10 @@ void* ff_memalloc (	/* Returns pointer to the allocated memory block */
 /*------------------------------------------------------------------------*/
 
 void ff_memfree(
-    void* mblock	/* Pointer to the memory block to free */
+	void* mblock	/* Pointer to the memory block to free */
 )
 {
-    free(mblock);
+	free(mblock);
 }
 
 #endif

@@ -17,14 +17,14 @@
   * CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
   *
   * <h2><center>&copy; COPYRIGHT 2010 STMicroelectronics</center></h2>
-  */
+  */ 
 
 /* Define to prevent recursive inclusion -------------------------------------*/
 #ifndef __STM32F10x_BKP_H
 #define __STM32F10x_BKP_H
 
 #ifdef __cplusplus
-extern "C" {
+ extern "C" {
 #endif
 
 /* Includes ------------------------------------------------------------------*/
@@ -162,27 +162,16 @@ extern "C" {
   */
 
 void BKP_DeInit(void);
-
 void BKP_TamperPinLevelConfig(uint16_t BKP_TamperPinLevel);
-
 void BKP_TamperPinCmd(FunctionalState NewState);
-
 void BKP_ITConfig(FunctionalState NewState);
-
 void BKP_RTCOutputConfig(uint16_t BKP_RTCOutputSource);
-
 void BKP_SetRTCCalibrationValue(uint8_t CalibrationValue);
-
 void BKP_WriteBackupRegister(uint16_t BKP_DR, uint16_t Data);
-
 uint16_t BKP_ReadBackupRegister(uint16_t BKP_DR);
-
 FlagStatus BKP_GetFlagStatus(void);
-
 void BKP_ClearFlag(void);
-
 ITStatus BKP_GetITStatus(void);
-
 void BKP_ClearITPendingBit(void);
 
 #ifdef __cplusplus

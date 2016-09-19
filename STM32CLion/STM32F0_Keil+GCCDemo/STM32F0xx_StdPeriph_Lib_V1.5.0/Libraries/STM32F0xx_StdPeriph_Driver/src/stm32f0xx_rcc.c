@@ -64,7 +64,7 @@
 /** @defgroup RCC 
   * @brief RCC driver modules
   * @{
-  */
+  */ 
 
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
@@ -87,9 +87,7 @@
 
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
-static __I uint8_t
-APBAHBPrescTable[16] = {
-0, 0, 0, 0, 1, 2, 3, 4, 1, 2, 3, 4, 6, 7, 8, 9};
+static __I uint8_t APBAHBPrescTable[16] = {0, 0, 0, 0, 1, 2, 3, 4, 1, 2, 3, 4, 6, 7, 8, 9};
 
 /* Private function prototypes -----------------------------------------------*/
 /* Private functions ---------------------------------------------------------*/
@@ -145,38 +143,39 @@ APBAHBPrescTable[16] = {
   * @param  None
   * @retval None
   */
-void RCC_DeInit(void) {
-    /* Set HSION bit */
-    RCC->CR |= (uint32_t) 0x00000001;
+void RCC_DeInit(void)
+{
+  /* Set HSION bit */
+  RCC->CR |= (uint32_t)0x00000001;
 
 #if defined (STM32F051)
-    /* Reset SW[1:0], HPRE[3:0], PPRE[2:0] and MCOSEL[2:0] bits */
-    RCC->CFGR &= (uint32_t)0xF8FFB80C;
+  /* Reset SW[1:0], HPRE[3:0], PPRE[2:0] and MCOSEL[2:0] bits */
+  RCC->CFGR &= (uint32_t)0xF8FFB80C;
 #else
-    /* Reset SW[1:0], HPRE[3:0], PPRE[2:0], ADCPRE, MCOSEL[2:0], MCOPRE[2:0] and PLLNODIV bits */
-    RCC->CFGR &= (uint32_t) 0x08FFB80C;
+  /* Reset SW[1:0], HPRE[3:0], PPRE[2:0], ADCPRE, MCOSEL[2:0], MCOPRE[2:0] and PLLNODIV bits */
+  RCC->CFGR &= (uint32_t)0x08FFB80C;
 #endif /* STM32F051 */
+  
+  /* Reset HSEON, CSSON and PLLON bits */
+  RCC->CR &= (uint32_t)0xFEF6FFFF;
 
-    /* Reset HSEON, CSSON and PLLON bits */
-    RCC->CR &= (uint32_t) 0xFEF6FFFF;
+  /* Reset HSEBYP bit */
+  RCC->CR &= (uint32_t)0xFFFBFFFF;
 
-    /* Reset HSEBYP bit */
-    RCC->CR &= (uint32_t) 0xFFFBFFFF;
+  /* Reset PLLSRC, PLLXTPRE and PLLMUL[3:0] bits */
+  RCC->CFGR &= (uint32_t)0xFFC0FFFF;
 
-    /* Reset PLLSRC, PLLXTPRE and PLLMUL[3:0] bits */
-    RCC->CFGR &= (uint32_t) 0xFFC0FFFF;
+  /* Reset PREDIV1[3:0] bits */
+  RCC->CFGR2 &= (uint32_t)0xFFFFFFF0;
 
-    /* Reset PREDIV1[3:0] bits */
-    RCC->CFGR2 &= (uint32_t) 0xFFFFFFF0;
+  /* Reset USARTSW[1:0], I2CSW, CECSW and ADCSW bits */
+  RCC->CFGR3 &= (uint32_t)0xFFF0FEAC;
+  
+  /* Reset HSI14 bit */
+  RCC->CR2 &= (uint32_t)0xFFFFFFFE;
 
-    /* Reset USARTSW[1:0], I2CSW, CECSW and ADCSW bits */
-    RCC->CFGR3 &= (uint32_t) 0xFFF0FEAC;
-
-    /* Reset HSI14 bit */
-    RCC->CR2 &= (uint32_t) 0xFFFFFFFE;
-
-    /* Disable all interrupts */
-    RCC->CIR = 0x00000000;
+  /* Disable all interrupts */
+  RCC->CIR = 0x00000000;
 }
 
 /**
@@ -199,23 +198,16 @@ void RCC_DeInit(void) {
   *            @arg RCC_HSE_Bypass: HSE oscillator bypassed with external clock
   * @retval None
   */
-void RCC_HSEConfig(uint8_t
-RCC_HSE)
+void RCC_HSEConfig(uint8_t RCC_HSE)
 {
-/* Check the parameters */
-assert_param (IS_RCC_HSE(RCC_HSE));
+  /* Check the parameters */
+  assert_param(IS_RCC_HSE(RCC_HSE));
 
-/* Reset HSEON and HSEBYP bits before configuring the HSE ------------------*/
-*(
-__IO uint8_t
-*) CR_BYTE2_ADDRESS =
-RCC_HSE_OFF;
+  /* Reset HSEON and HSEBYP bits before configuring the HSE ------------------*/
+  *(__IO uint8_t *) CR_BYTE2_ADDRESS = RCC_HSE_OFF;
 
-/* Set the new HSE configuration -------------------------------------------*/
-*(
-__IO uint8_t
-*) CR_BYTE2_ADDRESS =
-RCC_HSE;
+  /* Set the new HSE configuration -------------------------------------------*/
+  *(__IO uint8_t *) CR_BYTE2_ADDRESS = RCC_HSE;
 
 }
 
@@ -232,24 +224,28 @@ RCC_HSE;
   *          - SUCCESS: HSE oscillator is stable and ready to use
   *          - ERROR: HSE oscillator not yet ready
   */
-ErrorStatus RCC_WaitForHSEStartUp(void) {
-    __IO
-    uint32_t StartUpCounter = 0;
-    ErrorStatus status = ERROR;
-    FlagStatus HSEStatus = RESET;
-
-    /* Wait till HSE is ready and if timeout is reached exit */
-    do {
-        HSEStatus = RCC_GetFlagStatus(RCC_FLAG_HSERDY);
-        StartUpCounter++;
-    } while ((StartUpCounter != HSE_STARTUP_TIMEOUT) && (HSEStatus == RESET));
-
-    if (RCC_GetFlagStatus(RCC_FLAG_HSERDY) != RESET) {
-        status = SUCCESS;
-    } else {
-        status = ERROR;
-    }
-    return (status);
+ErrorStatus RCC_WaitForHSEStartUp(void)
+{
+  __IO uint32_t StartUpCounter = 0;
+  ErrorStatus status = ERROR;
+  FlagStatus HSEStatus = RESET;
+  
+  /* Wait till HSE is ready and if timeout is reached exit */
+  do
+  {
+    HSEStatus = RCC_GetFlagStatus(RCC_FLAG_HSERDY);
+    StartUpCounter++;  
+  } while((StartUpCounter != HSE_STARTUP_TIMEOUT) && (HSEStatus == RESET));
+  
+  if (RCC_GetFlagStatus(RCC_FLAG_HSERDY) != RESET)
+  {
+    status = SUCCESS;
+  }
+  else
+  {
+    status = ERROR;
+  }  
+  return (status);
 }
 
 /**
@@ -262,26 +258,23 @@ ErrorStatus RCC_WaitForHSEStartUp(void) {
   *          This parameter must be a number between 0 and 0x1F.
   * @retval None
   */
-void RCC_AdjustHSICalibrationValue(uint8_t
-HSICalibrationValue)
+void RCC_AdjustHSICalibrationValue(uint8_t HSICalibrationValue)
 {
-uint32_t tmpreg = 0;
+  uint32_t tmpreg = 0;
+  
+  /* Check the parameters */
+  assert_param(IS_RCC_HSI_CALIBRATION_VALUE(HSICalibrationValue));
+  
+  tmpreg = RCC->CR;
+  
+  /* Clear HSITRIM[4:0] bits */
+  tmpreg &= ~RCC_CR_HSITRIM;
+  
+  /* Set the HSITRIM[4:0] bits according to HSICalibrationValue value */
+  tmpreg |= (uint32_t)HSICalibrationValue << 3;
 
-/* Check the parameters */
-assert_param (IS_RCC_HSI_CALIBRATION_VALUE(HSICalibrationValue));
-
-tmpreg = RCC->CR;
-
-/* Clear HSITRIM[4:0] bits */
-tmpreg &=
-~RCC_CR_HSITRIM;
-
-/* Set the HSITRIM[4:0] bits according to HSICalibrationValue value */
-tmpreg |= (uint32_t)HSICalibrationValue << 3;
-
-/* Store the new value */
-RCC->
-CR = tmpreg;
+  /* Store the new value */
+  RCC->CR = tmpreg;
 }
 
 /**
@@ -299,15 +292,19 @@ CR = tmpreg;
   *         clock cycles.
   * @retval None
   */
-void RCC_HSICmd(FunctionalState NewState) {
-    /* Check the parameters */
-    assert_param(IS_FUNCTIONAL_STATE(NewState));
-
-    if (NewState != DISABLE) {
-        RCC->CR |= RCC_CR_HSION;
-    } else {
-        RCC->CR &= ~RCC_CR_HSION;
-    }
+void RCC_HSICmd(FunctionalState NewState)
+{
+  /* Check the parameters */
+  assert_param(IS_FUNCTIONAL_STATE(NewState));
+  
+  if (NewState != DISABLE)
+  {
+    RCC->CR |= RCC_CR_HSION;
+  }
+  else
+  {
+    RCC->CR &= ~RCC_CR_HSION;
+  }
 }
 
 /**
@@ -321,26 +318,23 @@ void RCC_HSICmd(FunctionalState NewState) {
   *          This parameter must be a number between 0 and 0x1F.
   * @retval None
   */
-void RCC_AdjustHSI14CalibrationValue(uint8_t
-HSI14CalibrationValue)
+void RCC_AdjustHSI14CalibrationValue(uint8_t HSI14CalibrationValue)
 {
-uint32_t tmpreg = 0;
+  uint32_t tmpreg = 0;
+  
+  /* Check the parameters */
+  assert_param(IS_RCC_HSI14_CALIBRATION_VALUE(HSI14CalibrationValue));
+  
+  tmpreg = RCC->CR2;
+  
+  /* Clear HSI14TRIM[4:0] bits */
+  tmpreg &= ~RCC_CR2_HSI14TRIM;
+  
+  /* Set the HSITRIM14[4:0] bits according to HSI14CalibrationValue value */
+  tmpreg |= (uint32_t)HSI14CalibrationValue << 3;
 
-/* Check the parameters */
-assert_param (IS_RCC_HSI14_CALIBRATION_VALUE(HSI14CalibrationValue));
-
-tmpreg = RCC->CR2;
-
-/* Clear HSI14TRIM[4:0] bits */
-tmpreg &=
-~RCC_CR2_HSI14TRIM;
-
-/* Set the HSITRIM14[4:0] bits according to HSI14CalibrationValue value */
-tmpreg |= (uint32_t)HSI14CalibrationValue << 3;
-
-/* Store the new value */
-RCC->
-CR2 = tmpreg;
+  /* Store the new value */
+  RCC->CR2 = tmpreg;
 }
 
 /**
@@ -355,15 +349,19 @@ CR2 = tmpreg;
   *         clock cycles.
   * @retval None
   */
-void RCC_HSI14Cmd(FunctionalState NewState) {
-    /* Check the parameters */
-    assert_param(IS_FUNCTIONAL_STATE(NewState));
-
-    if (NewState != DISABLE) {
-        RCC->CR2 |= RCC_CR2_HSI14ON;
-    } else {
-        RCC->CR2 &= ~RCC_CR2_HSI14ON;
-    }
+void RCC_HSI14Cmd(FunctionalState NewState)
+{
+  /* Check the parameters */
+  assert_param(IS_FUNCTIONAL_STATE(NewState));
+  
+  if (NewState != DISABLE)
+  {
+    RCC->CR2 |= RCC_CR2_HSI14ON;
+  }
+  else
+  {
+    RCC->CR2 &= ~RCC_CR2_HSI14ON;
+  }
 }
 
 /**
@@ -372,15 +370,19 @@ void RCC_HSI14Cmd(FunctionalState NewState) {
   *          This parameter can be: ENABLE or DISABLE.
   * @retval None
   */
-void RCC_HSI14ADCRequestCmd(FunctionalState NewState) {
-    /* Check the parameters */
-    assert_param(IS_FUNCTIONAL_STATE(NewState));
-
-    if (NewState != DISABLE) {
-        RCC->CR2 &= ~RCC_CR2_HSI14DIS;
-    } else {
-        RCC->CR2 |= RCC_CR2_HSI14DIS;
-    }
+void RCC_HSI14ADCRequestCmd(FunctionalState NewState)
+{
+  /* Check the parameters */
+  assert_param(IS_FUNCTIONAL_STATE(NewState));
+  
+  if (NewState != DISABLE)
+  {
+    RCC->CR2 &= ~RCC_CR2_HSI14DIS;
+  }
+  else
+  {
+    RCC->CR2 |= RCC_CR2_HSI14DIS;
+  }
 }
 
 /**
@@ -400,19 +402,20 @@ void RCC_HSI14ADCRequestCmd(FunctionalState NewState) {
   *            @arg RCC_LSE_Bypass: LSE oscillator bypassed with external clock
   * @retval None
   */
-void RCC_LSEConfig(uint32_t RCC_LSE) {
-    /* Check the parameters */
-    assert_param(IS_RCC_LSE(RCC_LSE));
+void RCC_LSEConfig(uint32_t RCC_LSE)
+{
+  /* Check the parameters */
+  assert_param(IS_RCC_LSE(RCC_LSE));
 
-    /* Reset LSEON and LSEBYP bits before configuring the LSE ------------------*/
-    /* Reset LSEON bit */
-    RCC->BDCR &= ~(RCC_BDCR_LSEON);
+  /* Reset LSEON and LSEBYP bits before configuring the LSE ------------------*/
+  /* Reset LSEON bit */
+  RCC->BDCR &= ~(RCC_BDCR_LSEON);
 
-    /* Reset LSEBYP bit */
-    RCC->BDCR &= ~(RCC_BDCR_LSEBYP);
+  /* Reset LSEBYP bit */
+  RCC->BDCR &= ~(RCC_BDCR_LSEBYP);
 
-    /* Configure LSE */
-    RCC->BDCR |= RCC_LSE;
+  /* Configure LSE */
+  RCC->BDCR |= RCC_LSE;
 }
 
 /**
@@ -425,15 +428,16 @@ void RCC_LSEConfig(uint32_t RCC_LSE) {
   *            @arg RCC_LSEDrive_High: LSE oscillator high drive capability.
   * @retval None
   */
-void RCC_LSEDriveConfig(uint32_t RCC_LSEDrive) {
-    /* Check the parameters */
-    assert_param(IS_RCC_LSE_DRIVE(RCC_LSEDrive));
+void RCC_LSEDriveConfig(uint32_t RCC_LSEDrive)
+{
+  /* Check the parameters */
+  assert_param(IS_RCC_LSE_DRIVE(RCC_LSEDrive));
+  
+  /* Clear LSEDRV[1:0] bits */
+  RCC->BDCR &= ~(RCC_BDCR_LSEDRV);
 
-    /* Clear LSEDRV[1:0] bits */
-    RCC->BDCR &= ~(RCC_BDCR_LSEDRV);
-
-    /* Set the LSE Drive */
-    RCC->BDCR |= RCC_LSEDrive;
+  /* Set the LSE Drive */
+  RCC->BDCR |= RCC_LSEDrive;
 }
 
 /**
@@ -448,15 +452,19 @@ void RCC_LSEDriveConfig(uint32_t RCC_LSEDrive) {
   *         clock cycles.
   * @retval None
   */
-void RCC_LSICmd(FunctionalState NewState) {
-    /* Check the parameters */
-    assert_param(IS_FUNCTIONAL_STATE(NewState));
-
-    if (NewState != DISABLE) {
-        RCC->CSR |= RCC_CSR_LSION;
-    } else {
-        RCC->CSR &= ~RCC_CSR_LSION;
-    }
+void RCC_LSICmd(FunctionalState NewState)
+{
+  /* Check the parameters */
+  assert_param(IS_FUNCTIONAL_STATE(NewState));
+  
+  if (NewState != DISABLE)
+  {
+    RCC->CSR |= RCC_CSR_LSION;
+  }
+  else
+  {
+    RCC->CSR &= ~RCC_CSR_LSION;
+  }
 }
 
 /**
@@ -477,16 +485,17 @@ void RCC_LSICmd(FunctionalState NewState) {
   *
   * @retval None
   */
-void RCC_PLLConfig(uint32_t RCC_PLLSource, uint32_t RCC_PLLMul) {
-    /* Check the parameters */
-    assert_param(IS_RCC_PLL_SOURCE(RCC_PLLSource));
-    assert_param(IS_RCC_PLL_MUL(RCC_PLLMul));
+void RCC_PLLConfig(uint32_t RCC_PLLSource, uint32_t RCC_PLLMul)
+{
+  /* Check the parameters */
+  assert_param(IS_RCC_PLL_SOURCE(RCC_PLLSource));
+  assert_param(IS_RCC_PLL_MUL(RCC_PLLMul));
 
-    /* Clear PLL Source [16] and Multiplier [21:18] bits */
-    RCC->CFGR &= ~(RCC_CFGR_PLLMULL | RCC_CFGR_PLLSRC);
+  /* Clear PLL Source [16] and Multiplier [21:18] bits */
+  RCC->CFGR &= ~(RCC_CFGR_PLLMULL | RCC_CFGR_PLLSRC);
 
-    /* Set the PLL Source and Multiplier */
-    RCC->CFGR |= (uint32_t)(RCC_PLLSource | RCC_PLLMul);
+  /* Set the PLL Source and Multiplier */
+  RCC->CFGR |= (uint32_t)(RCC_PLLSource | RCC_PLLMul);
 }
 
 /**
@@ -500,15 +509,19 @@ void RCC_PLLConfig(uint32_t RCC_PLLSource, uint32_t RCC_PLLMul) {
   *          This parameter can be: ENABLE or DISABLE.
   * @retval None
   */
-void RCC_PLLCmd(FunctionalState NewState) {
-    /* Check the parameters */
-    assert_param(IS_FUNCTIONAL_STATE(NewState));
-
-    if (NewState != DISABLE) {
-        RCC->CR |= RCC_CR_PLLON;
-    } else {
-        RCC->CR &= ~RCC_CR_PLLON;
-    }
+void RCC_PLLCmd(FunctionalState NewState)
+{
+  /* Check the parameters */
+  assert_param(IS_FUNCTIONAL_STATE(NewState));
+  
+  if (NewState != DISABLE)
+  {
+    RCC->CR |= RCC_CR_PLLON;
+  }
+  else
+  {
+    RCC->CR &= ~RCC_CR_PLLON;
+  }
 }
 
 /**
@@ -522,15 +535,19 @@ void RCC_PLLCmd(FunctionalState NewState) {
   *          This parameter can be: ENABLE or DISABLE.
   * @retval None
   */
-void RCC_HSI48Cmd(FunctionalState NewState) {
-    /* Check the parameters */
-    assert_param(IS_FUNCTIONAL_STATE(NewState));
-
-    if (NewState != DISABLE) {
-        RCC->CR2 |= RCC_CR2_HSI48ON;
-    } else {
-        RCC->CR2 &= ~RCC_CR2_HSI48ON;
-    }
+void RCC_HSI48Cmd(FunctionalState NewState)
+{
+  /* Check the parameters */
+  assert_param(IS_FUNCTIONAL_STATE(NewState));
+  
+  if (NewState != DISABLE)
+  {
+    RCC->CR2 |= RCC_CR2_HSI48ON;
+  }
+  else
+  {
+    RCC->CR2 &= ~RCC_CR2_HSI48ON;
+  }
 }
 
 /**
@@ -540,19 +557,20 @@ void RCC_HSI48Cmd(FunctionalState NewState) {
   *          This parameter can be RCC_PREDIV1_Divx where x:[1,16]
   * @retval None
   */
-void RCC_PREDIV1Config(uint32_t RCC_PREDIV1_Div) {
-    uint32_t tmpreg = 0;
+void RCC_PREDIV1Config(uint32_t RCC_PREDIV1_Div)
+{
+  uint32_t tmpreg = 0;
+  
+  /* Check the parameters */
+  assert_param(IS_RCC_PREDIV1(RCC_PREDIV1_Div));
 
-    /* Check the parameters */
-    assert_param(IS_RCC_PREDIV1(RCC_PREDIV1_Div));
-
-    tmpreg = RCC->CFGR2;
-    /* Clear PREDIV1[3:0] bits */
-    tmpreg &= ~(RCC_CFGR2_PREDIV1);
-    /* Set the PREDIV1 division factor */
-    tmpreg |= RCC_PREDIV1_Div;
-    /* Store the new value */
-    RCC->CFGR2 = tmpreg;
+  tmpreg = RCC->CFGR2;
+  /* Clear PREDIV1[3:0] bits */
+  tmpreg &= ~(RCC_CFGR2_PREDIV1);
+  /* Set the PREDIV1 division factor */
+  tmpreg |= RCC_PREDIV1_Div;
+  /* Store the new value */
+  RCC->CFGR2 = tmpreg;
 }
 
 /**
@@ -566,15 +584,19 @@ void RCC_PREDIV1Config(uint32_t RCC_PREDIV1_Div) {
   *          This parameter can be: ENABLE or DISABLE.
   * @retval None
   */
-void RCC_ClockSecuritySystemCmd(FunctionalState NewState) {
-    /* Check the parameters */
-    assert_param(IS_FUNCTIONAL_STATE(NewState));
-
-    if (NewState != DISABLE) {
-        RCC->CR |= RCC_CR_CSSON;
-    } else {
-        RCC->CR &= ~RCC_CR_CSSON;
-    }
+void RCC_ClockSecuritySystemCmd(FunctionalState NewState)
+{
+  /* Check the parameters */
+  assert_param(IS_FUNCTIONAL_STATE(NewState));
+  
+  if (NewState != DISABLE)
+  {
+    RCC->CR |= RCC_CR_CSSON;
+  }
+  else
+  {
+    RCC->CR &= ~RCC_CR_CSSON;
+  }
 }
 
 #ifdef STM32F051
@@ -631,28 +653,22 @@ void RCC_MCOConfig(uint8_t RCC_MCOSource)
   *            @arg RCC_MCOPrescaler_128: MCO clock is divided by 128.    
   * @retval None
   */
-void RCC_MCOConfig(uint8_t
-RCC_MCOSource,
-uint32_t RCC_MCOPrescaler
-)
+void RCC_MCOConfig(uint8_t RCC_MCOSource, uint32_t RCC_MCOPrescaler)
 {
-uint32_t tmpreg = 0;
-
-/* Check the parameters */
-assert_param (IS_RCC_MCO_SOURCE(RCC_MCOSource));
-
-assert_param(IS_RCC_MCO_PRESCALER(RCC_MCOPrescaler));
-
-/* Get CFGR value */
-tmpreg = RCC->CFGR;
-/* Clear MCOPRE[2:0] bits */
-tmpreg &=
-~(RCC_CFGR_MCO_PRE | RCC_CFGR_MCO | RCC_CFGR_PLLNODIV);
-/* Set the RCC_MCOSource and RCC_MCOPrescaler */
-tmpreg |= (RCC_MCOPrescaler | ((uint32_t)RCC_MCOSource<<24));
-/* Store the new value */
-RCC->
-CFGR = tmpreg;
+  uint32_t tmpreg = 0;
+  
+  /* Check the parameters */
+  assert_param(IS_RCC_MCO_SOURCE(RCC_MCOSource));
+  assert_param(IS_RCC_MCO_PRESCALER(RCC_MCOPrescaler));
+    
+  /* Get CFGR value */  
+  tmpreg = RCC->CFGR;
+  /* Clear MCOPRE[2:0] bits */
+  tmpreg &= ~(RCC_CFGR_MCO_PRE | RCC_CFGR_MCO | RCC_CFGR_PLLNODIV);
+  /* Set the RCC_MCOSource and RCC_MCOPrescaler */
+  tmpreg |= (RCC_MCOPrescaler | ((uint32_t)RCC_MCOSource<<24));
+  /* Store the new value */
+  RCC->CFGR = tmpreg;
 }
 #endif /* STM32F072 */
 
@@ -753,22 +769,23 @@ CFGR = tmpreg;
   *            @arg RCC_SYSCLKSource_HSI48:  HSI48 selected as system clock source, applicable only for STM32F072 devices  
   * @retval None
   */
-void RCC_SYSCLKConfig(uint32_t RCC_SYSCLKSource) {
-    uint32_t tmpreg = 0;
-
-    /* Check the parameters */
-    assert_param(IS_RCC_SYSCLK_SOURCE(RCC_SYSCLKSource));
-
-    tmpreg = RCC->CFGR;
-
-    /* Clear SW[1:0] bits */
-    tmpreg &= ~RCC_CFGR_SW;
-
-    /* Set SW[1:0] bits according to RCC_SYSCLKSource value */
-    tmpreg |= RCC_SYSCLKSource;
-
-    /* Store the new value */
-    RCC->CFGR = tmpreg;
+void RCC_SYSCLKConfig(uint32_t RCC_SYSCLKSource)
+{
+  uint32_t tmpreg = 0;
+  
+  /* Check the parameters */
+  assert_param(IS_RCC_SYSCLK_SOURCE(RCC_SYSCLKSource));
+  
+  tmpreg = RCC->CFGR;
+  
+  /* Clear SW[1:0] bits */
+  tmpreg &= ~RCC_CFGR_SW;
+  
+  /* Set SW[1:0] bits according to RCC_SYSCLKSource value */
+  tmpreg |= RCC_SYSCLKSource;
+  
+  /* Store the new value */
+  RCC->CFGR = tmpreg;
 }
 
 /**
@@ -781,8 +798,9 @@ void RCC_SYSCLKConfig(uint32_t RCC_SYSCLKSource) {
   *           - 0x08: PLL used as system clock
   *           - 0x0C: HSI48 used as system clock, applicable only for STM32F072 devices  
   */
-uint8_t RCC_GetSYSCLKSource(void) {
-    return ((uint8_t)(RCC->CFGR & RCC_CFGR_SWS));
+uint8_t RCC_GetSYSCLKSource(void)
+{
+  return ((uint8_t)(RCC->CFGR & RCC_CFGR_SWS));
 }
 
 /**
@@ -801,22 +819,23 @@ uint8_t RCC_GetSYSCLKSource(void) {
   *            @arg RCC_SYSCLK_Div512: AHB clock = SYSCLK/512
   * @retval None
   */
-void RCC_HCLKConfig(uint32_t RCC_SYSCLK) {
-    uint32_t tmpreg = 0;
-
-    /* Check the parameters */
-    assert_param(IS_RCC_HCLK(RCC_SYSCLK));
-
-    tmpreg = RCC->CFGR;
-
-    /* Clear HPRE[3:0] bits */
-    tmpreg &= ~RCC_CFGR_HPRE;
-
-    /* Set HPRE[3:0] bits according to RCC_SYSCLK value */
-    tmpreg |= RCC_SYSCLK;
-
-    /* Store the new value */
-    RCC->CFGR = tmpreg;
+void RCC_HCLKConfig(uint32_t RCC_SYSCLK)
+{
+  uint32_t tmpreg = 0;
+  
+  /* Check the parameters */
+  assert_param(IS_RCC_HCLK(RCC_SYSCLK));
+  
+  tmpreg = RCC->CFGR;
+  
+  /* Clear HPRE[3:0] bits */
+  tmpreg &= ~RCC_CFGR_HPRE;
+  
+  /* Set HPRE[3:0] bits according to RCC_SYSCLK value */
+  tmpreg |= RCC_SYSCLK;
+  
+  /* Store the new value */
+  RCC->CFGR = tmpreg;
 }
 
 /**
@@ -831,22 +850,23 @@ void RCC_HCLKConfig(uint32_t RCC_SYSCLK) {
   *            @arg RCC_HCLK_Div16: APB clock = HCLK/16
   * @retval None
   */
-void RCC_PCLKConfig(uint32_t RCC_HCLK) {
-    uint32_t tmpreg = 0;
-
-    /* Check the parameters */
-    assert_param(IS_RCC_PCLK(RCC_HCLK));
-
-    tmpreg = RCC->CFGR;
-
-    /* Clear PPRE[2:0] bits */
-    tmpreg &= ~RCC_CFGR_PPRE;
-
-    /* Set PPRE[2:0] bits according to RCC_HCLK value */
-    tmpreg |= RCC_HCLK;
-
-    /* Store the new value */
-    RCC->CFGR = tmpreg;
+void RCC_PCLKConfig(uint32_t RCC_HCLK)
+{
+  uint32_t tmpreg = 0;
+  
+  /* Check the parameters */
+  assert_param(IS_RCC_PCLK(RCC_HCLK));
+  
+  tmpreg = RCC->CFGR;
+  
+  /* Clear PPRE[2:0] bits */
+  tmpreg &= ~RCC_CFGR_PPRE;
+  
+  /* Set PPRE[2:0] bits according to RCC_HCLK value */
+  tmpreg |= RCC_HCLK;
+  
+  /* Store the new value */
+  RCC->CFGR = tmpreg;
 }
 
 /**
@@ -861,19 +881,20 @@ void RCC_PCLKConfig(uint32_t RCC_HCLK) {
   *             @arg RCC_ADCCLK_PCLK_Div4: ADC clock = PCLK/4  
   * @retval None
   */
-void RCC_ADCCLKConfig(uint32_t RCC_ADCCLK) {
-    /* Check the parameters */
-    assert_param(IS_RCC_ADCCLK(RCC_ADCCLK));
+void RCC_ADCCLKConfig(uint32_t RCC_ADCCLK)
+{ 
+  /* Check the parameters */
+  assert_param(IS_RCC_ADCCLK(RCC_ADCCLK));
 
-    /* Clear ADCPRE bit */
-    RCC->CFGR &= ~RCC_CFGR_ADCPRE;
-    /* Set ADCPRE bits according to RCC_PCLK value */
-    RCC->CFGR |= RCC_ADCCLK & 0xFFFF;
+  /* Clear ADCPRE bit */
+  RCC->CFGR &= ~RCC_CFGR_ADCPRE;
+  /* Set ADCPRE bits according to RCC_PCLK value */
+  RCC->CFGR |= RCC_ADCCLK & 0xFFFF;
 
-    /* Clear ADCSW bit */
-    RCC->CFGR3 &= ~RCC_CFGR3_ADCSW;
-    /* Set ADCSW bits according to RCC_ADCCLK value */
-    RCC->CFGR3 |= RCC_ADCCLK >> 16;
+  /* Clear ADCSW bit */
+  RCC->CFGR3 &= ~RCC_CFGR3_ADCSW; 
+  /* Set ADCSW bits according to RCC_ADCCLK value */
+  RCC->CFGR3 |= RCC_ADCCLK >> 16;  
 }
 
 /**
@@ -885,14 +906,15 @@ void RCC_ADCCLKConfig(uint32_t RCC_ADCCLK) {
   *             @arg RCC_CECCLK_LSE: CEC clock = LSE
   * @retval None
   */
-void RCC_CECCLKConfig(uint32_t RCC_CECCLK) {
-    /* Check the parameters */
-    assert_param(IS_RCC_CECCLK(RCC_CECCLK));
+void RCC_CECCLKConfig(uint32_t RCC_CECCLK)
+{ 
+  /* Check the parameters */
+  assert_param(IS_RCC_CECCLK(RCC_CECCLK));
 
-    /* Clear CECSW bit */
-    RCC->CFGR3 &= ~RCC_CFGR3_CECSW;
-    /* Set CECSW bits according to RCC_CECCLK value */
-    RCC->CFGR3 |= RCC_CECCLK;
+  /* Clear CECSW bit */
+  RCC->CFGR3 &= ~RCC_CFGR3_CECSW;
+  /* Set CECSW bits according to RCC_CECCLK value */
+  RCC->CFGR3 |= RCC_CECCLK;
 }
 
 /**
@@ -904,14 +926,15 @@ void RCC_CECCLKConfig(uint32_t RCC_CECCLK) {
   *             @arg RCC_I2C1CLK_SYSCLK: I2C1 clock = System Clock
   * @retval None
   */
-void RCC_I2CCLKConfig(uint32_t RCC_I2CCLK) {
-    /* Check the parameters */
-    assert_param(IS_RCC_I2CCLK(RCC_I2CCLK));
+void RCC_I2CCLKConfig(uint32_t RCC_I2CCLK)
+{ 
+  /* Check the parameters */
+  assert_param(IS_RCC_I2CCLK(RCC_I2CCLK));
 
-    /* Clear I2CSW bit */
-    RCC->CFGR3 &= ~RCC_CFGR3_I2C1SW;
-    /* Set I2CSW bits according to RCC_I2CCLK value */
-    RCC->CFGR3 |= RCC_I2CCLK;
+  /* Clear I2CSW bit */
+  RCC->CFGR3 &= ~RCC_CFGR3_I2C1SW;
+  /* Set I2CSW bits according to RCC_I2CCLK value */
+  RCC->CFGR3 |= RCC_I2CCLK;
 }
 
 /**
@@ -933,29 +956,35 @@ void RCC_I2CCLKConfig(uint32_t RCC_I2CCLK) {
   *             @arg RCC_USART3CLK_HSI: USART3 clock = HSI Clock, applicable only for STM32F091 devices   
   * @retval None
   */
-void RCC_USARTCLKConfig(uint32_t RCC_USARTCLK) {
-    uint32_t tmp = 0;
+void RCC_USARTCLKConfig(uint32_t RCC_USARTCLK)
+{ 
+  uint32_t tmp = 0;
+  
+  /* Check the parameters */
+  assert_param(IS_RCC_USARTCLK(RCC_USARTCLK));
 
-    /* Check the parameters */
-    assert_param(IS_RCC_USARTCLK(RCC_USARTCLK));
+  /* Get USART index */
+  tmp = (RCC_USARTCLK >> 28);
 
-    /* Get USART index */
-    tmp = (RCC_USARTCLK >> 28);
+  /* Clear USARTSW[1:0] bit */
+  if (tmp == (uint32_t)0x00000001)
+  {
+    /* Clear USART1SW[1:0] bit */  
+    RCC->CFGR3 &= ~RCC_CFGR3_USART1SW;
+  }
+  else if (tmp == (uint32_t)0x00000002)
+  {
+    /* Clear USART2SW[1:0] bit */
+    RCC->CFGR3 &= ~RCC_CFGR3_USART2SW;
+  }
+  else 
+  {
+    /* Clear USART3SW[1:0] bit */
+    RCC->CFGR3 &= ~RCC_CFGR3_USART3SW;
+  }
 
-    /* Clear USARTSW[1:0] bit */
-    if (tmp == (uint32_t) 0x00000001) {
-        /* Clear USART1SW[1:0] bit */
-        RCC->CFGR3 &= ~RCC_CFGR3_USART1SW;
-    } else if (tmp == (uint32_t) 0x00000002) {
-        /* Clear USART2SW[1:0] bit */
-        RCC->CFGR3 &= ~RCC_CFGR3_USART2SW;
-    } else {
-        /* Clear USART3SW[1:0] bit */
-        RCC->CFGR3 &= ~RCC_CFGR3_USART3SW;
-    }
-
-    /* Set USARTxSW bits according to RCC_USARTCLK value */
-    RCC->CFGR3 |= RCC_USARTCLK;
+  /* Set USARTxSW bits according to RCC_USARTCLK value */
+  RCC->CFGR3 |= RCC_USARTCLK;
 }
 
 /**
@@ -968,14 +997,15 @@ void RCC_USARTCLKConfig(uint32_t RCC_USARTCLK) {
   *             @arg RCC_USBCLK_PLLCLK: USB clock = PLL clock
   * @retval None
   */
-void RCC_USBCLKConfig(uint32_t RCC_USBCLK) {
-    /* Check the parameters */
-    assert_param(IS_RCC_USBCLK(RCC_USBCLK));
+void RCC_USBCLKConfig(uint32_t RCC_USBCLK)
+{ 
+  /* Check the parameters */
+  assert_param(IS_RCC_USBCLK(RCC_USBCLK));
 
-    /* Clear USBSW bit */
-    RCC->CFGR3 &= ~RCC_CFGR3_USBSW;
-    /* Set USBSW bits according to RCC_USBCLK value */
-    RCC->CFGR3 |= RCC_USBCLK;
+  /* Clear USBSW bit */
+  RCC->CFGR3 &= ~RCC_CFGR3_USBSW;
+  /* Set USBSW bits according to RCC_USBCLK value */
+  RCC->CFGR3 |= RCC_USBCLK;
 }
 
 /**
@@ -1020,143 +1050,184 @@ void RCC_USBCLKConfig(uint32_t RCC_USBCLK) {
   *    
   * @retval None
   */
-void RCC_GetClocksFreq(RCC_ClocksTypeDef *RCC_Clocks) {
-    uint32_t tmp = 0, pllmull = 0, pllsource = 0, prediv1factor = 0, presc = 0, pllclk = 0;
+void RCC_GetClocksFreq(RCC_ClocksTypeDef* RCC_Clocks)
+{
+  uint32_t tmp = 0, pllmull = 0, pllsource = 0, prediv1factor = 0, presc = 0, pllclk = 0;
 
-    /* Get SYSCLK source -------------------------------------------------------*/
-    tmp = RCC->CFGR & RCC_CFGR_SWS;
+  /* Get SYSCLK source -------------------------------------------------------*/
+  tmp = RCC->CFGR & RCC_CFGR_SWS;
+  
+  switch (tmp)
+  {
+    case 0x00:  /* HSI used as system clock */
+      RCC_Clocks->SYSCLK_Frequency = HSI_VALUE;
+      break;
+    case 0x04:  /* HSE used as system clock */
+      RCC_Clocks->SYSCLK_Frequency = HSE_VALUE;
+      break;
+    case 0x08:  /* PLL used as system clock */
+      /* Get PLL clock source and multiplication factor ----------------------*/
+      pllmull = RCC->CFGR & RCC_CFGR_PLLMULL;
+      pllsource = RCC->CFGR & RCC_CFGR_PLLSRC;
+      pllmull = ( pllmull >> 18) + 2;
+      
+      if (pllsource == 0x00)
+      {
+        /* HSI oscillator clock divided by 2 selected as PLL clock entry */
+        pllclk = (HSI_VALUE >> 1) * pllmull;
+      }
+      else
+      {
+        prediv1factor = (RCC->CFGR2 & RCC_CFGR2_PREDIV1) + 1;
+        /* HSE oscillator clock selected as PREDIV1 clock entry */
+        pllclk = (HSE_VALUE / prediv1factor) * pllmull; 
+      }
+      RCC_Clocks->SYSCLK_Frequency = pllclk;      
+      break;
+    case 0x0C:  /* HSI48 used as system clock */
+      RCC_Clocks->SYSCLK_Frequency = HSI48_VALUE;
+      break;
+    default: /* HSI used as system clock */
+      RCC_Clocks->SYSCLK_Frequency = HSI_VALUE;
+      break;
+  }
+  /* Compute HCLK, PCLK clocks frequencies -----------------------------------*/
+  /* Get HCLK prescaler */
+  tmp = RCC->CFGR & RCC_CFGR_HPRE;
+  tmp = tmp >> 4;
+  presc = APBAHBPrescTable[tmp]; 
+  /* HCLK clock frequency */
+  RCC_Clocks->HCLK_Frequency = RCC_Clocks->SYSCLK_Frequency >> presc;
 
-    switch (tmp) {
-        case 0x00:  /* HSI used as system clock */
-            RCC_Clocks->SYSCLK_Frequency = HSI_VALUE;
-            break;
-        case 0x04:  /* HSE used as system clock */
-            RCC_Clocks->SYSCLK_Frequency = HSE_VALUE;
-            break;
-        case 0x08:  /* PLL used as system clock */
-            /* Get PLL clock source and multiplication factor ----------------------*/
-            pllmull = RCC->CFGR & RCC_CFGR_PLLMULL;
-            pllsource = RCC->CFGR & RCC_CFGR_PLLSRC;
-            pllmull = (pllmull >> 18) + 2;
+  /* Get PCLK prescaler */
+  tmp = RCC->CFGR & RCC_CFGR_PPRE;
+  tmp = tmp >> 8;
+  presc = APBAHBPrescTable[tmp];
+  /* PCLK clock frequency */
+  RCC_Clocks->PCLK_Frequency = RCC_Clocks->HCLK_Frequency >> presc;
 
-            if (pllsource == 0x00) {
-                /* HSI oscillator clock divided by 2 selected as PLL clock entry */
-                pllclk = (HSI_VALUE >> 1) * pllmull;
-            } else {
-                prediv1factor = (RCC->CFGR2 & RCC_CFGR2_PREDIV1) + 1;
-                /* HSE oscillator clock selected as PREDIV1 clock entry */
-                pllclk = (HSE_VALUE / prediv1factor) * pllmull;
-            }
-            RCC_Clocks->SYSCLK_Frequency = pllclk;
-            break;
-        case 0x0C:  /* HSI48 used as system clock */
-            RCC_Clocks->SYSCLK_Frequency = HSI48_VALUE;
-            break;
-        default: /* HSI used as system clock */
-            RCC_Clocks->SYSCLK_Frequency = HSI_VALUE;
-            break;
+  /* ADCCLK clock frequency */
+  if((RCC->CFGR3 & RCC_CFGR3_ADCSW) != RCC_CFGR3_ADCSW)
+  {
+    /* ADC Clock is HSI14 Osc. */
+    RCC_Clocks->ADCCLK_Frequency = HSI14_VALUE;
+  }
+  else
+  {
+    if((RCC->CFGR & RCC_CFGR_ADCPRE) != RCC_CFGR_ADCPRE)
+    {
+      /* ADC Clock is derived from PCLK/2 */
+      RCC_Clocks->ADCCLK_Frequency = RCC_Clocks->PCLK_Frequency >> 1;
     }
-    /* Compute HCLK, PCLK clocks frequencies -----------------------------------*/
-    /* Get HCLK prescaler */
-    tmp = RCC->CFGR & RCC_CFGR_HPRE;
-    tmp = tmp >> 4;
-    presc = APBAHBPrescTable[tmp];
-    /* HCLK clock frequency */
-    RCC_Clocks->HCLK_Frequency = RCC_Clocks->SYSCLK_Frequency >> presc;
-
-    /* Get PCLK prescaler */
-    tmp = RCC->CFGR & RCC_CFGR_PPRE;
-    tmp = tmp >> 8;
-    presc = APBAHBPrescTable[tmp];
-    /* PCLK clock frequency */
-    RCC_Clocks->PCLK_Frequency = RCC_Clocks->HCLK_Frequency >> presc;
-
-    /* ADCCLK clock frequency */
-    if ((RCC->CFGR3 & RCC_CFGR3_ADCSW) != RCC_CFGR3_ADCSW) {
-        /* ADC Clock is HSI14 Osc. */
-        RCC_Clocks->ADCCLK_Frequency = HSI14_VALUE;
-    } else {
-        if ((RCC->CFGR & RCC_CFGR_ADCPRE) != RCC_CFGR_ADCPRE) {
-            /* ADC Clock is derived from PCLK/2 */
-            RCC_Clocks->ADCCLK_Frequency = RCC_Clocks->PCLK_Frequency >> 1;
-        } else {
-            /* ADC Clock is derived from PCLK/4 */
-            RCC_Clocks->ADCCLK_Frequency = RCC_Clocks->PCLK_Frequency >> 2;
-        }
-
+    else
+    {
+      /* ADC Clock is derived from PCLK/4 */
+      RCC_Clocks->ADCCLK_Frequency = RCC_Clocks->PCLK_Frequency >> 2;
     }
+    
+  }
 
-    /* CECCLK clock frequency */
-    if ((RCC->CFGR3 & RCC_CFGR3_CECSW) != RCC_CFGR3_CECSW) {
-        /* CEC Clock is HSI/244 */
-        RCC_Clocks->CECCLK_Frequency = HSI_VALUE / 244;
-    } else {
-        /* CECC Clock is LSE Osc. */
-        RCC_Clocks->CECCLK_Frequency = LSE_VALUE;
-    }
+  /* CECCLK clock frequency */
+  if((RCC->CFGR3 & RCC_CFGR3_CECSW) != RCC_CFGR3_CECSW)
+  {
+    /* CEC Clock is HSI/244 */
+    RCC_Clocks->CECCLK_Frequency = HSI_VALUE / 244;
+  }
+  else
+  {
+    /* CECC Clock is LSE Osc. */
+    RCC_Clocks->CECCLK_Frequency = LSE_VALUE;
+  }
 
-    /* I2C1CLK clock frequency */
-    if ((RCC->CFGR3 & RCC_CFGR3_I2C1SW) != RCC_CFGR3_I2C1SW) {
-        /* I2C1 Clock is HSI Osc. */
-        RCC_Clocks->I2C1CLK_Frequency = HSI_VALUE;
-    } else {
-        /* I2C1 Clock is System Clock */
-        RCC_Clocks->I2C1CLK_Frequency = RCC_Clocks->SYSCLK_Frequency;
-    }
+  /* I2C1CLK clock frequency */
+  if((RCC->CFGR3 & RCC_CFGR3_I2C1SW) != RCC_CFGR3_I2C1SW)
+  {
+    /* I2C1 Clock is HSI Osc. */
+    RCC_Clocks->I2C1CLK_Frequency = HSI_VALUE;
+  }
+  else
+  {
+    /* I2C1 Clock is System Clock */
+    RCC_Clocks->I2C1CLK_Frequency = RCC_Clocks->SYSCLK_Frequency;
+  }
 
-    /* USART1CLK clock frequency */
-    if ((RCC->CFGR3 & RCC_CFGR3_USART1SW) == 0x0) {
-        /* USART1 Clock is PCLK */
-        RCC_Clocks->USART1CLK_Frequency = RCC_Clocks->PCLK_Frequency;
-    } else if ((RCC->CFGR3 & RCC_CFGR3_USART1SW) == RCC_CFGR3_USART1SW_0) {
-        /* USART1 Clock is System Clock */
-        RCC_Clocks->USART1CLK_Frequency = RCC_Clocks->SYSCLK_Frequency;
-    } else if ((RCC->CFGR3 & RCC_CFGR3_USART1SW) == RCC_CFGR3_USART1SW_1) {
-        /* USART1 Clock is LSE Osc. */
-        RCC_Clocks->USART1CLK_Frequency = LSE_VALUE;
-    } else if ((RCC->CFGR3 & RCC_CFGR3_USART1SW) == RCC_CFGR3_USART1SW) {
-        /* USART1 Clock is HSI Osc. */
-        RCC_Clocks->USART1CLK_Frequency = HSI_VALUE;
-    }
-
-    /* USART2CLK clock frequency */
-    if ((RCC->CFGR3 & RCC_CFGR3_USART2SW) == 0x0) {
-        /* USART Clock is PCLK */
-        RCC_Clocks->USART2CLK_Frequency = RCC_Clocks->PCLK_Frequency;
-    } else if ((RCC->CFGR3 & RCC_CFGR3_USART2SW) == RCC_CFGR3_USART2SW_0) {
-        /* USART Clock is System Clock */
-        RCC_Clocks->USART2CLK_Frequency = RCC_Clocks->SYSCLK_Frequency;
-    } else if ((RCC->CFGR3 & RCC_CFGR3_USART2SW) == RCC_CFGR3_USART2SW_1) {
-        /* USART Clock is LSE Osc. */
-        RCC_Clocks->USART2CLK_Frequency = LSE_VALUE;
-    } else if ((RCC->CFGR3 & RCC_CFGR3_USART2SW) == RCC_CFGR3_USART2SW) {
-        /* USART Clock is HSI Osc. */
-        RCC_Clocks->USART2CLK_Frequency = HSI_VALUE;
-    }
-
-    /* USART3CLK clock frequency */
-    if ((RCC->CFGR3 & RCC_CFGR3_USART3SW) == 0x0) {
-        /* USART Clock is PCLK */
-        RCC_Clocks->USART3CLK_Frequency = RCC_Clocks->PCLK_Frequency;
-    } else if ((RCC->CFGR3 & RCC_CFGR3_USART3SW) == RCC_CFGR3_USART3SW_0) {
-        /* USART Clock is System Clock */
-        RCC_Clocks->USART3CLK_Frequency = RCC_Clocks->SYSCLK_Frequency;
-    } else if ((RCC->CFGR3 & RCC_CFGR3_USART3SW) == RCC_CFGR3_USART3SW_1) {
-        /* USART Clock is LSE Osc. */
-        RCC_Clocks->USART3CLK_Frequency = LSE_VALUE;
-    } else if ((RCC->CFGR3 & RCC_CFGR3_USART3SW) == RCC_CFGR3_USART3SW) {
-        /* USART Clock is HSI Osc. */
-        RCC_Clocks->USART3CLK_Frequency = HSI_VALUE;
-    }
-
-    /* USBCLK clock frequency */
-    if ((RCC->CFGR3 & RCC_CFGR3_USBSW) != RCC_CFGR3_USBSW) {
-        /* USB Clock is HSI48 */
-        RCC_Clocks->USBCLK_Frequency = HSI48_VALUE;
-    } else {
-        /* USB Clock is PLL clock */
-        RCC_Clocks->USBCLK_Frequency = pllclk;
-    }
+  /* USART1CLK clock frequency */
+  if((RCC->CFGR3 & RCC_CFGR3_USART1SW) == 0x0)
+  {
+    /* USART1 Clock is PCLK */
+    RCC_Clocks->USART1CLK_Frequency = RCC_Clocks->PCLK_Frequency;
+  }
+  else if((RCC->CFGR3 & RCC_CFGR3_USART1SW) == RCC_CFGR3_USART1SW_0)
+  {
+    /* USART1 Clock is System Clock */
+    RCC_Clocks->USART1CLK_Frequency = RCC_Clocks->SYSCLK_Frequency;
+  }
+  else if((RCC->CFGR3 & RCC_CFGR3_USART1SW) == RCC_CFGR3_USART1SW_1)
+  {
+    /* USART1 Clock is LSE Osc. */
+    RCC_Clocks->USART1CLK_Frequency = LSE_VALUE;
+  }
+  else if((RCC->CFGR3 & RCC_CFGR3_USART1SW) == RCC_CFGR3_USART1SW)
+  {
+    /* USART1 Clock is HSI Osc. */
+    RCC_Clocks->USART1CLK_Frequency = HSI_VALUE;
+  }
+  
+  /* USART2CLK clock frequency */
+  if((RCC->CFGR3 & RCC_CFGR3_USART2SW) == 0x0)
+  {
+    /* USART Clock is PCLK */
+    RCC_Clocks->USART2CLK_Frequency = RCC_Clocks->PCLK_Frequency;
+  }
+  else if((RCC->CFGR3 & RCC_CFGR3_USART2SW) == RCC_CFGR3_USART2SW_0)
+  {
+    /* USART Clock is System Clock */
+    RCC_Clocks->USART2CLK_Frequency = RCC_Clocks->SYSCLK_Frequency;
+  }
+  else if((RCC->CFGR3 & RCC_CFGR3_USART2SW) == RCC_CFGR3_USART2SW_1)
+  {
+    /* USART Clock is LSE Osc. */
+    RCC_Clocks->USART2CLK_Frequency = LSE_VALUE;
+  }
+  else if((RCC->CFGR3 & RCC_CFGR3_USART2SW) == RCC_CFGR3_USART2SW)
+  {
+    /* USART Clock is HSI Osc. */
+    RCC_Clocks->USART2CLK_Frequency = HSI_VALUE;
+  }
+  
+  /* USART3CLK clock frequency */
+  if((RCC->CFGR3 & RCC_CFGR3_USART3SW) == 0x0)
+  {
+    /* USART Clock is PCLK */
+    RCC_Clocks->USART3CLK_Frequency = RCC_Clocks->PCLK_Frequency;
+  }
+  else if((RCC->CFGR3 & RCC_CFGR3_USART3SW) == RCC_CFGR3_USART3SW_0)
+  {
+    /* USART Clock is System Clock */
+    RCC_Clocks->USART3CLK_Frequency = RCC_Clocks->SYSCLK_Frequency;
+  }
+  else if((RCC->CFGR3 & RCC_CFGR3_USART3SW) == RCC_CFGR3_USART3SW_1)
+  {
+    /* USART Clock is LSE Osc. */
+    RCC_Clocks->USART3CLK_Frequency = LSE_VALUE;
+  }
+  else if((RCC->CFGR3 & RCC_CFGR3_USART3SW) == RCC_CFGR3_USART3SW)
+  {
+    /* USART Clock is HSI Osc. */
+    RCC_Clocks->USART3CLK_Frequency = HSI_VALUE;
+  }
+  
+  /* USBCLK clock frequency */
+  if((RCC->CFGR3 & RCC_CFGR3_USBSW) != RCC_CFGR3_USBSW)
+  {
+    /* USB Clock is HSI48 */
+    RCC_Clocks->USBCLK_Frequency = HSI48_VALUE;
+  }
+  else
+  {
+    /* USB Clock is PLL clock */
+    RCC_Clocks->USBCLK_Frequency = pllclk;
+  }   
 }
 
 /**
@@ -1211,12 +1282,13 @@ void RCC_GetClocksFreq(RCC_ClocksTypeDef *RCC_Clocks) {
   *                          
   * @retval None
   */
-void RCC_RTCCLKConfig(uint32_t RCC_RTCCLKSource) {
-    /* Check the parameters */
-    assert_param(IS_RCC_RTCCLK_SOURCE(RCC_RTCCLKSource));
-
-    /* Select the RTC clock source */
-    RCC->BDCR |= RCC_RTCCLKSource;
+void RCC_RTCCLKConfig(uint32_t RCC_RTCCLKSource)
+{
+  /* Check the parameters */
+  assert_param(IS_RCC_RTCCLK_SOURCE(RCC_RTCCLKSource));
+  
+  /* Select the RTC clock source */
+  RCC->BDCR |= RCC_RTCCLKSource;
 }
 
 /**
@@ -1227,15 +1299,19 @@ void RCC_RTCCLKConfig(uint32_t RCC_RTCCLKSource) {
   *          This parameter can be: ENABLE or DISABLE.
   * @retval None
   */
-void RCC_RTCCLKCmd(FunctionalState NewState) {
-    /* Check the parameters */
-    assert_param(IS_FUNCTIONAL_STATE(NewState));
-
-    if (NewState != DISABLE) {
-        RCC->BDCR |= RCC_BDCR_RTCEN;
-    } else {
-        RCC->BDCR &= ~RCC_BDCR_RTCEN;
-    }
+void RCC_RTCCLKCmd(FunctionalState NewState)
+{
+  /* Check the parameters */
+  assert_param(IS_FUNCTIONAL_STATE(NewState));
+  
+  if (NewState != DISABLE)
+  {
+    RCC->BDCR |= RCC_BDCR_RTCEN;
+  }
+  else
+  {
+    RCC->BDCR &= ~RCC_BDCR_RTCEN;
+  }
 }
 
 /**
@@ -1246,15 +1322,19 @@ void RCC_RTCCLKCmd(FunctionalState NewState) {
   *          This parameter can be: ENABLE or DISABLE.
   * @retval None
   */
-void RCC_BackupResetCmd(FunctionalState NewState) {
-    /* Check the parameters */
-    assert_param(IS_FUNCTIONAL_STATE(NewState));
-
-    if (NewState != DISABLE) {
-        RCC->BDCR |= RCC_BDCR_BDRST;
-    } else {
-        RCC->BDCR &= ~RCC_BDCR_BDRST;
-    }
+void RCC_BackupResetCmd(FunctionalState NewState)
+{
+  /* Check the parameters */
+  assert_param(IS_FUNCTIONAL_STATE(NewState));
+  
+  if (NewState != DISABLE)
+  {
+    RCC->BDCR |= RCC_BDCR_BDRST;
+  }
+  else
+  {
+    RCC->BDCR &= ~RCC_BDCR_BDRST;
+  }
 }
 
 /**
@@ -1280,16 +1360,20 @@ void RCC_BackupResetCmd(FunctionalState NewState) {
   *          This parameter can be: ENABLE or DISABLE.
   * @retval None
   */
-void RCC_AHBPeriphClockCmd(uint32_t RCC_AHBPeriph, FunctionalState NewState) {
-    /* Check the parameters */
-    assert_param(IS_RCC_AHB_PERIPH(RCC_AHBPeriph));
-    assert_param(IS_FUNCTIONAL_STATE(NewState));
-
-    if (NewState != DISABLE) {
-        RCC->AHBENR |= RCC_AHBPeriph;
-    } else {
-        RCC->AHBENR &= ~RCC_AHBPeriph;
-    }
+void RCC_AHBPeriphClockCmd(uint32_t RCC_AHBPeriph, FunctionalState NewState)
+{
+  /* Check the parameters */
+  assert_param(IS_RCC_AHB_PERIPH(RCC_AHBPeriph));
+  assert_param(IS_FUNCTIONAL_STATE(NewState));
+  
+  if (NewState != DISABLE)
+  {
+    RCC->AHBENR |= RCC_AHBPeriph;
+  }
+  else
+  {
+    RCC->AHBENR &= ~RCC_AHBPeriph;
+  }
 }
 
 /**
@@ -1315,16 +1399,20 @@ void RCC_AHBPeriphClockCmd(uint32_t RCC_AHBPeriph, FunctionalState NewState) {
   *          This parameter can be: ENABLE or DISABLE.
   * @retval None
   */
-void RCC_APB2PeriphClockCmd(uint32_t RCC_APB2Periph, FunctionalState NewState) {
-    /* Check the parameters */
-    assert_param(IS_RCC_APB2_PERIPH(RCC_APB2Periph));
-    assert_param(IS_FUNCTIONAL_STATE(NewState));
+void RCC_APB2PeriphClockCmd(uint32_t RCC_APB2Periph, FunctionalState NewState)
+{
+  /* Check the parameters */
+  assert_param(IS_RCC_APB2_PERIPH(RCC_APB2Periph));
+  assert_param(IS_FUNCTIONAL_STATE(NewState));
 
-    if (NewState != DISABLE) {
-        RCC->APB2ENR |= RCC_APB2Periph;
-    } else {
-        RCC->APB2ENR &= ~RCC_APB2Periph;
-    }
+  if (NewState != DISABLE)
+  {
+    RCC->APB2ENR |= RCC_APB2Periph;
+  }
+  else
+  {
+    RCC->APB2ENR &= ~RCC_APB2Periph;
+  }
 }
 
 /**
@@ -1357,16 +1445,20 @@ void RCC_APB2PeriphClockCmd(uint32_t RCC_APB2Periph, FunctionalState NewState) {
   *          This parameter can be: ENABLE or DISABLE.
   * @retval None
   */
-void RCC_APB1PeriphClockCmd(uint32_t RCC_APB1Periph, FunctionalState NewState) {
-    /* Check the parameters */
-    assert_param(IS_RCC_APB1_PERIPH(RCC_APB1Periph));
-    assert_param(IS_FUNCTIONAL_STATE(NewState));
+void RCC_APB1PeriphClockCmd(uint32_t RCC_APB1Periph, FunctionalState NewState)
+{
+  /* Check the parameters */
+  assert_param(IS_RCC_APB1_PERIPH(RCC_APB1Periph));
+  assert_param(IS_FUNCTIONAL_STATE(NewState));
 
-    if (NewState != DISABLE) {
-        RCC->APB1ENR |= RCC_APB1Periph;
-    } else {
-        RCC->APB1ENR &= ~RCC_APB1Periph;
-    }
+  if (NewState != DISABLE)
+  {
+    RCC->APB1ENR |= RCC_APB1Periph;
+  }
+  else
+  {
+    RCC->APB1ENR &= ~RCC_APB1Periph;
+  }
 }
 
 /**
@@ -1384,16 +1476,20 @@ void RCC_APB1PeriphClockCmd(uint32_t RCC_APB1Periph, FunctionalState NewState) {
   *          This parameter can be: ENABLE or DISABLE.
   * @retval None
   */
-void RCC_AHBPeriphResetCmd(uint32_t RCC_AHBPeriph, FunctionalState NewState) {
-    /* Check the parameters */
-    assert_param(IS_RCC_AHB_RST_PERIPH(RCC_AHBPeriph));
-    assert_param(IS_FUNCTIONAL_STATE(NewState));
+void RCC_AHBPeriphResetCmd(uint32_t RCC_AHBPeriph, FunctionalState NewState)
+{
+  /* Check the parameters */
+  assert_param(IS_RCC_AHB_RST_PERIPH(RCC_AHBPeriph));
+  assert_param(IS_FUNCTIONAL_STATE(NewState));
 
-    if (NewState != DISABLE) {
-        RCC->AHBRSTR |= RCC_AHBPeriph;
-    } else {
-        RCC->AHBRSTR &= ~RCC_AHBPeriph;
-    }
+  if (NewState != DISABLE)
+  {
+    RCC->AHBRSTR |= RCC_AHBPeriph;
+  }
+  else
+  {
+    RCC->AHBRSTR &= ~RCC_AHBPeriph;
+  }
 }
 
 /**
@@ -1416,16 +1512,20 @@ void RCC_AHBPeriphResetCmd(uint32_t RCC_AHBPeriph, FunctionalState NewState) {
   *          This parameter can be: ENABLE or DISABLE.
   * @retval None
   */
-void RCC_APB2PeriphResetCmd(uint32_t RCC_APB2Periph, FunctionalState NewState) {
-    /* Check the parameters */
-    assert_param(IS_RCC_APB2_PERIPH(RCC_APB2Periph));
-    assert_param(IS_FUNCTIONAL_STATE(NewState));
+void RCC_APB2PeriphResetCmd(uint32_t RCC_APB2Periph, FunctionalState NewState)
+{
+  /* Check the parameters */
+  assert_param(IS_RCC_APB2_PERIPH(RCC_APB2Periph));
+  assert_param(IS_FUNCTIONAL_STATE(NewState));
 
-    if (NewState != DISABLE) {
-        RCC->APB2RSTR |= RCC_APB2Periph;
-    } else {
-        RCC->APB2RSTR &= ~RCC_APB2Periph;
-    }
+  if (NewState != DISABLE)
+  {
+    RCC->APB2RSTR |= RCC_APB2Periph;
+  }
+  else
+  {
+    RCC->APB2RSTR &= ~RCC_APB2Periph;
+  }
 }
 
 /**
@@ -1455,16 +1555,20 @@ void RCC_APB2PeriphResetCmd(uint32_t RCC_APB2Periph, FunctionalState NewState) {
   *          This parameter can be: ENABLE or DISABLE.
   * @retval None
   */
-void RCC_APB1PeriphResetCmd(uint32_t RCC_APB1Periph, FunctionalState NewState) {
-    /* Check the parameters */
-    assert_param(IS_RCC_APB1_PERIPH(RCC_APB1Periph));
-    assert_param(IS_FUNCTIONAL_STATE(NewState));
+void RCC_APB1PeriphResetCmd(uint32_t RCC_APB1Periph, FunctionalState NewState)
+{
+  /* Check the parameters */
+  assert_param(IS_RCC_APB1_PERIPH(RCC_APB1Periph));
+  assert_param(IS_FUNCTIONAL_STATE(NewState));
 
-    if (NewState != DISABLE) {
-        RCC->APB1RSTR |= RCC_APB1Periph;
-    } else {
-        RCC->APB1RSTR &= ~RCC_APB1Periph;
-    }
+  if (NewState != DISABLE)
+  {
+    RCC->APB1RSTR |= RCC_APB1Periph;
+  }
+  else
+  {
+    RCC->APB1RSTR &= ~RCC_APB1Periph;
+  }
 }
 
 /**
@@ -1503,32 +1607,22 @@ void RCC_APB1PeriphResetCmd(uint32_t RCC_APB1Periph, FunctionalState NewState) {
   *          This parameter can be: ENABLE or DISABLE.
   * @retval None
   */
-void RCC_ITConfig(uint8_t
-RCC_IT,
-FunctionalState NewState
-)
+void RCC_ITConfig(uint8_t RCC_IT, FunctionalState NewState)
 {
-/* Check the parameters */
-assert_param (IS_RCC_IT(RCC_IT));
-
-assert_param(IS_FUNCTIONAL_STATE(NewState));
-
-if (NewState != DISABLE)
-{
-/* Perform Byte access to RCC_CIR[13:8] bits to enable the selected interrupts */
-*(
-__IO uint8_t
-*) CIR_BYTE1_ADDRESS |=
-RCC_IT;
-}
-else
-{
-/* Perform Byte access to RCC_CIR[13:8] bits to disable the selected interrupts */
-*(
-__IO uint8_t
-*) CIR_BYTE1_ADDRESS &= (uint8_t)
-~RCC_IT;
-}
+  /* Check the parameters */
+  assert_param(IS_RCC_IT(RCC_IT));
+  assert_param(IS_FUNCTIONAL_STATE(NewState));
+  
+  if (NewState != DISABLE)
+  {
+    /* Perform Byte access to RCC_CIR[13:8] bits to enable the selected interrupts */
+    *(__IO uint8_t *) CIR_BYTE1_ADDRESS |= RCC_IT;
+  }
+  else
+  {
+    /* Perform Byte access to RCC_CIR[13:8] bits to disable the selected interrupts */
+    *(__IO uint8_t *) CIR_BYTE1_ADDRESS &= (uint8_t)~RCC_IT;
+  }
 }
 
 /**
@@ -1552,52 +1646,48 @@ __IO uint8_t
   *             @arg RCC_FLAG_HSI48RDY: HSI48 oscillator clock ready, applicable only for STM32F072 devices    
   * @retval The new state of RCC_FLAG (SET or RESET).
   */
-FlagStatus RCC_GetFlagStatus(uint8_t
-RCC_FLAG)
+FlagStatus RCC_GetFlagStatus(uint8_t RCC_FLAG)
 {
-uint32_t tmp = 0;
-uint32_t statusreg = 0;
-FlagStatus bitstatus = RESET;
+  uint32_t tmp = 0;
+  uint32_t statusreg = 0;
+  FlagStatus bitstatus = RESET;
 
-/* Check the parameters */
-assert_param (IS_RCC_FLAG(RCC_FLAG));
+  /* Check the parameters */
+  assert_param(IS_RCC_FLAG(RCC_FLAG));
 
-/* Get the RCC register index */
-tmp = RCC_FLAG >> 5;
+  /* Get the RCC register index */
+  tmp = RCC_FLAG >> 5;
 
-if (tmp == 0)               /* The flag to check is in CR register */
-{
-statusreg = RCC->CR;
-}
-else if (tmp == 1)          /* The flag to check is in BDCR register */
-{
-statusreg = RCC->BDCR;
-}
-else if (tmp == 2)          /* The flag to check is in CSR register */
-{
-statusreg = RCC->CSR;
-}
-else                        /* The flag to check is in CR2 register */
-{
-statusreg = RCC->CR2;
-}
+  if (tmp == 0)               /* The flag to check is in CR register */
+  {
+    statusreg = RCC->CR;
+  }
+  else if (tmp == 1)          /* The flag to check is in BDCR register */
+  {
+    statusreg = RCC->BDCR;
+  }
+  else if (tmp == 2)          /* The flag to check is in CSR register */
+  {
+    statusreg = RCC->CSR;
+  }
+  else                        /* The flag to check is in CR2 register */
+  {
+    statusreg = RCC->CR2;
+  }    
 
-/* Get the flag position */
-tmp = RCC_FLAG & FLAG_MASK;
+  /* Get the flag position */
+  tmp = RCC_FLAG & FLAG_MASK;
 
-if ((
-statusreg &((uint32_t)
-1 << tmp)) != (uint32_t)RESET)
-{
-bitstatus = SET;
-}
-else
-{
-bitstatus = RESET;
-}
-/* Return the flag status */
-return
-bitstatus;
+  if ((statusreg & ((uint32_t)1 << tmp)) != (uint32_t)RESET)
+  {
+    bitstatus = SET;
+  }
+  else
+  {
+    bitstatus = RESET;
+  }
+  /* Return the flag status */
+  return bitstatus;
 }
 
 /**
@@ -1608,9 +1698,10 @@ bitstatus;
   * @param  None
   * @retval None
   */
-void RCC_ClearFlag(void) {
-    /* Set RMVF bit to clear the reset flags */
-    RCC->CSR |= RCC_CSR_RMVF;
+void RCC_ClearFlag(void)
+{
+  /* Set RMVF bit to clear the reset flags */
+  RCC->CSR |= RCC_CSR_RMVF;
 }
 
 /**
@@ -1627,28 +1718,24 @@ void RCC_ClearFlag(void) {
   *             @arg RCC_IT_CSS: Clock Security System interrupt
   * @retval The new state of RCC_IT (SET or RESET).
   */
-ITStatus RCC_GetITStatus(uint8_t
-RCC_IT)
+ITStatus RCC_GetITStatus(uint8_t RCC_IT)
 {
-ITStatus bitstatus = RESET;
-
-/* Check the parameters */
-assert_param(IS_RCC_GET_IT(RCC_IT));
-
-/* Check the status of the specified RCC interrupt */
-if ((RCC->
-CIR &RCC_IT
-) != (uint32_t)RESET)
-{
-bitstatus = SET;
-}
-else
-{
-bitstatus = RESET;
-}
-/* Return the RCC_IT status */
-return
-bitstatus;
+  ITStatus bitstatus = RESET;
+  
+  /* Check the parameters */
+  assert_param(IS_RCC_GET_IT(RCC_IT));
+  
+  /* Check the status of the specified RCC interrupt */
+  if ((RCC->CIR & RCC_IT) != (uint32_t)RESET)
+  {
+    bitstatus = SET;
+  }
+  else
+  {
+    bitstatus = RESET;
+  }
+  /* Return the RCC_IT status */
+  return  bitstatus;
 }
 
 /**
@@ -1665,18 +1752,14 @@ bitstatus;
   *             @arg RCC_IT_CSS: Clock Security System interrupt
   * @retval None
   */
-void RCC_ClearITPendingBit(uint8_t
-RCC_IT)
+void RCC_ClearITPendingBit(uint8_t RCC_IT)
 {
-/* Check the parameters */
-assert_param(IS_RCC_CLEAR_IT(RCC_IT));
-
-/* Perform Byte access to RCC_CIR[23:16] bits to clear the selected interrupt
-   pending bits */
-*(
-__IO uint8_t
-*) CIR_BYTE2_ADDRESS =
-RCC_IT;
+  /* Check the parameters */
+  assert_param(IS_RCC_CLEAR_IT(RCC_IT));
+  
+  /* Perform Byte access to RCC_CIR[23:16] bits to clear the selected interrupt
+     pending bits */
+  *(__IO uint8_t *) CIR_BYTE2_ADDRESS = RCC_IT;
 }
 
 /**

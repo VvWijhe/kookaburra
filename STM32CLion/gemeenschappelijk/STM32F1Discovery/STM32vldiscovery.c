@@ -18,39 +18,39 @@
 * CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
 *
 * <h2><center>&copy; COPYRIGHT 2010 STMicroelectronics</center></h2>
-*/
-
+*/ 
+  
 /* Includes ------------------------------------------------------------------*/
 #include "STM32vldiscovery.h"
 
 /** @defgroup STM32vldiscovery_Private_TypesDefinitions
  * @{
- */
+ */ 
 /**
  * @}
- */
+ */ 
 
 
 /** @defgroup STM32vldiscovery_Private_Defines
  * @{
- */
+ */ 
 /**
  * @}
- */
+ */ 
 
 
 /** @defgroup STM32vldiscovery_Private_Macros
  * @{
- */
+ */ 
 /**
  * @}
- */
+ */ 
 
 
 /** @defgroup STM32vldiscovery_Private_Variables
  * @{
- */
-GPIO_TypeDef *GPIO_PORT[LEDn] = {LED3_GPIO_PORT, LED4_GPIO_PORT};
+ */ 
+GPIO_TypeDef* GPIO_PORT[LEDn] = {LED3_GPIO_PORT, LED4_GPIO_PORT};
 
 const uint16_t GPIO_PIN[LEDn] = {LED3_PIN, LED4_PIN};
 
@@ -60,27 +60,27 @@ const uint16_t BUTTON_PIN_SOURCE[BUTTONn] = {USER_BUTTON_EXTI_PIN_SOURCE};
 
 const uint16_t BUTTON_PORT_SOURCE[BUTTONn] = {USER_BUTTON_EXTI_PORT_SOURCE};
 
-GPIO_TypeDef *BUTTON_PORT[BUTTONn] = {USER_BUTTON_GPIO_PORT};
+GPIO_TypeDef* BUTTON_PORT[BUTTONn] = {USER_BUTTON_GPIO_PORT}; 
 
-const uint16_t BUTTON_PIN[BUTTONn] = {USER_BUTTON_PIN};
+const uint16_t BUTTON_PIN[BUTTONn] = {USER_BUTTON_PIN}; 
 
 const uint32_t BUTTON_CLK[BUTTONn] = {USER_BUTTON_GPIO_CLK};
 
 const uint16_t BUTTON_EXTI_LINE[BUTTONn] = {USER_BUTTON_EXTI_LINE};
 
-const uint16_t BUTTON_IRQn[BUTTONn] = {USER_BUTTON_EXTI_IRQn};
+const uint16_t BUTTON_IRQn[BUTTONn] = {USER_BUTTON_EXTI_IRQn};					 
 
 /** @defgroup STM32vldiscovery_Private_FunctionPrototypes
  * @{
- */
+ */ 
 /**
  * @}
- */
+ */ 
 
 
 /** @defgroup STM32vldiscovery_Private_Functions
  * @{
- */
+ */ 
 
 /**
  * @brief  Configures LED GPIO.
@@ -90,15 +90,16 @@ const uint16_t BUTTON_IRQn[BUTTONn] = {USER_BUTTON_EXTI_IRQn};
  *     @arg LED4
  * @retval None
  */
-void STM32vldiscovery_LEDInit(Led_TypeDef Led) {
-    GPIO_InitTypeDef GPIO_InitStructure;
-
+void STM32vldiscovery_LEDInit(Led_TypeDef Led)
+{
+    GPIO_InitTypeDef  GPIO_InitStructure;
+  
     /* Enable the GPIO_LED Clock */
     RCC_APB2PeriphClockCmd(GPIO_CLK[Led], ENABLE);
 
     /* Configure the GPIO_LED pin */
     GPIO_InitStructure.GPIO_Pin = GPIO_PIN[Led];
-
+  
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
     GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
     GPIO_Init(GPIO_PORT[Led], &GPIO_InitStructure);
@@ -112,8 +113,9 @@ void STM32vldiscovery_LEDInit(Led_TypeDef Led) {
  *     @arg LED4  
  * @retval None
  */
-void STM32vldiscovery_LEDOn(Led_TypeDef Led) {
-    GPIO_PORT[Led]->BSRR = GPIO_PIN[Led];
+void STM32vldiscovery_LEDOn(Led_TypeDef Led)
+{
+    GPIO_PORT[Led]->BSRR = GPIO_PIN[Led];   
 }
 
 /**
@@ -124,8 +126,9 @@ void STM32vldiscovery_LEDOn(Led_TypeDef Led) {
  *     @arg LED4 
  * @retval None
  */
-void STM32vldiscovery_LEDOff(Led_TypeDef Led) {
-    GPIO_PORT[Led]->BRR = GPIO_PIN[Led];
+void STM32vldiscovery_LEDOff(Led_TypeDef Led)
+{
+    GPIO_PORT[Led]->BRR = GPIO_PIN[Led];   
 }
 
 /**
@@ -136,7 +139,8 @@ void STM32vldiscovery_LEDOff(Led_TypeDef Led) {
  *     @arg LED4  
  * @retval None
  */
-void STM32vldiscovery_LEDToggle(Led_TypeDef Led) {
+void STM32vldiscovery_LEDToggle(Led_TypeDef Led)
+{
     GPIO_PORT[Led]->ODR ^= GPIO_PIN[Led];
 }
 
@@ -152,7 +156,8 @@ void STM32vldiscovery_LEDToggle(Led_TypeDef Led) {
  *                     generation capability  
  * @retval None
  */
-void STM32vldiscovery_PBInit(Button_TypeDef Button, ButtonMode_TypeDef Button_Mode) {
+void STM32vldiscovery_PBInit(Button_TypeDef Button, ButtonMode_TypeDef Button_Mode)
+{
     GPIO_InitTypeDef GPIO_InitStructure;
     EXTI_InitTypeDef EXTI_InitStructure;
     NVIC_InitTypeDef NVIC_InitStructure;
@@ -165,7 +170,8 @@ void STM32vldiscovery_PBInit(Button_TypeDef Button, ButtonMode_TypeDef Button_Mo
     GPIO_InitStructure.GPIO_Pin = BUTTON_PIN[Button];
     GPIO_Init(BUTTON_PORT[Button], &GPIO_InitStructure);
 
-    if (Button_Mode == BUTTON_MODE_EXTI) {
+    if (Button_Mode == BUTTON_MODE_EXTI)
+    {
         /* Connect Button EXTI Line to Button GPIO Pin */
         GPIO_EXTILineConfig(BUTTON_PORT_SOURCE[Button], BUTTON_PIN_SOURCE[Button]);
 
@@ -173,7 +179,7 @@ void STM32vldiscovery_PBInit(Button_TypeDef Button, ButtonMode_TypeDef Button_Mo
         EXTI_InitStructure.EXTI_Line = BUTTON_EXTI_LINE[Button];
         EXTI_InitStructure.EXTI_Mode = EXTI_Mode_Interrupt;
 
-        EXTI_InitStructure.EXTI_Trigger = EXTI_Trigger_Rising;
+        EXTI_InitStructure.EXTI_Trigger = EXTI_Trigger_Rising;  
 
         EXTI_InitStructure.EXTI_LineCmd = ENABLE;
         EXTI_Init(&EXTI_InitStructure);
@@ -184,7 +190,7 @@ void STM32vldiscovery_PBInit(Button_TypeDef Button, ButtonMode_TypeDef Button_Mo
         NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0x0F;
         NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
 
-        NVIC_Init(&NVIC_InitStructure);
+        NVIC_Init(&NVIC_InitStructure); 
     }
 }
 
@@ -195,29 +201,30 @@ void STM32vldiscovery_PBInit(Button_TypeDef Button, ButtonMode_TypeDef Button_Mo
  *     @arg BUTTON_USER: USER Push Button 
  * @retval The Button GPIO pin value.
  */
-uint32_t STM32vldiscovery_PBGetState(Button_TypeDef Button) {
+uint32_t STM32vldiscovery_PBGetState(Button_TypeDef Button)
+{
     return GPIO_ReadInputDataBit(BUTTON_PORT[Button], BUTTON_PIN[Button]);
 }
 
 /**
  * @}
- */
+ */ 
+
+/**
+ * @}
+ */ 
+
+
+/**
+ * @}
+ */ 
+
+/**
+ * @}
+ */ 
 
 /**
  * @}
  */
-
-
-/**
- * @}
- */
-
-/**
- * @}
- */
-
-/**
- * @}
- */
-
+    
 /******************* (C) COPYRIGHT 2010 STMicroelectronics *****END OF FILE****/

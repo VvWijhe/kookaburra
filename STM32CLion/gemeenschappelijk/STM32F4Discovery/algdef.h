@@ -24,13 +24,13 @@
 #ifdef  FALSE
 #define False		FALSE
 #else
-#define False        0
+#define False		0
 #endif
 
 #ifdef  TRUE
 #define True		TRUE
 #else
-#define True        1
+#define True		1
 #endif
 
 #ifndef NULL
@@ -45,34 +45,35 @@
 
 /* Basic Types
  */
-typedef char Char;
-typedef unsigned char UChar;
-typedef unsigned int UInt;
-typedef int Int;
-typedef float Float;
-typedef double Double;
+typedef char	 		Char;
+typedef unsigned char		UChar;
+typedef unsigned int		UInt;
+typedef int			Int;
+typedef float			Float;
+typedef double			Double;
 
 /* Sized Types
  */
-typedef signed char Int8;
-typedef unsigned char UInt8;
-typedef signed short Int16;
-typedef unsigned short UInt16;
-typedef signed long Int32;
-typedef unsigned long UInt32;
-typedef long long Int64;
-typedef unsigned long long UInt64;
+typedef signed char		Int8;
+typedef unsigned char		UInt8;
+typedef signed short		Int16;
+typedef unsigned short		UInt16;
+typedef signed long 		Int32;
+typedef unsigned long		UInt32;
+typedef long long		Int64; 
+typedef unsigned long long	UInt64; 
 
 /* Bool Type  */
-typedef UInt32 Bool32;
-typedef UInt16 Bool16;
-typedef UInt8 Bool8;
+typedef UInt32			Bool32;	
+typedef UInt16			Bool16;
+typedef UInt8			Bool8;
 
 
 /* algemene funktie foutmelding */
 
-typedef enum {
-    Ok = 0,
+typedef enum
+{
+    Ok=0,
     Waarschuwing,
     Fout,
     Ernstig,
@@ -80,44 +81,45 @@ typedef enum {
     ReserveFoutCode
 } FoutCode;
 
-typedef enum {
-    SchakelaarUit = 0,
+typedef enum
+{
+    SchakelaarUit=0,
     SchakelaarAan,
-    SchakelaarOm,
+	SchakelaarOm,
     SchakelaarEinde
 } Schakelaar;
 
 
-typedef UInt32 Teller;             /* standaard breedte van de ARM7 */
-typedef Int32 STeller;             /* standaard breedte van de ARM7 */
+typedef UInt32 Teller;             /* standaard breedte van de ARM7 */ 
+typedef Int32 STeller;             /* standaard breedte van de ARM7 */ 
 typedef float WiskundeFloatType;   /* schakel tussen enkel en dubbel precisie */
 
 
 /* funkties en inline funkties */
 
-/* bitsgewijze operatie macros . Geef bits aan als nummer en niet als 2 tot de macht (nummer) */
-#define SetBit(x, y)          x |= (1<<y) /* Set bit y in byte x*/
-#define ClearBit(x, y)        x &= (~(1<<(y))) /* Clear bit y in byte x*/
-#define CheckBit(x, y)        (x & (1<<y))  /* Check bit y in byte x*/
-#define EnterBit(x, y, b)      if (b)  SetBit(x,y) else  ClearBit(x,y)  /* zet bit y in byte x gelijk aan b */
-#define CopyBit(a, b, x, y)     EnterBit((x),(y), (CheckBit(a,b)) ) /* kopieer bit b in byte a naar bit y in byte x */  //    (x =  (x&(~(1<<(y))))  | ((a & (1<<b) ) << (y-b) ) )  /* kopieer bit b in byte a naar bit y in byte x */
-#define ToggleBit(x, y)       x = (x ^ (1<<y));  /* verander bit y in byte x */
+/* bitsgewijze operatie macros . Geef bits aan als nummer en niet als 2 tot de macht (nummer) */ 
+#define SetBit(x,y)          x |= (1<<y) /* Set bit y in byte x*/ 
+#define ClearBit(x,y)        x &= (~(1<<(y))) /* Clear bit y in byte x*/ 
+#define CheckBit(x,y)        (x & (1<<y))  /* Check bit y in byte x*/
+#define EnterBit(x,y,b)      if (b)  SetBit(x,y) else  ClearBit(x,y)  /* zet bit y in byte x gelijk aan b */
+#define CopyBit(a,b,x,y)     EnterBit((x),(y), (CheckBit(a,b)) ) /* kopieer bit b in byte a naar bit y in byte x */  //    (x =  (x&(~(1<<(y))))  | ((a & (1<<b) ) << (y-b) ) )  /* kopieer bit b in byte a naar bit y in byte x */
+#define ToggleBit(x,y)       x = (x ^ (1<<y));  /* verander bit y in byte x */
 
-/* bitsgewijze operatie macros . Geef bits als 2 tot de macht (nummer) */
+/* bitsgewijze operatie macros . Geef bits als 2 tot de macht (nummer) */ 
 /* Werkt in samenhang met Atmel AT91 bitdefinities */
-#define SetBitM(var, bit)          var |= (bit) /* Set bit bit in byte var*/
-#define ClearBitM(var, bit)        var &= (~(bit))  /* Clear bit y in bbitte var*/
-#define CheckBitM(var, bit)        (var & (bit))  /* Check bit y in byte var*/
-#define EnterBitM(var, bit, b)      if (b) SetBitM(var,bit) else ClearBitM(var,bit)  /* zet bit bit in byte var gelijk aan b */
-#define CoybitBitM(src, srcbit, dest, destbit)     EnterBitM((dest),(destbit), (CheckBitM(src,srcbit)) ) /* kopieer bit b in byte a naar bit bit in byte var */  //    (var =  (var&(~(1<<(bit))))  | ((a & (1<<b) ) << (bit-b) ) )  /* kopieer bit b in bbitte a naar bit bit in byte var */
-#define ToggleBitM(var, bit)       var = (var ^ (bit))  /* flip bit y in byte var */
+#define SetBitM(var,bit)          var |= (bit) /* Set bit bit in byte var*/ 
+#define ClearBitM(var,bit)        var &= (~(bit))  /* Clear bit y in bbitte var*/ 
+#define CheckBitM(var,bit)        (var & (bit))  /* Check bit y in byte var*/
+#define EnterBitM(var,bit,b)      if (b) SetBitM(var,bit) else ClearBitM(var,bit)  /* zet bit bit in byte var gelijk aan b */
+#define CoybitBitM(src,srcbit,dest,destbit)     EnterBitM((dest),(destbit), (CheckBitM(src,srcbit)) ) /* kopieer bit b in byte a naar bit bit in byte var */  //    (var =  (var&(~(1<<(bit))))  | ((a & (1<<b) ) << (bit-b) ) )  /* kopieer bit b in bbitte a naar bit bit in byte var */
+#define ToggleBitM(var,bit)       var = (var ^ (bit))  /* flip bit y in byte var */
 
 
 /* tel b bij a op binnen 'bits' aantal bits. Bij een overflow over 'bits' bits wordt slechts het restant doorgegeven */
 /* Werkt alleen bij unsigned integers !!! */
-#define kiwandaTelBinnenBits(a, b, bits)  ( ( (a+b) < (1<<bits) ) ? a+b : (a+b-1-(1<<bits)))
+#define kiwandaTelBinnenBits(a,b, bits)  ( ( (a+b) < (1<<bits) ) ? a+b : (a+b-1-(1<<bits)))  
 
-
+    
 /* Bit definities */
 #define KBit0                0x01
 #define KBit1                0x02
@@ -137,13 +139,15 @@ typedef float WiskundeFloatType;   /* schakel tussen enkel en dubbel precisie */
 
 #define Hoog              1
 #define Laag              0
-
+                              
 #define ReturnIsOk(a)  ( ( (a) == Ok ) ? True : False )
 #define ReturnIsNietOk(a)  ( ( (a) != Ok ) ? True : False )
 
 
-typedef enum {
-    BreukRelNummers_0 = 0,
+
+typedef enum
+{
+    BreukRelNummers_0=0,
     BreukRelNummers_1,
     BreukRelNummers_2,
     BreukRelNummers_3,
@@ -155,67 +159,69 @@ typedef enum {
     BreukRelNummers_Einde
 } BreukRelAantalRelevanteNummers;
 
-class Breuk {
+class Breuk
+{
 public:
     Breuk(const STeller t,     /* de teller */
-          const STeller n = 1);  /* de noemer. standaard = 1 --> geheel getal */
+          const STeller n=1);  /* de noemer. standaard = 1 --> geheel getal */
 
     Breuk(const WiskundeFloatType,          /* input: floating point getal */
-          const BreukRelAantalRelevanteNummers);           /* aantal relevante cijfers in het drijvende komma getal */
+	  const BreukRelAantalRelevanteNummers );           /* aantal relevante cijfers in het drijvende komma getal */
 
-    bool operator!=(const Breuk &) const;
+    bool operator != (const Breuk &) const;
+    bool operator == (const Breuk &) const;
 
-    bool operator==(const Breuk &) const;
+    Breuk operator + (const Breuk &) const;
 
-    Breuk operator+(const Breuk &) const;
+    Breuk operator + (const STeller ) const;
+  
+    Breuk operator - (const Breuk &) const;
 
-    Breuk operator+(const STeller) const;
+    Breuk operator - (const STeller ) const;
 
-    Breuk operator-(const Breuk &) const;
+    Breuk & operator += (const Breuk &);
+    Breuk & operator -= (const Breuk &);
+   
+    Breuk & operator *= (const STeller);
+    Breuk & operator *= (const Breuk &);
 
-    Breuk operator-(const STeller) const;
+    Breuk  operator * (const STeller) const;
+    Breuk  operator * (const Breuk &) const;
 
-    Breuk &operator+=(const Breuk &);
-
-    Breuk &operator-=(const Breuk &);
-
-    Breuk &operator*=(const STeller);
-
-    Breuk &operator*=(const Breuk &);
-
-    Breuk operator*(const STeller) const;
-
-    Breuk operator*(const Breuk &) const;
-
-    Breuk &operator/=(const STeller);
-
-    Breuk operator/(const STeller) const;
-
-    Breuk operator/(const Breuk &) const;
+    Breuk & operator /= (const STeller);
+    Breuk  operator / (const STeller) const;
+    Breuk  operator / (const Breuk &) const;
 
 
-    STeller teller() const {
-        return (tel);
-    }
+    STeller teller() const
+        {
+            return(tel);
+        }
 
-    STeller noemer() const {
-        return (noem);
-    }
-
-    STeller
-    vermenigvuldig(const STeller) const; /* vermenigvuldig breuk met STeller en rond af naar dichtbijzijnde STeller*/
+    STeller noemer() const
+        {
+            return(noem);
+        }
+    
+    STeller vermenigvuldig(const STeller) const; /* vermenigvuldig breuk met STeller en rond af naar dichtbijzijnde STeller*/
 
     WiskundeFloatType geefFloat() const;  /* geef breuk als float */
-
+ 
     STeller rondAf() const;   /* rond breuk af naar integer */
-
+    
 protected:
     void normaliseer();
 
 private:
-    STeller tel, noem;
+    STeller tel,noem;
     static const Int32 nulWerkers[];
 };
+
+
+
+
+
+
 
 
 #endif  /* ALGDEF_H */

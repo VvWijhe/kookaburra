@@ -334,7 +334,7 @@
                  If you need I2C1 device, uncomment relative define: #define CPAL_USE_I2C1.
                  All available I2Cx device can be used at the same time.
                  At least one I2C device should be selected. */
-
+        
 #define CPAL_USE_I2C1          /*<! Uncomment to use I2C1 device */
 #define CPAL_USE_I2C2          /*<! Uncomment to use I2C2 device */
 #define CPAL_USE_I2C3          /*<! Uncomment to use I2C3 device */
@@ -345,7 +345,7 @@
 /*  -- Section 2 :                **** Transfer Options Configuration ****
 
     Description: This section allows user to enable/disable some Transfer Options. The benefits of these 
-                 defines is to minimize the size of the source code  */
+                 defines is to minimize the size of the source code  */                             
 
 /* Enable the use of Master Mode */
 #define CPAL_I2C_MASTER_MODE
@@ -386,7 +386,7 @@
 
 /* Method1 used for closing communication with master receiver: This method is for the case when
    the I2C interrupts have the highest priority in the application */
-#define CPAL_I2C_CLOSECOM_METHOD1
+#define CPAL_I2C_CLOSECOM_METHOD1 
 
 /* Method2 used for closing communication with master receiver: This method is for the case when 
    the I2C interrupts do not have the highest priority in the application */
@@ -405,14 +405,14 @@
                  By default, All UserCallbacks are disabled (UserCallbacks are defined as void functions).
                  To implement a UserCallbacks in your application, comment the relative define and 
                  implement the callback body in your application file.*/
-
+                 
 
 /* Error UserCallbacks Type : Uncomment to select UserCallbacks type. One type must be selected */
 /* Note : if Error UserCallbacks are not used the two following defines must be commented 
  
    WARNING: These two defines are EXCLUSIVE, only one define should be uncommented ! 
  */
-#define USE_SINGLE_ERROR_CALLBACK   /*<! select single UserCallbacks type */
+#define USE_SINGLE_ERROR_CALLBACK   /*<! select single UserCallbacks type */  
 #define USE_MULTIPLE_ERROR_CALLBACK /*<! select multiple UserCallbacks type */
 
 /* Error UserCallbacks : To use an Error UserCallback comment the relative define */
@@ -427,16 +427,16 @@
 #define CPAL_I2C_AF_UserCallback        (void)
 
 /* Transfer UserCallbacks : To use a Transfer callback comment the relative define */
-#define CPAL_I2C_TX_UserCallback        (void)
+#define CPAL_I2C_TX_UserCallback        (void)    
 #define CPAL_I2C_RX_UserCallback        (void)
-#define CPAL_I2C_TXTC_UserCallback      (void)
+#define CPAL_I2C_TXTC_UserCallback      (void)    
 #define CPAL_I2C_RXTC_UserCallback      (void)
 
 /* DMA Transfer UserCallbacks : To use a DMA Transfer UserCallbacks comment the relative define */
-#define CPAL_I2C_DMATXTC_UserCallback   (void)
+#define CPAL_I2C_DMATXTC_UserCallback   (void)  
 #define CPAL_I2C_DMATXHT_UserCallback   (void)
-#define CPAL_I2C_DMATXTE_UserCallback   (void)
-#define CPAL_I2C_DMARXTC_UserCallback   (void)
+#define CPAL_I2C_DMATXTE_UserCallback   (void) 
+#define CPAL_I2C_DMARXTC_UserCallback   (void)  
 #define CPAL_I2C_DMARXHT_UserCallback   (void)
 #define CPAL_I2C_DMARXTE_UserCallback   (void)
 
@@ -449,7 +449,7 @@
 #define CPAL_ExitCriticalSection_UserCallback         __enable_irq
 
 /* Listen mode Callback : Used to handle communication in listen mode */
-#define CPAL_I2C_SLAVE_READ_UserCallback        (void)
+#define CPAL_I2C_SLAVE_READ_UserCallback        (void)    
 #define CPAL_I2C_SLAVE_WRITE_UserCallback       (void)
 
 /*------------------------------------------------------------------------------------------------------------------------------------------------*/
@@ -464,26 +464,24 @@
 
 
 #define _CPAL_TIMEOUT_INIT()           SysTick_Config((SystemCoreClock / 1000));\
-                                       NVIC_SetPriority (SysTick_IRQn, 0)
-/*<! Configure and enable the systick timer
-to generate an interrupt when counter value
-reaches 0. In the Systick interrupt handler
-the Timeout Error function is called. Time base is 1 ms */
+                                       NVIC_SetPriority (SysTick_IRQn, 0) 
+                                       /*<! Configure and enable the systick timer
+                                       to generate an interrupt when counter value
+                                       reaches 0. In the Systick interrupt handler 
+                                       the Timeout Error function is called. Time base is 1 ms */
 
-#define _CPAL_TIMEOUT_DEINIT()         SysTick->CTRL = 0        /*<! Disable the systick timer */
+#define _CPAL_TIMEOUT_DEINIT()         SysTick->CTRL = 0        /*<! Disable the systick timer */ 
 
 
 #define CPAL_I2C_TIMEOUT_Manager       SysTick_Handler         /*<! This callback is used to handle Timeout error.
                                                                      When a timeout occurs CPAL_TIMEOUT_UserCallback
                                                                      is called to handle this error */
 #ifndef CPAL_I2C_TIMEOUT_Manager
-void CPAL_I2C_TIMEOUT_Manager(void);
-#else
-
-void SysTick_Handler(void);
-
+   void CPAL_I2C_TIMEOUT_Manager(void);
+#else   
+   void SysTick_Handler(void);  
 #endif /* CPAL_I2C_TIMEOUT_Manager */ 
-
+                                                                     
 
 /*#define CPAL_TIMEOUT_UserCallback        (void)      */            /*<! Comment this line and implement the callback body in your 
                                                                       application in order to use the Timeout Callback. 
@@ -492,7 +490,7 @@ void SysTick_Handler(void);
 
 /* Maximum Timeout values for each communication operation (preferably, Time base should be 1 Millisecond).
    The exact maximum value is the sum of event timeout value and the CPAL_I2C_TIMEOUT_MIN value defined below */
-#define CPAL_I2C_TIMEOUT_SB             30
+#define CPAL_I2C_TIMEOUT_SB             30             
 #define CPAL_I2C_TIMEOUT_ADDR           3
 #define CPAL_I2C_TIMEOUT_ADD10          3
 #define CPAL_I2C_TIMEOUT_TXE            2
@@ -514,24 +512,24 @@ void SysTick_Handler(void);
                To change CPAL_NVIC_PRIOGROUP uncomment wanted Priority Group and comment others. Only one 
                define is possible. 
                By default Priority Offset of I2Cx device (ERR, EVT, DMA) are set to 0 */
-
-
+                     
+  
 /*-----------NVIC Group Priority-------------*/
-
+  
 /* #define CPAL_NVIC_PRIOGROUP      NVIC_PriorityGroup_0 */ /*!< 0 bits for preemption priority
                                                                        4 bits for subpriority */
-
+  
 /* #define CPAL_NVIC_PRIOGROUP      NVIC_PriorityGroup_1 */ /*!< 1 bits for preemption priority
                                                                        3 bits for subpriority */
-
+  
 #define CPAL_NVIC_PRIOGROUP      NVIC_PriorityGroup_2  /*!< 2 bits for preemption priority
                                                                        2 bits for subpriority */
-
+  
 /* #define CPAL_NVIC_PRIOGROUP       NVIC_PriorityGroup_3 */ /*!< 3 bits for preemption priority
                                                                        1 bits for subpriority */
-
+  
 /* #define CPAL_NVIC_PRIOGROUP       NVIC_PriorityGroup_4 */ /*!< 4 bits for preemption priority */
-
+  
 /*-----------Interrupt Priority Offset-------------*/
 
 /* This defines can be used to decrease the Level of Interrupt Priority for I2Cx Device (ERR, EVT, DMA_TX, DMA_RX).
@@ -539,14 +537,14 @@ void SysTick_Handler(void);
    is added to I2Cx_IT_XXX_PREPRIO (XXX: ERR, EVT, DMATX, DMARX). 
    I2Cx Interrupt Priority are defined in cpal_i2c_hal_stm32f10x.h file in Section 3  */
 
-#define I2C1_IT_OFFSET_SUBPRIO          0      /* I2C1 SUB-PRIORITY Offset */
-#define I2C1_IT_OFFSET_PREPRIO          0      /* I2C1 PREEMPTION PRIORITY Offset */
+#define I2C1_IT_OFFSET_SUBPRIO          0      /* I2C1 SUB-PRIORITY Offset */ 
+#define I2C1_IT_OFFSET_PREPRIO          0      /* I2C1 PREEMPTION PRIORITY Offset */ 
 
-#define I2C2_IT_OFFSET_SUBPRIO          0      /* I2C2 SUB-PRIORITY Offset */
-#define I2C2_IT_OFFSET_PREPRIO          0      /* I2C2 PREEMPTION PRIORITY Offset */
+#define I2C2_IT_OFFSET_SUBPRIO          0      /* I2C2 SUB-PRIORITY Offset */ 
+#define I2C2_IT_OFFSET_PREPRIO          0      /* I2C2 PREEMPTION PRIORITY Offset */ 
 
-#define I2C3_IT_OFFSET_SUBPRIO          0      /* I2C3 SUB-PRIORITY Offset */
-#define I2C3_IT_OFFSET_PREPRIO          0      /* I2C3 PREEMPTION PRIORITY Offset */
+#define I2C3_IT_OFFSET_SUBPRIO          0      /* I2C3 SUB-PRIORITY Offset */ 
+#define I2C3_IT_OFFSET_PREPRIO          0      /* I2C3 PREEMPTION PRIORITY Offset */ 
 
 /*-----------------------------------------------------------------------------------------------------------------------*/
 /*-----------------------------------------------------------------------------------------------------------------------*/
@@ -571,7 +569,7 @@ void SysTick_Handler(void);
     
     WARNING      Be aware that enabling this feature may slow down the communication process, increase the code size
                  significantly, and may in some cases cause communication errors (when print/display mechanism is too slow)*/
-
+                 
 
 /* To Enable CPAL_DEBUG Option Uncomment the define below */
 //#define CPAL_DEBUG

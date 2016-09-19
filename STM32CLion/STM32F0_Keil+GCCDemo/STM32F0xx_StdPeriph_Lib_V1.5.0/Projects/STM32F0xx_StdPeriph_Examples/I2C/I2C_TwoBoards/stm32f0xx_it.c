@@ -42,9 +42,7 @@
 /* Private define ------------------------------------------------------------*/
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
-extern __IO uint32_t
-ActionState,
-RecieverMode;
+extern __IO uint32_t ActionState, RecieverMode;
 
 /* Private function prototypes -----------------------------------------------*/
 /* Private functions ---------------------------------------------------------*/
@@ -58,7 +56,8 @@ RecieverMode;
   * @param  None
   * @retval None
   */
-void NMI_Handler(void) {
+void NMI_Handler(void)
+{
 }
 
 /**
@@ -66,10 +65,12 @@ void NMI_Handler(void) {
   * @param  None
   * @retval None
   */
-void HardFault_Handler(void) {
-    /* Go to infinite loop when Hard Fault exception occurs */
-    while (1) {
-    }
+void HardFault_Handler(void)
+{
+  /* Go to infinite loop when Hard Fault exception occurs */
+  while (1)
+  {
+  }
 }
 
 /**
@@ -77,7 +78,8 @@ void HardFault_Handler(void) {
   * @param  None
   * @retval None
   */
-void SVC_Handler(void) {
+void SVC_Handler(void)
+{
 }
 
 /**
@@ -85,7 +87,8 @@ void SVC_Handler(void) {
   * @param  None
   * @retval None
   */
-void PendSV_Handler(void) {
+void PendSV_Handler(void)
+{
 }
 
 /**
@@ -103,71 +106,82 @@ void PendSV_Handler(void) {
 /*  available peripheral interrupt handler's name please refer to the startup */
 /*  file (startup_stm32f0xx.s).                                            */
 /******************************************************************************/
-
+ 
 /**
   * @brief  This function handles EXTI0_1 interrupt request.
   * @param  None
   * @retval None
   */
-void EXTI0_1_IRQHandler(void) {
-    /* Check if the Key push button has been pushed */
-    if (EXTI_GetFlagStatus(SEL_BUTTON_EXTI_LINE) != RESET) {
-        if ((ActionState == ACTION_NONE) && (RecieverMode == STATE_OFF)) {
-            ActionState = BUTTON_SEL;
-        }
-        /* Clear the interrupt pending bit */
-        EXTI_ClearITPendingBit(SEL_BUTTON_EXTI_LINE);
-    }
+void EXTI0_1_IRQHandler(void)
+{
+  /* Check if the Key push button has been pushed */
+  if (EXTI_GetFlagStatus(SEL_BUTTON_EXTI_LINE) != RESET)  
+  {
+    if ((ActionState == ACTION_NONE) && (RecieverMode == STATE_OFF))
+    {
+      ActionState = BUTTON_SEL;
+    }    
+    /* Clear the interrupt pending bit */
+    EXTI_ClearITPendingBit(SEL_BUTTON_EXTI_LINE);
+  }
 }
-
+  
 /**
   * @brief  This function handles EXTI4_15 interrupt request.
   * @param  None
   * @retval None
   */
-void EXTI4_15_IRQHandler(void) {
-    /* Check if the Tamper push button has been pushed */
-    if (EXTI_GetFlagStatus(TAMPER_BUTTON_EXTI_LINE) != RESET) {
-        if ((ActionState == ACTION_NONE) && (RecieverMode == STATE_OFF)) {
-            ActionState = BUTTON_TAMPER;
-        }
-        /* Clear the interrupt pending bit */
-        EXTI_ClearITPendingBit(TAMPER_BUTTON_EXTI_LINE);
-    }
+void EXTI4_15_IRQHandler(void)
+{   
+  /* Check if the Tamper push button has been pushed */
+  if (EXTI_GetFlagStatus(TAMPER_BUTTON_EXTI_LINE) != RESET)  
+  {
+    if ((ActionState == ACTION_NONE) && (RecieverMode == STATE_OFF))
+    {
+      ActionState = BUTTON_TAMPER;
+    }    
+    /* Clear the interrupt pending bit */
+    EXTI_ClearITPendingBit(TAMPER_BUTTON_EXTI_LINE);
+  }
 }
-
+  
 /**
   * @brief  This function handles TIM6 global interrupt request.
   * @param  None
   * @retval None
-  */
-void TIM6_DAC_IRQHandler(void) {
-    if (TIM_GetITStatus(TIM6, TIM_IT_Update) != RESET) {
-        STM_EVAL_LEDToggle(LED1);
-        STM_EVAL_LEDToggle(LED4);
-
-        TIM_ClearITPendingBit(TIM6, TIM_IT_Update);
-    }
-}
+  */  
+void TIM6_DAC_IRQHandler(void)  
+{
+  if (TIM_GetITStatus(TIM6, TIM_IT_Update) != RESET)
+  {    
+    STM_EVAL_LEDToggle(LED1);
+    STM_EVAL_LEDToggle(LED4);
+    
+    TIM_ClearITPendingBit(TIM6, TIM_IT_Update);
+  } 
+}  
 
 /**
   * @brief  This function handles TIM17 global interrupt request.
   * @param  None
   * @retval None
   */
-void TIM17_IRQHandler(void) {
-    if (TIM_GetITStatus(TIM17, TIM_IT_Update) != RESET) {
-        if ((ActionState == ACTION_NONE) && (RecieverMode == STATE_OFF)) {
-            ActionState = ACTION_PERIODIC;
-        }
-
-        /* Clear Timer interrupt pending bit */
-        TIM_ClearITPendingBit(TIM17, TIM_IT_Update);
-
-        /* Clear Key Button Interrupt pending bit */
-        EXTI_ClearITPendingBit(SEL_BUTTON_EXTI_LINE);
-        EXTI_ClearFlag(SEL_BUTTON_EXTI_LINE);
+void TIM17_IRQHandler(void)
+{
+  if (TIM_GetITStatus(TIM17, TIM_IT_Update) != RESET)
+  {    
+    if ((ActionState == ACTION_NONE) && (RecieverMode == STATE_OFF))
+    {
+      ActionState =  ACTION_PERIODIC ;
     }
+    
+    /* Clear Timer interrupt pending bit */
+    TIM_ClearITPendingBit(TIM17, TIM_IT_Update);
+    
+    /* Clear Key Button Interrupt pending bit */
+    EXTI_ClearITPendingBit(SEL_BUTTON_EXTI_LINE);
+    EXTI_ClearFlag(SEL_BUTTON_EXTI_LINE); 
+  } 
 }
 
 /**
@@ -181,10 +195,10 @@ void TIM17_IRQHandler(void) {
 
 /**
   * @}
-  */
+  */ 
 
 /**
   * @}
-  */
+  */ 
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

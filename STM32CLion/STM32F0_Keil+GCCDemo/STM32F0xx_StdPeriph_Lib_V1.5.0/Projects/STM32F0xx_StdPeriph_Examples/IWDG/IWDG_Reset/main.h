@@ -24,18 +24,16 @@
   *
   ******************************************************************************
   */
-
+  
 /* Define to prevent recursive inclusion -------------------------------------*/
 #ifndef __MAIN_H
 #define __MAIN_H
 
 /* Includes ------------------------------------------------------------------*/
 #ifdef USE_STM320518_EVAL
-#include "stm320518_eval.h"
-#else
-
-#include "stm32072b_eval.h"
-
+  #include "stm320518_eval.h"
+#else 
+  #include "stm32072b_eval.h" 
 #endif /* USE_STM320518_EVAL */
 
 /* Exported types ------------------------------------------------------------*/
@@ -47,9 +45,7 @@
 /* Exported macro ------------------------------------------------------------*/
 /* Exported functions ------------------------------------------------------- */
 void TimingDelay_Decrement(void);
-
 void Delay(__IO uint32_t nTime);
-
 #endif /* __MAIN_H */
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

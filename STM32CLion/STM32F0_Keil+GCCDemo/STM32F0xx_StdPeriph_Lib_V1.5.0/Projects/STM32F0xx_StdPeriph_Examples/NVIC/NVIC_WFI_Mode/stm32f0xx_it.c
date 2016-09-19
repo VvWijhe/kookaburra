@@ -42,8 +42,7 @@
 /* Private define ------------------------------------------------------------*/
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
-extern __IO uint32_t
-LowPowerMode;
+extern __IO uint32_t LowPowerMode;
 
 /* Private function prototypes -----------------------------------------------*/
 /* Private functions ---------------------------------------------------------*/
@@ -57,7 +56,8 @@ LowPowerMode;
   * @param  None
   * @retval None
   */
-void NMI_Handler(void) {
+void NMI_Handler(void)
+{
 }
 
 /**
@@ -65,10 +65,12 @@ void NMI_Handler(void) {
   * @param  None
   * @retval None
   */
-void HardFault_Handler(void) {
-    /* Go to infinite loop when Hard Fault exception occurs */
-    while (1) {
-    }
+void HardFault_Handler(void)
+{
+  /* Go to infinite loop when Hard Fault exception occurs */
+  while (1)
+  {
+  }
 }
 
 /**
@@ -76,7 +78,8 @@ void HardFault_Handler(void) {
   * @param  None
   * @retval None
   */
-void SVC_Handler(void) {
+void SVC_Handler(void)
+{
 }
 
 /**
@@ -84,7 +87,8 @@ void SVC_Handler(void) {
   * @param  None
   * @retval None
   */
-void PendSV_Handler(void) {
+void PendSV_Handler(void)
+{
 }
 
 /**
@@ -92,7 +96,8 @@ void PendSV_Handler(void) {
   * @param  None
   * @retval None
   */
-void SysTick_Handler(void) {
+void SysTick_Handler(void)
+{
 }
 
 /******************************************************************************/
@@ -106,12 +111,14 @@ void SysTick_Handler(void) {
   * @param  None
   * @retval None
   */
-void EXTI4_15_IRQHandler(void) {
-    if (EXTI_GetITStatus(TAMPER_BUTTON_EXTI_LINE) != RESET) {
-        EXTI_ClearITPendingBit(TAMPER_BUTTON_EXTI_LINE);
-
-        LowPowerMode = 1;
-    }
+void EXTI4_15_IRQHandler(void)
+{
+  if(EXTI_GetITStatus(TAMPER_BUTTON_EXTI_LINE) != RESET)
+  {
+    EXTI_ClearITPendingBit(TAMPER_BUTTON_EXTI_LINE);
+  
+    LowPowerMode = 1;
+  }  
 }
 
 /**
@@ -125,10 +132,10 @@ void EXTI4_15_IRQHandler(void) {
 
 /**
   * @}
-  */
+  */ 
 
 /**
   * @}
-  */
+  */ 
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

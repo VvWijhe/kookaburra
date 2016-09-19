@@ -17,14 +17,14 @@
   * CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
   *
   * <h2><center>&copy; COPYRIGHT 2010 STMicroelectronics</center></h2>
-  */
+  */ 
 
 /* Define to prevent recursive inclusion -------------------------------------*/
 #ifndef __STM32F10x_PWR_H
 #define __STM32F10x_PWR_H
 
 #ifdef __cplusplus
-extern "C" {
+ extern "C" {
 #endif
 
 /* Includes ------------------------------------------------------------------*/
@@ -36,23 +36,23 @@ extern "C" {
 
 /** @addtogroup PWR
   * @{
-  */
+  */ 
 
 /** @defgroup PWR_Exported_Types
   * @{
-  */
+  */ 
 
 /**
   * @}
-  */
+  */ 
 
 /** @defgroup PWR_Exported_Constants
   * @{
-  */
+  */ 
 
 /** @defgroup PVD_detection_level 
   * @{
-  */
+  */ 
 
 #define PWR_PVDLevel_2V2          ((uint32_t)0x00000000)
 #define PWR_PVDLevel_2V3          ((uint32_t)0x00000020)
@@ -89,7 +89,7 @@ extern "C" {
 #define PWR_STOPEntry_WFI         ((uint8_t)0x01)
 #define PWR_STOPEntry_WFE         ((uint8_t)0x02)
 #define IS_PWR_STOP_ENTRY(ENTRY) (((ENTRY) == PWR_STOPEntry_WFI) || ((ENTRY) == PWR_STOPEntry_WFE))
-
+ 
 /**
   * @}
   */
@@ -126,21 +126,13 @@ extern "C" {
   */
 
 void PWR_DeInit(void);
-
 void PWR_BackupAccessCmd(FunctionalState NewState);
-
 void PWR_PVDCmd(FunctionalState NewState);
-
 void PWR_PVDLevelConfig(uint32_t PWR_PVDLevel);
-
 void PWR_WakeUpPinCmd(FunctionalState NewState);
-
 void PWR_EnterSTOPMode(uint32_t PWR_Regulator, uint8_t PWR_STOPEntry);
-
 void PWR_EnterSTANDBYMode(void);
-
 FlagStatus PWR_GetFlagStatus(uint32_t PWR_FLAG);
-
 void PWR_ClearFlag(uint32_t PWR_FLAG);
 
 #ifdef __cplusplus

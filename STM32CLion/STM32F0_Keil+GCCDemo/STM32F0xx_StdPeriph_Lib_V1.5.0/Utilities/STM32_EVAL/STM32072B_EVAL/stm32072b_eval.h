@@ -25,13 +25,13 @@
   *
   ******************************************************************************
   */
-
+  
 /* Define to prevent recursive inclusion -------------------------------------*/
 #ifndef __STM32072B_EVAL_H
 #define __STM32072B_EVAL_H
 
 #ifdef __cplusplus
-extern "C" {
+ extern "C" {
 #endif
 
 /* Includes ------------------------------------------------------------------*/
@@ -49,57 +49,63 @@ extern "C" {
 /** @addtogroup STM32072B_EVAL
   * @{
   */
-
+      
 /** @addtogroup STM32072B_EVAL_LOW_LEVEL
   * @{
-  */
+  */ 
 
 /* Exported types ------------------------------------------------------------*/
-typedef enum {
-    LED1 = 0,
-    LED2 = 1,
-    LED3 = 2,
-    LED4 = 3
+typedef enum 
+{
+  LED1 = 0,
+  LED2 = 1,
+  LED3 = 2,
+  LED4 = 3
 } Led_TypeDef;
 
-typedef enum {
-    BUTTON_TAMPER = 0,
-    BUTTON_RIGHT = 1,
-    BUTTON_LEFT = 2,
-    BUTTON_UP = 3,
-    BUTTON_DOWN = 4,
-    BUTTON_SEL = 5
+typedef enum 
+{
+  BUTTON_TAMPER = 0,
+  BUTTON_RIGHT = 1,
+  BUTTON_LEFT = 2,
+  BUTTON_UP = 3,
+  BUTTON_DOWN = 4,
+  BUTTON_SEL = 5
 } Button_TypeDef;
 
-typedef enum {
-    BUTTON_MODE_GPIO = 0,
-    BUTTON_MODE_EXTI = 1
+typedef enum 
+{  
+  BUTTON_MODE_GPIO = 0,
+  BUTTON_MODE_EXTI = 1
 } ButtonMode_TypeDef;
 
-typedef enum {
-    JOY_NONE = 0,
-    JOY_SEL = 1,
-    JOY_DOWN = 2,
-    JOY_LEFT = 3,
-    JOY_RIGHT = 4,
-    JOY_UP = 5
-} JOYState_TypeDef;
+typedef enum 
+{ 
+  JOY_NONE = 0,
+  JOY_SEL = 1,
+  JOY_DOWN = 2,
+  JOY_LEFT = 3,
+  JOY_RIGHT = 4,
+  JOY_UP = 5
+} JOYState_TypeDef
+;
 
-typedef enum {
-    COM1 = 0,
-    COM2 = 1
-} COM_TypeDef;
+typedef enum 
+{
+  COM1 = 0,
+  COM2 = 1
+} COM_TypeDef;   
 
 /* Exported constants --------------------------------------------------------*/
 /** @defgroup STM32072B_EVAL_LOW_LEVEL_Exported_Constants
   * @{
-  */
+  */ 
 
 /** 
   * @brief  Define for STM32072B_EVAL board  
-  */
+  */ 
 #if !defined (USE_STM32072B_EVAL)
-#define USE_STM32072B_EVAL
+ #define USE_STM32072B_EVAL
 #endif
 
 /** @addtogroup STM32072B_EVAL_LOW_LEVEL_LED
@@ -110,26 +116,26 @@ typedef enum {
 #define LED1_PIN                         GPIO_Pin_8
 #define LED1_GPIO_PORT                   GPIOD
 #define LED1_GPIO_CLK                    RCC_AHBPeriph_GPIOD
-
+  
 #define LED2_PIN                         GPIO_Pin_9
 #define LED2_GPIO_PORT                   GPIOD
 #define LED2_GPIO_CLK                    RCC_AHBPeriph_GPIOD
-
+  
 #define LED3_PIN                         GPIO_Pin_10
 #define LED3_GPIO_PORT                   GPIOD
 #define LED3_GPIO_CLK                    RCC_AHBPeriph_GPIOD
-
+  
 #define LED4_PIN                         GPIO_Pin_11
 #define LED4_GPIO_PORT                   GPIOD
 #define LED4_GPIO_CLK                    RCC_AHBPeriph_GPIOD
 
 /**
   * @}
-  */
+  */ 
 
 /** @addtogroup STM32072B_EVAL_LOW_LEVEL_BUTTON
   * @{
-  */
+  */  
 #define BUTTONn                          6
 
 /**
@@ -141,7 +147,7 @@ typedef enum {
 #define TAMPER_BUTTON_EXTI_LINE          EXTI_Line13
 #define TAMPER_BUTTON_EXTI_PORT_SOURCE   EXTI_PortSourceGPIOC
 #define TAMPER_BUTTON_EXTI_PIN_SOURCE    EXTI_PinSource13
-#define TAMPER_BUTTON_EXTI_IRQn          EXTI4_15_IRQn
+#define TAMPER_BUTTON_EXTI_IRQn          EXTI4_15_IRQn 
 
 /**
  * @brief Joystick Right push-button
@@ -163,7 +169,7 @@ typedef enum {
 #define LEFT_BUTTON_EXTI_LINE            EXTI_Line2
 #define LEFT_BUTTON_EXTI_PORT_SOURCE     EXTI_PortSourceGPIOE
 #define LEFT_BUTTON_EXTI_PIN_SOURCE      EXTI_PinSource2
-#define LEFT_BUTTON_EXTI_IRQn            EXTI2_3_IRQn
+#define LEFT_BUTTON_EXTI_IRQn            EXTI2_3_IRQn  
 
 /**
  * @brief Joystick Up push-button
@@ -174,18 +180,18 @@ typedef enum {
 #define UP_BUTTON_EXTI_LINE              EXTI_Line9
 #define UP_BUTTON_EXTI_PORT_SOURCE       EXTI_PortSourceGPIOF
 #define UP_BUTTON_EXTI_PIN_SOURCE        EXTI_PinSource9
-#define UP_BUTTON_EXTI_IRQn              EXTI4_15_IRQn
+#define UP_BUTTON_EXTI_IRQn              EXTI4_15_IRQn  
 
 /**
  * @brief Joystick Down push-button
- */
+ */  
 #define DOWN_BUTTON_PIN                  GPIO_Pin_10
 #define DOWN_BUTTON_GPIO_PORT            GPIOF
 #define DOWN_BUTTON_GPIO_CLK             RCC_AHBPeriph_GPIOF
 #define DOWN_BUTTON_EXTI_LINE            EXTI_Line10
 #define DOWN_BUTTON_EXTI_PORT_SOURCE     EXTI_PortSourceGPIOF
 #define DOWN_BUTTON_EXTI_PIN_SOURCE      EXTI_PinSource10
-#define DOWN_BUTTON_EXTI_IRQn            EXTI4_15_IRQn
+#define DOWN_BUTTON_EXTI_IRQn            EXTI4_15_IRQn  
 
 /**
  * @brief Joystick Sel push-button
@@ -196,11 +202,11 @@ typedef enum {
 #define SEL_BUTTON_EXTI_LINE             EXTI_Line0
 #define SEL_BUTTON_EXTI_PORT_SOURCE      EXTI_PortSourceGPIOA
 #define SEL_BUTTON_EXTI_PIN_SOURCE       EXTI_PinSource0
-#define SEL_BUTTON_EXTI_IRQn             EXTI0_1_IRQn
+#define SEL_BUTTON_EXTI_IRQn             EXTI0_1_IRQn 
 
 /**
   * @}
-  */
+  */ 
 
 
 /** @addtogroup STM32072B_EVAL_LOW_LEVEL_COM
@@ -210,7 +216,7 @@ typedef enum {
 
 /**
  * @brief Definition for COM port1, connected to USART2
- */
+ */ 
 #define EVAL_COM1                        USART2
 #define EVAL_COM1_CLK                    RCC_APB1Periph_USART2
 
@@ -237,7 +243,7 @@ typedef enum {
 #define EVAL_COM1_RTS_GPIO_CLK           RCC_AHBPeriph_GPIOD
 #define EVAL_COM1_RTS_SOURCE             GPIO_PinSource4
 #define EVAL_COM1_RTS_AF                 GPIO_AF_0
-
+   
 #define EVAL_COM1_IRQn                   USART2_IRQn
 
 /**
@@ -286,20 +292,20 @@ typedef enum {
 /**
   * @}
   */
-
+  
 /** @addtogroup STM32072B_EVAL_LOW_LEVEL_LCD_SPI
   * @{
   */
 /**
   * @brief  LCD SPI Interface pins
-  */
+  */  
 
 #define LCD_SPI                       SPI1
 #define LCD_SPI_CLK                   RCC_APB2Periph_SPI1
 
 #define LCD_SPI_SCK_PIN               GPIO_Pin_3                     /* PB.03 */
 #define LCD_SPI_SCK_GPIO_PORT         GPIOB                          /* GPIOB */
-#define LCD_SPI_SCK_GPIO_CLK          RCC_AHBPeriph_GPIOB
+#define LCD_SPI_SCK_GPIO_CLK          RCC_AHBPeriph_GPIOB  
 #define LCD_SPI_SCK_SOURCE            GPIO_PinSource3
 #define LCD_SPI_SCK_AF                GPIO_AF_0
 
@@ -311,24 +317,24 @@ typedef enum {
 
 #define LCD_SPI_MOSI_PIN              GPIO_Pin_15                    /* PA.15 */
 #define LCD_SPI_MOSI_GPIO_PORT        GPIOE                          /* GPIOE */
-#define LCD_SPI_MOSI_GPIO_CLK         RCC_AHBPeriph_GPIOE
+#define LCD_SPI_MOSI_GPIO_CLK         RCC_AHBPeriph_GPIOE  
 #define LCD_SPI_MOSI_SOURCE           GPIO_PinSource15
 #define LCD_SPI_MOSI_AF               GPIO_AF_1
 
 /** 
   * @brief  LCD Control pins  
   */
-
-#define LCD_NCS_PIN                   GPIO_Pin_6                     /* PE.06 */
+  
+#define LCD_NCS_PIN                   GPIO_Pin_6                     /* PE.06 */      
 #define LCD_NCS_GPIO_PORT             GPIOE                          /* GPIOE */
-#define LCD_NCS_GPIO_CLK              RCC_AHBPeriph_GPIOE
+#define LCD_NCS_GPIO_CLK              RCC_AHBPeriph_GPIOE 
 
 
 #define LCD_SD_SPI                       SPI1
 /**
   * @}
-  */
-
+  */  
+  
 /** @addtogroup STM32072B_EVAL_LOW_LEVEL_TSENSOR_I2C
   * @{
   */
@@ -359,16 +365,16 @@ typedef enum {
 /**
   * @}
   */
-
+   
 /** @addtogroup STM32072B_EVAL_LOW_LEVEL_I2C_EE
   * @{
   */
 /**
   * @brief  I2C EEPROM Interface pins
-  */
+  */  
 #define sEE_I2C                          I2C1
 #define sEE_I2C_CLK                      RCC_APB1Periph_I2C1
-
+   
 #define sEE_I2C_SCL_PIN                  GPIO_Pin_6                  /* PB.06 */
 #define sEE_I2C_SCL_GPIO_PORT            GPIOB                       /* GPIOB */
 #define sEE_I2C_SCL_GPIO_CLK             RCC_AHBPeriph_GPIOB
@@ -387,7 +393,7 @@ typedef enum {
 
 /** @addtogroup STM32072B_EVAL_LOW_LEVEL_CEC
   * @{
-  */
+  */  
 /**
   * @brief  HDMI CEC I2C Interface pins
   */
@@ -395,7 +401,7 @@ typedef enum {
 #define HDMI_CEC_I2C_SDA_PIN                                GPIO_Pin_7          /* PB.07 */
 #define HDMI_CEC_I2C_SCL_PIN_SOURCE                         GPIO_PinSource6
 #define HDMI_CEC_I2C_SDA_PIN_SOURCE                         GPIO_PinSource7
-#define HDMI_CEC_I2C_GPIO_PORT                              GPIOB
+#define HDMI_CEC_I2C_GPIO_PORT                              GPIOB               
 #define HDMI_CEC_I2C_GPIO_CLK                               RCC_AHBPeriph_GPIOB
 #define HDMI_CEC_I2C                                        I2C1
 #define HDMI_CEC_I2C_CLK                                    RCC_APB1Periph_I2C1
@@ -432,47 +438,32 @@ typedef enum {
 
 /**
   * @}
-  */
+  */  
 
 /** @defgroup STM32072B_EVAL_LOW_LEVEL_Exported_Functions
   * @{
   */
 void STM_EVAL_LEDInit(Led_TypeDef Led);
-
 void STM_EVAL_LEDOn(Led_TypeDef Led);
-
 void STM_EVAL_LEDOff(Led_TypeDef Led);
-
 void STM_EVAL_LEDToggle(Led_TypeDef Led);
-
 void STM_EVAL_PBInit(Button_TypeDef Button, ButtonMode_TypeDef Button_Mode);
-
 uint32_t STM_EVAL_PBGetState(Button_TypeDef Button);
-
-void STM_EVAL_COMInit(COM_TypeDef COM, USART_InitTypeDef *USART_InitStruct);
-
+void STM_EVAL_COMInit(COM_TypeDef COM, USART_InitTypeDef* USART_InitStruct);
 void SD_LowLevel_DeInit(void);
-
-void SD_LowLevel_Init(void);
-
+void SD_LowLevel_Init(void); 
 uint8_t STM_SPI_WriteRead(uint8_t Data);
-
 void sFLASH_LowLevel_DeInit(void);
-
 void sFLASH_LowLevel_Init(void);
-
 void LM75_LowLevel_DeInit(void);
-
 void LM75_LowLevel_Init(void);
-
 void sEE_LowLevel_DeInit(void);
-
-void sEE_LowLevel_Init(void);
+void sEE_LowLevel_Init(void); 
 
 /**
   * @}
   */
-
+  
 #ifdef __cplusplus
 }
 #endif
@@ -480,7 +471,11 @@ void sEE_LowLevel_Init(void);
 #endif /* __STM32072B_EVAL_H */
 /**
   * @}
-  */
+  */ 
+
+/**
+  * @}
+  */ 
 
 /**
   * @}
@@ -488,10 +483,6 @@ void sEE_LowLevel_Init(void);
 
 /**
   * @}
-  */
-
-/**
-  * @}
-  */
+  */  
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

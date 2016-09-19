@@ -26,6 +26,7 @@
   */
 
 /* Includes ------------------------------------------------------------------*/
+#include "main.h"
 
 /** @addtogroup STM32F0xx_StdPeriph_Examples
   * @{
@@ -41,14 +42,11 @@
 /* Private variables ---------------------------------------------------------*/
 extern uint8_t NbrOfDataToTransfer;
 extern uint8_t NbrOfDataToRead;
-extern __IO uint8_t
-TxCount;
-extern __IO uint16_t
-RxCount;
+extern __IO uint8_t TxCount; 
+extern __IO uint16_t RxCount; 
 
 /* Private function prototypes -----------------------------------------------*/
 static void USART_Config(void);
-
 static void NVIC_Config(void);
 
 
@@ -59,41 +57,46 @@ static void NVIC_Config(void);
   * @param  None
   * @retval None
   */
-int main(void) {
-    /*!< At this stage the microcontroller clock setting is already configured,
-    this is done through SystemInit() function which is called from startup
-    file (startup_stm32f0xx.s) before to branch to application main.
-    To reconfigure the default setting of SystemInit() function, refer to
-    system_stm32f0xx.c file
-    */
-
-    /* NVIC configuration */
-    NVIC_Config();
-
-    /* USART configuration */
-    USART_Config();
-
-    /* Enable the EVAL_COM1 Transmoit interrupt: this interrupt is generated when the
-    EVAL_COM1 transmit data register is empty */
-    USART_ITConfig(EVAL_COM1, USART_IT_TXE, ENABLE);
-
-    /* Wait until EVAL_COM1 send the TxBuffer */
-    while (TxCount < NbrOfDataToTransfer) {}
-
-    /* The software must wait until TC=1. The TC flag remains cleared during all data
-    transfers and it is set by hardware at the last frameï¿½s end of transmission*/
-    while (USART_GetFlagStatus(EVAL_COM1, USART_FLAG_TC) == RESET) {}
-
-    /* Enable the EVAL_COM1 Receive interrupt: this interrupt is generated when the
-    EVAL_COM1 receive data register is not empty */
-    USART_ITConfig(EVAL_COM1, USART_IT_RXNE, ENABLE);
-
-    /* Wait until EVAL_COM1 receive the RxBuffer */
-    while (RxCount < NbrOfDataToRead) {}
-
-    /* Infinite loop */
-    while (1) {
-    }
+int main(void)
+{
+  /*!< At this stage the microcontroller clock setting is already configured, 
+  this is done through SystemInit() function which is called from startup
+  file (startup_stm32f0xx.s) before to branch to application main.
+  To reconfigure the default setting of SystemInit() function, refer to
+  system_stm32f0xx.c file
+  */ 
+  
+  /* NVIC configuration */
+  NVIC_Config();
+  
+  /* USART configuration */
+  USART_Config();
+  
+  /* Enable the EVAL_COM1 Transmoit interrupt: this interrupt is generated when the 
+  EVAL_COM1 transmit data register is empty */  
+  USART_ITConfig(EVAL_COM1, USART_IT_TXE, ENABLE);
+  
+  /* Wait until EVAL_COM1 send the TxBuffer */
+  while(TxCount < NbrOfDataToTransfer)
+  {}
+  
+  /* The software must wait until TC=1. The TC flag remains cleared during all data
+  transfers and it is set by hardware at the last frame’s end of transmission*/
+  while (USART_GetFlagStatus(EVAL_COM1, USART_FLAG_TC) == RESET)
+  {}
+  
+  /* Enable the EVAL_COM1 Receive interrupt: this interrupt is generated when the 
+  EVAL_COM1 receive data register is not empty */
+  USART_ITConfig(EVAL_COM1, USART_IT_RXNE, ENABLE);
+  
+  /* Wait until EVAL_COM1 receive the RxBuffer */
+  while(RxCount < NbrOfDataToRead)
+  {}
+  
+  /* Infinite loop */
+  while (1)
+  {
+  }
 }
 
 /**
@@ -101,14 +104,15 @@ int main(void) {
   * @param  None
   * @retval None
   */
-static void NVIC_Config(void) {
-    NVIC_InitTypeDef NVIC_InitStructure;
+static void NVIC_Config(void)
+{
+  NVIC_InitTypeDef NVIC_InitStructure;
 
-    /* Enable the USART Interrupt */
-    NVIC_InitStructure.NVIC_IRQChannel = EVAL_COM1_IRQn;
-    NVIC_InitStructure.NVIC_IRQChannelPriority = 0;
-    NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
-    NVIC_Init(&NVIC_InitStructure);
+  /* Enable the USART Interrupt */
+  NVIC_InitStructure.NVIC_IRQChannel = EVAL_COM1_IRQn;
+  NVIC_InitStructure.NVIC_IRQChannelPriority = 0;
+  NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+  NVIC_Init(&NVIC_InitStructure);
 }
 
 /**
@@ -116,9 +120,10 @@ static void NVIC_Config(void) {
   * @param  None
   * @retval None
   */
-static void USART_Config(void) {
-    USART_InitTypeDef USART_InitStructure;
-
+static void USART_Config(void)
+{
+  USART_InitTypeDef USART_InitStructure;
+    
 /* USARTx configured as follow:
   - BaudRate = 9600 baud  
   - Word Length = 8 Bits
@@ -127,14 +132,14 @@ static void USART_Config(void) {
   - Hardware flow control disabled (RTS and CTS signals)
   - Receive and transmit enabled
   */
-    USART_InitStructure.USART_BaudRate = 9600;
-    USART_InitStructure.USART_WordLength = USART_WordLength_8b;
-    USART_InitStructure.USART_StopBits = USART_StopBits_2;
-    USART_InitStructure.USART_Parity = USART_Parity_Odd;
-    USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None;
-    USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;
-
-    STM_EVAL_COMInit(COM1, &USART_InitStructure);
+  USART_InitStructure.USART_BaudRate = 9600;
+  USART_InitStructure.USART_WordLength = USART_WordLength_8b;
+  USART_InitStructure.USART_StopBits = USART_StopBits_2;
+  USART_InitStructure.USART_Parity = USART_Parity_Odd;
+  USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None;
+  USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;
+  
+  STM_EVAL_COMInit(COM1, &USART_InitStructure);
 }
 
 #ifdef  USE_FULL_ASSERT

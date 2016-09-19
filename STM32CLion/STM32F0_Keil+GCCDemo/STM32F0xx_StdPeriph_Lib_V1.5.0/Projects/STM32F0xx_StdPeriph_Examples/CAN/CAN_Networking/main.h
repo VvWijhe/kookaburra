@@ -44,7 +44,7 @@
 #define CAN_GPIO_CLK               RCC_AHBPeriph_GPIOD
 #define CAN_AF_PORT                GPIO_AF_0
 #define CAN_RX_SOURCE              GPIO_PinSource0
-#define CAN_TX_SOURCE              GPIO_PinSource1
+#define CAN_TX_SOURCE              GPIO_PinSource1       
 
 
 /* Exported macro ------------------------------------------------------------*/

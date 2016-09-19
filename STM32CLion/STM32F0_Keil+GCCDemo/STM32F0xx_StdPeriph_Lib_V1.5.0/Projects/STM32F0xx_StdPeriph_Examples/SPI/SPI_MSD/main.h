@@ -24,28 +24,23 @@
   *
   ******************************************************************************
   */
-
+  
 /* Define to prevent recursive inclusion -------------------------------------*/
 #ifndef __MAIN_H
 #define __MAIN_H
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f0xx.h"
-
 #ifdef USE_STM320518_EVAL
-#include "stm320518_eval.h"
-#include "stm320518_eval_spi_sd.h"
-#else
-
-#include "stm32072b_eval.h"
-#include "stm32072b_eval_spi_sd.h"
-
+  #include "stm320518_eval.h"
+  #include "stm320518_eval_spi_sd.h"
+#else 
+  #include "stm32072b_eval.h"
+  #include "stm32072b_eval_spi_sd.h"
 #endif /* USE_STM320518_EVAL */
 
 /* Exported types ------------------------------------------------------------*/
-typedef enum {
-    FAILED = 0, PASSED = !FAILED
-} TestStatus;
+typedef enum {FAILED = 0, PASSED = !FAILED} TestStatus;
 
 /* Exported constants --------------------------------------------------------*/
 #define  BUFFERSIZE     512

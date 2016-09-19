@@ -16,7 +16,7 @@
   * CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
   *
   * <h2><center>&copy; COPYRIGHT 2010 STMicroelectronics</center></h2>
-  */
+  */ 
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f10x_iwdg.h"
@@ -28,7 +28,7 @@
 /** @defgroup IWDG 
   * @brief IWDG driver modules
   * @{
-  */
+  */ 
 
 /** @defgroup IWDG_Private_TypesDefinitions
   * @{
@@ -40,7 +40,7 @@
 
 /** @defgroup IWDG_Private_Defines
   * @{
-  */
+  */ 
 
 /* ---------------------- IWDG registers bit mask ----------------------------*/
 
@@ -50,7 +50,7 @@
 
 /**
   * @}
-  */
+  */ 
 
 /** @defgroup IWDG_Private_Macros
   * @{
@@ -88,10 +88,11 @@
   *     @arg IWDG_WriteAccess_Disable: Disable write access to IWDG_PR and IWDG_RLR registers
   * @retval None
   */
-void IWDG_WriteAccessCmd(uint16_t IWDG_WriteAccess) {
-    /* Check the parameters */
-    assert_param(IS_IWDG_WRITE_ACCESS(IWDG_WriteAccess));
-    IWDG->KR = IWDG_WriteAccess;
+void IWDG_WriteAccessCmd(uint16_t IWDG_WriteAccess)
+{
+  /* Check the parameters */
+  assert_param(IS_IWDG_WRITE_ACCESS(IWDG_WriteAccess));
+  IWDG->KR = IWDG_WriteAccess;
 }
 
 /**
@@ -107,10 +108,11 @@ void IWDG_WriteAccessCmd(uint16_t IWDG_WriteAccess) {
   *     @arg IWDG_Prescaler_256: IWDG prescaler set to 256
   * @retval None
   */
-void IWDG_SetPrescaler(uint8_t IWDG_Prescaler) {
-    /* Check the parameters */
-    assert_param(IS_IWDG_PRESCALER(IWDG_Prescaler));
-    IWDG->PR = IWDG_Prescaler;
+void IWDG_SetPrescaler(uint8_t IWDG_Prescaler)
+{
+  /* Check the parameters */
+  assert_param(IS_IWDG_PRESCALER(IWDG_Prescaler));
+  IWDG->PR = IWDG_Prescaler;
 }
 
 /**
@@ -119,10 +121,11 @@ void IWDG_SetPrescaler(uint8_t IWDG_Prescaler) {
   *   This parameter must be a number between 0 and 0x0FFF.
   * @retval None
   */
-void IWDG_SetReload(uint16_t Reload) {
-    /* Check the parameters */
-    assert_param(IS_IWDG_RELOAD(Reload));
-    IWDG->RLR = Reload;
+void IWDG_SetReload(uint16_t Reload)
+{
+  /* Check the parameters */
+  assert_param(IS_IWDG_RELOAD(Reload));
+  IWDG->RLR = Reload;
 }
 
 /**
@@ -131,8 +134,9 @@ void IWDG_SetReload(uint16_t Reload) {
   * @param  None
   * @retval None
   */
-void IWDG_ReloadCounter(void) {
-    IWDG->KR = KR_KEY_Reload;
+void IWDG_ReloadCounter(void)
+{
+  IWDG->KR = KR_KEY_Reload;
 }
 
 /**
@@ -140,8 +144,9 @@ void IWDG_ReloadCounter(void) {
   * @param  None
   * @retval None
   */
-void IWDG_Enable(void) {
-    IWDG->KR = KR_KEY_Enable;
+void IWDG_Enable(void)
+{
+  IWDG->KR = KR_KEY_Enable;
 }
 
 /**
@@ -152,17 +157,21 @@ void IWDG_Enable(void) {
   *     @arg IWDG_FLAG_RVU: Reload Value Update on going
   * @retval The new state of IWDG_FLAG (SET or RESET).
   */
-FlagStatus IWDG_GetFlagStatus(uint16_t IWDG_FLAG) {
-    FlagStatus bitstatus = RESET;
-    /* Check the parameters */
-    assert_param(IS_IWDG_FLAG(IWDG_FLAG));
-    if ((IWDG->SR & IWDG_FLAG) != (uint32_t) RESET) {
-        bitstatus = SET;
-    } else {
-        bitstatus = RESET;
-    }
-    /* Return the flag status */
-    return bitstatus;
+FlagStatus IWDG_GetFlagStatus(uint16_t IWDG_FLAG)
+{
+  FlagStatus bitstatus = RESET;
+  /* Check the parameters */
+  assert_param(IS_IWDG_FLAG(IWDG_FLAG));
+  if ((IWDG->SR & IWDG_FLAG) != (uint32_t)RESET)
+  {
+    bitstatus = SET;
+  }
+  else
+  {
+    bitstatus = RESET;
+  }
+  /* Return the flag status */
+  return bitstatus;
 }
 
 /**

@@ -18,9 +18,8 @@
 #pragma import(__use_no_semihosting_swi)
 
 
-extern int ser_putchar(int c);
-
-extern int ser_getchar(void);
+extern int ser_putchar (int c);
+extern int ser_getchar (void);
 
 /* C++ name mangling mag niet de interrupt handler namen veranderen, 
  * deze staan in een assembly bestand zo genoemd.
@@ -28,19 +27,19 @@ extern int ser_getchar(void);
  */
 #ifdef __cplusplus
 extern "C" {
-#endif
+#endif     
 
-struct __FILE {
-    int handle; /* Add whatever you need here */ };
+struct __FILE { int handle; /* Add whatever you need here */ };
 FILE __stdout;
 FILE __stdin;
 
 //int fputc (int ch, FILE *f) { return (ser_putchar(ch)); }
-int fputc(int ch, FILE *f) {
-    return (ITM_SendChar(ch));
+int fputc (int ch, FILE *f) 
+{ 
+	return (ITM_SendChar(ch)); 
 }
 
-int fgetc(FILE *f) { return (ser_getchar()); }
+int fgetc (FILE *f)         { return (ser_getchar()); }
 
 
 int ferror(FILE *f) {
@@ -49,12 +48,11 @@ int ferror(FILE *f) {
 }
 
 
-void _ttywrch(int ch) { ser_putchar(ch); }
+void _ttywrch(int ch)       { ser_putchar(ch); }
 
 
 void _sys_exit(int return_code) {
-    label:
-    goto label;  /* endless loop */
+label:  goto label;  /* endless loop */
 }
 
 #ifdef __cplusplus

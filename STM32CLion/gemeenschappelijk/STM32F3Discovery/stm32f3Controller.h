@@ -64,7 +64,7 @@ void assert_failed(uint8_t* file, uint32_t line);
 
 #else
 
-#define assert_param(expr) ((void)0)
+  #define assert_param(expr) ((void)0)
 
 #endif // USE_FULL_ASSERT
 
@@ -75,7 +75,7 @@ void assert_failed(uint8_t* file, uint32_t line);
 extern uint32_t trigger;
 
 extern uint32_t rx_ready;
-extern uint8_t rx_buffer[10];
+extern uint8_t  rx_buffer[10];
 
 /******************************************************************************
   Defines
@@ -84,58 +84,51 @@ extern uint8_t rx_buffer[10];
 #ifdef __cplusplus
 extern "C" {
 #endif
-
 /******************************************************************************
   Function prototypes
 ******************************************************************************/
-void NMI_Handler(void);
-
-void HardFault_Handler(void);
-
-void MemManage_Handler(void);
-
-void BusFault_Handler(void);
-
-void UsageFault_Handler(void);
-
-void SVC_Handler(void);
-
-void DebugMon_Handler(void);
-
-void PendSV_Handler(void);
-
-void SysTick_Handler(void);
-
-void USART1_IRQHandler(void);
+void NMI_Handler        (void);
+void HardFault_Handler  (void);
+void MemManage_Handler  (void);
+void BusFault_Handler   (void);
+void UsageFault_Handler (void);
+void SVC_Handler        (void);
+void DebugMon_Handler   (void);
+void PendSV_Handler     (void);
+void SysTick_Handler    (void);
+void USART1_IRQHandler  (void);
 
 #ifdef __cplusplus
 }
 #endif
 
 
-typedef enum {
-    STM32F3Discovery_Groen = 0,
+typedef enum
+{
+    STM32F3Discovery_Groen=0,
     STM32F3Discovery_Rood,
     STM32F3Discovery_Oranje,
     STM32F3Discovery_Blauw
 } STM32F3DiscoveryKleur;
 
-class STM32F3Controller {
+class STM32F3Controller
+{
 public:
     STM32F3Controller();
 
-    virtual ~STM32F3Controller() {
+    virtual ~STM32F3Controller()
+        {
 
-    };
+        };
 
     void LED(const STM32F3DiscoveryKleur,
-             const Schakelaar) const;
-
+             const Schakelaar ) const;	
+	
     /* wordt aangeroepen in de EXTI0 IRQ handler */
     static void knopGedrukt();
-
+	
     void wachtOpKnop();
-
+	
 protected:
 
     STM32Uart uart;
@@ -143,9 +136,8 @@ protected:
     STM32ADC adc;
 
     char wachtOpDesktopCommando() const;
-
+	
     bool geefKnopStand() const;
-
     void resetKnop();
 
 
@@ -154,7 +146,7 @@ private:
 
     void RCCInit();
 
-    static bool knop;      /* bevat de stand van de drukknop als ware het een knop met geheugen */
+    static bool knop;	  /* bevat de stand van de drukknop als ware het een knop met geheugen */
 };
 
 #endif /* stm32Controller_h */

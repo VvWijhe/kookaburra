@@ -31,7 +31,7 @@
 #define __STM32F30x_DAC_H
 
 #ifdef __cplusplus
-extern "C" {
+ extern "C" {
 #endif
 
 /* Includes ------------------------------------------------------------------*/
@@ -52,21 +52,22 @@ extern "C" {
   * @brief  DAC Init structure definition
   */
 
-typedef struct {
-    uint32_t DAC_Trigger;                      /*!< Specifies the external trigger for the selected DAC channel.
+typedef struct
+{
+  uint32_t DAC_Trigger;                      /*!< Specifies the external trigger for the selected DAC channel.
                                                   This parameter can be a value of @ref DAC_trigger_selection */
 
-    uint32_t DAC_WaveGeneration;               /*!< Specifies whether DAC channel noise waves or triangle waves
+  uint32_t DAC_WaveGeneration;               /*!< Specifies whether DAC channel noise waves or triangle waves
                                                   are generated, or whether no wave is generated.
                                                   This parameter can be a value of @ref DAC_wave_generation */
 
-    uint32_t DAC_LFSRUnmask_TriangleAmplitude; /*!< Specifies the LFSR mask for noise wave generation or
+  uint32_t DAC_LFSRUnmask_TriangleAmplitude; /*!< Specifies the LFSR mask for noise wave generation or
                                                   the maximum amplitude triangle generation for the DAC channel. 
                                                   This parameter can be a value of @ref DAC_lfsrunmask_triangleamplitude */
 
-    uint32_t DAC_OutputBuffer;                 /*!< Specifies whether the DAC channel output buffer is enabled or disabled.
+  uint32_t DAC_OutputBuffer;                 /*!< Specifies whether the DAC channel output buffer is enabled or disabled.
                                                   This parameter can be a value of @ref DAC_output_buffer */
-} DAC_InitTypeDef;
+}DAC_InitTypeDef;
 
 /* Exported constants --------------------------------------------------------*/
 
@@ -230,27 +231,27 @@ typedef struct {
   * @{
   */
 
-#define IS_DAC_DATA(DATA) ((DATA) <= 0xFFF0)
+#define IS_DAC_DATA(DATA) ((DATA) <= 0xFFF0) 
 /**
   * @}
   */
-
+  
 /** @defgroup DAC_interrupts_definition 
   * @{
-  */
-#define DAC_IT_DMAUDR                      ((uint32_t)0x00002000)
-#define IS_DAC_IT(IT) (((IT) == DAC_IT_DMAUDR))
+  */   
+#define DAC_IT_DMAUDR                      ((uint32_t)0x00002000)  
+#define IS_DAC_IT(IT) (((IT) == DAC_IT_DMAUDR)) 
 
 /**
   * @}
-  */
+  */ 
 
 /** @defgroup DAC_flags_definition 
   * @{
-  */
-
-#define DAC_FLAG_DMAUDR                    ((uint32_t)0x00002000)
-#define IS_DAC_FLAG(FLAG) (((FLAG) == DAC_FLAG_DMAUDR))
+  */ 
+  
+#define DAC_FLAG_DMAUDR                    ((uint32_t)0x00002000)  
+#define IS_DAC_FLAG(FLAG) (((FLAG) == DAC_FLAG_DMAUDR))  
 
 /**
   * @}
@@ -261,30 +262,21 @@ typedef struct {
   */
 
 /* Exported macro ------------------------------------------------------------*/
-/* Exported functions --------------------------------------------------------*/
+/* Exported functions --------------------------------------------------------*/  
 
-/*  Function used to set the DAC configuration to the default reset state *****/
+/*  Function used to set the DAC configuration to the default reset state *****/  
 void DAC_DeInit(void);
 
 /*  DAC channels configuration: trigger, output buffer, data format functions */
-void DAC_Init(uint32_t DAC_Channel, DAC_InitTypeDef *DAC_InitStruct);
-
-void DAC_StructInit(DAC_InitTypeDef *DAC_InitStruct);
-
+void DAC_Init(uint32_t DAC_Channel, DAC_InitTypeDef* DAC_InitStruct);
+void DAC_StructInit(DAC_InitTypeDef* DAC_InitStruct);
 void DAC_Cmd(uint32_t DAC_Channel, FunctionalState NewState);
-
 void DAC_SoftwareTriggerCmd(uint32_t DAC_Channel, FunctionalState NewState);
-
 void DAC_DualSoftwareTriggerCmd(FunctionalState NewState);
-
 void DAC_WaveGenerationCmd(uint32_t DAC_Channel, uint32_t DAC_Wave, FunctionalState NewState);
-
 void DAC_SetChannel1Data(uint32_t DAC_Align, uint16_t Data);
-
 void DAC_SetChannel2Data(uint32_t DAC_Align, uint16_t Data);
-
 void DAC_SetDualChannelData(uint32_t DAC_Align, uint16_t Data2, uint16_t Data1);
-
 uint16_t DAC_GetDataOutputValue(uint32_t DAC_Channel);
 
 /* DMA management functions ***************************************************/
@@ -292,13 +284,9 @@ void DAC_DMACmd(uint32_t DAC_Channel, FunctionalState NewState);
 
 /* Interrupts and flags management functions **********************************/
 void DAC_ITConfig(uint32_t DAC_Channel, uint32_t DAC_IT, FunctionalState NewState);
-
 FlagStatus DAC_GetFlagStatus(uint32_t DAC_Channel, uint32_t DAC_FLAG);
-
 void DAC_ClearFlag(uint32_t DAC_Channel, uint32_t DAC_FLAG);
-
 ITStatus DAC_GetITStatus(uint32_t DAC_Channel, uint32_t DAC_IT);
-
 void DAC_ClearITPendingBit(uint32_t DAC_Channel, uint32_t DAC_IT);
 
 #ifdef __cplusplus

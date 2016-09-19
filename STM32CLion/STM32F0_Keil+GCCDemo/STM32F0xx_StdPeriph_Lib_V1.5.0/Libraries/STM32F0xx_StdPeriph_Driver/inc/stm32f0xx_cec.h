@@ -31,7 +31,7 @@
 #define __STM32F0XX_CEC_H
 
 #ifdef __cplusplus
-extern "C" {
+ extern "C" {
 #endif
 
 /* Includes ------------------------------------------------------------------*/
@@ -45,27 +45,28 @@ extern "C" {
   * @{
   */
 /* Exported types ------------------------------------------------------------*/
-
+  
 /** 
   * @brief CEC Init structure definition 
   */
-typedef struct {
-    uint32_t CEC_SignalFreeTime;     /*!< Specifies the CEC Signal Free Time configuration.
+typedef struct
+{
+  uint32_t CEC_SignalFreeTime;     /*!< Specifies the CEC Signal Free Time configuration.
                                    This parameter can be a value of @ref CEC_Signal_Free_Time */
-    uint32_t CEC_RxTolerance;        /*!< Specifies the CEC Reception Tolerance.
+  uint32_t CEC_RxTolerance;        /*!< Specifies the CEC Reception Tolerance.
                                    This parameter can be a value of @ref CEC_RxTolerance */
-    uint32_t CEC_StopReception;      /*!< Specifies the CEC Stop Reception.
+  uint32_t CEC_StopReception;      /*!< Specifies the CEC Stop Reception.
                                    This parameter can be a value of @ref CEC_Stop_Reception */
-    uint32_t CEC_BitRisingError;     /*!< Specifies the CEC Bit Rising Error generation.
+  uint32_t CEC_BitRisingError;     /*!< Specifies the CEC Bit Rising Error generation.
                                    This parameter can be a value of @ref CEC_Bit_Rising_Error_Generation */
-    uint32_t CEC_LongBitPeriodError; /*!< Specifies the CEC Long Bit Error generation.
+  uint32_t CEC_LongBitPeriodError; /*!< Specifies the CEC Long Bit Error generation.
                                    This parameter can be a value of @ref CEC_Long_Bit_Error_Generation */
-    uint32_t CEC_BRDNoGen;           /*!< Specifies the CEC Broadcast Error generation.
+  uint32_t CEC_BRDNoGen;           /*!< Specifies the CEC Broadcast Error generation.
                                    This parameter can be a value of @ref CEC_BDR_No_Gen */
-    uint32_t CEC_SFTOption;          /*!< Specifies the CEC Signal Free Time option.
+  uint32_t CEC_SFTOption;          /*!< Specifies the CEC Signal Free Time option.
                                    This parameter can be a value of @ref CEC_SFT_Option */
 
-} CEC_InitTypeDef;
+}CEC_InitTypeDef;
 
 /* Exported constants --------------------------------------------------------*/
 
@@ -262,36 +263,24 @@ typedef struct {
 void CEC_DeInit(void);
 
 /* CEC_Initialization and Configuration functions *****************************/
-void CEC_Init(CEC_InitTypeDef *CEC_InitStruct);
-
-void CEC_StructInit(CEC_InitTypeDef *CEC_InitStruct);
-
+void CEC_Init(CEC_InitTypeDef* CEC_InitStruct);
+void CEC_StructInit(CEC_InitTypeDef* CEC_InitStruct);
 void CEC_Cmd(FunctionalState NewState);
-
 void CEC_ListenModeCmd(FunctionalState NewState);
-
 void CEC_OwnAddressConfig(uint8_t CEC_OwnAddress);
-
 void CEC_OwnAddressClear(void);
 
 /* CEC_Data transfers functions ***********************************************/
 void CEC_SendData(uint8_t Data);
-
 uint8_t CEC_ReceiveData(void);
-
 void CEC_StartOfMessage(void);
-
 void CEC_EndOfMessage(void);
 
 /* CEC_Interrupts and flags management functions ******************************/
 void CEC_ITConfig(uint16_t CEC_IT, FunctionalState NewState);
-
 FlagStatus CEC_GetFlagStatus(uint16_t CEC_FLAG);
-
 void CEC_ClearFlag(uint32_t CEC_FLAG);
-
 ITStatus CEC_GetITStatus(uint16_t CEC_IT);
-
 void CEC_ClearITPendingBit(uint16_t CEC_IT);
 
 #ifdef __cplusplus

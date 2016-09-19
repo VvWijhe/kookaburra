@@ -30,7 +30,7 @@
 #define __STM32F0XX_I2C_CPAL_CONF_H
 
 #ifdef __cplusplus
-extern "C" {
+ extern "C" {
 #endif
 
 /* Includes ------------------------------------------------------------------*/
@@ -350,13 +350,13 @@ extern "C" {
 /* Enable the use of DMA Programming Model */
 #define CPAL_I2C_DMA_PROGMODEL
 /* Uncomment this define and keep "CPAL_I2C_IT_PROGMODEL" define commented to use DMA
-   Programming Model */
+   Programming Model */ 
 
 /* Enable the use of IT Programming Model */
 //#define CPAL_I2C_IT_PROGMODEL
 /* Uncomment this define and keep "CPAL_I2C_DMA_PROGMODEL" define commented to use Interrupt
-   Programming Model */
-
+   Programming Model */    
+   
 /* !!!! These following defines are available only when CPAL_I2C_MASTER_MODE is enabled !!!! */
 
 /* Enable the use of 10Bit Addressing Mode */
@@ -364,7 +364,7 @@ extern "C" {
 
 /* Enable the use of Memory Addressing Mode */
 /*#define CPAL_I2C_MEM_ADDR*/
-
+   
 /* Enable the use of 16Bit Address memory register option */
 /*#define CPAL_16BIT_REG_OPTION*/
 
@@ -433,11 +433,11 @@ extern "C" {
 
 
 #define _CPAL_TIMEOUT_INIT()           SysTick_Config((SystemCoreClock / 1000));\
-                                       NVIC_SetPriority (SysTick_IRQn, 0)
-/*<! Configure and enable the systick timer
-to generate an interrupt when counter value
-reaches 0. In the Systick interrupt handler
-the Timeout Error function is called. Time base is 1 ms */
+                                       NVIC_SetPriority (SysTick_IRQn, 0) 
+                                       /*<! Configure and enable the systick timer
+                                       to generate an interrupt when counter value
+                                       reaches 0. In the Systick interrupt handler
+                                       the Timeout Error function is called. Time base is 1 ms */
 
 #define _CPAL_TIMEOUT_DEINIT()         SysTick->CTRL = 0        /*<! Disable the systick timer */
 
@@ -446,13 +446,11 @@ the Timeout Error function is called. Time base is 1 ms */
                                                                      When a timeout occurs CPAL_TIMEOUT_UserCallback
                                                                      is called to handle this error */
 #ifndef CPAL_I2C_TIMEOUT_Manager
-void CPAL_I2C_TIMEOUT_Manager(void);
-#else
-
-void SysTick_Handler(void);
-
+   void CPAL_I2C_TIMEOUT_Manager(void);
+#else   
+   void SysTick_Handler(void);  
 #endif /* CPAL_I2C_TIMEOUT_Manager */
-
+   
 /*#define CPAL_TIMEOUT_UserCallback        (void)      */            /*<! Comment this line and implement the callback body in your
                                                                       application in order to use the Timeout Callback.
                                                                       It is strongly advised to implement this callback, since it

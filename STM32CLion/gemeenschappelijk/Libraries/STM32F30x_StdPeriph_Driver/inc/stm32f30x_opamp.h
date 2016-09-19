@@ -24,14 +24,14 @@
   * limitations under the License.
   *
   ******************************************************************************
-  */
+  */ 
 
 /* Define to prevent recursive inclusion -------------------------------------*/
 #ifndef __STM32F30x_OPAMP_H
 #define __STM32F30x_OPAMP_H
 
 #ifdef __cplusplus
-extern "C" {
+ extern "C" {
 #endif
 
 /* Includes ------------------------------------------------------------------*/
@@ -50,22 +50,23 @@ extern "C" {
 /** 
   * @brief  OPAMP Init structure definition  
   */
+  
+typedef struct
+{
 
-typedef struct {
-
-    uint32_t OPAMP_InvertingInput;     /*!< Selects the inverting input of the operational amplifier.
+  uint32_t OPAMP_InvertingInput;     /*!< Selects the inverting input of the operational amplifier.
                                           This parameter can be a value of @ref OPAMP_InvertingInput */
 
-    uint32_t OPAMP_NonInvertingInput;  /*!< Selects the non inverting input of the operational amplifier.
+  uint32_t OPAMP_NonInvertingInput;  /*!< Selects the non inverting input of the operational amplifier.
                                          This parameter can be a value of @ref OPAMP_NonInvertingInput */
 
-} OPAMP_InitTypeDef;
+}OPAMP_InitTypeDef;
 
 /* Exported constants --------------------------------------------------------*/
 
 /** @defgroup OPAMP_Exported_Constants
   * @{
-  */
+  */ 
 
 /** @defgroup OPAMP_Selection
   * @{
@@ -80,7 +81,7 @@ typedef struct {
                                      ((PERIPH) == OPAMP_Selection_OPAMP2) || \
                                      ((PERIPH) == OPAMP_Selection_OPAMP3) || \
                                      ((PERIPH) == OPAMP_Selection_OPAMP4))
-
+ 
 /**
   * @}
   */
@@ -179,7 +180,7 @@ typedef struct {
 
 /**
   * @}
-  */
+  */ 
 
 /** @defgroup OPAMP_Vref
   * @{
@@ -210,7 +211,7 @@ typedef struct {
 
 /**
   * @}
-  */
+  */ 
 
 /** @defgroup OPAMP_TrimValue
   * @{
@@ -240,31 +241,20 @@ typedef struct {
 void OPAMP_DeInit(uint32_t OPAMP_Selection);
 
 /* Initialization and Configuration functions *********************************/
-void OPAMP_Init(uint32_t OPAMP_Selection, OPAMP_InitTypeDef *OPAMP_InitStruct);
-
-void OPAMP_StructInit(OPAMP_InitTypeDef *OPAMP_InitStruct);
-
+void OPAMP_Init(uint32_t OPAMP_Selection, OPAMP_InitTypeDef* OPAMP_InitStruct);
+void OPAMP_StructInit(OPAMP_InitTypeDef* OPAMP_InitStruct);
 void OPAMP_PGAConfig(uint32_t OPAMP_Selection, uint32_t OPAMP_PGAGain, uint32_t OPAMP_PGAConnect);
-
 void OPAMP_VrefConfig(uint32_t OPAMP_Selection, uint32_t OPAMP_Vref);
-
 void OPAMP_VrefConnectADCCmd(uint32_t OPAMP_Selection, FunctionalState NewState);
-
-void OPAMP_TimerControlledMuxConfig(uint32_t OPAMP_Selection, OPAMP_InitTypeDef *OPAMP_InitStruct);
-
+void OPAMP_TimerControlledMuxConfig(uint32_t OPAMP_Selection, OPAMP_InitTypeDef* OPAMP_InitStruct);
 void OPAMP_TimerControlledMuxCmd(uint32_t OPAMP_Selection, FunctionalState NewState);
-
 void OPAMP_Cmd(uint32_t OPAMP_Selection, FunctionalState NewState);
-
 uint32_t OPAMP_GetOutputLevel(uint32_t OPAMP_Selection);
 
 /* Calibration functions ******************************************************/
 void OPAMP_VrefConnectNonInvertingInput(uint32_t OPAMP_Selection, FunctionalState NewState);
-
 void OPAMP_OffsetTrimModeSelect(uint32_t OPAMP_Selection, uint32_t OPAMP_Trimming);
-
 void OPAMP_OffsetTrimConfig(uint32_t OPAMP_Selection, uint32_t OPAMP_Input, uint32_t OPAMP_TrimValue);
-
 void OPAMP_StartCalibration(uint32_t OPAMP_Selection, FunctionalState NewState);
 
 /* OPAMP configuration locking function ***************************************/
@@ -278,7 +268,7 @@ void OPAMP_LockConfig(uint32_t OPAMP_Selection);
 
 /**
   * @}
-  */
+  */ 
 
 /**
   * @}

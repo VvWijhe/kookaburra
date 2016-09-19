@@ -13,7 +13,9 @@
 /* $Id: stm32f3Controller.cpp 2279 2016-08-29 15:00:23Z ewout $     */
 
 
+#include <algdef.h>
 #include "stm32f3Controller.h"
+#include "stm32f3_discovery.h"
 
 #include <assert.h>
 
@@ -24,7 +26,7 @@
 
 #ifdef __cplusplus
 extern "C" {
-#endif
+#endif       
 /******************************************************************************
   Cortex-M3 Processor Exceptions Handlers
 ******************************************************************************/
@@ -32,78 +34,89 @@ extern "C" {
 // ----------------------------------------------------------------------------
 // This function handles NMI exception.
 // ----------------------------------------------------------------------------
-void NMI_Handler(void) {
-    while (1) { ; }
-}
+    void NMI_Handler(void)
+    {
+        while(1){;}
+    }
 
 // ----------------------------------------------------------------------------
 // This function handles Hard Fault exception.
 // ----------------------------------------------------------------------------
-void HardFault_Handler(void) {
-    // Go to infinite loop when Hard Fault exception occurs
-    while (1) { ; }
-}
+    void HardFault_Handler(void)
+    {
+        // Go to infinite loop when Hard Fault exception occurs
+        while(1){;}
+    }
 
 // ----------------------------------------------------------------------------
 // This function handles Memory Manage exception.
 // ----------------------------------------------------------------------------
-void MemManage_Handler(void) {
-    // Go to infinite loop when Memory Manage exception occurs
-    while (1) { ; }
-}
+    void MemManage_Handler(void)
+    {
+        // Go to infinite loop when Memory Manage exception occurs
+        while(1){;}
+    }
 
 // ----------------------------------------------------------------------------
 // This function handles Bus Fault exception.
 // ----------------------------------------------------------------------------
-void BusFault_Handler(void) {
-    // Go to infinite loop when Bus Fault exception occurs
-    while (1) { ; }
-}
+    void BusFault_Handler(void)
+    {
+        // Go to infinite loop when Bus Fault exception occurs
+        while(1){;}
+    }
 
 // ----------------------------------------------------------------------------
 // This function handles Usage Fault exception.
 // ----------------------------------------------------------------------------
-void UsageFault_Handler(void) {
-    // Go to infinite loop when Usage Fault exception occurs
-    while (1) { ; }
-}
+    void UsageFault_Handler(void)
+    {
+        // Go to infinite loop when Usage Fault exception occurs
+        while(1){;}
+    }
 
 // ----------------------------------------------------------------------------
 // This function handles SVCall exception.
 // ----------------------------------------------------------------------------
-void SVC_Handler(void) {
-}
+    void SVC_Handler(void)
+    {
+    }
 
 // ----------------------------------------------------------------------------
 // This function handles Debug Monitor exception.
 // ----------------------------------------------------------------------------
-void DebugMon_Handler(void) {
-}
+    void DebugMon_Handler(void)
+    {
+    }
 
 // ----------------------------------------------------------------------------
 // This function handles PendSV_Handler exception.
 // ----------------------------------------------------------------------------
-void PendSV_Handler(void) {
-}
+    void PendSV_Handler(void)
+    {
+    }
 
 // ----------------------------------------------------------------------------
 // This function handles SysTick Handler.
 // ----------------------------------------------------------------------------
-void SysTick_Handler(void) {
-    static bool stand = false;
+void SysTick_Handler(void)
+{
+     static bool stand=false;
 
-    if (stand == true)
-        STM_EVAL_LEDOn(LED3);
-    else
-        STM_EVAL_LEDOff(LED3);
+        if (stand == true)
+            STM_EVAL_LEDOn(LED3) ;
+        else
+            STM_EVAL_LEDOff(LED3);
+  
+    }
 
-}
 
+ void EXTI0_IRQHandler(void)
+ {
+	STM32F3Controller::knopGedrukt();
+	EXTI_ClearITPendingBit(EXTI_Line0);
+ }
 
-void EXTI0_IRQHandler(void) {
-    STM32F3Controller::knopGedrukt();
-    EXTI_ClearITPendingBit(EXTI_Line0);
-}
 
 
 #ifdef __cplusplus
@@ -111,9 +124,10 @@ void EXTI0_IRQHandler(void) {
 #endif
 
 
-bool STM32F3Controller::knop = false;
+bool STM32F3Controller::knop=false;
 
-STM32F3Controller::STM32F3Controller() {
+STM32F3Controller::STM32F3Controller()
+{
     /*!< At this stage the microcontroller clock setting is already configured, 
       this is done through SystemInit() function which is called from startup
       file (startup_stm32f3xx.s) before to branch to application main.
@@ -125,9 +139,10 @@ STM32F3Controller::STM32F3Controller() {
     // --------------------------------------------------------------------------
 
     // Initialize Leds LD3 and LD4 mounted on STM32VLDISCOVERY board  
-    for (Teller i = 0; i < 4; i++) {
-        STM_EVAL_LEDInit((Led_TypeDef) i);
-        STM_EVAL_LEDOff((Led_TypeDef) i);
+    for (Teller i=0;i<4;i++)
+    {
+        STM_EVAL_LEDInit((Led_TypeDef)i);
+        STM_EVAL_LEDOff((Led_TypeDef)i);
     }
     // --------------------------------------------------------------------------
     // Initialize Push Button
@@ -146,7 +161,8 @@ STM32F3Controller::STM32F3Controller() {
  * Output         : None
  * Return         : None
  *******************************************************************************/
-void STM32F3Controller::RCCInit(void) {
+void STM32F3Controller::RCCInit(void)
+{
 
     // /* Alle benodigde klokken in dit project */ 
     // RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_DMA1|RCC_AHB1Periph_GPIOA, ENABLE); 
@@ -159,54 +175,64 @@ void STM32F3Controller::RCCInit(void) {
 }
 
 
-char STM32F3Controller::wachtOpDesktopCommando() const {
+char STM32F3Controller::wachtOpDesktopCommando() const
+{
     const char desktop = uart.wachtOpDesktopCommando();
 
-    return (desktop);
+    return(desktop);
 }
 
 void STM32F3Controller::LED(const STM32F3DiscoveryKleur kleur,
-                            const Schakelaar stand) const {
-    switch (stand) {
+                          const Schakelaar stand) const
+{
+    switch(stand)
+    {
 
-        break;
+                    break;
         default:
             assert(0);
     }
 }
 
 
-void STM32F3Controller::debounce() const {
-    /* ruwe debounce controle */
-    volatile unsigned int debounceWaarde = 0;
-    for (volatile unsigned int i = 0; i < 999; i++)
-        debounceWaarde++;
+
+void STM32F3Controller::debounce() const
+{
+	   /* ruwe debounce controle */
+    volatile unsigned int debounceWaarde =0;
+    for (volatile unsigned int i=0;i<999;i++)
+        debounceWaarde++;	
 }
 
-void STM32F3Controller::wachtOpKnop() {
-
+void STM32F3Controller::wachtOpKnop()
+{
+  
     resetKnop();
-
+	
     /* wacht op interrupt van knop drukken */
-    do {
+    do
+    {
         debounce();
-
+						 
     } while (false == geefKnopStand());
 
 }
 
 
-void STM32F3Controller::resetKnop() {
-    knop = false;
-}
-
+void STM32F3Controller::resetKnop()
+{
+    knop=false;
+}	
+		
 /* wordt aangeroepen in de EXTI0 IRQ handler */
-void STM32F3Controller::knopGedrukt() {
+void STM32F3Controller::knopGedrukt()
+{
     knop = true;
 }
 
-bool STM32F3Controller::geefKnopStand() const {
-    return (knop);
+bool STM32F3Controller::geefKnopStand() const
+{
+    return(knop);
 }
 
 

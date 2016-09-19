@@ -28,6 +28,7 @@
   */
 
 /* Includes ------------------------------------------------------------------*/
+#include "stm32f0xx_it.h"
 
 /** @addtogroup STM32F0xx_StdPeriph_Examples
   * @{
@@ -41,10 +42,8 @@
 /* Private define ------------------------------------------------------------*/
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
-extern __IO uint32_t
-Capture;
-extern __IO uint32_t
-DisplayActive;
+extern __IO uint32_t Capture;
+extern __IO uint32_t DisplayActive;
 uint32_t CaptureCounter = 0;
 uint16_t IC4Value1 = 0;
 uint16_t IC4Value2 = 0;
@@ -61,7 +60,8 @@ uint16_t IC4Value2 = 0;
   * @param  None
   * @retval None
   */
-void NMI_Handler(void) {
+void NMI_Handler(void)
+{
 }
 
 /**
@@ -69,10 +69,12 @@ void NMI_Handler(void) {
   * @param  None
   * @retval None
   */
-void HardFault_Handler(void) {
-    /* Go to infinite loop when Hard Fault exception occurs */
-    while (1) {
-    }
+void HardFault_Handler(void)
+{
+  /* Go to infinite loop when Hard Fault exception occurs */
+  while (1)
+  {
+  }
 }
 
 /**
@@ -80,7 +82,8 @@ void HardFault_Handler(void) {
   * @param  None
   * @retval None
   */
-void SVC_Handler(void) {
+void SVC_Handler(void)
+{
 }
 
 /**
@@ -88,7 +91,8 @@ void SVC_Handler(void) {
   * @param  None
   * @retval None
   */
-void PendSV_Handler(void) {
+void PendSV_Handler(void)
+{
 }
 
 /**
@@ -96,7 +100,8 @@ void PendSV_Handler(void) {
   * @param  None
   * @retval None
   */
-void SysTick_Handler(void) {
+void SysTick_Handler(void)
+{
 }
 
 /******************************************************************************/
@@ -107,25 +112,33 @@ void SysTick_Handler(void) {
   * @param  None
   * @retval None
   */
-void TIM2_IRQHandler(void) {
-
-    if (TIM_GetITStatus(TIM2, TIM_IT_CC4) == SET) {
-        if (CaptureCounter == 0) {
-            IC4Value1 = TIM_GetCapture4(TIM2);
-            CaptureCounter = 1;
-        } else if (CaptureCounter == 1) {
-            CaptureCounter = 0;
-            IC4Value2 = TIM_GetCapture4(TIM2);
-
-            if (IC4Value2 > IC4Value1) {
-                Capture = (IC4Value2 - IC4Value1) - 1;
-            } else {
-                Capture = ((0xFFFF - IC4Value1) + IC4Value2) - 1;
-            }
-            DisplayActive = 1;
-        }
-        TIM_ClearITPendingBit(TIM2, TIM_IT_CC4);
+void TIM2_IRQHandler(void)
+{
+  
+  if (TIM_GetITStatus(TIM2, TIM_IT_CC4) == SET)
+  {
+    if (CaptureCounter == 0)
+    {
+      IC4Value1 = TIM_GetCapture4(TIM2);
+      CaptureCounter = 1;
     }
+    else if (CaptureCounter == 1)
+    {
+      CaptureCounter = 0;
+      IC4Value2 = TIM_GetCapture4(TIM2);
+
+      if (IC4Value2 > IC4Value1)
+      {
+        Capture = (IC4Value2 - IC4Value1) - 1;
+      }
+      else
+      {
+        Capture = ((0xFFFF - IC4Value1) + IC4Value2) - 1;
+      }
+      DisplayActive = 1;
+    }
+    TIM_ClearITPendingBit(TIM2, TIM_IT_CC4);
+  }
 }
 
 

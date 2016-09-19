@@ -32,8 +32,7 @@
 /* Private typedef -----------------------------------------------------------*/
 /* Private defines -----------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
-extern __IO TestStatus
-TransferStatus;
+extern __IO TestStatus TransferStatus;
 
 /* Private macro -------------------------------------------------------------*/
 /* Private function prototypes -----------------------------------------------*/
@@ -54,24 +53,25 @@ TransferStatus;
   * @param  pDevInitStruct
   * @retval None.
   */
-uint32_t CPAL_TIMEOUT_UserCallback(CPAL_InitTypeDef *pDevInitStruct) {
-    /* Update LCD Display */
-    LCD_SetBackColor(Red);
-    LCD_SetTextColor(White);
-    LCD_DisplayStringLine(Line8, MESSAGE12);
-
-    /* Update CPAL_State, wCPAL_DevError and wCPAL_Timeout */
-    pDevInitStruct->CPAL_State = CPAL_STATE_READY;
-    pDevInitStruct->wCPAL_DevError = CPAL_I2C_ERR_NONE;
-    pDevInitStruct->wCPAL_Timeout = CPAL_I2C_TIMEOUT_DEFAULT;
-
-    /* DeInitialize CPAL device */
-    CPAL_I2C_DeInit(pDevInitStruct);
-
-    /* Initialize CPAL device with the selected parameters */
-    CPAL_I2C_Init(pDevInitStruct);
-
-    return CPAL_PASS;
+uint32_t CPAL_TIMEOUT_UserCallback(CPAL_InitTypeDef* pDevInitStruct)
+{
+  /* Update LCD Display */
+  LCD_SetBackColor(Red);
+  LCD_SetTextColor(White); 
+  LCD_DisplayStringLine(Line8, MESSAGE12);
+  
+  /* Update CPAL_State, wCPAL_DevError and wCPAL_Timeout */ 
+  pDevInitStruct->CPAL_State = CPAL_STATE_READY;
+  pDevInitStruct->wCPAL_DevError = CPAL_I2C_ERR_NONE ;
+  pDevInitStruct->wCPAL_Timeout  = CPAL_I2C_TIMEOUT_DEFAULT; 
+  
+  /* DeInitialize CPAL device */
+  CPAL_I2C_DeInit(pDevInitStruct);  
+  
+  /* Initialize CPAL device with the selected parameters */
+  CPAL_I2C_Init(pDevInitStruct);
+  
+  return CPAL_PASS;
 }
 
 
@@ -199,33 +199,37 @@ uint32_t CPAL_TIMEOUT_UserCallback(CPAL_InitTypeDef *pDevInitStruct) {
   * @param  DeviceError
   * @retval None
   */
-void CPAL_I2C_ERR_UserCallback(CPAL_DevTypeDef pDevInstance, uint32_t DeviceError) {
-    /* Update CPAL_State */
-    I2C_DevStructures[pDevInstance]->CPAL_State = CPAL_STATE_READY;
-
-    /* Update Display settings */
-    LCD_SetBackColor(Red);
-    LCD_SetTextColor(White);
-
-    /* if an error occurred except AF*/
-    if (DeviceError != CPAL_I2C_ERR_AF) {
-        /* Deinitialize device */
-        CPAL_I2C_DeInit(I2C_DevStructures[pDevInstance]);
-
-        /* Initialize device with the selected parameters */
-        CPAL_I2C_Init(I2C_DevStructures[pDevInstance]);
-
-        /* Update LCD Display */
-        LCD_DisplayStringLine(Line8, MESSAGE11);
-    } else {
-        /* Update LCD Display */
-        LCD_DisplayStringLine(Line8, MESSAGE10);
-    }
-
-    /* Update wCPAL_DevError */
-    I2C_DevStructures[pDevInstance]->wCPAL_DevError = CPAL_I2C_ERR_NONE;
-
-    TransferStatus = FAILED;
+void CPAL_I2C_ERR_UserCallback(CPAL_DevTypeDef pDevInstance, uint32_t DeviceError)
+{ 
+  /* Update CPAL_State */
+  I2C_DevStructures[pDevInstance]->CPAL_State = CPAL_STATE_READY;
+  
+  /* Update Display settings */
+  LCD_SetBackColor(Red);
+  LCD_SetTextColor(White); 
+  
+  /* if an error occurred except AF*/
+  if (DeviceError != CPAL_I2C_ERR_AF )
+  {
+    /* Deinitialize device */
+    CPAL_I2C_DeInit(I2C_DevStructures[pDevInstance]);
+    
+    /* Initialize device with the selected parameters */
+    CPAL_I2C_Init(I2C_DevStructures[pDevInstance]);   
+    
+    /* Update LCD Display */
+    LCD_DisplayStringLine(Line8, MESSAGE11);    
+  }
+  else
+  {
+    /* Update LCD Display */
+    LCD_DisplayStringLine(Line8, MESSAGE10);
+  }
+  
+  /* Update wCPAL_DevError */  
+  I2C_DevStructures[pDevInstance]->wCPAL_DevError = CPAL_I2C_ERR_NONE ;
+  
+  TransferStatus = FAILED;
 }
 
 

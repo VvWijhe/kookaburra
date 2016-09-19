@@ -27,11 +27,11 @@
 /* Exported types ------------------------------------------------------------*/
 /* Exported constants --------------------------------------------------------*/
 /* Uncomment the line corresponding to evaluation board	used to run the example */
-#if !defined (USE_STM3210B_EVAL) && !defined (USE_STM3210E_EVAL) && \
-    !defined (USE_EK_STM32F) && !defined(USE_MINI_STM32)
-//#define USE_STM3210B_EVAL
-//#define USE_STM3210E_EVAL
-//#define USE_EK_STM32F
+#if !defined (USE_STM3210B_EVAL) &&  !defined (USE_STM3210E_EVAL) && \
+	!defined (USE_EK_STM32F) && !defined(USE_MINI_STM32)
+ //#define USE_STM3210B_EVAL
+ //#define USE_STM3210E_EVAL
+ //#define USE_EK_STM32F
 #error "board not defined"
 #endif
 

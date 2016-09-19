@@ -47,8 +47,7 @@ uint16_t Status = 0;
 
 /* Private function prototypes -----------------------------------------------*/
 static void Fill_Buffer(uint8_t *pBuffer, uint16_t BufferLenght, uint8_t Offset);
-
-static TestStatus Buffercmp(uint8_t *pBuffer1, uint8_t *pBuffer2, uint16_t BufferLength);
+static TestStatus Buffercmp(uint8_t* pBuffer1, uint8_t* pBuffer2, uint16_t BufferLength);
 
 /* Private functions ---------------------------------------------------------*/
 
@@ -57,50 +56,58 @@ static TestStatus Buffercmp(uint8_t *pBuffer1, uint8_t *pBuffer2, uint16_t Buffe
   * @param  None
   * @retval None
   */
-int main(void) {
-    /*!< At this stage the microcontroller clock setting is already configured,
-    this is done through SystemInit() function which is called from startup
-    file (startup_stm32f0xx.s) before to branch to application main.
-    To reconfigure the default setting of SystemInit() function, refer to
-    system_stm32f0xx.c file
-    */
-
-    /* Initialize Leds mounted on STM320518-EVAL board */
-    STM_EVAL_LEDInit(LED1);
-    STM_EVAL_LEDInit(LED2);
-
-    /* Initializes the SD/SPI communication */
-    Status = SD_Init();
-
-    /* If SD is responding */
-    if (Status == SD_RESPONSE_NO_ERROR) {
-        /* Fill the buffer to send */
-        Fill_Buffer(Buffer_Block_Tx, BUFFERSIZE, 0x0);
-
-        /* Write block of 512 bytes on address 0 */
-        Status = SD_WriteBlock(Buffer_Block_Tx, 0, BUFFERSIZE);
-
-        /* Read block of 512 bytes from address 0 */
-        Status = SD_ReadBlock(Buffer_Block_Rx, 0, BUFFERSIZE);
-
-        /* Check the corectness of written dada */
-        TransferStatus = Buffercmp(Buffer_Block_Tx, Buffer_Block_Rx, BUFFERSIZE);
-
-        if (TransferStatus == PASSED) {
-            /* OK: Turn on LD1 */
-            STM_EVAL_LEDOn(LED1);
-        } else {
-            /* Error: Turn on LD2 */
-            STM_EVAL_LEDOn(LED2);
-        }
-    } else {
-        /* Error: Turn on LD2 */
-        STM_EVAL_LEDOn(LED2);
+int main(void)
+{
+  /*!< At this stage the microcontroller clock setting is already configured, 
+  this is done through SystemInit() function which is called from startup
+  file (startup_stm32f0xx.s) before to branch to application main.
+  To reconfigure the default setting of SystemInit() function, refer to
+  system_stm32f0xx.c file
+  */
+  
+  /* Initialize Leds mounted on STM320518-EVAL board */
+  STM_EVAL_LEDInit(LED1);
+  STM_EVAL_LEDInit(LED2);
+  
+  /* Initializes the SD/SPI communication */
+  Status = SD_Init();	
+  
+  /* If SD is responding */
+  if (Status == SD_RESPONSE_NO_ERROR)
+  {
+    /* Fill the buffer to send */
+    Fill_Buffer(Buffer_Block_Tx, BUFFERSIZE, 0x0);
+    
+    /* Write block of 512 bytes on address 0 */
+    Status = SD_WriteBlock(Buffer_Block_Tx, 0, BUFFERSIZE);
+    
+    /* Read block of 512 bytes from address 0 */
+    Status = SD_ReadBlock(Buffer_Block_Rx, 0, BUFFERSIZE);
+    
+    /* Check the corectness of written dada */
+    TransferStatus = Buffercmp(Buffer_Block_Tx, Buffer_Block_Rx, BUFFERSIZE);
+    
+    if (TransferStatus == PASSED)
+    {
+      /* OK: Turn on LD1 */
+      STM_EVAL_LEDOn(LED1);
     }
-
-    while (1) {
+    else
+    {
+      /* Error: Turn on LD2 */
+      STM_EVAL_LEDOn(LED2);
     }
-
+  }
+  else
+  {
+    /* Error: Turn on LD2 */
+    STM_EVAL_LEDOn(LED2);
+  }
+  
+  while (1)
+  {
+  }
+  
 }
 
 /**
@@ -110,13 +117,15 @@ int main(void) {
   * @param  Offset: first value to fill on the Buffer
   * @retval None.
   */
-static void Fill_Buffer(uint8_t *pBuffer, uint16_t BufferLenght, uint8_t Offset) {
-    uint16_t IndexTmp;
-
-    /* Put in global buffer same values */
-    for (IndexTmp = 0; IndexTmp < BufferLenght; IndexTmp++) {
-        pBuffer[IndexTmp] = IndexTmp + Offset;
-    }
+static void Fill_Buffer(uint8_t *pBuffer, uint16_t BufferLenght, uint8_t Offset)
+{
+  uint16_t IndexTmp;
+  
+  /* Put in global buffer same values */
+  for( IndexTmp = 0; IndexTmp < BufferLenght; IndexTmp++ )
+  {
+    pBuffer[IndexTmp] =IndexTmp + Offset;
+  }
 }
 
 /**
@@ -126,17 +135,20 @@ static void Fill_Buffer(uint8_t *pBuffer, uint16_t BufferLenght, uint8_t Offset)
   * @retval PASSED: pBuffer1 identical to pBuffer2
   *         FAILED: pBuffer1 differs from pBuffer2
   */
-static TestStatus Buffercmp(uint8_t *pBuffer1, uint8_t *pBuffer2, uint16_t BufferLength) {
-    while (BufferLength--) {
-        if (*pBuffer1 != *pBuffer2) {
-            return FAILED;
-        }
-
-        pBuffer1++;
-        pBuffer2++;
+static TestStatus Buffercmp(uint8_t* pBuffer1, uint8_t* pBuffer2, uint16_t BufferLength)
+{
+  while (BufferLength--)
+  {
+    if (*pBuffer1 != *pBuffer2)
+    {
+      return FAILED;
     }
 
-    return PASSED;
+    pBuffer1++;
+    pBuffer2++;
+  }
+
+  return PASSED;
 }
 
 

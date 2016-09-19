@@ -42,8 +42,7 @@
 /* Private define ------------------------------------------------------------*/
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
-__IO uint32_t
-TimingDelay = 0;
+__IO uint32_t TimingDelay = 0;
 
 /* Private function prototypes -----------------------------------------------*/
 /* Private functions ---------------------------------------------------------*/
@@ -53,77 +52,84 @@ TimingDelay = 0;
   * @param  None
   * @retval None
   */
-int main(void) {
-    /*!< At this stage the microcontroller clock setting is already configured,
-         this is done through SystemInit() function which is called from startup
-         file (startup_stm32f0xx.s) before to branch to application main.
-         To reconfigure the default setting of SystemInit() function, refer to
-         system_stm32f0xx.c file
-       */
-    /* Initialize LEDs and Tamper Button mounted on EVAL board */
-    STM_EVAL_LEDInit(LED1);
-    STM_EVAL_LEDInit(LED2);
-    STM_EVAL_LEDInit(LED3);
-    STM_EVAL_PBInit(BUTTON_TAMPER, BUTTON_MODE_EXTI);
+int main(void)
+{
+  /*!< At this stage the microcontroller clock setting is already configured, 
+       this is done through SystemInit() function which is called from startup
+       file (startup_stm32f0xx.s) before to branch to application main.
+       To reconfigure the default setting of SystemInit() function, refer to
+       system_stm32f0xx.c file
+     */ 
+  /* Initialize LEDs and Tamper Button mounted on EVAL board */       
+  STM_EVAL_LEDInit(LED1);
+  STM_EVAL_LEDInit(LED2);
+  STM_EVAL_LEDInit(LED3);
+  STM_EVAL_PBInit(BUTTON_TAMPER, BUTTON_MODE_EXTI);
 
-    /* Check if the system has resumed from IWDG reset */
-    if (RCC_GetFlagStatus(RCC_FLAG_IWDGRST) != RESET) {
-        /* IWDGRST flag set */
-        /* Turn on LED1 */
-        STM_EVAL_LEDOn(LED1);
+  /* Check if the system has resumed from IWDG reset */
+  if (RCC_GetFlagStatus(RCC_FLAG_IWDGRST) != RESET)
+  { 
+    /* IWDGRST flag set */
+    /* Turn on LED1 */
+    STM_EVAL_LEDOn(LED1);
 
-        /* Clear reset flags */
-        RCC_ClearFlag();
-    } else {
-        /* IWDGRST flag is not set */
-        /* Turn off LED1 */
-        STM_EVAL_LEDOff(LED1);
-    }
+    /* Clear reset flags */
+    RCC_ClearFlag();
+  }
+  else
+  {
+    /* IWDGRST flag is not set */
+    /* Turn off LED1 */
+    STM_EVAL_LEDOff(LED1);
+   }
+  
+  /* Setup SysTick Timer for 1 msec interrupts  */
+  if (SysTick_Config(SystemCoreClock / 1000))
+  { 
+    /* Capture error */ 
+    while (1)
+    {}
+  }
+  
+  /********************* IWDG configuration ***********************************/
+  /* Enable IWDG, set reload and window values to 2000 and 1000, respectively. 
+     In this case the refresh window is:
+     (2000-1000) / (LSI/16) = ~400 ms < refresh window < 2000 / (LSI/16) = ~800 ms
 
-    /* Setup SysTick Timer for 1 msec interrupts  */
-    if (SysTick_Config(SystemCoreClock / 1000)) {
-        /* Capture error */
-        while (1) {}
-    }
+        Note: the refresh window may varies due to LSI frequency dispersion 
+        ----
+     */
 
-    /********************* IWDG configuration ***********************************/
-    /* Enable IWDG, set reload and window values to 2000 and 1000, respectively.
-       In this case the refresh window is:
-       (2000-1000) / (LSI/16) = ~400 ms < refresh window < 2000 / (LSI/16) = ~800 ms
+  /* Enable IWDG (the LSI oscillator will be enabled by hardware) */
+  IWDG_Enable();
 
-          Note: the refresh window may varies due to LSI frequency dispersion
-          ----
-       */
+  /* Enable write access to IWDG_PR and IWDG_RLR registers */
+  IWDG_WriteAccessCmd(IWDG_WriteAccess_Enable);
 
-    /* Enable IWDG (the LSI oscillator will be enabled by hardware) */
-    IWDG_Enable();
+  /* Set IWDG Prescaler value to 16 */
+  IWDG_SetPrescaler(IWDG_Prescaler_16);
 
-    /* Enable write access to IWDG_PR and IWDG_RLR registers */
-    IWDG_WriteAccessCmd(IWDG_WriteAccess_Enable);
+  /* Set IWDG Reload value to 2000 */
+  IWDG_SetReload(2000);
+  
+  /* Wait until RVU flag is reset to be sure that the reload value
+     update operation is completed */
+  while(IWDG_GetFlagStatus(IWDG_FLAG_RVU) != RESET);
+  
+  /* Set the IWDG window value to 1000 */
+  IWDG_SetWindowValue(1000);
+   
+  while (1)
+  {
+    /* Toggle LED2 */
+    STM_EVAL_LEDToggle(LED2);
 
-    /* Set IWDG Prescaler value to 16 */
-    IWDG_SetPrescaler(IWDG_Prescaler_16);
-
-    /* Set IWDG Reload value to 2000 */
-    IWDG_SetReload(2000);
-
-    /* Wait until RVU flag is reset to be sure that the reload value
-       update operation is completed */
-    while (IWDG_GetFlagStatus(IWDG_FLAG_RVU) != RESET);
-
-    /* Set the IWDG window value to 1000 */
-    IWDG_SetWindowValue(1000);
-
-    while (1) {
-        /* Toggle LED2 */
-        STM_EVAL_LEDToggle(LED2);
-
-        /* Insert 750 ms delay */
-        Delay(750);
-
-        /* Reload IWDG counter */
-        IWDG_ReloadCounter();
-    }
+    /* Insert 750 ms delay */
+    Delay(750);
+    
+    /* Reload IWDG counter */
+    IWDG_ReloadCounter();
+  }
 }
 
 /**
@@ -131,10 +137,11 @@ int main(void) {
   * @param  nTime: specifies the delay time length, in 1 ms.
   * @retval None
   */
-void Delay(__IO uint32_t nTime) {
-    TimingDelay = nTime;
+void Delay(__IO uint32_t nTime)
+{
+  TimingDelay = nTime;
 
-    while (TimingDelay != 0);
+  while(TimingDelay != 0);
 }
 
 /**
@@ -142,10 +149,12 @@ void Delay(__IO uint32_t nTime) {
   * @param  None
   * @retval None
   */
-void TimingDelay_Decrement(void) {
-    if (TimingDelay != 0x00) {
-        TimingDelay--;
-    }
+void TimingDelay_Decrement(void)
+{
+  if (TimingDelay != 0x00)
+  { 
+    TimingDelay--;
+  }
 }
 
 #ifdef  USE_FULL_ASSERT

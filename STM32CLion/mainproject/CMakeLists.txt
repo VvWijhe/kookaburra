@@ -5,7 +5,7 @@
 
 message("HAN ESE STM32F0Discovery LEDs demo.")
 
-set(PROJECTNAAM "stm32f0demo")
+set(PROJECTNAAM "mainproject")
 
 cmake_minimum_required(VERSION 2.8.10)
 

@@ -87,9 +87,10 @@
   * @param  None
   * @retval None
   */
-void CRS_DeInit(void) {
-    RCC_APB1PeriphResetCmd(RCC_APB1Periph_CRS, ENABLE);
-    RCC_APB1PeriphResetCmd(RCC_APB1Periph_CRS, DISABLE);
+void CRS_DeInit(void)
+{
+  RCC_APB1PeriphResetCmd(RCC_APB1Periph_CRS, ENABLE);
+  RCC_APB1PeriphResetCmd(RCC_APB1Periph_CRS, DISABLE);
 }
 
 /**
@@ -100,12 +101,13 @@ void CRS_DeInit(void) {
   * @param  CRS_HSI48CalibrationValue: 
   * @retval None
   */
-void CRS_AdjustHSI48CalibrationValue(uint8_t CRS_HSI48CalibrationValue) {
-    /* Clear TRIM[5:0] bits */
-    CRS->CR &= ~CRS_CR_TRIM;
-
-    /* Set the TRIM[5:0] bits according to CRS_HSI48CalibrationValue value */
-    CRS->CR |= (uint32_t)((uint32_t) CRS_HSI48CalibrationValue << 8);
+void CRS_AdjustHSI48CalibrationValue(uint8_t CRS_HSI48CalibrationValue)
+{
+  /* Clear TRIM[5:0] bits */
+  CRS->CR &= ~CRS_CR_TRIM;
+  
+  /* Set the TRIM[5:0] bits according to CRS_HSI48CalibrationValue value */
+  CRS->CR |= (uint32_t)((uint32_t)CRS_HSI48CalibrationValue << 8);
 
 }
 
@@ -116,14 +118,18 @@ void CRS_AdjustHSI48CalibrationValue(uint8_t CRS_HSI48CalibrationValue) {
   *          This parameter can be: ENABLE or DISABLE.
   * @retval None
   */
-void CRS_FrequencyErrorCounterCmd(FunctionalState NewState) {
-    assert_param(IS_FUNCTIONAL_STATE(NewState));
+void CRS_FrequencyErrorCounterCmd(FunctionalState NewState)
+{
+  assert_param(IS_FUNCTIONAL_STATE(NewState));
 
-    if (NewState != DISABLE) {
-        CRS->CR |= CRS_CR_CEN;
-    } else {
-        CRS->CR &= ~CRS_CR_CEN;
-    }
+  if (NewState != DISABLE)
+  {
+     CRS->CR |= CRS_CR_CEN;
+  }
+  else
+  {
+    CRS->CR &= ~CRS_CR_CEN;
+  }
 }
 
 /**
@@ -133,14 +139,18 @@ void CRS_FrequencyErrorCounterCmd(FunctionalState NewState) {
   *          This parameter can be: ENABLE or DISABLE.
   * @retval None
   */
-void CRS_AutomaticCalibrationCmd(FunctionalState NewState) {
-    assert_param(IS_FUNCTIONAL_STATE(NewState));
+void CRS_AutomaticCalibrationCmd(FunctionalState NewState)
+{
+  assert_param(IS_FUNCTIONAL_STATE(NewState));
 
-    if (NewState != DISABLE) {
-        CRS->CR |= CRS_CR_AUTOTRIMEN;
-    } else {
-        CRS->CR &= ~CRS_CR_AUTOTRIMEN;
-    }
+  if (NewState != DISABLE)
+  {
+    CRS->CR |= CRS_CR_AUTOTRIMEN;
+  }
+else
+  {
+    CRS->CR &= ~CRS_CR_AUTOTRIMEN;
+  }
 }
 
 /**
@@ -148,8 +158,9 @@ void CRS_AutomaticCalibrationCmd(FunctionalState NewState) {
   * @param  None
   * @retval None
   */
-void CRS_SoftwareSynchronizationGenerate(void) {
-    CRS->CR |= CRS_CR_SWSYNC;
+void CRS_SoftwareSynchronizationGenerate(void)
+{
+  CRS->CR |= CRS_CR_SWSYNC;
 }
 
 /**
@@ -161,13 +172,14 @@ void CRS_SoftwareSynchronizationGenerate(void) {
   *          This parameter must be a number between 0 and .
   * @retval None
   */
-void CRS_FrequencyErrorCounterReload(uint32_t CRS_ReloadValue) {
-
-    /* Clear RELOAD[15:0] bits */
-    CRS->CFGR &= ~CRS_CFGR_RELOAD;
-
-    /* Set the RELOAD[15:0] bits according to CRS_ReloadValue value */
-    CRS->CFGR |= (uint32_t) CRS_ReloadValue;
+void CRS_FrequencyErrorCounterReload(uint32_t CRS_ReloadValue)
+{
+ 
+  /* Clear RELOAD[15:0] bits */
+  CRS->CFGR &= ~CRS_CFGR_RELOAD;
+  
+  /* Set the RELOAD[15:0] bits according to CRS_ReloadValue value */
+  CRS->CFGR |= (uint32_t)CRS_ReloadValue;
 
 }
 
@@ -178,12 +190,13 @@ void CRS_FrequencyErrorCounterReload(uint32_t CRS_ReloadValue) {
   *          This parameter must be a number between 0 and .
   * @retval None
   */
-void CRS_FrequencyErrorLimitConfig(uint8_t CRS_ErrorLimitValue) {
-    /* Clear FELIM[7:0] bits */
-    CRS->CFGR &= ~CRS_CFGR_FELIM;
-
-    /* Set the FELIM[7:0] bits according to CRS_ErrorLimitValue value */
-    CRS->CFGR |= (uint32_t) CRS_ErrorLimitValue;
+void CRS_FrequencyErrorLimitConfig(uint8_t CRS_ErrorLimitValue)
+{
+  /* Clear FELIM[7:0] bits */
+  CRS->CFGR &= ~CRS_CFGR_FELIM;
+  
+  /* Set the FELIM[7:0] bits according to CRS_ErrorLimitValue value */
+  CRS->CFGR |= (uint32_t)CRS_ErrorLimitValue;
 }
 
 /**
@@ -201,15 +214,16 @@ void CRS_FrequencyErrorLimitConfig(uint8_t CRS_ErrorLimitValue) {
   *            @arg CRS_SYNC_Div128: 
   * @retval None
   */
-void CRS_SynchronizationPrescalerConfig(uint32_t CRS_Prescaler) {
-    /* Check the parameters */
-    assert_param(IS_CRS_SYNC_DIV(CRS_Prescaler));
-
-    /* Clear SYNCDIV[2:0] bits */
-    CRS->CFGR &= ~CRS_CFGR_SYNCDIV;
-
-    /* Set the CRS_CFGR_SYNCDIV[2:0] bits according to CRS_Prescaler value */
-    CRS->CFGR |= CRS_Prescaler;
+void CRS_SynchronizationPrescalerConfig(uint32_t CRS_Prescaler)
+{
+  /* Check the parameters */
+  assert_param(IS_CRS_SYNC_DIV(CRS_Prescaler));
+  
+  /* Clear SYNCDIV[2:0] bits */
+  CRS->CFGR &= ~CRS_CFGR_SYNCDIV;
+  
+  /* Set the CRS_CFGR_SYNCDIV[2:0] bits according to CRS_Prescaler value */
+  CRS->CFGR |= CRS_Prescaler;
 }
 
 /**
@@ -222,15 +236,16 @@ void CRS_SynchronizationPrescalerConfig(uint32_t CRS_Prescaler) {
   *            @arg CRS_SYNCSource_USB:   
   * @retval None
   */
-void CRS_SynchronizationSourceConfig(uint32_t CRS_Source) {
-    /* Check the parameters */
-    assert_param(IS_CRS_SYNC_SOURCE(CRS_Source));
-
-    /* Clear SYNCSRC[1:0] bits */
-    CRS->CFGR &= ~CRS_CFGR_SYNCSRC;
-
-    /* Set the SYNCSRC[1:0] bits according to CRS_Source value */
-    CRS->CFGR |= CRS_Source;
+void CRS_SynchronizationSourceConfig(uint32_t CRS_Source)
+{
+  /* Check the parameters */
+  assert_param(IS_CRS_SYNC_SOURCE(CRS_Source));
+  
+  /* Clear SYNCSRC[1:0] bits */
+  CRS->CFGR &= ~CRS_CFGR_SYNCSRC;
+  
+  /* Set the SYNCSRC[1:0] bits according to CRS_Source value */
+  CRS->CFGR |= CRS_Source;
 }
 
 /**
@@ -242,15 +257,16 @@ void CRS_SynchronizationSourceConfig(uint32_t CRS_Source) {
   *            @arg CRS_SYNCPolarity_Falling:   
   * @retval None
   */
-void CRS_SynchronizationPolarityConfig(uint32_t CRS_Polarity) {
-    /* Check the parameters */
-    assert_param(IS_CRS_SYNC_POLARITY(CRS_Polarity));
-
-    /* Clear SYNCSPOL bit */
-    CRS->CFGR &= ~CRS_CFGR_SYNCPOL;
-
-    /* Set the SYNCSPOL bits according to CRS_Polarity value */
-    CRS->CFGR |= CRS_Polarity;
+void CRS_SynchronizationPolarityConfig(uint32_t CRS_Polarity)
+{
+  /* Check the parameters */
+  assert_param(IS_CRS_SYNC_POLARITY(CRS_Polarity));
+  
+  /* Clear SYNCSPOL bit */
+  CRS->CFGR &= ~CRS_CFGR_SYNCPOL;
+  
+  /* Set the SYNCSPOL bits according to CRS_Polarity value */
+  CRS->CFGR |= CRS_Polarity;
 }
 
 /**
@@ -258,8 +274,9 @@ void CRS_SynchronizationPolarityConfig(uint32_t CRS_Polarity) {
   * @param  None
   * @retval The reload value 
   */
-uint32_t CRS_GetReloadValue(void) {
-    return ((uint32_t)(CRS->CFGR & CRS_CFGR_RELOAD));
+uint32_t CRS_GetReloadValue(void)
+{
+  return ((uint32_t)(CRS->CFGR & CRS_CFGR_RELOAD));
 }
 
 /**
@@ -267,8 +284,9 @@ uint32_t CRS_GetReloadValue(void) {
   * @param  None
   * @retval The reload value 
   */
-uint32_t CRS_GetHSI48CalibrationValue(void) {
-    return (((uint32_t)(CRS->CR & CRS_CR_TRIM)) >> 8);
+uint32_t CRS_GetHSI48CalibrationValue(void)
+{
+  return (((uint32_t)(CRS->CR & CRS_CR_TRIM)) >> 8);
 }
 
 /**
@@ -276,8 +294,9 @@ uint32_t CRS_GetHSI48CalibrationValue(void) {
   * @param  None
   * @retval The frequency error capture value 
   */
-uint32_t CRS_GetFrequencyErrorValue(void) {
-    return ((uint32_t)(CRS->ISR & CRS_ISR_FECAP));
+uint32_t CRS_GetFrequencyErrorValue(void)
+{
+  return ((uint32_t)(CRS->ISR & CRS_ISR_FECAP));
 }
 
 /**
@@ -288,8 +307,9 @@ uint32_t CRS_GetFrequencyErrorValue(void) {
   *           - 0x00: Up counting
   *           - 0x8000: Down counting   
   */
-uint32_t CRS_GetFrequencyErrorDirection(void) {
-    return ((uint32_t)(CRS->ISR & CRS_ISR_FEDIR));
+uint32_t CRS_GetFrequencyErrorDirection(void)
+{
+  return ((uint32_t)(CRS->ISR & CRS_ISR_FEDIR));
 }
 
 /** @defgroup CRS_Group2 Interrupts and flags management functions
@@ -314,16 +334,20 @@ uint32_t CRS_GetFrequencyErrorDirection(void) {
   *          This parameter can be: ENABLE or DISABLE.
   * @retval None
   */
-void CRS_ITConfig(uint32_t CRS_IT, FunctionalState NewState) {
-    /* Check the parameters */
-    assert_param(IS_CRS_IT(CRS_IT));
-    assert_param(IS_FUNCTIONAL_STATE(NewState));
-
-    if (NewState != DISABLE) {
-        CRS->CR |= CRS_IT;
-    } else {
-        CRS->CR &= ~CRS_IT;
-    }
+void CRS_ITConfig(uint32_t CRS_IT, FunctionalState NewState)
+{
+  /* Check the parameters */
+  assert_param(IS_CRS_IT(CRS_IT));
+  assert_param(IS_FUNCTIONAL_STATE(NewState));
+  
+  if (NewState != DISABLE)
+  {
+    CRS->CR |= CRS_IT;
+  }
+  else
+  {
+    CRS->CR &= ~CRS_IT;
+  }
 }
 
 /**
@@ -339,11 +363,12 @@ void CRS_ITConfig(uint32_t CRS_IT, FunctionalState NewState) {
   *              @arg CRS_FLAG_SYNCMISS: 
   * @retval The new state of CRS_FLAG (SET or RESET).
   */
-FlagStatus CRS_GetFlagStatus(uint32_t CRS_FLAG) {
-    /* Check the parameters */
-    assert_param(IS_CRS_FLAG(CRS_FLAG));
+FlagStatus CRS_GetFlagStatus(uint32_t CRS_FLAG)
+{
+  /* Check the parameters */
+  assert_param(IS_CRS_FLAG(CRS_FLAG));
 
-    return ((FlagStatus)(CRS->ISR & CRS_FLAG));
+  return ((FlagStatus)(CRS->ISR & CRS_FLAG));
 }
 
 /**
@@ -359,15 +384,19 @@ FlagStatus CRS_GetFlagStatus(uint32_t CRS_FLAG) {
   *              @arg CRS_FLAG_SYNCMISS: 
   * @retval None
   */
-void CRS_ClearFlag(uint32_t CRS_FLAG) {
-    /* Check the parameters */
-    assert_param(IS_CRS_FLAG(CRS_FLAG));
-
-    if ((CRS_FLAG & FLAG_MASK) != 0) {
-        CRS->ICR |= CRS_ICR_ERRC;
-    } else {
-        CRS->ICR |= CRS_FLAG;
-    }
+void CRS_ClearFlag(uint32_t CRS_FLAG)
+{
+  /* Check the parameters */
+  assert_param(IS_CRS_FLAG(CRS_FLAG));
+  
+  if ((CRS_FLAG & FLAG_MASK)!= 0)
+  {
+    CRS->ICR |= CRS_ICR_ERRC;  
+  }
+  else
+  {
+    CRS->ICR |= CRS_FLAG;
+  }
 }
 
 /**
@@ -383,11 +412,12 @@ void CRS_ClearFlag(uint32_t CRS_FLAG) {
   *              @arg CRS_IT_SYNCMISS: 
   * @retval The new state of CRS_IT (SET or RESET).
   */
-ITStatus CRS_GetITStatus(uint32_t CRS_IT) {
-    /* Check the parameters */
-    assert_param(IS_CRS_GET_IT(CRS_IT));
+ITStatus CRS_GetITStatus(uint32_t CRS_IT)
+{
+  /* Check the parameters */
+  assert_param(IS_CRS_GET_IT(CRS_IT));
 
-    return ((ITStatus)(CRS->ISR & CRS_IT));
+  return ((ITStatus)(CRS->ISR & CRS_IT));
 }
 
 /**
@@ -403,20 +433,24 @@ ITStatus CRS_GetITStatus(uint32_t CRS_IT) {
   *              @arg CRS_IT_SYNCMISS: 
   * @retval None
   */
-void CRS_ClearITPendingBit(uint32_t CRS_IT) {
-    /* Check the parameters */
-    assert_param(IS_CRS_CLEAR_IT(CRS_IT));
-
-    if ((CRS_IT & FLAG_MASK) != 0) {
-        CRS->ICR |= CRS_ICR_ERRC;
-    } else {
-        CRS->ICR |= CRS_IT;
-    }
+void CRS_ClearITPendingBit(uint32_t CRS_IT)
+{
+  /* Check the parameters */
+  assert_param(IS_CRS_CLEAR_IT(CRS_IT));
+  
+  if ((CRS_IT & FLAG_MASK)!= 0)
+  {
+    CRS->ICR |= CRS_ICR_ERRC;  
+  }
+  else
+  {
+    CRS->ICR |= CRS_IT;
+  }
 }
 /**
   * @}
   */
-
+  
 /**
   * @}
   */

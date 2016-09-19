@@ -24,22 +24,19 @@
   *
   ******************************************************************************
   */
-
+  
 /* Define to prevent recursive inclusion -------------------------------------*/
 #ifndef __MAIN_H
 #define __MAIN_H
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f0xx.h"
-
 #ifdef USE_STM320518_EVAL
-#include "stm320518_eval.h"
-#include "stm320518_eval_lcd.h"
-#else
-
-#include "stm32072b_eval.h"
-#include "stm32072b_eval_lcd.h"
-
+  #include "stm320518_eval.h"
+  #include "stm320518_eval_lcd.h"
+#else 
+  #include "stm32072b_eval.h"
+  #include "stm32072b_eval_lcd.h" 
 #endif /* USE_STM320518_EVAL */
 
 /* Exported types ------------------------------------------------------------*/
@@ -53,7 +50,7 @@
 #define DEVICE_ADDRESS_2               0x03  /* Tuner: CEC device 2 address   */
 #define DEVICE_ADDRESS_3               0x05  /* Audio System: CEC device 3 address   */
 
-/* Uncomment the define to use LCD */
+ /* Uncomment the define to use LCD */
 #define LCD_DISPLAY
 /* Exported macro ------------------------------------------------------------*/
 /* Exported functions ------------------------------------------------------- */

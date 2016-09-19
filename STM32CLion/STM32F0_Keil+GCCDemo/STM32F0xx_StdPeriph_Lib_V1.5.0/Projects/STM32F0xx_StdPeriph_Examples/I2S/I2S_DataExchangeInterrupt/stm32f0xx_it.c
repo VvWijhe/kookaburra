@@ -43,9 +43,7 @@
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
 extern const uint16_t I2S_Buffer_Tx[32];
-extern __IO uint16_t
-TxIdx,
-RxIdx;
+extern __IO uint16_t TxIdx, RxIdx;
 extern uint16_t I2S_Buffer_Rx[32];
 
 /* Private function prototypes -----------------------------------------------*/
@@ -60,7 +58,8 @@ extern uint16_t I2S_Buffer_Rx[32];
   * @param  None
   * @retval None
   */
-void NMI_Handler(void) {
+void NMI_Handler(void)
+{
 }
 
 /**
@@ -68,10 +67,12 @@ void NMI_Handler(void) {
   * @param  None
   * @retval None
   */
-void HardFault_Handler(void) {
-    /* Go to infinite loop when Hard Fault exception occurs */
-    while (1) {
-    }
+void HardFault_Handler(void)
+{
+  /* Go to infinite loop when Hard Fault exception occurs */
+  while (1)
+  {
+  }
 }
 
 /**
@@ -79,7 +80,8 @@ void HardFault_Handler(void) {
   * @param  None
   * @retval None
   */
-void SVC_Handler(void) {
+void SVC_Handler(void)
+{
 }
 
 /**
@@ -87,7 +89,8 @@ void SVC_Handler(void) {
   * @param  None
   * @retval None
   */
-void PendSV_Handler(void) {
+void PendSV_Handler(void)
+{
 }
 
 /**
@@ -95,7 +98,8 @@ void PendSV_Handler(void) {
   * @param  None
   * @retval None
   */
-void SysTick_Handler(void) {
+void SysTick_Handler(void)
+{
 }
 
 /******************************************************************************/
@@ -109,28 +113,31 @@ void SysTick_Handler(void) {
   * @param  None
   * @retval : None
   */
-void SPI1_IRQHandler(void) {
-    uint32_t tmpreg = 0x00;
-    tmpreg = SPI1->SR;
+void SPI1_IRQHandler(void)
+{
+  uint32_t tmpreg = 0x00;
+  tmpreg = SPI1->SR;
 #if defined (I2S_SLAVE_RECEIVER)
-    if ((tmpreg&0x01)==0x01)
+  if ((tmpreg&0x01)==0x01)
+  {
+    I2S_Buffer_Rx[RxIdx++] = SPI_I2S_ReceiveData16(SPI1);
+    /* Disable the Interrupt when transfer is complete */
+    if(RxIdx == 32)
     {
-      I2S_Buffer_Rx[RxIdx++] = SPI_I2S_ReceiveData16(SPI1);
-      /* Disable the Interrupt when transfer is complete */
-      if(RxIdx == 32)
-      {
-        /* Disable the I2S1 RXNE Interrupt */
-        SPI_I2S_ITConfig(SPI1, SPI_I2S_IT_RXNE, DISABLE);
-      }
+      /* Disable the I2S1 RXNE Interrupt */
+      SPI_I2S_ITConfig(SPI1, SPI_I2S_IT_RXNE, DISABLE);
     }
+  }
 #elif defined (I2S_MASTER_TRANSMITTER)
-    if ((tmpreg & 0x02) == 0x02) {
-        SPI_I2S_SendData16(SPI1, I2S_Buffer_Tx[TxIdx++]);
-        if (TxIdx == 32) {
-            /* Disable the I2S1 TXE Interrupt */
-            SPI_I2S_ITConfig(SPI1, SPI_I2S_IT_TXE, DISABLE);
-        }
+  if((tmpreg&0x02)==0x02)
+  {
+    SPI_I2S_SendData16(SPI1, I2S_Buffer_Tx[TxIdx++]);
+    if(TxIdx == 32)
+    {
+      /* Disable the I2S1 TXE Interrupt */
+      SPI_I2S_ITConfig(SPI1, SPI_I2S_IT_TXE, DISABLE);
     }
+  }
 #endif
 }
 /**

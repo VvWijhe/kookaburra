@@ -42,8 +42,7 @@
 /* Private define ------------------------------------------------------------*/
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
-extern __IO uint32_t
-EndOfTransfer;
+extern __IO uint32_t EndOfTransfer;
 /* Private function prototypes -----------------------------------------------*/
 /* Private functions ---------------------------------------------------------*/
 
@@ -56,7 +55,8 @@ EndOfTransfer;
   * @param  None
   * @retval None
   */
-void NMI_Handler(void) {
+void NMI_Handler(void)
+{
 }
 
 /**
@@ -64,10 +64,12 @@ void NMI_Handler(void) {
   * @param  None
   * @retval None
   */
-void HardFault_Handler(void) {
-    /* Go to infinite loop when Hard Fault exception occurs */
-    while (1) {
-    }
+void HardFault_Handler(void)
+{
+  /* Go to infinite loop when Hard Fault exception occurs */
+  while (1)
+  {
+  }
 }
 
 /**
@@ -75,7 +77,8 @@ void HardFault_Handler(void) {
   * @param  None
   * @retval None
   */
-void SVC_Handler(void) {
+void SVC_Handler(void)
+{
 }
 
 /**
@@ -83,7 +86,8 @@ void SVC_Handler(void) {
   * @param  None
   * @retval None
   */
-void PendSV_Handler(void) {
+void PendSV_Handler(void)
+{
 }
 
 /**
@@ -91,7 +95,8 @@ void PendSV_Handler(void) {
   * @param  None
   * @retval None
   */
-void SysTick_Handler(void) {
+void SysTick_Handler(void)
+{
 }
 
 /******************************************************************************/
@@ -106,15 +111,17 @@ void SysTick_Handler(void) {
   * @param  None
   * @retval None
   */
-void DMA1_Channel1_IRQHandler(void) {
-    /* Test on DMA1 Channel1 Transfer Complete interrupt */
-    if (DMA_GetITStatus(DMA1_IT_TC1)) {
-        /* DMA1 finished the transfer of SrcBuffer */
-        EndOfTransfer = 1;
+void DMA1_Channel1_IRQHandler(void)
+{
+  /* Test on DMA1 Channel1 Transfer Complete interrupt */
+  if(DMA_GetITStatus(DMA1_IT_TC1))
+  {
+    /* DMA1 finished the transfer of SrcBuffer */
+    EndOfTransfer = 1;
 
-        /* Clear DMA1 Channel1 Half Transfer, Transfer Complete and Global interrupt pending bits */
-        DMA_ClearITPendingBit(DMA1_IT_GL1);
-    }
+    /* Clear DMA1 Channel1 Half Transfer, Transfer Complete and Global interrupt pending bits */
+    DMA_ClearITPendingBit(DMA1_IT_GL1);
+  }
 }
 
 /**

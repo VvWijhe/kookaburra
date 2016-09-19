@@ -26,6 +26,7 @@
   */
 
 /* Includes ------------------------------------------------------------------*/
+#include "main.h"
 
 /** @addtogroup STM32F0xx_StdPeriph_Templates
   * @{
@@ -43,22 +44,24 @@
   * @param  None
   * @retval None
   */
-int main(void) {
+int main(void)
+{
 
-    /*!< At this stage the microcontroller clock setting is already configured,
-         this is done through SystemInit() function which is called from startup
-         file (startup_stm32f0xx.s) before to branch to application main.
-         To reconfigure the default setting of SystemInit() function, refer to
-         system_stm32f0xx.c file
-       */
+  /*!< At this stage the microcontroller clock setting is already configured, 
+       this is done through SystemInit() function which is called from startup
+       file (startup_stm32f0xx.s) before to branch to application main.
+       To reconfigure the default setting of SystemInit() function, refer to
+       system_stm32f0xx.c file
+     */ 
+      
+  /* Add your application code here
+     */
 
-    /* Add your application code here
-       */
+  /* Infinite loop */
+  while (1)
+  {
 
-    /* Infinite loop */
-    while (1) {
-
-    }
+  }
 }
 
 

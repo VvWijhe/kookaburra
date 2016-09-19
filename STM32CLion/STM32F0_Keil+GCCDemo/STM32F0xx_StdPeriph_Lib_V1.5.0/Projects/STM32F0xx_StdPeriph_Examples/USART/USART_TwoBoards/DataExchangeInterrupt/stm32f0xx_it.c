@@ -47,20 +47,14 @@ extern uint8_t TxBuffer[];
 extern uint8_t RxBuffer[];
 extern uint8_t CmdBuffer[];
 extern uint8_t AckBuffer[];
-extern __IO uint8_t
-RxIndex;
-extern __IO uint8_t
-TxIndex;
+extern __IO uint8_t RxIndex;
+extern __IO uint8_t TxIndex;
 
-extern __IO uint8_t
-UsartTransactionType;
-extern __IO uint8_t
-UsartMode;
+extern __IO uint8_t UsartTransactionType;
+extern __IO uint8_t UsartMode;
 
-__IO uint8_t
-Counter = 0x00;
-extern __IO uint32_t
-TimeOut;
+__IO uint8_t Counter = 0x00;
+extern __IO uint32_t TimeOut;
 
 /* Private function prototypes -----------------------------------------------*/
 /* Private functions ---------------------------------------------------------*/
@@ -74,7 +68,8 @@ TimeOut;
   * @param  None
   * @retval None
   */
-void NMI_Handler(void) {
+void NMI_Handler(void)
+{
 }
 
 /**
@@ -82,10 +77,12 @@ void NMI_Handler(void) {
   * @param  None
   * @retval None
   */
-void HardFault_Handler(void) {
-    /* Go to infinite loop when Hard Fault exception occurs */
-    while (1) {
-    }
+void HardFault_Handler(void)
+{
+  /* Go to infinite loop when Hard Fault exception occurs */
+  while (1)
+  {
+  }
 }
 
 /**
@@ -93,7 +90,8 @@ void HardFault_Handler(void) {
   * @param  None
   * @retval None
   */
-void SVC_Handler(void) {
+void SVC_Handler(void)
+{
 }
 
 /**
@@ -101,7 +99,8 @@ void SVC_Handler(void) {
   * @param  None
   * @retval None
   */
-void PendSV_Handler(void) {
+void PendSV_Handler(void)
+{
 }
 
 /**
@@ -109,18 +108,23 @@ void PendSV_Handler(void) {
 * @param  None
 * @retval None
 */
-void SysTick_Handler(void) {
-    /* Decrement the timeout value */
-    if (TimeOut != 0x0) {
-        TimeOut--;
-    }
-
-    if (Counter < 10) {
-        Counter++;
-    } else {
-        Counter = 0x00;
-        STM_EVAL_LEDToggle(LED1);
-    }
+void SysTick_Handler(void)
+{   
+  /* Decrement the timeout value */
+  if (TimeOut != 0x0)
+  {
+    TimeOut--;
+  }
+    
+  if (Counter < 10)
+  {
+    Counter++;
+  }
+  else
+  {
+    Counter = 0x00;
+    STM_EVAL_LEDToggle(LED1);
+  }
 }
 
 /******************************************************************************/
@@ -131,52 +135,66 @@ void SysTick_Handler(void) {
 * @param  None
 * @retval None
 */
-void USARTx_IRQHandler(void) {
-    /* USART in mode Transmitter -------------------------------------------------*/
-    if (USART_GetITStatus(USARTx, USART_IT_TXE) ==
-        SET) { /* When Joystick Pressed send the command then send the data */
-        if (UsartMode == USART_MODE_TRANSMITTER) { /* Send the command */
-            if (UsartTransactionType == USART_TRANSACTIONTYPE_CMD) {
-                USART_SendData(USARTx, CmdBuffer[TxIndex++]);
-                if (TxIndex == 0x02) {
-                    /* Disable the USARTx transmit data register empty interrupt */
-                    USART_ITConfig(USARTx, USART_IT_TXE, DISABLE);
-                }
-            }
-                /* Send the data */
-            else {
-                USART_SendData(USARTx, TxBuffer[TxIndex++]);
-                if (TxIndex == GetVar_NbrOfData()) {
-                    /* Disable the USARTx transmit data register empty interrupt */
-                    USART_ITConfig(USARTx, USART_IT_TXE, DISABLE);
-                }
-            }
+void USARTx_IRQHandler(void)
+{
+  /* USART in mode Transmitter -------------------------------------------------*/
+  if (USART_GetITStatus(USARTx, USART_IT_TXE) == SET)
+  { /* When Joystick Pressed send the command then send the data */
+    if (UsartMode == USART_MODE_TRANSMITTER)
+    { /* Send the command */
+      if (UsartTransactionType == USART_TRANSACTIONTYPE_CMD)
+      {
+        USART_SendData(USARTx, CmdBuffer[TxIndex++]);
+        if (TxIndex == 0x02)
+        {
+          /* Disable the USARTx transmit data register empty interrupt */
+          USART_ITConfig(USARTx, USART_IT_TXE, DISABLE);
         }
-            /*If Data Received send the ACK*/
-        else {
-            USART_SendData(USARTx, AckBuffer[TxIndex++]);
-            if (TxIndex == 0x02) {
-                /* Disable the USARTx transmit data register empty interrupt */
-                USART_ITConfig(USARTx, USART_IT_TXE, DISABLE);
-            }
+      }
+      /* Send the data */
+      else
+      {
+        USART_SendData(USARTx, TxBuffer[TxIndex++]);
+        if (TxIndex == GetVar_NbrOfData())
+        {
+          /* Disable the USARTx transmit data register empty interrupt */
+          USART_ITConfig(USARTx, USART_IT_TXE, DISABLE);
         }
+      }
     }
-
-    /* USART in mode Receiver --------------------------------------------------*/
-    if (USART_GetITStatus(USARTx, USART_IT_RXNE) == SET) {
-        if (UsartMode == USART_MODE_TRANSMITTER) {
-            AckBuffer[RxIndex++] = USART_ReceiveData(USARTx);
-        } else {
-            /* Receive the command */
-            if (UsartTransactionType == USART_TRANSACTIONTYPE_CMD) {
-                CmdBuffer[RxIndex++] = USART_ReceiveData(USARTx);
-            }
-                /* Receive the USART data */
-            else {
-                RxBuffer[RxIndex++] = USART_ReceiveData(USARTx);
-            }
-        }
+    /*If Data Received send the ACK*/
+    else
+    {
+      USART_SendData(USARTx, AckBuffer[TxIndex++]);
+      if (TxIndex == 0x02)
+      {
+          /* Disable the USARTx transmit data register empty interrupt */
+          USART_ITConfig(USARTx, USART_IT_TXE, DISABLE);
+      }
     }
+  }
+  
+  /* USART in mode Receiver --------------------------------------------------*/
+  if (USART_GetITStatus(USARTx, USART_IT_RXNE) == SET)
+  {
+    if (UsartMode == USART_MODE_TRANSMITTER)
+    {
+      AckBuffer[RxIndex++] = USART_ReceiveData(USARTx);
+    }
+    else
+    {
+      /* Receive the command */
+      if (UsartTransactionType == USART_TRANSACTIONTYPE_CMD)
+      {
+        CmdBuffer[RxIndex++] = USART_ReceiveData(USARTx);
+      }
+      /* Receive the USART data */
+      else
+      {
+        RxBuffer[RxIndex++] = USART_ReceiveData(USARTx);
+      }
+    }
+  }     
 }
 /******************************************************************************/
 /*                 STM32F0xx Peripherals Interrupt Handlers                   */

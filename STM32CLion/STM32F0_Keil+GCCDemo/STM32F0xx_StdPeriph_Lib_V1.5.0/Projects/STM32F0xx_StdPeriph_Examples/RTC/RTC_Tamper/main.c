@@ -26,6 +26,7 @@
   */
 
 /* Includes ------------------------------------------------------------------*/
+#include "main.h"
 
 /** @addtogroup STM32F0xx_StdPeriph_Examples
   * @{
@@ -41,21 +42,19 @@
 
 /* Uncomment the corresponding line to select the RTC Clock source */
 //#define RTC_CLOCK_SOURCE_LSE   /* LSE used as RTC source clock */
-#define RTC_CLOCK_SOURCE_LSI */ /* LSI used as RTC source clock. The RTC Clock
+ #define RTC_CLOCK_SOURCE_LSI */ /* LSI used as RTC source clock. The RTC Clock
                                       may varies due to LSI frequency dispersion. */
 
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
 uint32_t RTC_BKP_DR[RTC_BKP_DR_NUMBER] =
-        {
-                RTC_BKP_DR0, RTC_BKP_DR1, RTC_BKP_DR2, RTC_BKP_DR3, RTC_BKP_DR4
-        };
+  {
+    RTC_BKP_DR0, RTC_BKP_DR1, RTC_BKP_DR2, RTC_BKP_DR3, RTC_BKP_DR4
+  };
 
 /* Private function prototypes -----------------------------------------------*/
 static void RTC_Config(void);
-
 static void WriteToRTC_BKP_DR(uint32_t FirstRTCBackupData);
-
 static uint32_t CheckRTC_BKP_DR(uint32_t FirstRTCBackupData);
 
 /* Private functions ---------------------------------------------------------*/
@@ -65,38 +64,43 @@ static uint32_t CheckRTC_BKP_DR(uint32_t FirstRTCBackupData);
   * @param  None
   * @retval None
   */
-int main(void) {
-    /*!< At this stage the microcontroller clock setting is already configured,
-         this is done through SystemInit() function which is called from startup
-         file (startup_stm32f0xx.s) before to branch to application main.
-         To reconfigure the default setting of SystemInit() function, refer to
-         system_stm32f0xx.c file
-       */
+int main(void)
+{
+  /*!< At this stage the microcontroller clock setting is already configured, 
+       this is done through SystemInit() function which is called from startup
+       file (startup_stm32f0xx.s) before to branch to application main.
+       To reconfigure the default setting of SystemInit() function, refer to
+       system_stm32f0xx.c file
+     */ 
 
-    /* Initialize Leds mounted on STM320518-EVAL board */
-    STM_EVAL_LEDInit(LED1);
-    STM_EVAL_LEDInit(LED2);
-    STM_EVAL_LEDInit(LED3);
-    STM_EVAL_LEDInit(LED4);
+  /* Initialize Leds mounted on STM320518-EVAL board */
+  STM_EVAL_LEDInit(LED1);
+  STM_EVAL_LEDInit(LED2);
+  STM_EVAL_LEDInit(LED3);
+  STM_EVAL_LEDInit(LED4);
+  
+  /* RTC configuration */
+  RTC_Config();
 
-    /* RTC configuration */
-    RTC_Config();
+  /* Write To RTC Backup Data registers */
+  WriteToRTC_BKP_DR(0xA53C);
 
-    /* Write To RTC Backup Data registers */
-    WriteToRTC_BKP_DR(0xA53C);
+  /* Check if the written data are correct */
+  if(CheckRTC_BKP_DR(0xA53C) == 0x00)
+  {
+    /* Turn on LED1 */
+    STM_EVAL_LEDOn(LED1);
+  }
+  else
+  {
+    /* Turn on LED3 */
+    STM_EVAL_LEDOn(LED3);
+  }
 
-    /* Check if the written data are correct */
-    if (CheckRTC_BKP_DR(0xA53C) == 0x00) {
-        /* Turn on LED1 */
-        STM_EVAL_LEDOn(LED1);
-    } else {
-        /* Turn on LED3 */
-        STM_EVAL_LEDOn(LED3);
-    }
-
-    /* Infinite loop */
-    while (1) {
-    }
+  /* Infinite loop */
+  while (1)
+  {
+  }
 }
 
 /**
@@ -104,75 +108,77 @@ int main(void) {
   * @param  None
   * @retval None
   */
-static void RTC_Config(void) {
-    NVIC_InitTypeDef NVIC_InitStructure;
-    EXTI_InitTypeDef EXTI_InitStructure;
+static void RTC_Config(void)
+{
+  NVIC_InitTypeDef NVIC_InitStructure;
+  EXTI_InitTypeDef  EXTI_InitStructure;
 
-    /* Enable the PWR clock */
-    RCC_APB1PeriphClockCmd(RCC_APB1Periph_PWR, ENABLE);
+  /* Enable the PWR clock */
+  RCC_APB1PeriphClockCmd(RCC_APB1Periph_PWR, ENABLE);
 
-    /* Allow access to RTC */
-    PWR_BackupAccessCmd(ENABLE);
-
+  /* Allow access to RTC */
+  PWR_BackupAccessCmd(ENABLE);
+      
 #if defined (RTC_CLOCK_SOURCE_LSI)  /* LSI used as RTC source clock*/
 /* The RTC Clock may varies due to LSI frequency dispersion. */
-    /* Enable the LSI OSC */
-    RCC_LSICmd(ENABLE);
+  /* Enable the LSI OSC */ 
+  RCC_LSICmd(ENABLE);
 
-    /* Wait till LSI is ready */
-    while (RCC_GetFlagStatus(RCC_FLAG_LSIRDY) == RESET) {
-    }
+  /* Wait till LSI is ready */  
+  while(RCC_GetFlagStatus(RCC_FLAG_LSIRDY) == RESET)
+  {
+  }
 
-    /* Select the RTC Clock Source */
-    RCC_RTCCLKConfig(RCC_RTCCLKSource_LSI);
-
+  /* Select the RTC Clock Source */
+  RCC_RTCCLKConfig(RCC_RTCCLKSource_LSI);
+  
 #elif defined (RTC_CLOCK_SOURCE_LSE) /* LSE used as RTC source clock */
-    /* Enable the LSE OSC */
-    RCC_LSEConfig(RCC_LSE_ON);
+  /* Enable the LSE OSC */
+  RCC_LSEConfig(RCC_LSE_ON);
 
-    /* Wait till LSE is ready */
-    while(RCC_GetFlagStatus(RCC_FLAG_LSERDY) == RESET)
-    {
-    }
+  /* Wait till LSE is ready */  
+  while(RCC_GetFlagStatus(RCC_FLAG_LSERDY) == RESET)
+  {
+  }
 
-    /* Select the RTC Clock Source */
-    RCC_RTCCLKConfig(RCC_RTCCLKSource_LSE);
-
+  /* Select the RTC Clock Source */
+  RCC_RTCCLKConfig(RCC_RTCCLKSource_LSE);
+  
 #else
-#error Please select the RTC Clock source inside the main.c file
+  #error Please select the RTC Clock source inside the main.c file
 #endif /* RTC_CLOCK_SOURCE_LSI */
+  
+  /* Enable The external line19 interrupt */
+  EXTI_ClearITPendingBit(EXTI_Line19);
+  EXTI_InitStructure.EXTI_Line = EXTI_Line19;
+  EXTI_InitStructure.EXTI_Mode = EXTI_Mode_Interrupt;
+  EXTI_InitStructure.EXTI_Trigger = EXTI_Trigger_Rising;
+  EXTI_InitStructure.EXTI_LineCmd = ENABLE;
+  EXTI_Init(&EXTI_InitStructure);
 
-    /* Enable The external line19 interrupt */
-    EXTI_ClearITPendingBit(EXTI_Line19);
-    EXTI_InitStructure.EXTI_Line = EXTI_Line19;
-    EXTI_InitStructure.EXTI_Mode = EXTI_Mode_Interrupt;
-    EXTI_InitStructure.EXTI_Trigger = EXTI_Trigger_Rising;
-    EXTI_InitStructure.EXTI_LineCmd = ENABLE;
-    EXTI_Init(&EXTI_InitStructure);
+  /* Enable RTC IRQChannel */
+  NVIC_InitStructure.NVIC_IRQChannel = RTC_IRQn;
+  NVIC_InitStructure.NVIC_IRQChannelPriority = 0;
+  NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+  NVIC_Init(&NVIC_InitStructure);
 
-    /* Enable RTC IRQChannel */
-    NVIC_InitStructure.NVIC_IRQChannel = RTC_IRQn;
-    NVIC_InitStructure.NVIC_IRQChannelPriority = 0;
-    NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
-    NVIC_Init(&NVIC_InitStructure);
+  /* Disable the Tamper 1 detection */
+  RTC_TamperCmd(RTC_Tamper_1, DISABLE);
 
-    /* Disable the Tamper 1 detection */
-    RTC_TamperCmd(RTC_Tamper_1, DISABLE);
+  /* Clear Tamper 1 pin Event(TAMP1F) pending flag */
+  RTC_ClearFlag(RTC_FLAG_TAMP1F);
 
-    /* Clear Tamper 1 pin Event(TAMP1F) pending flag */
-    RTC_ClearFlag(RTC_FLAG_TAMP1F);
+  /* Configure the Tamper 1 Trigger */
+  RTC_TamperTriggerConfig(RTC_Tamper_1,  RTC_TamperTrigger_RisingEdge);
 
-    /* Configure the Tamper 1 Trigger */
-    RTC_TamperTriggerConfig(RTC_Tamper_1, RTC_TamperTrigger_RisingEdge);
+  /* Enable the Tamper interrupt */
+  RTC_ITConfig(RTC_IT_TAMP, ENABLE);
 
-    /* Enable the Tamper interrupt */
-    RTC_ITConfig(RTC_IT_TAMP, ENABLE);
+  /* Clear Tamper 1 pin interrupt pending bit */
+  RTC_ClearITPendingBit(RTC_IT_TAMP1);
 
-    /* Clear Tamper 1 pin interrupt pending bit */
-    RTC_ClearITPendingBit(RTC_IT_TAMP1);
-
-    /* Enable the Tamper 1 detection */
-    RTC_TamperCmd(RTC_Tamper_1, ENABLE);
+  /* Enable the Tamper 1 detection */
+  RTC_TamperCmd(RTC_Tamper_1, ENABLE);
 }
 
 /**
@@ -180,13 +186,15 @@ static void RTC_Config(void) {
   * @param  FirstRTCBackupData: data to be written to RTC Backup data registers.
   * @retval None
   */
-static void WriteToRTC_BKP_DR(uint32_t FirstRTCBackupData) {
-    uint32_t index = 0;
+static void WriteToRTC_BKP_DR(uint32_t FirstRTCBackupData)
+{
+  uint32_t index = 0;
 
-    for (index = 0; index < RTC_BKP_DR_NUMBER; index++) {
-        /* write To bkp data register */
-        RTC_WriteBackupRegister(RTC_BKP_DR[index], FirstRTCBackupData + (index * 0x5A));
-    }
+  for (index = 0; index < RTC_BKP_DR_NUMBER; index++)
+  {
+    /* write To bkp data register */
+    RTC_WriteBackupRegister(RTC_BKP_DR[index], FirstRTCBackupData + (index * 0x5A));
+  }
 }
 
 /**
@@ -196,15 +204,18 @@ static void WriteToRTC_BKP_DR(uint32_t FirstRTCBackupData) {
   *         - Value different from 0: Number of the first Backup register
   *           which value is not correct
   */
-static uint32_t CheckRTC_BKP_DR(uint32_t FirstRTCBackupData) {
-    uint32_t index = 0;
+static uint32_t CheckRTC_BKP_DR(uint32_t FirstRTCBackupData)
+{
+  uint32_t index = 0;
 
-    for (index = 0; index < RTC_BKP_DR_NUMBER; index++) {
-        /* Read from data register */
-        if (RTC_ReadBackupRegister(RTC_BKP_DR[index]) != (FirstRTCBackupData + (index * 0x5A))) {
-            return (index + 1);
-        }
+  for (index = 0; index < RTC_BKP_DR_NUMBER; index++)
+  {
+    /* Read from data register */
+    if (RTC_ReadBackupRegister(RTC_BKP_DR[index]) != (FirstRTCBackupData + (index * 0x5A)))
+    {
+      return (index + 1);
     }
+  }
     return 0;
 }
 
@@ -215,16 +226,19 @@ static uint32_t CheckRTC_BKP_DR(uint32_t FirstRTCBackupData) {
   *         - Value different from 0: Number of the first Backup register
   *           not reset
   */
-uint32_t IsBackupRegReset(void) {
-    uint32_t index = 0;
+uint32_t IsBackupRegReset(void)
+{
+  uint32_t index = 0;
 
-    for (index = 0; index < RTC_BKP_DR_NUMBER; index++) {
-        /* Read from bkp Data Register */
-        if (RTC_ReadBackupRegister(RTC_BKP_DR[index]) != 0x0) {
-            return (index + 1);
-        }
+  for (index = 0; index < RTC_BKP_DR_NUMBER; index++)
+  {
+     /* Read from bkp Data Register */
+    if (RTC_ReadBackupRegister(RTC_BKP_DR[index]) != 0x0)
+    {
+      return (index + 1);
     }
-    return 0;
+  }
+  return 0;
 }
 
 #ifdef  USE_FULL_ASSERT

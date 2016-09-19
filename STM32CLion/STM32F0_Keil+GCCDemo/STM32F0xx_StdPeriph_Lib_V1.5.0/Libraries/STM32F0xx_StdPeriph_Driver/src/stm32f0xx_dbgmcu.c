@@ -55,7 +55,7 @@
 /** @defgroup DBGMCU_Private_Functions 
   * @{
   */
-
+  
 
 /** @defgroup DBGMCU_Group1 Device and Revision ID management functions
  *  @brief   Device and Revision ID management functions
@@ -74,8 +74,9 @@
   * @param  None
   * @retval Device revision identifier
   */
-uint32_t DBGMCU_GetREVID(void) {
-    return (DBGMCU->IDCODE >> 16);
+uint32_t DBGMCU_GetREVID(void)
+{
+   return(DBGMCU->IDCODE >> 16);
 }
 
 /**
@@ -83,14 +84,15 @@ uint32_t DBGMCU_GetREVID(void) {
   * @param  None
   * @retval Device identifier
   */
-uint32_t DBGMCU_GetDEVID(void) {
-    return (DBGMCU->IDCODE & IDCODE_DEVID_MASK);
+uint32_t DBGMCU_GetDEVID(void)
+{
+   return(DBGMCU->IDCODE & IDCODE_DEVID_MASK);
 }
 
 /**
   * @}
   */
-
+  
 /** @defgroup DBGMCU_Group2 Peripherals Configuration functions
  *  @brief   Peripherals Configuration
  *
@@ -113,16 +115,20 @@ uint32_t DBGMCU_GetDEVID(void) {
   *          This parameter can be: ENABLE or DISABLE.
   * @retval None
   */
-void DBGMCU_Config(uint32_t DBGMCU_Periph, FunctionalState NewState) {
-    /* Check the parameters */
-    assert_param(IS_DBGMCU_PERIPH(DBGMCU_Periph));
-    assert_param(IS_FUNCTIONAL_STATE(NewState));
+void DBGMCU_Config(uint32_t DBGMCU_Periph, FunctionalState NewState)
+{
+  /* Check the parameters */
+  assert_param(IS_DBGMCU_PERIPH(DBGMCU_Periph));
+  assert_param(IS_FUNCTIONAL_STATE(NewState));
 
-    if (NewState != DISABLE) {
-        DBGMCU->CR |= DBGMCU_Periph;
-    } else {
-        DBGMCU->CR &= ~DBGMCU_Periph;
-    }
+  if (NewState != DISABLE)
+  {
+    DBGMCU->CR |= DBGMCU_Periph;
+  }
+  else
+  {
+    DBGMCU->CR &= ~DBGMCU_Periph;
+  }
 }
 
 
@@ -149,16 +155,20 @@ void DBGMCU_Config(uint32_t DBGMCU_Periph, FunctionalState NewState) {
   *          This parameter can be: ENABLE or DISABLE.
   * @retval None
   */
-void DBGMCU_APB1PeriphConfig(uint32_t DBGMCU_Periph, FunctionalState NewState) {
-    /* Check the parameters */
-    assert_param(IS_DBGMCU_APB1PERIPH(DBGMCU_Periph));
-    assert_param(IS_FUNCTIONAL_STATE(NewState));
+void DBGMCU_APB1PeriphConfig(uint32_t DBGMCU_Periph, FunctionalState NewState)
+{
+  /* Check the parameters */
+  assert_param(IS_DBGMCU_APB1PERIPH(DBGMCU_Periph));
+  assert_param(IS_FUNCTIONAL_STATE(NewState));
 
-    if (NewState != DISABLE) {
-        DBGMCU->APB1FZ |= DBGMCU_Periph;
-    } else {
-        DBGMCU->APB1FZ &= ~DBGMCU_Periph;
-    }
+  if (NewState != DISABLE)
+  {
+    DBGMCU->APB1FZ |= DBGMCU_Periph;
+  }
+  else
+  {
+    DBGMCU->APB1FZ &= ~DBGMCU_Periph;
+  }
 }
 
 /**
@@ -173,22 +183,26 @@ void DBGMCU_APB1PeriphConfig(uint32_t DBGMCU_Periph, FunctionalState NewState) {
   *          This parameter can be: ENABLE or DISABLE.
   * @retval None
   */
-void DBGMCU_APB2PeriphConfig(uint32_t DBGMCU_Periph, FunctionalState NewState) {
-    /* Check the parameters */
-    assert_param(IS_DBGMCU_APB2PERIPH(DBGMCU_Periph));
-    assert_param(IS_FUNCTIONAL_STATE(NewState));
+void DBGMCU_APB2PeriphConfig(uint32_t DBGMCU_Periph, FunctionalState NewState)
+{
+  /* Check the parameters */
+  assert_param(IS_DBGMCU_APB2PERIPH(DBGMCU_Periph));
+  assert_param(IS_FUNCTIONAL_STATE(NewState));
 
-    if (NewState != DISABLE) {
-        DBGMCU->APB2FZ |= DBGMCU_Periph;
-    } else {
-        DBGMCU->APB2FZ &= ~DBGMCU_Periph;
-    }
+  if (NewState != DISABLE)
+  {
+    DBGMCU->APB2FZ |= DBGMCU_Periph;
+  }
+  else
+  {
+    DBGMCU->APB2FZ &= ~DBGMCU_Periph;
+  }
 }
 
 /**
   * @}
   */
-
+  
 /**
   * @}
   */

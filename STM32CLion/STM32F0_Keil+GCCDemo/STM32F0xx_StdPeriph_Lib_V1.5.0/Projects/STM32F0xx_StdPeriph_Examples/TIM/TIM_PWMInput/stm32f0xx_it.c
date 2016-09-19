@@ -28,6 +28,7 @@
   */
 
 /* Includes ------------------------------------------------------------------*/
+#include "stm32f0xx_it.h"
 
 /** @addtogroup STM32F0xx_StdPeriph_Examples
   * @{
@@ -41,12 +42,9 @@
 /* Private define ------------------------------------------------------------*/
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
-__IO uint16_t
-IC2Value = 0;
-__IO uint16_t
-DutyCycle = 0;
-__IO uint32_t
-Frequency = 0;
+__IO uint16_t IC2Value = 0;
+__IO uint16_t DutyCycle = 0;
+__IO uint32_t Frequency = 0;
 
 /* Private function prototypes -----------------------------------------------*/
 /* Private functions ---------------------------------------------------------*/
@@ -60,7 +58,8 @@ Frequency = 0;
   * @param  None
   * @retval None
   */
-void NMI_Handler(void) {
+void NMI_Handler(void)
+{
 }
 
 /**
@@ -68,10 +67,12 @@ void NMI_Handler(void) {
   * @param  None
   * @retval None
   */
-void HardFault_Handler(void) {
-    /* Go to infinite loop when Hard Fault exception occurs */
-    while (1) {
-    }
+void HardFault_Handler(void)
+{
+  /* Go to infinite loop when Hard Fault exception occurs */
+  while (1)
+  {
+  }
 }
 
 /**
@@ -79,7 +80,8 @@ void HardFault_Handler(void) {
   * @param  None
   * @retval None
   */
-void SVC_Handler(void) {
+void SVC_Handler(void)
+{
 }
 
 /**
@@ -87,7 +89,8 @@ void SVC_Handler(void) {
   * @param  None
   * @retval None
   */
-void PendSV_Handler(void) {
+void PendSV_Handler(void)
+{
 }
 
 /**
@@ -95,7 +98,8 @@ void PendSV_Handler(void) {
   * @param  None
   * @retval None
   */
-void SysTick_Handler(void) {
+void SysTick_Handler(void)
+{
 }
 
 /******************************************************************************/
@@ -109,23 +113,27 @@ void SysTick_Handler(void) {
   * @param  None
   * @retval None
   */
-void TIM2_IRQHandler(void) {
-    /* Clear TIM2 Capture compare interrupt pending bit */
-    TIM_ClearITPendingBit(TIM2, TIM_IT_CC2);
+void TIM2_IRQHandler(void)
+{
+  /* Clear TIM2 Capture compare interrupt pending bit */
+  TIM_ClearITPendingBit(TIM2, TIM_IT_CC2);
 
-    /* Get the Input Capture value */
-    IC2Value = TIM_GetCapture2(TIM2);
+  /* Get the Input Capture value */
+  IC2Value = TIM_GetCapture2(TIM2);
 
-    if (IC2Value != 0) {
-        /* Duty cycle computation */
-        DutyCycle = (TIM_GetCapture1(TIM2) * 100) / IC2Value;
+  if (IC2Value != 0)
+  {
+    /* Duty cycle computation */
+    DutyCycle = (TIM_GetCapture1(TIM2) * 100) / IC2Value;
 
-        /* Frequency computation */
-        Frequency = SystemCoreClock / IC2Value;
-    } else {
-        DutyCycle = 0;
-        Frequency = 0;
-    }
+    /* Frequency computation */
+    Frequency = SystemCoreClock / IC2Value;
+  }
+  else
+  {
+    DutyCycle = 0;
+    Frequency = 0;
+  }
 }
 
 /**

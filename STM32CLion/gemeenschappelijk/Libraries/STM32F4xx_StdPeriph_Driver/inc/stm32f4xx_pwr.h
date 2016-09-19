@@ -24,14 +24,14 @@
   * limitations under the License.
   *
   ******************************************************************************
-  */
+  */ 
 
 /* Define to prevent recursive inclusion -------------------------------------*/
 #ifndef __STM32F4xx_PWR_H
 #define __STM32F4xx_PWR_H
 
 #ifdef __cplusplus
-extern "C" {
+ extern "C" {
 #endif
 
 /* Includes ------------------------------------------------------------------*/
@@ -43,18 +43,18 @@ extern "C" {
 
 /** @addtogroup PWR
   * @{
-  */
+  */ 
 
 /* Exported types ------------------------------------------------------------*/
 /* Exported constants --------------------------------------------------------*/
 
 /** @defgroup PWR_Exported_Constants
   * @{
-  */
+  */ 
 
 /** @defgroup PWR_PVD_detection_level 
   * @{
-  */
+  */ 
 
 #define PWR_PVDLevel_0                  PWR_CR_PLS_LEV0
 #define PWR_PVDLevel_1                  PWR_CR_PLS_LEV1
@@ -73,7 +73,7 @@ extern "C" {
   * @}
   */
 
-
+  
 /** @defgroup PWR_Regulator_state_in_STOP_mode 
   * @{
   */
@@ -101,7 +101,7 @@ extern "C" {
 #define PWR_Regulator_Voltage_Scale1    ((uint32_t)0x00004000)
 #define PWR_Regulator_Voltage_Scale2    ((uint32_t)0x00000000)
 #define IS_PWR_REGULATOR_VOLTAGE(VOLTAGE) (((VOLTAGE) == PWR_Regulator_Voltage_Scale1) || ((VOLTAGE) == PWR_Regulator_Voltage_Scale2))
-
+ 
 /**
   * @}
   */
@@ -119,7 +119,7 @@ extern "C" {
 /** @defgroup PWR_Flag_Legacy 
   * @{
   */
-#define PWR_FLAG_REGRDY                  PWR_FLAG_VOSRDY
+#define PWR_FLAG_REGRDY                  PWR_FLAG_VOSRDY               
 /**
   * @}
   */
@@ -138,38 +138,34 @@ extern "C" {
   */
 
 /* Exported macro ------------------------------------------------------------*/
-/* Exported functions --------------------------------------------------------*/
+/* Exported functions --------------------------------------------------------*/ 
 
-/* Function used to set the PWR configuration to the default reset state ******/
+/* Function used to set the PWR configuration to the default reset state ******/ 
 void PWR_DeInit(void);
 
-/* Backup Domain Access function **********************************************/
+/* Backup Domain Access function **********************************************/ 
 void PWR_BackupAccessCmd(FunctionalState NewState);
 
-/* PVD configuration functions ************************************************/
+/* PVD configuration functions ************************************************/ 
 void PWR_PVDLevelConfig(uint32_t PWR_PVDLevel);
-
 void PWR_PVDCmd(FunctionalState NewState);
 
-/* WakeUp pins configuration functions ****************************************/
+/* WakeUp pins configuration functions ****************************************/ 
 void PWR_WakeUpPinCmd(FunctionalState NewState);
 
-/* Main and Backup Regulators configuration functions *************************/
+/* Main and Backup Regulators configuration functions *************************/ 
 void PWR_BackupRegulatorCmd(FunctionalState NewState);
-
 void PWR_MainRegulatorModeConfig(uint32_t PWR_Regulator_Voltage);
 
-/* FLASH Power Down configuration functions ***********************************/
+/* FLASH Power Down configuration functions ***********************************/ 
 void PWR_FlashPowerDownCmd(FunctionalState NewState);
 
-/* Low Power modes configuration functions ************************************/
+/* Low Power modes configuration functions ************************************/ 
 void PWR_EnterSTOPMode(uint32_t PWR_Regulator, uint8_t PWR_STOPEntry);
-
 void PWR_EnterSTANDBYMode(void);
 
-/* Flags management functions *************************************************/
+/* Flags management functions *************************************************/ 
 FlagStatus PWR_GetFlagStatus(uint32_t PWR_FLAG);
-
 void PWR_ClearFlag(uint32_t PWR_FLAG);
 
 #ifdef __cplusplus

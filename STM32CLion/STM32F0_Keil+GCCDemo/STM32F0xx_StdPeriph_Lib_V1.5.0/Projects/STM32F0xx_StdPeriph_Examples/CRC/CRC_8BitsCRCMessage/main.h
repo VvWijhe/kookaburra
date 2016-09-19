@@ -24,18 +24,16 @@
   *
   ******************************************************************************
   */
-
+  
 /* Define to prevent recursive inclusion -------------------------------------*/
 #ifndef __MAIN_H
 #define __MAIN_H
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f0xx.h"
-
 #ifdef USE_STM32072B_EVAL
-#include "stm32072b_eval.h"
+  #include "stm32072b_eval.h"
 #endif /* USE_STM32072B_EVAL */
-
 #include <stdio.h>
 
 /* Exported types ------------------------------------------------------------*/

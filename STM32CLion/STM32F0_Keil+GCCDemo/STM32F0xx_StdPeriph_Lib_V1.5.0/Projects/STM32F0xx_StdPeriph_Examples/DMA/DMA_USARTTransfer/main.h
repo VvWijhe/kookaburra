@@ -24,7 +24,7 @@
   *
   ******************************************************************************
   */
-
+  
 /* Define to prevent recursive inclusion -------------------------------------*/
 #ifndef __MAIN_H
 #define __MAIN_H
@@ -34,9 +34,7 @@
 
 /* Exported typedef ----------------------------------------------------------*/
 #define countof(a)   (sizeof(a) / sizeof(*(a)))
-typedef enum {
-    FAILED = 0, PASSED = !FAILED
-} TestStatus;
+typedef enum {FAILED = 0, PASSED = !FAILED} TestStatus;
 
 /* Exported define -----------------------------------------------------------*/
 

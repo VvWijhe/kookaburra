@@ -28,6 +28,7 @@
   */
 
 /* Includes ------------------------------------------------------------------*/
+#include "stm32f0xx_it.h"
 
 /** @addtogroup STM32F0xx_StdPeriph_Examples
   * @{
@@ -53,7 +54,8 @@
   * @param  None
   * @retval None
   */
-void NMI_Handler(void) {
+void NMI_Handler(void)
+{
 }
 
 /**
@@ -61,10 +63,12 @@ void NMI_Handler(void) {
   * @param  None
   * @retval None
   */
-void HardFault_Handler(void) {
-    /* Go to infinite loop when Hard Fault exception occurs */
-    while (1) {
-    }
+void HardFault_Handler(void)
+{
+  /* Go to infinite loop when Hard Fault exception occurs */
+  while (1)
+  {
+  }
 }
 
 /**
@@ -72,7 +76,8 @@ void HardFault_Handler(void) {
   * @param  None
   * @retval None
   */
-void SVC_Handler(void) {
+void SVC_Handler(void)
+{
 }
 
 /**
@@ -80,7 +85,8 @@ void SVC_Handler(void) {
   * @param  None
   * @retval None
   */
-void PendSV_Handler(void) {
+void PendSV_Handler(void)
+{
 }
 
 /**
@@ -88,7 +94,8 @@ void PendSV_Handler(void) {
   * @param  None
   * @retval None
   */
-void SysTick_Handler(void) {
+void SysTick_Handler(void)
+{
 }
 
 /******************************************************************************/
@@ -103,14 +110,16 @@ void SysTick_Handler(void) {
   * @param  None
   * @retval None
   */
-void EXTI0_1_IRQHandler(void) {
-    if (EXTI_GetITStatus(EXTI_Line0) != RESET) {
-        /* Toggle LED2 */
-        STM_EVAL_LEDToggle(LED2);
+void EXTI0_1_IRQHandler(void)
+{
+  if(EXTI_GetITStatus(EXTI_Line0) != RESET)
+  {
+    /* Toggle LED2 */
+    STM_EVAL_LEDToggle(LED2);
 
-        /* Clear the EXTI line 0 pending bit */
-        EXTI_ClearITPendingBit(EXTI_Line0);
-    }
+    /* Clear the EXTI line 0 pending bit */
+    EXTI_ClearITPendingBit(EXTI_Line0);
+  }
 }
 
 /**
@@ -118,7 +127,7 @@ void EXTI0_1_IRQHandler(void) {
   * @param  None
   * @retval None
   */
-#ifdef USE_STM32072B_EVAL
+#ifdef USE_STM32072B_EVAL 
 void EXTI2_3_IRQHandler(void)
 {
   if(EXTI_GetITStatus(EXTI_Line3) != RESET)
@@ -146,34 +155,37 @@ void EXTI2_3_IRQHandler(void)
   * @param  None
   * @retval None
   */
-void EXTI4_15_IRQHandler(void) {
-    if (EXTI_GetITStatus(EXTI_Line8) != RESET) {
-        /* Toggle LED1 */
-        STM_EVAL_LEDToggle(LED1);
+void EXTI4_15_IRQHandler(void)
+{
+  if(EXTI_GetITStatus(EXTI_Line8) != RESET)
+  {
+    /* Toggle LED1 */
+    STM_EVAL_LEDToggle(LED1);
+    
+    /* Clear the EXTI line 8 pending bit */
+    EXTI_ClearITPendingBit(EXTI_Line8);
+  }
+  
+  if(EXTI_GetITStatus(EXTI_Line13) != RESET)
+  {
+    /* Toggle LED4 */
+    STM_EVAL_LEDToggle(LED4);
 
-        /* Clear the EXTI line 8 pending bit */
-        EXTI_ClearITPendingBit(EXTI_Line8);
-    }
-
-    if (EXTI_GetITStatus(EXTI_Line13) != RESET) {
-        /* Toggle LED4 */
-        STM_EVAL_LEDToggle(LED4);
-
-        /* Clear the EXTI line 13 pending bit */
-        EXTI_ClearITPendingBit(EXTI_Line13);
-    }
+    /* Clear the EXTI line 13 pending bit */
+    EXTI_ClearITPendingBit(EXTI_Line13);
+  }
 
 #ifdef USE_STM320518_EVAL
-    if(EXTI_GetITStatus(EXTI_Line9) != RESET)
-    {
-      /* Toggle LED4 */
-      STM_EVAL_LEDToggle(LED3);
+  if(EXTI_GetITStatus(EXTI_Line9) != RESET)
+  {
+    /* Toggle LED4 */
+    STM_EVAL_LEDToggle(LED3);
 
-      /* Clear the EXTI line 13 pending bit */
-      EXTI_ClearITPendingBit(EXTI_Line9);
-    }
+    /* Clear the EXTI line 13 pending bit */
+    EXTI_ClearITPendingBit(EXTI_Line9);
+  }
 #endif
-
+  
 }
 
 /**

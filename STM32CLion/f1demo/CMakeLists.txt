@@ -1,7 +1,7 @@
 ## (c)2011-2012 Ewout Boks
 ## Hogeschool van Arnhem en Nijmegen
 ## Opleiding Embedded Systems Engineering
-
+ 
 message("HAN ESE STM32F103 demo.")
 
 set(PROJECTNAAM "stm32f1demo")
@@ -19,7 +19,7 @@ include_directories(. ${BASISDIR} ${F1DISCOVERYDIR})
 
 add_definitions(-DSTM32F10X_MD -DUSE_STM3210E_EVAL -DUSE_STDPERIPH_DRIVER)
 
-include_directories(.)
+include_directories(. )
 
 set(STM32F1_128K_20K off)
 set(STM32F1_512K_64K on)

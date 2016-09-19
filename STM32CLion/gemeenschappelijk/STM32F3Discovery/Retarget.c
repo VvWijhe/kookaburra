@@ -17,20 +17,19 @@
 #pragma import(__use_no_semihosting_swi)
 
 
-extern int ser_putchar(int c);
+extern int ser_putchar (int c);
+extern int ser_getchar (void);
 
-extern int ser_getchar(void);
 
 
-struct __FILE {
-    int handle; /* Add whatever you need here */ };
+struct __FILE { int handle; /* Add whatever you need here */ };
 FILE __stdout;
 FILE __stdin;
 
 
-int fputc(int ch, FILE *f) { return (ser_putchar(ch)); }
+int fputc (int ch, FILE *f) { return (ser_putchar(ch)); }
 
-int fgetc(FILE *f) { return (ser_getchar()); }
+int fgetc (FILE *f)         { return (ser_getchar()); }
 
 
 int ferror(FILE *f) {
@@ -39,10 +38,9 @@ int ferror(FILE *f) {
 }
 
 
-void _ttywrch(int ch) { ser_putchar(ch); }
+void _ttywrch(int ch)       { ser_putchar(ch); }
 
 
 void _sys_exit(int return_code) {
-    label:
-    goto label;  /* endless loop */
+label:  goto label;  /* endless loop */
 }

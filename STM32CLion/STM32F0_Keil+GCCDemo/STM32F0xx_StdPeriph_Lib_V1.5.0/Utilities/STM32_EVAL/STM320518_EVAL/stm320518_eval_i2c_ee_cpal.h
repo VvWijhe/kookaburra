@@ -31,7 +31,7 @@
 #define __STM320518_EVAL_I2C_EE_CPAL_H
 
 #ifdef __cplusplus
-extern "C" {
+ extern "C" {
 #endif
 
 
@@ -115,7 +115,7 @@ extern "C" {
       and related resources (GPIO, DMA , IT and NVIC) relative to used EEPROM. 
       
 *********END OF User Notes**********************************************************************************/
-
+ 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f0xx_i2c_cpal.h"
 
@@ -126,52 +126,53 @@ extern "C" {
    Before starting each operation this state is tested. After each operation 
    sEE_State is updated with the new value resulting from the relative operation.*/
 
-typedef enum {
-    sEE_STATE_IDLE = 0x01,         /*This state indicates that the EEPROM device is in idle state */
+ typedef enum
+{ 
+  sEE_STATE_IDLE        = 0x01,         /*This state indicates that the EEPROM device is in idle state */ 
 
-    sEE_STATE_WRITING = 0x02,         /*This state indicates that write operation is ongoing */
+  sEE_STATE_WRITING     = 0x02,         /*This state indicates that write operation is ongoing */
 
-    sEE_STATE_READING = 0x03,         /*This state indicates that read operation is ongoing */
-
-    sEE_STATE_ERROR = 0x04,         /*This state indicates that an error is occurred during
+  sEE_STATE_READING     = 0x03,         /*This state indicates that read operation is ongoing */
+  
+  sEE_STATE_ERROR       = 0x04,         /*This state indicates that an error is occurred during 
                                             last operation */
-
-} sEE_StateTypeDef;
+  
+}sEE_StateTypeDef;
 
 
 /*========= CPAL_sEE_TypeDef =========*/
 /* sEE Device structure definition */
-typedef struct {
-    CPAL_InitTypeDef *sEE_CPALStructure;  /* Pointer on a CPAL Device structure relative to the device
+typedef struct  
+{
+  CPAL_InitTypeDef* sEE_CPALStructure;  /* Pointer on a CPAL Device structure relative to the device 
                                              instantiated to communicate with EEPROM */
-
-    uint16_t sEEPageSize;                 /* Contains the page size of EEPROM Memory*/
-
-    uint8_t sEEAddress;                   /* Contains the EEPROM device Address */
-
-
-    uint8_t sEEMemoryAddrMode;            /* Bit-field value specifying Memory Addressing Mode. Can be
+  
+  uint16_t sEEPageSize;                 /* Contains the page size of EEPROM Memory*/ 
+  
+  uint8_t sEEAddress;                   /* Contains the EEPROM device Address */
+  
+  
+  uint8_t sEEMemoryAddrMode;            /* Bit-field value specifying Memory Addressing Mode. Can be 
                                              any combination of following values: 
-                                             sEE_Memory_Addressing_Mode_Defines */
-
-    __IO sEE_StateTypeDef
-    sEEState;       /* Holds the current State of the EEPROM device. The state
+                                             sEE_Memory_Addressing_Mode_Defines */ 
+  
+  __IO sEE_StateTypeDef sEEState;       /* Holds the current State of the EEPROM device. The state 
                                              parameter can be one of the following values: sEE_State_Enum  */
-
-} sEE_InitTypeDef;
+  
+} sEE_InitTypeDef;   
 
 
 /*========= sEE_Global_Device_Structures =========*/
 /* sEE Global Device Structures are the Global default structures which 
-   are used to handle sEE configuration and status.*/
+   are used to handle sEE configuration and status.*/ 
+   
+extern sEE_InitTypeDef* sEE_DevStructures[];
 
-extern sEE_InitTypeDef *sEE_DevStructures[];
-
-#ifdef CPAL_USE_I2C1
+#ifdef CPAL_USE_I2C1 
 extern sEE_InitTypeDef sEE1_DevStructure;
 #endif /* CPAL_USE_I2C1 */
 
-#ifdef CPAL_USE_I2C2
+#ifdef CPAL_USE_I2C2 
 extern sEE_InitTypeDef sEE2_DevStructure;
 #endif /* CPAL_USE_I2C2 */
 
@@ -194,34 +195,26 @@ extern sEE_InitTypeDef sEE2_DevStructure;
 
 #define sEE_OPT_NO_MEM_ADDR            ((uint8_t)0x01)  /*Enable No Memory addressing mode for read operation : only EEPROM 
                                                             device address sent. No Register/Physical address to be sent after 
-                                                            addressing phase */
+                                                            addressing phase */  
 
 #define sEE_OPT_16BIT_REG              ((uint8_t)0x02)  /*Enable 16-Bit Register/Physical addressing mode (two bytes, 
                                                             MSB first). This option is supported only when sEE_OPT_NO_MEM_ADDR 
-                                                            option is not set */
+                                                            option is not set */ 
 
 
 
 /* Exported macro ------------------------------------------------------------*/
 /* Exported functions ------------------------------------------------------- */
 
-void sEE_DeInit(sEE_InitTypeDef *sEEInitStruct);
-
-void sEE_Init(sEE_InitTypeDef *sEEInitStruct);
-
-void sEE_StructInit(sEE_InitTypeDef *sEEInitStruct);
-
-uint32_t sEE_WriteBuffer(sEE_InitTypeDef *sEEInitStruct, uint8_t *pBuffer, uint16_t WriteAddr, uint32_t NumByteToWrite);
-
+void sEE_DeInit(sEE_InitTypeDef* sEEInitStruct);
+void sEE_Init(sEE_InitTypeDef* sEEInitStruct);
+void sEE_StructInit(sEE_InitTypeDef* sEEInitStruct);
+uint32_t sEE_WriteBuffer(sEE_InitTypeDef* sEEInitStruct, uint8_t* pBuffer, uint16_t WriteAddr, uint32_t NumByteToWrite);
 uint32_t sEE_WriteHandler(CPAL_DevTypeDef Device);
-
-uint32_t sEE_ReadBuffer(sEE_InitTypeDef *sEEInitStruct, uint8_t *pBuffer, uint16_t ReadAddr, uint32_t NumByteToRead);
-
+uint32_t sEE_ReadBuffer(sEE_InitTypeDef* sEEInitStruct, uint8_t* pBuffer, uint16_t ReadAddr, uint32_t NumByteToRead);
 uint32_t sEE_ReadHandler(CPAL_DevTypeDef Device);
-
 uint32_t sEE_WaitEepromStandbyState(CPAL_DevTypeDef Device);
-
-uint32_t sEE_GetEepromState(sEE_InitTypeDef *sEEInitStruct);
+uint32_t sEE_GetEepromState(sEE_InitTypeDef* sEEInitStruct);
 
 
 #ifdef __cplusplus

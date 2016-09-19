@@ -24,7 +24,7 @@
   *
   ******************************************************************************
   */
-
+  
 /* Define to prevent recursive inclusion -------------------------------------*/
 #ifndef __MAIN_H
 #define __MAIN_H
@@ -32,27 +32,22 @@
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f0xx.h"
 #include "stm32f0xx_i2c_cpal.h"
-
 #ifdef USE_STM320518_EVAL
-#include "stm320518_eval.h"
-#include "stm320518_eval_lcd.h"
-#else
-
-#include "stm32072b_eval.h"
-#include "stm32072b_eval_lcd.h"
-
+  #include "stm320518_eval.h"
+  #include "stm320518_eval_lcd.h"
+#else 
+  #include "stm32072b_eval.h"
+  #include "stm32072b_eval_lcd.h"
 #endif /* USE_STM320518_EVAL */
 
 
 /* Exported types ------------------------------------------------------------*/
-typedef enum {
-    FAILED = 1, PASSED = !FAILED
-} TestStatus;
+typedef enum {FAILED = 1, PASSED = !FAILED} TestStatus;
 
 /* Exported constants --------------------------------------------------------*/
 
 /* Uncomment the line below if you will use the I2C peripheral as a Master*/
-#define I2C_MASTER
+#define I2C_MASTER  
 /* Uncomment the line below if you will use the I2C peripheral as a Slave*/
 //#define I2C_SLAVE
 
@@ -61,7 +56,7 @@ typedef enum {
 #define SLAVE_I2C_TIMING                       0x10420F13
 
 /* Define the used Devices */
-#define MASTERSTRUCTURE           I2C1_DevStructure
+#define MASTERSTRUCTURE           I2C1_DevStructure  
 #define SLAVESTRUCTURE            I2C1_DevStructure
 
 /* Configure the OA1 address of the slave device */
@@ -78,7 +73,7 @@ typedef enum {
 #define MESSAGE5                        (uint8_t*)"       Tansfer      "
 #define MESSAGE6                        (uint8_t*)" Transfer Complete  "
 #define MESSAGE7                        (uint8_t*)" Entering Stop Mode "
-#define MESSAGE8                        (uint8_t*)" Device in Stop Mode"
+#define MESSAGE8                        (uint8_t*)" Device in Stop Mode"  
 #define MESSAGE9                        (uint8_t*)"  WakeUp From Stop  "
 #define MESSAGE10                       (uint8_t*)" Slave Not yet Ready"
 #define MESSAGE11                       (uint8_t*)"   Error occurred   "
@@ -89,7 +84,6 @@ typedef enum {
 
 /* Exported functions ------------------------------------------------------- */
 void TimingDelay_Decrement(void);
-
 void Delay(__IO uint32_t nTime);
 
 #endif /* __MAIN_H */

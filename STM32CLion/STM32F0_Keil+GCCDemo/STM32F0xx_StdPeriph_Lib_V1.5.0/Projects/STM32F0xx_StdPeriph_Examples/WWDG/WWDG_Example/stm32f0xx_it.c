@@ -25,7 +25,7 @@
   * limitations under the License.
   *
   ******************************************************************************
-  */
+  */ 
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f0xx_it.h"
@@ -50,7 +50,8 @@
   * @param  None
   * @retval None
   */
-void NMI_Handler(void) {
+void NMI_Handler(void)
+{
 }
 
 /**
@@ -58,10 +59,12 @@ void NMI_Handler(void) {
   * @param  None
   * @retval None
   */
-void HardFault_Handler(void) {
-    /* Go to infinite loop when Hard Fault exception occurs */
-    while (1) {
-    }
+void HardFault_Handler(void)
+{
+  /* Go to infinite loop when Hard Fault exception occurs */
+  while (1)
+  {
+  }
 }
 
 /**
@@ -69,7 +72,8 @@ void HardFault_Handler(void) {
   * @param  None
   * @retval None
   */
-void SVC_Handler(void) {
+void SVC_Handler(void)
+{
 }
 
 /**
@@ -77,7 +81,8 @@ void SVC_Handler(void) {
   * @param  None
   * @retval None
   */
-void PendSV_Handler(void) {
+void PendSV_Handler(void)
+{
 }
 
 /**
@@ -85,8 +90,9 @@ void PendSV_Handler(void) {
   * @param  None
   * @retval None
   */
-void SysTick_Handler(void) {
-    TimingDelay_Decrement();
+void SysTick_Handler(void)
+{
+  TimingDelay_Decrement();
 }
 
 /******************************************************************************/
@@ -100,17 +106,18 @@ void SysTick_Handler(void) {
   * @param  None
   * @retval None
   */
-void EXTI4_15_IRQHandler(void) {
-    if (EXTI_GetITStatus(TAMPER_BUTTON_EXTI_LINE) != RESET) {
-        /* Clear the TAMPER Button EXTI Line Pending Bit */
-        EXTI_ClearITPendingBit(TAMPER_BUTTON_EXTI_LINE);
-
-        /* As the following address is invalid (not mapped), a Hardfault exception
-           will be generated with an infinite loop and when the IWDG counter reaches 0
-           the IWDG reset occurs */
-        *(__IO
-        uint32_t *) 0x00040001 = 0xFF;
-    }
+void EXTI4_15_IRQHandler(void)
+{
+  if (EXTI_GetITStatus(TAMPER_BUTTON_EXTI_LINE) != RESET)
+  {  
+    /* Clear the TAMPER Button EXTI Line Pending Bit */
+    EXTI_ClearITPendingBit(TAMPER_BUTTON_EXTI_LINE);
+    
+    /* As the following address is invalid (not mapped), a Hardfault exception
+       will be generated with an infinite loop and when the IWDG counter reaches 0
+       the IWDG reset occurs */
+    *(__IO uint32_t *) 0x00040001 = 0xFF;
+  }
 }
 
 /**
@@ -124,6 +131,6 @@ void EXTI4_15_IRQHandler(void) {
 
 /**
   * @}
-  */
+  */ 
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

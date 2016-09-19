@@ -31,7 +31,7 @@
 #define __STM32F0XX_DBGMCU_H
 
 #ifdef __cplusplus
-extern "C" {
+ extern "C" {
 #endif
 
 /* Includes ------------------------------------------------------------------*/
@@ -43,8 +43,8 @@ extern "C" {
 
 /** @addtogroup DBGMCU
   * @{
-  */
-/* Exported types ------------------------------------------------------------*/
+  */ 
+/* Exported types ------------------------------------------------------------*/ 
 /* Exported constants --------------------------------------------------------*/
 
 
@@ -74,21 +74,18 @@ extern "C" {
 
 /**
   * @}
-  */
+  */ 
 
 /* Exported macro ------------------------------------------------------------*/
-/* Exported functions ------------------------------------------------------- */
+/* Exported functions ------------------------------------------------------- */ 
 
-/* Device and Revision ID management functions ********************************/
+/* Device and Revision ID management functions ********************************/ 
 uint32_t DBGMCU_GetREVID(void);
-
 uint32_t DBGMCU_GetDEVID(void);
 
-/* Peripherals Configuration functions ****************************************/
+/* Peripherals Configuration functions ****************************************/ 
 void DBGMCU_Config(uint32_t DBGMCU_Periph, FunctionalState NewState);
-
 void DBGMCU_APB1PeriphConfig(uint32_t DBGMCU_Periph, FunctionalState NewState);
-
 void DBGMCU_APB2PeriphConfig(uint32_t DBGMCU_Periph, FunctionalState NewState);
 
 #ifdef __cplusplus
@@ -99,10 +96,10 @@ void DBGMCU_APB2PeriphConfig(uint32_t DBGMCU_Periph, FunctionalState NewState);
 
 /**
   * @}
-  */
+  */ 
 
 /**
   * @}
-  */
+  */ 
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

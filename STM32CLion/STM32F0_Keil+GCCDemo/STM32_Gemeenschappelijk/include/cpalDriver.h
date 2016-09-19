@@ -21,12 +21,12 @@
 #include <stm32f0xx_i2c_cpal.h>
 
 #ifdef __cplusplus
-extern "C" {
+ extern "C" {
 #endif
-
+	 
 /*! @brief initialiseer de cpal bibliotheek.
  *  @note roep deze aan voor alle andere funkties. */
-void cpalInit(void);
+void cpalInit(void );
 
 
 /*! @brief lees een register
@@ -34,25 +34,25 @@ void cpalInit(void);
  *  @param adres van het register
  * @return waarde van het register */
 uint8_t cpalLeesReg(const uint8_t,
-                    const uint8_t);
-
+							      const uint8_t);
+	
 /*! @brief lees twee registers alsl een unsigned halfword
  *  @param adres van de slaaf
  *  @param adres van het register
  * @return waarde van het register */
 uint16_t cpalLees2Regs(const uint8_t,
-                       const uint8_t);
+							        const uint8_t);
 
 
 /*! @brief lees registers
  *  @param adres van de slaaf
  *  @param adres van het eerste register
  *  @param ptr naar leeslokatie (bestemming van de data)
- *  @param Het aantal bytes */
+ *  @param Het aantal bytes */ 
 void cpalLeesRegs(const uint8_t,
-                  const uint8_t,
-                  uint8_t *const,
-                  const uint32_t);
+							    const uint8_t,
+									uint8_t * const,
+									const uint32_t );
 
 
 /*! @brief schrijf een register
@@ -60,32 +60,32 @@ void cpalLeesRegs(const uint8_t,
  *  @param adres van het register 
  * @param waarde die geschreven wordt */
 void cpalSchrijfReg(const uint8_t,
-                    const uint8_t,
-                    const uint8_t);
-
+									  const uint8_t,
+							      const uint8_t);
+										
 /*! @brief schrijf twee registers met een unsigned halfword
  *  @param adres van de slaaf
  *  @param adres van het eerste register 
  * @param waarde die geschreven wordt */
 void cpalSchrijf2Regs(const uint8_t,
-                      const uint8_t,
-                      const uint16_t);
-
+									  const uint8_t,
+							      const uint16_t);
+	
 /*! @brief schrijf registers
  *  @param adres van de slaaf
  *  @param adres van het eerste register
  *  @param ptr naar schrijflokatie (bron van de data)
- *  @param Het aantal bytes */
+ *  @param Het aantal bytes */ 
 void cpalSchrijfRegs(const uint8_t,
-                     const uint8_t,
-                     uint8_t const *const,
-                     const uint32_t);
-
-
+							    const uint8_t,
+									uint8_t const * const,
+									const uint32_t );
+										
+			
 #ifdef __cplusplus
-}
-#endif
-
+	}
+#endif					
+	
 #endif /* #define __CPALDriver_H */
 
 

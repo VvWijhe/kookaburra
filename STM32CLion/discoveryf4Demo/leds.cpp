@@ -14,7 +14,6 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-
 void TIM3_IRQHandler(void) {
     if (TIM_GetITStatus(TIM3, TIM_IT_CC1) != RESET) {
         TIM_ClearITPendingBit(TIM3, TIM_IT_CC1);
@@ -46,7 +45,6 @@ void TIM3_IRQHandler(void) {
         TIM_SetCompare4(TIM3, LEDController::capture + LEDController::CCR4_Val);
     }
 }
-
 #ifdef __cplusplus
 }
 #endif
@@ -56,14 +54,10 @@ LEDController::LEDController() : STM32F4Controller(), i2c(I2C1) {
 }
 
 uint16_t LEDController::capture = 0;
-const __IO uint16_t
-LEDController::CCR1_Val = 54618;
-const __IO uint16_t
-LEDController::CCR2_Val = 27309;
-const __IO uint16_t
-LEDController::CCR3_Val = 13654;
-const __IO uint16_t
-LEDController::CCR4_Val = 6826;
+const __IO uint16_t LEDController::CCR1_Val = 54618;
+const __IO uint16_t LEDController::CCR2_Val = 27309;
+const __IO uint16_t LEDController::CCR3_Val = 13654;
+const __IO uint16_t LEDController::CCR4_Val = 6826;
 uint16_t LEDController::PrescalerValue = 0;
 
 void LEDController::tim3Init(void) {
@@ -116,7 +110,7 @@ void LEDController::tim3Demo() {
     TIM_TimeBaseInitTypeDef TIM_TimeBaseStructure;
     TIM_OCInitTypeDef TIM_OCInitStructure;
     /* Compute the prescaler value */
-    PrescalerValue = (uint16_t)((SystemCoreClock / 2) / 500000) - 1;
+    PrescalerValue = (uint16_t) ((SystemCoreClock / 2) / 500000) - 1;
 
     /* Time base configuration */
     TIM_TimeBaseStructure.TIM_Period = 65535;

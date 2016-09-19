@@ -6,18 +6,27 @@
 # 28-01-2012 - nieuwe versie in Python geschreven
 # 14-02-2012 - omgezet naar svn commit script
 
-import os
-import subprocess
+import os,subprocess;
 
-print("SVN Commit de directory ", os.getcwd());
+print("SVN Commit de directory ",os.getcwd());
 
-dirs = (".", "../gemeenschappelijk");
+dirs = (".","../gemeenschappelijk");
 
-subprocess.check_call(["emacs -nw veranderingen.txt"], shell=True);
+subprocess.check_call(["emacs -nw veranderingen.txt"],shell=True);
 
-for naam in dirs:
-    print("SVN Directory is:", naam);
-    arg1 = "/usr/local/bin/svn commit " + naam + " -F veranderingen.txt";
-    subprocess.check_call(arg1, shell=True);
+for naam in dirs :
+    print("SVN Directory is:",naam);
+    arg1 = "/usr/local/bin/svn commit "+naam+" -F veranderingen.txt";
+    subprocess.check_call(arg1,shell=True);
 
-subprocess.check_call(["rm veranderingen.txt"], shell=True);
+subprocess.check_call(["rm veranderingen.txt"],shell=True);
+
+
+
+
+
+
+
+
+
+

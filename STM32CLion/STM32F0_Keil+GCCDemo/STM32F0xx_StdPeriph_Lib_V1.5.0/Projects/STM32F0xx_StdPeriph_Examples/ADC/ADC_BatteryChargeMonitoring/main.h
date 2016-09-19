@@ -24,22 +24,19 @@
   *
   ******************************************************************************
   */
-
+  
 /* Define to prevent recursive inclusion -------------------------------------*/
 #ifndef __MAIN_H
 #define __MAIN_H
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f0xx.h"
-
 #ifdef USE_STM320518_EVAL
-#include "stm320518_eval.h"
-#include "stm320518_eval_lcd.h"
-#else
-
-#include "stm32072b_eval.h"
-#include "stm32072b_eval_lcd.h"
-
+  #include "stm320518_eval.h"
+  #include "stm320518_eval_lcd.h"
+#else 
+  #include "stm32072b_eval.h"
+  #include "stm32072b_eval_lcd.h" 
 #endif /* USE_STM320518_EVAL */
 
 #include <stdio.h>

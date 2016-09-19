@@ -40,8 +40,8 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
-#define MESSAGE1   "FIFO0 : Msg received"
-#define MESSAGE2   "FIFO1 : Msg received"
+#define MESSAGE1   "FIFO0 : Msg received" 
+#define MESSAGE2   "FIFO1 : Msg received" 
 
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
@@ -61,7 +61,8 @@ extern CanTxMsg TxMessage, TxMessage1;
   * @param  None
   * @retval None
   */
-void NMI_Handler(void) {
+void NMI_Handler(void)
+{
 }
 
 /**
@@ -69,10 +70,12 @@ void NMI_Handler(void) {
   * @param  None
   * @retval None
   */
-void HardFault_Handler(void) {
-    /* Go to infinite loop when Hard Fault exception occurs */
-    while (1) {
-    }
+void HardFault_Handler(void)
+{
+  /* Go to infinite loop when Hard Fault exception occurs */
+  while (1)
+  {
+  }
 }
 
 /**
@@ -80,10 +83,12 @@ void HardFault_Handler(void) {
   * @param  None
   * @retval None
   */
-void MemManage_Handler(void) {
-    /* Go to infinite loop when Memory Manage exception occurs */
-    while (1) {
-    }
+void MemManage_Handler(void)
+{
+  /* Go to infinite loop when Memory Manage exception occurs */
+  while (1)
+  {
+  }
 }
 
 /**
@@ -91,10 +96,12 @@ void MemManage_Handler(void) {
   * @param  None
   * @retval None
   */
-void BusFault_Handler(void) {
-    /* Go to infinite loop when Bus Fault exception occurs */
-    while (1) {
-    }
+void BusFault_Handler(void)
+{
+  /* Go to infinite loop when Bus Fault exception occurs */
+  while (1)
+  {
+  }
 }
 
 /**
@@ -102,10 +109,12 @@ void BusFault_Handler(void) {
   * @param  None
   * @retval None
   */
-void UsageFault_Handler(void) {
-    /* Go to infinite loop when Usage Fault exception occurs */
-    while (1) {
-    }
+void UsageFault_Handler(void)
+{
+  /* Go to infinite loop when Usage Fault exception occurs */
+  while (1)
+  {
+  }
 }
 
 /**
@@ -113,7 +122,8 @@ void UsageFault_Handler(void) {
   * @param  None
   * @retval None
   */
-void SVC_Handler(void) {
+void SVC_Handler(void)
+{
 }
 
 /**
@@ -121,7 +131,8 @@ void SVC_Handler(void) {
   * @param  None
   * @retval None
   */
-void DebugMon_Handler(void) {
+void DebugMon_Handler(void)
+{
 }
 
 /**
@@ -129,7 +140,8 @@ void DebugMon_Handler(void) {
   * @param  None
   * @retval None
   */
-void PendSV_Handler(void) {
+void PendSV_Handler(void)
+{
 }
 
 /**
@@ -137,7 +149,8 @@ void PendSV_Handler(void) {
   * @param  None
   * @retval None
   */
-void SysTick_Handler(void) {
+void SysTick_Handler(void)
+{
 }
 
 /******************************************************************************/
@@ -148,33 +161,36 @@ void SysTick_Handler(void) {
 * @param  None
 * @retval None
 */
-void CEC_CAN_IRQHandler(void) {
-    if (CAN_MessagePending(CANx, CAN_FIFO0) != 0) {
-        /* Set the LCD Back Color */
-        LCD_SetBackColor(Green);
-        /* Set the LCD Text Color */
-        LCD_SetTextColor(Black);
-        /* Displays MESSAGE1 on line 1 */
-        LCD_DisplayStringLine(LINE(6), (uint8_t *) MESSAGE1);
-
-        CAN_Receive(CANx, CAN_FIFO0, &RxMessage);
-        LED_Display(RxMessage.Data[0]);
-        KeyNumber = RxMessage.Data[0];
-    }
-
-    if (CAN_MessagePending(CANx, CAN_FIFO1) != 0) {
-        /* Set the LCD Back Color */
-        LCD_SetBackColor(Cyan);
-
-        /* Set the LCD Text Color */
-        LCD_SetTextColor(Black);
-
-        /* Displays MESSAGE1 on line 1 */
-        LCD_DisplayStringLine(LINE(6), (uint8_t *) MESSAGE2);
-        CAN_Receive(CANx, CAN_FIFO1, &RxMessage1);
-        LED_Display(RxMessage1.Data[0]);
-        KeyNumber = RxMessage1.Data[0];
-    }
+void CEC_CAN_IRQHandler(void)
+{
+  if (CAN_MessagePending(CANx, CAN_FIFO0) != 0) 
+  {
+    /* Set the LCD Back Color */
+    LCD_SetBackColor(Green);
+    /* Set the LCD Text Color */
+    LCD_SetTextColor(Black);
+    /* Displays MESSAGE1 on line 1 */
+    LCD_DisplayStringLine(LINE(6), (uint8_t *)MESSAGE1);
+    
+    CAN_Receive(CANx, CAN_FIFO0, &RxMessage);
+    LED_Display(RxMessage.Data[0]);
+    KeyNumber = RxMessage.Data[0];
+  }
+  
+  if (CAN_MessagePending(CANx, CAN_FIFO1) != 0) 
+  {
+    /* Set the LCD Back Color */
+    LCD_SetBackColor(Cyan);
+    
+    /* Set the LCD Text Color */
+    LCD_SetTextColor(Black);
+    
+    /* Displays MESSAGE1 on line 1 */
+    LCD_DisplayStringLine(LINE(6), (uint8_t *)MESSAGE2);
+    CAN_Receive(CANx, CAN_FIFO1, &RxMessage1);
+    LED_Display(RxMessage1.Data[0]);
+    KeyNumber = RxMessage1.Data[0];
+  }
 
 }
 
@@ -183,25 +199,28 @@ void CEC_CAN_IRQHandler(void) {
   * @param  None
   * @retval None
   */
-void EXTI4_15_IRQHandler(void) {
-    if (KeyNumber < 0x2) {
-        KeyNumber = 0x05;
-    }
-    LED_Display(--KeyNumber);
+void EXTI4_15_IRQHandler(void)
+{ 
+ if(KeyNumber < 0x2) 
 
-    TxMessage.Data[0] = KeyNumber;
+  {
+    KeyNumber = 0x05;
+  }
+  LED_Display(--KeyNumber);
 
-    CAN_Transmit(CANx, &TxMessage);
+  TxMessage.Data[0] = KeyNumber;
 
-    /* Set the LCD Back Color */
-    LCD_SetBackColor(Green);
-    /* Set the LCD Text Color */
-    LCD_SetTextColor(Black);
-    /* Displays MESSAGE1 on line 6 */
-    LCD_DisplayStringLine(LINE(6), (uint8_t *) MESSAGE1);
-
-    /* Clear the EXTI line 6 pending bit */
-    EXTI_ClearITPendingBit(EXTI_Line13);
+  CAN_Transmit(CANx, &TxMessage);
+  
+  /* Set the LCD Back Color */
+  LCD_SetBackColor(Green);
+  /* Set the LCD Text Color */
+  LCD_SetTextColor(Black);
+  /* Displays MESSAGE1 on line 6 */
+  LCD_DisplayStringLine(LINE(6), (uint8_t *)MESSAGE1);
+   
+  /* Clear the EXTI line 6 pending bit */
+  EXTI_ClearITPendingBit(EXTI_Line13);
 }
 
 /**
@@ -209,26 +228,28 @@ void EXTI4_15_IRQHandler(void) {
   * @param  None
   * @retval None
   */
-void EXTI0_1_IRQHandler(void) {
-    if (KeyNumber == 0x4) {
-        KeyNumber = 0x00;
-    }
-    LED_Display(++KeyNumber);
-    TxMessage1.Data[0] = KeyNumber;
-    CAN_Transmit(CANx, &TxMessage1);
-
-    /* Set the LCD Back Color */
-    LCD_SetBackColor(Cyan);
-
-    /* Set the LCD Text Color */
-    LCD_SetTextColor(Black);
-
-    /* Displays MESSAGE1 on line 6 */
-    LCD_DisplayStringLine(LINE(6), (uint8_t *) MESSAGE2);
-
-    /* Clear the EXTI line 13 pending bit */
-    EXTI_ClearITPendingBit(EXTI_Line0);
-
+void EXTI0_1_IRQHandler(void)
+{
+  if(KeyNumber == 0x4) 
+  {
+    KeyNumber = 0x00;
+  }
+  LED_Display(++KeyNumber);
+  TxMessage1.Data[0] = KeyNumber;
+  CAN_Transmit(CANx, &TxMessage1);
+  
+  /* Set the LCD Back Color */
+  LCD_SetBackColor(Cyan);
+  
+  /* Set the LCD Text Color */
+  LCD_SetTextColor(Black);
+  
+  /* Displays MESSAGE1 on line 6 */
+  LCD_DisplayStringLine(LINE(6), (uint8_t *)MESSAGE2);
+   
+  /* Clear the EXTI line 13 pending bit */
+  EXTI_ClearITPendingBit(EXTI_Line0);
+  
 }
 /******************************************************************************/
 /*                 STM32F0xx Peripherals Interrupt Handlers                   */

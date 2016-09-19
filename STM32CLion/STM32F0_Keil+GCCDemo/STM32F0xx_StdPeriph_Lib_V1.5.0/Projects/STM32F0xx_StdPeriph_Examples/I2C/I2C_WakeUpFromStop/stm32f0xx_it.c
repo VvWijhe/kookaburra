@@ -42,8 +42,7 @@
 /* Private define ------------------------------------------------------------*/
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
-__IO uint8_t
-Counter = 0;
+__IO uint8_t Counter = 0;
 
 /* Private function prototypes -----------------------------------------------*/
 /* Private functions ---------------------------------------------------------*/
@@ -57,7 +56,8 @@ Counter = 0;
   * @param  None
   * @retval None
   */
-void NMI_Handler(void) {
+void NMI_Handler(void)
+{
 }
 
 /**
@@ -65,10 +65,12 @@ void NMI_Handler(void) {
   * @param  None
   * @retval None
   */
-void HardFault_Handler(void) {
-    /* Go to infinite loop when Hard Fault exception occurs */
-    while (1) {
-    }
+void HardFault_Handler(void)
+{
+  /* Go to infinite loop when Hard Fault exception occurs */
+  while (1)
+  {
+  }
 }
 
 /**
@@ -76,7 +78,8 @@ void HardFault_Handler(void) {
   * @param  None
   * @retval None
   */
-void SVC_Handler(void) {
+void SVC_Handler(void)
+{
 }
 
 /**
@@ -84,7 +87,8 @@ void SVC_Handler(void) {
   * @param  None
   * @retval None
   */
-void PendSV_Handler(void) {
+void PendSV_Handler(void)
+{
 }
 
 /**
@@ -92,25 +96,29 @@ void PendSV_Handler(void) {
   * @param  None
   * @retval None
   */
-void SysTick_Handler(void) {
-    TimingDelay_Decrement();
-
-    /* CPAL Timeout manager handler */
-    CPAL_I2C_TIMEOUT_Manager();
-
-    if (Counter == 20) {
-        /* Toggle LED's */
-        STM_EVAL_LEDToggle(LED1);
-        STM_EVAL_LEDToggle(LED2);
-        STM_EVAL_LEDToggle(LED3);
-        STM_EVAL_LEDToggle(LED4);
-
-        /* Reset Counter */
-        Counter = 0;
-    } else {
-        /* increment Counter */
-        Counter++;
-    }
+void SysTick_Handler(void)
+{
+  TimingDelay_Decrement();
+  
+  /* CPAL Timeout manager handler */
+  CPAL_I2C_TIMEOUT_Manager();  
+  
+  if (Counter == 20)
+  {
+    /* Toggle LED's */
+    STM_EVAL_LEDToggle(LED1);
+    STM_EVAL_LEDToggle(LED2);
+    STM_EVAL_LEDToggle(LED3);
+    STM_EVAL_LEDToggle(LED4);  
+    
+    /* Reset Counter */
+    Counter = 0;
+  }
+  else
+  {
+    /* increment Counter */
+    Counter++; 
+  }
 }
 
 /******************************************************************************/
@@ -131,7 +139,7 @@ void SysTick_Handler(void) {
 
 /**
   * @}
-  */
+  */ 
 
 /**
   * @}

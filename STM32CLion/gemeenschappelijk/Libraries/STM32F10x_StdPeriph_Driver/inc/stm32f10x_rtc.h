@@ -17,14 +17,14 @@
   * CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
   *
   * <h2><center>&copy; COPYRIGHT 2010 STMicroelectronics</center></h2>
-  */
+  */ 
 
 /* Define to prevent recursive inclusion -------------------------------------*/
 #ifndef __STM32F10x_RTC_H
 #define __STM32F10x_RTC_H
 
 #ifdef __cplusplus
-extern "C" {
+ extern "C" {
 #endif
 
 /* Includes ------------------------------------------------------------------*/
@@ -36,15 +36,15 @@ extern "C" {
 
 /** @addtogroup RTC
   * @{
-  */
+  */ 
 
 /** @defgroup RTC_Exported_Types
   * @{
-  */
+  */ 
 
 /**
   * @}
-  */
+  */ 
 
 /** @defgroup RTC_Exported_Constants
   * @{
@@ -62,7 +62,7 @@ extern "C" {
                            ((IT) == RTC_IT_SEC))
 /**
   * @}
-  */
+  */ 
 
 /** @defgroup RTC_interrupts_flags 
   * @{
@@ -100,31 +100,18 @@ extern "C" {
   */
 
 void RTC_ITConfig(uint16_t RTC_IT, FunctionalState NewState);
-
 void RTC_EnterConfigMode(void);
-
 void RTC_ExitConfigMode(void);
-
-uint32_t RTC_GetCounter(void);
-
+uint32_t  RTC_GetCounter(void);
 void RTC_SetCounter(uint32_t CounterValue);
-
 void RTC_SetPrescaler(uint32_t PrescalerValue);
-
 void RTC_SetAlarm(uint32_t AlarmValue);
-
-uint32_t RTC_GetDivider(void);
-
+uint32_t  RTC_GetDivider(void);
 void RTC_WaitForLastTask(void);
-
 void RTC_WaitForSynchro(void);
-
 FlagStatus RTC_GetFlagStatus(uint16_t RTC_FLAG);
-
 void RTC_ClearFlag(uint16_t RTC_FLAG);
-
 ITStatus RTC_GetITStatus(uint16_t RTC_IT);
-
 void RTC_ClearITPendingBit(uint16_t RTC_IT);
 
 #ifdef __cplusplus

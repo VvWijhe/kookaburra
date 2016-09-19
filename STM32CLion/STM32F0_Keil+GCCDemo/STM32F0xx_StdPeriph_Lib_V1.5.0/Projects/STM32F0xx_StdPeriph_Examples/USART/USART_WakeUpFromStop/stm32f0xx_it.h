@@ -30,8 +30,8 @@
 #define __STM32F0XX_IT_H
 
 #ifdef __cplusplus
-extern "C" {
-#endif
+ extern "C" {
+#endif 
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
@@ -42,21 +42,14 @@ extern "C" {
 /* Exported functions ------------------------------------------------------- */
 
 void NMI_Handler(void);
-
 void HardFault_Handler(void);
-
 void SVC_Handler(void);
-
 void PendSV_Handler(void);
-
 void SysTick_Handler(void);
-
 #ifdef USE_STM320518_EVAL
 void USART1_IRQHandler(void);
-#else
-
+#else 
 void USART2_IRQHandler(void);
-
 #endif /* USE_STM320518_EVAL */
 
 

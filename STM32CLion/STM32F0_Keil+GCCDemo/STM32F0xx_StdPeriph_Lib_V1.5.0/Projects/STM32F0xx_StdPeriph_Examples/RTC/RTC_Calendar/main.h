@@ -24,22 +24,18 @@
   *
   ******************************************************************************
   */
-
+  
 /* Define to prevent recursive inclusion -------------------------------------*/
 #ifndef __MAIN_H
 #define __MAIN_H
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f0xx.h"
-
 #ifdef USE_STM320518_EVAL
-#include "stm320518_eval.h"
-#else
-
-#include "stm32072b_eval.h"
-
+  #include "stm320518_eval.h"
+#else 
+  #include "stm32072b_eval.h"
 #endif /* USE_STM320518_EVAL */
-
 #include <stdio.h>
 
 /* Exported types ------------------------------------------------------------*/
@@ -47,19 +43,16 @@
 /* Exported macro ------------------------------------------------------------*/
 /* Exported functions ------------------------------------------------------- */
 void RTC_TimeRegulate(void);
-
 void RTC_TimeShow(void);
-
 void RTC_AlarmShow(void);
-
 uint8_t USART_Scanf(uint32_t value);
 
 #ifdef __GNUC__
-/* With GCC/RAISONANCE, small printf (option LD Linker->Libraries->Small printf
-   set to 'Yes') calls __io_putchar() */
-#define PUTCHAR_PROTOTYPE int __io_putchar(int ch)
+  /* With GCC/RAISONANCE, small printf (option LD Linker->Libraries->Small printf
+     set to 'Yes') calls __io_putchar() */
+  #define PUTCHAR_PROTOTYPE int __io_putchar(int ch)
 #else
-#define PUTCHAR_PROTOTYPE int fputc(int ch, FILE *f)
+  #define PUTCHAR_PROTOTYPE int fputc(int ch, FILE *f)
 #endif /* __GNUC__ */
 
 #endif /* __MAIN_H */

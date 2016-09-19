@@ -28,6 +28,8 @@
   */
 
 /* Includes ------------------------------------------------------------------*/
+#include "stm32f0xx_it.h"
+#include "main.h"
 
 /** @addtogroup STM32F0xx_StdPeriph_Examples
   * @{
@@ -51,10 +53,8 @@ uint8_t TxBuffer[] = "\n\rUSART Hyperterminal Interrupts Example: USART-Hyperter
 uint8_t RxBuffer[RXBUFFERSIZE];
 uint8_t NbrOfDataToTransfer = TXBUFFERSIZE;
 uint8_t NbrOfDataToRead = RXBUFFERSIZE;
-__IO uint8_t
-TxCount = 0;
-__IO uint16_t
-RxCount = 0;
+__IO uint8_t TxCount = 0; 
+__IO uint16_t RxCount = 0; 
 
 /* Private function prototypes -----------------------------------------------*/
 /* Private functions ---------------------------------------------------------*/
@@ -68,7 +68,8 @@ RxCount = 0;
   * @param  None
   * @retval None
   */
-void NMI_Handler(void) {
+void NMI_Handler(void)
+{
 }
 
 /**
@@ -76,10 +77,12 @@ void NMI_Handler(void) {
   * @param  None
   * @retval None
   */
-void HardFault_Handler(void) {
-    /* Go to infinite loop when Hard Fault exception occurs */
-    while (1) {
-    }
+void HardFault_Handler(void)
+{
+  /* Go to infinite loop when Hard Fault exception occurs */
+  while (1)
+  {
+  }
 }
 
 /**
@@ -87,7 +90,8 @@ void HardFault_Handler(void) {
   * @param  None
   * @retval None
   */
-void SVC_Handler(void) {
+void SVC_Handler(void)
+{
 }
 
 /**
@@ -95,7 +99,8 @@ void SVC_Handler(void) {
   * @param  None
   * @retval None
   */
-void PendSV_Handler(void) {
+void PendSV_Handler(void)
+{
 }
 
 /**
@@ -103,7 +108,8 @@ void PendSV_Handler(void) {
   * @param  None
   * @retval None
   */
-void SysTick_Handler(void) {
+void SysTick_Handler(void)
+{
 }
 
 /******************************************************************************/
@@ -155,29 +161,32 @@ void USART1_IRQHandler(void)
   }
 }
 #else
+void USART2_IRQHandler(void)
+{
+  if(USART_GetITStatus(EVAL_COM1, USART_IT_RXNE) != RESET)
+  {
+    /* Read one byte from the receive data register */
+    RxBuffer[RxCount++] = (USART_ReceiveData(EVAL_COM1) & 0x7F);
 
-void USART2_IRQHandler(void) {
-    if (USART_GetITStatus(EVAL_COM1, USART_IT_RXNE) != RESET) {
-        /* Read one byte from the receive data register */
-        RxBuffer[RxCount++] = (USART_ReceiveData(EVAL_COM1) & 0x7F);
-
-        if (RxCount == NbrOfDataToRead) {
-            /* Disable the EVAL_COM1 Receive interrupt */
-            USART_ITConfig(EVAL_COM1, USART_IT_RXNE, DISABLE);
-        }
+    if(RxCount == NbrOfDataToRead)
+    {
+      /* Disable the EVAL_COM1 Receive interrupt */
+      USART_ITConfig(EVAL_COM1, USART_IT_RXNE, DISABLE);
     }
+  }
 
-    if (USART_GetITStatus(EVAL_COM1, USART_IT_TXE) != RESET) {
-        /* Write one byte to the transmit data register */
-        USART_SendData(EVAL_COM1, TxBuffer[TxCount++]);
+  if(USART_GetITStatus(EVAL_COM1, USART_IT_TXE) != RESET)
+  {   
+    /* Write one byte to the transmit data register */
+    USART_SendData(EVAL_COM1, TxBuffer[TxCount++]);
 
-        if (TxCount == NbrOfDataToTransfer) {
-            /* Disable the EVAL_COM1 Transmit interrupt */
-            USART_ITConfig(EVAL_COM1, USART_IT_TXE, DISABLE);
-        }
+    if(TxCount == NbrOfDataToTransfer)
+    {
+      /* Disable the EVAL_COM1 Transmit interrupt */
+      USART_ITConfig(EVAL_COM1, USART_IT_TXE, DISABLE);
     }
+  }
 }
-
 #endif /* USE_STM320518_EVAL */
 
 /**

@@ -42,9 +42,8 @@
 /* Private define ------------------------------------------------------------*/
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
-extern CAN_FilterInitTypeDef CAN_FilterInitStructure;
-__IO uint8_t
-MsgReceived = 0;
+extern CAN_FilterInitTypeDef  CAN_FilterInitStructure;
+__IO uint8_t MsgReceived = 0;
 /* Private function prototypes -----------------------------------------------*/
 /* Private functions ---------------------------------------------------------*/
 
@@ -57,7 +56,8 @@ MsgReceived = 0;
   * @param  None
   * @retval None
   */
-void NMI_Handler(void) {
+void NMI_Handler(void)
+{
 }
 
 /**
@@ -65,10 +65,12 @@ void NMI_Handler(void) {
   * @param  None
   * @retval None
   */
-void HardFault_Handler(void) {
-    /* Go to infinite loop when Hard Fault exception occurs */
-    while (1) {
-    }
+void HardFault_Handler(void)
+{
+  /* Go to infinite loop when Hard Fault exception occurs */
+  while (1)
+  {
+  }
 }
 
 /**
@@ -76,10 +78,12 @@ void HardFault_Handler(void) {
   * @param  None
   * @retval None
   */
-void MemManage_Handler(void) {
-    /* Go to infinite loop when Memory Manage exception occurs */
-    while (1) {
-    }
+void MemManage_Handler(void)
+{
+  /* Go to infinite loop when Memory Manage exception occurs */
+  while (1)
+  {
+  }
 }
 
 /**
@@ -87,10 +91,12 @@ void MemManage_Handler(void) {
   * @param  None
   * @retval None
   */
-void BusFault_Handler(void) {
-    /* Go to infinite loop when Bus Fault exception occurs */
-    while (1) {
-    }
+void BusFault_Handler(void)
+{
+  /* Go to infinite loop when Bus Fault exception occurs */
+  while (1)
+  {
+  }
 }
 
 /**
@@ -98,10 +104,12 @@ void BusFault_Handler(void) {
   * @param  None
   * @retval None
   */
-void UsageFault_Handler(void) {
-    /* Go to infinite loop when Usage Fault exception occurs */
-    while (1) {
-    }
+void UsageFault_Handler(void)
+{
+  /* Go to infinite loop when Usage Fault exception occurs */
+  while (1)
+  {
+  }
 }
 
 /**
@@ -109,7 +117,8 @@ void UsageFault_Handler(void) {
   * @param  None
   * @retval None
   */
-void SVC_Handler(void) {
+void SVC_Handler(void)
+{
 }
 
 /**
@@ -117,7 +126,8 @@ void SVC_Handler(void) {
   * @param  None
   * @retval None
   */
-void DebugMon_Handler(void) {
+void DebugMon_Handler(void)
+{
 }
 
 /**
@@ -125,7 +135,8 @@ void DebugMon_Handler(void) {
   * @param  None
   * @retval None
   */
-void PendSV_Handler(void) {
+void PendSV_Handler(void)
+{
 }
 
 /**
@@ -133,7 +144,8 @@ void PendSV_Handler(void) {
   * @param  None
   * @retval None
   */
-void SysTick_Handler(void) {
+void SysTick_Handler(void)
+{
 }
 
 /******************************************************************************/
@@ -144,7 +156,8 @@ void SysTick_Handler(void) {
 * @param  None
 * @retval None
 */
-void USB_LP_CAN1_RX0_IRQHandler(void) {
+void USB_LP_CAN1_RX0_IRQHandler(void)
+{
 }
 
 /**
@@ -152,26 +165,29 @@ void USB_LP_CAN1_RX0_IRQHandler(void) {
 * @param  None
 * @retval None
 */
-void CEC_CAN_IRQHandler(void) {
-    if (CAN_GetFlagStatus(CANx, CAN_FLAG_FF0) != RESET) {
-        /* Clears the CAN1 interrupt pending bit */
-        CAN_ClearITPendingBit(CANx, CAN_IT_FF0);
-
-        /* CAN filter init "FIFO1 " */
-        CAN_FilterInitStructure.CAN_FilterFIFOAssignment = 1;
-        CAN_FilterInit(&CAN_FilterInitStructure);
-    }
-
-    if (CAN_GetFlagStatus(CANx, CAN_FLAG_FF1) != RESET) {
-        /* Clears the CAN1 interrupt pending bit */
-        CAN_ClearITPendingBit(CANx, CAN_IT_FF1);
-
-        /* CAN filter init "FIFO0" */
-        CAN_FilterInitStructure.CAN_FilterFIFOAssignment = 0;
-        CAN_FilterInit(&CAN_FilterInitStructure);
-
-        MsgReceived = 1;
-    }
+void CEC_CAN_IRQHandler(void)
+{ 
+  if(CAN_GetFlagStatus(CANx,CAN_FLAG_FF0) != RESET)
+  { 
+    /* Clears the CAN1 interrupt pending bit */
+    CAN_ClearITPendingBit(CANx, CAN_IT_FF0);
+    
+    /* CAN filter init "FIFO1 " */
+    CAN_FilterInitStructure.CAN_FilterFIFOAssignment = 1;
+    CAN_FilterInit(&CAN_FilterInitStructure);   
+  }
+  
+  if(CAN_GetFlagStatus(CANx,CAN_FLAG_FF1) != RESET)
+  {     
+    /* Clears the CAN1 interrupt pending bit */    
+    CAN_ClearITPendingBit(CANx,CAN_IT_FF1);
+    
+    /* CAN filter init "FIFO0" */
+    CAN_FilterInitStructure.CAN_FilterFIFOAssignment = 0;
+    CAN_FilterInit(&CAN_FilterInitStructure); 
+    
+    MsgReceived = 1;
+  }
 }
 
 /******************************************************************************/

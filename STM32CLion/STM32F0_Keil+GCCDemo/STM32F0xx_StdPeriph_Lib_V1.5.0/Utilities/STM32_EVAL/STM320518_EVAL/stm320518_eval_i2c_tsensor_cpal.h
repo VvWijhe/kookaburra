@@ -31,32 +31,33 @@
 #define __STM320518_EVAL_I2C_TSENSOR_CPAL_H
 
 #ifdef __cplusplus
-extern "C" {
+ extern "C" {
 #endif
-
-
+   
+   
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f0xx_i2c_cpal.h"
-
+   
 /* Exported types ------------------------------------------------------------*/
 
 /** 
   * @brief  TSENSOR Status  
-  */
-typedef enum {
-    LM75_OK = 0,
-    LM75_FAIL
-} LM75_Status_TypDef;
+  */ 
+typedef enum
+{
+  LM75_OK = 0,
+  LM75_FAIL
+}LM75_Status_TypDef;
 
 /* Exported constants --------------------------------------------------------*/
-
-/*====================== CPAL Structure configuration ========================*/
+    
+/*====================== CPAL Structure configuration ========================*/ 
 /* Select I2C device (uncomment relative define) */
 
 //#define LM75_DevStructure                I2C1_DevStructure   
-#define LM75_DevStructure                I2C2_DevStructure
+#define LM75_DevStructure                I2C2_DevStructure  
 
-
+   
 /*============== TIMING Configuration ==========================*/
 #define LM75_I2C_TIMING 0x1045061D
 
@@ -68,7 +69,7 @@ typedef enum {
 
 
 /* Maximum Timeout values for waiting until device is ready for communication.*/
-
+   
 #define LM75_TIMEOUT        ((uint32_t)0x3FFFF)
 
 /**
@@ -79,30 +80,23 @@ typedef enum {
 #define LM75_REG_THYS       0x02  /* Temperature Register of LM75 */
 #define LM75_REG_TOS        0x03  /* Over-temp Shutdown threshold Register of LM75 */
 #define LM75_ADDR           0x90   /* LM75 address */
-
+   
 
 /* Exported macro ------------------------------------------------------------*/
-/* Exported functions ------------------------------------------------------- */
+/* Exported functions ------------------------------------------------------- */ 
 
 void LM75_DeInit(void);
-
 void LM75_Config(void);
-
 ErrorStatus LM75_GetStatus(void);
-
 uint16_t LM75_ReadTemp(void);
-
 uint16_t LM75_ReadReg(uint8_t RegName);
-
 uint8_t LM75_WriteReg(uint8_t RegName, uint16_t RegValue);
-
 uint8_t LM75_ReadConfReg(void);
-
 uint8_t LM75_WriteConfReg(uint8_t RegValue);
-
 uint8_t LM75_ShutDown(FunctionalState NewState);
 
 
+ 
 #ifdef __cplusplus
 }
 #endif
@@ -122,7 +116,7 @@ uint8_t LM75_ShutDown(FunctionalState NewState);
 
 /**
   * @}
-  */
+  */ 
 
 /**
   * @}

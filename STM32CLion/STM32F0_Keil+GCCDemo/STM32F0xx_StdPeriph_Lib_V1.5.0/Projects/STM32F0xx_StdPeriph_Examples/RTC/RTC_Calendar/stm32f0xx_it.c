@@ -54,7 +54,8 @@
   * @param  None
   * @retval None
   */
-void NMI_Handler(void) {
+void NMI_Handler(void)
+{
 }
 
 /**
@@ -62,10 +63,12 @@ void NMI_Handler(void) {
   * @param  None
   * @retval None
   */
-void HardFault_Handler(void) {
-    /* Go to infinite loop when Hard Fault exception occurs */
-    while (1) {
-    }
+void HardFault_Handler(void)
+{
+  /* Go to infinite loop when Hard Fault exception occurs */
+  while (1)
+  {
+  }
 }
 
 /**
@@ -73,7 +76,8 @@ void HardFault_Handler(void) {
   * @param  None
   * @retval None
   */
-void SVC_Handler(void) {
+void SVC_Handler(void)
+{
 }
 
 /**
@@ -81,7 +85,8 @@ void SVC_Handler(void) {
   * @param  None
   * @retval None
   */
-void PendSV_Handler(void) {
+void PendSV_Handler(void)
+{
 }
 
 /**
@@ -89,7 +94,8 @@ void PendSV_Handler(void) {
   * @param  None
   * @retval None
   */
-void SysTick_Handler(void) {
+void SysTick_Handler(void)
+{
 }
 
 /******************************************************************************/
@@ -100,14 +106,16 @@ void SysTick_Handler(void) {
   * @param  None
   * @retval None
   */
-void EXTI0_1_IRQHandler(void) {
-    if (EXTI_GetITStatus(SEL_BUTTON_EXTI_LINE) != RESET) {
-        /* Set the new RTC configuration */
-        RTC_TimeRegulate();
+void EXTI0_1_IRQHandler(void)
+{
+  if(EXTI_GetITStatus(SEL_BUTTON_EXTI_LINE) != RESET)
+  {
+    /* Set the new RTC configuration */
+     RTC_TimeRegulate();
 
-        /* Clear the SEL Button EXTI line pending bit */
-        EXTI_ClearITPendingBit(SEL_BUTTON_EXTI_LINE);
-    }
+    /* Clear the SEL Button EXTI line pending bit */
+    EXTI_ClearITPendingBit(SEL_BUTTON_EXTI_LINE);
+  }
 }
 
 /**
@@ -115,22 +123,25 @@ void EXTI0_1_IRQHandler(void) {
   * @param  None
   * @retval None
   */
-void EXTI4_15_IRQHandler(void) {
-    if (EXTI_GetITStatus(UP_BUTTON_EXTI_LINE) != RESET) {
-        /* Display the current alarm on the Hyperterminal */
-        RTC_AlarmShow();
-
-        /* Clear the UP Button EXTI line pending bit */
-        EXTI_ClearITPendingBit(UP_BUTTON_EXTI_LINE);
-    }
-
-    if (EXTI_GetITStatus(TAMPER_BUTTON_EXTI_LINE) != RESET) {
-        /* Display the current time on the Hyperterminal */
-        RTC_TimeShow();
-
-        /* Clear the Key Button EXTI line pending bit */
-        EXTI_ClearITPendingBit(TAMPER_BUTTON_EXTI_LINE);
-    }
+void EXTI4_15_IRQHandler(void)
+{
+  if(EXTI_GetITStatus(UP_BUTTON_EXTI_LINE) != RESET)
+  {  
+    /* Display the current alarm on the Hyperterminal */
+    RTC_AlarmShow();
+     
+    /* Clear the UP Button EXTI line pending bit */
+    EXTI_ClearITPendingBit(UP_BUTTON_EXTI_LINE);
+  } 
+  
+  if(EXTI_GetITStatus(TAMPER_BUTTON_EXTI_LINE) != RESET)
+  {  
+    /* Display the current time on the Hyperterminal */
+    RTC_TimeShow();
+     
+    /* Clear the Key Button EXTI line pending bit */
+    EXTI_ClearITPendingBit(TAMPER_BUTTON_EXTI_LINE);
+  }
 }
 
 /**
@@ -138,12 +149,14 @@ void EXTI4_15_IRQHandler(void) {
   * @param  None
   * @retval None
   */
-void RTC_IRQHandler(void) {
-    if (RTC_GetITStatus(RTC_IT_ALRA) != RESET) {
-        STM_EVAL_LEDToggle(LED1);
-        RTC_ClearITPendingBit(RTC_IT_ALRA);
-        EXTI_ClearITPendingBit(EXTI_Line17);
-    }
+void RTC_IRQHandler(void)
+{
+  if(RTC_GetITStatus(RTC_IT_ALRA) != RESET)
+  {
+    STM_EVAL_LEDToggle(LED1);
+    RTC_ClearITPendingBit(RTC_IT_ALRA);
+    EXTI_ClearITPendingBit(EXTI_Line17);
+  } 
 }
 /******************************************************************************/
 /*                 STM32F0xx Peripherals Interrupt Handlers                   */

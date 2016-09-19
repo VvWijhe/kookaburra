@@ -42,8 +42,7 @@
 /* Private define ------------------------------------------------------------*/
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
-extern __IO uint8_t
-Button_State;
+extern __IO uint8_t Button_State;
 /* Private function prototypes -----------------------------------------------*/
 /* Private functions ---------------------------------------------------------*/
 
@@ -56,7 +55,8 @@ Button_State;
   * @param  None
   * @retval None
   */
-void NMI_Handler(void) {
+void NMI_Handler(void)
+{
 }
 
 /**
@@ -64,10 +64,12 @@ void NMI_Handler(void) {
   * @param  None
   * @retval None
   */
-void HardFault_Handler(void) {
-    /* Go to infinite loop when Hard Fault exception occurs */
-    while (1) {
-    }
+void HardFault_Handler(void)
+{
+  /* Go to infinite loop when Hard Fault exception occurs */
+  while (1)
+  {
+  }
 }
 
 /**
@@ -75,10 +77,12 @@ void HardFault_Handler(void) {
   * @param  None
   * @retval None
   */
-void MemManage_Handler(void) {
-    /* Go to infinite loop when Memory Manage exception occurs */
-    while (1) {
-    }
+void MemManage_Handler(void)
+{
+  /* Go to infinite loop when Memory Manage exception occurs */
+  while (1)
+  {
+  }
 }
 
 /**
@@ -86,10 +90,12 @@ void MemManage_Handler(void) {
   * @param  None
   * @retval None
   */
-void BusFault_Handler(void) {
-    /* Go to infinite loop when Bus Fault exception occurs */
-    while (1) {
-    }
+void BusFault_Handler(void)
+{
+  /* Go to infinite loop when Bus Fault exception occurs */
+  while (1)
+  {
+  }
 }
 
 /**
@@ -97,10 +103,12 @@ void BusFault_Handler(void) {
   * @param  None
   * @retval None
   */
-void UsageFault_Handler(void) {
-    /* Go to infinite loop when Usage Fault exception occurs */
-    while (1) {
-    }
+void UsageFault_Handler(void)
+{
+  /* Go to infinite loop when Usage Fault exception occurs */
+  while (1)
+  {
+  }
 }
 
 /**
@@ -108,7 +116,8 @@ void UsageFault_Handler(void) {
   * @param  None
   * @retval None
   */
-void SVC_Handler(void) {
+void SVC_Handler(void)
+{
 }
 
 /**
@@ -116,7 +125,8 @@ void SVC_Handler(void) {
   * @param  None
   * @retval None
   */
-void DebugMon_Handler(void) {
+void DebugMon_Handler(void)
+{
 }
 
 /**
@@ -124,7 +134,8 @@ void DebugMon_Handler(void) {
   * @param  None
   * @retval None
   */
-void PendSV_Handler(void) {
+void PendSV_Handler(void)
+{
 }
 
 /**
@@ -132,25 +143,28 @@ void PendSV_Handler(void) {
   * @param  None
   * @retval None
   */
-void SysTick_Handler(void) {
+void SysTick_Handler(void)
+{
 }
 
 /******************************************************************************/
 /*                 STM32F4xx Peripherals Interrupt Handlers                   */
 /******************************************************************************/
-
+ 
 /**
   * @brief  This function handles External lines 15 to 10 interrupt request.
   * @param  None
   * @retval None
   */
-void EXTI4_15_IRQHandler(void) {
-    /* TimeStamp Event detected */
-    if (EXTI_GetITStatus(TAMPER_BUTTON_EXTI_LINE) != RESET) {
-        Button_State = TAMPER_ON;
-        /* Clear the TAMPER Button EXTI line pending bit */
-        EXTI_ClearITPendingBit(TAMPER_BUTTON_EXTI_LINE);
-    }
+void EXTI4_15_IRQHandler(void)
+{
+  /* TimeStamp Event detected */
+  if(EXTI_GetITStatus(TAMPER_BUTTON_EXTI_LINE) != RESET)
+  {
+    Button_State = TAMPER_ON; 
+    /* Clear the TAMPER Button EXTI line pending bit */
+    EXTI_ClearITPendingBit(TAMPER_BUTTON_EXTI_LINE); 
+  }
 }
 
 /**
@@ -158,14 +172,16 @@ void EXTI4_15_IRQHandler(void) {
   * @param  None
   * @retval None
   */
-void EXTI0_1_IRQHandler(void) {
+void EXTI0_1_IRQHandler(void)
+{
     /* Clear the TimeStamp registers */
-    if (EXTI_GetITStatus(SEL_BUTTON_EXTI_LINE) != RESET) {
-        Button_State = SEL_ON;
-        /* Clear the Wakeup Button EXTI line pending bit */
-        EXTI_ClearITPendingBit(SEL_BUTTON_EXTI_LINE);
-
-    }
+  if(EXTI_GetITStatus(SEL_BUTTON_EXTI_LINE) != RESET)
+  {
+    Button_State = SEL_ON; 
+    /* Clear the Wakeup Button EXTI line pending bit */
+    EXTI_ClearITPendingBit(SEL_BUTTON_EXTI_LINE);
+    
+  }
 }
 
 /******************************************************************************/

@@ -47,10 +47,10 @@ static const uint8_t NVIC_IRQChannel = DMA1_Channel3_IRQn;
 static KiwandaOSSemafoor  memDMATransferKlaar;
 
 static void UserPMADMACopy(UInt16 const * const src,
-               UInt16 * const dst,
-               const Teller aantal)
-{
-   DMA_Cmd(dma, DISABLE);
+			   UInt16 * const dst,
+			   const Teller aantal)
+{	
+   DMA_Cmd(dma, DISABLE);   
     /* geef lengte,bron en bestemming en maak beschikbaar de dma */
     DMA_SetCurrDataCounter(dma,aantal);
     dma->CMAR = (UInt32) src;
@@ -63,10 +63,10 @@ static void UserPMADMACopy(UInt16 const * const src,
     FoutCode retcode = memDMATransferKlaar.wacht(500); /* wacht tot de semafoor wordt teruggeven */
 
     KiwandaAssert(retcode == Ok);
-
+    
      /* interrupt en dma kanaal uit */
     DMA_ITConfig(dma, DMA_IT_TC, DISABLE);
-
+ 
 
 }
 
@@ -74,13 +74,13 @@ void UserPMABufferCopyInit()
 {
     DMA_InitTypeDef  DMA_InitStructure;
     NVIC_InitTypeDef NVIC_InitStructure;
-
+  
      /* DMA1 channel1 configuration ---------------------------------------------*/
      /* Enable DMA2 clock --------------------------------------------------------*/
     RCC_AHBPeriphClockCmd(RCC_AHBPeriph_DMA1, ENABLE);
 
     DMA_DeInit(dma);
-
+     
     DMA_InitStructure.DMA_DIR = DMA_DIR_PeripheralDST;
     DMA_InitStructure.DMA_PeripheralInc = DMA_PeripheralInc_Enable;
     DMA_InitStructure.DMA_MemoryInc = DMA_MemoryInc_Enable;
@@ -98,22 +98,22 @@ void UserPMABufferCopyInit()
     NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
     NVIC_Init(&NVIC_InitStructure);
 
-    memDMATransferKlaar.init(0,"USB Mem <-->PMA semafoor");
+    memDMATransferKlaar.init(0,"USB Mem <-->PMA semafoor");   
 
     const UInt16 testsrc[] = { 1,2,3,4,5,6,7,8,9,10 };
     UInt16 testdst[12];
-
+    
     UserPMADMACopy(testsrc,testdst,10);
-
+    
     KiwandaAssert(0 == memcmp(testsrc,testdst,10*sizeof(UInt16)));
 }
 
 
 #ifdef __cplusplus
-extern "C"
+extern "C" 
 {
 #endif
-
+ 
 /**
  * @brief  This function handles DMA1 Channel 1 interrupt request.
  * @param  None
@@ -121,20 +121,20 @@ extern "C"
  */
     void DMA1_Channel3_IRQHandler(void)
     {
-    OSIntEnter();
+	OSIntEnter();
+    
+	 /* Test on DMA1 Channel1 Transfer Complete interrupt */
+	if(DMA_GetITStatus(DMA_IT))
+	{
+	     /* DMA1 finished the transfer of SrcBuffer */
+	     //  EndOfTransfer = 1;
 
-     /* Test on DMA1 Channel1 Transfer Complete interrupt */
-    if(DMA_GetITStatus(DMA_IT))
-    {
-         /* DMA1 finished the transfer of SrcBuffer */
-         //  EndOfTransfer = 1;
+	     /* Clear DMA1 Channel1 Half Transfer, Transfer Complete and Global interrupt pending bits */
+	    DMA_ClearITPendingBit(DMA_IT);
 
-         /* Clear DMA1 Channel1 Half Transfer, Transfer Complete and Global interrupt pending bits */
-        DMA_ClearITPendingBit(DMA_IT);
-
-        memDMATransferKlaar.geef();   /* geef aan wachtende taak aan dat de transfer klaar is */
-    }
-    OSIntExit();
+	    memDMATransferKlaar.geef();   /* geef aan wachtende taak aan dat de transfer klaar is */
+	}
+	OSIntExit();
     }
 
 #ifdef __cplusplus
@@ -156,38 +156,40 @@ extern "C"
 * Output         : None.
 * Return         : None	.
 *******************************************************************************/
-void UserToPMABufferCopy(uint8_t *pbUsrBuf, uint16_t wPMABufAddr, uint16_t wNBytes) {
+void UserToPMABufferCopy(uint8_t *pbUsrBuf, uint16_t wPMABufAddr, uint16_t wNBytes)
+{
 
 
-    uint16_t *pdwVal = (uint16_t * )(wPMABufAddr * 2 + PMAAddr);
+    uint16_t *pdwVal = (uint16_t *)(wPMABufAddr * 2 + PMAAddr);
     const uint32_t n = (wNBytes + 1) >> 1;   /* n = (wNBytes + 1) / 2 */
 
 #ifdef USB_GEBRUIK_DMA
-    /* controleer of we op dit moment in een exeception handler (ISR) zijn */
-        if (0 != CortexMProcessor::get_IPSR())  /* we worden aangeroepen uit een ISR */
-        {
+/* controleer of we op dit moment in een exeception handler (ISR) zijn */
+    if (0 != CortexMProcessor::get_IPSR())  /* we worden aangeroepen uit een ISR */
+    {
 #endif
 
-    for (uint32_t i = n; i != 0; i--) {
-        const uint32_t temp1 = (uint16_t) * pbUsrBuf;
-        pbUsrBuf++;
-        const uint32_t temp2 = temp1 | (uint16_t) * pbUsrBuf << 8;
-        *pdwVal++ = temp2;
-        pdwVal++;
-        pbUsrBuf++;
-    }
+	for (uint32_t i = n; i != 0; i--)
+	{
+	    const uint32_t temp1 = (uint16_t) * pbUsrBuf;
+	    pbUsrBuf++;
+	    const uint32_t temp2 = temp1 | (uint16_t) * pbUsrBuf << 8;
+	    *pdwVal++ = temp2;
+	    pdwVal++;
+	    pbUsrBuf++;
+	}
 
 #ifdef USB_GEBRUIK_DMA
     }
     else
     {
-    UserPMADMACopy((UInt16 const * const)pbUsrBuf,
-               pdwVal,
-               n);
-
+	UserPMADMACopy((UInt16 const * const)pbUsrBuf,
+		       pdwVal,
+		       n);
+	
     }
 #endif
-
+    
 }
 
 /*******************************************************************************
@@ -199,12 +201,14 @@ void UserToPMABufferCopy(uint8_t *pbUsrBuf, uint16_t wPMABufAddr, uint16_t wNByt
 * Output         : None.
 * Return         : None.
 *******************************************************************************/
-void PMAToUserBufferCopy(uint8_t *pbUsrBuf, uint16_t wPMABufAddr, uint16_t wNBytes) {
+void PMAToUserBufferCopy(uint8_t *pbUsrBuf, uint16_t wPMABufAddr, uint16_t wNBytes)
+{
     const uint32_t n = (wNBytes + 1) >> 1;/* /2*/
-    uint16_t *pbUsrBufPtr = (uint16_t *) pbUsrBuf;
-    uint32_t const *pdwVal = (uint32_t * )(wPMABufAddr * 2 + PMAAddr);
-    for (Teller i = n; i != 0; i--) {
-        *(pbUsrBufPtr)++ = *pdwVal++;
+    uint16_t *pbUsrBufPtr = (uint16_t *)pbUsrBuf;
+    uint32_t const * pdwVal = (uint32_t *)(wPMABufAddr * 2 + PMAAddr);
+    for (Teller i = n; i != 0; i--)
+    {
+	*(pbUsrBufPtr)++ = *pdwVal++;
     }
 }
 

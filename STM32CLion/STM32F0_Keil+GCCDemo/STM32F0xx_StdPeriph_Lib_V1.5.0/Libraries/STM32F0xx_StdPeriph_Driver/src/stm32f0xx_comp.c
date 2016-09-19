@@ -105,7 +105,7 @@
 /** @defgroup COMP 
   * @brief COMP driver modules
   * @{
-  */
+  */ 
 
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
@@ -132,7 +132,7 @@
 @endverbatim
   * @{
   */
-
+   
 /**
   * @brief  Deinitializes COMP peripheral registers to their default reset values.
   * @note   Deinitialization can't be performed if the COMP configuration is locked.
@@ -140,8 +140,9 @@
   * @param  None
   * @retval None
   */
-void COMP_DeInit(void) {
-    COMP->CSR = ((uint32_t) 0x00000000);    /*!< Set COMP_CSR register to reset value */
+void COMP_DeInit(void)
+{
+  COMP->CSR = ((uint32_t)0x00000000);    /*!< Set COMP_CSR register to reset value */
 }
 
 /**
@@ -159,36 +160,36 @@ void COMP_DeInit(void) {
   *         the configuration information for the specified COMP peripheral.
   * @retval None
   */
-void COMP_Init(uint32_t COMP_Selection, COMP_InitTypeDef *COMP_InitStruct) {
-    uint32_t tmpreg = 0;
+void COMP_Init(uint32_t COMP_Selection, COMP_InitTypeDef* COMP_InitStruct)
+{
+  uint32_t tmpreg = 0;
 
-    /* Check the parameters */
-    assert_param(IS_COMP_ALL_PERIPH(COMP_Selection));
-    assert_param(IS_COMP_INVERTING_INPUT(COMP_InitStruct->COMP_InvertingInput));
-    assert_param(IS_COMP_OUTPUT(COMP_InitStruct->COMP_Output));
-    assert_param(IS_COMP_OUTPUT_POL(COMP_InitStruct->COMP_OutputPol));
-    assert_param(IS_COMP_HYSTERESIS(COMP_InitStruct->COMP_Hysteresis));
-    assert_param(IS_COMP_MODE(COMP_InitStruct->COMP_Mode));
+  /* Check the parameters */
+  assert_param(IS_COMP_ALL_PERIPH(COMP_Selection));
+  assert_param(IS_COMP_INVERTING_INPUT(COMP_InitStruct->COMP_InvertingInput));
+  assert_param(IS_COMP_OUTPUT(COMP_InitStruct->COMP_Output));
+  assert_param(IS_COMP_OUTPUT_POL(COMP_InitStruct->COMP_OutputPol));
+  assert_param(IS_COMP_HYSTERESIS(COMP_InitStruct->COMP_Hysteresis));
+  assert_param(IS_COMP_MODE(COMP_InitStruct->COMP_Mode));
 
-    /*!< Get the COMP_CSR register value */
-    tmpreg = COMP->CSR;
+  /*!< Get the COMP_CSR register value */
+  tmpreg = COMP->CSR;
 
-    /*!< Clear the COMP1SW1, COMPx_IN_SEL, COMPx_OUT_TIM_SEL, COMPx_POL, COMPx_HYST and COMPx_PWR_MODE bits */
-    tmpreg &= (uint32_t)
-    ~(COMP_CSR_CLEAR_MASK << COMP_Selection);
+  /*!< Clear the COMP1SW1, COMPx_IN_SEL, COMPx_OUT_TIM_SEL, COMPx_POL, COMPx_HYST and COMPx_PWR_MODE bits */ 
+  tmpreg &= (uint32_t) ~(COMP_CSR_CLEAR_MASK<<COMP_Selection);
 
-    /*!< Configure COMP: inverting input, output redirection, hysteresis value and power mode */
-    /*!< Set COMPxINSEL bits according to COMP_InitStruct->COMP_InvertingInput value */
-    /*!< Set COMPxOUTSEL bits according to COMP_InitStruct->COMP_Output value */
-    /*!< Set COMPxPOL bit according to COMP_InitStruct->COMP_OutputPol value */
-    /*!< Set COMPxHYST bits according to COMP_InitStruct->COMP_Hysteresis value */
-    /*!< Set COMPxMODE bits according to COMP_InitStruct->COMP_Mode value */
-    tmpreg |= (uint32_t)((COMP_InitStruct->COMP_InvertingInput | COMP_InitStruct->COMP_Output |
-                          COMP_InitStruct->COMP_OutputPol | COMP_InitStruct->COMP_Hysteresis |
-                          COMP_InitStruct->COMP_Mode) << COMP_Selection);
+  /*!< Configure COMP: inverting input, output redirection, hysteresis value and power mode */
+  /*!< Set COMPxINSEL bits according to COMP_InitStruct->COMP_InvertingInput value */
+  /*!< Set COMPxOUTSEL bits according to COMP_InitStruct->COMP_Output value */
+  /*!< Set COMPxPOL bit according to COMP_InitStruct->COMP_OutputPol value */
+  /*!< Set COMPxHYST bits according to COMP_InitStruct->COMP_Hysteresis value */
+  /*!< Set COMPxMODE bits according to COMP_InitStruct->COMP_Mode value */   
+  tmpreg |= (uint32_t)((COMP_InitStruct->COMP_InvertingInput | COMP_InitStruct->COMP_Output |
+                       COMP_InitStruct->COMP_OutputPol | COMP_InitStruct->COMP_Hysteresis |
+                       COMP_InitStruct->COMP_Mode)<<COMP_Selection);
 
-    /*!< Write to COMP_CSR register */
-    COMP->CSR = tmpreg;
+  /*!< Write to COMP_CSR register */
+  COMP->CSR = tmpreg;  
 }
 
 /**
@@ -197,12 +198,13 @@ void COMP_Init(uint32_t COMP_Selection, COMP_InitTypeDef *COMP_InitStruct) {
   *         be initialized.
   * @retval None
   */
-void COMP_StructInit(COMP_InitTypeDef *COMP_InitStruct) {
-    COMP_InitStruct->COMP_InvertingInput = COMP_InvertingInput_1_4VREFINT;
-    COMP_InitStruct->COMP_Output = COMP_Output_None;
-    COMP_InitStruct->COMP_OutputPol = COMP_OutputPol_NonInverted;
-    COMP_InitStruct->COMP_Hysteresis = COMP_Hysteresis_No;
-    COMP_InitStruct->COMP_Mode = COMP_Mode_UltraLowPower;
+void COMP_StructInit(COMP_InitTypeDef* COMP_InitStruct)
+{
+  COMP_InitStruct->COMP_InvertingInput = COMP_InvertingInput_1_4VREFINT;
+  COMP_InitStruct->COMP_Output = COMP_Output_None;
+  COMP_InitStruct->COMP_OutputPol = COMP_OutputPol_NonInverted;
+  COMP_InitStruct->COMP_Hysteresis = COMP_Hysteresis_No;
+  COMP_InitStruct->COMP_Mode = COMP_Mode_UltraLowPower;
 }
 
 /**
@@ -221,18 +223,22 @@ void COMP_StructInit(COMP_InitTypeDef *COMP_InitStruct) {
   *         output level is low.
   * @retval None
   */
-void COMP_Cmd(uint32_t COMP_Selection, FunctionalState NewState) {
-    /* Check the parameters */
-    assert_param(IS_COMP_ALL_PERIPH(COMP_Selection));
-    assert_param(IS_FUNCTIONAL_STATE(NewState));
+void COMP_Cmd(uint32_t COMP_Selection, FunctionalState NewState)
+{
+  /* Check the parameters */
+  assert_param(IS_COMP_ALL_PERIPH(COMP_Selection));
+  assert_param(IS_FUNCTIONAL_STATE(NewState));
 
-    if (NewState != DISABLE) {
-        /* Enable the selected COMP peripheral */
-        COMP->CSR |= (uint32_t)(1 << COMP_Selection);
-    } else {
-        /* Disable the selected COMP peripheral  */
-        COMP->CSR &= (uint32_t)(~((uint32_t) 1 << COMP_Selection));
-    }
+  if (NewState != DISABLE)
+  {
+    /* Enable the selected COMP peripheral */
+    COMP->CSR |= (uint32_t) (1<<COMP_Selection);
+  }
+  else
+  {
+    /* Disable the selected COMP peripheral  */
+    COMP->CSR &= (uint32_t)(~((uint32_t)1<<COMP_Selection));
+  }
 }
 
 /**
@@ -245,17 +251,21 @@ void COMP_Cmd(uint32_t COMP_Selection, FunctionalState NewState) {
   * @note   When disabled, the SW1 switch is open; PA1 is disconnected from PA4
   * @retval None
   */
-void COMP_SwitchCmd(FunctionalState NewState) {
-    /* Check the parameter */
-    assert_param(IS_FUNCTIONAL_STATE(NewState));
+void COMP_SwitchCmd(FunctionalState NewState)
+{
+  /* Check the parameter */
+  assert_param(IS_FUNCTIONAL_STATE(NewState));
 
-    if (NewState != DISABLE) {
-        /* Close SW1 switch */
-        COMP->CSR |= (uint32_t)(COMP_CSR_COMP1SW1);
-    } else {
-        /* Open SW1 switch */
-        COMP->CSR &= (uint32_t)(~COMP_CSR_COMP1SW1);
-    }
+  if (NewState != DISABLE)
+  {
+    /* Close SW1 switch */
+    COMP->CSR |= (uint32_t) (COMP_CSR_COMP1SW1);
+  }
+  else
+  {
+    /* Open SW1 switch */
+    COMP->CSR &= (uint32_t)(~COMP_CSR_COMP1SW1);
+  }
 }
 
 /**
@@ -278,21 +288,25 @@ void COMP_SwitchCmd(FunctionalState NewState) {
   * @retval Returns the selected comparator output level: low or high.
   *       
   */
-uint32_t COMP_GetOutputLevel(uint32_t COMP_Selection) {
-    uint32_t compout = 0x0;
+uint32_t COMP_GetOutputLevel(uint32_t COMP_Selection)
+{
+  uint32_t compout = 0x0;
 
-    /* Check the parameters */
-    assert_param(IS_COMP_ALL_PERIPH(COMP_Selection));
+  /* Check the parameters */
+  assert_param(IS_COMP_ALL_PERIPH(COMP_Selection));
 
-    /* Check if selected comparator output is high */
-    if ((COMP->CSR & (COMP_CSR_COMP1OUT << COMP_Selection)) != 0) {
-        compout = COMP_OutputLevel_High;
-    } else {
-        compout = COMP_OutputLevel_Low;
-    }
+  /* Check if selected comparator output is high */
+  if ((COMP->CSR & (COMP_CSR_COMP1OUT<<COMP_Selection)) != 0)
+  {
+    compout = COMP_OutputLevel_High;
+  }
+  else
+  {
+    compout = COMP_OutputLevel_Low;
+  }
 
-    /* Return the comparator output level */
-    return (uint32_t)(compout);
+  /* Return the comparator output level */
+  return (uint32_t)(compout);
 }
 
 /**
@@ -321,17 +335,21 @@ uint32_t COMP_GetOutputLevel(uint32_t COMP_Selection) {
   *           @arg DISABLE: OMP1 and COMP2 non inverting inputs are disconnected.
   * @retval None
   */
-void COMP_WindowCmd(FunctionalState NewState) {
-    /* Check the parameters */
-    assert_param(IS_FUNCTIONAL_STATE(NewState));
-
-    if (NewState != DISABLE) {
-        /* Enable the window mode */
-        COMP->CSR |= (uint32_t) COMP_CSR_WNDWEN;
-    } else {
-        /* Disable the window mode */
-        COMP->CSR &= (uint32_t)(~COMP_CSR_WNDWEN);
-    }
+void COMP_WindowCmd(FunctionalState NewState)
+{
+  /* Check the parameters */
+  assert_param(IS_FUNCTIONAL_STATE(NewState));
+  
+  if (NewState != DISABLE)
+  {
+    /* Enable the window mode */
+    COMP->CSR |= (uint32_t) COMP_CSR_WNDWEN;
+  }
+  else
+  {
+    /* Disable the window mode */
+    COMP->CSR &= (uint32_t)(~COMP_CSR_WNDWEN);
+  }
 }
 
 /**
@@ -362,12 +380,13 @@ void COMP_WindowCmd(FunctionalState NewState) {
   *            @arg COMP_Selection_COMP2: COMP2 configuration is locked.  
   * @retval None
   */
-void COMP_LockConfig(uint32_t COMP_Selection) {
-    /* Check the parameter */
-    assert_param(IS_COMP_ALL_PERIPH(COMP_Selection));
+void COMP_LockConfig(uint32_t COMP_Selection)
+{
+  /* Check the parameter */
+  assert_param(IS_COMP_ALL_PERIPH(COMP_Selection));
 
-    /* Set the lock bit corresponding to selected comparator */
-    COMP->CSR |= (uint32_t)(COMP_CSR_COMP1LOCK << COMP_Selection);
+  /* Set the lock bit corresponding to selected comparator */
+  COMP->CSR |= (uint32_t) (COMP_CSR_COMP1LOCK<<COMP_Selection);
 }
 
 /**

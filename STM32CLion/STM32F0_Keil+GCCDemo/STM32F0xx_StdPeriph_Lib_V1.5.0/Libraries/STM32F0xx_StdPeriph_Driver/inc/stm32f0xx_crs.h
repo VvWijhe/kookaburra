@@ -31,7 +31,7 @@
 #define __STM32F0XX_CRS_H
 
 #ifdef __cplusplus
-extern "C" {
+ extern "C" {
 #endif
 
 /*!< Includes ----------------------------------------------------------------*/
@@ -61,13 +61,13 @@ extern "C" {
 
 #define IS_CRS_IT(IT) (((IT) == CRS_IT_SYNCOK) || ((IT) == CRS_IT_SYNCWARN) || \
                        ((IT) == CRS_IT_ERR)  || ((IT) == CRS_IT_ESYNC))
-
+                       
 #define IS_CRS_GET_IT(IT) (((IT) == CRS_IT_SYNCOK) || ((IT) == CRS_IT_SYNCWARN) || \
                            ((IT) == CRS_IT_ERR) || ((IT) == CRS_IT_ESYNC) || \
                            ((IT) == CRS_IT_TRIMOVF) || ((IT) == CRS_IT_SYNCERR) || \
                            ((IT) == CRS_IT_SYNCMISS))
 
-#define IS_CRS_CLEAR_IT(IT) ((IT) != 0x00)
+#define IS_CRS_CLEAR_IT(IT) ((IT) != 0x00)                                         
 
 /**
   * @}
@@ -92,7 +92,7 @@ extern "C" {
 /**
   * @}
   */
-
+  
 /** @defgroup CRS_Synchro_Source
   * @{
   */
@@ -140,47 +140,30 @@ extern "C" {
   */
 
 
-
+    
 /* Exported macro ------------------------------------------------------------*/
 /* Exported functions ------------------------------------------------------- */
 /* Configuration of the CRS **********************************/
 void CRS_DeInit(void);
-
 void CRS_AdjustHSI48CalibrationValue(uint8_t CRS_HSI48CalibrationValue);
-
 void CRS_FrequencyErrorCounterCmd(FunctionalState NewState);
-
-void CRS_AutomaticCalibrationCmd(FunctionalState NewState);
-
+void CRS_AutomaticCalibrationCmd(FunctionalState NewState); 
 void CRS_SoftwareSynchronizationGenerate(void);
-
 void CRS_FrequencyErrorCounterReload(uint32_t CRS_ReloadValue);
-
 void CRS_FrequencyErrorLimitConfig(uint8_t CRS_ErrorLimitValue);
-
 void CRS_SynchronizationPrescalerConfig(uint32_t CRS_Prescaler);
-
 void CRS_SynchronizationSourceConfig(uint32_t CRS_Source);
-
 void CRS_SynchronizationPolarityConfig(uint32_t CRS_Polarity);
-
 uint32_t CRS_GetReloadValue(void);
-
 uint32_t CRS_GetHSI48CalibrationValue(void);
-
 uint32_t CRS_GetFrequencyErrorValue(void);
-
 uint32_t CRS_GetFrequencyErrorDirection(void);
 
 /* Interrupts and flags management functions **********************************/
 void CRS_ITConfig(uint32_t CRS_IT, FunctionalState NewState);
-
 FlagStatus CRS_GetFlagStatus(uint32_t CRS_FLAG);
-
 void CRS_ClearFlag(uint32_t CRS_FLAG);
-
 ITStatus CRS_GetITStatus(uint32_t CRS_IT);
-
 void CRS_ClearITPendingBit(uint32_t CRS_IT);
 
 #ifdef __cplusplus

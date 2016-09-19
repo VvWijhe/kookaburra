@@ -56,7 +56,8 @@ extern uint8_t TxStatus, RxStatus;
   * @param  None
   * @retval None
   */
-void NMI_Handler(void) {
+void NMI_Handler(void)
+{
 }
 
 /**
@@ -64,10 +65,12 @@ void NMI_Handler(void) {
   * @param  None
   * @retval None
   */
-void HardFault_Handler(void) {
-    /* Go to infinite loop when Hard Fault exception occurs */
-    while (1) {
-    }
+void HardFault_Handler(void)
+{
+  /* Go to infinite loop when Hard Fault exception occurs */
+  while (1)
+  {
+  }
 }
 
 /**
@@ -75,7 +78,8 @@ void HardFault_Handler(void) {
   * @param  None
   * @retval None
   */
-void SVC_Handler(void) {
+void SVC_Handler(void)
+{
 }
 
 /**
@@ -83,7 +87,8 @@ void SVC_Handler(void) {
   * @param  None
   * @retval None
   */
-void PendSV_Handler(void) {
+void PendSV_Handler(void)
+{
 }
 
 /**
@@ -91,7 +96,8 @@ void PendSV_Handler(void) {
   * @param  None
   * @retval None
   */
-void SysTick_Handler(void) {
+void SysTick_Handler(void)
+{
 }
 
 /******************************************************************************/
@@ -105,18 +111,20 @@ void SysTick_Handler(void) {
   * @param  None
   * @retval : None
   */
-void DMA1_Channel2_3_IRQHandler(void) {
+void DMA1_Channel2_3_IRQHandler(void)
+{ 
 #if defined (I2S_SLAVE_RECEIVER)
-    if (DMA_GetITStatus(DMA1_IT_TC2)== SET)
-    {
-      RxStatus = 1;
-      DMA_ClearITPendingBit(DMA1_IT_TC2);
-    }
-#elif defined (I2S_MASTER_TRANSMITTER)
-    if (DMA_GetITStatus(DMA1_IT_TC3) == SET) {
-        TxStatus = 1;
-        DMA_ClearITPendingBit(DMA1_IT_TC3);
-    }
+  if (DMA_GetITStatus(DMA1_IT_TC2)== SET)
+  {
+    RxStatus = 1;
+    DMA_ClearITPendingBit(DMA1_IT_TC2);
+  }
+#elif defined (I2S_MASTER_TRANSMITTER)  
+  if (DMA_GetITStatus(DMA1_IT_TC3)== SET)
+  {
+    TxStatus = 1;
+    DMA_ClearITPendingBit(DMA1_IT_TC3);
+  }
 #endif
 }
 /**

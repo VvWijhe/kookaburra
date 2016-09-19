@@ -1,12 +1,10 @@
 /**
   ******************************************************************************
-  * @file    stm32f0xx_it.c 
+  * @file    main.c 
   * @author  MCD Application Team
   * @version V1.0.0
   * @date    23-March-2012
-  * @brief   Main Interrupt Service Routines.
-  *          This file provides template for all exceptions handler and 
-  *          peripherals interrupt service routine.
+  * @brief   Main program body
   ******************************************************************************
   * @attention
   *
@@ -28,15 +26,9 @@
   */
 
 /* Includes ------------------------------------------------------------------*/
-#include "stm32f0xx_it.h"
 #include "main.h"
 
 /** @addtogroup STM32F0-Discovery_Demo
-  * @{
-  */
-
-/** @addtogroup STM32F0XX_IT
-  * @brief Interrupts driver modules
   * @{
   */
 
@@ -44,79 +36,110 @@
 /* Private define ------------------------------------------------------------*/
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
+static __IO uint32_t TimingDelay;
+uint8_t BlinkSpeed = 0;
+
+class Airplane {
+public:
+    Airplane(){
+        STM_EVAL_LEDOn(LED3);
+        Delay(100);
+        STM_EVAL_LEDOff(LED3);
+    }
+    ~Airplane(){}
+
+    void start(){}
+
+private:
+    float heigth;
+};
+
 /* Private function prototypes -----------------------------------------------*/
 /* Private functions ---------------------------------------------------------*/
 
-/******************************************************************************/
-/*            Cortex-M0 Processor Exceptions Handlers                         */
-/******************************************************************************/
-
 /**
-  * @brief  This function handles NMI exception.
+  * @brief  Main program.
   * @param  None
   * @retval None
   */
-void NMI_Handler(void) {
-}
+int main(void) {
+    RCC_ClocksTypeDef RCC_Clocks;
 
-/**
-  * @brief  This function handles Hard Fault exception.
-  * @param  None
-  * @retval None
-  */
-void HardFault_Handler(void) {
-    /* Go to infinite loop when Hard Fault exception occurs */
-    while (1) {
+    /* Configure LED3 and LED4 on STM32F0-Discovery */
+    STM_EVAL_LEDInit(LED3);
+    STM_EVAL_LEDInit(LED4);
+
+    /* Initialize User_Button on STM32F0-Discovery */
+    STM_EVAL_PBInit(BUTTON_USER, BUTTON_MODE_GPIO);
+
+    /* SysTick end of count event each 1ms */
+    RCC_GetClocksFreq(&RCC_Clocks);
+    SysTick_Config(RCC_Clocks.HCLK_Frequency / 1000);
+
+    Airplane myAirplane;
+    myAirplane.start();
+
+    while(1){
+        STM_EVAL_LEDToggle(LED4);
+        Delay(100);
+        STM_EVAL_LEDToggle(LED4);
+        Delay(500);
     }
 }
 
 /**
-  * @brief  This function handles SVCall exception.
-  * @param  None
+  * @brief  Inserts a delay time.
+  * @param  nTime: specifies the delay time length, in 1 ms.
   * @retval None
   */
-void SVC_Handler(void) {
+void Delay(__IO uint32_t nTime) {
+    TimingDelay = nTime;
+
+    while (TimingDelay != 0);
 }
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /**
-  * @brief  This function handles PendSVC exception.
+  * @brief  Decrements the TimingDelay variable.
   * @param  None
   * @retval None
   */
-void PendSV_Handler(void) {
+void TimingDelay_Decrement(void) {
+    if (TimingDelay != 0x00) {
+        TimingDelay--;
+    }
 }
 
-/**
-  * @brief  This function handles SysTick Handler.
-  * @param  None
-  * @retval None
-  */
-void SysTick_Handler(void) {
-    TimingDelay_Decrement();
+#ifdef __cplusplus
 }
+#endif
 
-/******************************************************************************/
-/*                 STM32F0xx Peripherals Interrupt Handlers                   */
-/*  Add here the Interrupt Handler for the used peripheral(s) (PPP), for the  */
-/*  available peripheral interrupt handler's name please refer to the startup */
-/*  file (startup_stm32f0xx.s).                                               */
-/******************************************************************************/
+#ifdef  USE_FULL_ASSERT
 
 /**
-  * @brief  This function handles PPP interrupt request.
-  * @param  None
+  * @brief  Reports the name of the source file and the source line number
+  *   where the assert_param error has occurred.
+  * @param  file: pointer to the source file name
+  * @param  line: assert_param error line source number
   * @retval None
   */
-/*void PPP_IRQHandler(void)
-{
-}*/
+void assert_failed(uint8_t* file, uint32_t line)
+{ 
+  /* User can add his own implementation to report the file name and line number,
+     ex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
+
+  /* Infinite loop */
+  while (1)
+  {}
+}
+#endif
 
 /**
   * @}
   */
 
-/**
-  * @}
-  */
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

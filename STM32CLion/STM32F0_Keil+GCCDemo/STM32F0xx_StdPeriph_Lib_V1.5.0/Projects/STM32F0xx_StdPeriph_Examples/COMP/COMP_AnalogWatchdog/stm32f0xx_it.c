@@ -54,7 +54,8 @@
   * @param  None
   * @retval None
   */
-void NMI_Handler(void) {
+void NMI_Handler(void)
+{
 }
 
 /**
@@ -62,10 +63,12 @@ void NMI_Handler(void) {
   * @param  None
   * @retval None
   */
-void HardFault_Handler(void) {
-    /* Go to infinite loop when Hard Fault exception occurs */
-    while (1) {
-    }
+void HardFault_Handler(void)
+{
+  /* Go to infinite loop when Hard Fault exception occurs */
+  while (1)
+  {
+  }
 }
 
 /**
@@ -73,7 +76,8 @@ void HardFault_Handler(void) {
   * @param  None
   * @retval None
   */
-void SVC_Handler(void) {
+void SVC_Handler(void)
+{
 }
 
 /**
@@ -81,7 +85,8 @@ void SVC_Handler(void) {
   * @param  None
   * @retval None
   */
-void PendSV_Handler(void) {
+void PendSV_Handler(void)
+{
 }
 
 /**
@@ -89,7 +94,8 @@ void PendSV_Handler(void) {
   * @param  None
   * @retval None
   */
-void SysTick_Handler(void) {
+void SysTick_Handler(void)
+{
 }
 
 /******************************************************************************/
@@ -100,18 +106,20 @@ void SysTick_Handler(void) {
   * @param  None
   * @retval None
   */
-void ADC1_COMP_IRQHandler(void) {
-    if ((EXTI_GetITStatus(EXTI_Line21) != RESET) || (EXTI_GetITStatus(EXTI_Line22) != RESET)) {
-        /* Check input voltage level: within the thresholds, above the upper threshold
-           or under the lower threshold */
-        CheckState();
-
-        /* Clear EXTI21 pending bit */
-        EXTI_ClearITPendingBit(EXTI_Line21);
-
-        /* Clear EXTI22 pending bit */
-        EXTI_ClearITPendingBit(EXTI_Line22);
-    }
+void ADC1_COMP_IRQHandler(void)
+{
+  if((EXTI_GetITStatus(EXTI_Line21) != RESET) || (EXTI_GetITStatus(EXTI_Line22) != RESET))
+  {
+    /* Check input voltage level: within the thresholds, above the upper threshold
+       or under the lower threshold */
+    CheckState();
+    
+    /* Clear EXTI21 pending bit */
+    EXTI_ClearITPendingBit(EXTI_Line21);
+    
+    /* Clear EXTI22 pending bit */
+    EXTI_ClearITPendingBit(EXTI_Line22);
+  }
 }
 
 /******************************************************************************/

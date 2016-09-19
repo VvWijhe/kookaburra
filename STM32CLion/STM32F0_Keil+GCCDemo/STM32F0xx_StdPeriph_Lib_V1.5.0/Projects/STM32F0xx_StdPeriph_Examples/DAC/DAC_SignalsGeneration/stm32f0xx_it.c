@@ -28,6 +28,7 @@
   */
 
 /* Includes ------------------------------------------------------------------*/
+#include "stm32f0xx_it.h"
 
 /** @addtogroup STM32F0xx_StdPeriph_Examples
   * @{
@@ -41,9 +42,7 @@
 /* Private define ------------------------------------------------------------*/
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
-extern __IO uint8_t
-SelectedWavesForm,
-WaveChange;
+extern __IO uint8_t SelectedWavesForm, WaveChange;
 
 /* Private function prototypes -----------------------------------------------*/
 /* Private functions ---------------------------------------------------------*/
@@ -57,7 +56,8 @@ WaveChange;
   * @param  None
   * @retval None
   */
-void NMI_Handler(void) {
+void NMI_Handler(void)
+{
 }
 
 /**
@@ -65,10 +65,12 @@ void NMI_Handler(void) {
   * @param  None
   * @retval None
   */
-void HardFault_Handler(void) {
-    /* Go to infinite loop when Hard Fault exception occurs */
-    while (1) {
-    }
+void HardFault_Handler(void)
+{
+  /* Go to infinite loop when Hard Fault exception occurs */
+  while (1)
+  {
+  }
 }
 
 /**
@@ -76,7 +78,8 @@ void HardFault_Handler(void) {
   * @param  None
   * @retval None
   */
-void SVC_Handler(void) {
+void SVC_Handler(void)
+{
 }
 
 /**
@@ -84,7 +87,8 @@ void SVC_Handler(void) {
   * @param  None
   * @retval None
   */
-void PendSV_Handler(void) {
+void PendSV_Handler(void)
+{
 }
 
 /**
@@ -92,7 +96,8 @@ void PendSV_Handler(void) {
   * @param  None
   * @retval None
   */
-void SysTick_Handler(void) {
+void SysTick_Handler(void)
+{
 }
 
 /******************************************************************************/
@@ -103,17 +108,19 @@ void SysTick_Handler(void) {
   * @param  None
   * @retval None
   */
-void EXTI4_15_IRQHandler(void) {
-    if (EXTI_GetITStatus(TAMPER_BUTTON_EXTI_LINE) != RESET) {
-        /* Change the wave */
-        WaveChange = !WaveChange;
+void EXTI4_15_IRQHandler(void)
+{
+  if(EXTI_GetITStatus(TAMPER_BUTTON_EXTI_LINE) != RESET)
+  { 
+    /* Change the wave */
+    WaveChange = !WaveChange;
 
-        /* Change the selected waves forms */
-        SelectedWavesForm = !SelectedWavesForm;
+    /* Change the selected waves forms */
+    SelectedWavesForm = !SelectedWavesForm;
 
-        /* Clear the Right Button EXTI line pending bit */
-        EXTI_ClearITPendingBit(TAMPER_BUTTON_EXTI_LINE);
-    }
+    /* Clear the Right Button EXTI line pending bit */
+    EXTI_ClearITPendingBit(TAMPER_BUTTON_EXTI_LINE);
+  }
 }
 
 /******************************************************************************/

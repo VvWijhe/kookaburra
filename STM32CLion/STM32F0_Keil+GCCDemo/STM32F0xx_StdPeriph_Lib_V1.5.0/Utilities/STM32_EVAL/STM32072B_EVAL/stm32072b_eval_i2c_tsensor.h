@@ -31,7 +31,7 @@
 #define __STM32072B_EVAL_I2C_TSENSOR_H
 
 #ifdef __cplusplus
-extern "C" {
+ extern "C" {
 #endif
 
 /* Includes ------------------------------------------------------------------*/
@@ -40,43 +40,44 @@ extern "C" {
 /** @addtogroup Utilities
   * @{
   */
-
+  
 /** @addtogroup STM32_EVAL
   * @{
-  */
+  */ 
 
 /** @addtogroup STM32072B_EVAL
   * @{
   */
-
+  
 /** @addtogroup STM32072B_EVAL_I2C_TSENSOR
   * @{
-  */
-/* Exported types ------------------------------------------------------------*/
+  */  
+/* Exported types ------------------------------------------------------------*/   
 /** 
   * @brief  TSENSOR Status  
-  */
-typedef enum {
-    LM75_OK = 0,
-    LM75_FAIL
-} LM75_Status_TypDef;
+  */ 
+typedef enum
+{
+  LM75_OK = 0,
+  LM75_FAIL
+}LM75_Status_TypDef;
 
 /* Exported constants --------------------------------------------------------*/
 /* Uncomment the following line to use Timeout_User_Callback LM75_TimeoutUserCallback(). 
    If This Callback is enabled, it should be implemented by user in main function .
    LM75_TimeoutUserCallback() function is called whenever a timeout condition 
    occurs during communication (waiting on an event that doesn't occur, bus 
-   errors, busy devices ...). */
-/* #define USE_TIMEOUT_USER_CALLBACK */
-
+   errors, busy devices ...). */   
+/* #define USE_TIMEOUT_USER_CALLBACK */    
+    
 /* Maximum Timeout values for flags and events waiting loops. These timeouts are
    not based on accurate values, they just guarantee that the application will 
    not remain stuck if the I2C communication is corrupted.
    You may modify these timeout values depending on CPU frequency and application
-   conditions (interrupts routines ...). */
+   conditions (interrupts routines ...). */   
 #define LM75_FLAG_TIMEOUT         ((uint32_t)0x1000)
-#define LM75_LONG_TIMEOUT         ((uint32_t)(10 * LM75_FLAG_TIMEOUT))
-
+#define LM75_LONG_TIMEOUT         ((uint32_t)(10 * LM75_FLAG_TIMEOUT))    
+    
 
 /**
   * @brief  Block Size
@@ -90,25 +91,17 @@ typedef enum {
 
 
 #define LM75_I2C_TIMING     0x1045061D
-
+   
 /* Exported macro ------------------------------------------------------------*/
-/* Exported functions ------------------------------------------------------- */
+/* Exported functions ------------------------------------------------------- */ 
 void LM75_DeInit(void);
-
 void LM75_Init(void);
-
 ErrorStatus LM75_GetStatus(void);
-
 uint16_t LM75_ReadTemp(void);
-
 uint16_t LM75_ReadReg(uint8_t RegName);
-
 uint8_t LM75_WriteReg(uint8_t RegName, uint16_t RegValue);
-
 uint8_t LM75_ReadConfReg(void);
-
 uint8_t LM75_WriteConfReg(uint8_t RegValue);
-
 uint8_t LM75_ShutDown(FunctionalState NewState);
 
 /** 
@@ -120,12 +113,12 @@ uint8_t LM75_ShutDown(FunctionalState NewState);
   *         To enable this function use uncomment the define USE_TIMEOUT_USER_CALLBACK
   *         at the top of this file.          
   */
-#ifdef USE_TIMEOUT_USER_CALLBACK
-uint8_t LM75_TIMEOUT_UserCallback(void);
+#ifdef USE_TIMEOUT_USER_CALLBACK 
+ uint8_t LM75_TIMEOUT_UserCallback(void);
 #else
-#define LM75_TIMEOUT_UserCallback()  LM75_FAIL
+ #define LM75_TIMEOUT_UserCallback()  LM75_FAIL
 #endif /* USE_TIMEOUT_USER_CALLBACK */
-
+ 
 #ifdef __cplusplus
 }
 #endif
@@ -142,7 +135,7 @@ uint8_t LM75_TIMEOUT_UserCallback(void);
 
 /**
   * @}
-  */
+  */ 
 
 /**
   * @}

@@ -49,7 +49,7 @@
 /* ARM armcc specific functions */
 
 #if (__ARMCC_VERSION < 400677)
-#error "Please use ARM Compiler Toolchain V4.0.677 or later!"
+  #error "Please use ARM Compiler Toolchain V4.0.677 or later!"
 #endif
 
 

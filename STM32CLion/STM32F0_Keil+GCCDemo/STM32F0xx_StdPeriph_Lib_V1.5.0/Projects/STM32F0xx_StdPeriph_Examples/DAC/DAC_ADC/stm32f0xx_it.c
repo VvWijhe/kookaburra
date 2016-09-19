@@ -28,6 +28,7 @@
   */
 
 /* Includes ------------------------------------------------------------------*/
+#include "stm32f0xx_it.h"
 
 /** @addtogroup STM32F0xx_StdPeriph_Examples
   * @{
@@ -55,7 +56,8 @@ uint16_t ADCVal = 0;
   * @param  None
   * @retval None
   */
-void NMI_Handler(void) {
+void NMI_Handler(void)
+{
 }
 
 /**
@@ -63,10 +65,12 @@ void NMI_Handler(void) {
   * @param  None
   * @retval None
   */
-void HardFault_Handler(void) {
-    /* Go to infinite loop when Hard Fault exception occurs */
-    while (1) {
-    }
+void HardFault_Handler(void)
+{
+  /* Go to infinite loop when Hard Fault exception occurs */
+  while (1)
+  {
+  }
 }
 
 /**
@@ -74,7 +78,8 @@ void HardFault_Handler(void) {
   * @param  None
   * @retval None
   */
-void SVC_Handler(void) {
+void SVC_Handler(void)
+{
 }
 
 /**
@@ -82,7 +87,8 @@ void SVC_Handler(void) {
   * @param  None
   * @retval None
   */
-void PendSV_Handler(void) {
+void PendSV_Handler(void)
+{
 }
 
 /**
@@ -90,7 +96,8 @@ void PendSV_Handler(void) {
   * @param  None
   * @retval None
   */
-void SysTick_Handler(void) {
+void SysTick_Handler(void)
+{
 }
 
 /******************************************************************************/
@@ -105,15 +112,17 @@ void SysTick_Handler(void) {
   * @param  None
   * @retval None
   */
-void ADC1_COMP_IRQHandler(void) {
-    if (ADC_GetITStatus(ADC1, ADC_IT_EOC) != RESET) {
-        /* Get converted value */
-        ADCVal = ADC_GetConversionValue(ADC1);
-        /* Output converted value on DAC_OUT1 */
-        DAC_SetChannel1Data(DAC_Align_12b_R, ADCVal);
-        /* Clear EOC Flag */
-        ADC_ClearITPendingBit(ADC1, ADC_IT_EOC);
-    }
+void ADC1_COMP_IRQHandler(void)
+{
+  if(ADC_GetITStatus(ADC1, ADC_IT_EOC) != RESET)
+  {
+    /* Get converted value */
+    ADCVal = ADC_GetConversionValue(ADC1);
+    /* Output converted value on DAC_OUT1 */
+    DAC_SetChannel1Data(DAC_Align_12b_R, ADCVal);
+    /* Clear EOC Flag */
+    ADC_ClearITPendingBit(ADC1, ADC_IT_EOC);
+  }
 }
 
 /**
