@@ -15,17 +15,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9bb779a6-c741-4f2c-a8d2-139c7b84ffc4" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../discoveryf0demo/.idea/discoveryf0demo.iml" afterPath="$PROJECT_DIR$/.idea/discoveryf0demo.iml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../discoveryf0demo/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../discoveryf0demo/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../discoveryf0demo/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../discoveryf0demo/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../discoveryf0demo/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../discoveryf0demo/Release_Notes.html" afterPath="$PROJECT_DIR$/Release_Notes.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../discoveryf0demo/main.cpp" afterPath="$PROJECT_DIR$/main.cpp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../discoveryf0demo/readme.txt" afterPath="$PROJECT_DIR$/readme.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../discoveryf0demo/stm32f0xx_it.c" afterPath="$PROJECT_DIR$/stm32f0xx_it.c" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../discoveryf0demo/system_stm32f0xx.c" afterPath="$PROJECT_DIR$/system_stm32f0xx.c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="discoveryf0demo.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -48,7 +38,7 @@
       <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="976">
+            <state relative-caret-position="-1166">
               <caret line="64" column="39" selection-start-line="64" selection-start-column="39" selection-end-line="64" selection-end-column="39" />
               <folding />
             </state>
@@ -121,20 +111,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="discoveryf0demo" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mainproject" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="discoveryf0demo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mainproject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -362,7 +338,7 @@
       <workItem from="1474287772250" duration="1966000" />
       <workItem from="1474289786876" duration="23000" />
       <workItem from="1474289873756" duration="617000" />
-      <workItem from="1474291572143" duration="101000" />
+      <workItem from="1474291572143" duration="195000" />
     </task>
     <task id="LOCAL-00001" summary="deletes acces files&#10;">
       <created>1474289374024</created>
@@ -392,11 +368,18 @@
       <option name="project" value="LOCAL" />
       <updated>1474290024025</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="&#10;lkj">
+      <created>1474291687165</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1474291687166</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7942000" />
+    <option name="totallyTimeSpent" value="8036000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -435,7 +418,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="deletes acces files&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="deletes acces files&#10;" />
+    <MESSAGE value="&#10;lkj" />
+    <option name="LAST_COMMIT_MESSAGE" value="&#10;lkj" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -622,7 +606,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="976">
+        <state relative-caret-position="-1166">
           <caret line="64" column="39" selection-start-line="64" selection-start-column="39" selection-end-line="64" selection-end-column="39" />
           <folding />
         </state>
