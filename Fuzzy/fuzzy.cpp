@@ -16,16 +16,18 @@
 /******************************************************************************
   Fuzzy function implemenations
 ******************************************************************************/
+Fuzzy::Fuzzy() {}
+
 Fuzzy::Fuzzy(t_cv control, t_er error) {
     _controlValue = control;
     _error = error;
 }
 
-void Fuzzy::setControlMBF(t_cv control) {
+void Fuzzy::setMBF(t_cv control) {
     _controlValue = control;
 }
 
-void Fuzzy::setControlMBF(t_er error) {
+void Fuzzy::setMBF(t_er error) {
     _error = error;
 }
 

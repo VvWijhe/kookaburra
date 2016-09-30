@@ -1,6 +1,9 @@
 #include <iostream>
 #include "fuzzy.h"
 
+// Fuzzy class variable
+Fuzzy fuzzy;
+
 // Fuzzy member functions
 t_er er;
 t_cv cv;
@@ -61,7 +64,8 @@ int main() {
     cv.mbf_posL[1] = 3419;
     cv.mbf_posL[2] = 4095;
 
-    Fuzzy fuzzy(cv, er);
+    fuzzy.setMBF(cv);
+    fuzzy.setMBF(er);
 
     for(int i = 0; i < 1000; i++){
         controlVoltage = fuzzy.process((int32_t)setPoint, (int32_t)measuredVoltage);

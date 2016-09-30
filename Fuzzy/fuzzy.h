@@ -78,18 +78,19 @@ typedef struct {
 
 class Fuzzy {
 public:
+    Fuzzy();
     Fuzzy(t_cv control, t_er error);
 
     int32_t process(int32_t setPoint, int32_t measurementValue);
+
+    void setMBF(t_cv control);
+    void setMBF(t_er error);
 
 private:
     // Fuzzy variables
     t_er _error;  // Error
     t_cv _controlValue;  // Control Value
     t_dom dom; // Degree of membership (for MOM)
-
-    void setControlMBF(t_cv control);
-    void setControlMBF(t_er error);
 
     t_dom MBF_Trapezoid(t_mbf p[4], t_crisp crisp);
 
