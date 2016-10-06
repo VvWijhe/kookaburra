@@ -17,6 +17,7 @@ public:
     Q_INVOKABLE bool isSerialOpen();
     void closeSerial(void);
     void SetBaud(int baudRate);
+    int connectDevice();
 public slots:
     void dataIn();
     void send(char *data);

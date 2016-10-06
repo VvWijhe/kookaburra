@@ -3,15 +3,19 @@
 #include "mywindow.h"
 #include "secondwindow.h"
 #include <QDebug>
-#include "UART.h"
-
-UART port;
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    this->setFixedSize(300, 400);
+
+    port = new UART;
+
+    if(!port->connectDevice()){
+       ui->statusBar->showMessage("Device not connected");
+    }
 }
 
 MainWindow::~MainWindow()
@@ -47,7 +51,7 @@ void MainWindow::on_pushButton_3_clicked() //Send heightdata
     }
     qDebug()<<Height1;
     *DataToSend = (char)Height1;
-    port.send(DataToSend);
+    port->send(DataToSend);
 
 
     buff = ui->UIHeightTwo->text();
@@ -62,5 +66,5 @@ void MainWindow::on_pushButton_3_clicked() //Send heightdata
     }
     qDebug()<<Height2;
     *DataToSend = (char)Height2;
-    port.send(DataToSend);
+    port->send(DataToSend);
 }

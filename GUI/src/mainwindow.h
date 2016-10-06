@@ -5,6 +5,7 @@
 #define MAXHEIGHT 300
 
 #include <QMainWindow>
+#include "UART.h"
 
 namespace Ui {
 class MainWindow;
@@ -32,6 +33,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    UART *port;
 };
 
 #endif // MAINWINDOW_H
