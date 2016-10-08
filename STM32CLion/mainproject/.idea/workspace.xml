@@ -3,6 +3,7 @@
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" assignedExecutableTargets="true" buildAllGenerated="true">
     <generated>
       <config projectName="stm32f0demo" targetName="stm32f0demo.elf" />
+      <config projectName="mainproject" targetName="info" />
       <config projectName="stm32f0demo" targetName="CMSISFIRMWARE" />
       <config projectName="stm32f0demo" targetName="STM32F0DiscoveryLib" />
       <config projectName="stm32f0demo" targetName="F0StdPerifDriver" />
@@ -16,235 +17,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9bb779a6-c741-4f2c-a8d2-139c7b84ffc4" name="Default" comment="Renamed project">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../buildsystem/STM32F1.cmake" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../buildsystem/STM32F30.cmake" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../buildsystem/STM32F4.cmake" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F10x_StdPeriph_Driver/CMakeLists.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F10x_StdPeriph_Driver/Release_Notes_for_STM32F10x_StdPeriph_Driver.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F10x_StdPeriph_Driver/inc/misc.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F10x_StdPeriph_Driver/inc/stm32f10x_adc.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F10x_StdPeriph_Driver/inc/stm32f10x_bkp.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F10x_StdPeriph_Driver/inc/stm32f10x_can.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F10x_StdPeriph_Driver/inc/stm32f10x_cec.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F10x_StdPeriph_Driver/inc/stm32f10x_crc.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F10x_StdPeriph_Driver/inc/stm32f10x_dac.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F10x_StdPeriph_Driver/inc/stm32f10x_dbgmcu.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F10x_StdPeriph_Driver/inc/stm32f10x_dma.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F10x_StdPeriph_Driver/inc/stm32f10x_exti.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F10x_StdPeriph_Driver/inc/stm32f10x_flash.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F10x_StdPeriph_Driver/inc/stm32f10x_fsmc.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F10x_StdPeriph_Driver/inc/stm32f10x_gpio.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F10x_StdPeriph_Driver/inc/stm32f10x_i2c.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F10x_StdPeriph_Driver/inc/stm32f10x_iwdg.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F10x_StdPeriph_Driver/inc/stm32f10x_pwr.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F10x_StdPeriph_Driver/inc/stm32f10x_rcc.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F10x_StdPeriph_Driver/inc/stm32f10x_rtc.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F10x_StdPeriph_Driver/inc/stm32f10x_sdio.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F10x_StdPeriph_Driver/inc/stm32f10x_spi.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F10x_StdPeriph_Driver/inc/stm32f10x_tim.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F10x_StdPeriph_Driver/inc/stm32f10x_usart.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F10x_StdPeriph_Driver/inc/stm32f10x_wwdg.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F10x_StdPeriph_Driver/src/misc.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f10x_adc.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f10x_can.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f10x_spi.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F30x_StdPeriph_Driver/CMakeLists.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F30x_StdPeriph_Driver/Release_Notes.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F30x_StdPeriph_Driver/inc/stm32f30x_adc.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F30x_StdPeriph_Driver/inc/stm32f30x_can.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F30x_StdPeriph_Driver/inc/stm32f30x_comp.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F30x_StdPeriph_Driver/inc/stm32f30x_crc.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F30x_StdPeriph_Driver/inc/stm32f30x_dac.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F30x_StdPeriph_Driver/inc/stm32f30x_dbgmcu.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F30x_StdPeriph_Driver/inc/stm32f30x_dma.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F30x_StdPeriph_Driver/inc/stm32f30x_exti.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F30x_StdPeriph_Driver/inc/stm32f30x_flash.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F30x_StdPeriph_Driver/inc/stm32f30x_gpio.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F30x_StdPeriph_Driver/inc/stm32f30x_i2c.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F30x_StdPeriph_Driver/inc/stm32f30x_iwdg.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F30x_StdPeriph_Driver/inc/stm32f30x_misc.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F30x_StdPeriph_Driver/inc/stm32f30x_opamp.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F30x_StdPeriph_Driver/inc/stm32f30x_pwr.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F30x_StdPeriph_Driver/inc/stm32f30x_rcc.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F30x_StdPeriph_Driver/inc/stm32f30x_rtc.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F30x_StdPeriph_Driver/inc/stm32f30x_spi.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F30x_StdPeriph_Driver/inc/stm32f30x_syscfg.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F30x_StdPeriph_Driver/inc/stm32f30x_tim.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F30x_StdPeriph_Driver/inc/stm32f30x_usart.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F30x_StdPeriph_Driver/inc/stm32f30x_wwdg.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F30x_StdPeriph_Driver/src/stm32f30x_adc.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F30x_StdPeriph_Driver/src/stm32f30x_can.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F30x_StdPeriph_Driver/src/stm32f30x_comp.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F30x_StdPeriph_Driver/src/stm32f30x_crc.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F30x_StdPeriph_Driver/src/stm32f30x_dac.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F30x_StdPeriph_Driver/src/stm32f30x_dbgmcu.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F30x_StdPeriph_Driver/src/stm32f30x_dma.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F30x_StdPeriph_Driver/src/stm32f30x_exti.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F30x_StdPeriph_Driver/src/stm32f30x_flash.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F30x_StdPeriph_Driver/src/stm32f30x_gpio.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F30x_StdPeriph_Driver/src/stm32f30x_i2c.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F30x_StdPeriph_Driver/src/stm32f30x_iwdg.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F30x_StdPeriph_Driver/src/stm32f30x_misc.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F30x_StdPeriph_Driver/src/stm32f30x_opamp.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F30x_StdPeriph_Driver/src/stm32f30x_pwr.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F30x_StdPeriph_Driver/src/stm32f30x_rcc.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F30x_StdPeriph_Driver/src/stm32f30x_rtc.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F30x_StdPeriph_Driver/src/stm32f30x_spi.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F30x_StdPeriph_Driver/src/stm32f30x_syscfg.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F30x_StdPeriph_Driver/src/stm32f30x_tim.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F30x_StdPeriph_Driver/src/stm32f30x_usart.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F30x_StdPeriph_Driver/src/stm32f30x_wwdg.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F4xx_StdPeriph_Driver/CMakeLists.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F4xx_StdPeriph_Driver/Release_Notes.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F4xx_StdPeriph_Driver/inc/misc.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_adc.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_can.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_crc.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_cryp.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_dac.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_dbgmcu.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_dcmi.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_dma.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_exti.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_flash.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_fsmc.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_gpio.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_hash.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_i2c.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_iwdg.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_pwr.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_rcc.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_rng.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_rtc.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_sdio.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_spi.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_syscfg.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_tim.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_usart.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_wwdg.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_adc.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_can.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_crc.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_cryp.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_cryp_aes.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_cryp_des.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_cryp_tdes.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_dac.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_dbgmcu.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_dcmi.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_dma.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_exti.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_flash.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_fsmc.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_hash.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_hash_md5.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_hash_sha1.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_i2c.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_iwdg.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_pwr.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_rcc.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_rng.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_rtc.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_sdio.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_spi.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_syscfg.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_tim.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_wwdg.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/STM32F1Discovery/CMakeLists.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/STM32F1Discovery/Retarget.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/STM32F1Discovery/STM32vldiscovery.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/STM32F1Discovery/STM32vldiscovery.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/STM32F1Discovery/algdef.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/STM32F1Discovery/algdef.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/STM32F1Discovery/stm32Controller.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/STM32F1Discovery/stm32Controller.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/STM32F1Discovery/stm32Periphs.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/STM32F1Discovery/stm32Periphs.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/STM32F1Discovery/stm32f10x_conf.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/STM32F1Discovery/stm32f10x_it.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/STM32F3Discovery/CMakeLists.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/STM32F3Discovery/Retarget.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/STM32F3Discovery/algdef.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/STM32F3Discovery/algdef.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/STM32F3Discovery/stm32f3Controller.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/STM32F3Discovery/stm32f3Controller.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/STM32F3Discovery/stm32f3Perifs.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/STM32F3Discovery/stm32f3Perifs.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/STM32F3Discovery/stm32f3_discovery.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/STM32F3Discovery/stm32f3_discovery.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/STM32F3Discovery/stm32f3_discovery_l3gd20.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/STM32F3Discovery/stm32f3_discovery_l3gd20.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/STM32F3Discovery/stm32f3_discovery_lsm303dlhc.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/STM32F3Discovery/stm32f3_discovery_lsm303dlhc.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/STM32F4Discovery/CMakeLists.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/STM32F4Discovery/Retarget.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/STM32F4Discovery/algdef.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/STM32F4Discovery/algdef.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/STM32F4Discovery/stm32f4Controller.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/STM32F4Discovery/stm32f4Controller.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/STM32F4Discovery/stm32f4Perifs.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/STM32F4Discovery/stm32f4Perifs.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/STM32F4Discovery/stm32f4_discovery.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/STM32F4Discovery/stm32f4_discovery.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Third_Party/FatFs_vR0.08a/00readme.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Third_Party/FatFs_vR0.08a/CMakeLists.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Third_Party/FatFs_vR0.08a/diskio.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Third_Party/FatFs_vR0.08a/ff.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Third_Party/FatFs_vR0.08a/ff.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Third_Party/FatFs_vR0.08a/ffconf.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Third_Party/FatFs_vR0.08a/integer.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Third_Party/FatFs_vR0.08a/option/cc932.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Third_Party/FatFs_vR0.08a/option/cc936.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Third_Party/FatFs_vR0.08a/option/cc949.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Third_Party/FatFs_vR0.08a/option/cc950.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Third_Party/FatFs_vR0.08a/option/ccsbcs.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Third_Party/FatFs_vR0.08a/option/syscall.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/Third_Party/FatFs_vR0.08a/tijd.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/basis/stm32f1/comm.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/basis/stm32f1/syscalls.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/basis/stm32f1/term_io.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/basis/stm32f2/comm.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/basis/stm32f2/syscalls.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/basis/stm32f2/term_io.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/basis/stm32f3/comm.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/basis/stm32f3/syscalls.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/basis/stm32f3/term_io.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/basis/stm32f4/comm.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/basis/stm32f4/syscalls.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/basis/stm32f4/term_io.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/basis/stm32l1/comm.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/basis/stm32l1/syscalls.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/basis/stm32l1/term_io.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/logos/STM32F0_series_SS1574.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/logos/STM32F1_series_SS1031.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/logos/STM32F2_series_SS1575.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/logos/STM32F3_series_SS1576.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/logos/STM32F4_series_SS1577.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../gemeenschappelijk/logos/STM32L0_serie_SS1817.jpg" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/discoveryf0demo.iml" afterPath="$PROJECT_DIR$/.idea/discoveryf0demo.iml" />
     </list>
     <list id="95c66ab1-e3ac-416d-9931-d39222814d1b" name="Rejected commit: Default" comment="Renamed project" />
     <ignored path="discoveryf0demo.iws" />
@@ -268,8 +41,8 @@
       <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="86" column="5" selection-start-line="86" selection-start-column="5" selection-end-line="86" selection-end-column="5" />
+            <state relative-caret-position="225">
+              <caret line="36" column="23" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="23" />
               <folding>
                 <element signature="e#0#1075#0" expanded="false" />
                 <element signature="e#1177#1227#0" expanded="false" />
@@ -283,7 +56,7 @@
       <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
+            <state relative-caret-position="175">
               <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
               <folding />
             </state>
@@ -293,7 +66,7 @@
       <file leaf-file-name="main.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/h/main.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
+            <state relative-caret-position="1225">
               <caret line="49" column="5" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
               <folding />
             </state>
@@ -323,10 +96,9 @@
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="y" value="28" />
+    <option name="width" value="1920" />
+    <option name="height" value="1052" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -429,7 +201,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.General" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/CMakeLists.txt" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Drivers/Accelerometer/mainproject/CMakeLists.txt" />
   </component>
   <component name="RunManager" selected="Application.Build All">
     <configuration default="true" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" PASS_PARENT_ENVS_2="true" TEST_MODE="SUITE_TEST">
@@ -617,13 +389,18 @@
       <envs />
       <method />
     </configuration>
-    <list size="6">
+    <configuration default="false" name="info" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="mainproject" TARGET_NAME="info" CONFIG_NAME="Debug">
+      <envs />
+      <method />
+    </configuration>
+    <list size="7">
       <item index="0" class="java.lang.String" itemvalue="Application.stm32f0demo.elf" />
       <item index="1" class="java.lang.String" itemvalue="Application.CMSISFIRMWARE" />
       <item index="2" class="java.lang.String" itemvalue="Application.F0StdPerifDriver" />
       <item index="3" class="java.lang.String" itemvalue="Application.STM32F0DiscoveryLib" />
       <item index="4" class="java.lang.String" itemvalue="Application.mainproject.elf" />
       <item index="5" class="java.lang.String" itemvalue="Application.Build All" />
+      <item index="6" class="java.lang.String" itemvalue="Application.info" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
@@ -649,6 +426,7 @@
       <workItem from="1474293235466" duration="24000" />
       <workItem from="1474293404198" duration="268000" />
       <workItem from="1474396621503" duration="404000" />
+      <workItem from="1475930661235" duration="92000" />
     </task>
     <task id="LOCAL-00001" summary="Renamed project">
       <created>1474293605687</created>
@@ -661,30 +439,30 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7639000" />
+    <option name="totallyTimeSpent" value="7731000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="0" y="28" width="1920" height="1052" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2035139" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.203125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3280757" sideWeight="0.47657394" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3272921" sideWeight="0.47239584" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26498422" sideWeight="0.4736457" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3280757" sideWeight="0.52342606" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.49707174" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3272921" sideWeight="0.52760416" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.49707174" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -727,6 +505,35 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#1075#0" expanded="false" />
+            <element signature="e#1177#1227#0" expanded="false" />
+            <element signature="e#1973#2041#0" expanded="false" />
+            <element signature="e#3650#3665#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h/main.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1225">
+          <caret line="49" column="5" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1047,7 +854,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/h/main.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
+        <state relative-caret-position="1225">
           <caret line="49" column="5" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
           <folding />
         </state>
@@ -1055,7 +862,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
+        <state relative-caret-position="175">
           <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
           <folding />
         </state>
@@ -1063,8 +870,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="86" column="5" selection-start-line="86" selection-start-column="5" selection-end-line="86" selection-end-column="5" />
+        <state relative-caret-position="225">
+          <caret line="36" column="23" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="23" />
           <folding>
             <element signature="e#0#1075#0" expanded="false" />
             <element signature="e#1177#1227#0" expanded="false" />

@@ -367,6 +367,16 @@ typedef int16_t  s16;
 typedef uint8_t  u8;
 typedef int8_t   s8;
 
+typedef struct {
+    s16 Ax;
+    s16 Ay;
+    s16 Az;
+
+    s16 Gx;
+    s16 Gy;
+    s16 Gz;
+} accelGyroDataRaw_t;
+
 class MPU6050 {
 public:
     void init();
@@ -375,47 +385,30 @@ public:
     bool testConnection();
 
     // Clock config
-    bool GetSleepModeStatus() const;
+    bool GetSleepModeStatus();
     void SetSleepModeStatus(FunctionalState NewState);
     void setClockSource(uint8_t source);
 
     // Gyro config
     uint8_t GetFullScaleGyroRange() const;
+    void SetFullScaleGyroRange(uint8_t range);
 
     // Accel config
     uint8_t GetFullScaleAccelRange() const;
     void SetFullScaleAccelRange(uint8_t range);
 
-    void GetRawAccelGyro(s16 *AccelGyro);
+    void GetRawAccelGyro(accelGyroDataRaw_t *AccelGyro);
+
+    // Read and Write functions
+    void WriteBits(uint8_t slaveAddr, uint8_t regAddr, uint8_t bitStart, uint8_t length, uint8_t data);
+    void WriteBit(uint8_t slaveAddr, uint8_t regAddr, uint8_t bitNum, uint8_t data);
+    void ReadBits(uint8_t slaveAddr, uint8_t regAddr, uint8_t bitStart, uint8_t length, uint8_t *data) const;
+    void ReadBit(uint8_t slaveAddr, uint8_t regAddr, uint8_t bitNum, uint8_t *data) ;
+
+    void ByteWrite(u8 slaveAddr, u8 *pBuffer, u8 writeAddr);
+    void BufferRead(u8 slaveAddr, u8 *pBuffer, u8 readAddr, u16 NumByteToRead)const;
 private:
 };
-
-void MPU6050_Initialize();
-bool MPU6050_TestConnection();
-
-// GYRO_CONFIG register
-uint8_t MPU6050_GetFullScaleGyroRange();
-void MPU6050_SetFullScaleGyroRange(uint8_t range);
-
-// ACCEL_CONFIG register
-uint8_t MPU6050_GetFullScaleAccelRange();
-void MPU6050_SetFullScaleAccelRange(uint8_t range);
-
-// PWR_MGMT_1 register
-bool MPU6050_GetSleepModeStatus();
-void MPU6050_SetSleepModeStatus(FunctionalState NewState);
-void MPU6050_SetClockSource(uint8_t source);
-
-void MPU6050_GetRawAccelGyro(s16 *AccelGyro);
-
-void MPU6050_WriteBits(uint8_t slaveAddr, uint8_t regAddr, uint8_t bitStart, uint8_t length, uint8_t data);
-void MPU6050_WriteBit(uint8_t slaveAddr, uint8_t regAddr, uint8_t bitNum, uint8_t data);
-void MPU6050_ReadBits(uint8_t slaveAddr, uint8_t regAddr, uint8_t bitStart, uint8_t length, uint8_t *data);
-void MPU6050_ReadBit(uint8_t slaveAddr, uint8_t regAddr, uint8_t bitNum, uint8_t *data);
-
-void MPU6050_I2C_Init();
-void MPU6050_I2C_ByteWrite(u8 slaveAddr, u8 *pBuffer, u8 writeAddr);
-void MPU6050_I2C_BufferRead(u8 slaveAddr, u8 *pBuffer, u8 readAddr, u16 NumByteToRead);
 
 #ifdef __cplusplus
 }
