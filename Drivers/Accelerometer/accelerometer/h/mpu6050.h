@@ -360,6 +360,9 @@ extern "C" {
 #define MPU6050_DMP_MEMORY_BANK_SIZE    256
 #define MPU6050_DMP_MEMORY_CHUNK_SIZE   16
 
+#define MPU6050_COMM_STATUS_OK true
+#define MPU6050_COMM_STATUS_ERROR false
+
 typedef uint32_t u32;
 typedef int32_t  s32;
 typedef uint16_t u16;
@@ -381,33 +384,37 @@ class MPU6050 {
 public:
     void init();
 
-    uint8_t getDeviceID() const;
+    uint8_t getDeviceID();
     bool testConnection();
 
     // Clock config
-    bool GetSleepModeStatus();
-    void SetSleepModeStatus(FunctionalState NewState);
+    bool getSleepModeStatus();
+    void setSleepModeStatus(FunctionalState NewState);
     void setClockSource(uint8_t source);
 
     // Gyro config
-    uint8_t GetFullScaleGyroRange() const;
-    void SetFullScaleGyroRange(uint8_t range);
+    uint8_t getFullScaleGyroRange();
+    void setFullScaleGyroRange(uint8_t range);
 
     // Accel config
-    uint8_t GetFullScaleAccelRange() const;
-    void SetFullScaleAccelRange(uint8_t range);
+    uint8_t getFullScaleAccelRange();
+    void getFullScaleAccelRange(uint8_t range);
 
-    void GetRawAccelGyro(accelGyroDataRaw_t *AccelGyro);
+    void getRawAccelGyro(accelGyroDataRaw_t *AccelGyro);
 
     // Read and Write functions
-    void WriteBits(uint8_t slaveAddr, uint8_t regAddr, uint8_t bitStart, uint8_t length, uint8_t data);
-    void WriteBit(uint8_t slaveAddr, uint8_t regAddr, uint8_t bitNum, uint8_t data);
-    void ReadBits(uint8_t slaveAddr, uint8_t regAddr, uint8_t bitStart, uint8_t length, uint8_t *data) const;
-    void ReadBit(uint8_t slaveAddr, uint8_t regAddr, uint8_t bitNum, uint8_t *data) ;
+    void writeBits(uint8_t slaveAddr, uint8_t regAddr, uint8_t bitStart, uint8_t length, uint8_t data);
+    void writeBit(uint8_t slaveAddr, uint8_t regAddr, uint8_t bitNum, uint8_t data);
+    void readBits(uint8_t slaveAddr, uint8_t regAddr, uint8_t bitStart, uint8_t length, uint8_t *data);
+    void readBit(uint8_t slaveAddr, uint8_t regAddr, uint8_t bitNum, uint8_t *data) ;
 
-    void ByteWrite(u8 slaveAddr, u8 *pBuffer, u8 writeAddr);
-    void BufferRead(u8 slaveAddr, u8 *pBuffer, u8 readAddr, u16 NumByteToRead)const;
+    void writeByte(u8 slaveAddr, u8 *pBuffer, u8 writeAddr);
+    void readToBuffer(u8 slaveAddr, u8 *pBuffer, u8 readAddr, u16 NumByteToRead);
+
+    void waitForI2CFlag(uint32_t flag);
+    uint32_t readStatus(uint8_t bf);
 private:
+    bool commStatus;
 };
 
 #ifdef __cplusplus

@@ -21,8 +21,7 @@ public:
     quint16 Height1;
     quint16 Height2;
     QString buff;
-    bool ok;
-    char *DataToSend;
+    char DataToSend;
 
 private slots:
     void on_pushButton_clicked();
@@ -30,6 +29,8 @@ private slots:
     void on_pushButton_2_clicked();
 
     void on_pushButton_3_clicked();
+
+    void on_recButton_clicked();
 
 private:
     Ui::MainWindow *ui;

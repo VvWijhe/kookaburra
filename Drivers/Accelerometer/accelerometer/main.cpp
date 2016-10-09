@@ -27,17 +27,13 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "mpu6050.h"
 
-/** @addtogroup STM32F0-Discovery_Demo
-  * @{
-  */
-
-/* Private typedef -----------------------------------------------------------*/
-/* Private define ------------------------------------------------------------*/
-/* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
 static __IO uint32_t TimingDelay;
-uint8_t BlinkSpeed = 0;
+
+MPU6050 accelerometer;
+accelGyroDataRaw_t accelGyroDataRaw;
 
 /* Private function prototypes -----------------------------------------------*/
 /* Private functions ---------------------------------------------------------*/
@@ -50,19 +46,26 @@ uint8_t BlinkSpeed = 0;
 int main(void) {
     RCC_ClocksTypeDef RCC_Clocks;
 
-    /* Configure LED3 and LED4 on STM32F0-Discovery */
+    // Configure LED3 and LED4 on STM32F0-Discovery
     STM_EVAL_LEDInit(LED3);
     STM_EVAL_LEDInit(LED4);
 
-    /* Initialize User_Button on STM32F0-Discovery */
-    STM_EVAL_PBInit(BUTTON_USER, BUTTON_MODE_GPIO);
-
-    /* SysTick end of count event each 1ms */
+    // SysTick end of count event each 1ms
     RCC_GetClocksFreq(&RCC_Clocks);
     SysTick_Config(RCC_Clocks.HCLK_Frequency / 1000);
 
-    while (1) {
+    // Initialize MPU6050
+    // Power ON, Clock source X Gyro, Highest sensivity
+    accelerometer.init();
 
+    while (1) {
+        if(accelerometer.testConnection()){
+            STM_EVAL_LEDToggle(LED3);
+        } else {
+            STM_EVAL_LEDToggle(LED4);
+        }
+
+        accelerometer.getRawAccelGyro(&accelGyroDataRaw);
     }
 }
 
@@ -71,7 +74,7 @@ int main(void) {
   * @param  nTime: specifies the delay time length, in 1 ms.
   * @retval None
   */
-void Delay(__IO uint32_t nTime) {
+void delay(__IO uint32_t nTime) {
     TimingDelay = nTime;
 
     while (TimingDelay != 0);

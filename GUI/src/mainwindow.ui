@@ -43,26 +43,26 @@
        <property name="orientation">
         <enum>Qt::Vertical</enum>
        </property>
-       <widget class="QLineEdit" name="UIHeightOne">
-        <property name="maximumSize">
-         <size>
-          <width>16777215</width>
-          <height>31</height>
-         </size>
+       <widget class="QSpinBox" name="heightBox1">
+        <property name="minimum">
+         <number>10</number>
         </property>
-        <property name="text">
-         <string>Height 1</string>
+        <property name="maximum">
+         <number>300</number>
+        </property>
+        <property name="singleStep">
+         <number>5</number>
         </property>
        </widget>
-       <widget class="QLineEdit" name="UIHeightTwo">
-        <property name="maximumSize">
-         <size>
-          <width>16777215</width>
-          <height>31</height>
-         </size>
+       <widget class="QSpinBox" name="heightBox2">
+        <property name="minimum">
+         <number>10</number>
         </property>
-        <property name="text">
-         <string>Height 2</string>
+        <property name="maximum">
+         <number>300</number>
+        </property>
+        <property name="singleStep">
+         <number>5</number>
         </property>
        </widget>
       </widget>
@@ -88,6 +88,11 @@
         <widget class="QPushButton" name="pushButton_3">
          <property name="text">
           <string>Send to Kookaburra</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="recButton">
+         <property name="text">
+          <string>Connect</string>
          </property>
         </widget>
        </widget>

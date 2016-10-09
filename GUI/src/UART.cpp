@@ -5,7 +5,7 @@
 UART::UART(QObject *parent) : QObject(parent)
 {
    serialPort  = new QSerialPort(this);
-   serialPort->setBaudRate(QSerialPort::Baud115200,QSerialPort::AllDirections);
+   serialPort->setBaudRate(926200,QSerialPort::AllDirections);
    serialPort->setDataBits(QSerialPort::Data8);
    serialPort->setParity(QSerialPort::NoParity);
    serialPort->setStopBits(QSerialPort::OneStop);
@@ -21,9 +21,10 @@ int UART::connectDevice(){
       return 0;
    }
    else{
-      qDebug()<<"Write";
+      qDebug() << "Device connected on port" << serialPort->portName();
       connect(serialPort,SIGNAL(readyRead()),this,SLOT(dataIn()));
       connect(serialPort,SIGNAL(error(QSerialPort::SerialPortError)),this,SLOT(handleError(QSerialPort::SerialPortError)));
+      return 1;
    }
 }
 
@@ -56,15 +57,14 @@ void UART::dataIn()
 {
    qDebug()<<"datain started";
    data = serialPort->readAll();
-
 }
 
 void UART::handleError(QSerialPort::SerialPortError serialPortError)
-{if (serialPortError == QSerialPort::ReadError) {
+{
+   if (serialPortError == QSerialPort::ReadError) {
       qDebug()<< QObject::tr("An I/O error occurred while reading the data from port %1, error: %2").
                  arg(serialPort->portName()).arg(serialPort->errorString());
    }
-
 }
 
 
@@ -76,8 +76,8 @@ void UART::closeSerial(void)
 
 void UART::send(char *data)
 {
-   if (!serialPort->open(QIODevice::ReadWrite)) {
-      qDebug()<< QObject::tr("Failed to open port %1, error: %2").arg(serialPort->portName()).arg(serialPort->errorString());
+   if (!serialPort->isOpen()) {
+      qDebug()<< QObject::tr("Failed port %1, error: %2").arg(serialPort->portName()).arg(serialPort->errorString());
       return;
    }
    serialPort->write(data);

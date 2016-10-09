@@ -47,7 +47,7 @@ void TimingDelay_Decrement(void);
 }
 #endif
 
-void Delay(__IO uint32_t nTime);
+void delay(__IO uint32_t nTime);
 #endif /* __MAIN_H */
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
