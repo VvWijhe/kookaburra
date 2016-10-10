@@ -13,8 +13,11 @@ MainWindow::MainWindow(QWidget *parent) :
 
    port = new UART;
 
+   ui->pushButton_3->setEnabled(false);
+
    if(port->connectDevice()){
       ui->statusBar->showMessage("Device connected");
+      ui->pushButton_3->setEnabled(true);
    } else {
       ui->statusBar->showMessage("Device not connected");
    }
@@ -58,6 +61,7 @@ void MainWindow::on_recButton_clicked()
 {
     if(port->connectDevice()){
        ui->statusBar->showMessage("Device connected");
+       ui->pushButton_3->setEnabled(true);
     } else {
        ui->statusBar->showMessage("Device not connected");
     }

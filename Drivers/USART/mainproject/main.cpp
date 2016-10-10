@@ -67,7 +67,7 @@ int main(void) {
 
     while(1){
         STM_EVAL_LEDToggle(LED4);
-        Delay(500);
+        Delay(200);
     }
 
 }
@@ -79,6 +79,7 @@ void USART1_IRQHandler() {
         usart1 << "You typed: ";
         usart1 < USART_ReceiveData(USART1);
         usart1 << "\n";
+
         //Clear interrupt flag
         USART_ClearITPendingBit(USART1, USART_IT_RXNE);
     }
