@@ -398,7 +398,7 @@ public:
 
     // Accel config
     uint8_t getFullScaleAccelRange();
-    void getFullScaleAccelRange(uint8_t range);
+    void setFullScaleAccelRange(uint8_t range);
 
     void getRawAccelGyro(accelGyroDataRaw_t *AccelGyro);
 

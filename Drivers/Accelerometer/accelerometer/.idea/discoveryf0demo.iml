@@ -34,10 +34,12 @@
       <sourceFolder url="file://$MODULE_DIR$/../buildsystem/BasisSTM32.cmake" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../buildsystem/STM32Development.cmake" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../buildsystem/STM32F0.cmake" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/stm32f0xx_it.c" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/main.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/mpu6050.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/main.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/stm32f0xx_it.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/usart.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/usart.h" isTestSource="false" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">

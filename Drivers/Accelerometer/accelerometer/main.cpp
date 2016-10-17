@@ -26,14 +26,21 @@
   */
 
 /* Includes ------------------------------------------------------------------*/
+#include <mpu6050.h>
 #include "main.h"
 #include "mpu6050.h"
+#include "usart.h"
+#include "math.h"
+
+#define CONVERSIONG 3.9
 
 /* Private variables ---------------------------------------------------------*/
 static __IO uint32_t TimingDelay;
 
+USART_1 usart;
 MPU6050 accelerometer;
 accelGyroDataRaw_t accelGyroDataRaw;
+double pitch, roll, yaw;
 
 /* Private function prototypes -----------------------------------------------*/
 /* Private functions ---------------------------------------------------------*/
@@ -58,14 +65,34 @@ int main(void) {
     // Power ON, Clock source X Gyro, Highest sensivity
     accelerometer.init();
 
+    //initialize usart
+    usart.init();
+
+    usart << "This is a test application for the accelerometer\n";
+
     while (1) {
-        if(accelerometer.testConnection()){
+        if (accelerometer.testConnection()) {
             STM_EVAL_LEDToggle(LED3);
         } else {
             STM_EVAL_LEDToggle(LED4);
         }
 
         accelerometer.getRawAccelGyro(&accelGyroDataRaw);
+
+        double accelerationX = (accelGyroDataRaw.Ax * CONVERSIONG);
+        double accelerationY = (accelGyroDataRaw.Ay * CONVERSIONG);
+        double accelerationZ = (accelGyroDataRaw.Az * CONVERSIONG);
+
+        pitch = 180 * atan (accelerationX/sqrt(accelerationY*accelerationY + accelerationZ*accelerationZ))/M_PI;
+        roll = 180 * atan (accelerationY/sqrt(accelerationX*accelerationX + accelerationZ*accelerationZ))/M_PI;
+        yaw = 180 * atan (accelerationZ/sqrt(accelerationX*accelerationX + accelerationZ*accelerationZ))/M_PI;
+
+        usart << "Pitch: ";
+        usart << pitch;
+        usart << "\nRoll: ";
+        usart << roll;
+        usart << "\n\n";
+        delay(50);
     }
 }
 
