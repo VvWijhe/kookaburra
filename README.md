@@ -12,6 +12,6 @@
 <ul>
 	<li>Timers voor tijd en regellussen, PWM voor motor</li>
 	<li>Druksensor</li>
-	<li>GUI testen</li>
-	<li>Regelaar maken</li>
+	<li>GUI testen met microcontroller</li>
+	<li>Regelaar ontwerpen</li>
 </ul>
