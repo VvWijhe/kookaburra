@@ -1,0 +1,13 @@
+INPUT(
+./debug\main.o
+./debug\mainwindow.o
+./debug\mywindow.o
+./debug\secondwindow.o
+./debug\UART.o
+./debug\sendcompleted.o
+./debug\moc_mainwindow.o
+./debug\moc_mywindow.o
+./debug\moc_secondwindow.o
+./debug\moc_UART.o
+./debug\moc_sendcompleted.o
+);
