@@ -1,4 +1,17 @@
 **<h1>Kookaburra</h1>**
 
-Hello world 2!
-hello world 3!
+<h2>Finished</h2>
+<ul>
+	<li>Basis project</li>
+	<li>USART driver</li>
+	<li>MPU6050 Driver</li>
+</ul>
+
+
+<h2>TBD</h2>
+<ul>
+	<li>Timers voor tijd en regellussen, PWM voor motor</li>
+	<li>Druksensor</li>
+	<li>GUI testen</li>
+	<li>Regelaar maken</li>
+</ul>
