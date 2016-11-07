@@ -68,7 +68,7 @@ int main(void) {
     //initialize usart
     usart.init();
 
-    usart << "This is a test application for the accelerometer\n";
+    usart << "This is a test application for the pwm\n";
 
     while (1) {
         if (accelerometer.testConnection()) {

@@ -39,6 +39,20 @@
 /* Exported macro ------------------------------------------------------------*/
 /* Exported functions ------------------------------------------------------- */
 
+class pwm {
+    int width, height;
+public:
+    void init_pwm  (void);
+
+    int area (void);
+};
+
+
+
+
+
+
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -47,7 +61,7 @@ void TimingDelay_Decrement(void);
 }
 #endif
 
-void delay(__IO uint32_t nTime);
+
 #endif /* __MAIN_H */
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

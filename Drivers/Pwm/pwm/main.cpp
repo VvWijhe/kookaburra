@@ -26,21 +26,13 @@
   */
 
 /* Includes ------------------------------------------------------------------*/
-#include <mpu6050.h>
 #include "main.h"
-#include "mpu6050.h"
-#include "usart.h"
 #include "math.h"
 
 #define CONVERSIONG 3.9
 
 /* Private variables ---------------------------------------------------------*/
-static __IO uint32_t TimingDelay;
 
-USART_1 usart;
-MPU6050 accelerometer;
-accelGyroDataRaw_t accelGyroDataRaw;
-double pitch, roll, yaw;
 
 /* Private function prototypes -----------------------------------------------*/
 /* Private functions ---------------------------------------------------------*/
@@ -51,104 +43,61 @@ double pitch, roll, yaw;
   * @retval None
   */
 int main(void) {
-    RCC_ClocksTypeDef RCC_Clocks;
+    pwm pwm1;
+    pwm1.init_pwm ();
 
-    // Configure LED3 and LED4 on STM32F0-Discovery
-    STM_EVAL_LEDInit(LED3);
-    STM_EVAL_LEDInit(LED4);
-
-    // SysTick end of count event each 1ms
-    RCC_GetClocksFreq(&RCC_Clocks);
-    SysTick_Config(RCC_Clocks.HCLK_Frequency / 1000);
-
-    // Initialize MPU6050
-    // Power ON, Clock source X Gyro, Highest sensivity
-    accelerometer.init();
-
-    //initialize usart
-    usart.init();
-
-    usart << "This is a test application for the accelerometer\n";
-
-    while (1) {
-        if (accelerometer.testConnection()) {
-            STM_EVAL_LEDToggle(LED3);
-        } else {
-            STM_EVAL_LEDToggle(LED4);
-        }
-
-        accelerometer.getRawAccelGyro(&accelGyroDataRaw);
-
-        double accelerationX = (accelGyroDataRaw.Ax * CONVERSIONG);
-        double accelerationY = (accelGyroDataRaw.Ay * CONVERSIONG);
-        double accelerationZ = (accelGyroDataRaw.Az * CONVERSIONG);
-
-        pitch = 180 * atan (accelerationX/sqrt(accelerationY*accelerationY + accelerationZ*accelerationZ))/M_PI;
-        roll = 180 * atan (accelerationY/sqrt(accelerationX*accelerationX + accelerationZ*accelerationZ))/M_PI;
-        yaw = 180 * atan (accelerationZ/sqrt(accelerationX*accelerationX + accelerationZ*accelerationZ))/M_PI;
-
-        usart << "Pitch: ";
-        usart << pitch;
-        usart << "\nRoll: ";
-        usart << roll;
-        usart << "\n\n";
-        delay(50);
-    }
+    return 0;
 }
 
-/**
-  * @brief  Inserts a delay time.
-  * @param  nTime: specifies the delay time length, in 1 ms.
-  * @retval None
-  */
-void delay(__IO uint32_t nTime) {
-    TimingDelay = nTime;
+void pwm::init_pwm() {
 
-    while (TimingDelay != 0);
+    GPIO_InitTypeDef        GPIO_InitStructure;
+    TIM_TimeBaseInitTypeDef TIM_TimeBaseStructure;
+    TIM_OCInitTypeDef       TIM_OCInitStructure;
+
+    uint32_t compare=0;
+
+    //(#) Enable TIM clock using
+    //    RCC_APBxPeriphClockCmd(RCC_APBxPeriph_TIMx, ENABLE) function.
+    RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2, ENABLE);
+
+    //(#) Configure the TIM pins by configuring the corresponding GPIO pins
+    //    This is LED3 on STM32F0-Discovery
+    RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOA, ENABLE);
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;
+    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_9;
+    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+    GPIO_Init(GPIOA, &GPIO_InitStructure);
+    GPIO_PinAFConfig(GPIOA, GPIO_PinSource9, GPIO_AF_1);
+
+    //(#) Configure the Time base unit as described in the first part of this
+    //    driver, if needed, else the Timer will run with the default
+    //    configuration:
+    //    (++) Autoreload value = 0xFFFF.
+    //    (++) Prescaler value = 0x0000.
+    //    (++) Counter mode = Up counting.
+    //    (++) Clock Division = TIM_CKD_DIV1.
+    TIM_TimeBaseStructure.TIM_ClockDivision = TIM_CKD_DIV1;
+    TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;
+    TIM_TimeBaseStructure.TIM_Period = 100 - 1;
+    TIM_TimeBaseStructure.TIM_Prescaler = (uint16_t)((SystemCoreClock / 5000) - 1);
+    TIM_TimeBaseInit(TIM2, &TIM_TimeBaseStructure);
+
+    //(#) Fill the TIM_OCInitStruct with the desired parameters including:
+    //    (++) The TIM Output Compare mode: TIM_OCMode.
+    //    (++) TIM Output State: TIM_OutputState.
+    //    (++) TIM Pulse value: TIM_Pulse.
+    //    (++) TIM Output Compare Polarity : TIM_OCPolarity.
+    TIM_OCInitStructure.TIM_OCMode = TIM_OCMode_PWM1;
+    TIM_OCInitStructure.TIM_OutputState = TIM_OutputState_Enable;
+    TIM_OCInitStructure.TIM_Pulse = compare;
+    TIM_OCInitStructure.TIM_OCPolarity = TIM_OCPolarity_High;
+
+    //(#) Call TIM_OCxInit(TIMx, &TIM_OCInitStruct) to configure the desired
+    //    channel with the corresponding configuration.
+    TIM_OC4Init(TIM2, &TIM_OCInitStructure);
+    //(#) Call the TIM_Cmd(ENABLE) function to enable the TIM counter.
+    TIM_Cmd(TIM2, ENABLE);
+
+
 }
-
-#ifdef __cplusplus
-extern "C" {
-#endif
-
-/**
-  * @brief  Decrements the TimingDelay variable.
-  * @param  None
-  * @retval None
-  */
-void TimingDelay_Decrement(void) {
-    if (TimingDelay != 0x00) {
-        TimingDelay--;
-    }
-}
-
-#ifdef __cplusplus
-}
-#endif
-
-#ifdef  USE_FULL_ASSERT
-
-/**
-  * @brief  Reports the name of the source file and the source line number
-  *   where the assert_param error has occurred.
-  * @param  file: pointer to the source file name
-  * @param  line: assert_param error line source number
-  * @retval None
-  */
-void assert_failed(uint8_t* file, uint32_t line)
-{ 
-  /* User can add his own implementation to report the file name and line number,
-     ex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
-
-  /* Infinite loop */
-  while (1)
-  {}
-}
-#endif
-
-/**
-  * @}
-  */
-
-
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

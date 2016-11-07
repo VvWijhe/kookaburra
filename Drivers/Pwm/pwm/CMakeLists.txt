@@ -3,9 +3,9 @@
 ## Ewout Boks
 ## $Id: CMakeLists.txt 2297 2016-09-08 10:49:19Z ewout $
 
-message("HAN ESE STM32F0Discovery LEDs demo.")
+message("Kookaboora puls-with-modulation")
 
-set(PROJECTNAAM "accelerometer")
+set(PROJECTNAAM "pwm")
 
 cmake_minimum_required(VERSION 2.8.10)
 
@@ -21,7 +21,7 @@ include_directories(h ${BASISDIR} ${F0DISCOVERYDIR})
 include(${CMAKESCRIPTDIR}/STM32F0.cmake)
 
 file(GLOB BasisBestanden ${BASISDIR}/stm32f0/*.c)
-set(SRCS main.cpp mpu6050.cpp usart.cpp ${BasisBestanden} stm32f0xx_it.c)
+set(SRCS main.cpp ${BasisBestanden} stm32f0xx_it.c)
 
 add_subdirectory(${F0DISCOVERYDIR} ${CMAKE_CURRENT_BINARY_DIR}/F0DiscoveryDir)
 
