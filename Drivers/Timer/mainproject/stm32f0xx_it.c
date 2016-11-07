@@ -56,8 +56,7 @@
   * @param  None
   * @retval None
   */
-void NMI_Handler(void)
-{
+void NMI_Handler(void) {
 }
 
 /**
@@ -65,12 +64,10 @@ void NMI_Handler(void)
   * @param  None
   * @retval None
   */
-void HardFault_Handler(void)
-{
-  /* Go to infinite loop when Hard Fault exception occurs */
-  while (1)
-  {
-  }
+void HardFault_Handler(void) {
+    /* Go to infinite loop when Hard Fault exception occurs */
+    while (1) {
+    }
 }
 
 /**
@@ -78,8 +75,7 @@ void HardFault_Handler(void)
   * @param  None
   * @retval None
   */
-void SVC_Handler(void)
-{
+void SVC_Handler(void) {
 }
 
 /**
@@ -87,8 +83,7 @@ void SVC_Handler(void)
   * @param  None
   * @retval None
   */
-void PendSV_Handler(void)
-{
+void PendSV_Handler(void) {
 }
 
 /**
@@ -96,10 +91,24 @@ void PendSV_Handler(void)
   * @param  None
   * @retval None
   */
-void SysTick_Handler(void)
-{
-  TimingDelay_Decrement(); 
+void SysTick_Handler(void) {
+    //TimingDelay_Decrement();
 }
+
+/**
+  * @brief  This function handles the timer interrupt.
+  * @param  None
+  * @retval None
+  */
+//void TIM3_IRQHandler(void) {
+//    if (TIM_GetITStatus(TIM3, TIM_IT_Update) != RESET) {
+//
+//
+//        TIM_ClearITPendingBit(TIM3, TIM_IT_Update);
+//
+//    }
+//}
+
 
 /******************************************************************************/
 /*                 STM32F0xx Peripherals Interrupt Handlers                   */
