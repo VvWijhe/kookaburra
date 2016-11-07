@@ -26,6 +26,7 @@
   */
 
 /* Includes ------------------------------------------------------------------*/
+#include <stm32f0xx.h>
 #include "main.h"
 #include "math.h"
 
@@ -46,6 +47,12 @@ int main(void) {
     pwm pwm1;
     pwm1.init_pwm ();
 
+    TIM2 -> ARR = 100;
+    TIM2 -> CCR1 = 50;
+
+    while(1){
+
+    }
     return 0;
 }
 
@@ -63,12 +70,12 @@ void pwm::init_pwm() {
 
     //(#) Configure the TIM pins by configuring the corresponding GPIO pins
     //    This is LED3 on STM32F0-Discovery
-    RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOA, ENABLE);
+    RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOC, ENABLE);
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;
     GPIO_InitStructure.GPIO_Pin = GPIO_Pin_9;
     GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-    GPIO_Init(GPIOA, &GPIO_InitStructure);
-    GPIO_PinAFConfig(GPIOA, GPIO_PinSource9, GPIO_AF_1);
+    GPIO_Init(GPIOC, &GPIO_InitStructure);
+    GPIO_PinAFConfig(GPIOC, GPIO_PinSource9, GPIO_AF_1);
 
     //(#) Configure the Time base unit as described in the first part of this
     //    driver, if needed, else the Timer will run with the default
