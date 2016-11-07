@@ -15,7 +15,7 @@ public:
     void Raisetime();
 
 private:
-    int period;
+    int Freq;
     int32_t Value;
 };
 
