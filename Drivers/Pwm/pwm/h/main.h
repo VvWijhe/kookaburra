@@ -40,11 +40,11 @@
 /* Exported functions ------------------------------------------------------- */
 
 class pwm {
-    int width, height;
-public:
-    void init_pwm  (void);
+private:
 
-    int area (void);
+public:
+    void delay(const int d);
+    void init_pwm  (void);
 };
 
 

@@ -43,26 +43,46 @@
   * @param  None
   * @retval None
   */
-int main(void) {
+
+
+
+
+
+
+
+int main(void){
+
+    uint32_t comparator =0;
+
     pwm pwm1;
-    pwm1.init_pwm ();
+    pwm1.init_pwm();
 
-    TIM2 -> ARR = 100;
-    TIM2 -> CCR1 = 50;
 
-    while(1){
+        // Delay ~ 0.01 sec.
+       // pwm1.delay(SystemCoreClock/8/100);
 
-    }
-    return 0;
+        // Update compare value
+
+        comparator=40;
+
+        TIM_SetCompare4(TIM2, comparator);
+
+    while (1){;}
 }
 
-void pwm::init_pwm() {
-
+void pwm::init_pwm()
+{
     GPIO_InitTypeDef        GPIO_InitStructure;
     TIM_TimeBaseInitTypeDef TIM_TimeBaseStructure;
     TIM_OCInitTypeDef       TIM_OCInitStructure;
 
     uint32_t compare=0;
+
+    // Initialize User Button on STM32F0-Discovery
+    STM_EVAL_PBInit(BUTTON_USER, BUTTON_MODE_GPIO);
+
+    //[..] To use the Timer in Output Compare mode, the following steps are
+    //     mandatory:
 
     //(#) Enable TIM clock using
     //    RCC_APBxPeriphClockCmd(RCC_APBxPeriph_TIMx, ENABLE) function.
@@ -103,8 +123,17 @@ void pwm::init_pwm() {
     //(#) Call TIM_OCxInit(TIMx, &TIM_OCInitStruct) to configure the desired
     //    channel with the corresponding configuration.
     TIM_OC4Init(TIM2, &TIM_OCInitStructure);
+
     //(#) Call the TIM_Cmd(ENABLE) function to enable the TIM counter.
     TIM_Cmd(TIM2, ENABLE);
 
+}
 
+void pwm::delay (const int d){
+    volatile int i;
+
+    for (i=d; i> 0; i--){
+        ;
+    }
+    return;
 }
