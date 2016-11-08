@@ -45,6 +45,7 @@ extern "C" {
 #ifdef __cplusplus
 void TimingDelay_Decrement(void);
 void TIM3_IRQHandler(void);
+void USART1_IRQHandler();
 }
 #endif
 

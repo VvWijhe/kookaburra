@@ -39,6 +39,7 @@
   * @brief Interrupts driver modules
   * @{
   */
+extern volatile char rx_buffer;
 
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
@@ -94,6 +95,16 @@ void PendSV_Handler(void) {
 void SysTick_Handler(void) {
     //TimingDelay_Decrement();
 }
+
+//void USART1_IRQHandler(void)
+//{
+//    // Read Data Register not empty interrupt?
+//    if(USART1->ISR & USART_ISR_RXNE)
+//    {
+//        // Read the data, clears the interrupt flag
+//        rx_buffer = USART1->RDR;
+//    }
+//}
 
 /**
   * @brief  This function handles the timer interrupt.

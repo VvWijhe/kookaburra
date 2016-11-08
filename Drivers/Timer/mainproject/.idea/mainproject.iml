@@ -42,8 +42,10 @@
       <sourceFolder url="file://$MODULE_DIR$/main.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/stm32f0xx_it.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/counter.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/usart.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/counter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/usart.h" isTestSource="false" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">

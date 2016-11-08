@@ -28,10 +28,12 @@
 /* Includes ------------------------------------------------------------------*/
 #include "counter.h"
 #include "main.h"
+#include "usart.h"
 
 
 /* Private variables ---------------------------------------------------------*/
 static __IO uint32_t TimingDelay;
+extern volatile char rx_buffer;
 
 /* Private function prototypes -----------------------------------------------*/
 /* Private functions ---------------------------------------------------------*/
@@ -41,9 +43,12 @@ static __IO uint32_t TimingDelay;
   * @param  None
   * @retval None
   */
+Time Anita;
+USART_1 Truus;
+
 int main(void) {
     RCC_ClocksTypeDef RCC_Clocks;
-    Time anita(480000);
+
 
     // Configure LED3 and LED4 on STM32F0-Discovery
     STM_EVAL_LEDInit(LED3);
@@ -52,6 +57,8 @@ int main(void) {
     // SysTick end of count event each 1ms
     RCC_GetClocksFreq(&RCC_Clocks);
     SysTick_Config(RCC_Clocks.HCLK_Frequency / 1000);
+    Truus.init();
+    Anita.init(240000);
 
     while (1) {
 
@@ -63,8 +70,24 @@ void TIM3_IRQHandler(void) {
 
 
         TIM_ClearITPendingBit(TIM3, TIM_IT_Update);
+        Anita.Raisetime();
+        Truus << Anita.GetValue();
+        Truus << "\n";
+        //STM_EVAL_LEDToggle(LED3);
 
-        STM_EVAL_LEDToggle(LED3);
+    }
+}
+
+void USART1_IRQHandler() {
+    //Check if interrupt was because data is received
+    if (USART_GetITStatus(USART1, USART_IT_RXNE)) {
+        //Do your stuff here
+        Truus << "You typed: ";
+        Truus < USART_ReceiveData(USART1);
+        Truus << "\n";
+
+        //Clear interrupt flag
+        USART_ClearITPendingBit(USART1, USART_IT_RXNE);
     }
 }
 
