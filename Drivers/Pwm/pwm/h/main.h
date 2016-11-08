@@ -43,8 +43,9 @@ class pwm {
 private:
 
 public:
-    void delay(const int d);
-    void init_pwm  (void);
+    void pwm_cicle  (uint8_t timer, uint8_t duty_cicle);
+    void init_servo (void);
+    void init_motor (void);
 };
 
 
