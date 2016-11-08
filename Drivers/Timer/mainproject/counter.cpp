@@ -1,7 +1,11 @@
 #include "counter.h"
 
 
-Time::Time(int p) {
+Time::Time() {
+
+}
+
+void Time::init(int p) {
     TIM_TimeBaseInitTypeDef TIM_TimeBaseStructure;
     NVIC_InitTypeDef NVIC_InitStructure;
     Freq = p;
@@ -35,10 +39,13 @@ Time::Time(int p) {
 
     //(#) Call the TIM_Cmd(ENABLE) function to enable the TIM counter.
     TIM_Cmd(TIM3, ENABLE);
+}
+
+void Time::Raisetime(void) {
+    Value++;
 
 }
 
-void Time::Raisetime() {
-    Value++;
-
+uint32_t Time ::GetValue(void) {
+    return Value;
 }

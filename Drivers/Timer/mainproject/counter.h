@@ -8,15 +8,16 @@
 #include <stm32f0xx_tim.h>
 #include <stdint.h>
 
-
 class Time {
 public:
-    Time(int p);
-    void Raisetime();
+    Time();
+    void init(int p);
+    void Raisetime(void);
+    uint32_t GetValue(void);
 
 private:
     int Freq;
-    int32_t Value;
+    uint32_t Value;
 };
 
 
