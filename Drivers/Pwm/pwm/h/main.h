@@ -24,7 +24,9 @@
   *
   ******************************************************************************
   */ 
-  
+
+
+
 /* Define to prevent recursive inclusion -------------------------------------*/
 #ifndef __MAIN_H
 #define __MAIN_H
@@ -32,6 +34,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f0xx.h"
 #include "stm32f0_discovery.h"
+#include "usart.h"
 
 /* Exported types ------------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
@@ -43,7 +46,7 @@ class pwm {
 private:
 
 public:
-    void pwm_cicle  (uint8_t timer, uint8_t duty_cicle);
+    void pwm_cicle  (uint8_t timer, uint16_t duty_cicle);
     void init_servo (void);
     void init_motor (void);
 };

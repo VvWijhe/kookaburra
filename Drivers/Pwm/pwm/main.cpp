@@ -47,6 +47,7 @@
 
 
 
+USART_1 tryout;
 
 
 
@@ -54,16 +55,13 @@ int main(void){
 
     //uint32_t comparator =0;
 
+
     pwm pwm1;
     pwm1.init_servo();
     pwm1.init_motor();
-
-    pwm1.pwm_cicle(2, 100);
-
+    tryout.init();
 
 
-
-    while (1){;}
 }
 
 void pwm::init_servo()
@@ -185,13 +183,26 @@ void pwm::init_motor()
 
 // timer        = 2 voor timer 2 en 14 voor timer 14
 // duty_cicle   = van 1 t'm 100 met voor timer 2: 1 = 1ms & 100 = 2ms
-void pwm::pwm_cicle(uint8_t timer, uint8_t duty_cicle) {
+void pwm::pwm_cicle(uint8_t timer, uint16_t duty_cicle) {
 
     if(timer == 2){
-        TIM_SetCompare4(TIM2, ((duty_cicle/2)+50));
+        TIM_SetCompare4(TIM2, ((duty_cicle/2)));
     }
     if(timer == 14){
         TIM_SetCompare4(TIM14, (duty_cicle*10));
     }
 
+}
+
+void USART1_IRQHandler() {
+    //Check if interrupt was because data is received
+    if (USART_GetITStatus(USART1, USART_IT_RXNE)) {
+        //Do your stuff here
+        tryout << "You typed: ";
+        tryout < USART_ReceiveData(USART1);
+        tryout << "\n";
+
+        //Clear interrupt flag
+        USART_ClearITPendingBit(USART1, USART_IT_RXNE);
+    }
 }
