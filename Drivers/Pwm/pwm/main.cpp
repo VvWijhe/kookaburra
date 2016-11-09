@@ -27,7 +27,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include <stm32f0xx.h>
-#include "main.h"
+#include "pwm.h"
 #include "math.h"
 
 

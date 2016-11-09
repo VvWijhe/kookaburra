@@ -21,7 +21,7 @@ include_directories(h ${BASISDIR} ${F0DISCOVERYDIR})
 include(${CMAKESCRIPTDIR}/STM32F0.cmake)
 
 file(GLOB BasisBestanden ${BASISDIR}/stm32f0/*.c)
-set(SRCS main.cpp ${BasisBestanden} stm32f0xx_it.c ../../../Basisopbouw/mainproject/h/includes.h h/pwm.h h/main.h)
+set(SRCS main.cpp ${BasisBestanden} stm32f0xx_it.c usart.cpp ../../../Basisopbouw/mainproject/h/includes.h h/pwm.h)
 
 add_subdirectory(${F0DISCOVERYDIR} ${CMAKE_CURRENT_BINARY_DIR}/F0DiscoveryDir)
 
