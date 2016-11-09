@@ -29,7 +29,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f0xx_it.h"
-#include "main.h"
+#include "pwm.h"
 
 /** @addtogroup STM32F0-Discovery_Demo
   * @{
