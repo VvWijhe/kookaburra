@@ -12,3 +12,5 @@
 
 // driver pwm
 #include "../../../drivers/pwm/pwm/h/pwm.h"
+#include "../../../drivers/USART/mainproject/h/usart.h"
+#include "../../../drivers/Timer/mainproject/h/main.h"
