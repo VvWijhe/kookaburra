@@ -32,7 +32,6 @@
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f0xx.h"
 #include "stm32f0_discovery.h"
-#include "../../../../basisopbouw/mainproject/h/includes.h"
 
 /* Exported types ------------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
