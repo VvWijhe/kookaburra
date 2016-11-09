@@ -163,14 +163,14 @@ void MS5611::calculatePressureAndTemperature() {
     }
     if (TEMP < 2000)
     {
-        T2 = dT * dT / pow(2, 31);
-        OFF2 = 5 * pow(TEMP - 2000, 2) / 2;
+        T2 = dT * dT / float(pow(2, 31));
+        OFF2 = 5 * float(pow(TEMP - 2000, 2)) / 2;
         SENS2 = OFF2 / 2;
     }
     if (TEMP < -1500)
     {
-        OFF2 = OFF2 + 7 * pow(TEMP + 1500, 2);
-        SENS2 = SENS2 + 11 * pow(TEMP + 1500, 2) / 2;
+        OFF2 = OFF2 + 7 * float(pow(TEMP + 1500, 2));
+        SENS2 = SENS2 + 11 * float(pow(TEMP + 1500, 2)) / 2;
     }
 
     TEMP = TEMP - T2;
@@ -178,7 +178,7 @@ void MS5611::calculatePressureAndTemperature() {
     SENS = SENS - SENS2;
 
     // Final calculations
-    PRES = ((D1 * SENS) / pow(2, 21) - OFF) / pow(2, 15) / 100;
+    PRES = ((D1 * SENS) / float(pow(2, 21)) - OFF) / float(pow(2, 15)) / 100;
     TEMP = TEMP / 100;
 }
 
@@ -211,8 +211,8 @@ float MS5611::getPressure() {
     return PRES;
 }
 
-float MS5611::getAltitude(float pressure) {
-    return toAltitude(pressure ? pressure :  getPressure());
+float MS5611::getAltitude() {
+    return toAltitude(getPressure());
 }
 
 float MS5611::toAltitude(float pressure) {
@@ -222,7 +222,7 @@ float MS5611::toAltitude(float pressure) {
     const float t0 = 273.15 + 15; // temperature at 0 altitude
     const float p0 = 101325; // pressure at 0 altitude
 
-    return t0 / t_grad * (1 - exp((t_grad * R / g) * log(pressure / p0)));
+    return t0 / t_grad * (1 - float(exp((t_grad * R / g)) * log(pressure / p0)));
 }
 
 /**

@@ -24,8 +24,8 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-#ifndef MS5611_HPP
-#define MS5611_HPP
+#ifndef MS5611_H
+#define MS5611_H
 
 #include "stm32f0xx_i2c.h"
 #include <math.h>
@@ -89,14 +89,9 @@ public:
 
     float getTemperature();
     float getPressure();
-    float getAltitude(float presssure = 0);
+    float getAltitude();
 
     // Read and Write functions
-    void writeBits(uint8_t slaveAddr, uint8_t regAddr, uint8_t bitStart, uint8_t length, uint8_t data);
-    void writeBit(uint8_t slaveAddr, uint8_t regAddr, uint8_t bitNum, uint8_t data);
-    void readBits(uint8_t slaveAddr, uint8_t regAddr, uint8_t bitStart, uint8_t length, uint8_t *data);
-    void readBit(uint8_t slaveAddr, uint8_t regAddr, uint8_t bitNum, uint8_t *data) ;
-
     void writeByte(u8 slaveAddr, u8 *pBuffer, u8 writeAddr);
     void readToBuffer(u8 slaveAddr, u8 *pBuffer, u8 readAddr, u16 NumByteToRead);
 
@@ -115,4 +110,4 @@ private:
     float toAltitude(float pressure);
 };
 
-#endif // MS5611_HPP
+#endif // MS5611_H
