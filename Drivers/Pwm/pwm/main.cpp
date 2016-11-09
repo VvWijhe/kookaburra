@@ -27,10 +27,10 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include <stm32f0xx.h>
-#include "main.h"
+#include "pwm.h"
 #include "math.h"
 
-#define CONVERSIONG 3.9
+
 
 /* Private variables ---------------------------------------------------------*/
 
@@ -72,8 +72,6 @@ void pwm::init_servo()
 
     uint32_t compare=0;
 
-    // Initialize User Button on STM32F0-Discovery
-    STM_EVAL_PBInit(BUTTON_USER, BUTTON_MODE_GPIO);
 
     //[..] To use the Timer in Output Compare mode, the following steps are
     //     mandatory:
