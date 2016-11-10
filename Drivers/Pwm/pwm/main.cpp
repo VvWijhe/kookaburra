@@ -28,7 +28,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include <stm32f0xx.h>
 #include "main.h"
-#include "math.h"
+
 
 #define CONVERSIONG 3.9
 
@@ -46,20 +46,21 @@
 
 
 
+char digits[3] = {0,0,0};
+int i;
+int what;
 
 USART_1 tryout;
-
-
-
+pwm pwm1;
 int main(void){
 
     //uint32_t comparator =0;
 
-
-    pwm pwm1;
+    tryout.init();
     pwm1.init_servo();
     pwm1.init_motor();
-    tryout.init();
+    pwm1.pwm_cicle(2, what);
+
 
 
 }
@@ -186,7 +187,7 @@ void pwm::init_motor()
 void pwm::pwm_cicle(uint8_t timer, uint16_t duty_cicle) {
 
     if(timer == 2){
-        TIM_SetCompare4(TIM2, ((duty_cicle/2)));
+        TIM_SetCompare4(TIM2, ((duty_cicle)));
     }
     if(timer == 14){
         TIM_SetCompare4(TIM14, (duty_cicle*10));
@@ -195,14 +196,21 @@ void pwm::pwm_cicle(uint8_t timer, uint16_t duty_cicle) {
 }
 
 void USART1_IRQHandler() {
+
     //Check if interrupt was because data is received
     if (USART_GetITStatus(USART1, USART_IT_RXNE)) {
         //Do your stuff here
-        tryout << "You typed: ";
-        tryout < USART_ReceiveData(USART1);
-        tryout << "\n";
+
+        digits[i] < USART_ReceiveData(USART1);
+        i++;
+        if(i > 3) {
+           what = ((digits[0]*100) + (digits[1] * 10) + digits[2]);
+
+            i =0;
+        }
 
         //Clear interrupt flag
         USART_ClearITPendingBit(USART1, USART_IT_RXNE);
     }
 }
+
