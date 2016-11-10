@@ -187,11 +187,11 @@ void MS5611::calculatePressureAndTemperature() {
  */
 void MS5611::update() {
     refreshPressure();
-    usleep(10000); // Waiting for pressure data ready
+    delay(SystemCoreClock/8/100); // Waiting for pressure data ready 0.01 sec
     readPressure();
 
     refreshTemperature();
-    usleep(10000); // Waiting for temperature data ready
+    delay(SystemCoreClock/8/100); // Waiting for temperature data ready 0.01 sec
     readTemperature();
 
     calculatePressureAndTemperature();
@@ -327,4 +327,19 @@ void MS5611::waitForI2CFlag(uint32_t flag) {
             }
         }
     }
+}
+
+/* Delay 1 sec.
+**delay(SystemCoreClock/8);
+*
+* Delay 0.1 sec.
+*delay(SystemCoreClock/8/10);
+*/
+void MS5611::delay(const int d)
+{
+    volatile int i;
+
+    for(i=d; i>0; i--){ ; }
+
+    return;
 }

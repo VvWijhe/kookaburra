@@ -108,6 +108,7 @@ private:
     float PRES; // Calculated pressure
 
     float toAltitude(float pressure);
+    void delay(const int d);
 };
 
 #endif // MS5611_H
