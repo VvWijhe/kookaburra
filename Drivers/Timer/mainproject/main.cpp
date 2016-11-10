@@ -58,7 +58,7 @@ int main(void) {
     RCC_GetClocksFreq(&RCC_Clocks);
     SysTick_Config(RCC_Clocks.HCLK_Frequency / 1000);
     Truus.init();
-    Anita.init(20,0);
+    Anita.init(0.498,0);
 
     while (1) {
 
@@ -72,8 +72,13 @@ void TIM3_IRQHandler(void) {
         TIM_ClearITPendingBit(TIM3, TIM_IT_Update);
         Anita.Raisetime();
         Anita.incrementTime();
-        //Truus << Anita.GetSeconds();
-      //  Truus << "\n";
+        Truus << Anita.GetHours();
+        if()
+        Truus << ":";
+        Truus << Anita.GetMinutes();
+        Truus << ":";
+        Truus << Anita.GetSeconds();
+        Truus << "\n";
         STM_EVAL_LEDToggle(LED3);
 
     }
