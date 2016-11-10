@@ -39,20 +39,6 @@
 /* Exported macro ------------------------------------------------------------*/
 /* Exported functions ------------------------------------------------------- */
 
-class pwm {
-private:
-
-public:
-    void delay(const int d);
-    void init_pwm  (void);
-};
-
-
-
-
-
-
-
 #ifdef __cplusplus
 extern "C" {
 #endif
