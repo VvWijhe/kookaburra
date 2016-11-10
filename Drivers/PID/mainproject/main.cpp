@@ -29,26 +29,9 @@
 #include "main.h"
 #include "usart.h"
 
-/** @addtogroup STM32F0-Discovery_Demo
-  * @{
-  */
-
-/* Private typedef -----------------------------------------------------------*/
-/* Private define ------------------------------------------------------------*/
-/* Private macro -------------------------------------------------------------*/
-/* Private variables ---------------------------------------------------------*/
 static __IO uint32_t TimingDelay;
 USART_1 usart1;
 
-
-/* Private function prototypes -----------------------------------------------*/
-/* Private functions ---------------------------------------------------------*/
-
-/**
-  * @brief  Main program.
-  * @param  None
-  * @retval None
-  */
 int main(void) {
     RCC_ClocksTypeDef RCC_Clocks;
 
@@ -60,25 +43,15 @@ int main(void) {
     RCC_GetClocksFreq(&RCC_Clocks);
     SysTick_Config(RCC_Clocks.HCLK_Frequency / 1000);
 
-    // Initialise usart 1
-    usart1.init();
-
-    usart1 << "USART example in c++!\n";
-
     while(1){
-        STM_EVAL_LEDToggle(LED4);
-        Delay(200);
-    }
 
+    }
 }
 
 void USART1_IRQHandler() {
     //Check if interrupt was because data is received
     if (USART_GetITStatus(USART1, USART_IT_RXNE)) {
         //Do your stuff here
-        usart1 << "You typed: ";
-        usart1 < USART_ReceiveData(USART1);
-        usart1 << "\n";
 
         //Clear interrupt flag
         USART_ClearITPendingBit(USART1, USART_IT_RXNE);
