@@ -45,6 +45,7 @@ PWM pwm1;
 
 int main(void){
     char c[2];
+//    int digit = 33;
 
     tryout.init();
     pwm1.initServo();
@@ -52,16 +53,17 @@ int main(void){
 
     while(1){
         // Recive data
-        tryout << "Enter 3 digits:\n";
+        tryout << "Enter three digits:\n";
         tryout > c[0];
         tryout > c[1];
         tryout > c[2];
-        tryout << "You entered: ";
+        tryout << "numer is: ";
         tryout << c;
         tryout << "\n";
 
+
         // Convert char to int and send to servo
-        pwm1.cycle(2, (uint16_t)atoi(c));
+        pwm1.cycle(2, (uint16_t(atoi(c))));
     }
 }
 

@@ -127,7 +127,7 @@ void PWM::initMotor()
 void PWM::cycle(uint8_t timer, uint16_t duty_cicle) {
 
     if(timer == 2){
-        TIM_SetCompare4(TIM2, ((duty_cicle)));
+        TIM_SetCompare4(TIM2, (32+ (uint32_t (duty_cicle * 0.522))));
     }
     if(timer == 14){
         TIM_SetCompare4(TIM14, (duty_cicle*10));
