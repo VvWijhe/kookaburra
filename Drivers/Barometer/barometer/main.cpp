@@ -75,9 +75,10 @@ int main(void) {
 
         Barometer.readvalues();
 
-        float altitude = Barometer.getAltitude();
+        float altitude = Barometer.getAltitude() * float(0.3048);
         usart << "Altitude : ";
         usart << altitude;
+        usart << " Meters";
         usart << "\n\n";
         delay(50);
     }

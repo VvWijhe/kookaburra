@@ -16,10 +16,8 @@
   <component name="ChangeListManager">
     <list default="true" id="712a3573-b563-4f54-93e0-59b36ab9e035" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CLionBuildOutput/Debug/barometer.elf" afterPath="$PROJECT_DIR$/CLionBuildOutput/Debug/barometer.elf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MS5611.cpp" afterPath="$PROJECT_DIR$/MS5611.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/h/MS5611.h" afterPath="$PROJECT_DIR$/h/MS5611.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.cpp" afterPath="$PROJECT_DIR$/main.cpp" />
     </list>
     <ignored path="barometer.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,44 +37,42 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="27" column="42" selection-start-line="27" selection-start-column="42" selection-end-line="27" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="726">
-              <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="33" />
+            <state relative-caret-position="220">
+              <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MS5611.cpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MS5611.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MS5611.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="338" column="1" selection-start-line="338" selection-start-column="1" selection-end-line="338" selection-end-column="1" />
+            <state relative-caret-position="361">
+              <caret line="214" column="36" selection-start-line="214" selection-start-column="36" selection-end-line="214" selection-end-column="36" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MS5611.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/h/MS5611.h">
+      <file leaf-file-name="stm32f0xx_usart.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/inc/stm32f0xx_usart.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="711">
-              <caret line="110" column="28" selection-start-line="110" selection-start-column="28" selection-end-line="110" selection-end-column="28" />
-              <folding>
-                <element signature="e#1601#1627#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-1188">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="syscalls_cm0.c" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../gemeenschappelijk/basis/stm32f0/syscalls_cm0.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -92,6 +88,7 @@
       <list>
         <option value="$PROJECT_DIR$/h/MS5611.h" />
         <option value="$PROJECT_DIR$/MS5611.cpp" />
+        <option value="$PROJECT_DIR$/main.cpp" />
       </list>
     </option>
   </component>
@@ -192,6 +189,359 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/accelerometer/.gitignore</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/accelerometer/CLionBuildOutput/Debug/accelerometer.elf</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/accelerometer/CMakeLists.txt</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/accelerometer/Release_Notes.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/accelerometer/h/comm.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/accelerometer/h/main.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/accelerometer/h/mpu6050.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/accelerometer/h/stm32f0xx_conf.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/accelerometer/h/stm32f0xx_it.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/accelerometer/h/term_io.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/accelerometer/main.cpp</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/accelerometer/mpu6050.cpp</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/accelerometer/readme.txt</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/accelerometer/stm32f0xx_it.c</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/accelerometer/system_stm32f0xx.c</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/accelerometer/usart.cpp</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/accelerometer/usart.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/buildsystem/BasisSTM32.cmake</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/buildsystem/STM32Development.cmake</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/buildsystem/STM32F0.cmake</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/CMSIS/CM3/CMakeLists.txt</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/CMSIS/CM3/CoreSupport/core_cm3.c</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/CMSIS/CM3/CoreSupport/core_cm3.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/CMSIS/CM3/DeviceSupport/ST/STM32F10x/Release_Notes.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/CMSIS/CM3/DeviceSupport/ST/STM32F10x/startup/arm/startup_stm32f10x_cl.s</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/CMSIS/CM3/DeviceSupport/ST/STM32F10x/startup/arm/startup_stm32f10x_hd.s</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/CMSIS/CM3/DeviceSupport/ST/STM32F10x/startup/arm/startup_stm32f10x_hd_vl.s</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/CMSIS/CM3/DeviceSupport/ST/STM32F10x/startup/arm/startup_stm32f10x_ld.s</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/CMSIS/CM3/DeviceSupport/ST/STM32F10x/startup/arm/startup_stm32f10x_ld_vl.s</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/CMSIS/CM3/DeviceSupport/ST/STM32F10x/startup/arm/startup_stm32f10x_md.s</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/CMSIS/CM3/DeviceSupport/ST/STM32F10x/startup/arm/startup_stm32f10x_md_vl.s</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/CMSIS/CM3/DeviceSupport/ST/STM32F10x/startup/arm/startup_stm32f10x_xl.s</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/CMSIS/CM3/DeviceSupport/ST/STM32F10x/startup/gcc/startup_stm32f10x_md.c</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/CMSIS/CM3/DeviceSupport/ST/STM32F10x/stm32f10x.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/CMSIS/CM3/DeviceSupport/ST/STM32F10x/system_stm32f10x.c</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/CMSIS/CM3/DeviceSupport/ST/STM32F10x/system_stm32f10x.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/CMSIS/CMSIS debug support.htm</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/CMSIS/CMSIS_changes.htm</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/CMSIS/Device/ST/Release_Notes_for_STM32F10x_CMSIS.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/CMSIS/Device/ST/STM32F0xx/CMakeLists.txt</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/CMSIS/Device/ST/STM32F0xx/Include/system_stm32f0xx.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/CMSIS/Device/ST/STM32F0xx/Release_Notes.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/CMSIS/Device/ST/STM32F0xx/Source/Templates/arm/startup_stm32f0xx.s</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/CMSIS/Device/ST/STM32F0xx/Source/Templates/gcc/startup_stm32f0xx.s</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/CMSIS/Device/ST/STM32F0xx/Source/Templates/system_stm32f0xx.c</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/CMSIS/Device/ST/STM32F30x/CMakeLists.txt</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/CMSIS/Device/ST/STM32F30x/Include/stm32f30x.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/CMSIS/Device/ST/STM32F30x/Include/system_stm32f30x.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/CMSIS/Device/ST/STM32F30x/Release_Notes.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/CMSIS/Device/ST/STM32F30x/Source/Templates/TrueSTUDIO/startup_stm32f30x.s</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/CMSIS/Device/ST/STM32F30x/Source/Templates/arm/startup_stm32f30x.s</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/CMSIS/Device/ST/STM32F30x/Source/Templates/gcc_ride7/startup_stm32f30x.s</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/CMSIS/Device/ST/STM32F30x/Source/Templates/iar/startup_stm32f30x.s</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/CMSIS/Device/ST/STM32F30x/Source/Templates/system_stm32f30x.c</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/CMSIS/Device/ST/STM32F4xx/CMakeLists.txt</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/CMSIS/Device/ST/STM32F4xx/Release_Notes.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f4xx.s</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/gcc_ride7/startup_stm32f4xx.s</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/system_stm32f4xx.c</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/CMSIS/Include/arm_common_tables.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/CMSIS/Include/arm_math.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/CMSIS/Include/core_cm0.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/CMSIS/Include/core_cm0plus.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/CMSIS/Include/core_cm3.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/CMSIS/Include/core_cm4.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/CMSIS/Include/core_cm4_simd.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/CMSIS/Include/core_cmFunc.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/CMSIS/Include/core_cmInstr.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/CMSIS/Include/core_sc000.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/CMSIS/Include/core_sc300.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32F0xx_CPAL_Driver/CMakeLists.txt</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32F0xx_CPAL_Driver/Release_Notes.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32F0xx_CPAL_Driver/inc/stm32f0xx_i2c_cpal.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32F0xx_CPAL_Driver/inc/stm32f0xx_i2c_cpal_conf_template.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32F0xx_CPAL_Driver/inc/stm32f0xx_i2c_cpal_hal.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32F0xx_CPAL_Driver/src/stm32f0xx_i2c_cpal.c</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32F0xx_CPAL_Driver/src/stm32f0xx_i2c_cpal_hal.c</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32F0xx_CPAL_Driver/src/stm32f0xx_i2c_cpal_usercallback_template.ctempl</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/CMakeLists.txt</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/Doxyfile</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/Release_Notes.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/inc/stm32f0xx_adc.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/inc/stm32f0xx_cec.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/inc/stm32f0xx_comp.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/inc/stm32f0xx_crc.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/inc/stm32f0xx_dac.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/inc/stm32f0xx_dbgmcu.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/inc/stm32f0xx_dma.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/inc/stm32f0xx_exti.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/inc/stm32f0xx_flash.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/inc/stm32f0xx_gpio.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/inc/stm32f0xx_i2c.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/inc/stm32f0xx_iwdg.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/inc/stm32f0xx_misc.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/inc/stm32f0xx_pwr.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/inc/stm32f0xx_rcc.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/inc/stm32f0xx_rtc.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/inc/stm32f0xx_spi.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/inc/stm32f0xx_syscfg.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/inc/stm32f0xx_tim.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/inc/stm32f0xx_usart.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/inc/stm32f0xx_wwdg.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_adc.c</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_cec.c</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_comp.c</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_crc.c</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_dac.c</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_dbgmcu.c</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_dma.c</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_exti.c</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_flash.c</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_gpio.c</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_i2c.c</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_iwdg.c</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_misc.c</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_pwr.c</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_rcc.c</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_rtc.c</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_spi.c</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_syscfg.c</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_tim.c</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_usart.c</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_wwdg.c</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_CPALv1_Driver/CMakeLists.txt</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_CPALv1_Driver/Release_Notes.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_CPALv1_Driver/devices/stm32f10x/cpal_i2c_hal_stm32f10x.c</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_CPALv1_Driver/devices/stm32f10x/cpal_i2c_hal_stm32f10x.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_CPALv1_Driver/devices/stm32f2xx/cpal_i2c_hal_stm32f2xx.c</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_CPALv1_Driver/devices/stm32f2xx/cpal_i2c_hal_stm32f2xx.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_CPALv1_Driver/devices/stm32f4xx/CMakeLists.txt</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_CPALv1_Driver/devices/stm32f4xx/cpal_i2c_hal_stm32f4xx.c</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_CPALv1_Driver/devices/stm32f4xx/cpal_i2c_hal_stm32f4xx.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_CPALv1_Driver/devices/stm32l1xx/cpal_i2c_hal_stm32l1xx.c</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_CPALv1_Driver/devices/stm32l1xx/cpal_i2c_hal_stm32l1xx.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_CPALv1_Driver/inc/cpal.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_CPALv1_Driver/inc/cpal_conf_template.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_CPALv1_Driver/inc/cpal_i2c.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_CPALv1_Driver/src/cpal_hal.c</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_CPALv1_Driver/src/cpal_i2c.c</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_CPALv1_Driver/src/cpal_usercallback.c_template</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB-FS-Device_Driver/CMakeLists.txt</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB-FS-Device_Driver/Release_Notes.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB-FS-Device_Driver/inc/usb_core.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB-FS-Device_Driver/inc/usb_def.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB-FS-Device_Driver/inc/usb_init.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB-FS-Device_Driver/inc/usb_int.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB-FS-Device_Driver/inc/usb_lib.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB-FS-Device_Driver/inc/usb_mem.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB-FS-Device_Driver/inc/usb_regs.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB-FS-Device_Driver/inc/usb_sil.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB-FS-Device_Driver/inc/usb_type.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB-FS-Device_Driver/src/usb_core.c</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB-FS-Device_Driver/src/usb_init.c</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB-FS-Device_Driver/src/usb_int.c</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB-FS-Device_Driver/src/usb_mem.c</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB_Device_Library/CMakeLists.txt</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB_Device_Library/Class/audio/inc/usbd_audio_core.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB_Device_Library/Class/audio/inc/usbd_audio_out_if.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB_Device_Library/Class/audio/src/usbd_audio_core.c</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB_Device_Library/Class/audio/src/usbd_audio_out_if.c</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB_Device_Library/Class/cdc/inc/usbd_cdc_core.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB_Device_Library/Class/cdc/inc/usbd_cdc_if_template.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB_Device_Library/Class/cdc/src/usbd_cdc_core.c</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB_Device_Library/Class/cdc/src/usbd_cdc_if_template.ctempl</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB_Device_Library/Class/dfu/inc/usbd_dfu_core.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB_Device_Library/Class/dfu/inc/usbd_dfu_mal.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB_Device_Library/Class/dfu/inc/usbd_flash_if.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB_Device_Library/Class/dfu/inc/usbd_mem_if_template.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB_Device_Library/Class/dfu/inc/usbd_otp_if.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB_Device_Library/Class/dfu/src/usbd_dfu_core.c</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB_Device_Library/Class/dfu/src/usbd_dfu_mal.c</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB_Device_Library/Class/dfu/src/usbd_flash_if.c</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB_Device_Library/Class/dfu/src/usbd_mem_if_template.c</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB_Device_Library/Class/dfu/src/usbd_otp_if.c</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB_Device_Library/Class/hid/inc/usbd_hid_core.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB_Device_Library/Class/hid/src/usbd_hid_core.c</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB_Device_Library/Class/msc/inc/usbd_msc_bot.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB_Device_Library/Class/msc/inc/usbd_msc_core.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB_Device_Library/Class/msc/inc/usbd_msc_data.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB_Device_Library/Class/msc/inc/usbd_msc_mem.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB_Device_Library/Class/msc/inc/usbd_msc_scsi.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB_Device_Library/Class/msc/src/usbd_msc_bot.c</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB_Device_Library/Class/msc/src/usbd_msc_core.c</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB_Device_Library/Class/msc/src/usbd_msc_data.c</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB_Device_Library/Class/msc/src/usbd_msc_scsi.c</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB_Device_Library/Class/msc/src/usbd_storage_template.c</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB_Device_Library/Core/inc/usbd_conf_template.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB_Device_Library/Core/inc/usbd_core.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB_Device_Library/Core/inc/usbd_def.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB_Device_Library/Core/inc/usbd_ioreq.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB_Device_Library/Core/inc/usbd_req.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB_Device_Library/Core/inc/usbd_usr.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB_Device_Library/Core/src/usbd_core.c</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB_Device_Library/Core/src/usbd_ioreq.c</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB_Device_Library/Core/src/usbd_req.c</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB_Device_Library/Release_Notes.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB_OTG_Driver/CMakeLists.txt</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB_OTG_Driver/Release_Notes.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB_OTG_Driver/inc/usb_bsp.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB_OTG_Driver/inc/usb_conf_template.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB_OTG_Driver/inc/usb_core.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB_OTG_Driver/inc/usb_dcd.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB_OTG_Driver/inc/usb_dcd_int.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB_OTG_Driver/inc/usb_defines.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB_OTG_Driver/inc/usb_hcd.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB_OTG_Driver/inc/usb_hcd_int.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB_OTG_Driver/inc/usb_otg.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB_OTG_Driver/inc/usb_regs.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB_OTG_Driver/src/usb_bsp_template.ctempl</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB_OTG_Driver/src/usb_core.c</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB_OTG_Driver/src/usb_dcd.c</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB_OTG_Driver/src/usb_dcd_int.c</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB_OTG_Driver/src/usb_hcd.c</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB_OTG_Driver/src/usb_hcd_int.c</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/STM32_USB_OTG_Driver/src/usb_otg.c</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/ldscripts/STM32F0x_16k_4k_flash.ld</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/ldscripts/STM32F0x_32k_4k_flash.ld</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/ldscripts/STM32F0x_64k_8k_flash.ld</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/ldscripts/STM32F103_512k_64k_flash.ld</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/ldscripts/STM32F10x_128k_20k_flash.ld</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/ldscripts/STM32F20x_1024k_128k_flash.ld</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/ldscripts/STM32F2xx_1024k_128k_flash.ld</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/ldscripts/STM32F30x_256k_40k_flash.ld</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/ldscripts/STM32F37x_256k_32k_flash.ld</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/ldscripts/STM32F40x_1024k_192k_flash.ld</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/peripherals_svd/STM32F0x1.svd</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/peripherals_svd/STM32F103xx.svd</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/peripherals_svd/STM32F303xE.svd</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/peripherals_svd/STM32F411xx.svd</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/peripherals_svd/STM32F41x.svd</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/peripherals_svd/STM32L0x1.svd</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/peripherals_svd/STM32L4x6.svd</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/Libraries/uitleg.txt</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/STM32F0Discovery/CMakeLists.txt</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/STM32F0Discovery/stm32f0_discovery.c</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/STM32F0Discovery/stm32f0_discovery.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/basis/comm.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../Pitch_Control_example/gemeenschappelijk/basis/term_io.h</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
   </component>
   <component name="RunManager" selected="Application.Build All">
     <configuration default="true" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" PASS_PARENT_ENVS_2="true" PROJECT_NAME="barometer" TARGET_NAME="barometer.elf" CONFIG_NAME="Debug" TEST_MODE="SUITE_TEST">
@@ -355,10 +705,6 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" EXPLICIT_BUILD_TARGET_NAME="all">
-      <envs />
-      <method />
-    </configuration>
     <configuration default="false" name="barometer.elf" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="barometer" TARGET_NAME="barometer.elf" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="barometer" RUN_TARGET_NAME="barometer.elf">
       <envs />
       <method />
@@ -375,12 +721,16 @@
       <envs />
       <method />
     </configuration>
+    <configuration default="false" name="Build All" type="CMakeRunConfiguration" factoryName="Application" WORKING_DIR="" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="barometer" RUN_TARGET_NAME="barometer.elf" EXPLICIT_BUILD_TARGET_NAME="all">
+      <envs />
+      <method />
+    </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.Build All" />
-      <item index="1" class="java.lang.String" itemvalue="Application.barometer.elf" />
-      <item index="2" class="java.lang.String" itemvalue="Application.CMSISFIRMWARE" />
-      <item index="3" class="java.lang.String" itemvalue="Application.F0StdPerifDriver" />
-      <item index="4" class="java.lang.String" itemvalue="Application.STM32F0DiscoveryLib" />
+      <item index="0" class="java.lang.String" itemvalue="Application.barometer.elf" />
+      <item index="1" class="java.lang.String" itemvalue="Application.CMSISFIRMWARE" />
+      <item index="2" class="java.lang.String" itemvalue="Application.F0StdPerifDriver" />
+      <item index="3" class="java.lang.String" itemvalue="Application.STM32F0DiscoveryLib" />
+      <item index="4" class="java.lang.String" itemvalue="Application.Build All" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
@@ -395,12 +745,21 @@
       <updated>1478689002680</updated>
       <workItem from="1478689007911" duration="117000" />
       <workItem from="1478689144687" duration="1120000" />
-      <workItem from="1478770019996" duration="931000" />
+      <workItem from="1478770019996" duration="1378000" />
+      <workItem from="1478784678062" duration="749000" />
     </task>
+    <task id="LOCAL-00001" summary="Barometer v0.4">
+      <created>1478770994988</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1478770994988</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2168000" />
+    <option name="totallyTimeSpent" value="3364000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
@@ -408,22 +767,22 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32968238" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32968238" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32968238" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32968238" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32968238" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32968238" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -437,16 +796,43 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Barometer v0.4" />
+    <option name="LAST_COMMIT_MESSAGE" value="Barometer v0.4" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/inc/stm32f0xx_usart.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../gemeenschappelijk/basis/stm32f0/syscalls_cm0.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="594">
           <caret line="27" column="42" selection-start-line="27" selection-start-column="42" selection-end-line="27" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -470,7 +856,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -481,14 +866,6 @@
           <folding>
             <element signature="e#1601#1627#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="27" column="42" selection-start-line="27" selection-start-column="42" selection-end-line="27" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -506,19 +883,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="726">
-          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/Program Files (x86)/GNU Tools ARM Embedded/5.4 2016q2/arm-none-eabi/include/sys/unistd.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
           <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -532,10 +900,70 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/usart.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="726">
+          <caret line="75" column="0" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/usart.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="28" column="15" selection-start-line="28" selection-start-column="15" selection-end-line="28" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../gemeenschappelijk/Libraries/CMSIS/Device/ST/STM32F0xx/Include/system_stm32f0xx.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1352">
+          <caret line="64" column="51" selection-start-line="64" selection-start-column="51" selection-end-line="64" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="27" column="42" selection-start-line="27" selection-start-column="42" selection-end-line="27" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../gemeenschappelijk/basis/stm32f0/syscalls_cm0.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stm32f0xx_it.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="100" column="2" selection-start-line="100" selection-start-column="2" selection-end-line="100" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/inc/stm32f0xx_usart.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1188">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/MS5611.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="338" column="1" selection-start-line="338" selection-start-column="1" selection-end-line="338" selection-end-column="1" />
+        <state relative-caret-position="361">
+          <caret line="214" column="36" selection-start-line="214" selection-start-column="36" selection-end-line="214" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
           <folding />
         </state>
       </provider>
