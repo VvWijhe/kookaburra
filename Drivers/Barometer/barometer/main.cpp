@@ -29,9 +29,6 @@
 #include "MS5611.h"
 #include "main.h"
 #include "usart.h"
-#include "math.h"
-
-#define CONVERSIONG 3.9
 
 /* Private variables ---------------------------------------------------------*/
 static __IO uint32_t TimingDelay;
@@ -48,6 +45,8 @@ USART_1 usart;
   */
 int main(void) {
     RCC_ClocksTypeDef RCC_Clocks;
+    MS5611 Barometer;
+
 
     // Configure LED3 and LED4 on STM32F0-Discovery
     STM_EVAL_LEDInit(LED3);
@@ -57,39 +56,31 @@ int main(void) {
     RCC_GetClocksFreq(&RCC_Clocks);
     SysTick_Config(RCC_Clocks.HCLK_Frequency / 1000);
 
-    // Initialize MPU6050
-    // Power ON, Clock source X Gyro, Highest sensivity
-    //MS5611I2C barometer();
+    // Initialize MS5611
+    Barometer.initialize();
+
+
 
     //initialize usart
     usart.init();
 
-    usart << "This is a test application for the accelerometer\n";
+    usart << "This is a test application for the barometer\n";
 
-    /*while (1) {
-        if (accelerometer.testConnection()) {
+    while (1) {
+        if (Barometer.testConnection()) {
             STM_EVAL_LEDToggle(LED3);
         } else {
             STM_EVAL_LEDToggle(LED4);
         }
 
-        accelerometer.getRawAccelGyro(&accelGyroDataRaw);
+        Barometer.readvalues();
 
-        double accelerationX = (accelGyroDataRaw.Ax * CONVERSIONG);
-        double accelerationY = (accelGyroDataRaw.Ay * CONVERSIONG);
-        double accelerationZ = (accelGyroDataRaw.Az * CONVERSIONG);
-
-        pitch = 180 * atan (accelerationX/sqrt(accelerationY*accelerationY + accelerationZ*accelerationZ))/M_PI;
-        roll = 180 * atan (accelerationY/sqrt(accelerationX*accelerationX + accelerationZ*accelerationZ))/M_PI;
-        yaw = 180 * atan (accelerationZ/sqrt(accelerationX*accelerationX + accelerationZ*accelerationZ))/M_PI;
-
-        usart << "Pitch: ";
-        usart << pitch;
-        usart << "\nRoll: ";
-        usart << roll;
+        float altitude = Barometer.getAltitude();
+        usart << "Altitude : ";
+        usart << altitude;
         usart << "\n\n";
         delay(50);
-    }*/
+    }
 }
 
 /**
