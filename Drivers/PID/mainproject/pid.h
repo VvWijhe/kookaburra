@@ -11,7 +11,7 @@
 class PID {
 public:
     PID(double stepTime, double p, double i, double d);
-    double calculate(double er, double setp);
+    double calculate(double measuredValue, double setpoint);
 
 private:
     double dt;
