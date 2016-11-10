@@ -42,20 +42,6 @@
 /* Exported macro ------------------------------------------------------------*/
 /* Exported functions ------------------------------------------------------- */
 
-class pwm {
-private:
-
-public:
-    void pwm_cicle  (uint8_t timer, uint16_t duty_cicle);
-    void init_servo (void);
-    void init_motor (void);
-};
-
-
-
-
-
-
 
 #ifdef __cplusplus
 extern "C" {

@@ -26,7 +26,7 @@
   */
 
 /* Includes ------------------------------------------------------------------*/
-#include "counter.h"
+#include "h/counter.h"
 #include "main.h"
 #include "usart.h"
 
