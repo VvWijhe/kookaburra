@@ -74,3 +74,12 @@ void USART_1::operator>>(char c[]) {
     //cin.get(c, 10);
 }
 
+void USART_1::Clearscreen(void)
+{
+    char cmd1[5] = {0x1B, '[', '2', 'J', '\0'}; // Clear screen
+    char cmd2[4] = {0x1B, '[', 'f', '\0'}; // Cursor home
+
+    puts(cmd1);
+    puts(cmd2);
+}
+
