@@ -58,7 +58,7 @@ int main(void) {
     RCC_GetClocksFreq(&RCC_Clocks);
     SysTick_Config(RCC_Clocks.HCLK_Frequency / 1000);
     Truus.init();
-    Anita.init(240000);
+    Anita.init(20,0);
 
     while (1) {
 
@@ -71,9 +71,10 @@ void TIM3_IRQHandler(void) {
 
         TIM_ClearITPendingBit(TIM3, TIM_IT_Update);
         Anita.Raisetime();
-        Truus << Anita.GetValue();
-        Truus << "\n";
-        //STM_EVAL_LEDToggle(LED3);
+        Anita.incrementTime();
+        //Truus << Anita.GetSeconds();
+      //  Truus << "\n";
+        STM_EVAL_LEDToggle(LED3);
 
     }
 }
@@ -82,8 +83,9 @@ void USART1_IRQHandler() {
     //Check if interrupt was because data is received
     if (USART_GetITStatus(USART1, USART_IT_RXNE)) {
         //Do your stuff here
-        Truus << "You typed: ";
-        Truus < USART_ReceiveData(USART1);
+        Truus << "Sec:  ";
+        Truus << Anita.GetSeconds();
+//        Truus < USART_ReceiveData(USART1);
         Truus << "\n";
 
         //Clear interrupt flag

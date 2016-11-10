@@ -11,13 +11,19 @@
 class Time {
 public:
     Time();
-    void init(int p);
+    void init(int p, int f);
     void Raisetime(void);
     uint32_t GetValue(void);
+    void incrementTime(void);
+    int  GetSeconds(void);
+    uint32_t GetMinutes(void);
 
 private:
     int Freq;
     uint32_t Value;
+    int TimeDelay;
+    int Seconds;
+    int Minutes;
 };
 
 
