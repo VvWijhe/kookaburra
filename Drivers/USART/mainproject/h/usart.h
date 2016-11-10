@@ -43,6 +43,8 @@ public:
 
     void operator>>(char c[]);
 
+    void Clearscreen(void);
+
 private:
 };
 

@@ -43,9 +43,9 @@ extern volatile char rx_buffer;
   * @param  None
   * @retval None
   */
-Time Anita;
-USART_1 Truus;
-
+Time Timer;
+USART_1 Usart;
+int Switch;
 int main(void) {
     RCC_ClocksTypeDef RCC_Clocks;
 
@@ -57,8 +57,8 @@ int main(void) {
     // SysTick end of count event each 1ms
     RCC_GetClocksFreq(&RCC_Clocks);
     SysTick_Config(RCC_Clocks.HCLK_Frequency / 1000);
-    Truus.init();
-    Anita.init(20,0);
+    Usart.init();
+    Timer.init(0.498,0);
 
     while (1) {
 
@@ -70,28 +70,54 @@ void TIM3_IRQHandler(void) {
 
 
         TIM_ClearITPendingBit(TIM3, TIM_IT_Update);
-        Anita.Raisetime();
-        Anita.incrementTime();
-        //Truus << Anita.GetSeconds();
-      //  Truus << "\n";
+        Timer.Raisetime();
+        Timer.incrementTime();
+        Usart.Clearscreen();
+        if(Timer.GetHours() <= 9){
+            Usart << "0";
+        }
+        Usart << Timer.GetHours();
+        if(Switch == 1){
+            Usart << ":";
+        }
+        else{
+            Usart << " ";
+        }
+        if(Timer.GetMinutes() <= 9){
+            Usart << "0";
+        }
+        Usart << Timer.GetMinutes();
+        if(Switch == 1){
+            Usart << ":";
+            Switch = 0;
+        }
+        else{
+            Usart << " ";
+            Switch = 1;
+        }
+        if(Timer.GetSeconds() <= 9){
+            Usart << "0";
+        }
+        Usart << Timer.GetSeconds();
+        Usart << "\n";
         STM_EVAL_LEDToggle(LED3);
 
     }
 }
 
-void USART1_IRQHandler() {
-    //Check if interrupt was because data is received
-    if (USART_GetITStatus(USART1, USART_IT_RXNE)) {
-        //Do your stuff here
-        Truus << "Sec:  ";
-        Truus << Anita.GetSeconds();
-//        Truus < USART_ReceiveData(USART1);
-        Truus << "\n";
-
-        //Clear interrupt flag
-        USART_ClearITPendingBit(USART1, USART_IT_RXNE);
-    }
-}
+//void USART1_IRQHandler() {
+//    //Check if interrupt was because data is received
+//    if (USART_GetITStatus(USART1, USART_IT_RXNE)) {
+//        //Do your stuff here
+//        Usart << "Sec:  ";
+//        Usart << Timer.GetSeconds();
+//        Usart < USART_ReceiveData(USART1);
+//        Usart << "\n";
+//
+//        //Clear interrupt flag
+//        USART_ClearITPendingBit(USART1, USART_IT_RXNE);
+//    }
+//}
 
 /**
   * @brief  Inserts a delay time.
