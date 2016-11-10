@@ -32,8 +32,8 @@ void USART_1::init() {
 
     USART_Cmd(USART1, ENABLE);
 
-    USART_ITConfig(USART1, USART_IT_RXNE, ENABLE);
-    NVIC_EnableIRQ(USART1_IRQn);
+//    USART_ITConfig(USART1, USART_IT_RXNE, ENABLE);
+//    NVIC_EnableIRQ(USART1_IRQn);
 }
 
 void USART_1::operator<<(const char *str) {
@@ -66,7 +66,8 @@ void USART_1::puts(const char *str) {
 }
 
 void USART_1::operator>(char &c) {
-    //cin >> c;
+    while (USART_GetFlagStatus(USART1, USART_ISR_RXNE) == RESET) { ; }
+    c = (char) USART_ReceiveData(USART1);
 }
 
 void USART_1::operator>>(char c[]) {

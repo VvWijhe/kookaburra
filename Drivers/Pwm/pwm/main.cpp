@@ -30,12 +30,7 @@
 #include <pwm.h>
 #include "main.h"
 
-
-#define CONVERSIONG 3.9
-
 /* Private variables ---------------------------------------------------------*/
-
-
 /* Private function prototypes -----------------------------------------------*/
 /* Private functions ---------------------------------------------------------*/
 
@@ -45,40 +40,28 @@
   * @retval None
   */
 
-
-
-char digits[3] = {0,0,0};
-int i;
-int what;
-
 USART_1 tryout;
 PWM pwm1;
-int main(void){
 
-    //uint32_t comparator =0;
+int main(void){
+    char c[2];
 
     tryout.init();
     pwm1.initServo();
     pwm1.initMotor();
-    pwm1.cycle(2, what);
-}
 
-void USART1_IRQHandler() {
+    while(1){
+        // Recive data
+        tryout << "Enter 3 digits:\n";
+        tryout > c[0];
+        tryout > c[1];
+        tryout > c[2];
+        tryout << "You entered: ";
+        tryout << c;
+        tryout << "\n";
 
-    //Check if interrupt was because data is received
-    if (USART_GetITStatus(USART1, USART_IT_RXNE)) {
-        //Do your stuff here
-
-        digits[i] < USART_ReceiveData(USART1);
-        i++;
-        if(i > 3) {
-           what = ((digits[0]*100) + (digits[1] * 10) + digits[2]);
-
-            i =0;
-        }
-
-        //Clear interrupt flag
-        USART_ClearITPendingBit(USART1, USART_IT_RXNE);
+        // Convert char to int and send to servo
+        pwm1.cycle(2, (uint16_t)atoi(c));
     }
 }
 
