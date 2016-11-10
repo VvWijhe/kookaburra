@@ -60,9 +60,6 @@ int main(void){
     pwm1.init_servo();
     pwm1.init_motor();
     pwm1.pwm_cicle(2, what);
-
-
-
 }
 
 void pwm::init_servo()
