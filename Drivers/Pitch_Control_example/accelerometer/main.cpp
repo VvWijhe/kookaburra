@@ -27,6 +27,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include <mpu6050.h>
+#include <pwm.h>
 #include "main.h"
 #include "mpu6050.h"
 #include "usart.h"
@@ -37,6 +38,7 @@
 /* Private variables ---------------------------------------------------------*/
 static __IO uint32_t TimingDelay;
 
+PWM pwm;
 USART_1 usart;
 MPU6050 accelerometer;
 accelGyroDataRaw_t accelGyroDataRaw;
@@ -68,6 +70,9 @@ int main(void) {
     //initialize usart
     usart.init();
 
+    // Init pwm
+    pwm.initServo();
+
     usart << "This is a test application for the pwm\n";
 
     while (1) {
@@ -75,6 +80,7 @@ int main(void) {
             STM_EVAL_LEDToggle(LED3);
         } else {
             STM_EVAL_LEDToggle(LED4);
+            accelerometer.init();
         }
 
         accelerometer.getRawAccelGyro(&accelGyroDataRaw);
@@ -86,6 +92,12 @@ int main(void) {
         pitch = 180 * atan (accelerationX/sqrt(accelerationY*accelerationY + accelerationZ*accelerationZ))/M_PI;
         roll = 180 * atan (accelerationY/sqrt(accelerationX*accelerationX + accelerationZ*accelerationZ))/M_PI;
         yaw = 180 * atan (accelerationZ/sqrt(accelerationX*accelerationX + accelerationZ*accelerationZ))/M_PI;
+
+        pitch += 90;
+
+        if(pitch > 0 && pitch < 180) {
+            pwm.cycle(2, (uint32_t)pitch);
+        }
 
         usart << "Pitch: ";
         usart << pitch;
