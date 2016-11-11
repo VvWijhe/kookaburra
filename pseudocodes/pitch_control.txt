@@ -1,0 +1,34 @@
+## Pseudo code pitch control
+
+loop at 20Hz
+	(other code)
+	
+	angle = get angle
+	if angle > maxAngle or angle < minAngle
+		set PID servo parameters (P = 0.2, I = 0, D = 0)
+		
+		## Measure error
+		if angle > maxAngle
+			error = maxAngle - angle
+		else
+			error = minAngle + angle
+		end if
+		
+		## Calculate the control value
+		controlValue = PID servo calculate error
+		controlValue *= 0.07
+		
+		## Saturation
+		if controlValue > 0.5
+			controlValue = 0.4
+		else if controlValue < -0.5 then
+			controlValue = -0.4
+		end if
+		
+		## Set the servo PWM
+		## 1 ms = 0, 1.5 ms = 90, 2ms = 180
+		set PWM (controlValue + 1.5 ms)
+	else
+		set PWM (1.5 ms)
+	end if
+end loop

@@ -2,6 +2,7 @@
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" assignedExecutableTargets="true" buildAllGenerated="true">
     <generated>
+      <config projectName="mainproject" targetName="info" />
       <config projectName="stm32f0demo" targetName="stm32f0demo.elf" />
       <config projectName="stm32f0demo" targetName="CMSISFIRMWARE" />
       <config projectName="stm32f0demo" targetName="STM32F0DiscoveryLib" />
@@ -16,17 +17,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9bb779a6-c741-4f2c-a8d2-139c7b84ffc4" name="Default" comment="Renamed project">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../discoveryf0demo/.idea/discoveryf0demo.iml" afterPath="$PROJECT_DIR$/.idea/discoveryf0demo.iml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../discoveryf0demo/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../discoveryf0demo/.idea/inspectionProfiles/profiles_settings.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../discoveryf0demo/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../discoveryf0demo/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../discoveryf0demo/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../discoveryf0demo/CLionBuildOutput/Debug/stm32f0demo.elf" afterPath="$PROJECT_DIR$/CLionBuildOutput/Debug/stm32f0demo.elf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../.idea/kookaburra.iml" afterPath="$PROJECT_DIR$/../../.idea/kookaburra.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../.idea/misc.xml" afterPath="$PROJECT_DIR$/../../.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../.idea/modules.xml" afterPath="$PROJECT_DIR$/../../.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../.idea/vcs.xml" afterPath="$PROJECT_DIR$/../../.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CLionBuildOutput/Debug/mainproject.elf" afterPath="$PROJECT_DIR$/CLionBuildOutput/Debug/mainproject.elf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="95c66ab1-e3ac-416d-9931-d39222814d1b" name="Rejected commit: Default" comment="Renamed project" />
     <ignored path="discoveryf0demo.iws" />
@@ -50,16 +42,34 @@
       <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="78">
-              <caret line="28" column="12" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="12" />
+            <state relative-caret-position="24">
+              <caret line="36" column="23" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="23" />
               <folding>
                 <element signature="e#0#1075#0" expanded="false" />
                 <element signature="e#1177#1227#0" expanded="false" />
                 <element signature="e#1973#2041#0" expanded="false" />
                 <element signature="e#3650#3665#0" expanded="false" />
-                <marker date="1473948404798" expanded="true" signature="3129:3384" ph="/**...*/" />
-                <marker date="1473948404798" expanded="true" signature="3439:3599" ph="/.../" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/h/main.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1176">
+              <caret line="49" column="5" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -85,6 +95,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+  <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectFrameBounds">
     <option name="x" value="-9" />
     <option name="y" value="-9" />
@@ -130,7 +141,7 @@
               <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="discoveryf0demo" />
+              <option name="myItemId" value="mainproject" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -142,7 +153,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.General" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/CMakeLists.txt" />
+    <property name="last_opened_file_path" value="$USER_HOME$/ClionProjects/HelloWorld/CMakeLists.txt" />
   </component>
   <component name="RunManager" selected="Application.Build All">
     <configuration default="true" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" PASS_PARENT_ENVS_2="true" TEST_MODE="SUITE_TEST">
@@ -306,10 +317,6 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" EXPLICIT_BUILD_TARGET_NAME="all">
-      <envs />
-      <method />
-    </configuration>
     <configuration default="false" name="stm32f0demo.elf" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="stm32f0demo" TARGET_NAME="stm32f0demo.elf" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="stm32f0demo" RUN_TARGET_NAME="stm32f0demo.elf">
       <envs />
       <method />
@@ -330,13 +337,22 @@
       <envs />
       <method />
     </configuration>
-    <list size="6">
-      <item index="0" class="java.lang.String" itemvalue="Application.Build All" />
-      <item index="1" class="java.lang.String" itemvalue="Application.stm32f0demo.elf" />
-      <item index="2" class="java.lang.String" itemvalue="Application.CMSISFIRMWARE" />
-      <item index="3" class="java.lang.String" itemvalue="Application.F0StdPerifDriver" />
-      <item index="4" class="java.lang.String" itemvalue="Application.STM32F0DiscoveryLib" />
-      <item index="5" class="java.lang.String" itemvalue="Application.mainproject.elf" />
+    <configuration default="false" name="Build All" type="CMakeRunConfiguration" factoryName="Application" WORKING_DIR="" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="mainproject" RUN_TARGET_NAME="mainproject.elf" EXPLICIT_BUILD_TARGET_NAME="all">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="info" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="mainproject" TARGET_NAME="info" CONFIG_NAME="Debug">
+      <envs />
+      <method />
+    </configuration>
+    <list size="7">
+      <item index="0" class="java.lang.String" itemvalue="Application.stm32f0demo.elf" />
+      <item index="1" class="java.lang.String" itemvalue="Application.CMSISFIRMWARE" />
+      <item index="2" class="java.lang.String" itemvalue="Application.F0StdPerifDriver" />
+      <item index="3" class="java.lang.String" itemvalue="Application.STM32F0DiscoveryLib" />
+      <item index="4" class="java.lang.String" itemvalue="Application.mainproject.elf" />
+      <item index="5" class="java.lang.String" itemvalue="Application.Build All" />
+      <item index="6" class="java.lang.String" itemvalue="Application.info" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
@@ -361,6 +377,12 @@
       <workItem from="1474293039267" duration="175000" />
       <workItem from="1474293235466" duration="24000" />
       <workItem from="1474293404198" duration="268000" />
+      <workItem from="1474396621503" duration="404000" />
+      <workItem from="1475930661235" duration="92000" />
+      <workItem from="1476102693868" duration="28000" />
+      <workItem from="1476102759046" duration="29000" />
+      <workItem from="1476794830552" duration="139000" />
+      <workItem from="1477778834066" duration="52000" />
     </task>
     <task id="LOCAL-00001" summary="Renamed project">
       <created>1474293605687</created>
@@ -373,28 +395,28 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7235000" />
+    <option name="totallyTimeSpent" value="7979000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20412481" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20200951" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32842582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21970555" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26498422" sideWeight="0.4736457" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32616082" sideWeight="0.5309996" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3269731" sideWeight="0.46900043" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.49707174" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -433,10 +455,20 @@
     <option name="LAST_COMMIT_MESSAGE" value="Renamed project" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/h/main.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1176">
+          <caret line="49" column="5" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -446,8 +478,135 @@
             <element signature="e#1177#1227#0" expanded="false" />
             <element signature="e#1973#2041#0" expanded="false" />
             <element signature="e#3650#3665#0" expanded="false" />
-            <marker date="1473948404798" expanded="true" signature="3129:3384" ph="/**...*/" />
-            <marker date="1473948404798" expanded="true" signature="3439:3599" ph="/.../" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h/main.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1176">
+          <caret line="49" column="5" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#1075#0" expanded="false" />
+            <element signature="e#1177#1227#0" expanded="false" />
+            <element signature="e#1973#2041#0" expanded="false" />
+            <element signature="e#3650#3665#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h/main.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="833">
+          <caret line="49" column="5" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#1075#0" expanded="false" />
+            <element signature="e#1177#1227#0" expanded="false" />
+            <element signature="e#1973#2041#0" expanded="false" />
+            <element signature="e#3650#3665#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h/main.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="833">
+          <caret line="49" column="5" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#1075#0" expanded="false" />
+            <element signature="e#1177#1227#0" expanded="false" />
+            <element signature="e#1973#2041#0" expanded="false" />
+            <element signature="e#3650#3665#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h/main.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1225">
+          <caret line="49" column="5" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#1075#0" expanded="false" />
+            <element signature="e#1177#1227#0" expanded="false" />
+            <element signature="e#1973#2041#0" expanded="false" />
+            <element signature="e#3650#3665#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#1075#0" expanded="false" />
+            <element signature="e#1177#1227#0" expanded="false" />
+            <element signature="e#1973#2041#0" expanded="false" />
+            <element signature="e#3650#3665#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -469,8 +628,6 @@
             <element signature="e#1177#1227#0" expanded="false" />
             <element signature="e#1973#2041#0" expanded="false" />
             <element signature="e#3650#3665#0" expanded="false" />
-            <marker date="1473948404798" expanded="true" signature="3129:3384" ph="/**...*/" />
-            <marker date="1473948404798" expanded="true" signature="3439:3599" ph="/.../" />
           </folding>
         </state>
       </provider>
@@ -492,8 +649,6 @@
             <element signature="e#1177#1227#0" expanded="false" />
             <element signature="e#1973#2041#0" expanded="false" />
             <element signature="e#3650#3665#0" expanded="false" />
-            <marker date="1473948404798" expanded="true" signature="3129:3384" ph="/**...*/" />
-            <marker date="1473948404798" expanded="true" signature="3439:3599" ph="/.../" />
           </folding>
         </state>
       </provider>
@@ -515,8 +670,6 @@
             <element signature="e#1177#1227#0" expanded="false" />
             <element signature="e#1973#2041#0" expanded="false" />
             <element signature="e#3650#3665#0" expanded="false" />
-            <marker date="1473948404798" expanded="true" signature="3129:3384" ph="/**...*/" />
-            <marker date="1473948404798" expanded="true" signature="3439:3599" ph="/.../" />
           </folding>
         </state>
       </provider>
@@ -538,8 +691,6 @@
             <element signature="e#1177#1227#0" expanded="false" />
             <element signature="e#1973#2041#0" expanded="false" />
             <element signature="e#3650#3665#0" expanded="false" />
-            <marker date="1473948404798" expanded="true" signature="3129:3384" ph="/**...*/" />
-            <marker date="1473948404798" expanded="true" signature="3439:3599" ph="/.../" />
           </folding>
         </state>
       </provider>
@@ -553,8 +704,6 @@
             <element signature="e#1177#1227#0" expanded="false" />
             <element signature="e#1973#2041#0" expanded="false" />
             <element signature="e#3650#3665#0" expanded="false" />
-            <marker date="1473948404798" expanded="true" signature="3129:3384" ph="/**...*/" />
-            <marker date="1473948404798" expanded="true" signature="3439:3599" ph="/.../" />
           </folding>
         </state>
       </provider>
@@ -589,8 +738,6 @@
             <element signature="e#1177#1227#0" expanded="false" />
             <element signature="e#1973#2041#0" expanded="false" />
             <element signature="e#3650#3665#0" expanded="false" />
-            <marker date="1473948404798" expanded="true" signature="3129:3384" ph="/**...*/" />
-            <marker date="1473948404798" expanded="true" signature="3439:3599" ph="/.../" />
           </folding>
         </state>
       </provider>
@@ -618,8 +765,6 @@
             <element signature="e#1177#1227#0" expanded="false" />
             <element signature="e#1973#2041#0" expanded="false" />
             <element signature="e#3650#3665#0" expanded="false" />
-            <marker date="1473948404798" expanded="true" signature="3129:3384" ph="/**...*/" />
-            <marker date="1473948404798" expanded="true" signature="3439:3599" ph="/.../" />
           </folding>
         </state>
       </provider>
@@ -647,8 +792,6 @@
             <element signature="e#1177#1227#0" expanded="false" />
             <element signature="e#1973#2041#0" expanded="false" />
             <element signature="e#3650#3665#0" expanded="false" />
-            <marker date="1473948404798" expanded="true" signature="3129:3384" ph="/**...*/" />
-            <marker date="1473948404798" expanded="true" signature="3439:3599" ph="/.../" />
           </folding>
         </state>
       </provider>
@@ -669,8 +812,6 @@
             <element signature="e#1177#1227#0" expanded="false" />
             <element signature="e#1973#2041#0" expanded="false" />
             <element signature="e#3650#3665#0" expanded="false" />
-            <marker date="1473948404798" expanded="true" signature="3129:3384" ph="/**...*/" />
-            <marker date="1473948404798" expanded="true" signature="3439:3599" ph="/.../" />
           </folding>
         </state>
       </provider>
@@ -728,9 +869,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#1223#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -762,9 +900,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/h/main.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1176">
+          <caret line="49" column="5" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
+        <state relative-caret-position="168">
           <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
           <folding />
         </state>
@@ -772,15 +918,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="28" column="12" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="12" />
+        <state relative-caret-position="24">
+          <caret line="36" column="23" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="23" />
           <folding>
             <element signature="e#0#1075#0" expanded="false" />
             <element signature="e#1177#1227#0" expanded="false" />
             <element signature="e#1973#2041#0" expanded="false" />
             <element signature="e#3650#3665#0" expanded="false" />
-            <marker date="1473948404798" expanded="true" signature="3129:3384" ph="/**...*/" />
-            <marker date="1473948404798" expanded="true" signature="3439:3599" ph="/.../" />
           </folding>
         </state>
       </provider>

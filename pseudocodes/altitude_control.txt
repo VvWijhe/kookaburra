@@ -1,0 +1,20 @@
+loop at 20 Hz
+	set PID altitude parameters (P = 1, I = 0, D = 0)
+	
+	altitudeError = setpoint - get altitude
+	
+	altitudeControlValue = PID calculate error
+	
+	## Make the controlvalue useable for the PWM
+	altitudeControlValue *= 0.04
+	
+	## PWM in percentages
+	PWM += altitudeControlValue
+	
+	## Saturation
+	if PWM < 0% 
+		PWM = 0%
+	else if PWM > 100%
+		PWM = 100%
+	end if
+end loop
