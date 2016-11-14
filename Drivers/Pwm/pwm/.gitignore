@@ -60,6 +60,7 @@ gen### C++ template
 *.dylib
 
 # Executables
+*.elf
 *.exe
 *.out
 *.app
@@ -73,6 +74,4 @@ gen### C++ template
 
 .gitignore
 .idea/
-CLionBuildOutput/MinSizeRel/
-CLionBuildOutput/RelWithDebInfo/
-CLionBuildOutput/Release/
+CLionBuildOutput/
