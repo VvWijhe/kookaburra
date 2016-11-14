@@ -42,7 +42,7 @@ void PWM::initServo()
     TIM_TimeBaseStructure.TIM_ClockDivision = TIM_CKD_DIV1;
     TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;
     TIM_TimeBaseStructure.TIM_Period = 20000-1;
-    TIM_TimeBaseStructure.TIM_Prescaler = (uint16_t)(8 - 1);
+    TIM_TimeBaseStructure.TIM_Prescaler = (uint16_t)((SystemCoreClock / 1000000) - 1);
     TIM_TimeBaseInit(TIM2, &TIM_TimeBaseStructure);
 
     //(#) Fill the TIM_OCInitStruct with the desired parameters including:
