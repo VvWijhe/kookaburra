@@ -80,7 +80,6 @@ int main(void) {
             STM_EVAL_LEDToggle(LED3);
         } else {
             STM_EVAL_LEDToggle(LED4);
-            accelerometer.init();
         }
 
         accelerometer.getRawAccelGyro(&accelGyroDataRaw);
@@ -148,7 +147,7 @@ void TimingDelay_Decrement(void) {
   * @retval None
   */
 void assert_failed(uint8_t* file, uint32_t line)
-{ 
+{
   /* User can add his own implementation to report the file name and line number,
      ex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
 

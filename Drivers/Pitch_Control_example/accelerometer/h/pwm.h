@@ -6,12 +6,12 @@
 #define PWM_PWM_H
 
 class PWM {
-private:
-
 public:
     void cycle(uint8_t timer, uint32_t duty_cicle);
     void initServo(void);
     void initMotor(void);
+
+private:
 };
 
 

@@ -41,8 +41,8 @@ void PWM::initServo()
     //    (++) Clock Division = TIM_CKD_DIV1.
     TIM_TimeBaseStructure.TIM_ClockDivision = TIM_CKD_DIV1;
     TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;
-    TIM_TimeBaseStructure.TIM_Period = 1000-1;
-    TIM_TimeBaseStructure.TIM_Prescaler = (uint16_t)((SystemCoreClock / 298200 ) - 1);
+    TIM_TimeBaseStructure.TIM_Period = 20000-1;
+    TIM_TimeBaseStructure.TIM_Prescaler = (uint16_t)(8 - 1);
     TIM_TimeBaseInit(TIM2, &TIM_TimeBaseStructure);
 
     //(#) Fill the TIM_OCInitStruct with the desired parameters including:
@@ -124,13 +124,13 @@ void PWM::initMotor()
 
 // timer        = 2 voor timer 2 en 14 voor timer 14
 // duty_cicle   = van 1 t'm 100 met voor timer 2: 1 = 1ms & 100 = 2ms
-void PWM::cycle(uint8_t timer, uint16_t duty_cicle) {
+void PWM::cycle(uint8_t timer, uint32_t duty_cicle) {
 
     if(timer == 2){
-        TIM_SetCompare4(TIM2, (32+ (uint32_t (duty_cicle * 0.522))));
+        TIM_SetCompare4(TIM2, duty_cicle);
     }
     if(timer == 14){
-        TIM_SetCompare4(TIM14, (duty_cicle*10));
+        TIM_SetCompare4(TIM14, duty_cicle);
     }
 
 }

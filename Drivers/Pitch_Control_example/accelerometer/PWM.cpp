@@ -63,7 +63,6 @@ void PWM::initServo()
 
     //(#) Call the TIM_Cmd(ENABLE) function to enable the TIM counter.
     TIM_Cmd(TIM2, ENABLE);
-
 }
 
 void PWM::initMotor()
@@ -89,7 +88,6 @@ void PWM::initMotor()
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;
     GPIO_InitStructure.GPIO_Pin = GPIO_Pin_1;
     GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-    GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;
     GPIO_Init(GPIOB, &GPIO_InitStructure);
     GPIO_PinAFConfig(GPIOB, GPIO_PinSource1, GPIO_AF_0);
 
@@ -135,6 +133,4 @@ void PWM::cycle(uint8_t timer, uint32_t duty_cicle) {
     if(timer == 14){
         TIM_SetCompare4(TIM14, (duty_cicle*10));
     }
-
 }
-
