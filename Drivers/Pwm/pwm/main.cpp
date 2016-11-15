@@ -63,7 +63,7 @@ int main(void){
 
         // Convert char to int and send to servo
         //pwm1.cycle(2, (uint16_t(atoi(c))));
-        pwm1.cycle(2, 1500);
+        pwm1.cycle(2, 1000);
     }
 }
 

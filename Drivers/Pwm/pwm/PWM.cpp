@@ -3,6 +3,7 @@
 //
 #include <stm32f0xx_conf.h>
 #include <stm32f0_discovery.h>
+#include <stm32f0xx_gpio.h>
 #include "pwm.h"
 
 void PWM::initServo()
@@ -27,6 +28,7 @@ void PWM::initServo()
     //    This is LED3 on STM32F0-Discovery
     RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOA, ENABLE);
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;
+    GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;
     GPIO_InitStructure.GPIO_Pin = GPIO_Pin_3;
     GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
     GPIO_Init(GPIOA, &GPIO_InitStructure);

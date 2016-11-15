@@ -24,7 +24,9 @@
   *
   ******************************************************************************
   */ 
-  
+
+
+
 /* Define to prevent recursive inclusion -------------------------------------*/
 #ifndef __MAIN_H
 #define __MAIN_H
@@ -32,12 +34,14 @@
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f0xx.h"
 #include "stm32f0_discovery.h"
+#include "usart.h"
 
 /* Exported types ------------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
 /* Exported constants --------------------------------------------------------*/
 /* Exported macro ------------------------------------------------------------*/
 /* Exported functions ------------------------------------------------------- */
+
 
 #ifdef __cplusplus
 extern "C" {
@@ -47,7 +51,7 @@ void TimingDelay_Decrement(void);
 }
 #endif
 
-void delay(__IO uint32_t nTime);
+
 #endif /* __MAIN_H */
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

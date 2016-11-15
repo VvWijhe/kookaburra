@@ -43,8 +43,8 @@ void PWM::initServo()
     //    (++) Clock Division = TIM_CKD_DIV1.
     TIM_TimeBaseStructure.TIM_ClockDivision = TIM_CKD_DIV1;
     TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;
-    TIM_TimeBaseStructure.TIM_Period = 1000-1;
-    TIM_TimeBaseStructure.TIM_Prescaler = (uint16_t)((SystemCoreClock / 298200 ) - 1);
+    TIM_TimeBaseStructure.TIM_Period = 20000-1;
+    TIM_TimeBaseStructure.TIM_Prescaler = (uint16_t)((SystemCoreClock / 1000000) - 1);
     TIM_TimeBaseInit(TIM2, &TIM_TimeBaseStructure);
 
     //(#) Fill the TIM_OCInitStruct with the desired parameters including:
@@ -63,6 +63,7 @@ void PWM::initServo()
 
     //(#) Call the TIM_Cmd(ENABLE) function to enable the TIM counter.
     TIM_Cmd(TIM2, ENABLE);
+
 }
 
 void PWM::initMotor()
@@ -128,9 +129,11 @@ void PWM::initMotor()
 void PWM::cycle(uint8_t timer, uint32_t duty_cicle) {
 
     if(timer == 2){
-        TIM_SetCompare4(TIM2, (32+ (uint32_t (duty_cicle * 0.522))));
+        TIM_SetCompare4(TIM2, duty_cicle);
     }
     if(timer == 14){
-        TIM_SetCompare4(TIM14, (duty_cicle*10));
+        TIM_SetCompare4(TIM14, duty_cicle);
     }
+
 }
+
