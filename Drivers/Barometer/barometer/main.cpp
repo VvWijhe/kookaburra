@@ -45,7 +45,7 @@ USART_1 usart;
   */
 int main(void) {
     RCC_ClocksTypeDef RCC_Clocks;
-    MS5611 Barometer;
+    MS5611 Barometer(MS5611_ADDRESS_CSB_LOW);
 
 
     // Configure LED3 and LED4 on STM32F0-Discovery
