@@ -44,26 +44,26 @@ USART_1 tryout;
 PWM pwm1;
 
 int main(void){
-    char c[2];
+    //char c[2];
 //    int digit = 33;
 
-    tryout.init();
+    //tryout.init();
     pwm1.initServo();
-    pwm1.initMotor();
+    //pwm1.initMotor();
 
     while(1){
-        // Recive data
-        tryout << "Enter three digits:\n";
-        tryout > c[0];
-        tryout > c[1];
-        tryout > c[2];
-        tryout << "numer is: ";
-        tryout << c;
-        tryout << "\n";
-
+//        // Recive data
+//        tryout << "Enter three digits:\n";
+//        tryout > c[0];
+//        tryout > c[1];
+//        tryout > c[2];
+//        tryout << "numer is: ";
+//        tryout << c;
+//        tryout << "\n";
 
         // Convert char to int and send to servo
-        pwm1.cycle(2, (uint16_t(atoi(c))));
+        //pwm1.cycle(2, (uint16_t(atoi(c))));
+        pwm1.cycle(2, 1000);
     }
 }
 

@@ -34,7 +34,7 @@
              (++) Auto-Preload Configuration.
              (++) Enable/Disable the counter.
   
-         (#) TIM Output Compare management: this group includes all needed 
+         (#) TIM Output Comp RCC_APB1PeriphClockCmdare management: this group includes all needed
              functions to configure the Capture/Compare unit used in Output 
              compare mode: 
              (++) Configure each channel, independently, in Output Compare mode.
