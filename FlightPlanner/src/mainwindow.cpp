@@ -23,6 +23,7 @@ MainWindow::MainWindow(QWidget *parent) :
     else
     {
         ui->Serialconnectedlabel->setText("WARNING: Connection failed.");
+        ui->pushButton_3->setEnabled(false);
     }
 }
 
