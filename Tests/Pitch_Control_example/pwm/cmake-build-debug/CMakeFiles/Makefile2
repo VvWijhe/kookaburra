@@ -62,9 +62,9 @@ CMAKE_BINARY_DIR = C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Pitch_Contro
 # Target rules for target CMakeFiles/pwm.elf.dir
 
 # All Build rule for target.
-CMakeFiles/pwm.elf.dir/all: STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/all
-CMakeFiles/pwm.elf.dir/all: F0DiscoveryDir/CMakeFiles/STM32F0DiscoveryLib.dir/all
 CMakeFiles/pwm.elf.dir/all: STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/all
+CMakeFiles/pwm.elf.dir/all: F0DiscoveryDir/CMakeFiles/STM32F0DiscoveryLib.dir/all
+CMakeFiles/pwm.elf.dir/all: STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/all
 	$(MAKE) -f CMakeFiles\pwm.elf.dir\build.make CMakeFiles/pwm.elf.dir/depend
 	$(MAKE) -f CMakeFiles\pwm.elf.dir\build.make CMakeFiles/pwm.elf.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Pitch_Control_example\pwm\cmake-build-debug\CMakeFiles --progress-num=28,29,30,31,32,33,34 "Built target pwm.elf"
