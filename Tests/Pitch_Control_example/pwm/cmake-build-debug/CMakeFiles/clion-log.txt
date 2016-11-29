@@ -1,4 +1,4 @@
-"C:\Program Files (x86)\JetBrains\CLion 2016.3\bin\cmake\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" C:\Users\Jamie\Documents\GitHub\kookaburra\Drivers\Pitch_Control_example\pwm
+"C:\Program Files (x86)\JetBrains\CLion 2016.3\bin\cmake\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Pitch_Control_example\pwm
 Kookaboora puls-with-modulation
 -- The C compiler identification is GNU 5.3.0
 -- The CXX compiler identification is GNU 5.3.0
@@ -25,8 +25,8 @@ Kookaboora puls-with-modulation
 -- Geen GNU ARM Toolchain gevonden op C:\Program Files (x86)/GNU Tools ARM Embedded/5.3 2016q1
 -- GNU ARM Toolchain gevonden op C:\Program Files (x86)/GNU Tools ARM Embedded/5.4 2016q2
 -- GNU ARM Toolchain op C:\Program Files (x86)/GNU Tools ARM Embedded/5.4 2016q2 wordt gebruikt.
--- Build output dir is : C:/Users/Jamie/Documents/GitHub/kookaburra/Drivers/Pitch_Control_example/pwm/CLionBuildOutput/Debug
+-- Build output dir is : C:/Users/Jamie/Documents/GitHub/kookaburra/Tests/Pitch_Control_example/pwm/CLionBuildOutput/Debug
 -- STM32F0xx Perif Driver wordt zonder debug ondersteuning gecompileerd
 -- Configuring done
 -- Generating done
--- Build files have been written to: C:/Users/Jamie/Documents/GitHub/kookaburra/Drivers/Pitch_Control_example/pwm/cmake-build-debug
+-- Build files have been written to: C:/Users/Jamie/Documents/GitHub/kookaburra/Tests/Pitch_Control_example/pwm/cmake-build-debug

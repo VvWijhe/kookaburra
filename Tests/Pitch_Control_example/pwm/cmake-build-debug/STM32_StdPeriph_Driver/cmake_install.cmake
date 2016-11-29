@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/Jamie/Documents/GitHub/kookaburra/Drivers/Pitch_Control_example/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver
+# Install script for directory: C:/Users/Jamie/Documents/GitHub/kookaburra/Tests/Pitch_Control_example/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

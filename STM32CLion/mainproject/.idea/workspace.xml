@@ -17,7 +17,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9bb779a6-c741-4f2c-a8d2-139c7b84ffc4" name="Default" comment="Renamed project">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Basisopbouw/mainproject/CLionBuildOutput/Debug/mainproject.elf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Basisopbouw/mainproject/CMakeLists.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Basisopbouw/mainproject/Release_Notes.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Basisopbouw/mainproject/h/comm.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Basisopbouw/mainproject/h/main.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Basisopbouw/mainproject/h/stm32f0xx_conf.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Basisopbouw/mainproject/h/stm32f0xx_it.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Basisopbouw/mainproject/h/term_io.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Basisopbouw/mainproject/main.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Basisopbouw/mainproject/readme.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Basisopbouw/mainproject/stm32f0xx_it.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Basisopbouw/mainproject/system_stm32f0xx.c" afterPath="" />
     </list>
     <list id="95c66ab1-e3ac-416d-9931-d39222814d1b" name="Rejected commit: Default" comment="Renamed project" />
     <ignored path="discoveryf0demo.iws" />
@@ -140,7 +151,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.General" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="C:/Program Files (x86)/STMicroelectronics/STM32 ST-LINK Utility/ST-LINK Utility/qstlink.exe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Tests/Pitch_Control_example/pwm/CMakeLists.txt" />
     <property name="js.eslint.eslintPackage" value="" />
   </component>
   <component name="RunManager" selected="Application.Build All">
@@ -379,7 +390,7 @@
       <workItem from="1477778834066" duration="52000" />
       <workItem from="1480363898804" duration="1791000" />
       <workItem from="1480366464268" duration="3521000" />
-      <workItem from="1480414722391" duration="422000" />
+      <workItem from="1480414722391" duration="742000" />
     </task>
     <task id="LOCAL-00001" summary="Renamed project">
       <created>1474293605687</created>
@@ -406,10 +417,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13713000" />
+    <option name="totallyTimeSpent" value="14033000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1552" height="840" extended-state="7" />
+    <frame x="-8" y="-8" width="1552" height="840" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2014531" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -418,7 +429,7 @@
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26435536" sideWeight="0.4736457" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31117398" sideWeight="0.51849407" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31117398" sideWeight="0.48150593" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31117398" sideWeight="0.48150593" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />

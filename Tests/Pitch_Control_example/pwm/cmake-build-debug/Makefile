@@ -47,10 +47,10 @@ RM = "C:\Program Files (x86)\JetBrains\CLion 2016.3\bin\cmake\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\Jamie\Documents\GitHub\kookaburra\Drivers\Pitch_Control_example\pwm
+CMAKE_SOURCE_DIR = C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Pitch_Control_example\pwm
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\Jamie\Documents\GitHub\kookaburra\Drivers\Pitch_Control_example\pwm\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Pitch_Control_example\pwm\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -79,9 +79,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Jamie\Documents\GitHub\kookaburra\Drivers\Pitch_Control_example\pwm\cmake-build-debug\CMakeFiles C:\Users\Jamie\Documents\GitHub\kookaburra\Drivers\Pitch_Control_example\pwm\cmake-build-debug\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Pitch_Control_example\pwm\cmake-build-debug\CMakeFiles C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Pitch_Control_example\pwm\cmake-build-debug\CMakeFiles\progress.marks
 	$(MAKE) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Jamie\Documents\GitHub\kookaburra\Drivers\Pitch_Control_example\pwm\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Pitch_Control_example\pwm\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -161,32 +161,32 @@ STM32F0DiscoveryLib/fast:
 	$(MAKE) -f F0DiscoveryDir\CMakeFiles\STM32F0DiscoveryLib.dir\build.make F0DiscoveryDir/CMakeFiles/STM32F0DiscoveryLib.dir/build
 .PHONY : STM32F0DiscoveryLib/fast
 
-C_/Users/Jamie/Documents/GitHub/kookaburra/Drivers/Pitch_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.obj: C_/Users/Jamie/Documents/GitHub/kookaburra/Drivers/Pitch_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
+C_/Users/Jamie/Documents/GitHub/kookaburra/Tests/Pitch_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.obj: C_/Users/Jamie/Documents/GitHub/kookaburra/Tests/Pitch_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
 
-.PHONY : C_/Users/Jamie/Documents/GitHub/kookaburra/Drivers/Pitch_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.obj
+.PHONY : C_/Users/Jamie/Documents/GitHub/kookaburra/Tests/Pitch_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.obj
 
 # target to build an object file
-C_/Users/Jamie/Documents/GitHub/kookaburra/Drivers/Pitch_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj:
-	$(MAKE) -f CMakeFiles\pwm.elf.dir\build.make CMakeFiles/pwm.elf.dir/C_/Users/Jamie/Documents/GitHub/kookaburra/Drivers/Pitch_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
-.PHONY : C_/Users/Jamie/Documents/GitHub/kookaburra/Drivers/Pitch_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
+C_/Users/Jamie/Documents/GitHub/kookaburra/Tests/Pitch_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj:
+	$(MAKE) -f CMakeFiles\pwm.elf.dir\build.make CMakeFiles/pwm.elf.dir/C_/Users/Jamie/Documents/GitHub/kookaburra/Tests/Pitch_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
+.PHONY : C_/Users/Jamie/Documents/GitHub/kookaburra/Tests/Pitch_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
 
-C_/Users/Jamie/Documents/GitHub/kookaburra/Drivers/Pitch_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.i: C_/Users/Jamie/Documents/GitHub/kookaburra/Drivers/Pitch_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.i
+C_/Users/Jamie/Documents/GitHub/kookaburra/Tests/Pitch_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.i: C_/Users/Jamie/Documents/GitHub/kookaburra/Tests/Pitch_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.i
 
-.PHONY : C_/Users/Jamie/Documents/GitHub/kookaburra/Drivers/Pitch_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.i
+.PHONY : C_/Users/Jamie/Documents/GitHub/kookaburra/Tests/Pitch_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.i
 
 # target to preprocess a source file
-C_/Users/Jamie/Documents/GitHub/kookaburra/Drivers/Pitch_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.i:
-	$(MAKE) -f CMakeFiles\pwm.elf.dir\build.make CMakeFiles/pwm.elf.dir/C_/Users/Jamie/Documents/GitHub/kookaburra/Drivers/Pitch_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.i
-.PHONY : C_/Users/Jamie/Documents/GitHub/kookaburra/Drivers/Pitch_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.i
+C_/Users/Jamie/Documents/GitHub/kookaburra/Tests/Pitch_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.i:
+	$(MAKE) -f CMakeFiles\pwm.elf.dir\build.make CMakeFiles/pwm.elf.dir/C_/Users/Jamie/Documents/GitHub/kookaburra/Tests/Pitch_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.i
+.PHONY : C_/Users/Jamie/Documents/GitHub/kookaburra/Tests/Pitch_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.i
 
-C_/Users/Jamie/Documents/GitHub/kookaburra/Drivers/Pitch_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.s: C_/Users/Jamie/Documents/GitHub/kookaburra/Drivers/Pitch_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.s
+C_/Users/Jamie/Documents/GitHub/kookaburra/Tests/Pitch_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.s: C_/Users/Jamie/Documents/GitHub/kookaburra/Tests/Pitch_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.s
 
-.PHONY : C_/Users/Jamie/Documents/GitHub/kookaburra/Drivers/Pitch_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.s
+.PHONY : C_/Users/Jamie/Documents/GitHub/kookaburra/Tests/Pitch_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.s
 
 # target to generate assembly for a file
-C_/Users/Jamie/Documents/GitHub/kookaburra/Drivers/Pitch_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.s:
-	$(MAKE) -f CMakeFiles\pwm.elf.dir\build.make CMakeFiles/pwm.elf.dir/C_/Users/Jamie/Documents/GitHub/kookaburra/Drivers/Pitch_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.s
-.PHONY : C_/Users/Jamie/Documents/GitHub/kookaburra/Drivers/Pitch_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.s
+C_/Users/Jamie/Documents/GitHub/kookaburra/Tests/Pitch_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.s:
+	$(MAKE) -f CMakeFiles\pwm.elf.dir\build.make CMakeFiles/pwm.elf.dir/C_/Users/Jamie/Documents/GitHub/kookaburra/Tests/Pitch_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.s
+.PHONY : C_/Users/Jamie/Documents/GitHub/kookaburra/Tests/Pitch_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.s
 
 PWM.obj: PWM.cpp.obj
 
@@ -335,9 +335,9 @@ help:
 	@echo ... CMSISFIRMWARE
 	@echo ... F0StdPerifDriver
 	@echo ... STM32F0DiscoveryLib
-	@echo ... C_/Users/Jamie/Documents/GitHub/kookaburra/Drivers/Pitch_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.obj
-	@echo ... C_/Users/Jamie/Documents/GitHub/kookaburra/Drivers/Pitch_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.i
-	@echo ... C_/Users/Jamie/Documents/GitHub/kookaburra/Drivers/Pitch_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.s
+	@echo ... C_/Users/Jamie/Documents/GitHub/kookaburra/Tests/Pitch_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.obj
+	@echo ... C_/Users/Jamie/Documents/GitHub/kookaburra/Tests/Pitch_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.i
+	@echo ... C_/Users/Jamie/Documents/GitHub/kookaburra/Tests/Pitch_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.s
 	@echo ... PWM.obj
 	@echo ... PWM.i
 	@echo ... PWM.s
