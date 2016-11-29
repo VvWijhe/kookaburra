@@ -1,17 +1,16 @@
 #include <stm32f0xx.h>
 #include <pwm.h>
 #include <cmath>
-//#include <cmath>
+#include <stm32f0_discovery.h>
 #include "MPU6050.h"
-#include "main.h"
 
 #define CONVERSIONG 3.9
 
-PWM pwm1;
+PWM pwm;
 MPU6050 accelerometer;
 
 int main(void){
-    pwm1.initServo();
+    pwm.initServo();
     accelerometer.init();
 
     STM_EVAL_LEDInit(LED4);
@@ -21,9 +20,9 @@ int main(void){
         accelGyroDataRaw_t accelGyroDataRaw;
 
         if (accelerometer.testConnection()) {
-            STM_EVAL_LEDToggle(LED3);
-        } else {
             STM_EVAL_LEDToggle(LED4);
+        } else {
+            STM_EVAL_LEDToggle(LED3);
         }
 
         accelerometer.getRawAccelGyro(&accelGyroDataRaw);
@@ -38,7 +37,7 @@ int main(void){
 
         pitch += 90;
 
-        pwm1.cycle(2, (uint32_t) ((1000 - 2000) * pitch / 180 + 1000) + 1000);
+        pwm.cycle(2, (uint32_t) ((1000 - 2000) * pitch / 180 + 1000) + 1000);
     }
 }
 
