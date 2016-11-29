@@ -1,145 +1,85 @@
-/**
-  ******************************************************************************
-  * @file    main.c 
-  * @author  MCD Application Team
-  * @version V1.0.0
-  * @date    23-March-2012
-  * @brief   Main program body
-  ******************************************************************************
-  * @attention
-  *
-  * <h2><center>&copy; COPYRIGHT 2012 STMicroelectronics</center></h2>
-  *
-  * Licensed under MCD-ST Liberty SW License Agreement V2, (the "License");
-  * You may not use this file except in compliance with the License.
-  * You may obtain a copy of the License at:
-  *
-  *        http://www.st.com/software_license_agreement_liberty_v2
-  *
-  * Unless required by applicable law or agreed to in writing, software 
-  * distributed under the License is distributed on an "AS IS" BASIS, 
-  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  * See the License for the specific language governing permissions and
-  * limitations under the License.
-  *
-  ******************************************************************************
-  */
+/******************************************************************************
+ * Project        : HAN ESE PRJ2, PRJ1V & PRJ1D
+ * File           : Main program - Output Compare
+ * Copyright      : 2013 HAN Embedded Systems Engineering
+ ******************************************************************************
+  Change History:
 
-/* Includes ------------------------------------------------------------------*/
-#include "main.h"
+    Version 1.0 - May 2013
+    > Initial revision
 
-/** @addtogroup STM32F0-Discovery_Demo
-  * @{
-  */
+******************************************************************************/
+#include "stm32f0xx.h"
+#include "stm32f0_discovery.h"
 
-/* Private typedef -----------------------------------------------------------*/
-/* Private define ------------------------------------------------------------*/
-/* Private macro -------------------------------------------------------------*/
-/* Private variables ---------------------------------------------------------*/
-static __IO uint32_t TimingDelay;
-uint8_t BlinkSpeed = 0;
+// ----------------------------------------------------------------------------
+// Global variables
+// ----------------------------------------------------------------------------
 
-class Airplane {
-public:
-    Airplane(){
-        STM_EVAL_LEDOn(LED3);
-        Delay(100);
-        STM_EVAL_LEDOff(LED3);
-    }
-    ~Airplane(){}
+// ----------------------------------------------------------------------------
+// Function prototypes
+// ----------------------------------------------------------------------------
 
-    void start(){}
+// ----------------------------------------------------------------------------
+// Main
+// ----------------------------------------------------------------------------
+int main(void)
+{
+    GPIO_InitTypeDef        GPIO_InitStructure;
+    TIM_TimeBaseInitTypeDef TIM_TimeBaseStructure;
+    TIM_OCInitTypeDef       TIM_OCInitStructure;
 
-private:
-    float heigth;
-};
-
-/* Private function prototypes -----------------------------------------------*/
-/* Private functions ---------------------------------------------------------*/
-
-/**
-  * @brief  Main program.
-  * @param  None
-  * @retval None
-  */
-int main(void) {
-    RCC_ClocksTypeDef RCC_Clocks;
-
-    /* Configure LED3 and LED4 on STM32F0-Discovery */
-    STM_EVAL_LEDInit(LED3);
-    STM_EVAL_LEDInit(LED4);
-
-    /* Initialize User_Button on STM32F0-Discovery */
+    // Initialize User Button on STM32F0-Discovery
     STM_EVAL_PBInit(BUTTON_USER, BUTTON_MODE_GPIO);
 
-    /* SysTick end of count event each 1ms */
-    RCC_GetClocksFreq(&RCC_Clocks);
-    SysTick_Config(RCC_Clocks.HCLK_Frequency / 1000);
+    //[..] To use the Timer in Output Compare mode, the following steps are mandatory:
 
-    Airplane myAirplane;
-    myAirplane.start();
+    //(#) Enable TIM clock using
+    //    RCC_APBxPeriphClockCmd(RCC_APBxPeriph_TIMx, ENABLE) function.
+    RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3, ENABLE);
 
-    while(1){
-        STM_EVAL_LEDToggle(LED4);
-        Delay(100);
-        STM_EVAL_LEDToggle(LED4);
-        Delay(500);
+    //(#) Configure the TIM pins by configuring the corresponding GPIO pins
+    //    This is LED4 on STM32F0-Discovery
+    RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOC, ENABLE);
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;
+    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_8;
+    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+    GPIO_Init(GPIOC, &GPIO_InitStructure);
+    GPIO_PinAFConfig(GPIOC, GPIO_PinSource8, GPIO_AF_1);
+
+    //(#) Configure the Time base unit as described in the first part of this
+    //    driver, if needed, else the Timer will run with the default
+    //    configuration:
+    //    (++) Autoreload value = 0xFFFF.
+    //    (++) Prescaler value = 0x0000.
+    //    (++) Counter mode = Up counting.
+    //    (++) Clock Division = TIM_CKD_DIV1.
+    TIM_TimeBaseStructure.TIM_ClockDivision = TIM_CKD_DIV1;
+    TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;
+    TIM_TimeBaseStructure.TIM_Period = 1000 - 1;
+    TIM_TimeBaseStructure.TIM_Prescaler = (uint16_t)((SystemCoreClock / 1000) - 1);
+    TIM_TimeBaseInit(TIM3, &TIM_TimeBaseStructure);
+
+    //(#) Fill the TIM_OCInitStruct with the desired parameters including:
+    //    (++) The TIM Output Compare mode: TIM_OCMode.
+    //    (++) TIM Output State: TIM_OutputState.
+    //    (++) TIM Pulse value: TIM_Pulse.
+    //    (++) TIM Output Compare Polarity : TIM_OCPolarity.
+    TIM_OCInitStructure.TIM_OCMode = TIM_OCMode_Toggle;
+    TIM_OCInitStructure.TIM_OutputState = TIM_OutputState_Enable;
+    TIM_OCInitStructure.TIM_Pulse = 500;
+    TIM_OCInitStructure.TIM_OCPolarity = TIM_OCPolarity_High;
+
+    //(#) Call TIM_OCxInit(TIMx, &TIM_OCInitStruct) to configure the desired
+    //    channel with the corresponding configuration.
+    TIM_OC3Init(TIM3, &TIM_OCInitStructure);
+
+    //(#) Call the TIM_Cmd(ENABLE) function to enable the TIM counter.
+    TIM_Cmd(TIM3, ENABLE);
+
+    while(1)
+    {
+        ;
     }
 }
 
-/**
-  * @brief  Inserts a delay time.
-  * @param  nTime: specifies the delay time length, in 1 ms.
-  * @retval None
-  */
-void Delay(__IO uint32_t nTime) {
-    TimingDelay = nTime;
-
-    while (TimingDelay != 0);
-}
-
-#ifdef __cplusplus
-extern "C" {
-#endif
-
-/**
-  * @brief  Decrements the TimingDelay variable.
-  * @param  None
-  * @retval None
-  */
-void TimingDelay_Decrement(void) {
-    if (TimingDelay != 0x00) {
-        TimingDelay--;
-    }
-}
-
-#ifdef __cplusplus
-}
-#endif
-
-#ifdef  USE_FULL_ASSERT
-
-/**
-  * @brief  Reports the name of the source file and the source line number
-  *   where the assert_param error has occurred.
-  * @param  file: pointer to the source file name
-  * @param  line: assert_param error line source number
-  * @retval None
-  */
-void assert_failed(uint8_t* file, uint32_t line)
-{ 
-  /* User can add his own implementation to report the file name and line number,
-     ex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
-
-  /* Infinite loop */
-  while (1)
-  {}
-}
-#endif
-
-/**
-  * @}
-  */
-
-
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
