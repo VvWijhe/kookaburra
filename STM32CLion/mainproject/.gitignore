@@ -88,3 +88,5 @@ dkms.conf
 .gitignore
 cmake-build-debug/CMakeFiles/3.6.2/CompilerIdASM-ATT/
 cmake-build-debug/CMakeFiles/CMakeTmp/
+/CLionBuildOutput/
+/cmake-build-debug/
