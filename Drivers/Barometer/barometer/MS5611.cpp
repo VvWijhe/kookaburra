@@ -29,7 +29,6 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #define MS5611_I2C_SCL_Pin GPIO_Pin_6
 #define MS5611_I2C_SDA_Pin GPIO_Pin_7
-#define MS5611_I2C_Port GPIOB
 #define MS5611_I2C I2C1
 #define MS5611_TIMEOUT ((uint32_t)(0x00001000))
 
@@ -212,7 +211,7 @@ float MS5611::getPressure() {
 }
 
 float MS5611::getAltitude() {
-    return toAltitude(getPressure());
+    return toAltitude(getPressure()) * float(0.3048);
 }
 
 float MS5611::toAltitude(float pressure) {
