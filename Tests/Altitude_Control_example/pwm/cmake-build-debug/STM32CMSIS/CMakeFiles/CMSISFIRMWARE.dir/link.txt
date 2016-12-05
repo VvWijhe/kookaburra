@@ -1,0 +1,2 @@
+C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\ARM-NO~2.EXE qc libCMSISFIRMWARE.a  CMakeFiles/CMSISFIRMWARE.dir/Source/Templates/system_stm32f0xx.c.obj CMakeFiles/CMSISFIRMWARE.dir/Source/Templates/gcc/startup_stm32f0xx.s.obj
+C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR17F9~1.EXE libCMSISFIRMWARE.a
