@@ -73,13 +73,52 @@ int main(void) {
             STM_EVAL_LEDToggle(LED4);
         }
 
+
+
         Barometer.readvalues();
 
-        float altitude = Barometer.getAltitude();
+        usart << "Adress : ";
+        usart << Barometer.getdevAddr();
+        usart << "\n";
+
+        usart << "C1 : ";
+        usart << Barometer.getvalueC1();
+        usart << "\n";
+
+        usart << "C2 : ";
+        usart << Barometer.getvalueC2();
+        usart << "\n";
+
+        usart << "C3 : ";
+        usart << Barometer.getvalueC3();
+        usart << "\n";
+
+        usart << "C4 : ";
+        usart << Barometer.getvalueC4();
+        usart << "\n";
+
+        usart << "C5 : ";
+        usart << Barometer.getvalueC5();
+        usart << "\n";
+
+        usart << "C6 : ";
+        usart << Barometer.getvalueC6();
+        usart << "\n";
+
         usart << "Altitude : ";
-        usart << altitude;
+        usart << Barometer.getAltitude();
         usart << " Meters";
+        usart << "\n";
+
+        usart << "Pressure : ";
+        usart << Barometer.getPressure();
+        usart << "\n";
+
+        usart << "Temprature : ";
+        usart << Barometer.getTemperature();
         usart << "\n\n";
+
+
         delay(100);
     }
 }

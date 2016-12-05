@@ -40,6 +40,10 @@ MS5611::MS5611(uint8_t address) {
     this->devAddr = address;
 }
 
+uint8_t MS5611::getdevAddr(){
+    return this->devAddr;
+}
+
 /** Power on and prepare for general usage.
  * This method reads coefficients stored in PROM.
  */
@@ -78,6 +82,29 @@ void MS5611::initialize(){
     I2C_Cmd(MS5611_I2C, ENABLE);
 }
 
+uint16_t MS5611::getvalueC1(){
+    return C1;
+}
+
+uint16_t MS5611::getvalueC2(){
+    return C2;
+}
+
+uint16_t MS5611::getvalueC3(){
+    return C3;
+}
+
+uint16_t MS5611::getvalueC4(){
+    return C4;
+}
+
+uint16_t MS5611::getvalueC5(){
+    return C5;
+}
+
+uint16_t MS5611::getvalueC6(){
+    return C6;
+}
 
 void MS5611::readvalues() {
     // Reading 6 calibration data values , length of a byte
@@ -97,6 +124,8 @@ void MS5611::readvalues() {
 
     update();
 }
+
+
 
 /** Verify the I2C connection.
  * @return True if connection is valid, false otherwise
@@ -211,7 +240,7 @@ float MS5611::getPressure() {
 }
 
 float MS5611::getAltitude() {
-    return toAltitude(getPressure()) * float(0.3048);
+    return toAltitude(getPressure()) * float(0.3048) ;
 }
 
 float MS5611::toAltitude(float pressure) {

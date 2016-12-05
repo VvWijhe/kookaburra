@@ -34,7 +34,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #define MS5611_ADDRESS_CSB_LOW  0x76    //I2C
 #define MS5611_ADDRESS_CSB_HIGH 0x77    //SPI
-#define MS5611_DEFAULT_ADDRESS  MS5611_ADDRESS_CSB_HIGH
+#define MS5611_DEFAULT_ADDRESS  MS5611_ADDRESS_CSB_LOW
 
 #define MS5611_RA_ADC           0x00
 #define MS5611_RA_RESET         0x1E
@@ -73,6 +73,14 @@ typedef int8_t   s8;
 class MS5611 {
 public:
     MS5611(uint8_t address = MS5611_DEFAULT_ADDRESS);
+
+    uint8_t getdevAddr();
+    uint16_t getvalueC1();
+    uint16_t getvalueC2();
+    uint16_t getvalueC3();
+    uint16_t getvalueC4();
+    uint16_t getvalueC5();
+    uint16_t getvalueC6();
 
     void initialize();
     void readvalues();
