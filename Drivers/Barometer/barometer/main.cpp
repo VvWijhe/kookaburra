@@ -65,9 +65,9 @@ int main(void) {
     usart << "This is a test application for the barometer\n";
 
     while (1) {
-        usart << "Temperature: ";
-        usart << Barometer.getTemperature();
-        usart << "\n";
+        //usart << "Temperature: ";
+        //usart << Barometer.getTemperature();
+        //usart << "\n";
 
         usart << "Altitude: ";
         usart << Barometer.getAltitude();
