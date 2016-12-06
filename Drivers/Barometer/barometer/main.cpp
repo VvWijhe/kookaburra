@@ -45,7 +45,7 @@ USART_1 usart;
   */
 int main(void) {
     RCC_ClocksTypeDef RCC_Clocks;
-    MS5611 Barometer(MS5611_ADDRESS_CSB_LOW);
+    MS5611 Barometer;
 
 
     // Configure LED3 and LED4 on STM32F0-Discovery
@@ -59,65 +59,19 @@ int main(void) {
     // Initialize MS5611
     Barometer.initialize();
 
-
-
     //initialize usart
     usart.init();
 
     usart << "This is a test application for the barometer\n";
 
     while (1) {
-        if (Barometer.testConnection()) {
-            STM_EVAL_LEDToggle(LED3);
-        } else {
-            STM_EVAL_LEDToggle(LED4);
-        }
-
-
-
-        Barometer.readvalues();
-
-        usart << "Adress : ";
-        usart << Barometer.getdevAddr();
-        usart << "\n";
-
-        usart << "C1 : ";
-        usart << Barometer.getvalueC1();
-        usart << "\n";
-
-        usart << "C2 : ";
-        usart << Barometer.getvalueC2();
-        usart << "\n";
-
-        usart << "C3 : ";
-        usart << Barometer.getvalueC3();
-        usart << "\n";
-
-        usart << "C4 : ";
-        usart << Barometer.getvalueC4();
-        usart << "\n";
-
-        usart << "C5 : ";
-        usart << Barometer.getvalueC5();
-        usart << "\n";
-
-        usart << "C6 : ";
-        usart << Barometer.getvalueC6();
-        usart << "\n";
-
-        usart << "Altitude : ";
-        usart << Barometer.getAltitude();
-        usart << " Meters";
-        usart << "\n";
-
-        usart << "Pressure : ";
-        usart << Barometer.getPressure();
-        usart << "\n";
-
-        usart << "Temprature : ";
+        usart << "Temperature: ";
         usart << Barometer.getTemperature();
-        usart << "\n\n";
+        usart << "\n";
 
+        usart << "Altitude: ";
+        usart << Barometer.getAltitude();
+        usart << "\n";
 
         delay(100);
     }

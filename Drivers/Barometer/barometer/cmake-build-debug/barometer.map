@@ -1,0 +1,2325 @@
+Archive member included to satisfy reference by file (symbol)
+
+F0DiscoveryDir/libSTM32F0DiscoveryLib.a(stm32f0_discovery.c.obj)
+                              CMakeFiles/barometer.elf.dir/main.cpp.obj (STM_EVAL_LEDInit)
+STM32CMSIS/libCMSISFIRMWARE.a(startup_stm32f0xx.s.obj)
+                              (Reset_Handler)
+STM32CMSIS/libCMSISFIRMWARE.a(system_stm32f0xx.c.obj)
+                              STM32CMSIS/libCMSISFIRMWARE.a(startup_stm32f0xx.s.obj) (SystemInit)
+STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_exti.c.obj)
+                              F0DiscoveryDir/libSTM32F0DiscoveryLib.a(stm32f0_discovery.c.obj) (EXTI_Init)
+STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_gpio.c.obj)
+                              CMakeFiles/barometer.elf.dir/usart.cpp.obj (GPIO_Init)
+STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+                              CMakeFiles/barometer.elf.dir/MS5611.cpp.obj (I2C_Init)
+STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_misc.c.obj)
+                              F0DiscoveryDir/libSTM32F0DiscoveryLib.a(stm32f0_discovery.c.obj) (NVIC_Init)
+STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+                              CMakeFiles/barometer.elf.dir/MS5611.cpp.obj (RCC_I2CCLKConfig)
+STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_syscfg.c.obj)
+                              F0DiscoveryDir/libSTM32F0DiscoveryLib.a(stm32f0_discovery.c.obj) (SYSCFG_EXTILineConfig)
+STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+                              CMakeFiles/barometer.elf.dir/usart.cpp.obj (USART_Init)
+c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-w_log.o)
+                              CMakeFiles/barometer.elf.dir/MS5611.cpp.obj (log)
+c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-e_log.o)
+                              c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-w_log.o) (__ieee754_log)
+c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_lib_ver.o)
+                              c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-w_log.o) (__fdlib_version)
+c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_matherr.o)
+                              c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-w_log.o) (matherr)
+c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_nan.o)
+                              c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-w_log.o) (nan)
+c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_udivsi3.o)
+                              CMakeFiles/barometer.elf.dir/main.cpp.obj (__aeabi_uidiv)
+c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_dvmd_tls.o)
+                              c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_udivsi3.o) (__aeabi_idiv0)
+c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_arm_cmpdf2.o)
+                              c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-w_log.o) (__aeabi_dcmpeq)
+c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_arm_cmpsf2.o)
+                              CMakeFiles/barometer.elf.dir/MS5611.cpp.obj (__aeabi_fcmplt)
+c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_fixunssfsi.o)
+                              CMakeFiles/barometer.elf.dir/main.cpp.obj (__aeabi_f2uiz)
+c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(addsf3.o)
+                              CMakeFiles/barometer.elf.dir/MS5611.cpp.obj (__aeabi_fadd)
+c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(divsf3.o)
+                              CMakeFiles/barometer.elf.dir/MS5611.cpp.obj (__aeabi_fdiv)
+c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(eqsf2.o)
+                              c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_arm_cmpsf2.o) (__eqsf2)
+c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(gesf2.o)
+                              c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_arm_cmpsf2.o) (__gesf2)
+c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(lesf2.o)
+                              c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_arm_cmpsf2.o) (__lesf2)
+c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(mulsf3.o)
+                              CMakeFiles/barometer.elf.dir/MS5611.cpp.obj (__aeabi_fmul)
+c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(subsf3.o)
+                              CMakeFiles/barometer.elf.dir/MS5611.cpp.obj (__aeabi_fsub)
+c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(fixsfsi.o)
+                              c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_fixunssfsi.o) (__aeabi_f2iz)
+c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(floatsisf.o)
+                              CMakeFiles/barometer.elf.dir/MS5611.cpp.obj (__aeabi_i2f)
+c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(floatunsisf.o)
+                              CMakeFiles/barometer.elf.dir/MS5611.cpp.obj (__aeabi_ui2f)
+c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(adddf3.o)
+                              c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-e_log.o) (__aeabi_dadd)
+c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(divdf3.o)
+                              c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-e_log.o) (__aeabi_ddiv)
+c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(eqdf2.o)
+                              c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_arm_cmpdf2.o) (__eqdf2)
+c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(gedf2.o)
+                              c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_arm_cmpdf2.o) (__gedf2)
+c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(ledf2.o)
+                              c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_arm_cmpdf2.o) (__ledf2)
+c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(muldf3.o)
+                              CMakeFiles/barometer.elf.dir/MS5611.cpp.obj (__aeabi_dmul)
+c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(subdf3.o)
+                              c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-e_log.o) (__aeabi_dsub)
+c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(unorddf2.o)
+                              c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-w_log.o) (__aeabi_dcmpun)
+c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(floatsidf.o)
+                              c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-e_log.o) (__aeabi_i2d)
+c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(extendsfdf2.o)
+                              CMakeFiles/barometer.elf.dir/MS5611.cpp.obj (__aeabi_f2d)
+c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(truncdfsf2.o)
+                              CMakeFiles/barometer.elf.dir/MS5611.cpp.obj (__aeabi_d2f)
+c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(unwind-arm.o)
+                              CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj (__aeabi_unwind_cpp_pr0)
+c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(libunwind.o)
+                              c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(unwind-arm.o) (restore_core_regs)
+c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(pr-support.o)
+                              c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(unwind-arm.o) (__gnu_unwind_execute)
+c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_clzsi2.o)
+                              c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(addsf3.o) (__clzsi2)
+c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-abort.o)
+                              c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(unwind-arm.o) (abort)
+c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-errno.o)
+                              c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-w_log.o) (__errno)
+c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-impure.o)
+                              c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-errno.o) (_impure_ptr)
+c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-itoa.o)
+                              CMakeFiles/barometer.elf.dir/usart.cpp.obj (itoa)
+c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-memcpy-stub.o)
+                              c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(unwind-arm.o) (memcpy)
+c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-reent.o)
+                              CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj (errno)
+c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-signal.o)
+                              c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-abort.o) (raise)
+c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-signalr.o)
+                              c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-signal.o) (_kill_r)
+c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-sysisatty.o)
+                              CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj (isatty)
+c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-utoa.o)
+                              c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-itoa.o) (__utoa)
+c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-nano-freer.o)
+                              c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-reent.o) (_free_r)
+c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-nano-mallocr.o)
+                              c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-signal.o) (_malloc_r)
+c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-sbrkr.o)
+                              c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-nano-mallocr.o) (_sbrk_r)
+c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-mlock.o)
+                              c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-nano-freer.o) (__malloc_lock)
+
+Allocating common symbols
+Common symbol       size              file
+
+errno               0x4               c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-reent.o)
+
+Discarded input sections
+
+ .text          0x00000000        0x0 CMakeFiles/barometer.elf.dir/main.cpp.obj
+ .data          0x00000000        0x0 CMakeFiles/barometer.elf.dir/main.cpp.obj
+ .bss           0x00000000        0x0 CMakeFiles/barometer.elf.dir/main.cpp.obj
+ .text          0x00000000        0x0 CMakeFiles/barometer.elf.dir/usart.cpp.obj
+ .data          0x00000000        0x0 CMakeFiles/barometer.elf.dir/usart.cpp.obj
+ .bss           0x00000000        0x0 CMakeFiles/barometer.elf.dir/usart.cpp.obj
+ .text._ZN7USART_1ltEc
+                0x00000000       0x20 CMakeFiles/barometer.elf.dir/usart.cpp.obj
+ .text._ZN7USART_1gtERc
+                0x00000000        0x2 CMakeFiles/barometer.elf.dir/usart.cpp.obj
+ .text._ZN7USART_1rsEPc
+                0x00000000        0x2 CMakeFiles/barometer.elf.dir/usart.cpp.obj
+ .text          0x00000000        0x0 CMakeFiles/barometer.elf.dir/MS5611.cpp.obj
+ .data          0x00000000        0x0 CMakeFiles/barometer.elf.dir/MS5611.cpp.obj
+ .bss           0x00000000        0x0 CMakeFiles/barometer.elf.dir/MS5611.cpp.obj
+ .text          0x00000000        0x0 CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
+ .data          0x00000000        0x0 CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
+ .bss           0x00000000        0x0 CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
+ .ARM.extab.text._kill
+                0x00000000        0x0 CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
+ .ARM.extab.text._exit
+                0x00000000        0x0 CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
+ .ARM.extab.text._getpid
+                0x00000000        0x0 CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
+ .text.get_heap_end
+                0x00000000        0xc CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
+ .ARM.extab.text.get_heap_end
+                0x00000000        0x0 CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
+ .ARM.exidx.text.get_heap_end
+                0x00000000        0x8 CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
+ .text.get_stack_top
+                0x00000000        0x6 CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
+ .ARM.extab.text.get_stack_top
+                0x00000000        0x0 CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
+ .ARM.exidx.text.get_stack_top
+                0x00000000        0x8 CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
+ .text._sbrk    0x00000000       0x20 CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
+ .ARM.extab.text._sbrk
+                0x00000000        0x0 CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
+ .ARM.exidx.text._sbrk
+                0x00000000        0x8 CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
+ .text._close   0x00000000        0x6 CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
+ .ARM.extab.text._close
+                0x00000000        0x0 CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
+ .ARM.exidx.text._close
+                0x00000000        0x8 CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
+ .text._fstat   0x00000000        0xa CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
+ .ARM.extab.text._fstat
+                0x00000000        0x0 CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
+ .ARM.exidx.text._fstat
+                0x00000000        0x8 CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
+ .text._lseek   0x00000000        0x4 CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
+ .ARM.extab.text._lseek
+                0x00000000        0x0 CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
+ .ARM.exidx.text._lseek
+                0x00000000        0x8 CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
+ .text._read    0x00000000        0x4 CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
+ .ARM.extab.text._read
+                0x00000000        0x0 CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
+ .ARM.exidx.text._read
+                0x00000000        0x8 CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
+ .text._write   0x00000000        0x4 CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
+ .ARM.extab.text._write
+                0x00000000        0x0 CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
+ .ARM.exidx.text._write
+                0x00000000        0x8 CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
+ .text._isatty_r
+                0x00000000        0xa CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
+ .ARM.extab.text._isatty_r
+                0x00000000        0x0 CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
+ .ARM.exidx.text._isatty_r
+                0x00000000        0x8 CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
+ .bss._ZL8heap_end
+                0x00000000        0x4 CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
+ .text          0x00000000        0x0 CMakeFiles/barometer.elf.dir/stm32f0xx_it.c.obj
+ .data          0x00000000        0x0 CMakeFiles/barometer.elf.dir/stm32f0xx_it.c.obj
+ .bss           0x00000000        0x0 CMakeFiles/barometer.elf.dir/stm32f0xx_it.c.obj
+ .ARM.extab.text.NMI_Handler
+                0x00000000        0x0 CMakeFiles/barometer.elf.dir/stm32f0xx_it.c.obj
+ .ARM.extab.text.HardFault_Handler
+                0x00000000        0x0 CMakeFiles/barometer.elf.dir/stm32f0xx_it.c.obj
+ .ARM.extab.text.SVC_Handler
+                0x00000000        0x0 CMakeFiles/barometer.elf.dir/stm32f0xx_it.c.obj
+ .ARM.extab.text.PendSV_Handler
+                0x00000000        0x0 CMakeFiles/barometer.elf.dir/stm32f0xx_it.c.obj
+ .ARM.extab.text.SysTick_Handler
+                0x00000000        0x0 CMakeFiles/barometer.elf.dir/stm32f0xx_it.c.obj
+ .text          0x00000000        0x0 F0DiscoveryDir/libSTM32F0DiscoveryLib.a(stm32f0_discovery.c.obj)
+ .data          0x00000000        0x0 F0DiscoveryDir/libSTM32F0DiscoveryLib.a(stm32f0_discovery.c.obj)
+ .bss           0x00000000        0x0 F0DiscoveryDir/libSTM32F0DiscoveryLib.a(stm32f0_discovery.c.obj)
+ .ARM.extab.text.STM_EVAL_LEDInit
+                0x00000000        0x0 F0DiscoveryDir/libSTM32F0DiscoveryLib.a(stm32f0_discovery.c.obj)
+ .text.STM_EVAL_LEDOn
+                0x00000000       0x18 F0DiscoveryDir/libSTM32F0DiscoveryLib.a(stm32f0_discovery.c.obj)
+ .ARM.extab.text.STM_EVAL_LEDOn
+                0x00000000        0x0 F0DiscoveryDir/libSTM32F0DiscoveryLib.a(stm32f0_discovery.c.obj)
+ .ARM.exidx.text.STM_EVAL_LEDOn
+                0x00000000        0x8 F0DiscoveryDir/libSTM32F0DiscoveryLib.a(stm32f0_discovery.c.obj)
+ .text.STM_EVAL_LEDOff
+                0x00000000       0x18 F0DiscoveryDir/libSTM32F0DiscoveryLib.a(stm32f0_discovery.c.obj)
+ .ARM.extab.text.STM_EVAL_LEDOff
+                0x00000000        0x0 F0DiscoveryDir/libSTM32F0DiscoveryLib.a(stm32f0_discovery.c.obj)
+ .ARM.exidx.text.STM_EVAL_LEDOff
+                0x00000000        0x8 F0DiscoveryDir/libSTM32F0DiscoveryLib.a(stm32f0_discovery.c.obj)
+ .text.STM_EVAL_LEDToggle
+                0x00000000       0x1c F0DiscoveryDir/libSTM32F0DiscoveryLib.a(stm32f0_discovery.c.obj)
+ .ARM.extab.text.STM_EVAL_LEDToggle
+                0x00000000        0x0 F0DiscoveryDir/libSTM32F0DiscoveryLib.a(stm32f0_discovery.c.obj)
+ .ARM.exidx.text.STM_EVAL_LEDToggle
+                0x00000000        0x8 F0DiscoveryDir/libSTM32F0DiscoveryLib.a(stm32f0_discovery.c.obj)
+ .text.STM_EVAL_PBInit
+                0x00000000       0x6c F0DiscoveryDir/libSTM32F0DiscoveryLib.a(stm32f0_discovery.c.obj)
+ .ARM.extab.text.STM_EVAL_PBInit
+                0x00000000        0x0 F0DiscoveryDir/libSTM32F0DiscoveryLib.a(stm32f0_discovery.c.obj)
+ .ARM.exidx.text.STM_EVAL_PBInit
+                0x00000000        0x8 F0DiscoveryDir/libSTM32F0DiscoveryLib.a(stm32f0_discovery.c.obj)
+ .text.STM_EVAL_PBGetState
+                0x00000000       0x14 F0DiscoveryDir/libSTM32F0DiscoveryLib.a(stm32f0_discovery.c.obj)
+ .ARM.extab.text.STM_EVAL_PBGetState
+                0x00000000        0x0 F0DiscoveryDir/libSTM32F0DiscoveryLib.a(stm32f0_discovery.c.obj)
+ .ARM.exidx.text.STM_EVAL_PBGetState
+                0x00000000        0x8 F0DiscoveryDir/libSTM32F0DiscoveryLib.a(stm32f0_discovery.c.obj)
+ .data.BUTTON_PORT
+                0x00000000        0x4 F0DiscoveryDir/libSTM32F0DiscoveryLib.a(stm32f0_discovery.c.obj)
+ .text          0x00000000       0x14 STM32CMSIS/libCMSISFIRMWARE.a(startup_stm32f0xx.s.obj)
+ .data          0x00000000        0x0 STM32CMSIS/libCMSISFIRMWARE.a(startup_stm32f0xx.s.obj)
+ .bss           0x00000000        0x0 STM32CMSIS/libCMSISFIRMWARE.a(startup_stm32f0xx.s.obj)
+ .text          0x00000000        0x0 STM32CMSIS/libCMSISFIRMWARE.a(system_stm32f0xx.c.obj)
+ .data          0x00000000        0x0 STM32CMSIS/libCMSISFIRMWARE.a(system_stm32f0xx.c.obj)
+ .bss           0x00000000        0x0 STM32CMSIS/libCMSISFIRMWARE.a(system_stm32f0xx.c.obj)
+ .ARM.extab.text.SystemInit
+                0x00000000        0x0 STM32CMSIS/libCMSISFIRMWARE.a(system_stm32f0xx.c.obj)
+ .text.SystemCoreClockUpdate
+                0x00000000       0x64 STM32CMSIS/libCMSISFIRMWARE.a(system_stm32f0xx.c.obj)
+ .ARM.extab.text.SystemCoreClockUpdate
+                0x00000000        0x0 STM32CMSIS/libCMSISFIRMWARE.a(system_stm32f0xx.c.obj)
+ .ARM.exidx.text.SystemCoreClockUpdate
+                0x00000000        0x8 STM32CMSIS/libCMSISFIRMWARE.a(system_stm32f0xx.c.obj)
+ .data.AHBPrescTable
+                0x00000000       0x10 STM32CMSIS/libCMSISFIRMWARE.a(system_stm32f0xx.c.obj)
+ .data.SystemCoreClock
+                0x00000000        0x4 STM32CMSIS/libCMSISFIRMWARE.a(system_stm32f0xx.c.obj)
+ .text          0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_exti.c.obj)
+ .data          0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_exti.c.obj)
+ .bss           0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_exti.c.obj)
+ .text.EXTI_DeInit
+                0x00000000       0x20 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_exti.c.obj)
+ .ARM.extab.text.EXTI_DeInit
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_exti.c.obj)
+ .ARM.exidx.text.EXTI_DeInit
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_exti.c.obj)
+ .text.EXTI_Init
+                0x00000000       0x68 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_exti.c.obj)
+ .ARM.extab.text.EXTI_Init
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_exti.c.obj)
+ .ARM.exidx.text.EXTI_Init
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_exti.c.obj)
+ .text.EXTI_StructInit
+                0x00000000        0xe STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_exti.c.obj)
+ .ARM.extab.text.EXTI_StructInit
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_exti.c.obj)
+ .ARM.exidx.text.EXTI_StructInit
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_exti.c.obj)
+ .text.EXTI_GenerateSWInterrupt
+                0x00000000       0x10 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_exti.c.obj)
+ .ARM.extab.text.EXTI_GenerateSWInterrupt
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_exti.c.obj)
+ .ARM.exidx.text.EXTI_GenerateSWInterrupt
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_exti.c.obj)
+ .text.EXTI_GetFlagStatus
+                0x00000000       0x14 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_exti.c.obj)
+ .ARM.extab.text.EXTI_GetFlagStatus
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_exti.c.obj)
+ .ARM.exidx.text.EXTI_GetFlagStatus
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_exti.c.obj)
+ .text.EXTI_ClearFlag
+                0x00000000        0xc STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_exti.c.obj)
+ .ARM.extab.text.EXTI_ClearFlag
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_exti.c.obj)
+ .ARM.exidx.text.EXTI_ClearFlag
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_exti.c.obj)
+ .text.EXTI_GetITStatus
+                0x00000000       0x1c STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_exti.c.obj)
+ .ARM.extab.text.EXTI_GetITStatus
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_exti.c.obj)
+ .ARM.exidx.text.EXTI_GetITStatus
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_exti.c.obj)
+ .text.EXTI_ClearITPendingBit
+                0x00000000        0xc STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_exti.c.obj)
+ .ARM.extab.text.EXTI_ClearITPendingBit
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_exti.c.obj)
+ .ARM.exidx.text.EXTI_ClearITPendingBit
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_exti.c.obj)
+ .text          0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_gpio.c.obj)
+ .data          0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_gpio.c.obj)
+ .bss           0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_gpio.c.obj)
+ .text.GPIO_DeInit
+                0x00000000       0x90 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_gpio.c.obj)
+ .ARM.extab.text.GPIO_DeInit
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_gpio.c.obj)
+ .ARM.exidx.text.GPIO_DeInit
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_gpio.c.obj)
+ .ARM.extab.text.GPIO_Init
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_gpio.c.obj)
+ .ARM.extab.text.GPIO_StructInit
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_gpio.c.obj)
+ .text.GPIO_PinLockConfig
+                0x00000000       0x24 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_gpio.c.obj)
+ .ARM.extab.text.GPIO_PinLockConfig
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_gpio.c.obj)
+ .ARM.exidx.text.GPIO_PinLockConfig
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_gpio.c.obj)
+ .text.GPIO_ReadInputDataBit
+                0x00000000        0xe STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_gpio.c.obj)
+ .ARM.extab.text.GPIO_ReadInputDataBit
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_gpio.c.obj)
+ .ARM.exidx.text.GPIO_ReadInputDataBit
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_gpio.c.obj)
+ .text.GPIO_ReadInputData
+                0x00000000        0x6 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_gpio.c.obj)
+ .ARM.extab.text.GPIO_ReadInputData
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_gpio.c.obj)
+ .ARM.exidx.text.GPIO_ReadInputData
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_gpio.c.obj)
+ .text.GPIO_ReadOutputDataBit
+                0x00000000        0xe STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_gpio.c.obj)
+ .ARM.extab.text.GPIO_ReadOutputDataBit
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_gpio.c.obj)
+ .ARM.exidx.text.GPIO_ReadOutputDataBit
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_gpio.c.obj)
+ .text.GPIO_ReadOutputData
+                0x00000000        0x6 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_gpio.c.obj)
+ .ARM.extab.text.GPIO_ReadOutputData
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_gpio.c.obj)
+ .ARM.exidx.text.GPIO_ReadOutputData
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_gpio.c.obj)
+ .text.GPIO_SetBits
+                0x00000000        0x4 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_gpio.c.obj)
+ .ARM.extab.text.GPIO_SetBits
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_gpio.c.obj)
+ .ARM.exidx.text.GPIO_SetBits
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_gpio.c.obj)
+ .text.GPIO_ResetBits
+                0x00000000        0x4 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_gpio.c.obj)
+ .ARM.extab.text.GPIO_ResetBits
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_gpio.c.obj)
+ .ARM.exidx.text.GPIO_ResetBits
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_gpio.c.obj)
+ .text.GPIO_WriteBit
+                0x00000000        0xc STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_gpio.c.obj)
+ .ARM.extab.text.GPIO_WriteBit
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_gpio.c.obj)
+ .ARM.exidx.text.GPIO_WriteBit
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_gpio.c.obj)
+ .text.GPIO_Write
+                0x00000000        0x4 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_gpio.c.obj)
+ .ARM.extab.text.GPIO_Write
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_gpio.c.obj)
+ .ARM.exidx.text.GPIO_Write
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_gpio.c.obj)
+ .ARM.extab.text.GPIO_PinAFConfig
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_gpio.c.obj)
+ .text          0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .data          0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .bss           0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .text.I2C_DeInit
+                0x00000000       0x34 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.extab.text.I2C_DeInit
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.exidx.text.I2C_DeInit
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.extab.text.I2C_Init
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.extab.text.I2C_StructInit
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.extab.text.I2C_Cmd
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .text.I2C_SoftwareResetCmd
+                0x00000000       0x1c STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.extab.text.I2C_SoftwareResetCmd
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.exidx.text.I2C_SoftwareResetCmd
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .text.I2C_StretchClockCmd
+                0x00000000       0x1c STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.extab.text.I2C_StretchClockCmd
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.exidx.text.I2C_StretchClockCmd
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .text.I2C_StopModeCmd
+                0x00000000       0x1c STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.extab.text.I2C_StopModeCmd
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.exidx.text.I2C_StopModeCmd
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .text.I2C_DualAddressCmd
+                0x00000000       0x1c STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.extab.text.I2C_DualAddressCmd
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.exidx.text.I2C_DualAddressCmd
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .text.I2C_OwnAddress2Config
+                0x00000000       0x20 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.extab.text.I2C_OwnAddress2Config
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.exidx.text.I2C_OwnAddress2Config
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .text.I2C_GeneralCallCmd
+                0x00000000       0x1c STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.extab.text.I2C_GeneralCallCmd
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.exidx.text.I2C_GeneralCallCmd
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .text.I2C_SlaveByteControlCmd
+                0x00000000       0x1c STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.extab.text.I2C_SlaveByteControlCmd
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.exidx.text.I2C_SlaveByteControlCmd
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .text.I2C_SlaveAddressConfig
+                0x00000000       0x10 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.extab.text.I2C_SlaveAddressConfig
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.exidx.text.I2C_SlaveAddressConfig
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .text.I2C_10BitAddressingModeCmd
+                0x00000000       0x1c STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.extab.text.I2C_10BitAddressingModeCmd
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.exidx.text.I2C_10BitAddressingModeCmd
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .text.I2C_AutoEndCmd
+                0x00000000       0x1c STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.extab.text.I2C_AutoEndCmd
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.exidx.text.I2C_AutoEndCmd
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .text.I2C_ReloadCmd
+                0x00000000       0x1c STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.extab.text.I2C_ReloadCmd
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.exidx.text.I2C_ReloadCmd
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .text.I2C_NumberOfBytesConfig
+                0x00000000       0x14 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.extab.text.I2C_NumberOfBytesConfig
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.exidx.text.I2C_NumberOfBytesConfig
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .text.I2C_MasterRequestConfig
+                0x00000000       0x1c STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.extab.text.I2C_MasterRequestConfig
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.exidx.text.I2C_MasterRequestConfig
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .text.I2C_GenerateSTART
+                0x00000000       0x1c STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.extab.text.I2C_GenerateSTART
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.exidx.text.I2C_GenerateSTART
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .text.I2C_GenerateSTOP
+                0x00000000       0x1c STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.extab.text.I2C_GenerateSTOP
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.exidx.text.I2C_GenerateSTOP
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .text.I2C_10BitAddressHeaderCmd
+                0x00000000       0x1c STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.extab.text.I2C_10BitAddressHeaderCmd
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.exidx.text.I2C_10BitAddressHeaderCmd
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .text.I2C_AcknowledgeConfig
+                0x00000000       0x1c STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.extab.text.I2C_AcknowledgeConfig
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.exidx.text.I2C_AcknowledgeConfig
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .text.I2C_GetAddressMatched
+                0x00000000        0xa STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.extab.text.I2C_GetAddressMatched
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.exidx.text.I2C_GetAddressMatched
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .text.I2C_GetTransferDirection
+                0x00000000        0xa STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.extab.text.I2C_GetTransferDirection
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.exidx.text.I2C_GetTransferDirection
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.extab.text.I2C_TransferHandling
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .text.I2C_SMBusAlertCmd
+                0x00000000       0x1c STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.extab.text.I2C_SMBusAlertCmd
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.exidx.text.I2C_SMBusAlertCmd
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .text.I2C_ClockTimeoutCmd
+                0x00000000       0x1c STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.extab.text.I2C_ClockTimeoutCmd
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.exidx.text.I2C_ClockTimeoutCmd
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .text.I2C_ExtendedClockTimeoutCmd
+                0x00000000       0x16 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.extab.text.I2C_ExtendedClockTimeoutCmd
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.exidx.text.I2C_ExtendedClockTimeoutCmd
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .text.I2C_IdleClockTimeoutCmd
+                0x00000000       0x1c STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.extab.text.I2C_IdleClockTimeoutCmd
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.exidx.text.I2C_IdleClockTimeoutCmd
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .text.I2C_TimeoutAConfig
+                0x00000000       0x10 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.extab.text.I2C_TimeoutAConfig
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.exidx.text.I2C_TimeoutAConfig
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .text.I2C_TimeoutBConfig
+                0x00000000       0x1c STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.extab.text.I2C_TimeoutBConfig
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.exidx.text.I2C_TimeoutBConfig
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .text.I2C_CalculatePEC
+                0x00000000       0x1c STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.extab.text.I2C_CalculatePEC
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.exidx.text.I2C_CalculatePEC
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .text.I2C_PECRequestCmd
+                0x00000000       0x1c STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.extab.text.I2C_PECRequestCmd
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.exidx.text.I2C_PECRequestCmd
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .text.I2C_GetPEC
+                0x00000000        0x6 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.extab.text.I2C_GetPEC
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.exidx.text.I2C_GetPEC
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .text.I2C_ReadRegister
+                0x00000000       0x16 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.extab.text.I2C_ReadRegister
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.exidx.text.I2C_ReadRegister
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.extab.text.I2C_SendData
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.extab.text.I2C_ReceiveData
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .text.I2C_DMACmd
+                0x00000000       0x12 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.extab.text.I2C_DMACmd
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.exidx.text.I2C_DMACmd
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .text.I2C_ITConfig
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.extab.text.I2C_ITConfig
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.exidx.text.I2C_ITConfig
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.extab.text.I2C_GetFlagStatus
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.extab.text.I2C_ClearFlag
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .text.I2C_GetITStatus
+                0x00000000       0x30 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.extab.text.I2C_GetITStatus
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.exidx.text.I2C_GetITStatus
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .text.I2C_ClearITPendingBit
+                0x00000000        0x4 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.extab.text.I2C_ClearITPendingBit
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.exidx.text.I2C_ClearITPendingBit
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .text          0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_misc.c.obj)
+ .data          0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_misc.c.obj)
+ .bss           0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_misc.c.obj)
+ .text.NVIC_Init
+                0x00000000       0x58 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_misc.c.obj)
+ .ARM.extab.text.NVIC_Init
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_misc.c.obj)
+ .ARM.exidx.text.NVIC_Init
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_misc.c.obj)
+ .text.NVIC_SystemLPConfig
+                0x00000000       0x18 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_misc.c.obj)
+ .ARM.extab.text.NVIC_SystemLPConfig
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_misc.c.obj)
+ .ARM.exidx.text.NVIC_SystemLPConfig
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_misc.c.obj)
+ .text.SysTick_CLKSourceConfig
+                0x00000000       0x1c STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_misc.c.obj)
+ .ARM.extab.text.SysTick_CLKSourceConfig
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_misc.c.obj)
+ .ARM.exidx.text.SysTick_CLKSourceConfig
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_misc.c.obj)
+ .text          0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .data          0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .bss           0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .text.RCC_DeInit
+                0x00000000       0x60 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.extab.text.RCC_DeInit
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.exidx.text.RCC_DeInit
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .text.RCC_HSEConfig
+                0x00000000       0x10 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.extab.text.RCC_HSEConfig
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.exidx.text.RCC_HSEConfig
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .text.RCC_AdjustHSICalibrationValue
+                0x00000000       0x14 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.extab.text.RCC_AdjustHSICalibrationValue
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.exidx.text.RCC_AdjustHSICalibrationValue
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .text.RCC_HSICmd
+                0x00000000       0x18 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.extab.text.RCC_HSICmd
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.exidx.text.RCC_HSICmd
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .text.RCC_AdjustHSI14CalibrationValue
+                0x00000000       0x14 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.extab.text.RCC_AdjustHSI14CalibrationValue
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.exidx.text.RCC_AdjustHSI14CalibrationValue
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .text.RCC_HSI14Cmd
+                0x00000000       0x18 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.extab.text.RCC_HSI14Cmd
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.exidx.text.RCC_HSI14Cmd
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .text.RCC_HSI14ADCRequestCmd
+                0x00000000       0x18 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.extab.text.RCC_HSI14ADCRequestCmd
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.exidx.text.RCC_HSI14ADCRequestCmd
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .text.RCC_LSEConfig
+                0x00000000       0x20 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.extab.text.RCC_LSEConfig
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.exidx.text.RCC_LSEConfig
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .text.RCC_LSEDriveConfig
+                0x00000000       0x18 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.extab.text.RCC_LSEDriveConfig
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.exidx.text.RCC_LSEDriveConfig
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .text.RCC_LSICmd
+                0x00000000       0x18 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.extab.text.RCC_LSICmd
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.exidx.text.RCC_LSICmd
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .text.RCC_PLLConfig
+                0x00000000       0x20 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.extab.text.RCC_PLLConfig
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.exidx.text.RCC_PLLConfig
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .text.RCC_PLLCmd
+                0x00000000       0x24 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.extab.text.RCC_PLLCmd
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.exidx.text.RCC_PLLCmd
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .text.RCC_PREDIV1Config
+                0x00000000       0x14 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.extab.text.RCC_PREDIV1Config
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.exidx.text.RCC_PREDIV1Config
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .text.RCC_ClockSecuritySystemCmd
+                0x00000000       0x24 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.extab.text.RCC_ClockSecuritySystemCmd
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.exidx.text.RCC_ClockSecuritySystemCmd
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .text.RCC_MCOConfig
+                0x00000000        0xc STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.extab.text.RCC_MCOConfig
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.exidx.text.RCC_MCOConfig
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .text.RCC_SYSCLKConfig
+                0x00000000       0x14 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.extab.text.RCC_SYSCLKConfig
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.exidx.text.RCC_SYSCLKConfig
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .text.RCC_GetSYSCLKSource
+                0x00000000       0x10 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.extab.text.RCC_GetSYSCLKSource
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.exidx.text.RCC_GetSYSCLKSource
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .text.RCC_HCLKConfig
+                0x00000000       0x14 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.extab.text.RCC_HCLKConfig
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.exidx.text.RCC_HCLKConfig
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .text.RCC_PCLKConfig
+                0x00000000       0x18 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.extab.text.RCC_PCLKConfig
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.exidx.text.RCC_PCLKConfig
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .text.RCC_ADCCLKConfig
+                0x00000000       0x30 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.extab.text.RCC_ADCCLKConfig
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.exidx.text.RCC_ADCCLKConfig
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .text.RCC_CECCLKConfig
+                0x00000000       0x18 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.extab.text.RCC_CECCLKConfig
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.exidx.text.RCC_CECCLKConfig
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.extab.text.RCC_I2CCLKConfig
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .text.RCC_USARTCLKConfig
+                0x00000000       0x18 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.extab.text.RCC_USARTCLKConfig
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.exidx.text.RCC_USARTCLKConfig
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.extab.text.RCC_GetClocksFreq
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .text.RCC_RTCCLKConfig
+                0x00000000       0x10 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.extab.text.RCC_RTCCLKConfig
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.exidx.text.RCC_RTCCLKConfig
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .text.RCC_RTCCLKCmd
+                0x00000000       0x24 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.extab.text.RCC_RTCCLKCmd
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.exidx.text.RCC_RTCCLKCmd
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .text.RCC_BackupResetCmd
+                0x00000000       0x24 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.extab.text.RCC_BackupResetCmd
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.exidx.text.RCC_BackupResetCmd
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.extab.text.RCC_AHBPeriphClockCmd
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.extab.text.RCC_APB2PeriphClockCmd
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.extab.text.RCC_APB1PeriphClockCmd
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .text.RCC_AHBPeriphResetCmd
+                0x00000000       0x18 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.extab.text.RCC_AHBPeriphResetCmd
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.exidx.text.RCC_AHBPeriphResetCmd
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .text.RCC_APB2PeriphResetCmd
+                0x00000000       0x18 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.extab.text.RCC_APB2PeriphResetCmd
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.exidx.text.RCC_APB2PeriphResetCmd
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .text.RCC_APB1PeriphResetCmd
+                0x00000000       0x18 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.extab.text.RCC_APB1PeriphResetCmd
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.exidx.text.RCC_APB1PeriphResetCmd
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .text.RCC_ITConfig
+                0x00000000       0x18 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.extab.text.RCC_ITConfig
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.exidx.text.RCC_ITConfig
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .text.RCC_GetFlagStatus
+                0x00000000       0x2c STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.extab.text.RCC_GetFlagStatus
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.exidx.text.RCC_GetFlagStatus
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .text.RCC_WaitForHSEStartUp
+                0x00000000       0x2e STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.extab.text.RCC_WaitForHSEStartUp
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.exidx.text.RCC_WaitForHSEStartUp
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .text.RCC_ClearFlag
+                0x00000000       0x14 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.extab.text.RCC_ClearFlag
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.exidx.text.RCC_ClearFlag
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .text.RCC_GetITStatus
+                0x00000000       0x14 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.extab.text.RCC_GetITStatus
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.exidx.text.RCC_GetITStatus
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .text.RCC_ClearITPendingBit
+                0x00000000        0xc STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.extab.text.RCC_ClearITPendingBit
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.exidx.text.RCC_ClearITPendingBit
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .text          0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_syscfg.c.obj)
+ .data          0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_syscfg.c.obj)
+ .bss           0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_syscfg.c.obj)
+ .text.SYSCFG_DeInit
+                0x00000000       0x24 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_syscfg.c.obj)
+ .ARM.extab.text.SYSCFG_DeInit
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_syscfg.c.obj)
+ .ARM.exidx.text.SYSCFG_DeInit
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_syscfg.c.obj)
+ .text.SYSCFG_MemoryRemapConfig
+                0x00000000       0x14 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_syscfg.c.obj)
+ .ARM.extab.text.SYSCFG_MemoryRemapConfig
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_syscfg.c.obj)
+ .ARM.exidx.text.SYSCFG_MemoryRemapConfig
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_syscfg.c.obj)
+ .text.SYSCFG_I2CFastModePlusConfig
+                0x00000000       0x18 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_syscfg.c.obj)
+ .ARM.extab.text.SYSCFG_I2CFastModePlusConfig
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_syscfg.c.obj)
+ .ARM.exidx.text.SYSCFG_I2CFastModePlusConfig
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_syscfg.c.obj)
+ .text.SYSCFG_DMAChannelRemapConfig
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_syscfg.c.obj)
+ .ARM.extab.text.SYSCFG_DMAChannelRemapConfig
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_syscfg.c.obj)
+ .ARM.exidx.text.SYSCFG_DMAChannelRemapConfig
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_syscfg.c.obj)
+ .text.SYSCFG_EXTILineConfig
+                0x00000000       0x28 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_syscfg.c.obj)
+ .ARM.extab.text.SYSCFG_EXTILineConfig
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_syscfg.c.obj)
+ .ARM.exidx.text.SYSCFG_EXTILineConfig
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_syscfg.c.obj)
+ .text.SYSCFG_GetFlagStatus
+                0x00000000       0x10 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_syscfg.c.obj)
+ .ARM.extab.text.SYSCFG_GetFlagStatus
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_syscfg.c.obj)
+ .ARM.exidx.text.SYSCFG_GetFlagStatus
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_syscfg.c.obj)
+ .text.SYSCFG_ClearFlag
+                0x00000000       0x10 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_syscfg.c.obj)
+ .ARM.extab.text.SYSCFG_ClearFlag
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_syscfg.c.obj)
+ .ARM.exidx.text.SYSCFG_ClearFlag
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_syscfg.c.obj)
+ .text.SYSCFG_BreakConfig
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_syscfg.c.obj)
+ .ARM.extab.text.SYSCFG_BreakConfig
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_syscfg.c.obj)
+ .ARM.exidx.text.SYSCFG_BreakConfig
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_syscfg.c.obj)
+ .text          0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .data          0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .bss           0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .text.USART_DeInit
+                0x00000000       0x44 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.extab.text.USART_DeInit
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.exidx.text.USART_DeInit
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.extab.text.USART_Init
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .text.USART_StructInit
+                0x00000000       0x16 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.extab.text.USART_StructInit
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.exidx.text.USART_StructInit
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .text.USART_ClockInit
+                0x00000000       0x20 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.extab.text.USART_ClockInit
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.exidx.text.USART_ClockInit
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .text.USART_ClockStructInit
+                0x00000000        0xc STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.extab.text.USART_ClockStructInit
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.exidx.text.USART_ClockStructInit
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.extab.text.USART_Cmd
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .text.USART_DirectionModeCmd
+                0x00000000       0x12 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.extab.text.USART_DirectionModeCmd
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.exidx.text.USART_DirectionModeCmd
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .text.USART_OverSampling8Cmd
+                0x00000000       0x1c STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.extab.text.USART_OverSampling8Cmd
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.exidx.text.USART_OverSampling8Cmd
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .text.USART_OneBitMethodCmd
+                0x00000000       0x1c STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.extab.text.USART_OneBitMethodCmd
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.exidx.text.USART_OneBitMethodCmd
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .text.USART_MSBFirstCmd
+                0x00000000       0x1c STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.extab.text.USART_MSBFirstCmd
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.exidx.text.USART_MSBFirstCmd
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .text.USART_DataInvCmd
+                0x00000000       0x1c STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.extab.text.USART_DataInvCmd
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.exidx.text.USART_DataInvCmd
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .text.USART_InvPinCmd
+                0x00000000       0x12 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.extab.text.USART_InvPinCmd
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.exidx.text.USART_InvPinCmd
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .text.USART_SWAPPinCmd
+                0x00000000       0x1c STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.extab.text.USART_SWAPPinCmd
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.exidx.text.USART_SWAPPinCmd
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .text.USART_ReceiverTimeOutCmd
+                0x00000000       0x1c STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.extab.text.USART_ReceiverTimeOutCmd
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.exidx.text.USART_ReceiverTimeOutCmd
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .text.USART_SetReceiverTimeOut
+                0x00000000       0x10 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.extab.text.USART_SetReceiverTimeOut
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.exidx.text.USART_SetReceiverTimeOut
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .text.USART_SetPrescaler
+                0x00000000       0x10 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.extab.text.USART_SetPrescaler
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.exidx.text.USART_SetPrescaler
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .text.USART_STOPModeCmd
+                0x00000000       0x12 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.extab.text.USART_STOPModeCmd
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.exidx.text.USART_STOPModeCmd
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .text.USART_StopModeWakeUpSourceConfig
+                0x00000000       0x14 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.extab.text.USART_StopModeWakeUpSourceConfig
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.exidx.text.USART_StopModeWakeUpSourceConfig
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .text.USART_AutoBaudRateCmd
+                0x00000000       0x1c STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.extab.text.USART_AutoBaudRateCmd
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.exidx.text.USART_AutoBaudRateCmd
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .text.USART_AutoBaudRateConfig
+                0x00000000       0x14 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.extab.text.USART_AutoBaudRateConfig
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.exidx.text.USART_AutoBaudRateConfig
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.extab.text.USART_SendData
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .text.USART_ReceiveData
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.extab.text.USART_ReceiveData
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.exidx.text.USART_ReceiveData
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .text.USART_SetAddress
+                0x00000000       0x12 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.extab.text.USART_SetAddress
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.exidx.text.USART_SetAddress
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .text.USART_MuteModeCmd
+                0x00000000       0x1c STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.extab.text.USART_MuteModeCmd
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.exidx.text.USART_MuteModeCmd
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .text.USART_MuteModeWakeUpConfig
+                0x00000000       0x14 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.extab.text.USART_MuteModeWakeUpConfig
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.exidx.text.USART_MuteModeWakeUpConfig
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .text.USART_AddressDetectionConfig
+                0x00000000       0x10 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.extab.text.USART_AddressDetectionConfig
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.exidx.text.USART_AddressDetectionConfig
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .text.USART_LINBreakDetectLengthConfig
+                0x00000000       0x10 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.extab.text.USART_LINBreakDetectLengthConfig
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.exidx.text.USART_LINBreakDetectLengthConfig
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .text.USART_LINCmd
+                0x00000000       0x1c STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.extab.text.USART_LINCmd
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.exidx.text.USART_LINCmd
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .text.USART_HalfDuplexCmd
+                0x00000000       0x12 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.extab.text.USART_HalfDuplexCmd
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.exidx.text.USART_HalfDuplexCmd
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .text.USART_SetGuardTime
+                0x00000000       0x10 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.extab.text.USART_SetGuardTime
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.exidx.text.USART_SetGuardTime
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .text.USART_SmartCardCmd
+                0x00000000       0x12 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.extab.text.USART_SmartCardCmd
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.exidx.text.USART_SmartCardCmd
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .text.USART_SmartCardNACKCmd
+                0x00000000       0x12 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.extab.text.USART_SmartCardNACKCmd
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.exidx.text.USART_SmartCardNACKCmd
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .text.USART_SetAutoRetryCount
+                0x00000000       0x18 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.extab.text.USART_SetAutoRetryCount
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.exidx.text.USART_SetAutoRetryCount
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .text.USART_SetBlockLength
+                0x00000000       0x12 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.extab.text.USART_SetBlockLength
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.exidx.text.USART_SetBlockLength
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .text.USART_IrDAConfig
+                0x00000000       0x10 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.extab.text.USART_IrDAConfig
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.exidx.text.USART_IrDAConfig
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .text.USART_IrDACmd
+                0x00000000       0x12 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.extab.text.USART_IrDACmd
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.exidx.text.USART_IrDACmd
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .text.USART_DECmd
+                0x00000000       0x1c STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.extab.text.USART_DECmd
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.exidx.text.USART_DECmd
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .text.USART_DEPolarityConfig
+                0x00000000       0x14 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.extab.text.USART_DEPolarityConfig
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.exidx.text.USART_DEPolarityConfig
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .text.USART_SetDEAssertionTime
+                0x00000000       0x18 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.extab.text.USART_SetDEAssertionTime
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.exidx.text.USART_SetDEAssertionTime
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .text.USART_SetDEDeassertionTime
+                0x00000000       0x18 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.extab.text.USART_SetDEDeassertionTime
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.exidx.text.USART_SetDEDeassertionTime
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .text.USART_DMACmd
+                0x00000000       0x12 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.extab.text.USART_DMACmd
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.exidx.text.USART_DMACmd
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .text.USART_DMAReceptionErrorConfig
+                0x00000000       0x14 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.extab.text.USART_DMAReceptionErrorConfig
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.exidx.text.USART_DMAReceptionErrorConfig
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.extab.text.USART_ITConfig
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .text.USART_RequestCmd
+                0x00000000       0x14 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.extab.text.USART_RequestCmd
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.exidx.text.USART_RequestCmd
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .text.USART_OverrunDetectionConfig
+                0x00000000       0x14 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.extab.text.USART_OverrunDetectionConfig
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.exidx.text.USART_OverrunDetectionConfig
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.extab.text.USART_GetFlagStatus
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .text.USART_ClearFlag
+                0x00000000        0x4 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.extab.text.USART_ClearFlag
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.exidx.text.USART_ClearFlag
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .text.USART_GetITStatus
+                0x00000000       0x3c STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.extab.text.USART_GetITStatus
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.exidx.text.USART_GetITStatus
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .text.USART_ClearITPendingBit
+                0x00000000        0xa STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.extab.text.USART_ClearITPendingBit
+                0x00000000        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.exidx.text.USART_ClearITPendingBit
+                0x00000000        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .text          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-w_log.o)
+ .data          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-w_log.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-w_log.o)
+ .text          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-e_log.o)
+ .data          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-e_log.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-e_log.o)
+ .text          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_lib_ver.o)
+ .data          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_lib_ver.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_lib_ver.o)
+ .text          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_matherr.o)
+ .data          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_matherr.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_matherr.o)
+ .text          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_nan.o)
+ .data          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_nan.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_nan.o)
+ .data          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_udivsi3.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_udivsi3.o)
+ .data          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_dvmd_tls.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_dvmd_tls.o)
+ .data          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_arm_cmpdf2.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_arm_cmpdf2.o)
+ .data          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_arm_cmpsf2.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_arm_cmpsf2.o)
+ .data          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_fixunssfsi.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_fixunssfsi.o)
+ .data          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(addsf3.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(addsf3.o)
+ .data          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(divsf3.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(divsf3.o)
+ .data          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(eqsf2.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(eqsf2.o)
+ .data          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(gesf2.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(gesf2.o)
+ .data          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(lesf2.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(lesf2.o)
+ .data          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(mulsf3.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(mulsf3.o)
+ .data          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(subsf3.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(subsf3.o)
+ .data          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(fixsfsi.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(fixsfsi.o)
+ .data          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(floatsisf.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(floatsisf.o)
+ .data          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(floatunsisf.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(floatunsisf.o)
+ .data          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(adddf3.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(adddf3.o)
+ .data          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(divdf3.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(divdf3.o)
+ .data          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(eqdf2.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(eqdf2.o)
+ .data          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(gedf2.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(gedf2.o)
+ .data          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(ledf2.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(ledf2.o)
+ .data          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(muldf3.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(muldf3.o)
+ .data          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(subdf3.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(subdf3.o)
+ .data          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(unorddf2.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(unorddf2.o)
+ .data          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(floatsidf.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(floatsidf.o)
+ .data          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(extendsfdf2.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(extendsfdf2.o)
+ .data          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(truncdfsf2.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(truncdfsf2.o)
+ .data          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(unwind-arm.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(unwind-arm.o)
+ .data          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(libunwind.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(libunwind.o)
+ .data          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(pr-support.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(pr-support.o)
+ .data          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_clzsi2.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_clzsi2.o)
+ .text          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-abort.o)
+ .data          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-abort.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-abort.o)
+ .text          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-errno.o)
+ .data          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-errno.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-errno.o)
+ .text          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-impure.o)
+ .data          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-impure.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-impure.o)
+ .rodata._global_impure_ptr
+                0x00000000        0x4 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-impure.o)
+ .text          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-itoa.o)
+ .data          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-itoa.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-itoa.o)
+ .text          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-memcpy-stub.o)
+ .data          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-memcpy-stub.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-memcpy-stub.o)
+ .text          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-reent.o)
+ .data          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-reent.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-reent.o)
+ .text.cleanup_glue
+                0x00000000       0x1a c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-reent.o)
+ .text._reclaim_reent
+                0x00000000       0xcc c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-reent.o)
+ .text          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-signal.o)
+ .data          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-signal.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-signal.o)
+ .text._init_signal_r
+                0x00000000       0x30 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-signal.o)
+ .text._signal_r
+                0x00000000       0x32 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-signal.o)
+ .text.__sigtramp_r
+                0x00000000       0x48 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-signal.o)
+ .text.signal   0x00000000       0x14 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-signal.o)
+ .text._init_signal
+                0x00000000       0x10 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-signal.o)
+ .text.__sigtramp
+                0x00000000       0x14 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-signal.o)
+ .text          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-signalr.o)
+ .data          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-signalr.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-signalr.o)
+ .text          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-sysisatty.o)
+ .data          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-sysisatty.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-sysisatty.o)
+ .text.isatty   0x00000000        0x8 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-sysisatty.o)
+ .text          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-utoa.o)
+ .data          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-utoa.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-utoa.o)
+ .text.utoa     0x00000000        0x8 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-utoa.o)
+ .text          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-nano-freer.o)
+ .data          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-nano-freer.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-nano-freer.o)
+ .text._free_r  0x00000000       0x98 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-nano-freer.o)
+ .text          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-nano-mallocr.o)
+ .data          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-nano-mallocr.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-nano-mallocr.o)
+ .text._malloc_r
+                0x00000000       0xc0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-nano-mallocr.o)
+ .bss.__malloc_sbrk_start
+                0x00000000        0x4 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-nano-mallocr.o)
+ .bss.__malloc_free_list
+                0x00000000        0x4 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-nano-mallocr.o)
+ .text          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-sbrkr.o)
+ .data          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-sbrkr.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-sbrkr.o)
+ .text._sbrk_r  0x00000000       0x24 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-sbrkr.o)
+ .text          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-mlock.o)
+ .data          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-mlock.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-mlock.o)
+ .text.__malloc_lock
+                0x00000000        0x2 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-mlock.o)
+ .text.__malloc_unlock
+                0x00000000        0x2 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-mlock.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+SRAM             0x20000000         0x00002000         xrw
+FLASH            0x08000000         0x00010000         xr
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD CMakeFiles/barometer.elf.dir/main.cpp.obj
+LOAD CMakeFiles/barometer.elf.dir/usart.cpp.obj
+LOAD CMakeFiles/barometer.elf.dir/MS5611.cpp.obj
+LOAD CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
+LOAD CMakeFiles/barometer.elf.dir/stm32f0xx_it.c.obj
+LOAD F0DiscoveryDir/libSTM32F0DiscoveryLib.a
+LOAD STM32CMSIS/libCMSISFIRMWARE.a
+LOAD STM32_StdPeriph_Driver/libF0StdPerifDriver.a
+LOAD c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libstdc++_nano.a
+LOAD c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libm.a
+START GROUP
+LOAD c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a
+LOAD c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a
+END GROUP
+START GROUP
+LOAD c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a
+LOAD c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a
+END GROUP
+                0x20002000                _estack = (ORIGIN (SRAM) + LENGTH (SRAM))
+                0x20002000                __TOP_STACK = (ORIGIN (SRAM) + LENGTH (SRAM))
+                0x00000096                _Minimum_Stack_Size = 0x96
+                0x00000001                ASSERT ((ORIGIN (FLASH) == ALIGN (ORIGIN (FLASH), 0x80)), Start of memory region flash not aligned for startup vector table)
+
+.text           0x08000000     0x4fd4
+                0x08000000                . = ALIGN (0x80)
+                0x00000000                _isr_vector_offs = (. - 0x8000000)
+ *(.isr_vector)
+ .isr_vector    0x08000000       0xc4 STM32CMSIS/libCMSISFIRMWARE.a(startup_stm32f0xx.s.obj)
+                0x08000000                g_pfnVectors
+                0x080000c4                . = ALIGN (0x4)
+ CREATE_OBJECT_SYMBOLS
+ *(.text .text.* .gnu.linkonce.t.*)
+ .text._Z5delaym
+                0x080000c4       0x18 CMakeFiles/barometer.elf.dir/main.cpp.obj
+                0x080000c4                delay(unsigned long)
+ .text.startup.main
+                0x080000dc       0xc4 CMakeFiles/barometer.elf.dir/main.cpp.obj
+                0x080000dc                main
+ .text.TimingDelay_Decrement
+                0x080001a0       0x14 CMakeFiles/barometer.elf.dir/main.cpp.obj
+                0x080001a0                TimingDelay_Decrement
+ .text._ZN7USART_14initEv
+                0x080001b4       0x90 CMakeFiles/barometer.elf.dir/usart.cpp.obj
+                0x080001b4                USART_1::init()
+ .text._ZN7USART_14putsEPKc
+                0x08000244       0x40 CMakeFiles/barometer.elf.dir/usart.cpp.obj
+                0x08000244                USART_1::puts(char const*)
+ .text._ZN7USART_1lsEPKc
+                0x08000284        0x8 CMakeFiles/barometer.elf.dir/usart.cpp.obj
+                0x08000284                USART_1::operator<<(char const*)
+ .text._ZN7USART_1lsEm
+                0x0800028c       0x1c CMakeFiles/barometer.elf.dir/usart.cpp.obj
+                0x0800028c                USART_1::operator<<(unsigned long)
+ .text._ZN6MS5611C2Ev
+                0x080002a8        0x2 CMakeFiles/barometer.elf.dir/MS5611.cpp.obj
+                0x080002a8                MS5611::MS5611()
+                0x080002a8                MS5611::MS5611()
+ *fill*         0x080002aa        0x2 
+ .text._ZN6MS56119calculateEv
+                0x080002ac      0x1b8 CMakeFiles/barometer.elf.dir/MS5611.cpp.obj
+                0x080002ac                MS5611::calculate()
+ .text._ZN6MS561110toAltitudeEf
+                0x08000464       0x40 CMakeFiles/barometer.elf.dir/MS5611.cpp.obj
+                0x08000464                MS5611::toAltitude(float)
+ .text._ZN6MS561114waitForI2CFlagEm
+                0x080004a4       0x48 CMakeFiles/barometer.elf.dir/MS5611.cpp.obj
+                0x080004a4                MS5611::waitForI2CFlag(unsigned long)
+ .text._ZN6MS56118readPROMEv
+                0x080004ec       0xc4 CMakeFiles/barometer.elf.dir/MS5611.cpp.obj
+                0x080004ec                MS5611::readPROM()
+ .text._ZN6MS561110initializeEv
+                0x080005b0       0x98 CMakeFiles/barometer.elf.dir/MS5611.cpp.obj
+                0x080005b0                MS5611::initialize()
+ .text._ZN6MS561115readTemperatureEv
+                0x08000648       0xec CMakeFiles/barometer.elf.dir/MS5611.cpp.obj
+                0x08000648                MS5611::readTemperature()
+ .text._ZN6MS561114getTemperatureEv
+                0x08000734       0x12 CMakeFiles/barometer.elf.dir/MS5611.cpp.obj
+                0x08000734                MS5611::getTemperature()
+ *fill*         0x08000746        0x2 
+ .text._ZN6MS561112readPressureEv
+                0x08000748       0xec CMakeFiles/barometer.elf.dir/MS5611.cpp.obj
+                0x08000748                MS5611::readPressure()
+ .text._ZN6MS561111getAltitudeEv
+                0x08000834       0x18 CMakeFiles/barometer.elf.dir/MS5611.cpp.obj
+                0x08000834                MS5611::getAltitude()
+ .text._kill    0x0800084c       0x10 CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
+                0x0800084c                _kill
+ .text._exit    0x0800085c        0x2 CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
+                0x0800085c                _exit
+ .text._getpid  0x0800085e        0x4 CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
+                0x0800085e                _getpid
+ .text.NMI_Handler
+                0x08000862        0x2 CMakeFiles/barometer.elf.dir/stm32f0xx_it.c.obj
+                0x08000862                NMI_Handler
+ .text.HardFault_Handler
+                0x08000864        0x2 CMakeFiles/barometer.elf.dir/stm32f0xx_it.c.obj
+                0x08000864                HardFault_Handler
+ .text.SVC_Handler
+                0x08000866        0x2 CMakeFiles/barometer.elf.dir/stm32f0xx_it.c.obj
+                0x08000866                SVC_Handler
+ .text.PendSV_Handler
+                0x08000868        0x2 CMakeFiles/barometer.elf.dir/stm32f0xx_it.c.obj
+                0x08000868                PendSV_Handler
+ .text.SysTick_Handler
+                0x0800086a        0x8 CMakeFiles/barometer.elf.dir/stm32f0xx_it.c.obj
+                0x0800086a                SysTick_Handler
+ *fill*         0x08000872        0x2 
+ .text.STM_EVAL_LEDInit
+                0x08000874       0x40 F0DiscoveryDir/libSTM32F0DiscoveryLib.a(stm32f0_discovery.c.obj)
+                0x08000874                STM_EVAL_LEDInit
+ .text.Reset_Handler
+                0x080008b4       0x44 STM32CMSIS/libCMSISFIRMWARE.a(startup_stm32f0xx.s.obj)
+                0x080008b4                Reset_Handler
+ .text.Default_Handler
+                0x080008f8        0x2 STM32CMSIS/libCMSISFIRMWARE.a(startup_stm32f0xx.s.obj)
+                0x080008f8                TIM1_CC_IRQHandler
+                0x080008f8                ADC1_COMP_IRQHandler
+                0x080008f8                PVD_IRQHandler
+                0x080008f8                I2C1_IRQHandler
+                0x080008f8                SPI1_IRQHandler
+                0x080008f8                TIM6_DAC_IRQHandler
+                0x080008f8                EXTI2_3_IRQHandler
+                0x080008f8                I2C2_IRQHandler
+                0x080008f8                TIM17_IRQHandler
+                0x080008f8                RTC_IRQHandler
+                0x080008f8                TIM16_IRQHandler
+                0x080008f8                TIM3_IRQHandler
+                0x080008f8                EXTI4_15_IRQHandler
+                0x080008f8                RCC_IRQHandler
+                0x080008f8                DMA1_Channel1_IRQHandler
+                0x080008f8                Default_Handler
+                0x080008f8                CEC_IRQHandler
+                0x080008f8                TIM14_IRQHandler
+                0x080008f8                DMA1_Channel4_5_IRQHandler
+                0x080008f8                TIM15_IRQHandler
+                0x080008f8                EXTI0_1_IRQHandler
+                0x080008f8                SPI2_IRQHandler
+                0x080008f8                TS_IRQHandler
+                0x080008f8                WWDG_IRQHandler
+                0x080008f8                TIM2_IRQHandler
+                0x080008f8                DMA1_Channel2_3_IRQHandler
+                0x080008f8                USART2_IRQHandler
+                0x080008f8                FLASH_IRQHandler
+                0x080008f8                USART1_IRQHandler
+                0x080008f8                TIM1_BRK_UP_TRG_COM_IRQHandler
+ *fill*         0x080008fa        0x2 
+ .text.SystemInit
+                0x080008fc       0xf8 STM32CMSIS/libCMSISFIRMWARE.a(system_stm32f0xx.c.obj)
+                0x080008fc                SystemInit
+ .text.GPIO_Init
+                0x080009f4       0x76 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_gpio.c.obj)
+                0x080009f4                GPIO_Init
+ *fill*         0x08000a6a        0x2 
+ .text.GPIO_StructInit
+                0x08000a6c       0x18 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_gpio.c.obj)
+                0x08000a6c                GPIO_StructInit
+ .text.GPIO_PinAFConfig
+                0x08000a84       0x22 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_gpio.c.obj)
+                0x08000a84                GPIO_PinAFConfig
+ *fill*         0x08000aa6        0x2 
+ .text.I2C_Init
+                0x08000aa8       0x64 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+                0x08000aa8                I2C_Init
+ .text.I2C_StructInit
+                0x08000b0c       0x16 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+                0x08000b0c                I2C_StructInit
+ .text.I2C_Cmd  0x08000b22       0x12 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+                0x08000b22                I2C_Cmd
+ .text.I2C_TransferHandling
+                0x08000b34       0x24 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+                0x08000b34                I2C_TransferHandling
+ .text.I2C_SendData
+                0x08000b58        0x4 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+                0x08000b58                I2C_SendData
+ .text.I2C_ReceiveData
+                0x08000b5c        0x6 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+                0x08000b5c                I2C_ReceiveData
+ .text.I2C_GetFlagStatus
+                0x08000b62        0xe STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+                0x08000b62                I2C_GetFlagStatus
+ .text.I2C_ClearFlag
+                0x08000b70        0x4 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+                0x08000b70                I2C_ClearFlag
+ .text.RCC_I2CCLKConfig
+                0x08000b74       0x18 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+                0x08000b74                RCC_I2CCLKConfig
+ .text.RCC_GetClocksFreq
+                0x08000b8c       0xe0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+                0x08000b8c                RCC_GetClocksFreq
+ .text.RCC_AHBPeriphClockCmd
+                0x08000c6c       0x18 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+                0x08000c6c                RCC_AHBPeriphClockCmd
+ .text.RCC_APB2PeriphClockCmd
+                0x08000c84       0x18 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+                0x08000c84                RCC_APB2PeriphClockCmd
+ .text.RCC_APB1PeriphClockCmd
+                0x08000c9c       0x18 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+                0x08000c9c                RCC_APB1PeriphClockCmd
+ .text.USART_Init
+                0x08000cb4       0xa0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+                0x08000cb4                USART_Init
+ .text.USART_Cmd
+                0x08000d54       0x12 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+                0x08000d54                USART_Cmd
+ .text.USART_SendData
+                0x08000d66        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+                0x08000d66                USART_SendData
+ .text.USART_ITConfig
+                0x08000d6e       0x30 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+                0x08000d6e                USART_ITConfig
+ .text.USART_GetFlagStatus
+                0x08000d9e        0xe STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+                0x08000d9e                USART_GetFlagStatus
+ .text.log      0x08000dac      0x110 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-w_log.o)
+                0x08000dac                log
+ .text.__ieee754_log
+                0x08000ebc      0x404 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-e_log.o)
+                0x08000ebc                __ieee754_log
+ .text.matherr  0x080012c0        0x4 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_matherr.o)
+                0x080012c0                matherr
+ .text.nan      0x080012c4        0xc c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_nan.o)
+                0x080012c4                nan
+ .text          0x080012d0      0x114 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_udivsi3.o)
+                0x080012d0                __aeabi_uidiv
+                0x080012d0                __udivsi3
+                0x080013dc                __aeabi_uidivmod
+ .text          0x080013e4        0x4 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_dvmd_tls.o)
+                0x080013e4                __aeabi_idiv0
+                0x080013e4                __aeabi_ldiv0
+ .text          0x080013e8       0x7c c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_arm_cmpdf2.o)
+                0x080013e8                __aeabi_cdrcmple
+                0x080013f8                __aeabi_cdcmple
+                0x080013f8                __aeabi_cdcmpeq
+                0x08001408                __aeabi_dcmpeq
+                0x08001414                __aeabi_dcmplt
+                0x08001428                __aeabi_dcmple
+                0x0800143c                __aeabi_dcmpgt
+                0x08001450                __aeabi_dcmpge
+ .text          0x08001464       0x74 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_arm_cmpsf2.o)
+                0x08001464                __aeabi_cfrcmple
+                0x0800146c                __aeabi_cfcmpeq
+                0x0800146c                __aeabi_cfcmple
+                0x0800147c                __aeabi_fcmpeq
+                0x08001488                __aeabi_fcmplt
+                0x0800149c                __aeabi_fcmple
+                0x080014b0                __aeabi_fcmpgt
+                0x080014c4                __aeabi_fcmpge
+ .text          0x080014d8       0x30 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_fixunssfsi.o)
+                0x080014d8                __fixunssfsi
+                0x080014d8                __aeabi_f2uiz
+ .text          0x08001508      0x2ec c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(addsf3.o)
+                0x08001508                __aeabi_fadd
+ .text          0x080017f4      0x234 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(divsf3.o)
+                0x080017f4                __aeabi_fdiv
+ .text          0x08001a28       0x50 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(eqsf2.o)
+                0x08001a28                __eqsf2
+                0x08001a28                __nesf2
+ .text          0x08001a78       0x88 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(gesf2.o)
+                0x08001a78                __gesf2
+                0x08001a78                __gtsf2
+ .text          0x08001b00       0x88 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(lesf2.o)
+                0x08001b00                __ltsf2
+                0x08001b00                __lesf2
+ .text          0x08001b88      0x228 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(mulsf3.o)
+                0x08001b88                __aeabi_fmul
+ .text          0x08001db0      0x30c c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(subsf3.o)
+                0x08001db0                __aeabi_fsub
+ .text          0x080020bc       0x44 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(fixsfsi.o)
+                0x080020bc                __aeabi_f2iz
+ .text          0x08002100       0x90 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(floatsisf.o)
+                0x08002100                __aeabi_i2f
+ .text          0x08002190       0x7c c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(floatunsisf.o)
+                0x08002190                __aeabi_ui2f
+ .text          0x0800220c      0x658 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(adddf3.o)
+                0x0800220c                __aeabi_dadd
+ .text          0x08002864      0x62c c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(divdf3.o)
+                0x08002864                __aeabi_ddiv
+ .text          0x08002e90       0x80 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(eqdf2.o)
+                0x08002e90                __nedf2
+                0x08002e90                __eqdf2
+ .text          0x08002f10       0xc8 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(gedf2.o)
+                0x08002f10                __gedf2
+                0x08002f10                __gtdf2
+ .text          0x08002fd8       0xd4 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(ledf2.o)
+                0x08002fd8                __ledf2
+                0x08002fd8                __ltdf2
+ .text          0x080030ac      0x4f4 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(muldf3.o)
+                0x080030ac                __aeabi_dmul
+ .text          0x080035a0      0x6a8 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(subdf3.o)
+                0x080035a0                __aeabi_dsub
+ .text          0x08003c48       0x40 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(unorddf2.o)
+                0x08003c48                __aeabi_dcmpun
+ .text          0x08003c88       0x84 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(floatsidf.o)
+                0x08003c88                __aeabi_i2d
+ .text          0x08003d0c       0xa8 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(extendsfdf2.o)
+                0x08003d0c                __aeabi_f2d
+ .text          0x08003db4      0x118 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(truncdfsf2.o)
+                0x08003db4                __aeabi_d2f
+ .text          0x08003ecc      0xa3c c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(unwind-arm.o)
+                0x080041a4                _Unwind_GetCFA
+                0x080041a8                __gnu_Unwind_RaiseException
+                0x080041fc                __gnu_Unwind_ForcedUnwind
+                0x08004210                __gnu_Unwind_Resume
+                0x08004258                __gnu_Unwind_Resume_or_Rethrow
+                0x08004274                _Unwind_Complete
+                0x08004278                _Unwind_DeleteException
+                0x08004288                _Unwind_VRS_Get
+                0x080042d4                _Unwind_VRS_Set
+                0x08004320                __gnu_Unwind_Backtrace
+                0x08004680                __aeabi_unwind_cpp_pr0
+                0x0800468c                __aeabi_unwind_cpp_pr1
+                0x08004698                __aeabi_unwind_cpp_pr2
+                0x080046a4                _Unwind_VRS_Pop
+ .text          0x08004908      0x144 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(libunwind.o)
+                0x08004908                __restore_core_regs
+                0x08004908                restore_core_regs
+                0x08004934                __gnu_Unwind_Restore_VFP
+                0x08004938                __gnu_Unwind_Save_VFP
+                0x0800493c                __gnu_Unwind_Restore_VFP_D
+                0x08004940                __gnu_Unwind_Save_VFP_D
+                0x08004944                __gnu_Unwind_Restore_VFP_D_16_to_31
+                0x08004948                __gnu_Unwind_Save_VFP_D_16_to_31
+                0x0800494c                __gnu_Unwind_Restore_WMMXD
+                0x08004950                __gnu_Unwind_Save_WMMXD
+                0x08004954                __gnu_Unwind_Restore_WMMXC
+                0x08004958                __gnu_Unwind_Save_WMMXC
+                0x0800495c                ___Unwind_RaiseException
+                0x0800495c                _Unwind_RaiseException
+                0x0800498c                _Unwind_Resume
+                0x0800498c                ___Unwind_Resume
+                0x080049bc                _Unwind_Resume_or_Rethrow
+                0x080049bc                ___Unwind_Resume_or_Rethrow
+                0x080049ec                _Unwind_ForcedUnwind
+                0x080049ec                ___Unwind_ForcedUnwind
+                0x08004a1c                ___Unwind_Backtrace
+                0x08004a1c                _Unwind_Backtrace
+ .text          0x08004a4c      0x3b0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(pr-support.o)
+                0x08004aa0                __gnu_unwind_execute
+                0x08004da4                __gnu_unwind_frame
+                0x08004dcc                _Unwind_GetRegionStart
+                0x08004dd8                _Unwind_GetLanguageSpecificData
+                0x08004dec                _Unwind_GetTextRelBase
+                0x08004df4                _Unwind_GetDataRelBase
+ .text          0x08004dfc       0x3c c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_clzsi2.o)
+                0x08004dfc                __clzsi2
+ .text.abort    0x08004e38        0xe c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-abort.o)
+                0x08004e38                abort
+ *fill*         0x08004e46        0x2 
+ .text.__errno  0x08004e48        0xc c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-errno.o)
+                0x08004e48                __errno
+ .text.__itoa   0x08004e54       0x2e c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-itoa.o)
+                0x08004e54                __itoa
+ .text.itoa     0x08004e82        0x8 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-itoa.o)
+                0x08004e82                itoa
+ .text.memcpy   0x08004e8a       0x12 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-memcpy-stub.o)
+                0x08004e8a                memcpy
+ .text._raise_r
+                0x08004e9c       0x54 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-signal.o)
+                0x08004e9c                _raise_r
+ .text.raise    0x08004ef0       0x14 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-signal.o)
+                0x08004ef0                raise
+ .text._kill_r  0x08004f04       0x24 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-signalr.o)
+                0x08004f04                _kill_r
+ .text._getpid_r
+                0x08004f28        0x8 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-signalr.o)
+                0x08004f28                _getpid_r
+ .text.__utoa   0x08004f30       0x74 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-utoa.o)
+                0x08004f30                __utoa
+ *(.plt)
+ *(.gnu.warning)
+ *(.glue_7t)
+ .glue_7t       0x08004fa4        0x0 linker stubs
+ *(.glue_7)
+ .glue_7        0x08004fa4        0x0 linker stubs
+ *(.vfp11_veneer)
+ .vfp11_veneer  0x08004fa4        0x0 linker stubs
+ *(.ARM.extab* .gnu.linkonce.armextab.*)
+ .ARM.extab     0x08004fa4       0x24 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(unwind-arm.o)
+ .ARM.extab     0x08004fc8        0xc c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(pr-support.o)
+ *(.gcc_except_table)
+
+.v4_bx          0x08004fd4        0x0
+ .v4_bx         0x08004fd4        0x0 linker stubs
+
+.iplt           0x08004fd4        0x0
+ .iplt          0x08004fd4        0x0 CMakeFiles/barometer.elf.dir/main.cpp.obj
+
+.eh_frame_hdr
+ *(.eh_frame_hdr)
+
+.eh_frame
+ *(.eh_frame)
+                0x08004fd4                __exidx_start = .
+
+.ARM.exidx      0x08004fd4       0xf0
+ *(.ARM.exidx* .gnu.linkonce.armexidx.*)
+ .ARM.exidx.text._kill
+                0x08004fd4        0x8 CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
+ .ARM.exidx.text._exit
+                0x08004fdc        0x0 CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text._getpid
+                0x08004fdc        0x0 CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.NMI_Handler
+                0x08004fdc        0x0 CMakeFiles/barometer.elf.dir/stm32f0xx_it.c.obj
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.HardFault_Handler
+                0x08004fdc        0x0 CMakeFiles/barometer.elf.dir/stm32f0xx_it.c.obj
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.SVC_Handler
+                0x08004fdc        0x0 CMakeFiles/barometer.elf.dir/stm32f0xx_it.c.obj
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.PendSV_Handler
+                0x08004fdc        0x0 CMakeFiles/barometer.elf.dir/stm32f0xx_it.c.obj
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.SysTick_Handler
+                0x08004fdc        0x8 CMakeFiles/barometer.elf.dir/stm32f0xx_it.c.obj
+ .ARM.exidx.text.STM_EVAL_LEDInit
+                0x08004fe4       0x10 F0DiscoveryDir/libSTM32F0DiscoveryLib.a(stm32f0_discovery.c.obj)
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.SystemInit
+                0x08004ff4        0x0 STM32CMSIS/libCMSISFIRMWARE.a(system_stm32f0xx.c.obj)
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.GPIO_Init
+                0x08004ff4        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_gpio.c.obj)
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.GPIO_StructInit
+                0x08004ff4        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_gpio.c.obj)
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.GPIO_PinAFConfig
+                0x08004ff4        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_gpio.c.obj)
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.I2C_Init
+                0x08004ff4        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.I2C_StructInit
+                0x08004ff4        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.I2C_Cmd
+                0x08004ff4        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.I2C_TransferHandling
+                0x08004ff4        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.I2C_SendData
+                0x08004ff4        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.I2C_ReceiveData
+                0x08004ff4        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.I2C_GetFlagStatus
+                0x08004ff4        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.I2C_ClearFlag
+                0x08004ff4        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.RCC_I2CCLKConfig
+                0x08004ff4        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.RCC_GetClocksFreq
+                0x08004ff4        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.RCC_AHBPeriphClockCmd
+                0x08004ff4        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.RCC_APB2PeriphClockCmd
+                0x08004ff4        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.RCC_APB1PeriphClockCmd
+                0x08004ff4        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.USART_Init
+                0x08004ff4        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.exidx.text.USART_Cmd
+                0x08004ffc        0x8 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.exidx.text.USART_SendData
+                0x08005004        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.USART_ITConfig
+                0x08005004        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.USART_GetFlagStatus
+                0x08005004        0x0 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+                                  0x8 (size before relaxing)
+ .ARM.exidx     0x08005004       0x90 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(unwind-arm.o)
+                                 0xd8 (size before relaxing)
+ .ARM.exidx     0x08005094       0x30 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(pr-support.o)
+                                 0x48 (size before relaxing)
+                0x080050c4                __exidx_end = .
+
+.rodata         0x080050c4      0x1c4
+ *(.cortexm3vectors)
+ *(.rodata .rodata.* .gnu.linkonce.r.*)
+ .rodata.str1.1
+                0x080050c4       0x47 CMakeFiles/barometer.elf.dir/main.cpp.obj
+                                 0x49 (size before relaxing)
+ *fill*         0x0800510b        0x1 
+ .rodata._ZL8GPIO_CLK
+                0x0800510c        0x8 F0DiscoveryDir/libSTM32F0DiscoveryLib.a(stm32f0_discovery.c.obj)
+ .rodata._ZL8GPIO_PIN
+                0x08005114        0x4 F0DiscoveryDir/libSTM32F0DiscoveryLib.a(stm32f0_discovery.c.obj)
+ .rodata.str1.4
+                0x08005118        0x8 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-w_log.o)
+                                  0x5 (size before relaxing)
+ .rodata        0x08005120       0x80 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(divsf3.o)
+ .rodata        0x080051a0       0x40 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(mulsf3.o)
+ .rodata        0x080051e0       0x40 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(divdf3.o)
+ .rodata        0x08005220       0x40 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(muldf3.o)
+ .rodata.str1.1
+                0x08005260        0x2 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-impure.o)
+ .rodata.str1.1
+                0x08005262       0x25 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-utoa.o)
+                0x08005288                . = ALIGN (0x4)
+ *fill*         0x08005287        0x1 
+ *(.init)
+                0x08005288                . = ALIGN (0x4)
+                0x08005288                __preinit_array_start = .
+ *(.preinit_array)
+                0x08005288                __preinit_array_end = .
+                0x08005288                . = ALIGN (0x4)
+                0x08005288                __init_array_start = .
+ *(SORT(.init_array.*))
+ *(.init_array)
+                0x08005288                __init_array_end = .
+                0x08005288                . = ALIGN (0x4)
+ *(.fini)
+                0x08005288                . = ALIGN (0x4)
+                0x08005288                __fini_array_start = .
+ *(.fini_array)
+ *(SORT(.fini_array.*))
+                0x08005288                __fini_array_end = .
+                0x08005288                . = ALIGN (0x4)
+ *crtbegin.o(.ctors)
+ *(EXCLUDE_FILE(*crtend.o) .ctors)
+ *(SORT(.ctors.*))
+ *crtend.o(.ctors)
+                0x08005288                . = ALIGN (0x4)
+ *crtbegin.o(.dtors)
+ *(EXCLUDE_FILE(*crtend.o) .dtors)
+ *(SORT(.dtors.*))
+ *crtend.o(.dtors)
+ *(.init .init.*)
+ *(.fini .fini.*)
+                [!provide]                PROVIDE (__preinit_array_start, .)
+ *(.preinit_array)
+                [!provide]                PROVIDE (__preinit_array_end, .)
+                [!provide]                PROVIDE (__init_array_start, .)
+ *(SORT(.init_array.*))
+ *(.init_array)
+                [!provide]                PROVIDE (__init_array_end, .)
+                [!provide]                PROVIDE (__fini_array_start, .)
+ *(.fini_array)
+ *(SORT(.fini_array.*))
+                [!provide]                PROVIDE (__fini_array_end, .)
+                0x08005288                . = ALIGN (0x8)
+ *(.rom)
+ *(.rom.b)
+                0x08005288                _etext = .
+                0x08005288                _sidata = _etext
+
+.rel.dyn        0x08005288        0x0
+ .rel.iplt      0x08005288        0x0 CMakeFiles/barometer.elf.dir/main.cpp.obj
+
+.data           0x20000000       0x80 load address 0x08005288
+                0x20000000                _sdata = .
+                0x20000000                _data = .
+                0x20000000                . = ALIGN (0x80)
+                0x00000000                _isr_vectorsram_offs = (. - 0x20000000)
+ *(.isr_vectorsram)
+                0x20000000                . = ALIGN (0x4)
+ *(.jcr)
+ *(.got.plt)
+ *(.got)
+ *(.shdata)
+ *(.data .data.* .gnu.linkonce.d.*)
+ .data.GPIO_PORT
+                0x20000000        0x8 F0DiscoveryDir/libSTM32F0DiscoveryLib.a(stm32f0_discovery.c.obj)
+                0x20000000                GPIO_PORT
+ .data._ZL16APBAHBPrescTable
+                0x20000008       0x10 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .data.__fdlib_version
+                0x20000018        0x1 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_lib_ver.o)
+                0x20000018                __fdlib_version
+ *fill*         0x20000019        0x3 
+ .data.impure_data
+                0x2000001c       0x60 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-impure.o)
+ .data._impure_ptr
+                0x2000007c        0x4 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-impure.o)
+                0x2000007c                _impure_ptr
+                0x20000080                . = ALIGN (0x8)
+ *(.ram)
+ *(.ramfunc*)
+                0x20000080                . = ALIGN (0x4)
+                0x20000080                _edata = .
+
+.igot.plt       0x20000080        0x0 load address 0x08005308
+ .igot.plt      0x20000080        0x0 CMakeFiles/barometer.elf.dir/main.cpp.obj
+
+.bss            0x20000080       0x10 load address 0x08005308
+                0x20000080                . = ALIGN (0x4)
+                0x20000080                _bss = .
+                0x20000080                _sbss = .
+                0x20000080                __bss_start__ = .
+ *(.shbss)
+ *(.bss .bss.* .gnu.linkonce.b.*)
+ .bss._ZL11TimingDelay
+                0x20000080        0x4 CMakeFiles/barometer.elf.dir/main.cpp.obj
+ .bss.usart     0x20000084        0x1 CMakeFiles/barometer.elf.dir/main.cpp.obj
+                0x20000084                usart
+ *(COMMON)
+ *fill*         0x20000085        0x3 
+ COMMON         0x20000088        0x4 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-reent.o)
+                0x20000088                errno
+                0x20000090                . = ALIGN (0x8)
+ *fill*         0x2000008c        0x4 
+ *(.ram.b)
+                0x20000090                . = ALIGN (0x4)
+                0x20000090                __bss_end__ = .
+                0x20000090                _ebss = .
+                0x20000090                __end = .
+                0x20000090                _end = .
+                [!provide]                PROVIDE (end, .)
+
+._usrstack      0x20000090       0x98 load address 0x08005308
+                0x20000090                . = ALIGN (0x4)
+                0x20000090                _susrstack = .
+                0x20000126                . = (. + _Minimum_Stack_Size)
+ *fill*         0x20000090       0x96 
+                0x20000128                . = ALIGN (0x4)
+ *fill*         0x20000126        0x2 
+                0x20000128                _eusrstack = .
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment        0x00000000       0x6e
+ *(.comment)
+ .comment       0x00000000       0x6e CMakeFiles/barometer.elf.dir/main.cpp.obj
+                                 0x6f (size before relaxing)
+ .comment       0x0000006e       0x6f CMakeFiles/barometer.elf.dir/usart.cpp.obj
+ .comment       0x0000006e       0x6f CMakeFiles/barometer.elf.dir/MS5611.cpp.obj
+ .comment       0x0000006e       0x6f CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
+ .comment       0x0000006e       0x6f CMakeFiles/barometer.elf.dir/stm32f0xx_it.c.obj
+ .comment       0x0000006e       0x6f F0DiscoveryDir/libSTM32F0DiscoveryLib.a(stm32f0_discovery.c.obj)
+ .comment       0x0000006e       0x6f STM32CMSIS/libCMSISFIRMWARE.a(system_stm32f0xx.c.obj)
+ .comment       0x0000006e       0x6f STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_exti.c.obj)
+ .comment       0x0000006e       0x6f STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_gpio.c.obj)
+ .comment       0x0000006e       0x6f STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .comment       0x0000006e       0x6f STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_misc.c.obj)
+ .comment       0x0000006e       0x6f STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .comment       0x0000006e       0x6f STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_syscfg.c.obj)
+ .comment       0x0000006e       0x6f STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x00000000      0x220
+ *(.debug_aranges)
+ .debug_aranges
+                0x00000000       0x30 CMakeFiles/barometer.elf.dir/main.cpp.obj
+ .debug_aranges
+                0x00000030       0x48 CMakeFiles/barometer.elf.dir/usart.cpp.obj
+ .debug_aranges
+                0x00000078       0x68 CMakeFiles/barometer.elf.dir/MS5611.cpp.obj
+ .debug_aranges
+                0x000000e0       0x78 CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
+ .debug_aranges
+                0x00000158       0x30 CMakeFiles/barometer.elf.dir/stm32f0xx_it.c.obj
+ .debug_aranges
+                0x00000188       0x48 F0DiscoveryDir/libSTM32F0DiscoveryLib.a(stm32f0_discovery.c.obj)
+ .debug_aranges
+                0x000001d0       0x28 STM32CMSIS/libCMSISFIRMWARE.a(startup_stm32f0xx.s.obj)
+ .debug_aranges
+                0x000001f8       0x28 STM32CMSIS/libCMSISFIRMWARE.a(system_stm32f0xx.c.obj)
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info     0x00000000     0x9979
+ *(.debug_info .gnu.linkonce.wi.*)
+ .debug_info    0x00000000     0x41ea CMakeFiles/barometer.elf.dir/main.cpp.obj
+ .debug_info    0x000041ea     0x169c CMakeFiles/barometer.elf.dir/usart.cpp.obj
+ .debug_info    0x00005886     0x2670 CMakeFiles/barometer.elf.dir/MS5611.cpp.obj
+ .debug_info    0x00007ef6      0xd6c CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
+ .debug_info    0x00008c62       0xc1 CMakeFiles/barometer.elf.dir/stm32f0xx_it.c.obj
+ .debug_info    0x00008d23      0x7df F0DiscoveryDir/libSTM32F0DiscoveryLib.a(stm32f0_discovery.c.obj)
+ .debug_info    0x00009502       0xfe STM32CMSIS/libCMSISFIRMWARE.a(startup_stm32f0xx.s.obj)
+ .debug_info    0x00009600      0x379 STM32CMSIS/libCMSISFIRMWARE.a(system_stm32f0xx.c.obj)
+
+.debug_abbrev   0x00000000     0x14b5
+ *(.debug_abbrev)
+ .debug_abbrev  0x00000000      0x664 CMakeFiles/barometer.elf.dir/main.cpp.obj
+ .debug_abbrev  0x00000664      0x3ba CMakeFiles/barometer.elf.dir/usart.cpp.obj
+ .debug_abbrev  0x00000a1e      0x47f CMakeFiles/barometer.elf.dir/MS5611.cpp.obj
+ .debug_abbrev  0x00000e9d      0x28f CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
+ .debug_abbrev  0x0000112c       0x94 CMakeFiles/barometer.elf.dir/stm32f0xx_it.c.obj
+ .debug_abbrev  0x000011c0      0x19e F0DiscoveryDir/libSTM32F0DiscoveryLib.a(stm32f0_discovery.c.obj)
+ .debug_abbrev  0x0000135e       0x12 STM32CMSIS/libCMSISFIRMWARE.a(startup_stm32f0xx.s.obj)
+ .debug_abbrev  0x00001370      0x145 STM32CMSIS/libCMSISFIRMWARE.a(system_stm32f0xx.c.obj)
+
+.debug_line     0x00000000     0x1c8b
+ *(.debug_line)
+ .debug_line    0x00000000      0x6b2 CMakeFiles/barometer.elf.dir/main.cpp.obj
+ .debug_line    0x000006b2      0x49b CMakeFiles/barometer.elf.dir/usart.cpp.obj
+ .debug_line    0x00000b4d      0x6cc CMakeFiles/barometer.elf.dir/MS5611.cpp.obj
+ .debug_line    0x00001219      0x376 CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
+ .debug_line    0x0000158f       0xd6 CMakeFiles/barometer.elf.dir/stm32f0xx_it.c.obj
+ .debug_line    0x00001665      0x30d F0DiscoveryDir/libSTM32F0DiscoveryLib.a(stm32f0_discovery.c.obj)
+ .debug_line    0x00001972       0xe7 STM32CMSIS/libCMSISFIRMWARE.a(startup_stm32f0xx.s.obj)
+ .debug_line    0x00001a59      0x232 STM32CMSIS/libCMSISFIRMWARE.a(system_stm32f0xx.c.obj)
+
+.debug_frame    0x00000000     0x105c
+ *(.debug_frame)
+ .debug_frame   0x00000000       0x50 CMakeFiles/barometer.elf.dir/main.cpp.obj
+ .debug_frame   0x00000050       0xb0 CMakeFiles/barometer.elf.dir/usart.cpp.obj
+ .debug_frame   0x00000100      0x12c CMakeFiles/barometer.elf.dir/MS5611.cpp.obj
+ .debug_frame   0x0000022c       0xd8 CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
+ .debug_frame   0x00000304       0x68 CMakeFiles/barometer.elf.dir/stm32f0xx_it.c.obj
+ .debug_frame   0x0000036c       0x98 F0DiscoveryDir/libSTM32F0DiscoveryLib.a(stm32f0_discovery.c.obj)
+ .debug_frame   0x00000404       0x48 STM32CMSIS/libCMSISFIRMWARE.a(system_stm32f0xx.c.obj)
+ .debug_frame   0x0000044c       0x38 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-w_log.o)
+ .debug_frame   0x00000484       0x3c c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-e_log.o)
+ .debug_frame   0x000004c0       0x20 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_matherr.o)
+ .debug_frame   0x000004e0       0x20 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_nan.o)
+ .debug_frame   0x00000500       0x20 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_udivsi3.o)
+ .debug_frame   0x00000520       0x28 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_fixunssfsi.o)
+ .debug_frame   0x00000548       0x30 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(addsf3.o)
+ .debug_frame   0x00000578       0x3c c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(divsf3.o)
+ .debug_frame   0x000005b4       0x2c c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(eqsf2.o)
+ .debug_frame   0x000005e0       0x30 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(gesf2.o)
+ .debug_frame   0x00000610       0x30 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(lesf2.o)
+ .debug_frame   0x00000640       0x38 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(mulsf3.o)
+ .debug_frame   0x00000678       0x30 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(subsf3.o)
+ .debug_frame   0x000006a8       0x20 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(fixsfsi.o)
+ .debug_frame   0x000006c8       0x2c c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(floatsisf.o)
+ .debug_frame   0x000006f4       0x2c c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(floatunsisf.o)
+ .debug_frame   0x00000720       0x3c c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(adddf3.o)
+ .debug_frame   0x0000075c       0x3c c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(divdf3.o)
+ .debug_frame   0x00000798       0x38 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(eqdf2.o)
+ .debug_frame   0x000007d0       0x38 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(gedf2.o)
+ .debug_frame   0x00000808       0x38 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(ledf2.o)
+ .debug_frame   0x00000840       0x3c c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(muldf3.o)
+ .debug_frame   0x0000087c       0x38 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(subdf3.o)
+ .debug_frame   0x000008b4       0x2c c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(unorddf2.o)
+ .debug_frame   0x000008e0       0x2c c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(floatsidf.o)
+ .debug_frame   0x0000090c       0x2c c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(extendsfdf2.o)
+ .debug_frame   0x00000938       0x2c c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(truncdfsf2.o)
+ .debug_frame   0x00000964      0x2c4 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(unwind-arm.o)
+ .debug_frame   0x00000c28       0xf4 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(pr-support.o)
+ .debug_frame   0x00000d1c       0x28 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-abort.o)
+ .debug_frame   0x00000d44       0x20 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-errno.o)
+ .debug_frame   0x00000d64       0x40 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-itoa.o)
+ .debug_frame   0x00000da4       0x28 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-memcpy-stub.o)
+ .debug_frame   0x00000dcc       0x48 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-reent.o)
+ .debug_frame   0x00000e14       0xe0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-signal.o)
+ .debug_frame   0x00000ef4       0x44 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-signalr.o)
+ .debug_frame   0x00000f38       0x28 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-sysisatty.o)
+ .debug_frame   0x00000f60       0x48 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-utoa.o)
+ .debug_frame   0x00000fa8       0x2c c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-nano-freer.o)
+ .debug_frame   0x00000fd4       0x2c c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-nano-mallocr.o)
+ .debug_frame   0x00001000       0x2c c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-sbrkr.o)
+ .debug_frame   0x0000102c       0x30 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-mlock.o)
+
+.debug_str      0x00000000     0x5c29
+ *(.debug_str)
+ .debug_str     0x00000000     0x4f09 CMakeFiles/barometer.elf.dir/main.cpp.obj
+                               0x52bc (size before relaxing)
+ .debug_str     0x00004f09      0x367 CMakeFiles/barometer.elf.dir/usart.cpp.obj
+                                0xdb0 (size before relaxing)
+ .debug_str     0x00005270      0x1ee CMakeFiles/barometer.elf.dir/MS5611.cpp.obj
+                               0x12c5 (size before relaxing)
+ .debug_str     0x0000545e      0x2af CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
+                                0x7d8 (size before relaxing)
+ .debug_str     0x0000570d       0x74 CMakeFiles/barometer.elf.dir/stm32f0xx_it.c.obj
+                                0x1e3 (size before relaxing)
+ .debug_str     0x00005781      0x325 F0DiscoveryDir/libSTM32F0DiscoveryLib.a(stm32f0_discovery.c.obj)
+                                0x822 (size before relaxing)
+ .debug_str     0x00005aa6      0x183 STM32CMSIS/libCMSISFIRMWARE.a(system_stm32f0xx.c.obj)
+                                0x3ac (size before relaxing)
+
+.debug_loc      0x00000000      0x872
+ *(.debug_loc)
+ .debug_loc     0x00000000       0x4a CMakeFiles/barometer.elf.dir/main.cpp.obj
+ .debug_loc     0x0000004a      0x168 CMakeFiles/barometer.elf.dir/usart.cpp.obj
+ .debug_loc     0x000001b2      0x3c9 CMakeFiles/barometer.elf.dir/MS5611.cpp.obj
+ .debug_loc     0x0000057b      0x134 CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
+ .debug_loc     0x000006af       0xe7 F0DiscoveryDir/libSTM32F0DiscoveryLib.a(stm32f0_discovery.c.obj)
+ .debug_loc     0x00000796       0xdc STM32CMSIS/libCMSISFIRMWARE.a(system_stm32f0xx.c.obj)
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+.debug_pubtypes
+ *(.debug_pubtypes)
+
+.debug_ranges   0x00000000      0x1c8
+ *(.debug_ranges)
+ .debug_ranges  0x00000000       0x20 CMakeFiles/barometer.elf.dir/main.cpp.obj
+ .debug_ranges  0x00000020       0x38 CMakeFiles/barometer.elf.dir/usart.cpp.obj
+ .debug_ranges  0x00000058       0x58 CMakeFiles/barometer.elf.dir/MS5611.cpp.obj
+ .debug_ranges  0x000000b0       0x68 CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
+ .debug_ranges  0x00000118       0x20 CMakeFiles/barometer.elf.dir/stm32f0xx_it.c.obj
+ .debug_ranges  0x00000138       0x38 F0DiscoveryDir/libSTM32F0DiscoveryLib.a(stm32f0_discovery.c.obj)
+ .debug_ranges  0x00000170       0x20 STM32CMSIS/libCMSISFIRMWARE.a(startup_stm32f0xx.s.obj)
+ .debug_ranges  0x00000190       0x38 STM32CMSIS/libCMSISFIRMWARE.a(system_stm32f0xx.c.obj)
+
+.ARM.attributes
+                0x00000000       0x2f
+ *(.ARM.attributes)
+ .ARM.attributes
+                0x00000000       0x31 CMakeFiles/barometer.elf.dir/main.cpp.obj
+ .ARM.attributes
+                0x00000031       0x31 CMakeFiles/barometer.elf.dir/usart.cpp.obj
+ .ARM.attributes
+                0x00000062       0x31 CMakeFiles/barometer.elf.dir/MS5611.cpp.obj
+ .ARM.attributes
+                0x00000093       0x31 CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
+ .ARM.attributes
+                0x000000c4       0x31 CMakeFiles/barometer.elf.dir/stm32f0xx_it.c.obj
+ .ARM.attributes
+                0x000000f5       0x31 F0DiscoveryDir/libSTM32F0DiscoveryLib.a(stm32f0_discovery.c.obj)
+ .ARM.attributes
+                0x00000126       0x21 STM32CMSIS/libCMSISFIRMWARE.a(startup_stm32f0xx.s.obj)
+ .ARM.attributes
+                0x00000147       0x31 STM32CMSIS/libCMSISFIRMWARE.a(system_stm32f0xx.c.obj)
+ .ARM.attributes
+                0x00000178       0x31 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_exti.c.obj)
+ .ARM.attributes
+                0x000001a9       0x31 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_gpio.c.obj)
+ .ARM.attributes
+                0x000001da       0x31 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_i2c.c.obj)
+ .ARM.attributes
+                0x0000020b       0x31 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_misc.c.obj)
+ .ARM.attributes
+                0x0000023c       0x31 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_rcc.c.obj)
+ .ARM.attributes
+                0x0000026d       0x31 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_syscfg.c.obj)
+ .ARM.attributes
+                0x0000029e       0x31 STM32_StdPeriph_Driver/libF0StdPerifDriver.a(stm32f0xx_usart.c.obj)
+ .ARM.attributes
+                0x000002cf       0x2c c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-w_log.o)
+ .ARM.attributes
+                0x000002fb       0x2c c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-e_log.o)
+ .ARM.attributes
+                0x00000327       0x2c c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_lib_ver.o)
+ .ARM.attributes
+                0x00000353       0x2c c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_matherr.o)
+ .ARM.attributes
+                0x0000037f       0x2c c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libm.a(lib_a-s_nan.o)
+ .ARM.attributes
+                0x000003ab       0x1e c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_udivsi3.o)
+ .ARM.attributes
+                0x000003c9       0x1e c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_dvmd_tls.o)
+ .ARM.attributes
+                0x000003e7       0x1e c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_arm_cmpdf2.o)
+ .ARM.attributes
+                0x00000405       0x1e c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_arm_cmpsf2.o)
+ .ARM.attributes
+                0x00000423       0x2c c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_fixunssfsi.o)
+ .ARM.attributes
+                0x0000044f       0x2c c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(addsf3.o)
+ .ARM.attributes
+                0x0000047b       0x2c c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(divsf3.o)
+ .ARM.attributes
+                0x000004a7       0x2c c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(eqsf2.o)
+ .ARM.attributes
+                0x000004d3       0x2c c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(gesf2.o)
+ .ARM.attributes
+                0x000004ff       0x2c c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(lesf2.o)
+ .ARM.attributes
+                0x0000052b       0x2c c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(mulsf3.o)
+ .ARM.attributes
+                0x00000557       0x2c c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(subsf3.o)
+ .ARM.attributes
+                0x00000583       0x2c c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(fixsfsi.o)
+ .ARM.attributes
+                0x000005af       0x2c c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(floatsisf.o)
+ .ARM.attributes
+                0x000005db       0x2c c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(floatunsisf.o)
+ .ARM.attributes
+                0x00000607       0x2c c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(adddf3.o)
+ .ARM.attributes
+                0x00000633       0x2c c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(divdf3.o)
+ .ARM.attributes
+                0x0000065f       0x2c c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(eqdf2.o)
+ .ARM.attributes
+                0x0000068b       0x2c c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(gedf2.o)
+ .ARM.attributes
+                0x000006b7       0x2c c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(ledf2.o)
+ .ARM.attributes
+                0x000006e3       0x2c c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(muldf3.o)
+ .ARM.attributes
+                0x0000070f       0x2c c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(subdf3.o)
+ .ARM.attributes
+                0x0000073b       0x2c c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(unorddf2.o)
+ .ARM.attributes
+                0x00000767       0x2c c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(floatsidf.o)
+ .ARM.attributes
+                0x00000793       0x2c c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(extendsfdf2.o)
+ .ARM.attributes
+                0x000007bf       0x2c c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(truncdfsf2.o)
+ .ARM.attributes
+                0x000007eb       0x2c c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(unwind-arm.o)
+ .ARM.attributes
+                0x00000817       0x1e c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(libunwind.o)
+ .ARM.attributes
+                0x00000835       0x2c c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(pr-support.o)
+ .ARM.attributes
+                0x00000861       0x1e c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_clzsi2.o)
+ .ARM.attributes
+                0x0000087f       0x2c c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-abort.o)
+ .ARM.attributes
+                0x000008ab       0x2c c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-errno.o)
+ .ARM.attributes
+                0x000008d7       0x2c c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-impure.o)
+ .ARM.attributes
+                0x00000903       0x2c c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-itoa.o)
+ .ARM.attributes
+                0x0000092f       0x2c c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-memcpy-stub.o)
+ .ARM.attributes
+                0x0000095b       0x2c c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-reent.o)
+ .ARM.attributes
+                0x00000987       0x2c c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-signal.o)
+ .ARM.attributes
+                0x000009b3       0x2c c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-signalr.o)
+ .ARM.attributes
+                0x000009df       0x2c c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-sysisatty.o)
+ .ARM.attributes
+                0x00000a0b       0x2c c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-utoa.o)
+ .ARM.attributes
+                0x00000a37       0x2c c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-nano-freer.o)
+ .ARM.attributes
+                0x00000a63       0x2c c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-nano-mallocr.o)
+ .ARM.attributes
+                0x00000a8f       0x2c c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-sbrkr.o)
+ .ARM.attributes
+                0x00000abb       0x2c c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a(lib_a-mlock.o)
+ *(.gnu.attributes)
+
+.note.gnu.arm.ident
+ *(.note.gnu.arm.ident)
+
+/DISCARD/
+ *(.note.GNU-stack)
+ *(.gnu_debuglink)
+                0x00000400                __Stack_Size = 0x400
+                [!provide]                PROVIDE (_Stack_Size, __Stack_Size)
+                0x20001c00                __Stack_Init = (_estack - __Stack_Size)
+                [!provide]                PROVIDE (_Stack_Init, __Stack_Init)
+OUTPUT(..\CLionBuildOutput\Debug\barometer.elf.exe elf32-littlearm)
