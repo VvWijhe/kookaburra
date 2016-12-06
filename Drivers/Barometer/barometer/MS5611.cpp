@@ -101,16 +101,16 @@ void MS5611::readPROM() {
         // Read sequence
         waitForI2CFlag(I2C_ISR_BUSY);
 
-        I2C_TransferHandling(MS5611_I2C, MS5611_ADDRESS_CSB_LOW, 3, I2C_AutoEnd_Mode, I2C_Generate_Start_Read);
+        I2C_TransferHandling(MS5611_I2C, MS5611_ADDRESS_CSB_LOW, 2, I2C_AutoEnd_Mode, I2C_Generate_Start_Read);
 
         waitForI2CFlag(I2C_ISR_RXNE);
-        tempC[i] = I2C_ReceiveData(MS5611_I2C) << 8;
+        tempC[i] = (uint16_t)I2C_ReceiveData(MS5611_I2C) << 8;
 
         waitForI2CFlag(I2C_ISR_STOPF);
         I2C_ClearFlag(MS5611_I2C, I2C_ICR_STOPCF);
 
         waitForI2CFlag(I2C_ISR_RXNE);
-        tempC[i] = tempC[i] | I2C_ReceiveData(MS5611_I2C);
+        tempC[i] = tempC[i] | (uint16_t)I2C_ReceiveData(MS5611_I2C);
     }
 
     C1 = tempC[0];
@@ -158,11 +158,11 @@ void MS5611::readTemperature() {
     waitForI2CFlag(I2C_ISR_RXNE);
     D2 = (uint32_t)I2C_ReceiveData(MS5611_I2C) << 16;
     waitForI2CFlag(I2C_ISR_RXNE);
-    D2 = D2 | I2C_ReceiveData(MS5611_I2C) << 8;
+    D2 = D2 | (uint32_t)I2C_ReceiveData(MS5611_I2C) << 8;
     waitForI2CFlag(I2C_ISR_STOPF);
     I2C_ClearFlag(MS5611_I2C, I2C_ICR_STOPCF);
     waitForI2CFlag(I2C_ISR_RXNE);
-    D2 = D2 | I2C_ReceiveData(MS5611_I2C);
+    D2 = D2 | (uint32_t)I2C_ReceiveData(MS5611_I2C);
 }
 
 /** Read pressure ADC from the IC.
@@ -200,13 +200,13 @@ void MS5611::readPressure() {
     I2C_TransferHandling(MS5611_I2C, MS5611_ADDRESS_CSB_LOW, 3, I2C_AutoEnd_Mode, I2C_Generate_Start_Read);
 
     waitForI2CFlag(I2C_ISR_RXNE);
-    D2 = I2C_ReceiveData(MS5611_I2C) << 16;
+    D2 = (uint32_t)I2C_ReceiveData(MS5611_I2C) << 16;
     waitForI2CFlag(I2C_ISR_RXNE);
-    D2 = D2 | I2C_ReceiveData(MS5611_I2C) << 8;
+    D2 = D2 | (uint32_t)I2C_ReceiveData(MS5611_I2C) << 8;
     waitForI2CFlag(I2C_ISR_STOPF);
     I2C_ClearFlag(MS5611_I2C, I2C_ICR_STOPCF);
     waitForI2CFlag(I2C_ISR_RXNE);
-    D2 = D2 | I2C_ReceiveData(MS5611_I2C);
+    D2 = D2 | (uint32_t)I2C_ReceiveData(MS5611_I2C);
 }
 
 /** Calculate temperature and pressure calculations and perform compensation

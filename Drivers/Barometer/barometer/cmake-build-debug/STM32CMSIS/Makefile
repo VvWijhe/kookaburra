@@ -38,19 +38,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files (x86)\JetBrains\CLion 2016.3\bin\cmake\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Program Files (x86)\JetBrains\CLion 2016.2.2\bin\cmake\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files (x86)\JetBrains\CLion 2016.3\bin\cmake\bin\cmake.exe" -E remove -f
+RM = "C:\Program Files (x86)\JetBrains\CLion 2016.2.2\bin\cmake\bin\cmake.exe" -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\Jamie\Documents\GitHub\Barometer\barometer
+CMAKE_SOURCE_DIR = C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -58,7 +58,7 @@ CMAKE_BINARY_DIR = C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-bui
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	"C:\Program Files (x86)\JetBrains\CLion 2016.3\bin\cmake\bin\cmake.exe" -E echo "No interactive CMake dialog available."
+	"C:\Program Files (x86)\JetBrains\CLion 2016.2.2\bin\cmake\bin\cmake.exe" -E echo "No interactive CMake dialog available."
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -69,7 +69,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	"C:\Program Files (x86)\JetBrains\CLion 2016.3\bin\cmake\bin\cmake.exe" -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	"C:\Program Files (x86)\JetBrains\CLion 2016.2.2\bin\cmake\bin\cmake.exe" -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -79,14 +79,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug && $(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\CMakeFiles C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\STM32CMSIS\CMakeFiles\progress.marks
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug && $(MAKE) -f CMakeFiles\Makefile2 STM32CMSIS/all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\CMakeFiles 0
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug && $(CMAKE_COMMAND) -E cmake_progress_start C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\CMakeFiles C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\STM32CMSIS\CMakeFiles\progress.marks
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug && $(MAKE) -f CMakeFiles\Makefile2 STM32CMSIS/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug && $(MAKE) -f CMakeFiles\Makefile2 STM32CMSIS/clean
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug && $(MAKE) -f CMakeFiles\Makefile2 STM32CMSIS/clean
 .PHONY : clean
 
 # The main clean target
@@ -96,22 +96,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug && $(MAKE) -f CMakeFiles\Makefile2 STM32CMSIS/preinstall
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug && $(MAKE) -f CMakeFiles\Makefile2 STM32CMSIS/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug && $(MAKE) -f CMakeFiles\Makefile2 STM32CMSIS/preinstall
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug && $(MAKE) -f CMakeFiles\Makefile2 STM32CMSIS/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/rule:
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug && $(MAKE) -f CMakeFiles\Makefile2 STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug && $(MAKE) -f CMakeFiles\Makefile2 STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/rule
 .PHONY : STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/rule
 
 # Convenience name for target.
@@ -121,7 +121,7 @@ CMSISFIRMWARE: STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/rule
 
 # fast build rule for target.
 CMSISFIRMWARE/fast:
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug && $(MAKE) -f STM32CMSIS\CMakeFiles\CMSISFIRMWARE.dir\build.make STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/build
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug && $(MAKE) -f STM32CMSIS\CMakeFiles\CMSISFIRMWARE.dir\build.make STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/build
 .PHONY : CMSISFIRMWARE/fast
 
 Source/Templates/gcc/startup_stm32f0xx.obj: Source/Templates/gcc/startup_stm32f0xx.s.obj
@@ -130,7 +130,7 @@ Source/Templates/gcc/startup_stm32f0xx.obj: Source/Templates/gcc/startup_stm32f0
 
 # target to build an object file
 Source/Templates/gcc/startup_stm32f0xx.s.obj:
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug && $(MAKE) -f STM32CMSIS\CMakeFiles\CMSISFIRMWARE.dir\build.make STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/Source/Templates/gcc/startup_stm32f0xx.s.obj
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug && $(MAKE) -f STM32CMSIS\CMakeFiles\CMSISFIRMWARE.dir\build.make STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/Source/Templates/gcc/startup_stm32f0xx.s.obj
 .PHONY : Source/Templates/gcc/startup_stm32f0xx.s.obj
 
 Source/Templates/system_stm32f0xx.obj: Source/Templates/system_stm32f0xx.c.obj
@@ -139,7 +139,7 @@ Source/Templates/system_stm32f0xx.obj: Source/Templates/system_stm32f0xx.c.obj
 
 # target to build an object file
 Source/Templates/system_stm32f0xx.c.obj:
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug && $(MAKE) -f STM32CMSIS\CMakeFiles\CMSISFIRMWARE.dir\build.make STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/Source/Templates/system_stm32f0xx.c.obj
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug && $(MAKE) -f STM32CMSIS\CMakeFiles\CMSISFIRMWARE.dir\build.make STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/Source/Templates/system_stm32f0xx.c.obj
 .PHONY : Source/Templates/system_stm32f0xx.c.obj
 
 Source/Templates/system_stm32f0xx.i: Source/Templates/system_stm32f0xx.c.i
@@ -148,7 +148,7 @@ Source/Templates/system_stm32f0xx.i: Source/Templates/system_stm32f0xx.c.i
 
 # target to preprocess a source file
 Source/Templates/system_stm32f0xx.c.i:
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug && $(MAKE) -f STM32CMSIS\CMakeFiles\CMSISFIRMWARE.dir\build.make STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/Source/Templates/system_stm32f0xx.c.i
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug && $(MAKE) -f STM32CMSIS\CMakeFiles\CMSISFIRMWARE.dir\build.make STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/Source/Templates/system_stm32f0xx.c.i
 .PHONY : Source/Templates/system_stm32f0xx.c.i
 
 Source/Templates/system_stm32f0xx.s: Source/Templates/system_stm32f0xx.c.s
@@ -157,7 +157,7 @@ Source/Templates/system_stm32f0xx.s: Source/Templates/system_stm32f0xx.c.s
 
 # target to generate assembly for a file
 Source/Templates/system_stm32f0xx.c.s:
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug && $(MAKE) -f STM32CMSIS\CMakeFiles\CMSISFIRMWARE.dir\build.make STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/Source/Templates/system_stm32f0xx.c.s
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug && $(MAKE) -f STM32CMSIS\CMakeFiles\CMSISFIRMWARE.dir\build.make STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/Source/Templates/system_stm32f0xx.c.s
 .PHONY : Source/Templates/system_stm32f0xx.c.s
 
 # Help Target
@@ -184,6 +184,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 0
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

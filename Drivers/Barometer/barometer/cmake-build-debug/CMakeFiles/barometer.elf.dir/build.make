@@ -33,19 +33,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files (x86)\JetBrains\CLion 2016.3\bin\cmake\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Program Files (x86)\JetBrains\CLion 2016.2.2\bin\cmake\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files (x86)\JetBrains\CLion 2016.3\bin\cmake\bin\cmake.exe" -E remove -f
+RM = "C:\Program Files (x86)\JetBrains\CLion 2016.2.2\bin\cmake\bin\cmake.exe" -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\Jamie\Documents\GitHub\Barometer\barometer
+CMAKE_SOURCE_DIR = C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/barometer.elf.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/barometer.elf.dir/flags.make
 CMakeFiles/barometer.elf.dir/main.cpp.obj: CMakeFiles/barometer.elf.dir/flags.make
 CMakeFiles/barometer.elf.dir/main.cpp.obj: CMakeFiles/barometer.elf.dir/includes_CXX.rsp
 CMakeFiles/barometer.elf.dir/main.cpp.obj: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/barometer.elf.dir/main.cpp.obj"
-	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\barometer.elf.dir\main.cpp.obj -c C:\Users\Jamie\Documents\GitHub\Barometer\barometer\main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/barometer.elf.dir/main.cpp.obj"
+	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\barometer.elf.dir\main.cpp.obj -c C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\main.cpp
 
 CMakeFiles/barometer.elf.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/barometer.elf.dir/main.cpp.i"
-	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Jamie\Documents\GitHub\Barometer\barometer\main.cpp > CMakeFiles\barometer.elf.dir\main.cpp.i
+	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\main.cpp > CMakeFiles\barometer.elf.dir\main.cpp.i
 
 CMakeFiles/barometer.elf.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/barometer.elf.dir/main.cpp.s"
-	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Jamie\Documents\GitHub\Barometer\barometer\main.cpp -o CMakeFiles\barometer.elf.dir\main.cpp.s
+	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\main.cpp -o CMakeFiles\barometer.elf.dir\main.cpp.s
 
 CMakeFiles/barometer.elf.dir/main.cpp.obj.requires:
 
@@ -84,16 +84,16 @@ CMakeFiles/barometer.elf.dir/main.cpp.obj.provides.build: CMakeFiles/barometer.e
 CMakeFiles/barometer.elf.dir/usart.cpp.obj: CMakeFiles/barometer.elf.dir/flags.make
 CMakeFiles/barometer.elf.dir/usart.cpp.obj: CMakeFiles/barometer.elf.dir/includes_CXX.rsp
 CMakeFiles/barometer.elf.dir/usart.cpp.obj: ../usart.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/barometer.elf.dir/usart.cpp.obj"
-	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\barometer.elf.dir\usart.cpp.obj -c C:\Users\Jamie\Documents\GitHub\Barometer\barometer\usart.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/barometer.elf.dir/usart.cpp.obj"
+	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\barometer.elf.dir\usart.cpp.obj -c C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\usart.cpp
 
 CMakeFiles/barometer.elf.dir/usart.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/barometer.elf.dir/usart.cpp.i"
-	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Jamie\Documents\GitHub\Barometer\barometer\usart.cpp > CMakeFiles\barometer.elf.dir\usart.cpp.i
+	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\usart.cpp > CMakeFiles\barometer.elf.dir\usart.cpp.i
 
 CMakeFiles/barometer.elf.dir/usart.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/barometer.elf.dir/usart.cpp.s"
-	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Jamie\Documents\GitHub\Barometer\barometer\usart.cpp -o CMakeFiles\barometer.elf.dir\usart.cpp.s
+	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\usart.cpp -o CMakeFiles\barometer.elf.dir\usart.cpp.s
 
 CMakeFiles/barometer.elf.dir/usart.cpp.obj.requires:
 
@@ -109,16 +109,16 @@ CMakeFiles/barometer.elf.dir/usart.cpp.obj.provides.build: CMakeFiles/barometer.
 CMakeFiles/barometer.elf.dir/MS5611.cpp.obj: CMakeFiles/barometer.elf.dir/flags.make
 CMakeFiles/barometer.elf.dir/MS5611.cpp.obj: CMakeFiles/barometer.elf.dir/includes_CXX.rsp
 CMakeFiles/barometer.elf.dir/MS5611.cpp.obj: ../MS5611.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/barometer.elf.dir/MS5611.cpp.obj"
-	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\barometer.elf.dir\MS5611.cpp.obj -c C:\Users\Jamie\Documents\GitHub\Barometer\barometer\MS5611.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/barometer.elf.dir/MS5611.cpp.obj"
+	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\barometer.elf.dir\MS5611.cpp.obj -c C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\MS5611.cpp
 
 CMakeFiles/barometer.elf.dir/MS5611.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/barometer.elf.dir/MS5611.cpp.i"
-	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Jamie\Documents\GitHub\Barometer\barometer\MS5611.cpp > CMakeFiles\barometer.elf.dir\MS5611.cpp.i
+	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\MS5611.cpp > CMakeFiles\barometer.elf.dir\MS5611.cpp.i
 
 CMakeFiles/barometer.elf.dir/MS5611.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/barometer.elf.dir/MS5611.cpp.s"
-	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Jamie\Documents\GitHub\Barometer\barometer\MS5611.cpp -o CMakeFiles\barometer.elf.dir\MS5611.cpp.s
+	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\MS5611.cpp -o CMakeFiles\barometer.elf.dir\MS5611.cpp.s
 
 CMakeFiles/barometer.elf.dir/MS5611.cpp.obj.requires:
 
@@ -131,44 +131,44 @@ CMakeFiles/barometer.elf.dir/MS5611.cpp.obj.provides: CMakeFiles/barometer.elf.d
 CMakeFiles/barometer.elf.dir/MS5611.cpp.obj.provides.build: CMakeFiles/barometer.elf.dir/MS5611.cpp.obj
 
 
-CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj: CMakeFiles/barometer.elf.dir/flags.make
-CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj: CMakeFiles/barometer.elf.dir/includes_C.rsp
-CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj: C:/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj"
-	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\barometer.elf.dir\C_\Users\Jamie\Documents\GitHub\Barometer\gemeenschappelijk\basis\stm32f0\syscalls_cm0.c.obj   -c C:\Users\Jamie\Documents\GitHub\Barometer\gemeenschappelijk\basis\stm32f0\syscalls_cm0.c
+CMakeFiles/barometer.elf.dir/C_/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj: CMakeFiles/barometer.elf.dir/flags.make
+CMakeFiles/barometer.elf.dir/C_/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj: CMakeFiles/barometer.elf.dir/includes_C.rsp
+CMakeFiles/barometer.elf.dir/C_/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj: C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/barometer.elf.dir/C_/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj"
+	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\barometer.elf.dir\C_\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\basis\stm32f0\syscalls_cm0.c.obj   -c C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\basis\stm32f0\syscalls_cm0.c
 
-CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.i"
-	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Jamie\Documents\GitHub\Barometer\gemeenschappelijk\basis\stm32f0\syscalls_cm0.c > CMakeFiles\barometer.elf.dir\C_\Users\Jamie\Documents\GitHub\Barometer\gemeenschappelijk\basis\stm32f0\syscalls_cm0.c.i
+CMakeFiles/barometer.elf.dir/C_/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/barometer.elf.dir/C_/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.i"
+	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\basis\stm32f0\syscalls_cm0.c > CMakeFiles\barometer.elf.dir\C_\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\basis\stm32f0\syscalls_cm0.c.i
 
-CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.s"
-	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Jamie\Documents\GitHub\Barometer\gemeenschappelijk\basis\stm32f0\syscalls_cm0.c -o CMakeFiles\barometer.elf.dir\C_\Users\Jamie\Documents\GitHub\Barometer\gemeenschappelijk\basis\stm32f0\syscalls_cm0.c.s
+CMakeFiles/barometer.elf.dir/C_/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/barometer.elf.dir/C_/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.s"
+	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\basis\stm32f0\syscalls_cm0.c -o CMakeFiles\barometer.elf.dir\C_\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\basis\stm32f0\syscalls_cm0.c.s
 
-CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj.requires:
+CMakeFiles/barometer.elf.dir/C_/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj.requires:
 
-.PHONY : CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj.requires
+.PHONY : CMakeFiles/barometer.elf.dir/C_/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj.requires
 
-CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj.provides: CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj.requires
-	$(MAKE) -f CMakeFiles\barometer.elf.dir\build.make CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj.provides.build
-.PHONY : CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj.provides
+CMakeFiles/barometer.elf.dir/C_/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj.provides: CMakeFiles/barometer.elf.dir/C_/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj.requires
+	$(MAKE) -f CMakeFiles\barometer.elf.dir\build.make CMakeFiles/barometer.elf.dir/C_/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj.provides.build
+.PHONY : CMakeFiles/barometer.elf.dir/C_/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj.provides
 
-CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj.provides.build: CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
+CMakeFiles/barometer.elf.dir/C_/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj.provides.build: CMakeFiles/barometer.elf.dir/C_/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
 
 
 CMakeFiles/barometer.elf.dir/stm32f0xx_it.c.obj: CMakeFiles/barometer.elf.dir/flags.make
 CMakeFiles/barometer.elf.dir/stm32f0xx_it.c.obj: CMakeFiles/barometer.elf.dir/includes_C.rsp
 CMakeFiles/barometer.elf.dir/stm32f0xx_it.c.obj: ../stm32f0xx_it.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/barometer.elf.dir/stm32f0xx_it.c.obj"
-	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\barometer.elf.dir\stm32f0xx_it.c.obj   -c C:\Users\Jamie\Documents\GitHub\Barometer\barometer\stm32f0xx_it.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/barometer.elf.dir/stm32f0xx_it.c.obj"
+	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\barometer.elf.dir\stm32f0xx_it.c.obj   -c C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\stm32f0xx_it.c
 
 CMakeFiles/barometer.elf.dir/stm32f0xx_it.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/barometer.elf.dir/stm32f0xx_it.c.i"
-	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Jamie\Documents\GitHub\Barometer\barometer\stm32f0xx_it.c > CMakeFiles\barometer.elf.dir\stm32f0xx_it.c.i
+	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\stm32f0xx_it.c > CMakeFiles\barometer.elf.dir\stm32f0xx_it.c.i
 
 CMakeFiles/barometer.elf.dir/stm32f0xx_it.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/barometer.elf.dir/stm32f0xx_it.c.s"
-	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Jamie\Documents\GitHub\Barometer\barometer\stm32f0xx_it.c -o CMakeFiles\barometer.elf.dir\stm32f0xx_it.c.s
+	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\stm32f0xx_it.c -o CMakeFiles\barometer.elf.dir\stm32f0xx_it.c.s
 
 CMakeFiles/barometer.elf.dir/stm32f0xx_it.c.obj.requires:
 
@@ -186,7 +186,7 @@ barometer_elf_OBJECTS = \
 "CMakeFiles/barometer.elf.dir/main.cpp.obj" \
 "CMakeFiles/barometer.elf.dir/usart.cpp.obj" \
 "CMakeFiles/barometer.elf.dir/MS5611.cpp.obj" \
-"CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj" \
+"CMakeFiles/barometer.elf.dir/C_/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj" \
 "CMakeFiles/barometer.elf.dir/stm32f0xx_it.c.obj"
 
 # External object files for target barometer.elf
@@ -195,7 +195,7 @@ barometer_elf_EXTERNAL_OBJECTS =
 ../CLionBuildOutput/Debug/barometer.elf.exe: CMakeFiles/barometer.elf.dir/main.cpp.obj
 ../CLionBuildOutput/Debug/barometer.elf.exe: CMakeFiles/barometer.elf.dir/usart.cpp.obj
 ../CLionBuildOutput/Debug/barometer.elf.exe: CMakeFiles/barometer.elf.dir/MS5611.cpp.obj
-../CLionBuildOutput/Debug/barometer.elf.exe: CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
+../CLionBuildOutput/Debug/barometer.elf.exe: CMakeFiles/barometer.elf.dir/C_/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
 ../CLionBuildOutput/Debug/barometer.elf.exe: CMakeFiles/barometer.elf.dir/stm32f0xx_it.c.obj
 ../CLionBuildOutput/Debug/barometer.elf.exe: CMakeFiles/barometer.elf.dir/build.make
 ../CLionBuildOutput/Debug/barometer.elf.exe: F0DiscoveryDir/libSTM32F0DiscoveryLib.a
@@ -204,12 +204,12 @@ barometer_elf_EXTERNAL_OBJECTS =
 ../CLionBuildOutput/Debug/barometer.elf.exe: CMakeFiles/barometer.elf.dir/linklibs.rsp
 ../CLionBuildOutput/Debug/barometer.elf.exe: CMakeFiles/barometer.elf.dir/objects1.rsp
 ../CLionBuildOutput/Debug/barometer.elf.exe: CMakeFiles/barometer.elf.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable ..\CLionBuildOutput\Debug\barometer.elf.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable ..\CLionBuildOutput\Debug\barometer.elf.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\barometer.elf.dir\link.txt --verbose=$(VERBOSE)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Windows post-aktie: barometer.elf.exe naar barometer.elf gekopieerd."
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "STM32 barometer.elf is gemaakt."
-	"C:\Program Files (x86)\GNU Tools ARM Embedded\5.4 2016q2\bin\arm-none-eabi-size.exe" -A -d C:/Users/Jamie/Documents/GitHub/Barometer/barometer/CLionBuildOutput/Debug/barometer.elf.exe
-	"C:\Program Files (x86)\JetBrains\CLion 2016.3\bin\cmake\bin\cmake.exe" -E rename C:/Users/Jamie/Documents/GitHub/Barometer/barometer/CLionBuildOutput/Debug/barometer.elf.exe C:/Users/Jamie/Documents/GitHub/Barometer/barometer/CLionBuildOutput/Debug/barometer.elf
+	"C:\Program Files (x86)\GNU Tools ARM Embedded\5.4 2016q2\bin\arm-none-eabi-size.exe" -A -d C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/barometer/CLionBuildOutput/Debug/barometer.elf.exe
+	"C:\Program Files (x86)\JetBrains\CLion 2016.2.2\bin\cmake\bin\cmake.exe" -E rename C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/barometer/CLionBuildOutput/Debug/barometer.elf.exe C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/barometer/CLionBuildOutput/Debug/barometer.elf
 
 # Rule to build all files generated by this target.
 CMakeFiles/barometer.elf.dir/build: ../CLionBuildOutput/Debug/barometer.elf.exe
@@ -219,7 +219,7 @@ CMakeFiles/barometer.elf.dir/build: ../CLionBuildOutput/Debug/barometer.elf.exe
 CMakeFiles/barometer.elf.dir/requires: CMakeFiles/barometer.elf.dir/main.cpp.obj.requires
 CMakeFiles/barometer.elf.dir/requires: CMakeFiles/barometer.elf.dir/usart.cpp.obj.requires
 CMakeFiles/barometer.elf.dir/requires: CMakeFiles/barometer.elf.dir/MS5611.cpp.obj.requires
-CMakeFiles/barometer.elf.dir/requires: CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj.requires
+CMakeFiles/barometer.elf.dir/requires: CMakeFiles/barometer.elf.dir/C_/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj.requires
 CMakeFiles/barometer.elf.dir/requires: CMakeFiles/barometer.elf.dir/stm32f0xx_it.c.obj.requires
 
 .PHONY : CMakeFiles/barometer.elf.dir/requires
@@ -229,6 +229,6 @@ CMakeFiles/barometer.elf.dir/clean:
 .PHONY : CMakeFiles/barometer.elf.dir/clean
 
 CMakeFiles/barometer.elf.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\Jamie\Documents\GitHub\Barometer\barometer C:\Users\Jamie\Documents\GitHub\Barometer\barometer C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\CMakeFiles\barometer.elf.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\CMakeFiles\barometer.elf.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/barometer.elf.dir/depend
 

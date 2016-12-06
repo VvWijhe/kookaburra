@@ -5,8 +5,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "C:/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c" "C:/Users/Jamie/Documents/GitHub/Barometer/barometer/cmake-build-debug/CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj"
-  "C:/Users/Jamie/Documents/GitHub/Barometer/barometer/stm32f0xx_it.c" "C:/Users/Jamie/Documents/GitHub/Barometer/barometer/cmake-build-debug/CMakeFiles/barometer.elf.dir/stm32f0xx_it.c.obj"
+  "C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c" "C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/barometer/cmake-build-debug/CMakeFiles/barometer.elf.dir/C_/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj"
+  "C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/barometer/stm32f0xx_it.c" "C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/barometer/cmake-build-debug/CMakeFiles/barometer.elf.dir/stm32f0xx_it.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
@@ -31,9 +31,9 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   "../../gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/inc"
   )
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/Jamie/Documents/GitHub/Barometer/barometer/MS5611.cpp" "C:/Users/Jamie/Documents/GitHub/Barometer/barometer/cmake-build-debug/CMakeFiles/barometer.elf.dir/MS5611.cpp.obj"
-  "C:/Users/Jamie/Documents/GitHub/Barometer/barometer/main.cpp" "C:/Users/Jamie/Documents/GitHub/Barometer/barometer/cmake-build-debug/CMakeFiles/barometer.elf.dir/main.cpp.obj"
-  "C:/Users/Jamie/Documents/GitHub/Barometer/barometer/usart.cpp" "C:/Users/Jamie/Documents/GitHub/Barometer/barometer/cmake-build-debug/CMakeFiles/barometer.elf.dir/usart.cpp.obj"
+  "C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/barometer/MS5611.cpp" "C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/barometer/cmake-build-debug/CMakeFiles/barometer.elf.dir/MS5611.cpp.obj"
+  "C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/barometer/main.cpp" "C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/barometer/cmake-build-debug/CMakeFiles/barometer.elf.dir/main.cpp.obj"
+  "C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/barometer/usart.cpp" "C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/barometer/cmake-build-debug/CMakeFiles/barometer.elf.dir/usart.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -60,9 +60,9 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "C:/Users/Jamie/Documents/GitHub/Barometer/barometer/cmake-build-debug/F0DiscoveryDir/CMakeFiles/STM32F0DiscoveryLib.dir/DependInfo.cmake"
-  "C:/Users/Jamie/Documents/GitHub/Barometer/barometer/cmake-build-debug/STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/DependInfo.cmake"
-  "C:/Users/Jamie/Documents/GitHub/Barometer/barometer/cmake-build-debug/STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/DependInfo.cmake"
+  "C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/barometer/cmake-build-debug/F0DiscoveryDir/CMakeFiles/STM32F0DiscoveryLib.dir/DependInfo.cmake"
+  "C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/barometer/cmake-build-debug/STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/DependInfo.cmake"
+  "C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/barometer/cmake-build-debug/STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

@@ -33,19 +33,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files (x86)\JetBrains\CLion 2016.3\bin\cmake\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Program Files (x86)\JetBrains\CLion 2016.2.2\bin\cmake\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files (x86)\JetBrains\CLion 2016.3\bin\cmake\bin\cmake.exe" -E remove -f
+RM = "C:\Program Files (x86)\JetBrains\CLion 2016.2.2\bin\cmake\bin\cmake.exe" -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\Jamie\Documents\GitHub\Barometer\barometer
+CMAKE_SOURCE_DIR = C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug
 
 # Include any dependencies generated for this target.
 include STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/depend.make
@@ -58,17 +58,17 @@ include STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/flags.make
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_adc.c.obj: STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/flags.make
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_adc.c.obj: STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/includes_C.rsp
-STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_adc.c.obj: C:/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_adc.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_adc.c.obj"
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_adc.c.obj   -c C:\Users\Jamie\Documents\GitHub\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_adc.c
+STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_adc.c.obj: C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_adc.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_adc.c.obj"
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_adc.c.obj   -c C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_adc.c
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_adc.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_adc.c.i"
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Jamie\Documents\GitHub\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_adc.c > CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_adc.c.i
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_adc.c > CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_adc.c.i
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_adc.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_adc.c.s"
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Jamie\Documents\GitHub\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_adc.c -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_adc.c.s
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_adc.c -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_adc.c.s
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_adc.c.obj.requires:
 
@@ -83,17 +83,17 @@ STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_adc.c.obj.p
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_cec.c.obj: STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/flags.make
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_cec.c.obj: STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/includes_C.rsp
-STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_cec.c.obj: C:/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_cec.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_cec.c.obj"
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_cec.c.obj   -c C:\Users\Jamie\Documents\GitHub\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_cec.c
+STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_cec.c.obj: C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_cec.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_cec.c.obj"
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_cec.c.obj   -c C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_cec.c
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_cec.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_cec.c.i"
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Jamie\Documents\GitHub\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_cec.c > CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_cec.c.i
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_cec.c > CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_cec.c.i
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_cec.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_cec.c.s"
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Jamie\Documents\GitHub\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_cec.c -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_cec.c.s
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_cec.c -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_cec.c.s
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_cec.c.obj.requires:
 
@@ -108,17 +108,17 @@ STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_cec.c.obj.p
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_comp.c.obj: STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/flags.make
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_comp.c.obj: STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/includes_C.rsp
-STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_comp.c.obj: C:/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_comp.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_comp.c.obj"
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_comp.c.obj   -c C:\Users\Jamie\Documents\GitHub\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_comp.c
+STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_comp.c.obj: C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_comp.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_comp.c.obj"
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_comp.c.obj   -c C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_comp.c
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_comp.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_comp.c.i"
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Jamie\Documents\GitHub\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_comp.c > CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_comp.c.i
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_comp.c > CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_comp.c.i
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_comp.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_comp.c.s"
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Jamie\Documents\GitHub\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_comp.c -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_comp.c.s
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_comp.c -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_comp.c.s
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_comp.c.obj.requires:
 
@@ -133,17 +133,17 @@ STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_comp.c.obj.
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_crc.c.obj: STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/flags.make
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_crc.c.obj: STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/includes_C.rsp
-STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_crc.c.obj: C:/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_crc.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_crc.c.obj"
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_crc.c.obj   -c C:\Users\Jamie\Documents\GitHub\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_crc.c
+STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_crc.c.obj: C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_crc.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_crc.c.obj"
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_crc.c.obj   -c C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_crc.c
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_crc.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_crc.c.i"
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Jamie\Documents\GitHub\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_crc.c > CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_crc.c.i
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_crc.c > CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_crc.c.i
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_crc.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_crc.c.s"
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Jamie\Documents\GitHub\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_crc.c -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_crc.c.s
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_crc.c -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_crc.c.s
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_crc.c.obj.requires:
 
@@ -158,17 +158,17 @@ STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_crc.c.obj.p
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_dac.c.obj: STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/flags.make
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_dac.c.obj: STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/includes_C.rsp
-STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_dac.c.obj: C:/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_dac.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_dac.c.obj"
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_dac.c.obj   -c C:\Users\Jamie\Documents\GitHub\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_dac.c
+STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_dac.c.obj: C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_dac.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_dac.c.obj"
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_dac.c.obj   -c C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_dac.c
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_dac.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_dac.c.i"
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Jamie\Documents\GitHub\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_dac.c > CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_dac.c.i
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_dac.c > CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_dac.c.i
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_dac.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_dac.c.s"
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Jamie\Documents\GitHub\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_dac.c -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_dac.c.s
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_dac.c -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_dac.c.s
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_dac.c.obj.requires:
 
@@ -183,17 +183,17 @@ STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_dac.c.obj.p
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_dbgmcu.c.obj: STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/flags.make
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_dbgmcu.c.obj: STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/includes_C.rsp
-STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_dbgmcu.c.obj: C:/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_dbgmcu.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_dbgmcu.c.obj"
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_dbgmcu.c.obj   -c C:\Users\Jamie\Documents\GitHub\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_dbgmcu.c
+STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_dbgmcu.c.obj: C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_dbgmcu.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_dbgmcu.c.obj"
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_dbgmcu.c.obj   -c C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_dbgmcu.c
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_dbgmcu.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_dbgmcu.c.i"
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Jamie\Documents\GitHub\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_dbgmcu.c > CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_dbgmcu.c.i
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_dbgmcu.c > CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_dbgmcu.c.i
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_dbgmcu.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_dbgmcu.c.s"
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Jamie\Documents\GitHub\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_dbgmcu.c -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_dbgmcu.c.s
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_dbgmcu.c -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_dbgmcu.c.s
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_dbgmcu.c.obj.requires:
 
@@ -208,17 +208,17 @@ STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_dbgmcu.c.ob
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_dma.c.obj: STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/flags.make
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_dma.c.obj: STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/includes_C.rsp
-STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_dma.c.obj: C:/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_dma.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_dma.c.obj"
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_dma.c.obj   -c C:\Users\Jamie\Documents\GitHub\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_dma.c
+STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_dma.c.obj: C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_dma.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_dma.c.obj"
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_dma.c.obj   -c C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_dma.c
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_dma.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_dma.c.i"
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Jamie\Documents\GitHub\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_dma.c > CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_dma.c.i
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_dma.c > CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_dma.c.i
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_dma.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_dma.c.s"
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Jamie\Documents\GitHub\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_dma.c -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_dma.c.s
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_dma.c -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_dma.c.s
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_dma.c.obj.requires:
 
@@ -233,17 +233,17 @@ STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_dma.c.obj.p
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_exti.c.obj: STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/flags.make
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_exti.c.obj: STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/includes_C.rsp
-STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_exti.c.obj: C:/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_exti.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_exti.c.obj"
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_exti.c.obj   -c C:\Users\Jamie\Documents\GitHub\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_exti.c
+STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_exti.c.obj: C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_exti.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_exti.c.obj"
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_exti.c.obj   -c C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_exti.c
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_exti.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_exti.c.i"
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Jamie\Documents\GitHub\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_exti.c > CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_exti.c.i
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_exti.c > CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_exti.c.i
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_exti.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_exti.c.s"
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Jamie\Documents\GitHub\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_exti.c -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_exti.c.s
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_exti.c -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_exti.c.s
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_exti.c.obj.requires:
 
@@ -258,17 +258,17 @@ STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_exti.c.obj.
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_flash.c.obj: STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/flags.make
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_flash.c.obj: STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/includes_C.rsp
-STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_flash.c.obj: C:/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_flash.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_flash.c.obj"
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_flash.c.obj   -c C:\Users\Jamie\Documents\GitHub\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_flash.c
+STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_flash.c.obj: C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_flash.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_flash.c.obj"
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_flash.c.obj   -c C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_flash.c
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_flash.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_flash.c.i"
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Jamie\Documents\GitHub\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_flash.c > CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_flash.c.i
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_flash.c > CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_flash.c.i
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_flash.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_flash.c.s"
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Jamie\Documents\GitHub\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_flash.c -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_flash.c.s
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_flash.c -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_flash.c.s
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_flash.c.obj.requires:
 
@@ -283,17 +283,17 @@ STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_flash.c.obj
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_gpio.c.obj: STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/flags.make
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_gpio.c.obj: STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/includes_C.rsp
-STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_gpio.c.obj: C:/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_gpio.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_gpio.c.obj"
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_gpio.c.obj   -c C:\Users\Jamie\Documents\GitHub\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_gpio.c
+STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_gpio.c.obj: C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_gpio.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_gpio.c.obj"
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_gpio.c.obj   -c C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_gpio.c
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_gpio.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_gpio.c.i"
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Jamie\Documents\GitHub\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_gpio.c > CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_gpio.c.i
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_gpio.c > CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_gpio.c.i
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_gpio.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_gpio.c.s"
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Jamie\Documents\GitHub\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_gpio.c -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_gpio.c.s
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_gpio.c -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_gpio.c.s
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_gpio.c.obj.requires:
 
@@ -308,17 +308,17 @@ STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_gpio.c.obj.
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_i2c.c.obj: STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/flags.make
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_i2c.c.obj: STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/includes_C.rsp
-STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_i2c.c.obj: C:/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_i2c.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_i2c.c.obj"
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_i2c.c.obj   -c C:\Users\Jamie\Documents\GitHub\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_i2c.c
+STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_i2c.c.obj: C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_i2c.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_i2c.c.obj"
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_i2c.c.obj   -c C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_i2c.c
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_i2c.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_i2c.c.i"
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Jamie\Documents\GitHub\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_i2c.c > CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_i2c.c.i
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_i2c.c > CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_i2c.c.i
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_i2c.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_i2c.c.s"
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Jamie\Documents\GitHub\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_i2c.c -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_i2c.c.s
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_i2c.c -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_i2c.c.s
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_i2c.c.obj.requires:
 
@@ -333,17 +333,17 @@ STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_i2c.c.obj.p
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_iwdg.c.obj: STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/flags.make
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_iwdg.c.obj: STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/includes_C.rsp
-STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_iwdg.c.obj: C:/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_iwdg.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_iwdg.c.obj"
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_iwdg.c.obj   -c C:\Users\Jamie\Documents\GitHub\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_iwdg.c
+STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_iwdg.c.obj: C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_iwdg.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_iwdg.c.obj"
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_iwdg.c.obj   -c C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_iwdg.c
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_iwdg.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_iwdg.c.i"
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Jamie\Documents\GitHub\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_iwdg.c > CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_iwdg.c.i
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_iwdg.c > CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_iwdg.c.i
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_iwdg.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_iwdg.c.s"
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Jamie\Documents\GitHub\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_iwdg.c -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_iwdg.c.s
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_iwdg.c -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_iwdg.c.s
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_iwdg.c.obj.requires:
 
@@ -358,17 +358,17 @@ STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_iwdg.c.obj.
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_misc.c.obj: STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/flags.make
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_misc.c.obj: STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/includes_C.rsp
-STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_misc.c.obj: C:/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_misc.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_misc.c.obj"
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_misc.c.obj   -c C:\Users\Jamie\Documents\GitHub\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_misc.c
+STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_misc.c.obj: C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_misc.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_misc.c.obj"
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_misc.c.obj   -c C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_misc.c
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_misc.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_misc.c.i"
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Jamie\Documents\GitHub\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_misc.c > CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_misc.c.i
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_misc.c > CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_misc.c.i
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_misc.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_misc.c.s"
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Jamie\Documents\GitHub\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_misc.c -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_misc.c.s
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_misc.c -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_misc.c.s
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_misc.c.obj.requires:
 
@@ -383,17 +383,17 @@ STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_misc.c.obj.
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_pwr.c.obj: STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/flags.make
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_pwr.c.obj: STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/includes_C.rsp
-STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_pwr.c.obj: C:/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_pwr.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_pwr.c.obj"
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_pwr.c.obj   -c C:\Users\Jamie\Documents\GitHub\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_pwr.c
+STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_pwr.c.obj: C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_pwr.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_pwr.c.obj"
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_pwr.c.obj   -c C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_pwr.c
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_pwr.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_pwr.c.i"
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Jamie\Documents\GitHub\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_pwr.c > CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_pwr.c.i
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_pwr.c > CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_pwr.c.i
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_pwr.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_pwr.c.s"
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Jamie\Documents\GitHub\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_pwr.c -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_pwr.c.s
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_pwr.c -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_pwr.c.s
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_pwr.c.obj.requires:
 
@@ -408,17 +408,17 @@ STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_pwr.c.obj.p
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_rcc.c.obj: STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/flags.make
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_rcc.c.obj: STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/includes_C.rsp
-STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_rcc.c.obj: C:/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_rcc.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_rcc.c.obj"
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_rcc.c.obj   -c C:\Users\Jamie\Documents\GitHub\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_rcc.c
+STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_rcc.c.obj: C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_rcc.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_rcc.c.obj"
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_rcc.c.obj   -c C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_rcc.c
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_rcc.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_rcc.c.i"
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Jamie\Documents\GitHub\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_rcc.c > CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_rcc.c.i
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_rcc.c > CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_rcc.c.i
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_rcc.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_rcc.c.s"
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Jamie\Documents\GitHub\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_rcc.c -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_rcc.c.s
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_rcc.c -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_rcc.c.s
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_rcc.c.obj.requires:
 
@@ -433,17 +433,17 @@ STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_rcc.c.obj.p
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_rtc.c.obj: STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/flags.make
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_rtc.c.obj: STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/includes_C.rsp
-STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_rtc.c.obj: C:/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_rtc.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_rtc.c.obj"
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_rtc.c.obj   -c C:\Users\Jamie\Documents\GitHub\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_rtc.c
+STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_rtc.c.obj: C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_rtc.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_rtc.c.obj"
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_rtc.c.obj   -c C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_rtc.c
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_rtc.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_rtc.c.i"
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Jamie\Documents\GitHub\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_rtc.c > CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_rtc.c.i
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_rtc.c > CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_rtc.c.i
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_rtc.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_rtc.c.s"
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Jamie\Documents\GitHub\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_rtc.c -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_rtc.c.s
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_rtc.c -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_rtc.c.s
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_rtc.c.obj.requires:
 
@@ -458,17 +458,17 @@ STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_rtc.c.obj.p
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_spi.c.obj: STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/flags.make
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_spi.c.obj: STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/includes_C.rsp
-STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_spi.c.obj: C:/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_spi.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_spi.c.obj"
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_spi.c.obj   -c C:\Users\Jamie\Documents\GitHub\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_spi.c
+STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_spi.c.obj: C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_spi.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_spi.c.obj"
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_spi.c.obj   -c C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_spi.c
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_spi.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_spi.c.i"
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Jamie\Documents\GitHub\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_spi.c > CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_spi.c.i
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_spi.c > CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_spi.c.i
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_spi.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_spi.c.s"
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Jamie\Documents\GitHub\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_spi.c -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_spi.c.s
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_spi.c -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_spi.c.s
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_spi.c.obj.requires:
 
@@ -483,17 +483,17 @@ STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_spi.c.obj.p
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_syscfg.c.obj: STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/flags.make
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_syscfg.c.obj: STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/includes_C.rsp
-STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_syscfg.c.obj: C:/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_syscfg.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_syscfg.c.obj"
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_syscfg.c.obj   -c C:\Users\Jamie\Documents\GitHub\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_syscfg.c
+STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_syscfg.c.obj: C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_syscfg.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_syscfg.c.obj"
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_syscfg.c.obj   -c C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_syscfg.c
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_syscfg.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_syscfg.c.i"
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Jamie\Documents\GitHub\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_syscfg.c > CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_syscfg.c.i
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_syscfg.c > CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_syscfg.c.i
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_syscfg.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_syscfg.c.s"
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Jamie\Documents\GitHub\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_syscfg.c -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_syscfg.c.s
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_syscfg.c -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_syscfg.c.s
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_syscfg.c.obj.requires:
 
@@ -508,17 +508,17 @@ STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_syscfg.c.ob
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_tim.c.obj: STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/flags.make
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_tim.c.obj: STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/includes_C.rsp
-STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_tim.c.obj: C:/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_tim.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_tim.c.obj"
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_tim.c.obj   -c C:\Users\Jamie\Documents\GitHub\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_tim.c
+STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_tim.c.obj: C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_tim.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_tim.c.obj"
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_tim.c.obj   -c C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_tim.c
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_tim.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_tim.c.i"
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Jamie\Documents\GitHub\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_tim.c > CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_tim.c.i
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_tim.c > CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_tim.c.i
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_tim.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_tim.c.s"
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Jamie\Documents\GitHub\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_tim.c -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_tim.c.s
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_tim.c -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_tim.c.s
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_tim.c.obj.requires:
 
@@ -533,17 +533,17 @@ STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_tim.c.obj.p
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_usart.c.obj: STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/flags.make
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_usart.c.obj: STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/includes_C.rsp
-STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_usart.c.obj: C:/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_usart.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_usart.c.obj"
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_usart.c.obj   -c C:\Users\Jamie\Documents\GitHub\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_usart.c
+STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_usart.c.obj: C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_usart.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_usart.c.obj"
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_usart.c.obj   -c C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_usart.c
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_usart.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_usart.c.i"
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Jamie\Documents\GitHub\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_usart.c > CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_usart.c.i
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_usart.c > CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_usart.c.i
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_usart.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_usart.c.s"
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Jamie\Documents\GitHub\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_usart.c -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_usart.c.s
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_usart.c -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_usart.c.s
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_usart.c.obj.requires:
 
@@ -558,17 +558,17 @@ STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_usart.c.obj
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_wwdg.c.obj: STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/flags.make
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_wwdg.c.obj: STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/includes_C.rsp
-STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_wwdg.c.obj: C:/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_wwdg.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_wwdg.c.obj"
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_wwdg.c.obj   -c C:\Users\Jamie\Documents\GitHub\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_wwdg.c
+STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_wwdg.c.obj: C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_wwdg.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_wwdg.c.obj"
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_wwdg.c.obj   -c C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_wwdg.c
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_wwdg.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_wwdg.c.i"
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Jamie\Documents\GitHub\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_wwdg.c > CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_wwdg.c.i
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_wwdg.c > CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_wwdg.c.i
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_wwdg.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_wwdg.c.s"
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Jamie\Documents\GitHub\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_wwdg.c -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_wwdg.c.s
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_wwdg.c -o CMakeFiles\F0StdPerifDriver.dir\src\stm32f0xx_wwdg.c.s
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_wwdg.c.obj.requires:
 
@@ -631,9 +631,9 @@ STM32_StdPeriph_Driver/libF0StdPerifDriver.a: STM32_StdPeriph_Driver/CMakeFiles/
 STM32_StdPeriph_Driver/libF0StdPerifDriver.a: STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/src/stm32f0xx_wwdg.c.obj
 STM32_StdPeriph_Driver/libF0StdPerifDriver.a: STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/build.make
 STM32_StdPeriph_Driver/libF0StdPerifDriver.a: STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Linking C static library libF0StdPerifDriver.a"
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && $(CMAKE_COMMAND) -P CMakeFiles\F0StdPerifDriver.dir\cmake_clean_target.cmake
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\F0StdPerifDriver.dir\link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Linking C static library libF0StdPerifDriver.a"
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && $(CMAKE_COMMAND) -P CMakeFiles\F0StdPerifDriver.dir\cmake_clean_target.cmake
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\F0StdPerifDriver.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/build: STM32_StdPeriph_Driver/libF0StdPerifDriver.a
@@ -665,10 +665,10 @@ STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/requires: STM32_StdPeriph
 .PHONY : STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/requires
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/clean:
-	cd /d C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && $(CMAKE_COMMAND) -P CMakeFiles\F0StdPerifDriver.dir\cmake_clean.cmake
+	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver && $(CMAKE_COMMAND) -P CMakeFiles\F0StdPerifDriver.dir\cmake_clean.cmake
 .PHONY : STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/clean
 
 STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\Jamie\Documents\GitHub\Barometer\barometer C:\Users\Jamie\Documents\GitHub\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver\CMakeFiles\F0StdPerifDriver.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\Libraries\STM32F0xx_StdPeriph_Driver C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\STM32_StdPeriph_Driver\CMakeFiles\F0StdPerifDriver.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/depend
 

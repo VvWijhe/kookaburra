@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver
+# Install script for directory: C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

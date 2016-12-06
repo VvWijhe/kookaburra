@@ -5,7 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_ASM-ATT
-  "C:/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/Libraries/CMSIS/Device/ST/STM32F0xx/Source/Templates/gcc/startup_stm32f0xx.s" "C:/Users/Jamie/Documents/GitHub/Barometer/barometer/cmake-build-debug/STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/Source/Templates/gcc/startup_stm32f0xx.s.obj"
+  "C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/Libraries/CMSIS/Device/ST/STM32F0xx/Source/Templates/gcc/startup_stm32f0xx.s" "C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/barometer/cmake-build-debug/STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/Source/Templates/gcc/startup_stm32f0xx.s.obj"
   )
 set(CMAKE_ASM-ATT_COMPILER_ID "GNU")
 
@@ -22,15 +22,15 @@ set(CMAKE_TARGET_DEFINITIONS_ASM-ATT
 
 # The include file search paths:
 set(CMAKE_ASM-ATT_TARGET_INCLUDE_PATH
-  "C:/Users/Jamie/Documents/GitHub/Barometer/barometer/h"
-  "C:/Users/Jamie/Documents/GitHub/Barometer/barometer/../gemeenschappelijk/basis"
-  "C:/Users/Jamie/Documents/GitHub/Barometer/barometer/../gemeenschappelijk/STM32F0Discovery"
-  "C:/Users/Jamie/Documents/GitHub/Barometer/barometer/../gemeenschappelijk/Libraries/CMSIS/Include"
-  "C:/Users/Jamie/Documents/GitHub/Barometer/barometer/../gemeenschappelijk/Libraries/CMSIS/Device/ST/STM32F0xx/Include"
-  "C:/Users/Jamie/Documents/GitHub/Barometer/barometer/../gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/inc"
+  "C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/barometer/h"
+  "C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/barometer/../gemeenschappelijk/basis"
+  "C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/barometer/../gemeenschappelijk/STM32F0Discovery"
+  "C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/barometer/../gemeenschappelijk/Libraries/CMSIS/Include"
+  "C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/barometer/../gemeenschappelijk/Libraries/CMSIS/Device/ST/STM32F0xx/Include"
+  "C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/barometer/../gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/inc"
   )
 set(CMAKE_DEPENDS_CHECK_C
-  "C:/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/Libraries/CMSIS/Device/ST/STM32F0xx/Source/Templates/system_stm32f0xx.c" "C:/Users/Jamie/Documents/GitHub/Barometer/barometer/cmake-build-debug/STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/Source/Templates/system_stm32f0xx.c.obj"
+  "C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/Libraries/CMSIS/Device/ST/STM32F0xx/Source/Templates/system_stm32f0xx.c" "C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/barometer/cmake-build-debug/STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/Source/Templates/system_stm32f0xx.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
@@ -47,12 +47,12 @@ set(CMAKE_TARGET_DEFINITIONS_C
 
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH
-  "C:/Users/Jamie/Documents/GitHub/Barometer/barometer/h"
-  "C:/Users/Jamie/Documents/GitHub/Barometer/barometer/../gemeenschappelijk/basis"
-  "C:/Users/Jamie/Documents/GitHub/Barometer/barometer/../gemeenschappelijk/STM32F0Discovery"
-  "C:/Users/Jamie/Documents/GitHub/Barometer/barometer/../gemeenschappelijk/Libraries/CMSIS/Include"
-  "C:/Users/Jamie/Documents/GitHub/Barometer/barometer/../gemeenschappelijk/Libraries/CMSIS/Device/ST/STM32F0xx/Include"
-  "C:/Users/Jamie/Documents/GitHub/Barometer/barometer/../gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/inc"
+  "C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/barometer/h"
+  "C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/barometer/../gemeenschappelijk/basis"
+  "C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/barometer/../gemeenschappelijk/STM32F0Discovery"
+  "C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/barometer/../gemeenschappelijk/Libraries/CMSIS/Include"
+  "C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/barometer/../gemeenschappelijk/Libraries/CMSIS/Device/ST/STM32F0xx/Include"
+  "C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/barometer/../gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/inc"
   )
 
 # Targets to which this target links.

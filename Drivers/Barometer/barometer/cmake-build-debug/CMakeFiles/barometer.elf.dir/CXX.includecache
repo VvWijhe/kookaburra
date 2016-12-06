@@ -180,23 +180,23 @@ stm32f0xx_wwdg.h
 stm32f0xx_misc.h
 ../h/stm32f0xx_misc.h
 
-C:/Users/Jamie/Documents/GitHub/Barometer/barometer/MS5611.cpp
+C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/barometer/MS5611.cpp
 MS5611.h
-C:/Users/Jamie/Documents/GitHub/Barometer/barometer/MS5611.h
+C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/barometer/MS5611.h
 
-C:/Users/Jamie/Documents/GitHub/Barometer/barometer/main.cpp
+C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/barometer/main.cpp
 MS5611.h
-C:/Users/Jamie/Documents/GitHub/Barometer/barometer/MS5611.h
+C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/barometer/MS5611.h
 main.h
-C:/Users/Jamie/Documents/GitHub/Barometer/barometer/main.h
+C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/barometer/main.h
 usart.h
-C:/Users/Jamie/Documents/GitHub/Barometer/barometer/usart.h
+C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/barometer/usart.h
 
-C:/Users/Jamie/Documents/GitHub/Barometer/barometer/usart.cpp
+C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/barometer/usart.cpp
 usart.h
-C:/Users/Jamie/Documents/GitHub/Barometer/barometer/usart.h
+C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/barometer/usart.h
 
-C:/Users/Jamie/Documents/GitHub/Barometer/barometer/usart.h
+C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/barometer/usart.h
 stdlib.h
 -
 string.h
@@ -204,5 +204,5 @@ string.h
 cstdio
 -
 stm32f0xx_usart.h
-C:/Users/Jamie/Documents/GitHub/Barometer/barometer/stm32f0xx_usart.h
+C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/barometer/stm32f0xx_usart.h
 

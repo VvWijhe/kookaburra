@@ -38,19 +38,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files (x86)\JetBrains\CLion 2016.3\bin\cmake\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Program Files (x86)\JetBrains\CLion 2016.2.2\bin\cmake\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files (x86)\JetBrains\CLion 2016.3\bin\cmake\bin\cmake.exe" -E remove -f
+RM = "C:\Program Files (x86)\JetBrains\CLion 2016.2.2\bin\cmake\bin\cmake.exe" -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\Jamie\Documents\GitHub\Barometer\barometer
+CMAKE_SOURCE_DIR = C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -58,7 +58,7 @@ CMAKE_BINARY_DIR = C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-bui
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	"C:\Program Files (x86)\JetBrains\CLion 2016.3\bin\cmake\bin\cmake.exe" -E echo "No interactive CMake dialog available."
+	"C:\Program Files (x86)\JetBrains\CLion 2016.2.2\bin\cmake\bin\cmake.exe" -E echo "No interactive CMake dialog available."
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -69,7 +69,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	"C:\Program Files (x86)\JetBrains\CLion 2016.3\bin\cmake\bin\cmake.exe" -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	"C:\Program Files (x86)\JetBrains\CLion 2016.2.2\bin\cmake\bin\cmake.exe" -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -79,9 +79,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\CMakeFiles C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\CMakeFiles C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\CMakeFiles\progress.marks
 	$(MAKE) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Jamie\Documents\GitHub\Barometer\barometer\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -161,32 +161,32 @@ STM32F0DiscoveryLib/fast:
 	$(MAKE) -f F0DiscoveryDir\CMakeFiles\STM32F0DiscoveryLib.dir\build.make F0DiscoveryDir/CMakeFiles/STM32F0DiscoveryLib.dir/build
 .PHONY : STM32F0DiscoveryLib/fast
 
-C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.obj: C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
+C_/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.obj: C_/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
 
-.PHONY : C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.obj
+.PHONY : C_/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.obj
 
 # target to build an object file
-C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj:
-	$(MAKE) -f CMakeFiles\barometer.elf.dir\build.make CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
-.PHONY : C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
+C_/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj:
+	$(MAKE) -f CMakeFiles\barometer.elf.dir\build.make CMakeFiles/barometer.elf.dir/C_/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
+.PHONY : C_/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
 
-C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.i: C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.i
+C_/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.i: C_/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.i
 
-.PHONY : C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.i
+.PHONY : C_/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.i
 
 # target to preprocess a source file
-C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.i:
-	$(MAKE) -f CMakeFiles\barometer.elf.dir\build.make CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.i
-.PHONY : C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.i
+C_/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.i:
+	$(MAKE) -f CMakeFiles\barometer.elf.dir\build.make CMakeFiles/barometer.elf.dir/C_/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.i
+.PHONY : C_/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.i
 
-C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.s: C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.s
+C_/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.s: C_/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.s
 
-.PHONY : C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.s
+.PHONY : C_/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.s
 
 # target to generate assembly for a file
-C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.s:
-	$(MAKE) -f CMakeFiles\barometer.elf.dir\build.make CMakeFiles/barometer.elf.dir/C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.s
-.PHONY : C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.s
+C_/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.s:
+	$(MAKE) -f CMakeFiles\barometer.elf.dir\build.make CMakeFiles/barometer.elf.dir/C_/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.s
+.PHONY : C_/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.s
 
 MS5611.obj: MS5611.cpp.obj
 
@@ -308,9 +308,9 @@ help:
 	@echo ... CMSISFIRMWARE
 	@echo ... F0StdPerifDriver
 	@echo ... STM32F0DiscoveryLib
-	@echo ... C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.obj
-	@echo ... C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.i
-	@echo ... C_/Users/Jamie/Documents/GitHub/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.s
+	@echo ... C_/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.obj
+	@echo ... C_/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.i
+	@echo ... C_/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.s
 	@echo ... MS5611.obj
 	@echo ... MS5611.i
 	@echo ... MS5611.s
