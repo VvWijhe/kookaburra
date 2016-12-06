@@ -1,6 +1,5 @@
 #include <pwm.h>
 #include <pid.h>
-#include <sched.h>
 
 #define ALT_SETPOINT 10
 

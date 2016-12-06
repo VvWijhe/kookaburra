@@ -1,9 +1,6 @@
 //
 // Created by Jamie on 10-11-2016.
 //
-#include <stm32f0xx_conf.h>
-#include <stm32f0_discovery.h>
-#include <stm32f0xx_gpio.h>
 #include "pwm.h"
 
 void PWM::initServo()

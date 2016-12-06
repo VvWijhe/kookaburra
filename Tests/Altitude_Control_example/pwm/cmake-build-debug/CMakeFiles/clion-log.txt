@@ -1,16 +1,32 @@
-"C:\Program Files (x86)\JetBrains\CLion 2016.3\bin\cmake\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Pitch_Control_example\pwm
+"C:\Program Files (x86)\JetBrains\CLion 2016.3\bin\cmake\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Altitude_Control_example\pwm
 Kookaboora puls-with-modulation
+-- The C compiler identification is GNU 5.3.0
+-- The CXX compiler identification is GNU 5.3.0
+-- Check for working C compiler: C:/MinGW/bin/gcc.exe
+-- Check for working C compiler: C:/MinGW/bin/gcc.exe -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: C:/MinGW/bin/g++.exe
+-- Check for working CXX compiler: C:/MinGW/bin/g++.exe -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
 -- Bouw target voor STM32F051R8T6 met 64 KByte Flash en 8K SRAM
 -- HAN ESE STM32 software ontwikkeling.
 -- Software wordt gebouwd met debugging opties
+-- The ASM-ATT compiler identification is GNU
+-- Found assembler: C:/MinGW/bin/as.exe
 -- Microsoft Windows omgeving gedetecteerd.
 -- Geen GNU ARM Toolchain gevonden op C:\Program Files (x86)/GNU Tools ARM Embedded/4.8 2014q3
 -- Geen GNU ARM Toolchain gevonden op C:\Program Files (x86)/GNU Tools ARM Embedded/5.2 2015q4
 -- Geen GNU ARM Toolchain gevonden op C:\Program Files (x86)/GNU Tools ARM Embedded/5.3 2016q1
 -- GNU ARM Toolchain gevonden op C:\Program Files (x86)/GNU Tools ARM Embedded/5.4 2016q2
 -- GNU ARM Toolchain op C:\Program Files (x86)/GNU Tools ARM Embedded/5.4 2016q2 wordt gebruikt.
--- Build output dir is : C:/Users/Jamie/Documents/GitHub/kookaburra/Tests/Pitch_Control_example/pwm/CLionBuildOutput/Debug
+-- Build output dir is : C:/Users/Jamie/Documents/GitHub/kookaburra/Tests/Altitude_Control_example/pwm/CLionBuildOutput/Debug
 -- STM32F0xx Perif Driver wordt zonder debug ondersteuning gecompileerd
 -- Configuring done
 -- Generating done
--- Build files have been written to: C:/Users/Jamie/Documents/GitHub/kookaburra/Tests/Pitch_Control_example/pwm/cmake-build-debug
+-- Build files have been written to: C:/Users/Jamie/Documents/GitHub/kookaburra/Tests/Altitude_Control_example/pwm/cmake-build-debug

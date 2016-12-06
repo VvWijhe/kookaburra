@@ -42,10 +42,10 @@ RM = "C:\Program Files (x86)\JetBrains\CLion 2016.3\bin\cmake\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Pitch_Control_example\pwm
+CMAKE_SOURCE_DIR = C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Altitude_Control_example\pwm
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Pitch_Control_example\pwm\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Altitude_Control_example\pwm\cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/pwm.elf.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/pwm.elf.dir/flags.make
 CMakeFiles/pwm.elf.dir/main.cpp.obj: CMakeFiles/pwm.elf.dir/flags.make
 CMakeFiles/pwm.elf.dir/main.cpp.obj: CMakeFiles/pwm.elf.dir/includes_CXX.rsp
 CMakeFiles/pwm.elf.dir/main.cpp.obj: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Pitch_Control_example\pwm\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/pwm.elf.dir/main.cpp.obj"
-	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\pwm.elf.dir\main.cpp.obj -c C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Pitch_Control_example\pwm\main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Altitude_Control_example\pwm\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/pwm.elf.dir/main.cpp.obj"
+	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\pwm.elf.dir\main.cpp.obj -c C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Altitude_Control_example\pwm\main.cpp
 
 CMakeFiles/pwm.elf.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/pwm.elf.dir/main.cpp.i"
-	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Pitch_Control_example\pwm\main.cpp > CMakeFiles\pwm.elf.dir\main.cpp.i
+	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Altitude_Control_example\pwm\main.cpp > CMakeFiles\pwm.elf.dir\main.cpp.i
 
 CMakeFiles/pwm.elf.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/pwm.elf.dir/main.cpp.s"
-	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Pitch_Control_example\pwm\main.cpp -o CMakeFiles\pwm.elf.dir\main.cpp.s
+	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Altitude_Control_example\pwm\main.cpp -o CMakeFiles\pwm.elf.dir\main.cpp.s
 
 CMakeFiles/pwm.elf.dir/main.cpp.obj.requires:
 
@@ -81,44 +81,44 @@ CMakeFiles/pwm.elf.dir/main.cpp.obj.provides: CMakeFiles/pwm.elf.dir/main.cpp.ob
 CMakeFiles/pwm.elf.dir/main.cpp.obj.provides.build: CMakeFiles/pwm.elf.dir/main.cpp.obj
 
 
-CMakeFiles/pwm.elf.dir/C_/Users/Jamie/Documents/GitHub/kookaburra/Tests/Pitch_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj: CMakeFiles/pwm.elf.dir/flags.make
-CMakeFiles/pwm.elf.dir/C_/Users/Jamie/Documents/GitHub/kookaburra/Tests/Pitch_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj: CMakeFiles/pwm.elf.dir/includes_C.rsp
-CMakeFiles/pwm.elf.dir/C_/Users/Jamie/Documents/GitHub/kookaburra/Tests/Pitch_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj: C:/Users/Jamie/Documents/GitHub/kookaburra/Tests/Pitch_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Pitch_Control_example\pwm\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/pwm.elf.dir/C_/Users/Jamie/Documents/GitHub/kookaburra/Tests/Pitch_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj"
-	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\pwm.elf.dir\C_\Users\Jamie\Documents\GitHub\kookaburra\Tests\Pitch_Control_example\gemeenschappelijk\basis\stm32f0\syscalls_cm0.c.obj   -c C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Pitch_Control_example\gemeenschappelijk\basis\stm32f0\syscalls_cm0.c
+CMakeFiles/pwm.elf.dir/C_/Users/Jamie/Documents/GitHub/kookaburra/Tests/Altitude_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj: CMakeFiles/pwm.elf.dir/flags.make
+CMakeFiles/pwm.elf.dir/C_/Users/Jamie/Documents/GitHub/kookaburra/Tests/Altitude_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj: CMakeFiles/pwm.elf.dir/includes_C.rsp
+CMakeFiles/pwm.elf.dir/C_/Users/Jamie/Documents/GitHub/kookaburra/Tests/Altitude_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj: C:/Users/Jamie/Documents/GitHub/kookaburra/Tests/Altitude_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Altitude_Control_example\pwm\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/pwm.elf.dir/C_/Users/Jamie/Documents/GitHub/kookaburra/Tests/Altitude_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj"
+	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\pwm.elf.dir\C_\Users\Jamie\Documents\GitHub\kookaburra\Tests\Altitude_Control_example\gemeenschappelijk\basis\stm32f0\syscalls_cm0.c.obj   -c C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Altitude_Control_example\gemeenschappelijk\basis\stm32f0\syscalls_cm0.c
 
-CMakeFiles/pwm.elf.dir/C_/Users/Jamie/Documents/GitHub/kookaburra/Tests/Pitch_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pwm.elf.dir/C_/Users/Jamie/Documents/GitHub/kookaburra/Tests/Pitch_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.i"
-	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Pitch_Control_example\gemeenschappelijk\basis\stm32f0\syscalls_cm0.c > CMakeFiles\pwm.elf.dir\C_\Users\Jamie\Documents\GitHub\kookaburra\Tests\Pitch_Control_example\gemeenschappelijk\basis\stm32f0\syscalls_cm0.c.i
+CMakeFiles/pwm.elf.dir/C_/Users/Jamie/Documents/GitHub/kookaburra/Tests/Altitude_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pwm.elf.dir/C_/Users/Jamie/Documents/GitHub/kookaburra/Tests/Altitude_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.i"
+	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Altitude_Control_example\gemeenschappelijk\basis\stm32f0\syscalls_cm0.c > CMakeFiles\pwm.elf.dir\C_\Users\Jamie\Documents\GitHub\kookaburra\Tests\Altitude_Control_example\gemeenschappelijk\basis\stm32f0\syscalls_cm0.c.i
 
-CMakeFiles/pwm.elf.dir/C_/Users/Jamie/Documents/GitHub/kookaburra/Tests/Pitch_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pwm.elf.dir/C_/Users/Jamie/Documents/GitHub/kookaburra/Tests/Pitch_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.s"
-	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Pitch_Control_example\gemeenschappelijk\basis\stm32f0\syscalls_cm0.c -o CMakeFiles\pwm.elf.dir\C_\Users\Jamie\Documents\GitHub\kookaburra\Tests\Pitch_Control_example\gemeenschappelijk\basis\stm32f0\syscalls_cm0.c.s
+CMakeFiles/pwm.elf.dir/C_/Users/Jamie/Documents/GitHub/kookaburra/Tests/Altitude_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pwm.elf.dir/C_/Users/Jamie/Documents/GitHub/kookaburra/Tests/Altitude_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.s"
+	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Altitude_Control_example\gemeenschappelijk\basis\stm32f0\syscalls_cm0.c -o CMakeFiles\pwm.elf.dir\C_\Users\Jamie\Documents\GitHub\kookaburra\Tests\Altitude_Control_example\gemeenschappelijk\basis\stm32f0\syscalls_cm0.c.s
 
-CMakeFiles/pwm.elf.dir/C_/Users/Jamie/Documents/GitHub/kookaburra/Tests/Pitch_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj.requires:
+CMakeFiles/pwm.elf.dir/C_/Users/Jamie/Documents/GitHub/kookaburra/Tests/Altitude_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj.requires:
 
-.PHONY : CMakeFiles/pwm.elf.dir/C_/Users/Jamie/Documents/GitHub/kookaburra/Tests/Pitch_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj.requires
+.PHONY : CMakeFiles/pwm.elf.dir/C_/Users/Jamie/Documents/GitHub/kookaburra/Tests/Altitude_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj.requires
 
-CMakeFiles/pwm.elf.dir/C_/Users/Jamie/Documents/GitHub/kookaburra/Tests/Pitch_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj.provides: CMakeFiles/pwm.elf.dir/C_/Users/Jamie/Documents/GitHub/kookaburra/Tests/Pitch_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj.requires
-	$(MAKE) -f CMakeFiles\pwm.elf.dir\build.make CMakeFiles/pwm.elf.dir/C_/Users/Jamie/Documents/GitHub/kookaburra/Tests/Pitch_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj.provides.build
-.PHONY : CMakeFiles/pwm.elf.dir/C_/Users/Jamie/Documents/GitHub/kookaburra/Tests/Pitch_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj.provides
+CMakeFiles/pwm.elf.dir/C_/Users/Jamie/Documents/GitHub/kookaburra/Tests/Altitude_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj.provides: CMakeFiles/pwm.elf.dir/C_/Users/Jamie/Documents/GitHub/kookaburra/Tests/Altitude_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj.requires
+	$(MAKE) -f CMakeFiles\pwm.elf.dir\build.make CMakeFiles/pwm.elf.dir/C_/Users/Jamie/Documents/GitHub/kookaburra/Tests/Altitude_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj.provides.build
+.PHONY : CMakeFiles/pwm.elf.dir/C_/Users/Jamie/Documents/GitHub/kookaburra/Tests/Altitude_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj.provides
 
-CMakeFiles/pwm.elf.dir/C_/Users/Jamie/Documents/GitHub/kookaburra/Tests/Pitch_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj.provides.build: CMakeFiles/pwm.elf.dir/C_/Users/Jamie/Documents/GitHub/kookaburra/Tests/Pitch_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
+CMakeFiles/pwm.elf.dir/C_/Users/Jamie/Documents/GitHub/kookaburra/Tests/Altitude_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj.provides.build: CMakeFiles/pwm.elf.dir/C_/Users/Jamie/Documents/GitHub/kookaburra/Tests/Altitude_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
 
 
 CMakeFiles/pwm.elf.dir/stm32f0xx_it.c.obj: CMakeFiles/pwm.elf.dir/flags.make
 CMakeFiles/pwm.elf.dir/stm32f0xx_it.c.obj: CMakeFiles/pwm.elf.dir/includes_C.rsp
 CMakeFiles/pwm.elf.dir/stm32f0xx_it.c.obj: ../stm32f0xx_it.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Pitch_Control_example\pwm\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/pwm.elf.dir/stm32f0xx_it.c.obj"
-	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\pwm.elf.dir\stm32f0xx_it.c.obj   -c C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Pitch_Control_example\pwm\stm32f0xx_it.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Altitude_Control_example\pwm\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/pwm.elf.dir/stm32f0xx_it.c.obj"
+	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\pwm.elf.dir\stm32f0xx_it.c.obj   -c C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Altitude_Control_example\pwm\stm32f0xx_it.c
 
 CMakeFiles/pwm.elf.dir/stm32f0xx_it.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pwm.elf.dir/stm32f0xx_it.c.i"
-	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Pitch_Control_example\pwm\stm32f0xx_it.c > CMakeFiles\pwm.elf.dir\stm32f0xx_it.c.i
+	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Altitude_Control_example\pwm\stm32f0xx_it.c > CMakeFiles\pwm.elf.dir\stm32f0xx_it.c.i
 
 CMakeFiles/pwm.elf.dir/stm32f0xx_it.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pwm.elf.dir/stm32f0xx_it.c.s"
-	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Pitch_Control_example\pwm\stm32f0xx_it.c -o CMakeFiles\pwm.elf.dir\stm32f0xx_it.c.s
+	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Altitude_Control_example\pwm\stm32f0xx_it.c -o CMakeFiles\pwm.elf.dir\stm32f0xx_it.c.s
 
 CMakeFiles/pwm.elf.dir/stm32f0xx_it.c.obj.requires:
 
@@ -134,16 +134,16 @@ CMakeFiles/pwm.elf.dir/stm32f0xx_it.c.obj.provides.build: CMakeFiles/pwm.elf.dir
 CMakeFiles/pwm.elf.dir/usart.cpp.obj: CMakeFiles/pwm.elf.dir/flags.make
 CMakeFiles/pwm.elf.dir/usart.cpp.obj: CMakeFiles/pwm.elf.dir/includes_CXX.rsp
 CMakeFiles/pwm.elf.dir/usart.cpp.obj: ../usart.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Pitch_Control_example\pwm\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/pwm.elf.dir/usart.cpp.obj"
-	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\pwm.elf.dir\usart.cpp.obj -c C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Pitch_Control_example\pwm\usart.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Altitude_Control_example\pwm\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/pwm.elf.dir/usart.cpp.obj"
+	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\pwm.elf.dir\usart.cpp.obj -c C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Altitude_Control_example\pwm\usart.cpp
 
 CMakeFiles/pwm.elf.dir/usart.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/pwm.elf.dir/usart.cpp.i"
-	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Pitch_Control_example\pwm\usart.cpp > CMakeFiles\pwm.elf.dir\usart.cpp.i
+	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Altitude_Control_example\pwm\usart.cpp > CMakeFiles\pwm.elf.dir\usart.cpp.i
 
 CMakeFiles/pwm.elf.dir/usart.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/pwm.elf.dir/usart.cpp.s"
-	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Pitch_Control_example\pwm\usart.cpp -o CMakeFiles\pwm.elf.dir\usart.cpp.s
+	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Altitude_Control_example\pwm\usart.cpp -o CMakeFiles\pwm.elf.dir\usart.cpp.s
 
 CMakeFiles/pwm.elf.dir/usart.cpp.obj.requires:
 
@@ -159,16 +159,16 @@ CMakeFiles/pwm.elf.dir/usart.cpp.obj.provides.build: CMakeFiles/pwm.elf.dir/usar
 CMakeFiles/pwm.elf.dir/PWM.cpp.obj: CMakeFiles/pwm.elf.dir/flags.make
 CMakeFiles/pwm.elf.dir/PWM.cpp.obj: CMakeFiles/pwm.elf.dir/includes_CXX.rsp
 CMakeFiles/pwm.elf.dir/PWM.cpp.obj: ../PWM.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Pitch_Control_example\pwm\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/pwm.elf.dir/PWM.cpp.obj"
-	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\pwm.elf.dir\PWM.cpp.obj -c C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Pitch_Control_example\pwm\PWM.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Altitude_Control_example\pwm\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/pwm.elf.dir/PWM.cpp.obj"
+	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\pwm.elf.dir\PWM.cpp.obj -c C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Altitude_Control_example\pwm\PWM.cpp
 
 CMakeFiles/pwm.elf.dir/PWM.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/pwm.elf.dir/PWM.cpp.i"
-	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Pitch_Control_example\pwm\PWM.cpp > CMakeFiles\pwm.elf.dir\PWM.cpp.i
+	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Altitude_Control_example\pwm\PWM.cpp > CMakeFiles\pwm.elf.dir\PWM.cpp.i
 
 CMakeFiles/pwm.elf.dir/PWM.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/pwm.elf.dir/PWM.cpp.s"
-	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Pitch_Control_example\pwm\PWM.cpp -o CMakeFiles\pwm.elf.dir\PWM.cpp.s
+	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Altitude_Control_example\pwm\PWM.cpp -o CMakeFiles\pwm.elf.dir\PWM.cpp.s
 
 CMakeFiles/pwm.elf.dir/PWM.cpp.obj.requires:
 
@@ -184,16 +184,16 @@ CMakeFiles/pwm.elf.dir/PWM.cpp.obj.provides.build: CMakeFiles/pwm.elf.dir/PWM.cp
 CMakeFiles/pwm.elf.dir/mpu6050.cpp.obj: CMakeFiles/pwm.elf.dir/flags.make
 CMakeFiles/pwm.elf.dir/mpu6050.cpp.obj: CMakeFiles/pwm.elf.dir/includes_CXX.rsp
 CMakeFiles/pwm.elf.dir/mpu6050.cpp.obj: ../mpu6050.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Pitch_Control_example\pwm\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/pwm.elf.dir/mpu6050.cpp.obj"
-	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\pwm.elf.dir\mpu6050.cpp.obj -c C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Pitch_Control_example\pwm\mpu6050.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Altitude_Control_example\pwm\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/pwm.elf.dir/mpu6050.cpp.obj"
+	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\pwm.elf.dir\mpu6050.cpp.obj -c C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Altitude_Control_example\pwm\mpu6050.cpp
 
 CMakeFiles/pwm.elf.dir/mpu6050.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/pwm.elf.dir/mpu6050.cpp.i"
-	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Pitch_Control_example\pwm\mpu6050.cpp > CMakeFiles\pwm.elf.dir\mpu6050.cpp.i
+	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Altitude_Control_example\pwm\mpu6050.cpp > CMakeFiles\pwm.elf.dir\mpu6050.cpp.i
 
 CMakeFiles/pwm.elf.dir/mpu6050.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/pwm.elf.dir/mpu6050.cpp.s"
-	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Pitch_Control_example\pwm\mpu6050.cpp -o CMakeFiles\pwm.elf.dir\mpu6050.cpp.s
+	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Altitude_Control_example\pwm\mpu6050.cpp -o CMakeFiles\pwm.elf.dir\mpu6050.cpp.s
 
 CMakeFiles/pwm.elf.dir/mpu6050.cpp.obj.requires:
 
@@ -206,24 +206,51 @@ CMakeFiles/pwm.elf.dir/mpu6050.cpp.obj.provides: CMakeFiles/pwm.elf.dir/mpu6050.
 CMakeFiles/pwm.elf.dir/mpu6050.cpp.obj.provides.build: CMakeFiles/pwm.elf.dir/mpu6050.cpp.obj
 
 
+CMakeFiles/pwm.elf.dir/pid.cpp.obj: CMakeFiles/pwm.elf.dir/flags.make
+CMakeFiles/pwm.elf.dir/pid.cpp.obj: CMakeFiles/pwm.elf.dir/includes_CXX.rsp
+CMakeFiles/pwm.elf.dir/pid.cpp.obj: ../pid.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Altitude_Control_example\pwm\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/pwm.elf.dir/pid.cpp.obj"
+	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\pwm.elf.dir\pid.cpp.obj -c C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Altitude_Control_example\pwm\pid.cpp
+
+CMakeFiles/pwm.elf.dir/pid.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/pwm.elf.dir/pid.cpp.i"
+	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Altitude_Control_example\pwm\pid.cpp > CMakeFiles\pwm.elf.dir\pid.cpp.i
+
+CMakeFiles/pwm.elf.dir/pid.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/pwm.elf.dir/pid.cpp.s"
+	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Altitude_Control_example\pwm\pid.cpp -o CMakeFiles\pwm.elf.dir\pid.cpp.s
+
+CMakeFiles/pwm.elf.dir/pid.cpp.obj.requires:
+
+.PHONY : CMakeFiles/pwm.elf.dir/pid.cpp.obj.requires
+
+CMakeFiles/pwm.elf.dir/pid.cpp.obj.provides: CMakeFiles/pwm.elf.dir/pid.cpp.obj.requires
+	$(MAKE) -f CMakeFiles\pwm.elf.dir\build.make CMakeFiles/pwm.elf.dir/pid.cpp.obj.provides.build
+.PHONY : CMakeFiles/pwm.elf.dir/pid.cpp.obj.provides
+
+CMakeFiles/pwm.elf.dir/pid.cpp.obj.provides.build: CMakeFiles/pwm.elf.dir/pid.cpp.obj
+
+
 # Object files for target pwm.elf
 pwm_elf_OBJECTS = \
 "CMakeFiles/pwm.elf.dir/main.cpp.obj" \
-"CMakeFiles/pwm.elf.dir/C_/Users/Jamie/Documents/GitHub/kookaburra/Tests/Pitch_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj" \
+"CMakeFiles/pwm.elf.dir/C_/Users/Jamie/Documents/GitHub/kookaburra/Tests/Altitude_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj" \
 "CMakeFiles/pwm.elf.dir/stm32f0xx_it.c.obj" \
 "CMakeFiles/pwm.elf.dir/usart.cpp.obj" \
 "CMakeFiles/pwm.elf.dir/PWM.cpp.obj" \
-"CMakeFiles/pwm.elf.dir/mpu6050.cpp.obj"
+"CMakeFiles/pwm.elf.dir/mpu6050.cpp.obj" \
+"CMakeFiles/pwm.elf.dir/pid.cpp.obj"
 
 # External object files for target pwm.elf
 pwm_elf_EXTERNAL_OBJECTS =
 
 ../CLionBuildOutput/Debug/pwm.elf.exe: CMakeFiles/pwm.elf.dir/main.cpp.obj
-../CLionBuildOutput/Debug/pwm.elf.exe: CMakeFiles/pwm.elf.dir/C_/Users/Jamie/Documents/GitHub/kookaburra/Tests/Pitch_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
+../CLionBuildOutput/Debug/pwm.elf.exe: CMakeFiles/pwm.elf.dir/C_/Users/Jamie/Documents/GitHub/kookaburra/Tests/Altitude_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
 ../CLionBuildOutput/Debug/pwm.elf.exe: CMakeFiles/pwm.elf.dir/stm32f0xx_it.c.obj
 ../CLionBuildOutput/Debug/pwm.elf.exe: CMakeFiles/pwm.elf.dir/usart.cpp.obj
 ../CLionBuildOutput/Debug/pwm.elf.exe: CMakeFiles/pwm.elf.dir/PWM.cpp.obj
 ../CLionBuildOutput/Debug/pwm.elf.exe: CMakeFiles/pwm.elf.dir/mpu6050.cpp.obj
+../CLionBuildOutput/Debug/pwm.elf.exe: CMakeFiles/pwm.elf.dir/pid.cpp.obj
 ../CLionBuildOutput/Debug/pwm.elf.exe: CMakeFiles/pwm.elf.dir/build.make
 ../CLionBuildOutput/Debug/pwm.elf.exe: F0DiscoveryDir/libSTM32F0DiscoveryLib.a
 ../CLionBuildOutput/Debug/pwm.elf.exe: STM32CMSIS/libCMSISFIRMWARE.a
@@ -231,12 +258,12 @@ pwm_elf_EXTERNAL_OBJECTS =
 ../CLionBuildOutput/Debug/pwm.elf.exe: CMakeFiles/pwm.elf.dir/linklibs.rsp
 ../CLionBuildOutput/Debug/pwm.elf.exe: CMakeFiles/pwm.elf.dir/objects1.rsp
 ../CLionBuildOutput/Debug/pwm.elf.exe: CMakeFiles/pwm.elf.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Pitch_Control_example\pwm\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable ..\CLionBuildOutput\Debug\pwm.elf.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Altitude_Control_example\pwm\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable ..\CLionBuildOutput\Debug\pwm.elf.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\pwm.elf.dir\link.txt --verbose=$(VERBOSE)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Windows post-aktie: pwm.elf.exe naar pwm.elf gekopieerd."
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "STM32 pwm.elf is gemaakt."
-	"C:\Program Files (x86)\GNU Tools ARM Embedded\5.4 2016q2\bin\arm-none-eabi-size.exe" -A -d C:/Users/Jamie/Documents/GitHub/kookaburra/Tests/Pitch_Control_example/pwm/CLionBuildOutput/Debug/pwm.elf.exe
-	"C:\Program Files (x86)\JetBrains\CLion 2016.3\bin\cmake\bin\cmake.exe" -E rename C:/Users/Jamie/Documents/GitHub/kookaburra/Tests/Pitch_Control_example/pwm/CLionBuildOutput/Debug/pwm.elf.exe C:/Users/Jamie/Documents/GitHub/kookaburra/Tests/Pitch_Control_example/pwm/CLionBuildOutput/Debug/pwm.elf
+	"C:\Program Files (x86)\GNU Tools ARM Embedded\5.4 2016q2\bin\arm-none-eabi-size.exe" -A -d C:/Users/Jamie/Documents/GitHub/kookaburra/Tests/Altitude_Control_example/pwm/CLionBuildOutput/Debug/pwm.elf.exe
+	"C:\Program Files (x86)\JetBrains\CLion 2016.3\bin\cmake\bin\cmake.exe" -E rename C:/Users/Jamie/Documents/GitHub/kookaburra/Tests/Altitude_Control_example/pwm/CLionBuildOutput/Debug/pwm.elf.exe C:/Users/Jamie/Documents/GitHub/kookaburra/Tests/Altitude_Control_example/pwm/CLionBuildOutput/Debug/pwm.elf
 
 # Rule to build all files generated by this target.
 CMakeFiles/pwm.elf.dir/build: ../CLionBuildOutput/Debug/pwm.elf.exe
@@ -244,11 +271,12 @@ CMakeFiles/pwm.elf.dir/build: ../CLionBuildOutput/Debug/pwm.elf.exe
 .PHONY : CMakeFiles/pwm.elf.dir/build
 
 CMakeFiles/pwm.elf.dir/requires: CMakeFiles/pwm.elf.dir/main.cpp.obj.requires
-CMakeFiles/pwm.elf.dir/requires: CMakeFiles/pwm.elf.dir/C_/Users/Jamie/Documents/GitHub/kookaburra/Tests/Pitch_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj.requires
+CMakeFiles/pwm.elf.dir/requires: CMakeFiles/pwm.elf.dir/C_/Users/Jamie/Documents/GitHub/kookaburra/Tests/Altitude_Control_example/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj.requires
 CMakeFiles/pwm.elf.dir/requires: CMakeFiles/pwm.elf.dir/stm32f0xx_it.c.obj.requires
 CMakeFiles/pwm.elf.dir/requires: CMakeFiles/pwm.elf.dir/usart.cpp.obj.requires
 CMakeFiles/pwm.elf.dir/requires: CMakeFiles/pwm.elf.dir/PWM.cpp.obj.requires
 CMakeFiles/pwm.elf.dir/requires: CMakeFiles/pwm.elf.dir/mpu6050.cpp.obj.requires
+CMakeFiles/pwm.elf.dir/requires: CMakeFiles/pwm.elf.dir/pid.cpp.obj.requires
 
 .PHONY : CMakeFiles/pwm.elf.dir/requires
 
@@ -257,6 +285,6 @@ CMakeFiles/pwm.elf.dir/clean:
 .PHONY : CMakeFiles/pwm.elf.dir/clean
 
 CMakeFiles/pwm.elf.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Pitch_Control_example\pwm C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Pitch_Control_example\pwm C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Pitch_Control_example\pwm\cmake-build-debug C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Pitch_Control_example\pwm\cmake-build-debug C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Pitch_Control_example\pwm\cmake-build-debug\CMakeFiles\pwm.elf.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Altitude_Control_example\pwm C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Altitude_Control_example\pwm C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Altitude_Control_example\pwm\cmake-build-debug C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Altitude_Control_example\pwm\cmake-build-debug C:\Users\Jamie\Documents\GitHub\kookaburra\Tests\Altitude_Control_example\pwm\cmake-build-debug\CMakeFiles\pwm.elf.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/pwm.elf.dir/depend
 

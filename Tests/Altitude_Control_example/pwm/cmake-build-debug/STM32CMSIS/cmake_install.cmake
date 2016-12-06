@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/Jamie/Documents/GitHub/kookaburra/Tests/Pitch_Control_example/gemeenschappelijk/Libraries/CMSIS/Device/ST/STM32F0xx
+# Install script for directory: C:/Users/Jamie/Documents/GitHub/kookaburra/Tests/Altitude_Control_example/gemeenschappelijk/Libraries/CMSIS/Device/ST/STM32F0xx
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

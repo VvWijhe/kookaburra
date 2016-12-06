@@ -122,7 +122,15 @@ stm32f0xx.h
 stm32f0xx.h
 ../../gemeenschappelijk/STM32F0Discovery/stm32f0xx.h
 
+../h/pid.h
+cmath
+-
+
 ../h/pwm.h
+stm32f0xx_conf.h
+-
+stm32f0_discovery.h
+-
 
 ../h/stm32f0xx_conf.h
 stm32f0xx_cec.h
@@ -176,41 +184,31 @@ cstdio
 stm32f0xx_usart.h
 ../h/stm32f0xx_usart.h
 
-C:/Users/Jamie/Documents/GitHub/kookaburra/Tests/Pitch_Control_example/pwm/MPU6050.h
-stm32f0xx_i2c.h
-C:/Users/Jamie/Documents/GitHub/kookaburra/Tests/Pitch_Control_example/pwm/stm32f0xx_i2c.h
-
-C:/Users/Jamie/Documents/GitHub/kookaburra/Tests/Pitch_Control_example/pwm/PWM.cpp
-stm32f0xx_conf.h
--
-stm32f0_discovery.h
--
-stm32f0xx_gpio.h
--
+C:/Users/Jamie/Documents/GitHub/kookaburra/Tests/Altitude_Control_example/pwm/PWM.cpp
 pwm.h
-C:/Users/Jamie/Documents/GitHub/kookaburra/Tests/Pitch_Control_example/pwm/pwm.h
+C:/Users/Jamie/Documents/GitHub/kookaburra/Tests/Altitude_Control_example/pwm/pwm.h
 
-C:/Users/Jamie/Documents/GitHub/kookaburra/Tests/Pitch_Control_example/pwm/main.cpp
-stm32f0xx.h
--
+C:/Users/Jamie/Documents/GitHub/kookaburra/Tests/Altitude_Control_example/pwm/main.cpp
 pwm.h
 -
-cmath
+pid.h
 -
-stm32f0_discovery.h
+sched.h
 -
-MPU6050.h
-C:/Users/Jamie/Documents/GitHub/kookaburra/Tests/Pitch_Control_example/pwm/MPU6050.h
 
-C:/Users/Jamie/Documents/GitHub/kookaburra/Tests/Pitch_Control_example/pwm/mpu6050.cpp
+C:/Users/Jamie/Documents/GitHub/kookaburra/Tests/Altitude_Control_example/pwm/mpu6050.cpp
 mpu6050.h
-C:/Users/Jamie/Documents/GitHub/kookaburra/Tests/Pitch_Control_example/pwm/mpu6050.h
+C:/Users/Jamie/Documents/GitHub/kookaburra/Tests/Altitude_Control_example/pwm/mpu6050.h
 
-C:/Users/Jamie/Documents/GitHub/kookaburra/Tests/Pitch_Control_example/pwm/mpu6050.h
+C:/Users/Jamie/Documents/GitHub/kookaburra/Tests/Altitude_Control_example/pwm/mpu6050.h
 stm32f0xx_i2c.h
-C:/Users/Jamie/Documents/GitHub/kookaburra/Tests/Pitch_Control_example/pwm/stm32f0xx_i2c.h
+C:/Users/Jamie/Documents/GitHub/kookaburra/Tests/Altitude_Control_example/pwm/stm32f0xx_i2c.h
 
-C:/Users/Jamie/Documents/GitHub/kookaburra/Tests/Pitch_Control_example/pwm/usart.cpp
+C:/Users/Jamie/Documents/GitHub/kookaburra/Tests/Altitude_Control_example/pwm/pid.cpp
+pid.h
+C:/Users/Jamie/Documents/GitHub/kookaburra/Tests/Altitude_Control_example/pwm/pid.h
+
+C:/Users/Jamie/Documents/GitHub/kookaburra/Tests/Altitude_Control_example/pwm/usart.cpp
 usart.h
-C:/Users/Jamie/Documents/GitHub/kookaburra/Tests/Pitch_Control_example/pwm/usart.h
+C:/Users/Jamie/Documents/GitHub/kookaburra/Tests/Altitude_Control_example/pwm/usart.h
 
