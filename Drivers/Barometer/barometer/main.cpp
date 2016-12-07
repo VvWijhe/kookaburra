@@ -45,7 +45,7 @@ USART_1 usart;
   */
 int main(void) {
     RCC_ClocksTypeDef RCC_Clocks;
-    MS5611 Barometer(MS5611_ADDRESS_CSB_LOW);
+    MS5611 Barometer;
 
 
     // Configure LED3 and LED4 on STM32F0-Discovery
@@ -59,27 +59,21 @@ int main(void) {
     // Initialize MS5611
     Barometer.initialize();
 
-
-
     //initialize usart
     usart.init();
 
     usart << "This is a test application for the barometer\n";
 
     while (1) {
-        if (Barometer.testConnection()) {
-            STM_EVAL_LEDToggle(LED3);
-        } else {
-            STM_EVAL_LEDToggle(LED4);
-        }
+        //usart << "Temperature: ";
+        //usart << Barometer.getTemperature();
+        //usart << "\n";
 
-        Barometer.readvalues();
+        usart << "Altitude: ";
+        usart << Barometer.getAltitude();
+        usart << "\n";
 
-        float altitude = Barometer.getAltitude();
-        usart << "Altitude : ";
-        usart << altitude;
-        usart << "\n\n";
-        delay(50);
+        delay(100);
     }
 }
 

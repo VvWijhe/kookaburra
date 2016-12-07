@@ -1,0 +1,2 @@
+C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\ARM-NO~2.EXE qc libSTM32F0DiscoveryLib.a  CMakeFiles/STM32F0DiscoveryLib.dir/stm32f0_discovery.c.obj
+C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR17F9~1.EXE libSTM32F0DiscoveryLib.a

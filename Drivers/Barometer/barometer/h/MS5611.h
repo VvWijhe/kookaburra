@@ -32,12 +32,12 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <unistd.h>
 #include <string>
 
-#define MS5611_ADDRESS_CSB_LOW  0x76    //I2C
+#define MS5611_ADDRESS_CSB_LOW  (0x77 << 1)    //I2C
 #define MS5611_ADDRESS_CSB_HIGH 0x77    //SPI
-#define MS5611_DEFAULT_ADDRESS  MS5611_ADDRESS_CSB_HIGH
+#define MS5611_DEFAULT_ADDRESS  MS5611_ADDRESS_CSB_LOW
 
-#define MS5611_RA_ADC           0x00
-#define MS5611_RA_RESET         0x1E
+#define MS5611_ADC_READ         0x00
+#define MS5611_RESET            0x1E
 
 #define MS5611_RA_C0            0xA0
 #define MS5611_RA_C1            0xA2
@@ -64,51 +64,37 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define MPU6050_COMM_STATUS_ERROR false
 
 typedef uint32_t u32;
-typedef int32_t  s32;
+typedef int32_t s32;
 typedef uint16_t u16;
-typedef int16_t  s16;
-typedef uint8_t  u8;
-typedef int8_t   s8;
+typedef int16_t s16;
+typedef uint8_t u8;
+typedef int8_t s8;
 
 class MS5611 {
 public:
-    MS5611(uint8_t address = MS5611_DEFAULT_ADDRESS);
+    MS5611();
 
     void initialize();
-    void readvalues();
-    bool testConnection();
-
-    void refreshPressure(uint8_t OSR = MS5611_RA_D1_OSR_4096);
-    void readPressure();
-
-    void refreshTemperature(uint8_t OSR = MS5611_RA_D2_OSR_4096);
-    void readTemperature();
-
-    void calculatePressureAndTemperature();
-    void update();
 
     float getTemperature();
-    float getPressure();
+
     float getAltitude();
 
     // Read and Write functions
-    void writeByte(u8 slaveAddr, u8 *pBuffer, u8 writeAddr);
-    void readToBuffer(u8 slaveAddr, u8 *pBuffer, u8 readAddr, u16 NumByteToRead);
-
     void waitForI2CFlag(uint32_t flag);
-    uint32_t readStatus(uint8_t bf);
 
 private:
-    bool commStatus;
-
-    uint8_t devAddr; // I2C device adress
+    bool deviceStatus;
     uint16_t C1, C2, C3, C4, C5, C6; // Calibration data
     uint32_t D1, D2; // Raw measurement data
     float TEMP; // Calculated temperature
     float PRES; // Calculated pressure
 
+    void readPROM();
     float toAltitude(float pressure);
-    void delay(const int d);
+    void readPressure();
+    void readTemperature();
+    void calculate();
 };
 
 #endif // MS5611_H

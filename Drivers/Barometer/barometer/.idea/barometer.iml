@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <module type="CPP_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
@@ -70,3 +71,6 @@
     </orderEntry>
   </component>
 </module>
+=======
+<module classpath="CMake" type="CPP_MODULE" version="4" />
+>>>>>>> c366a4c724d86638dcef74a99e9f61fd0cdc5e19
