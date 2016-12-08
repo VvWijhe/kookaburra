@@ -26,18 +26,20 @@ Airplane::Airplane() {
 }
 
 void Airplane::loop() {
-    while (mode == MANUAL_M) {
-        // Read RC controller pwm and send to the motor and servos
+    while (true) {
+        while (mode == MANUAL_M) {
+            // Read RC controller pwm and send to the motor and servos
 
-        // Read RC controller pattern to activate autopilot
+            // Read RC controller pattern to activate autopilot
 
-    }
+        }
 
-    while (mode == AUTOPILOT_M){
-        // control height
+        while (mode == AUTOPILOT_M) {
+            // control height
 
-        // control pitch
+            // control pitch
 
+        }
     }
 }
 
