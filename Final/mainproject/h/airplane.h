@@ -1,0 +1,8 @@
+//
+// Created by Jamie on 8-12-2016.
+//
+
+#ifndef MAINPROJECT_AIRPLANE_H
+#define MAINPROJECT_AIRPLANE_H
+
+#endif //MAINPROJECT_AIRPLANE_H
