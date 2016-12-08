@@ -1,12 +1,11 @@
 #include <stm32f0xx.h>
 #include <pwm.h>
-#include <cmath>
-#include <stm32f0_discovery.h>
 #include <pid.h>
+#include <stm32f0_discovery.h>
 #include "MPU6050.h"
 
-#define  MAX_ANGLE 20
-#define  MIN_ANGLE -20
+#define  MAX_ANGLE 5
+#define  MIN_ANGLE -5
 #define CONVERSIONG 3.9
 
 PWM pwm;
@@ -23,9 +22,9 @@ int main(void) {
         accelGyroDataRaw_t accelGyroDataRaw;
 
         if (accelerometer.testConnection()) {
-            STM_EVAL_LEDToggle(LED4);
+            STM_EVAL_LEDOn(LED4);
         } else {
-            STM_EVAL_LEDToggle(LED3);
+            STM_EVAL_LEDOff(LED4);
         }
 
         accelerometer.getRawAccelGyro(&accelGyroDataRaw);
@@ -41,7 +40,7 @@ int main(void) {
         //pitch += 90;
 
         if (pitch > MAX_ANGLE || pitch < MIN_ANGLE) {
-            PID pidPitch(0.02, 15, 0, 0);
+            PID pidPitch(0.02, 15.0, 0.0, 0.0);
             double pitchControlValue = 0;
 
             // Error an control value
@@ -50,7 +49,6 @@ int main(void) {
             } else {
                 pitchControlValue = pidPitch.calculate(pitch, MIN_ANGLE);
             }
-            //pitchControlValue *= 0.1;
 
             // Saturation
             if (pitchControlValue > 500) pitchControlValue = 495;
@@ -58,8 +56,10 @@ int main(void) {
 
             // Set servo
             pwm.cycle(2, (uint32_t) (pitchControlValue + 1500));
+            STM_EVAL_LEDOn(LED3);
         } else {
             pwm.cycle(2, (uint32_t) 1500);
+            STM_EVAL_LEDOff(LED3);
         }
     }
 }

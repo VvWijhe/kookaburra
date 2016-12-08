@@ -1,8 +1,6 @@
 #include <pwm.h>
 #include <pid.h>
 
-#define ALT_SETPOINT 10
-
 PWM pwm;
 
 /// TBD: NEED BAROMETER
@@ -12,9 +10,10 @@ int main(void) {
 
     while (1) {
         PID pid(0.02, 1, 0, 0);
-        double altitudeControlValue;
+        double altitudeControlValue = 0;
+        double altitudeSetpoint = 0;
 
-        altitudeControlValue = pid.calculate(barometerHeight, ALT_SETPOINT);
+        altitudeControlValue = pid.calculate(barometerHeight, altitudeSetpoint);
 
         // Set to PWM
         altitudeControlValue *= 0.04;

@@ -11,7 +11,7 @@
 class Time {
 public:
     Time();
-    void init(double p, int f);
+    void init(uint16_t f);
     void Raisetime(void);
     uint32_t GetValue(void);
     void incrementTime(void);

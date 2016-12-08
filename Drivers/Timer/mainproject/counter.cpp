@@ -5,12 +5,9 @@ Time::Time() {
 
 }
 
-void Time::init(double p, int f) {
+void Time::init(uint16_t f) {
     TIM_TimeBaseInitTypeDef TIM_TimeBaseStructure;
     NVIC_InitTypeDef NVIC_InitStructure;
-    int Sub = p * 12000;
-
-    Freq = p;
 
     //[..] To use the Timer in Timing(Time base) mode, the following steps are
     //     mandatory:
@@ -22,7 +19,7 @@ void Time::init(double p, int f) {
     //(#) Fill the TIM_TimeBaseInitStruct with the desired parameters.
     TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;
     TIM_TimeBaseStructure.TIM_Period = 1000 - 1;
-    TIM_TimeBaseStructure.TIM_Prescaler = (uint16_t) ((SystemCoreClock / Sub) - 1);
+    TIM_TimeBaseStructure.TIM_Prescaler = (uint16_t) ((SystemCoreClock / (f * 1000)) - 1);
 
     //(#) Call TIM_TimeBaseInit(TIMx, &TIM_TimeBaseInitStruct) to configure
     //    the Time Base unit with the corresponding configuration.
