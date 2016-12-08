@@ -1,3 +1,4 @@
+#include <stm32f0xx_tim.h>
 #include "h/counter.h"
 
 
@@ -5,12 +6,9 @@ Time::Time() {
 
 }
 
-void Time::init_Tim3(double p) {
+void Time::init_Tim3(uint16_t p) {
     TIM_TimeBaseInitTypeDef TIM_TimeBaseStructure;
     NVIC_InitTypeDef NVIC_InitStructure;
-    int Sub = p * 12000;
-
-    Freq = p;
 
     //[..] To use the Timer in Timing(Time base) mode, the following steps are
     //     mandatory:
@@ -22,7 +20,7 @@ void Time::init_Tim3(double p) {
     //(#) Fill the TIM_TimeBaseInitStruct with the desired parameters.
     TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;
     TIM_TimeBaseStructure.TIM_Period = 1000 - 1;
-    TIM_TimeBaseStructure.TIM_Prescaler = (uint16_t) ((SystemCoreClock / Sub) - 1);
+    TIM_TimeBaseStructure.TIM_Prescaler = (uint16_t) ((SystemCoreClock / (p * 1000)) - 1);
 
     //(#) Call TIM_TimeBaseInit(TIMx, &TIM_TimeBaseInitStruct) to configure
     //    the Time Base unit with the corresponding configuration.
@@ -43,12 +41,9 @@ void Time::init_Tim3(double p) {
     TIM_Cmd(TIM3, ENABLE);
 }
 
-void Time::init_Tim16(double p) {
+void Time::init_Tim16(uint16_t p) {
     TIM_TimeBaseInitTypeDef TIM_TimeBaseStructure;
     NVIC_InitTypeDef NVIC_InitStructure;
-    double Sub = p * 12000;
-
-    p = Freq16;
 
     //[..] To use the Timer in Timing(Time base) mode, the following steps are
     //     mandatory:
@@ -60,7 +55,8 @@ void Time::init_Tim16(double p) {
     //(#) Fill the TIM_TimeBaseInitStruct with the desired parameters.
     TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;
     TIM_TimeBaseStructure.TIM_Period = 1000 - 1;
-    TIM_TimeBaseStructure.TIM_Prescaler = (uint16_t) ((SystemCoreClock / Sub) - 1);
+    TIM_TimeBaseStructure.TIM_Prescaler = (uint16_t) ((SystemCoreClock / (p * 1000)) - 1);
+    TIM_TimeBaseStructure.TIM_ClockDivision = TIM_CKD_DIV1;
 
     //(#) Call TIM_TimeBaseInit(TIMx, &TIM_TimeBaseInitStruct) to configure
     //    the Time Base unit with the corresponding configuration.

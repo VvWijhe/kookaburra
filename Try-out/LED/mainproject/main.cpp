@@ -79,7 +79,7 @@ int main(void) {
     SysTick_Config(RCC_Clocks.HCLK_Frequency / 1000);
    // Usart.init();
     Barometer.initialize();
-    Timer.init_Tim3(0.498);
+    Timer.init_Tim3(1);
     Timer.init_Tim16(1);
 
     while (1) {
@@ -96,10 +96,8 @@ int main(void) {
     }
 }
 
-void TIM3_IRQHandler(void) {
+extern "C" void TIM3_IRQHandler(void) {
     if (TIM_GetITStatus(TIM3, TIM_IT_Update) != RESET) {
-
-
         TIM_ClearITPendingBit(TIM3, TIM_IT_Update);
         Time2 = Time1;
         Time1 = Timer.GetSeconds();
@@ -109,12 +107,10 @@ void TIM3_IRQHandler(void) {
         AltSpeed = 20;
         Timer.SetFreq16(AltSpeed);
         STM_EVAL_LEDToggle(LED4);
-
-
     }
 }
 
-void TIM16IRQHandler(void) {
+extern "C" void TIM16_IRQHandler(void) {
     if(TIM_GetITStatus(TIM16, TIM_IT_Update) != RESET){
         TIM_ClearITPendingBit(TIM16, TIM_IT_Update);
         STM_EVAL_LEDToggle(LED3);
