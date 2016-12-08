@@ -24,7 +24,9 @@ file(GLOB BasisBestanden ${BASISDIR}/stm32f0/*.c)
 set(SRCS main.cpp ${BasisBestanden}
         stm32f0xx_it.c
         airplane.cpp
-        mpu6050.cpp)
+        mpu6050.cpp
+        usart.cpp
+        pid.cpp)
 
 add_subdirectory(${F0DISCOVERYDIR} ${CMAKE_CURRENT_BINARY_DIR}/F0DiscoveryDir)
 

@@ -2,6 +2,5 @@
 
 int main(void) {
     Airplane plane;
-
-    plane.start();
+    plane.loop();
 }

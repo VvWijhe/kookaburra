@@ -494,13 +494,13 @@ void USART_MSBFirstCmd(USART_TypeDef* USARTx, FunctionalState NewState)
   if (NewState != DISABLE)
   {
     /* Enable the most significant bit first transmitted/received following the 
-       start bit by setting the MSBFIRST bit in the CR2 register */
+       loop bit by setting the MSBFIRST bit in the CR2 register */
     USARTx->CR2 |= USART_CR2_MSBFIRST;
   }
   else
   {
     /* Disable the most significant bit first transmitted/received following the 
-       start bit by clearing the MSBFIRST bit in the CR2 register */
+       loop bit by clearing the MSBFIRST bit in the CR2 register */
     USARTx->CR2 &= (uint32_t)~((uint32_t)USART_CR2_MSBFIRST);
   }
 }
