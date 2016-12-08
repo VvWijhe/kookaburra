@@ -79,7 +79,7 @@ int main(void) {
     SysTick_Config(RCC_Clocks.HCLK_Frequency / 1000);
    // Usart.init();
     Barometer.initialize();
-    Timer.init_Tim3(0.498);
+    Timer.init_Tim3(1);
     Timer.init_Tim16(1);
 
     while (1) {
@@ -96,7 +96,7 @@ int main(void) {
     }
 }
 
-void TIM3_IRQHandler(void) {
+extern "C" void TIM3_IRQHandler(void) {
     if (TIM_GetITStatus(TIM3, TIM_IT_Update) != RESET) {
 
 
@@ -114,7 +114,7 @@ void TIM3_IRQHandler(void) {
     }
 }
 
-void TIM16IRQHandler(void) {
+extern "C" void TIM16IRQHandler(void) {
     if(TIM_GetITStatus(TIM16, TIM_IT_Update) != RESET){
         TIM_ClearITPendingBit(TIM16, TIM_IT_Update);
         STM_EVAL_LEDToggle(LED3);

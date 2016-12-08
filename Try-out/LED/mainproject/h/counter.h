@@ -11,8 +11,8 @@
 class Time {
 public:
     Time();
-    void init_Tim3(double p);
-    void init_Tim16(double p);
+    void init_Tim3(uint16_t p);
+    void init_Tim16(uint16_t p);
     void SetFreq16(float freq);
     void Raisetime(void);
     uint32_t GetValue(void);
