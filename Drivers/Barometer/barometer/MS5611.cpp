@@ -33,10 +33,9 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define MS5611_TIMEOUT ((uint32_t)(0x00001000))
 
 /** MS5611 constructor.
- * @param address I2C address
- * @see MS5611_DEFAULT_ADDRESS
  */
 MS5611::MS5611() {
+
 }
 
 /** Power on and prepare for general usage.
@@ -79,6 +78,21 @@ void MS5611::initialize() {
     readPROM();
 }
 
+void MS5611::reset(){
+    // -------------------------- Convert command
+    waitForI2CFlag(I2C_ISR_BUSY);
+
+    I2C_TransferHandling(MS5611_I2C, MS5611_ADDRESS_CSB_LOW, 1, I2C_AutoEnd_Mode, I2C_Generate_Start_Write);
+
+    waitForI2CFlag(I2C_ISR_TXIS);
+
+    I2C_SendData(MS5611_I2C, MS5611_RESET);
+
+    waitForI2CFlag(I2C_ISR_STOPF);
+
+    I2C_ClearFlag(MS5611_I2C, I2C_ICR_STOPCF);
+}
+
 /** Read Cx(1-6) from the IC's PROM
  */
 void MS5611::readPROM() {
@@ -92,7 +106,7 @@ void MS5611::readPROM() {
 
         waitForI2CFlag(I2C_ISR_TXIS);
 
-        I2C_SendData(MS5611_I2C, (uint8_t) (MS5611_RA_C0 + (i * 2)));
+        I2C_SendData(MS5611_I2C, (uint8_t) (MS5611_RA_C1 + (i * 2)));
 
         waitForI2CFlag(I2C_ISR_STOPF);
 
@@ -121,9 +135,7 @@ void MS5611::readPROM() {
     C6 = tempC[5];
 }
 
-/** Read temperature ADC from the IC.
- */
-void MS5611::readTemperature() {
+void MS5611::refreshTemperature(){
     // -------------------------- Convert command
     waitForI2CFlag(I2C_ISR_BUSY);
 
@@ -136,6 +148,11 @@ void MS5611::readTemperature() {
     waitForI2CFlag(I2C_ISR_STOPF);
 
     I2C_ClearFlag(MS5611_I2C, I2C_ICR_STOPCF);
+}
+
+/** Read temperature ADC from the IC.
+ */
+void MS5611::readTemperature() {
 
     // -------------------------- ADC Read sequence
     waitForI2CFlag(I2C_ISR_BUSY);
@@ -165,9 +182,7 @@ void MS5611::readTemperature() {
     D2 = D2 | (uint32_t)I2C_ReceiveData(MS5611_I2C);
 }
 
-/** Read pressure ADC from the IC.
- */
-void MS5611::readPressure() {
+void MS5611::refreshPressure(){
     // -------------------------- Convert command
     waitForI2CFlag(I2C_ISR_BUSY);
 
@@ -180,6 +195,11 @@ void MS5611::readPressure() {
     waitForI2CFlag(I2C_ISR_STOPF);
 
     I2C_ClearFlag(MS5611_I2C, I2C_ICR_STOPCF);
+}
+
+/** Read pressure ADC from the IC.
+ */
+void MS5611::readPressure() {
 
     // -------------------------- ADC Read command
     waitForI2CFlag(I2C_ISR_BUSY);
@@ -200,13 +220,13 @@ void MS5611::readPressure() {
     I2C_TransferHandling(MS5611_I2C, MS5611_ADDRESS_CSB_LOW, 3, I2C_AutoEnd_Mode, I2C_Generate_Start_Read);
 
     waitForI2CFlag(I2C_ISR_RXNE);
-    D2 = (uint32_t)I2C_ReceiveData(MS5611_I2C) << 16;
+    D1 = (uint32_t)I2C_ReceiveData(MS5611_I2C) << 16;
     waitForI2CFlag(I2C_ISR_RXNE);
-    D2 = D2 | (uint32_t)I2C_ReceiveData(MS5611_I2C) << 8;
+    D1 = D1 | (uint32_t)I2C_ReceiveData(MS5611_I2C) << 8;
     waitForI2CFlag(I2C_ISR_STOPF);
     I2C_ClearFlag(MS5611_I2C, I2C_ICR_STOPCF);
     waitForI2CFlag(I2C_ISR_RXNE);
-    D2 = D2 | (uint32_t)I2C_ReceiveData(MS5611_I2C);
+    D1 = D1 | (uint32_t)I2C_ReceiveData(MS5611_I2C);
 }
 
 /** Calculate temperature and pressure calculations and perform compensation
@@ -244,30 +264,45 @@ void MS5611::calculate() {
     TEMP = TEMP / 100;
 }
 
-float MS5611::toAltitude(float pressure) {
-    const float R = 287.052; // specific gas constant R*/M0
+float MS5611::toAltitude() {
+    /*
+    const float R = 287.052; // specific gas constant R/M0
     const float g = 9.80665; // standard gravity
-    const float t_grad = 0.0065; // gradient of temperature
+    const float t_grad = 0.0065; // gradient of temperature (Kelvin per meter)
     const float t0 = (const float) (273.15 + 15.0); // temperature at 0 altitude
     const float p0 = 101325.0; // pressure at 0 altitude
+     */
 
-    return t0 / t_grad * (1 - float(exp((t_grad * R / g)) * log(pressure / p0)));
+    //Limburg Hoogte 23m (+127m)
+    //Arnhem Hoogte 11m  (+122m)
+
+    return float(((pow((1013.25 / PRES), 1/5.257) - 1.0) * (TEMP + 273.15)) / 0.0065);
+
+    //return t0 / t_grad * (1 - float(exp((t_grad * R / g)) * log(pressure / p0)));
 }
 
 float MS5611::getTemperature() {
-    readTemperature();
+    //readTemperature();
 
     calculate();
 
     return TEMP;
 }
 
-float MS5611::getAltitude() {
-    readPressure();
+float MS5611::getPressure() {
+    //readPressure();
 
     calculate();
 
-    return toAltitude(PRES);
+    return PRES;
+}
+
+float MS5611::getAltitude() {
+    //readPressure();
+
+    calculate();
+
+    return toAltitude(); // feet to meters
 }
 
 void MS5611::waitForI2CFlag(uint32_t flag) {
