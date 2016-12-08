@@ -58,7 +58,7 @@ int main(void) {
     RCC_GetClocksFreq(&RCC_Clocks);
     SysTick_Config(RCC_Clocks.HCLK_Frequency / 1000);
     Usart.init();
-    Timer.init(0.498,0);
+    Timer.init(1);
 
     while (1) {
 
