@@ -14,7 +14,7 @@ public:
     } pwmFunction_t;
 
     AirplaneControl();
-    void setDutyCycle(pwmFunction_t function, uint32_t dutyCycle);
+    void setOnTime(pwmFunction_t function, uint32_t time);
     void initServo();
     void initMotor();
 

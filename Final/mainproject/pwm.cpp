@@ -113,15 +113,15 @@ void AirplaneControl::initMotor() {
     motorEnabled = true;
 }
 
-// timer        = 2 voor timer 2 en 14 voor timer 14
-// duty_cicle   = van 1 t'm 100 met voor timer 2: 1 = 1ms & 100 = 2ms
-void AirplaneControl::setDutyCycle(pwmFunction_t function, uint32_t dutyCycle) {
+/// @brief sets pwm on time.
+/// @param time: on time in ms
+void AirplaneControl::setOnTime(pwmFunction_t function, uint32_t time) {
     if (function == PWM_SERVO_ELEVATOR && servoEnbled) {
-        TIM_SetCompare4(TIM2, dutyCycle);
+        TIM_SetCompare4(TIM2, time);
     } else if (function == PWM_MOTOR && motorEnabled) {
-        TIM_SetCompare4(TIM14, dutyCycle);
+        TIM_SetCompare4(TIM14, time);
     } else {
-        while(1){};
+        while (1) {};
     }
 
 }

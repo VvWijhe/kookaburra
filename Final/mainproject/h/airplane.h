@@ -5,13 +5,16 @@
 #ifndef _AIRPLANE_H
 #define _AIRPLANE_H
 
+// Include self made drivers
 #include "mpu6050.h"
 #include "usart.h"
+#include "pwm.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+// Global variables, used in interrupt handlers
 extern uint16_t currentPitch;
 extern uint16_t currentAltitude;
 
