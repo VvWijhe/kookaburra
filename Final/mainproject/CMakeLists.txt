@@ -26,7 +26,8 @@ set(SRCS main.cpp ${BasisBestanden}
         airplane.cpp
         mpu6050.cpp
         usart.cpp
-        pid.cpp)
+        pid.cpp
+        pwm.cpp)
 
 add_subdirectory(${F0DISCOVERYDIR} ${CMAKE_CURRENT_BINARY_DIR}/F0DiscoveryDir)
 
