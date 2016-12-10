@@ -4,7 +4,10 @@
 
 #include "usart.h"
 
-void USART_1::init() {
+uint8_t rxBuffer[10] = "";
+uint8_t indexBuffer = 0;
+
+void UART::init() {
     GPIO_InitTypeDef GPIO_InitStructure;
     USART_InitTypeDef USART_InitStructure;
 
@@ -36,24 +39,24 @@ void USART_1::init() {
     NVIC_EnableIRQ(USART1_IRQn);
 }
 
-void USART_1::operator<<(const char *str) {
+void UART::operator<<(const char *str) {
     puts(str);
 }
 
-void USART_1::operator<(char c) {
+void UART::operator<(char c) {
     /// TODO: replace cout with usart_putc
     while (USART_GetFlagStatus(USART1, USART_FLAG_TXE) == RESET) { ; }
     USART_SendData(USART1, (uint16_t) c);
 }
 
-void USART_1::operator<<(uint32_t number) {
+void UART::operator<<(uint32_t number) {
     char buffer[30];
 
     itoa(number, buffer, 10);
     puts(buffer);
 }
 
-void USART_1::puts(const char *str) {
+void UART::puts(const char *str) {
     while (*str) {
         if (*str == '\n') {
             while (USART_GetFlagStatus(USART1, USART_FLAG_TXE) == RESET) { ; }
@@ -65,16 +68,16 @@ void USART_1::puts(const char *str) {
     }
 }
 
-void USART_1::operator>(char &c) {
+void UART::operator>(char &c) {
     //cin >> c;
 }
 
-void USART_1::operator>>(char c[]) {
+void UART::operator>>(char c[]) {
     //fflush(stdin);
     //cin.get(c, 10);
 }
 
-void USART_1::Clearscreen(void)
+void UART::Clearscreen()
 {
     char cmd1[5] = {0x1B, '[', '2', 'J', '\0'}; // Clear screen
     char cmd2[4] = {0x1B, '[', 'f', '\0'}; // Cursor home

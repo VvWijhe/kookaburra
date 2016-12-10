@@ -3,6 +3,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include <airplane.h>
 #include "stm32f0xx_it.h"
+#include "usart.h"
 
 /******************************************************************************/
 /*            Cortex-M0 Processor Exceptions Handlers                         */
@@ -65,7 +66,14 @@ void SysTick_Handler(void) {
   * @retval None
   */
 void USART1_IRQHandler() {
+    if((rxBuffer[indexBuffer] = (uint8_t) (USART_ReceiveData(USART1))) != '\r'){
+        indexBuffer++;
+    } else {
+        indexBuffer = 0;
 
+        /// TBD: convert string to number
+
+    }
 }
 
 /**

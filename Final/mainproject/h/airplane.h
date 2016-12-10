@@ -18,6 +18,9 @@ extern "C" {
 extern uint16_t currentPitch;
 extern uint16_t currentAltitude;
 
+extern int userAltitude1;
+extern int userAltitude2;
+
 class Airplane {
 public:
     typedef enum {
@@ -29,13 +32,16 @@ public:
 
     void loop();
 
+    // Called in timer interrupt
     static uint32_t getAltitude();
 
     static uint32_t getPitch();
 
 private:
+    UART uart;
+
+    AirplaneControl control;
     static MPU6050 accelerometer;
-    USART_1 usart;
 
     flightMode_t mode;
 };

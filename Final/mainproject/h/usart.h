@@ -11,6 +11,9 @@
 #ifndef USART_H
 #define USART_H
 
+extern uint8_t rxBuffer[10];
+extern uint8_t indexBuffer;
+
 /**
  * Description:
  * USART driver for the stm32. USART1 and USART2 are classes that contain
@@ -27,7 +30,7 @@
  * RXNE flag.
  */
 
-class USART_1 {
+class UART {
 public:
     void init();
 
@@ -43,7 +46,7 @@ public:
 
     void operator>>(char c[]);
 
-    void Clearscreen(void);
+    void Clearscreen();
 
 private:
 };
