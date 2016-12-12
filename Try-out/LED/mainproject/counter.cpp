@@ -1,3 +1,4 @@
+#include <stm32f0xx_tim.h>
 #include "h/counter.h"
 
 
@@ -55,6 +56,10 @@ void Time::init_Tim16(uint16_t p) {
     TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;
     TIM_TimeBaseStructure.TIM_Period = 1000 - 1;
     TIM_TimeBaseStructure.TIM_Prescaler = (uint16_t) ((SystemCoreClock / (p * 1000)) - 1);
+<<<<<<< HEAD
+=======
+    TIM_TimeBaseStructure.TIM_ClockDivision = TIM_CKD_DIV1;
+>>>>>>> b8e5ea2287f294661bac34dc4cff31b905eb106c
 
     //(#) Call TIM_TimeBaseInit(TIMx, &TIM_TimeBaseInitStruct) to configure
     //    the Time Base unit with the corresponding configuration.

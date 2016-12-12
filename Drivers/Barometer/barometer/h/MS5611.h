@@ -75,10 +75,18 @@ public:
     MS5611();
 
     void initialize();
+    void reset();
+
+    void refreshTemperature();
+    void refreshPressure();
 
     float getTemperature();
-
+    float getPressure();
     float getAltitude();
+
+    void readPROM();
+    void readPressure();
+    void readTemperature();
 
     // Read and Write functions
     void waitForI2CFlag(uint32_t flag);
@@ -90,11 +98,9 @@ private:
     float TEMP; // Calculated temperature
     float PRES; // Calculated pressure
 
-    void readPROM();
-    float toAltitude(float pressure);
-    void readPressure();
-    void readTemperature();
+    float toAltitude();
     void calculate();
+
 };
 
 #endif // MS5611_H

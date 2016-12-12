@@ -64,14 +64,41 @@ int main(void) {
 
     usart << "This is a test application for the barometer\n";
 
+    float QFH_ALT;
+    float Altitude;
+
+    Barometer.refreshPressure();
+    delay(10); // Waiting for pressure data ready
+    Barometer.readPressure();
+
+    Barometer.refreshTemperature();
+    delay(10); // Waiting for temperature data ready
+    Barometer.readTemperature();
+
+    QFH_ALT = Barometer.getAltitude();
+
     while (1) {
-        //usart << "Temperature: ";
-        //usart << Barometer.getTemperature();
-        //usart << "\n";
+        Barometer.refreshPressure();
+        delay(10); // Waiting for pressure data ready
+        Barometer.readPressure();
+
+        Barometer.refreshTemperature();
+        delay(10); // Waiting for temperature data ready
+        Barometer.readTemperature();
+
+        Altitude = Barometer.getAltitude();
+
+        usart << "Pressure: ";
+        usart << Barometer.getPressure();
+        usart << "\n";
+
+        usart << "Temperature: ";
+        usart << Barometer.getTemperature();
+        usart << "\n";
 
         usart << "Altitude: ";
-        usart << Barometer.getAltitude();
-        usart << "\n";
+        usart << Altitude - QFH_ALT;
+        usart << "\n\n";
 
         delay(100);
     }

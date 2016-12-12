@@ -98,8 +98,6 @@ int main(void) {
 
 extern "C" void TIM3_IRQHandler(void) {
     if (TIM_GetITStatus(TIM3, TIM_IT_Update) != RESET) {
-
-
         TIM_ClearITPendingBit(TIM3, TIM_IT_Update);
         Time2 = Time1;
         Time1 = Timer.GetSeconds();
@@ -109,12 +107,14 @@ extern "C" void TIM3_IRQHandler(void) {
         AltSpeed = 20;
         Timer.SetFreq16(AltSpeed);
         STM_EVAL_LEDToggle(LED4);
-
-
     }
 }
 
+<<<<<<< HEAD
 extern "C" void TIM16IRQHandler(void) {
+=======
+extern "C" void TIM16_IRQHandler(void) {
+>>>>>>> b8e5ea2287f294661bac34dc4cff31b905eb106c
     if(TIM_GetITStatus(TIM16, TIM_IT_Update) != RESET){
         TIM_ClearITPendingBit(TIM16, TIM_IT_Update);
         STM_EVAL_LEDToggle(LED3);

@@ -1,10 +1,10 @@
 /**
   ******************************************************************************
-  * @file    stm32f0xx_it.h 
+  * @file    usbd_cdc_if_template.h
   * @author  MCD Application Team
-  * @version V1.0.0
-  * @date    23-March-2012
-  * @brief   This file contains the headers of the interrupt handlers.
+  * @version V1.1.0
+  * @date    19-March-2012
+  * @brief   Header for dfu_mal.c file.
   ******************************************************************************
   * @attention
   *
@@ -26,31 +26,21 @@
   */
 
 /* Define to prevent recursive inclusion -------------------------------------*/
-#ifndef __STM32F0XX_IT_H
-#define __STM32F0XX_IT_H
-
-#ifdef __cplusplus
- extern "C" {
-#endif 
+#ifndef __USBD_CDC_IF_TEMPLATE_H
+#define __USBD_CDC_IF_TEMPLATE_H
 
 /* Includes ------------------------------------------------------------------*/
-#include "stm32f0xx.h"
+#include "usb_conf.h"
+#include "usbd_conf.h"
+#include "usbd_cdc_core.h"
 
 /* Exported types ------------------------------------------------------------*/
 /* Exported constants --------------------------------------------------------*/
+
+extern CDC_IF_Prop_TypeDef  TEMPLATE_fops;
+
 /* Exported macro ------------------------------------------------------------*/
 /* Exported functions ------------------------------------------------------- */
-
-void NMI_Handler(void);
-void HardFault_Handler(void);
-void SVC_Handler(void);
-void PendSV_Handler(void);
-void SysTick_Handler(void);
-
-#ifdef __cplusplus
-}
-#endif
-
-#endif /* __STM32F0XX_IT_H */
+#endif /* __USBD_CDC_IF_TEMPLATE_H */
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
