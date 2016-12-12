@@ -2,6 +2,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include <airplane.h>
+#include <flash.h>
 #include "stm32f0xx_it.h"
 #include "usart.h"
 
@@ -72,7 +73,8 @@ void USART1_IRQHandler() {
         indexBuffer = 0;
 
         /// TBD: convert string to number
-
+//        Flash memory;
+//        memory.write32(EEPROM_START_ADDRESS, 1);
     }
 }
 
