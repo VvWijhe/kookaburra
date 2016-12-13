@@ -474,7 +474,7 @@ ErrorStatus RTC_EnterInitMode(void)
     /* Set the Initialization mode */
     RTC->ISR = (uint32_t)RTC_INIT_MASK;
     
-    /* Wait till RTC is in INIT state and if Time out is reached exit */
+    /* Wait till RTC is in INIT state and if Timer out is reached exit */
     do
     {
       initstatus = RTC->ISR & RTC_ISR_INITF;
@@ -788,7 +788,7 @@ ErrorStatus RTC_SetTime(uint32_t RTC_Format, RTC_TimeTypeDef* RTC_TimeStruct)
   */
 void RTC_TimeStructInit(RTC_TimeTypeDef* RTC_TimeStruct)
 {
-  /* Time = 00h:00min:00sec */
+  /* Timer = 00h:00min:00sec */
   RTC_TimeStruct->RTC_H12 = RTC_H12_AM;
   RTC_TimeStruct->RTC_Hours = 0;
   RTC_TimeStruct->RTC_Minutes = 0;
@@ -1139,7 +1139,7 @@ void RTC_SetAlarm(uint32_t RTC_Format, uint32_t RTC_Alarm, RTC_AlarmTypeDef* RTC
   */
 void RTC_AlarmStructInit(RTC_AlarmTypeDef* RTC_AlarmStruct)
 {
-  /* Alarm Time Settings : Time = 00h:00mn:00sec */
+  /* Alarm Timer Settings : Timer = 00h:00mn:00sec */
   RTC_AlarmStruct->RTC_AlarmTime.RTC_H12 = RTC_H12_AM;
   RTC_AlarmStruct->RTC_AlarmTime.RTC_Hours = 0;
   RTC_AlarmStruct->RTC_AlarmTime.RTC_Minutes = 0;
@@ -1238,7 +1238,7 @@ ErrorStatus RTC_AlarmCmd(uint32_t RTC_Alarm, FunctionalState NewState)
     /* Disable the Alarm in RTC_CR register */
     RTC->CR &= (uint32_t)~RTC_Alarm;
    
-    /* Wait till RTC ALRxWF flag is set and if Time out is reached exit */
+    /* Wait till RTC ALRxWF flag is set and if Timer out is reached exit */
     do
     {
       alarmstatus = RTC->ISR & (RTC_Alarm >> 8);
@@ -1652,7 +1652,7 @@ void RTC_TimeStampCmd(uint32_t RTC_TimeStampEdge, FunctionalState NewState)
   RTC->WPR = 0xCA;
   RTC->WPR = 0x53;
 
-  /* Configure the Time Stamp TSEDGE and Enable bits */
+  /* Configure the Timer Stamp TSEDGE and Enable bits */
   RTC->CR = (uint32_t)tmpreg;
 
   /* Enable the write protection for RTC registers */
@@ -1683,7 +1683,7 @@ void RTC_GetTimeStamp(uint32_t RTC_Format, RTC_TimeTypeDef* RTC_StampTimeStruct,
   tmptime = (uint32_t)(RTC->TSTR & RTC_TR_RESERVED_MASK);
   tmpdate = (uint32_t)(RTC->TSDR & RTC_DR_RESERVED_MASK);
 
-  /* Fill the Time structure fields with the read parameters */
+  /* Fill the Timer structure fields with the read parameters */
   RTC_StampTimeStruct->RTC_Hours = (uint8_t)((tmptime & (RTC_TR_HT | RTC_TR_HU)) >> 16);
   RTC_StampTimeStruct->RTC_Minutes = (uint8_t)((tmptime & (RTC_TR_MNT | RTC_TR_MNU)) >> 8);
   RTC_StampTimeStruct->RTC_Seconds = (uint8_t)(tmptime & (RTC_TR_ST | RTC_TR_SU));
@@ -1698,7 +1698,7 @@ void RTC_GetTimeStamp(uint32_t RTC_Format, RTC_TimeTypeDef* RTC_StampTimeStruct,
   /* Check the input parameters format */
   if (RTC_Format == RTC_Format_BIN)
   {
-    /* Convert the Time structure parameters to Binary format */
+    /* Convert the Timer structure parameters to Binary format */
     RTC_StampTimeStruct->RTC_Hours = (uint8_t)RTC_Bcd2ToByte(RTC_StampTimeStruct->RTC_Hours);
     RTC_StampTimeStruct->RTC_Minutes = (uint8_t)RTC_Bcd2ToByte(RTC_StampTimeStruct->RTC_Minutes);
     RTC_StampTimeStruct->RTC_Seconds = (uint8_t)RTC_Bcd2ToByte(RTC_StampTimeStruct->RTC_Seconds);

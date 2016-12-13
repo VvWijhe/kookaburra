@@ -700,7 +700,7 @@ void ADC_ChannelConfig(ADC_TypeDef* ADCx, uint32_t ADC_Channel, uint32_t ADC_Sam
   /* Clear the Sampling time Selection bits */
   tmpreg &= ~ADC_SMPR1_SMPR;
 
-  /* Set the ADC Sampling Time register */
+  /* Set the ADC Sampling Timer register */
   tmpreg |= (uint32_t)ADC_SampleTime;
 
   /* Configure the ADC Sample time register */

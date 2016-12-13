@@ -639,10 +639,10 @@ void USART_SetReceiverTimeOut(USART_TypeDef* USARTx, uint32_t USART_ReceiverTime
   assert_param(IS_USART_1_PERIPH(USARTx));
   assert_param(IS_USART_TIMEOUT(USART_ReceiverTimeOut));
 
-  /* Clear the receiver Time Out value by clearing the RTO[23:0] bits in the RTOR
+  /* Clear the receiver Timer Out value by clearing the RTO[23:0] bits in the RTOR
      register  */
   USARTx->RTOR &= (uint32_t)~((uint32_t)USART_RTOR_RTO);
-  /* Set the receiver Time Out value by setting the RTO[23:0] bits in the RTOR
+  /* Set the receiver Timer Out value by setting the RTO[23:0] bits in the RTOR
      register  */
   USARTx->RTOR |= USART_ReceiverTimeOut;
 }

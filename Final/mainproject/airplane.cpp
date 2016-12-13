@@ -18,31 +18,25 @@ Airplane::Airplane() {
     accelerometer.init();
     barometer.initialize();
 
-    // Initialize motor
-    control.initMotor();
-
-    // Initialize servos
-    control.initServo();
+    // Initialize PWM
+    control.init();
 
     // Initialize uart with interupts
     uart.init();
 
-    // Initialize clockwork timer
+    // Initialize timers
+    timer.setTim3(5);
+    timer.setTim14(2);
+    timer.setTim16(20);
 
     // Initialize input compare for the receiver
 
     // Set initiate flight parameters
     mode = MANUAL_M;
 
-//    userData.write32(ALT1_ADRESS, 1);
-//    userData.write32(ALT2_ADRESS, 2);
-
-    // Get user altitudes
-//    altitude1 = userData.read32(ALT1_ADRESS);
-//    altitude2 = userData.read32(ALT2_ADRESS);
-
     // Test
     STM_EVAL_LEDInit(LED4);
+    STM_EVAL_LEDInit(LED3);
 }
 
 void Airplane::loop() {
@@ -53,7 +47,9 @@ void Airplane::loop() {
             // Read RC controller pattern to activate autopilot
 
             // Test
-            STM_EVAL_LEDOn(LED4);
+            control.setOnTime(PWM_SERVO_RUDDER, 1500);
+            control.setOnTime(PWM_SERVO_ELEVATOR, 1500);
+            control.setOnTime(PWM_MOTOR, 1500);
         }
 
         while (mode == AUTOPILOT_M) {
@@ -66,7 +62,7 @@ void Airplane::loop() {
 }
 
 uint32_t Airplane::getAltitude() {
-    return barometer.getAltitude();
+    return (uint32_t) barometer.getAltitude();
 }
 
 uint32_t Airplane::getPitch() {

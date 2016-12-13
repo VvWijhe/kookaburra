@@ -48,6 +48,9 @@ void PendSV_Handler(void);
 void SysTick_Handler(void);
 
 void USART1_IRQHandler();
+void TIM3_IRQHandler();
+void TIM14_IRQHandler();
+void TIM16_IRQHandler();
 
 #ifdef __cplusplus
 }

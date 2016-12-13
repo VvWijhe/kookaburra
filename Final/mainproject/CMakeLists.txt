@@ -28,7 +28,8 @@ set(SRCS main.cpp ${BasisBestanden}
         usart.cpp
         pid.cpp
         pwm.cpp
-        flash.cpp MS5611.cpp h/MS5611.h)
+        MS5611.cpp
+        counter.cpp)
 
 add_subdirectory(${F0DISCOVERYDIR} ${CMAKE_CURRENT_BINARY_DIR}/F0DiscoveryDir)
 

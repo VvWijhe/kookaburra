@@ -284,7 +284,7 @@ static void SetSysClock(void)
   /* Enable HSE */    
   RCC->CR |= ((uint32_t)RCC_CR_HSEON);
  
-  /* Wait till HSE is ready and if Time out is reached exit */
+  /* Wait till HSE is ready and if Timer out is reached exit */
   do
   {
     HSEStatus = RCC->CR & RCC_CR_HSERDY;
