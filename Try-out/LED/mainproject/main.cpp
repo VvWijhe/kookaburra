@@ -80,7 +80,7 @@ int main(void) {
    // Usart.init();
     Barometer.initialize();
     Timer.init_Tim3(1);
-    Timer.init_Tim16(1);
+    Timer.init_Tim16(10);
 
     while (1) {
 //        if(Alt1 < WantedAlt+3 && Alt1 >WantedAlt-3){
@@ -104,17 +104,14 @@ extern "C" void TIM3_IRQHandler(void) {
         Alt2 = Alt1;
         Alt1 = Barometer.getAltitude();
         AltSpeed = CalculateSpeed(Alt1, Alt2, Time1, Time2);
-        AltSpeed = 20;
-        Timer.SetFreq16(AltSpeed);
+        //AltSpeed = 20;
+        Timer.init_Tim16(20);
         STM_EVAL_LEDToggle(LED4);
     }
 }
 
-<<<<<<< HEAD
-extern "C" void TIM16IRQHandler(void) {
-=======
+
 extern "C" void TIM16_IRQHandler(void) {
->>>>>>> b8e5ea2287f294661bac34dc4cff31b905eb106c
     if(TIM_GetITStatus(TIM16, TIM_IT_Update) != RESET){
         TIM_ClearITPendingBit(TIM16, TIM_IT_Update);
         STM_EVAL_LEDToggle(LED3);

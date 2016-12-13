@@ -56,10 +56,7 @@ void Time::init_Tim16(uint16_t p) {
     TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;
     TIM_TimeBaseStructure.TIM_Period = 1000 - 1;
     TIM_TimeBaseStructure.TIM_Prescaler = (uint16_t) ((SystemCoreClock / (p * 1000)) - 1);
-<<<<<<< HEAD
-=======
     TIM_TimeBaseStructure.TIM_ClockDivision = TIM_CKD_DIV1;
->>>>>>> b8e5ea2287f294661bac34dc4cff31b905eb106c
 
     //(#) Call TIM_TimeBaseInit(TIMx, &TIM_TimeBaseInitStruct) to configure
     //    the Time Base unit with the corresponding configuration.
@@ -68,7 +65,7 @@ void Time::init_Tim16(uint16_t p) {
     //(#) Enable the NVIC if you need to generate the update interrupt.
     //    Enable the TIM3 global Interrupt
     NVIC_InitStructure.NVIC_IRQChannel = TIM16_IRQn;
-    NVIC_InitStructure.NVIC_IRQChannelPriority = 2;
+    NVIC_InitStructure.NVIC_IRQChannelPriority = 1;
     NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
     NVIC_Init(&NVIC_InitStructure);
 
@@ -81,7 +78,7 @@ void Time::init_Tim16(uint16_t p) {
 }
 
 void Time::SetFreq16(float freq){
-   Freq16 = (int)freq;
+    //init_Tim16(freq);
 }
 
 void Time::Raisetime(void) {
