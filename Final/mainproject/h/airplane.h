@@ -10,6 +10,7 @@
 #include "usart.h"
 #include "pwm.h"
 #include "flash.h"
+#include "MS5611.h"
 
 #define ALT1_ADRESS EEPROM_START_ADDRESS
 #define ALT2_ADRESS (EEPROM_START_ADDRESS + 1)
@@ -44,6 +45,7 @@ private:
 
     AirplaneControl control;
     static MPU6050 accelerometer;
+    static MS5611 barometer;
 
     flightMode_t mode;
     uint32_t altitude1, altitude2;

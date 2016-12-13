@@ -8,6 +8,7 @@ uint16_t currentPitch = 0;
 uint16_t currentAltitude = 0;
 
 MPU6050 Airplane::accelerometer;
+MS5611 Airplane::barometer;
 
 Airplane::Airplane() {
     // Enable flash acces
@@ -15,6 +16,7 @@ Airplane::Airplane() {
 
     // Initialize sensors
     accelerometer.init();
+    barometer.initialize();
 
     // Initialize motor
     control.initMotor();
@@ -64,7 +66,7 @@ void Airplane::loop() {
 }
 
 uint32_t Airplane::getAltitude() {
-    return 0;
+    return barometer.getAltitude();
 }
 
 uint32_t Airplane::getPitch() {
