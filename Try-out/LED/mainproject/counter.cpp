@@ -29,7 +29,7 @@ void Time::init_Tim3(uint16_t p) {
     //(#) Enable the NVIC if you need to generate the update interrupt.
     //    Enable the TIM3 global Interrupt
     NVIC_InitStructure.NVIC_IRQChannel = TIM3_IRQn;
-    NVIC_InitStructure.NVIC_IRQChannelPriority = 0;
+    NVIC_InitStructure.NVIC_IRQChannelPriority = 1;
     NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
     NVIC_Init(&NVIC_InitStructure);
 
@@ -65,7 +65,7 @@ void Time::init_Tim16(uint16_t p) {
     //(#) Enable the NVIC if you need to generate the update interrupt.
     //    Enable the TIM3 global Interrupt
     NVIC_InitStructure.NVIC_IRQChannel = TIM16_IRQn;
-    NVIC_InitStructure.NVIC_IRQChannelPriority = 0;
+    NVIC_InitStructure.NVIC_IRQChannelPriority = 1;
     NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
     NVIC_Init(&NVIC_InitStructure);
 
@@ -78,7 +78,7 @@ void Time::init_Tim16(uint16_t p) {
 }
 
 void Time::SetFreq16(float freq){
-   Freq16 = (int)freq;
+    //init_Tim16(freq);
 }
 
 void Time::Raisetime(void) {
