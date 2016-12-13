@@ -78,7 +78,7 @@ void USART1_IRQHandler() {
 }
 
 /**
-  * @brief  This function handles TIM3 interrupt request.
+  * @brief  This function handles TIM3 interrupt request for altitude update.
   * @param  None
   * @retval None
   */
@@ -91,7 +91,7 @@ void TIM3_IRQHandler() {
 }
 
 /**
-  * @brief  This function handles TIM14 interrupt request.
+  * @brief  This function handles TIM14 interrupt request for the stopwatch.
   * @param  None
   * @retval None
   */
@@ -104,7 +104,7 @@ void TIM14_IRQHandler() {
 }
 
 /**
-  * @brief  This function handles TIM16 interrupt request.
+  * @brief  This function handles TIM16 interrupt request for the pitch update.
   * @param  None
   * @retval None
   */

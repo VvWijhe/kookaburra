@@ -26,7 +26,7 @@ Airplane::Airplane() {
 
     // Initialize timers
     timer.setTim3(5);
-    timer.setTim14(2);
+    timer.setTim14(1);
     timer.setTim16(20);
 
     // Initialize input compare for the receiver
