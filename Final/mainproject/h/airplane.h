@@ -9,6 +9,10 @@
 #include "mpu6050.h"
 #include "usart.h"
 #include "pwm.h"
+#include "flash.h"
+
+#define ALT1_ADRESS EEPROM_START_ADDRESS
+#define ALT2_ADRESS (EEPROM_START_ADDRESS + 1)
 
 #ifdef __cplusplus
 extern "C" {
@@ -17,9 +21,6 @@ extern "C" {
 // Global variables, used in interrupt handlers
 extern uint16_t currentPitch;
 extern uint16_t currentAltitude;
-
-extern int userAltitude1;
-extern int userAltitude2;
 
 class Airplane {
 public:
@@ -39,11 +40,13 @@ public:
 
 private:
     UART uart;
+    Flash userData;
 
     AirplaneControl control;
     static MPU6050 accelerometer;
 
     flightMode_t mode;
+    uint32_t altitude1, altitude2;
 };
 
 #ifdef __cplusplus

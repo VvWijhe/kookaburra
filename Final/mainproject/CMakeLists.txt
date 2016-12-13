@@ -27,7 +27,8 @@ set(SRCS main.cpp ${BasisBestanden}
         mpu6050.cpp
         usart.cpp
         pid.cpp
-        pwm.cpp)
+        pwm.cpp
+        flash.cpp)
 
 add_subdirectory(${F0DISCOVERYDIR} ${CMAKE_CURRENT_BINARY_DIR}/F0DiscoveryDir)
 

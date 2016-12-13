@@ -35,7 +35,16 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 /** MS5611 constructor.
  */
 MS5611::MS5611() {
+    refreshTemperature();
+    delay(SystemCoreClock/8/100); // Waiting for temperature data ready ~10ms
+    readTemperature();
 
+    refreshPressure();
+    delay(SystemCoreClock/8/100); // Waiting for pressure data ready ~10ms
+    readPressure();
+
+    calculate();
+    QFH_ALT = toAltitude();
 }
 
 /** Power on and prepare for general usage.
@@ -233,26 +242,26 @@ void MS5611::readPressure() {
  *  More info about these calculations is available in the datasheet.
  */
 void MS5611::calculate() {
-    float dT = D2 - C5 * float(pow(2, 8));
-    TEMP = (2000 + ((dT * C6) / float(pow(2, 23))));
-    float OFF = C2 * float(pow(2, 16)) + (C4 * dT) / float(pow(2, 7));
-    float SENS = C1 * float(pow(2, 15)) + (C3 * dT) / float(pow(2, 8));
+    float dT = D2 - C5 * float(pow(2.0, 8.0));
+    TEMP = float((2000.0 + ((dT * C6) / pow(2.0, 23.0))));
+    float OFF = C2 * float(pow(2.0, 16.0)) + (C4 * dT) / float(pow(2.0, 7.0));
+    float SENS = C1 * float(pow(2.0, 15.0)) + (C3 * dT) / float(pow(2.0, 8.0));
 
-    float T2 = 0, OFF2 = 0, SENS2 = 0;
+    float T2 = 0.0, OFF2 = 0.0, SENS2 = 0.0;
 
     if (TEMP >= 2000) {
-        T2 = 0;
-        OFF2 = 0;
-        SENS2 = 0;
+        T2 = 0.0;
+        OFF2 = 0.0;
+        SENS2 = 0.0;
     }
     if (TEMP < 2000) {
-        T2 = dT * dT / float(pow(2, 31));
-        OFF2 = 5 * float(pow(TEMP - 2000, 2)) / 2;
-        SENS2 = OFF2 / 2;
+        T2 = dT * dT / float(pow(2.0, 31.0));
+        OFF2 = float(5.0 * pow(TEMP - 2000.0, 2.0) / 2.0);
+        SENS2 = float(OFF2 / 2.0);
     }
-    if (TEMP < -1500) {
-        OFF2 = OFF2 + 7 * float(pow(TEMP + 1500, 2));
-        SENS2 = SENS2 + 11 * float(pow(TEMP + 1500, 2)) / 2;
+    if (TEMP < -1500.0) {
+        OFF2 = float(OFF2 + 7.0 * pow(TEMP + 1500.0, 2.0));
+        SENS2 = float(SENS2 + 11.0 * pow(TEMP + 1500.0, 2.0) / 2.0);
     }
 
     TEMP = TEMP - T2;
@@ -260,8 +269,10 @@ void MS5611::calculate() {
     SENS = SENS - SENS2;
 
     // Final calculations
-    PRES = ((D1 * SENS) / float(pow(2, 21)) - OFF) / float(pow(2, 15)) / 100;
-    TEMP = TEMP / 100;
+    PRES = float(((D1 * SENS) / pow(2.0, 21.0) - OFF) / pow(2.0, 15.0) / 10.0);
+    TEMP = float(TEMP / 10.0);
+    // Pressure = x100 pB
+    // Temprature = x100 celcius
 }
 
 float MS5611::toAltitude() {
@@ -276,13 +287,15 @@ float MS5611::toAltitude() {
     //Limburg Hoogte 23m (+127m)
     //Arnhem Hoogte 11m  (+122m)
 
-    return float(((pow((1013.25 / PRES), 1/5.257) - 1.0) * (TEMP + 273.15)) / 0.0065);
+    return float(((pow((10132.5 / PRES), 1/5.257) - 1.0) * (TEMP + 2731.5)) / 0.0065);
 
     //return t0 / t_grad * (1 - float(exp((t_grad * R / g)) * log(pressure / p0)));
 }
 
 float MS5611::getTemperature() {
-    //readTemperature();
+    refreshTemperature();
+    delay(SystemCoreClock/8/100); // Waiting for temperature data ready ~10ms
+    readTemperature();
 
     calculate();
 
@@ -290,7 +303,9 @@ float MS5611::getTemperature() {
 }
 
 float MS5611::getPressure() {
-    //readPressure();
+    refreshPressure();
+    delay(SystemCoreClock/8/100); // Waiting for pressure data ready ~10ms
+    readPressure();
 
     calculate();
 
@@ -298,11 +313,17 @@ float MS5611::getPressure() {
 }
 
 float MS5611::getAltitude() {
-    //readPressure();
+    refreshTemperature();
+    delay(SystemCoreClock/8/100); // Waiting for temperature data ready ~10m
+    readTemperature();
+
+    refreshPressure();
+    delay(SystemCoreClock/8/100); // Waiting for pressure data ready ~10ms
+    readPressure();
 
     calculate();
 
-    return toAltitude(); // feet to meters
+    return toAltitude() - QFH_ALT; // meters diff of QFH_ALT
 }
 
 void MS5611::waitForI2CFlag(uint32_t flag) {
@@ -323,4 +344,16 @@ void MS5611::waitForI2CFlag(uint32_t flag) {
             }
         }
     }
+}
+
+// Delay ~ 1 sec.
+//delay(SystemCoreClock/8);
+
+void delay(const int d)
+{
+    volatile int i;
+
+    for(i=d; i>0; i--){ ; }
+
+    return;
 }
