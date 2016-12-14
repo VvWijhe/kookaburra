@@ -6,6 +6,8 @@
 
 uint16_t currentPitch = 0;
 uint16_t currentAltitude = 0;
+uint16_t previousAltitude = 0;
+float verticalSpeed = 0;
 
 MPU6050 Airplane::accelerometer;
 MS5611 Airplane::barometer;

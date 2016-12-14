@@ -22,6 +22,8 @@ extern "C" {
 // Global variables, used in interrupt handlers
 extern uint16_t currentPitch;
 extern uint16_t currentAltitude;
+extern uint16_t previousAltitude;
+extern float verticalSpeed;
 
 class Airplane {
 public:

@@ -112,7 +112,7 @@ void Timer::setTim16(uint16_t p) {
     TIM_Cmd(TIM16, ENABLE);
 }
 
-void Timer::incrementTime(int hours, int minutes, int seconds) {
+void Timer::incrementTime(int &hours, int &minutes, int &seconds) {
     if (seconds++ == 60) {
         if (minutes++ == 60) {
             if (hours++ == 24) {

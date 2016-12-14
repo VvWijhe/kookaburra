@@ -3,6 +3,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include <airplane.h>
 #include <stm32f0_discovery.h>
+#include <counter.h>
 #include "stm32f0xx_it.h"
 
 /******************************************************************************/
@@ -86,7 +87,9 @@ void TIM3_IRQHandler() {
     if (TIM_GetITStatus(TIM3, TIM_IT_Update) != RESET) {
         TIM_ClearITPendingBit(TIM3, TIM_IT_Update);
 
+        previousAltitude = currentAltitude;
         //currentAltitude = Airplane::getAltitude();
+        verticalSpeed = (float) ((currentAltitude - previousAltitude) / 0.2);
     }
 }
 
@@ -99,6 +102,7 @@ void TIM14_IRQHandler() {
     if (TIM_GetITStatus(TIM14, TIM_IT_Update) != RESET) {
         TIM_ClearITPendingBit(TIM14, TIM_IT_Update);
 
+        Timer::incrementTime(Time::hours, Time::minutes, Time::seconds);
         STM_EVAL_LEDToggle(LED4);
     }
 }
