@@ -12,9 +12,6 @@
 #include "MS5611.h"
 #include "counter.h"
 
-#define ALT1_ADRESS EEPROM_START_ADDRESS
-#define ALT2_ADRESS (EEPROM_START_ADDRESS + 1)
-
 #ifdef __cplusplus
 extern "C" {
 #endif
