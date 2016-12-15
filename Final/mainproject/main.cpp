@@ -2,5 +2,5 @@
 
 int main(void) {
     Airplane plane;
-    plane.loop();
+    plane.loop(); //maar een vliegtuig loopt toch helemaal niet?
 }

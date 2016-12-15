@@ -17,6 +17,7 @@ public:
     void setOnTime(pwmFunction_t function, uint32_t time);
     void initServo();
     void initMotor();
+    void InitCapComp( void );
 
 private:
     bool motorEnabled, servoEnbled;
