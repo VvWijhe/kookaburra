@@ -431,6 +431,8 @@ void MPU6050::waitForI2CFlag(uint32_t flag) {
             if (timeout-- == 0) {
                 commStatus = MPU6050_COMM_STATUS_ERROR;
                 return;
+            } else {
+                commStatus = MPU6050_COMM_STATUS_OK;
             }
         }
     } else {
@@ -438,6 +440,8 @@ void MPU6050::waitForI2CFlag(uint32_t flag) {
             if (timeout-- == 0) {
                 commStatus = MPU6050_COMM_STATUS_ERROR;
                 return;
+            } else {
+                commStatus = MPU6050_COMM_STATUS_OK;
             }
         }
     }

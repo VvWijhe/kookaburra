@@ -2,9 +2,9 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include <airplane.h>
-#include <flash.h>
+#include <stm32f0_discovery.h>
+#include <counter.h>
 #include "stm32f0xx_it.h"
-#include "usart.h"
 
 /******************************************************************************/
 /*            Cortex-M0 Processor Exceptions Handlers                         */
@@ -62,12 +62,12 @@ void SysTick_Handler(void) {
 /******************************************************************************/
 
 /**
-  * @brief  This function handles PPP interrupt request.
+  * @brief  This function handles USART interrupt request.
   * @param  None
   * @retval None
   */
 void USART1_IRQHandler() {
-    if((rxBuffer[indexBuffer] = (uint8_t) (USART_ReceiveData(USART1))) != '\r'){
+    if ((rxBuffer[indexBuffer] = (uint8_t) (USART_ReceiveData(USART1))) != '\r') {
         indexBuffer++;
     } else {
         indexBuffer = 0;
@@ -75,6 +75,49 @@ void USART1_IRQHandler() {
         /// TBD: convert string to number
 //        Flash memory;
 //        memory.write32(EEPROM_START_ADDRESS, 1);
+    }
+}
+
+/**
+  * @brief  This function handles TIM3 interrupt request for altitude update.
+  * @param  None
+  * @retval None
+  */
+void TIM3_IRQHandler() {
+    if (TIM_GetITStatus(TIM3, TIM_IT_Update) != RESET) {
+        TIM_ClearITPendingBit(TIM3, TIM_IT_Update);
+
+        previousAltitude = currentAltitude;
+        //currentAltitude = Airplane::getAltitude();
+        verticalSpeed = (float) ((currentAltitude - previousAltitude) / 0.2);
+    }
+}
+
+/**
+  * @brief  This function handles TIM14 interrupt request for the stopwatch.
+  * @param  None
+  * @retval None
+  */
+void TIM14_IRQHandler() {
+    if (TIM_GetITStatus(TIM14, TIM_IT_Update) != RESET) {
+        TIM_ClearITPendingBit(TIM14, TIM_IT_Update);
+
+        Timer::incrementTime(Time::hours, Time::minutes, Time::seconds);
+        STM_EVAL_LEDToggle(LED4);
+    }
+}
+
+/**
+  * @brief  This function handles TIM16 interrupt request for the pitch update.
+  * @param  None
+  * @retval None
+  */
+void TIM16_IRQHandler(void) {
+    if (TIM_GetITStatus(TIM16, TIM_IT_Update) != RESET) {
+        TIM_ClearITPendingBit(TIM16, TIM_IT_Update);
+
+        //currentAltitude = Airplane::getPitch();
+        STM_EVAL_LEDToggle(LED3);
     }
 }
 

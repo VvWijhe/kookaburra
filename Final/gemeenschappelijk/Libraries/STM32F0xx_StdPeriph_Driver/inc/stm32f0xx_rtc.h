@@ -688,7 +688,7 @@ ErrorStatus RTC_WaitForSynchro(void);
 ErrorStatus RTC_RefClockCmd(FunctionalState NewState);
 void RTC_BypassShadowCmd(FunctionalState NewState);
 
-/* Time and Date configuration functions **************************************/
+/* Timer and Date configuration functions **************************************/
 ErrorStatus RTC_SetTime(uint32_t RTC_Format, RTC_TimeTypeDef* RTC_TimeStruct);
 void RTC_TimeStructInit(RTC_TimeTypeDef* RTC_TimeStruct);
 void RTC_GetTime(uint32_t RTC_Format, RTC_TimeTypeDef* RTC_TimeStruct);
