@@ -141,6 +141,8 @@ void TIM17_IRQHandler(void) {
             case LEDRED:
                 STM_EVAL_LEDToggle(LED4);
                 break;
+            case Error:
+                break;
 
             default:
                 break;
