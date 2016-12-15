@@ -24,6 +24,8 @@ public:
 
     static void setTim16(uint16_t p);
 
+    static void setTim17(uint16_t p);
+
     static void incrementTime(int &hours, int &minutes, int &seconds);
 
 private:

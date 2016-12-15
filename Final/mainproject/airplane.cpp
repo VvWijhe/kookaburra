@@ -55,6 +55,30 @@ void Airplane::loop() {
         }
 
         while (mode == AUTOPILOT_M) {
+
+            while(currentAltitude != altitude1){
+                if(currentAltitude < altitude2+3 && currentAltitude >altitude2-3){
+                    // Color->Green;
+                    ledColor = LEDGREEN;
+                }
+                if(currentAltitude > WantedAlt+3){
+                    // Color->Orange;
+                }
+                if(currentAltitude < WantedAlt-3){
+                    // Color->Red;
+                }
+            }
+            while(currentAltitude != altitude2){
+                if(currentAltitude < WantedAlt+3 && currentAltitude >WantedAlt-3){
+                    // Color->Green;
+                }
+                if(currentAltitude > WantedAlt+3){
+                    // Color->Orange;
+                }
+                if(currentAltitude < WantedAlt-3){
+                    // Color->Red;
+                }
+            }
             // control height
 
             // control pitch

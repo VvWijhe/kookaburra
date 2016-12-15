@@ -90,6 +90,7 @@ void TIM3_IRQHandler() {
         previousAltitude = currentAltitude;
         //currentAltitude = Airplane::getAltitude();
         verticalSpeed = (float) ((currentAltitude - previousAltitude) / 0.2);
+        Timer::setTim17(verticalSpeed);
     }
 }
 
@@ -103,7 +104,7 @@ void TIM14_IRQHandler() {
         TIM_ClearITPendingBit(TIM14, TIM_IT_Update);
 
         Timer::incrementTime(Time::hours, Time::minutes, Time::seconds);
-        STM_EVAL_LEDToggle(LED4);
+        //STM_EVAL_LEDToggle(LED4);
     }
 }
 
@@ -117,7 +118,35 @@ void TIM16_IRQHandler(void) {
         TIM_ClearITPendingBit(TIM16, TIM_IT_Update);
 
         //currentAltitude = Airplane::getPitch();
-        STM_EVAL_LEDToggle(LED3);
+        //STM_EVAL_LEDToggle(LED3);
+    }
+}
+
+void TIM17_IRQHandler(void) {
+    if (TIM_GetITStatus(TIM17, TIM_IT_Update) != RESET) {
+        TIM_ClearITPendingBit(TIM17, TIM_IT_Update);
+
+        switch (ledColor) {
+
+            case LEDGREEN:
+                STM_EVAL_LEDToggle(LED3);
+                STM_EVAL_LEDOff(LED4);
+                break;
+
+            case LEDORANGE:
+                STM_EVAL_LEDToggle(LED3);
+                STM_EVAL_LEDToggle(LED4);
+                break;
+
+            case LEDRED:
+                STM_EVAL_LEDToggle(LED4);
+                break;
+
+            default:
+                break;
+        }
+
+        //STM_EVAL_LEDToggle(LED3);
     }
 }
 

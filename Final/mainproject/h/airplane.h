@@ -16,11 +16,19 @@
 extern "C" {
 #endif
 
+typedef enum {
+    LEDGREEN,
+    LEDRED,
+    LEDORANGE
+}LEDColor_t;
+
 // Global variables, used in interrupt handlers
 extern uint16_t currentPitch;
 extern uint16_t currentAltitude;
 extern uint16_t previousAltitude;
+extern uint32_t altitude1, altitude2;
 extern float verticalSpeed;
+extern LEDColor_t ledColor;
 
 class Airplane {
 public:
@@ -47,7 +55,7 @@ private:
     static MS5611 barometer;
 
     flightMode_t mode;
-    uint32_t altitude1, altitude2;
+
 };
 
 #ifdef __cplusplus
