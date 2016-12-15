@@ -144,6 +144,7 @@ void TIM17_IRQHandler(void) {
 
             default:
                 break;
+
         }
 
         //STM_EVAL_LEDToggle(LED3);
