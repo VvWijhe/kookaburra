@@ -19,7 +19,7 @@ extern "C" {
 typedef enum {
     LEDGREEN,
     LEDRED,
-    LEDORANGE
+    LEDYELLOW
 }LEDColor_t;
 
 // Global variables, used in interrupt handlers

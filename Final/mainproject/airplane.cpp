@@ -8,6 +8,8 @@ uint16_t currentPitch = 0;
 uint16_t currentAltitude = 0;
 uint16_t previousAltitude = 0;
 float verticalSpeed = 0;
+LEDColor_t ledColor = LEDRED;
+uint32_t altitude1 = 0, altitude2 = 0;
 
 MPU6050 Airplane::accelerometer;
 MS5611 Airplane::barometer;
@@ -56,26 +58,39 @@ void Airplane::loop() {
 
         while (mode == AUTOPILOT_M) {
 
-            while(currentAltitude != altitude1){
-                if(currentAltitude < altitude2+3 && currentAltitude >altitude2-3){
-                    // Color->Green;
+            // Follow altitude 1 for 10 seconds
+            while (currentAltitude != altitude1) {
+                // ------------ Control Leds ------------
+                // 1. Altitude is OK
+                if (currentAltitude < altitude1 + 3 || currentAltitude > altitude1 - 3) {
                     ledColor = LEDGREEN;
                 }
-                if(currentAltitude > WantedAlt+3){
-                    // Color->Orange;
+
+                // 2. Altitude is too high
+                if (currentAltitude > altitude1 + 3) {
+                    ledColor = LEDYELLOW;
                 }
-                if(currentAltitude < WantedAlt-3){
-                    // Color->Red;
+
+                // 2. Altitude is too low
+                if (currentAltitude < altitude1 - 3) {
+                    ledColor = LEDRED;
                 }
+
+                // ----------- Control motor ------------
+
+                // ----------- Control servo ------------
+
             }
-            while(currentAltitude != altitude2){
-                if(currentAltitude < WantedAlt+3 && currentAltitude >WantedAlt-3){
+
+            // Follow altitude 2 for 10 seconds
+            while (currentAltitude != altitude2) {
+                if (currentAltitude < altitude2 + 3 && currentAltitude > altitude2 - 3) {
                     // Color->Green;
                 }
-                if(currentAltitude > WantedAlt+3){
+                if (currentAltitude > altitude2 + 3) {
                     // Color->Orange;
                 }
-                if(currentAltitude < WantedAlt-3){
+                if (currentAltitude < altitude2 - 3) {
                     // Color->Red;
                 }
             }

@@ -73,8 +73,6 @@ void USART1_IRQHandler() {
         indexBuffer = 0;
 
         /// TBD: convert string to number
-//        Flash memory;
-//        memory.write32(EEPROM_START_ADDRESS, 1);
     }
 }
 
@@ -87,10 +85,10 @@ void TIM3_IRQHandler() {
     if (TIM_GetITStatus(TIM3, TIM_IT_Update) != RESET) {
         TIM_ClearITPendingBit(TIM3, TIM_IT_Update);
 
-        previousAltitude = currentAltitude;
+        //previousAltitude = currentAltitude;
         //currentAltitude = Airplane::getAltitude();
-        verticalSpeed = (float) ((currentAltitude - previousAltitude) / 0.2);
-        Timer::setTim17(verticalSpeed);
+        //verticalSpeed = (float) ((currentAltitude - previousAltitude) / 0.2);
+        //Timer::setTim17(verticalSpeed);
     }
 }
 
@@ -104,7 +102,7 @@ void TIM14_IRQHandler() {
         TIM_ClearITPendingBit(TIM14, TIM_IT_Update);
 
         Timer::incrementTime(Time::hours, Time::minutes, Time::seconds);
-        //STM_EVAL_LEDToggle(LED4);
+        STM_EVAL_LEDToggle(LED4);
     }
 }
 
@@ -133,15 +131,13 @@ void TIM17_IRQHandler(void) {
                 STM_EVAL_LEDOff(LED4);
                 break;
 
-            case LEDORANGE:
+            case LEDYELLOW:
                 STM_EVAL_LEDToggle(LED3);
                 STM_EVAL_LEDToggle(LED4);
                 break;
 
             case LEDRED:
                 STM_EVAL_LEDToggle(LED4);
-                break;
-            case Error:
                 break;
 
             default:

@@ -22,7 +22,7 @@ void Timer::setTim3(uint16_t p) {
     //(#) Fill the TIM_TimeBaseInitStruct with the desired parameters.
     TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;
     TIM_TimeBaseStructure.TIM_Period = 1000 - 1;
-    TIM_TimeBaseStructure.TIM_Prescaler = (uint16_t) ((SystemCoreClock / (p * 2000)) - 1);
+    TIM_TimeBaseStructure.TIM_Prescaler = (uint16_t) ((SystemCoreClock / (p * 1000)) - 1);
 
     //(#) Call TIM_TimeBaseInit(TIMx, &TIM_TimeBaseInitStruct) to configure
     //    the Timer Base unit with the corresponding configuration.
@@ -56,7 +56,7 @@ void Timer::setTim14(uint16_t p) {
     //(#) Fill the TIM_TimeBaseInitStruct with the desired parameters.
     TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;
     TIM_TimeBaseStructure.TIM_Period = 1000 - 1;
-    TIM_TimeBaseStructure.TIM_Prescaler = (uint16_t) ((SystemCoreClock / (p * 2000)) - 1);
+    TIM_TimeBaseStructure.TIM_Prescaler = (uint16_t) ((SystemCoreClock / (p * 1000)) - 1);
 
     //(#) Call TIM_TimeBaseInit(TIMx, &TIM_TimeBaseInitStruct) to configure
     //    the Timer Base unit with the corresponding configuration.
@@ -90,7 +90,7 @@ void Timer::setTim16(uint16_t p) {
     //(#) Fill the TIM_TimeBaseInitStruct with the desired parameters.
     TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;
     TIM_TimeBaseStructure.TIM_Period = 1000 - 1;
-    TIM_TimeBaseStructure.TIM_Prescaler = (uint16_t) ((SystemCoreClock / (p * 2000)) - 1);
+    TIM_TimeBaseStructure.TIM_Prescaler = (uint16_t) ((SystemCoreClock / (p * 1000)) - 1);
     TIM_TimeBaseStructure.TIM_ClockDivision = TIM_CKD_DIV1;
 
     //(#) Call TIM_TimeBaseInit(TIMx, &TIM_TimeBaseInitStruct) to configure
