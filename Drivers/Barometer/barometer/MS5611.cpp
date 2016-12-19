@@ -280,20 +280,20 @@ void MS5611::calculate() {
 }
 
 float MS5611::toAltitude() {
-    /*
-    const float R = 287.052; // specific gas constant R/M0
-    const float g = 9.80665; // standard gravity
-    const float t_grad = 0.0065; // gradient of temperature (Kelvin per meter)
-    const float t0 = (const float) (273.15 + 15.0); // temperature at 0 altitude
-    const float p0 = 101325.0; // pressure at 0 altitude
-     */
 
-    //Limburg Hoogte 23m (+127m)
-    //Arnhem Hoogte 11m  (+122m)
+    const float P0 = 1013.25; //Sea level standard atmospheric pressure
+    const float L = 0.0065; //temprature lapse rate, = g/cp for dry air
+    const float T0 = 273.15; //sea level standard temprature
+    const float g = 9.8124; //Earth-surface gravitational acceleration
+    const float M = 0.0289644; //Molar mass of dry air
+    const float R0 = 8.31447; //Universal gas constant
 
-    return float(((pow((1013.25 / PRES), 1/5.257) - 1.0) * (TEMP + 273.15)) / 0.0065);
 
-    //return t0 / t_grad * (1 - float(exp((t_grad * R / g)) * log(pressure / p0)));
+    return (float(pow((PRES/P0),(R0 * L)/(g * M)) - 1.0) * float((-1.0 *((T0 + TEMP)/L))));
+    //return float(((pow((1013.25 / PRES), 1/5.257) - 1.0) * (TEMP + 273.15)) / 0.0065); //juiste!!!
+
+
+
 }
 
 float MS5611::getTemperature() {
