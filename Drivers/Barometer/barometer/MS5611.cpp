@@ -35,16 +35,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 /** MS5611 constructor.
  */
 MS5611::MS5611() {
-    refreshTemperature();
-    delay(SystemCoreClock/8/100); // Waiting for temperature data ready ~10ms
-    readTemperature();
 
-    refreshPressure();
-    delay(SystemCoreClock/8/100); // Waiting for pressure data ready ~10ms
-    readPressure();
-
-    calculate();
-    QFH_ALT = toAltitude();
 }
 
 /** Power on and prepare for general usage.
@@ -85,6 +76,7 @@ void MS5611::initialize() {
     I2C_Cmd(MS5611_I2C, ENABLE);
 
     readPROM();
+    set_QFE();
 }
 
 void MS5611::reset(){
@@ -238,6 +230,18 @@ void MS5611::readPressure() {
     D1 = D1 | (uint32_t)I2C_ReceiveData(MS5611_I2C);
 }
 
+void MS5611::update(){
+    refreshTemperature();
+    delay(SystemCoreClock/8/100); // Waiting for temperature data ready ~10m
+    readTemperature();
+
+    refreshPressure();
+    delay(SystemCoreClock/8/100); // Waiting for pressure data ready ~10ms
+    readPressure();
+
+    calculate();
+}
+
 /** Calculate temperature and pressure calculations and perform compensation
  *  More info about these calculations is available in the datasheet.
  */
@@ -269,10 +273,10 @@ void MS5611::calculate() {
     SENS = SENS - SENS2;
 
     // Final calculations
-    PRES = float(((D1 * SENS) / pow(2.0, 21.0) - OFF) / pow(2.0, 15.0) / 10.0);
-    TEMP = float(TEMP / 10.0);
-    // Pressure = x100 pB
-    // Temprature = x100 celcius
+    PRES = float(((D1 * SENS) / pow(2.0, 21.0) - OFF) / pow(2.0, 15.0) / 100.0);
+    TEMP = float(TEMP / 100.0);
+    // Pressure = pB
+    // Temprature = celcius
 }
 
 float MS5611::toAltitude() {
@@ -287,43 +291,32 @@ float MS5611::toAltitude() {
     //Limburg Hoogte 23m (+127m)
     //Arnhem Hoogte 11m  (+122m)
 
-    return float(((pow((10132.5 / PRES), 1/5.257) - 1.0) * (TEMP + 2731.5)) / 0.0065);
+    return float(((pow((1013.25 / PRES), 1/5.257) - 1.0) * (TEMP + 273.15)) / 0.0065);
 
     //return t0 / t_grad * (1 - float(exp((t_grad * R / g)) * log(pressure / p0)));
 }
 
 float MS5611::getTemperature() {
-    refreshTemperature();
-    delay(SystemCoreClock/8/100); // Waiting for temperature data ready ~10ms
-    readTemperature();
-
-    calculate();
+    update();
 
     return TEMP;
 }
 
 float MS5611::getPressure() {
-    refreshPressure();
-    delay(SystemCoreClock/8/100); // Waiting for pressure data ready ~10ms
-    readPressure();
-
-    calculate();
+    update();
 
     return PRES;
 }
 
 float MS5611::getAltitude() {
-    refreshTemperature();
-    delay(SystemCoreClock/8/100); // Waiting for temperature data ready ~10m
-    readTemperature();
+    update();
 
-    refreshPressure();
-    delay(SystemCoreClock/8/100); // Waiting for pressure data ready ~10ms
-    readPressure();
+    return toAltitude() - QFE_ALT; // meters diff of QFH_ALT
+}
 
-    calculate();
-
-    return toAltitude() - QFH_ALT; // meters diff of QFH_ALT
+void MS5611::set_QFE(){
+    update();
+    QFE_ALT = toAltitude();
 }
 
 void MS5611::waitForI2CFlag(uint32_t flag) {
@@ -349,7 +342,7 @@ void MS5611::waitForI2CFlag(uint32_t flag) {
 // Delay ~ 1 sec.
 //delay(SystemCoreClock/8);
 
-void delay(const int d)
+void MS5611::delay(const int d)
 {
     volatile int i;
 
