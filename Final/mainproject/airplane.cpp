@@ -3,9 +3,6 @@
 //
 #include <airplane.h>
 #include <stm32f0_discovery.h>
-#include <stm32f0xx_gpio.h>
-#include <stm32f0xx.h>
-#include "stm32f0xx.h"
 
 uint16_t currentPitch = 0;
 uint16_t currentAltitude = 0;
@@ -18,9 +15,6 @@ MPU6050 Airplane::accelerometer;
 MS5611 Airplane::barometer;
 
 Airplane::Airplane() {
-    // Enable flash acces
-    //userData.init();
-
     // Initialize sensors
     accelerometer.init();
     barometer.initialize();
@@ -33,17 +27,11 @@ Airplane::Airplane() {
 
     // Initialize timers
     timer.setTim3(5);
-    timer.setTim14(1);
     timer.setTim16(20);
 
     // Initialize input compare for the receiver
 
-    // Set initiate flight parameters
-    mode = MANUAL_M;
-
-    // Test
-    STM_EVAL_LEDInit(LED4);
-    STM_EVAL_LEDInit(LED3);
+    // Initialize leds
     // GPIOC Periph clock enable
     RCC->AHBENR |= RCC_AHBENR_GPIOAEN;
     // PC8 and PC9 in output mode
@@ -54,32 +42,31 @@ Airplane::Airplane() {
     GPIOA->OSPEEDR |= (GPIO_OSPEEDER_OSPEEDR11 | GPIO_OSPEEDER_OSPEEDR12);
     // Pull-up and pull-down resistors disabled
     GPIOA->PUPDR &= ~(GPIO_PUPDR_PUPDR11 | GPIO_PUPDR_PUPDR12);
+
+    // Set initiate flight parameters
+    mode = AUTOPILOT_M;
+
+    // Test
+    STM_EVAL_LEDInit(LED4);
+    STM_EVAL_LEDInit(LED3);
 }
 
 void Airplane::loop() {
     while (true) {
-        mode = AUTOPILOT_M;
-        altitude1 = 10;
-        currentAltitude = 8;
-        STM_EVAL_LEDOn(LED3);
         while (mode == MANUAL_M) {
             // Read RC controller pwm and send to the motor and servos
 
             // Read RC controller pattern to activate autopilot
 
             // Test
-            control.setOnTime(PWM_SERVO_RUDDER, 1500);
-            control.setOnTime(PWM_SERVO_ELEVATOR, 1500);
-            control.setOnTime(PWM_MOTOR, 1500);
         }
 
         while (mode == AUTOPILOT_M) {
-
             // Follow altitude 1 for 10 seconds
             while (Time::seconds < 10) {
                 // ------------ Control Leds ------------
                 // 1. Altitude is OK
-                if (currentAltitude < altitude1 + 3 || currentAltitude > altitude1 - 3) {
+                if (currentAltitude < altitude1 + 3 && currentAltitude > altitude1 - 3) {
                     ledColor = LEDGREEN;
                     //ENABLE TIM14
                     TIM_Cmd(TIM14, ENABLE);
@@ -90,7 +77,6 @@ void Airplane::loop() {
                     ledColor = LEDYELLOW;
                     //DISABLE TIM14
                     TIM_Cmd(TIM14, DISABLE);
-
                 }
 
                 // 2. Altitude is too low
@@ -98,13 +84,7 @@ void Airplane::loop() {
                     ledColor = LEDRED;
                     //DISABLE TIM14
                     TIM_Cmd(TIM14, DISABLE);
-
                 }
-
-                // ----------- Control motor ------------
-
-                // ----------- Control servo ------------
-
             }
 
             // Follow altitude 2 for 10 seconds
@@ -119,14 +99,17 @@ void Airplane::loop() {
                     ledColor = LEDYELLOW;
                     //DISABLE TIM14
                     TIM_Cmd(TIM14, DISABLE);
-
                 }
                 if (currentAltitude < altitude2 - 3) {
                     ledColor = LEDRED;
                     //DISABLE TIM14
                     TIM_Cmd(TIM14, DISABLE);
-
                 }
+
+                // ----------- Control motor ------------
+
+                // ----------- Control servo ------------
+
             }
             // control height
 
@@ -151,9 +134,9 @@ uint32_t Airplane::getPitch() {
     //double accelerationZ = (accelGyroDataRaw.Az * CONVERSIONG);
 }
 
+// Toggle GPIO ports for the leds
 void Airplane::setColor(LEDColor_t Color){
     if(Color == LEDGREEN){
-        //A11 = GREEN A12 = RED
         GPIO_ResetBits(GPIOA, GPIO_Pin_12);
         if(!GPIO_ReadOutputDataBit(GPIOA, GPIO_Pin_11)){
             GPIO_SetBits(GPIOA, GPIO_Pin_11);
@@ -161,6 +144,7 @@ void Airplane::setColor(LEDColor_t Color){
         else {
             GPIO_ResetBits(GPIOA, GPIO_Pin_11);
         }
+        STM_EVAL_LEDToggle(LED3);
 
     }
 
@@ -177,7 +161,7 @@ void Airplane::setColor(LEDColor_t Color){
             GPIO_ResetBits(GPIOA, GPIO_Pin_11);
             GPIO_ResetBits(GPIOA, GPIO_Pin_12);
         }
-
+        STM_EVAL_LEDToggle(LED3);
     }
 
     if(Color == LEDRED){
@@ -188,6 +172,6 @@ void Airplane::setColor(LEDColor_t Color){
         else {
             GPIO_ResetBits(GPIOA, GPIO_Pin_12);
         }
-
+        STM_EVAL_LEDToggle(LED3);
     }
 }

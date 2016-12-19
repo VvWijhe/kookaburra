@@ -4,6 +4,7 @@
 #include <airplane.h>
 #include <stm32f0_discovery.h>
 #include <counter.h>
+#include <stm32f0xx_tim.h>
 #include "stm32f0xx_it.h"
 
 /******************************************************************************/
@@ -81,21 +82,20 @@ void USART1_IRQHandler() {
   * @param  None
   * @retval None
   */
+int count = 0;
 void TIM3_IRQHandler() {
     if (TIM_GetITStatus(TIM3, TIM_IT_Update) != RESET) {
         TIM_ClearITPendingBit(TIM3, TIM_IT_Update);
-        STM_EVAL_LEDToggle(LED4);
-
 //        previousAltitude = currentAltitude;
 //        currentAltitude = Airplane::getAltitude();
 //        verticalSpeed = (float) ((currentAltitude - previousAltitude) / 0.2);
-        verticalSpeed = 2;
-        if (verticalSpeed < 0) {
-            verticalSpeed = verticalSpeed * -1;
-        }
-        int Anita = static_cast<int>(verticalSpeed);
-        Timer::setTim17(verticalSpeed);
 
+        // Delay = (count - 1) / TIM3 freq
+        if(count++ == 4){
+            Timer::setTim17(1);
+
+            count = 0;
+        }
     }
 }
 
@@ -109,7 +109,6 @@ void TIM14_IRQHandler() {
         TIM_ClearITPendingBit(TIM14, TIM_IT_Update);
 
         Timer::incrementTime(Time::seconds);
-        STM_EVAL_LEDToggle(LED4);
     }
 }
 
@@ -132,7 +131,6 @@ void TIM17_IRQHandler(void) {
         TIM_ClearITPendingBit(TIM17, TIM_IT_Update);
 
         switch (ledColor) {
-
             case LEDGREEN:
                 Airplane::setColor(LEDGREEN);
                 break;
@@ -147,10 +145,7 @@ void TIM17_IRQHandler(void) {
 
             default:
                 break;
-
         }
-
-        //STM_EVAL_LEDToggle(LED3);
     }
 }
 

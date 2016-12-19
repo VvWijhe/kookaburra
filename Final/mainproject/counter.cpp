@@ -112,7 +112,7 @@ void Timer::setTim16(uint16_t p) {
     TIM_Cmd(TIM16, ENABLE);
 }
 
-void Timer::setTim17(uint16_t p) {
+void Timer::setTim17(uint32_t p) {
     TIM_TimeBaseInitTypeDef TIM_TimeBaseStructure;
     NVIC_InitTypeDef NVIC_InitStructure;
 
@@ -125,7 +125,7 @@ void Timer::setTim17(uint16_t p) {
     //(#) Fill the TIM_TimeBaseInitStruct with the desired parameters.
     TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;
     TIM_TimeBaseStructure.TIM_Period = 1000 - 1;
-    TIM_TimeBaseStructure.TIM_Prescaler = (uint16_t) ((SystemCoreClock / (p * 2000)) - 1);
+    TIM_TimeBaseStructure.TIM_Prescaler = (uint16_t) ((SystemCoreClock / (p * 1000)) - 1);
     TIM_TimeBaseStructure.TIM_ClockDivision = TIM_CKD_DIV1;
 
     //(#) Call TIM_TimeBaseInit(TIMx, &TIM_TimeBaseInitStruct) to configure
@@ -135,7 +135,7 @@ void Timer::setTim17(uint16_t p) {
     //(#) Enable the NVIC if you need to generate the update interrupt.
     //    Enable the TIM3 global Interrupt
     NVIC_InitStructure.NVIC_IRQChannel = TIM17_IRQn;
-    NVIC_InitStructure.NVIC_IRQChannelPriority = 1;
+    NVIC_InitStructure.NVIC_IRQChannelPriority = 2;
     NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
     NVIC_Init(&NVIC_InitStructure);
 
