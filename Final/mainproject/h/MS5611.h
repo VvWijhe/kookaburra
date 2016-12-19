@@ -84,6 +84,8 @@ public:
     float getPressure();
     float getAltitude();
 
+    void set_QFE();
+
     void readPROM();
     void readPressure();
     void readTemperature();
@@ -95,11 +97,12 @@ private:
     bool deviceStatus;
     uint16_t C1, C2, C3, C4, C5, C6; // Calibration data
     uint32_t D1, D2; // Raw measurement data
-    float TEMP; // Calculated temperature
-    float PRES; // Calculated pressure
-    float QFH_ALT; // Altitude at time 0.
+    float TEMP = 0; // Calculated temperature
+    float PRES = 0; // Calculated pressure
+    float QFE_ALT = 0; // Altitude at time 0.
 
     float toAltitude();
+    void update();
     void calculate();
     void delay(const int d);
 
