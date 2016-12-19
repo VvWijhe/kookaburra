@@ -84,11 +84,18 @@ void USART1_IRQHandler() {
 void TIM3_IRQHandler() {
     if (TIM_GetITStatus(TIM3, TIM_IT_Update) != RESET) {
         TIM_ClearITPendingBit(TIM3, TIM_IT_Update);
+        STM_EVAL_LEDToggle(LED4);
 
-        //previousAltitude = currentAltitude;
-        //currentAltitude = Airplane::getAltitude();
-        //verticalSpeed = (float) ((currentAltitude - previousAltitude) / 0.2);
-        //Timer::setTim17(verticalSpeed);
+//        previousAltitude = currentAltitude;
+//        currentAltitude = Airplane::getAltitude();
+//        verticalSpeed = (float) ((currentAltitude - previousAltitude) / 0.2);
+        verticalSpeed = 2;
+        if (verticalSpeed < 0) {
+            verticalSpeed = verticalSpeed * -1;
+        }
+        int Anita = static_cast<int>(verticalSpeed);
+        Timer::setTim17(verticalSpeed);
+
     }
 }
 
@@ -101,7 +108,7 @@ void TIM14_IRQHandler() {
     if (TIM_GetITStatus(TIM14, TIM_IT_Update) != RESET) {
         TIM_ClearITPendingBit(TIM14, TIM_IT_Update);
 
-        Timer::incrementTime(Time::hours, Time::minutes, Time::seconds);
+        Timer::incrementTime(Time::seconds);
         STM_EVAL_LEDToggle(LED4);
     }
 }
@@ -127,17 +134,15 @@ void TIM17_IRQHandler(void) {
         switch (ledColor) {
 
             case LEDGREEN:
-                STM_EVAL_LEDToggle(LED3);
-                STM_EVAL_LEDOff(LED4);
+                Airplane::setColor(LEDGREEN);
                 break;
 
             case LEDYELLOW:
-                STM_EVAL_LEDToggle(LED3);
-                STM_EVAL_LEDToggle(LED4);
+                Airplane::setColor(LEDYELLOW);
                 break;
 
             case LEDRED:
-                STM_EVAL_LEDToggle(LED4);
+                Airplane::setColor(LEDRED);
                 break;
 
             default:

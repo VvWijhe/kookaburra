@@ -46,6 +46,8 @@ public:
 
     static uint32_t getPitch();
 
+    static void setColor(LEDColor_t Color);
+
 private:
     UART uart;
     Timer timer;

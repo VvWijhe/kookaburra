@@ -74,7 +74,7 @@ void Timer::setTim14(uint16_t p) {
     TIM_ITConfig(TIM14, TIM_IT_Update, ENABLE);
 
     //(#) Call the TIM_Cmd(ENABLE) function to enable the TIM counter.
-    TIM_Cmd(TIM14, ENABLE);
+
 }
 
 void Timer::setTim16(uint16_t p) {
@@ -147,14 +147,6 @@ void Timer::setTim17(uint16_t p) {
     TIM_Cmd(TIM17, ENABLE);
 }
 
-void Timer::incrementTime(int &hours, int &minutes, int &seconds) {
-    if (seconds++ == 60) {
-        if (minutes++ == 60) {
-            if (hours++ == 24) {
-                hours = 0;
-            }
-            minutes = 0;
-        }
-        seconds = 0;
-    }
+void Timer::incrementTime(int &seconds) {
+    seconds++;
 }

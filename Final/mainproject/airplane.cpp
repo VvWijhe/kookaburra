@@ -3,6 +3,9 @@
 //
 #include <airplane.h>
 #include <stm32f0_discovery.h>
+#include <stm32f0xx_gpio.h>
+#include <stm32f0xx.h>
+#include "stm32f0xx.h"
 
 uint16_t currentPitch = 0;
 uint16_t currentAltitude = 0;
@@ -41,10 +44,24 @@ Airplane::Airplane() {
     // Test
     STM_EVAL_LEDInit(LED4);
     STM_EVAL_LEDInit(LED3);
+    // GPIOC Periph clock enable
+    RCC->AHBENR |= RCC_AHBENR_GPIOAEN;
+    // PC8 and PC9 in output mode
+    GPIOA->MODER |= (GPIO_MODER_MODER11_0 | GPIO_MODER_MODER12_0) ;
+    // Push pull mode selected
+    GPIOA->OTYPER &= ~(GPIO_OTYPER_OT_11 | GPIO_OTYPER_OT_12) ;
+    // Maximum speed setting
+    GPIOA->OSPEEDR |= (GPIO_OSPEEDER_OSPEEDR11 | GPIO_OSPEEDER_OSPEEDR12);
+    // Pull-up and pull-down resistors disabled
+    GPIOA->PUPDR &= ~(GPIO_PUPDR_PUPDR11 | GPIO_PUPDR_PUPDR12);
 }
 
 void Airplane::loop() {
     while (true) {
+        mode = AUTOPILOT_M;
+        altitude1 = 10;
+        currentAltitude = 8;
+        STM_EVAL_LEDOn(LED3);
         while (mode == MANUAL_M) {
             // Read RC controller pwm and send to the motor and servos
 
@@ -59,21 +76,29 @@ void Airplane::loop() {
         while (mode == AUTOPILOT_M) {
 
             // Follow altitude 1 for 10 seconds
-            while (currentAltitude != altitude1) {
+            while (Time::seconds < 10) {
                 // ------------ Control Leds ------------
                 // 1. Altitude is OK
                 if (currentAltitude < altitude1 + 3 || currentAltitude > altitude1 - 3) {
                     ledColor = LEDGREEN;
+                    //ENABLE TIM14
+                    TIM_Cmd(TIM14, ENABLE);
                 }
 
                 // 2. Altitude is too high
                 if (currentAltitude > altitude1 + 3) {
                     ledColor = LEDYELLOW;
+                    //DISABLE TIM14
+                    TIM_Cmd(TIM14, DISABLE);
+
                 }
 
                 // 2. Altitude is too low
                 if (currentAltitude < altitude1 - 3) {
                     ledColor = LEDRED;
+                    //DISABLE TIM14
+                    TIM_Cmd(TIM14, DISABLE);
+
                 }
 
                 // ----------- Control motor ------------
@@ -83,15 +108,24 @@ void Airplane::loop() {
             }
 
             // Follow altitude 2 for 10 seconds
-            while (currentAltitude != altitude2) {
+            while (Time::seconds < 20) {
                 if (currentAltitude < altitude2 + 3 && currentAltitude > altitude2 - 3) {
-                    // Color->Green;
+
+                    ledColor = LEDGREEN;
+                    //ENABLE TIM14
+                    TIM_Cmd(TIM14, ENABLE);
                 }
                 if (currentAltitude > altitude2 + 3) {
-                    // Color->Orange;
+                    ledColor = LEDYELLOW;
+                    //DISABLE TIM14
+                    TIM_Cmd(TIM14, DISABLE);
+
                 }
                 if (currentAltitude < altitude2 - 3) {
-                    // Color->Red;
+                    ledColor = LEDRED;
+                    //DISABLE TIM14
+                    TIM_Cmd(TIM14, DISABLE);
+
                 }
             }
             // control height
@@ -115,4 +149,45 @@ uint32_t Airplane::getPitch() {
     return (uint32_t) (accelGyroDataRaw.Ax * CONVERSIONG);
     //double accelerationY = (accelGyroDataRaw.Ay * CONVERSIONG);
     //double accelerationZ = (accelGyroDataRaw.Az * CONVERSIONG);
+}
+
+void Airplane::setColor(LEDColor_t Color){
+    if(Color == LEDGREEN){
+        //A11 = GREEN A12 = RED
+        GPIO_ResetBits(GPIOA, GPIO_Pin_12);
+        if(!GPIO_ReadOutputDataBit(GPIOA, GPIO_Pin_11)){
+            GPIO_SetBits(GPIOA, GPIO_Pin_11);
+        }
+        else {
+            GPIO_ResetBits(GPIOA, GPIO_Pin_11);
+        }
+
+    }
+
+    if(Color == LEDYELLOW){
+        if(GPIO_ReadOutputDataBit(GPIOA, GPIO_Pin_11) != GPIO_ReadOutputDataBit(GPIOA, GPIO_Pin_12)){
+            GPIO_ResetBits(GPIOA, GPIO_Pin_11);
+            GPIO_ResetBits(GPIOA, GPIO_Pin_12);
+        }
+        else if(!GPIO_ReadOutputDataBit(GPIOA, GPIO_Pin_11)){
+            GPIO_SetBits(GPIOA, GPIO_Pin_11);
+            GPIO_SetBits(GPIOA, GPIO_Pin_12);
+        }
+        else {
+            GPIO_ResetBits(GPIOA, GPIO_Pin_11);
+            GPIO_ResetBits(GPIOA, GPIO_Pin_12);
+        }
+
+    }
+
+    if(Color == LEDRED){
+        GPIO_ResetBits(GPIOA, GPIO_Pin_11);
+        if(!GPIO_ReadOutputDataBit(GPIOA, GPIO_Pin_12)){
+            GPIO_SetBits(GPIOA, GPIO_Pin_12);
+        }
+        else {
+            GPIO_ResetBits(GPIOA, GPIO_Pin_12);
+        }
+
+    }
 }
