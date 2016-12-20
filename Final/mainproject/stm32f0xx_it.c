@@ -182,12 +182,12 @@ void TIM15_IRQHandler(void)
     {
         Newstate = ON;
         Attempts = 0;
-        StepCount = 0;
     }
-    else if ( Newstate == ON && Attempts > MAXATTEMPTS && DutyCyclePC < RCLOW ) //down when Flightplanner is active, disable it
+    else if ( Newstate == ON && Attempts > MAXATTEMPTS && DutyCyclePC < RCLOW ) //down when Flightplanner is active disables it
     {
         Newstate = OFF;
         Attempts = 0;
+        StepCount = 0;
     }
 
     Attempts++;
