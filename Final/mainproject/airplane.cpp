@@ -8,28 +8,13 @@ uint16_t currentPitch = 0;
 uint16_t currentAltitude = 0;
 uint16_t previousAltitude = 0;
 float verticalSpeed = 0;
-
-/* Private define ------------------------------------------------------------*/
-#define RCHIGH 5.0
-#define RCLOW 4.0
-#define MAXATTEMPTS 10
-/* Private variables ---------------------------------------------------------*/
-__IO uint16_t IC2Value = 0;
-__IO uint16_t DutyCycle = 0;
-__IO int16_t PrevDutyCycle = 0;
-float DutyCyclePC = 0;
-uint8_t Attempts = 0;
-uint8_t StepCount = 0;
-typedef enum { OFF = 0, ON } FlightPlanner;
-FlightPlanner Newstate = OFF;
+LEDColor_t ledColor = LEDRED;
+uint32_t altitude1 = 0, altitude2 = 0;
 
 MPU6050 Airplane::accelerometer;
 MS5611 Airplane::barometer;
 
 Airplane::Airplane() {
-    // Enable flash acces
-    //userData.init();
-
     // Initialize sensors
     accelerometer.init();
     barometer.initialize();
@@ -42,13 +27,24 @@ Airplane::Airplane() {
 
     // Initialize timers
     timer.setTim3(5);
-    timer.setTim14(1);
     timer.setTim16(20);
 
     // Initialize input compare for the receiver
 
+    // Initialize leds
+    // GPIOC Periph clock enable
+    RCC->AHBENR |= RCC_AHBENR_GPIOAEN;
+    // PC8 and PC9 in output mode
+    GPIOA->MODER |= (GPIO_MODER_MODER11_0 | GPIO_MODER_MODER12_0) ;
+    // Push pull mode selected
+    GPIOA->OTYPER &= ~(GPIO_OTYPER_OT_11 | GPIO_OTYPER_OT_12) ;
+    // Maximum speed setting
+    GPIOA->OSPEEDR |= (GPIO_OSPEEDER_OSPEEDR11 | GPIO_OSPEEDER_OSPEEDR12);
+    // Pull-up and pull-down resistors disabled
+    GPIOA->PUPDR &= ~(GPIO_PUPDR_PUPDR11 | GPIO_PUPDR_PUPDR12);
+
     // Set initiate flight parameters
-    mode = MANUAL_M;
+    mode = AUTOPILOT_M;
 
     // Test
     STM_EVAL_LEDInit(LED4);
@@ -63,12 +59,58 @@ void Airplane::loop() {
             // Read RC controller pattern to activate autopilot
 
             // Test
-            control.setOnTime(PWM_SERVO_RUDDER, 1500);
-            control.setOnTime(PWM_SERVO_ELEVATOR, 1500);
-            control.setOnTime(PWM_MOTOR, 1500);
         }
 
         while (mode == AUTOPILOT_M) {
+            // Follow altitude 1 for 10 seconds
+            while (Time::seconds < 10) {
+                // ------------ Control Leds ------------
+                // 1. Altitude is OK
+                if (currentAltitude < altitude1 + 3 && currentAltitude > altitude1 - 3) {
+                    ledColor = LEDGREEN;
+                    //ENABLE TIM14
+                    TIM_Cmd(TIM14, ENABLE);
+                }
+
+                // 2. Altitude is too high
+                if (currentAltitude > altitude1 + 3) {
+                    ledColor = LEDYELLOW;
+                    //DISABLE TIM14
+                    TIM_Cmd(TIM14, DISABLE);
+                }
+
+                // 2. Altitude is too low
+                if (currentAltitude < altitude1 - 3) {
+                    ledColor = LEDRED;
+                    //DISABLE TIM14
+                    TIM_Cmd(TIM14, DISABLE);
+                }
+            }
+
+            // Follow altitude 2 for 10 seconds
+            while (Time::seconds < 20) {
+                if (currentAltitude < altitude2 + 3 && currentAltitude > altitude2 - 3) {
+
+                    ledColor = LEDGREEN;
+                    //ENABLE TIM14
+                    TIM_Cmd(TIM14, ENABLE);
+                }
+                if (currentAltitude > altitude2 + 3) {
+                    ledColor = LEDYELLOW;
+                    //DISABLE TIM14
+                    TIM_Cmd(TIM14, DISABLE);
+                }
+                if (currentAltitude < altitude2 - 3) {
+                    ledColor = LEDRED;
+                    //DISABLE TIM14
+                    TIM_Cmd(TIM14, DISABLE);
+                }
+
+                // ----------- Control motor ------------
+
+                // ----------- Control servo ------------
+
+            }
             // control height
 
             // control pitch
@@ -92,56 +134,44 @@ uint32_t Airplane::getPitch() {
     //double accelerationZ = (accelGyroDataRaw.Az * CONVERSIONG);
 }
 
-void TIM15_IRQHandler(void)
-{
-    /* Clear TIM2 Capture compare interrupt pending bit */
-    TIM_ClearITPendingBit(TIM15, TIM_IT_CC1);
-
-    /* Get the Input Capture value */
-    IC2Value = TIM_GetCapture2(TIM15);
-
-    if ( IC2Value > TIM_GetCapture1(TIM15) )
-    {
-        /* Duty cycle computation */
-        DutyCycle = IC2Value - TIM_GetCapture1(TIM15);
-        PrevDutyCycle = DutyCycle;
-        DutyCyclePC = (float)( DutyCycle - 49200 ) / 163.2;
-        if ( DutyCyclePC < 0 )
-        {
-            DutyCyclePC += 301.9;
+// Toggle GPIO ports for the leds
+void Airplane::setColor(LEDColor_t Color){
+    if(Color == LEDGREEN){
+        GPIO_ResetBits(GPIOA, GPIO_Pin_12);
+        if(!GPIO_ReadOutputDataBit(GPIOA, GPIO_Pin_11)){
+            GPIO_SetBits(GPIOA, GPIO_Pin_11);
         }
-    }
-    else
-    {
-        DutyCycle = PrevDutyCycle;
+        else {
+            GPIO_ResetBits(GPIOA, GPIO_Pin_11);
+        }
+        STM_EVAL_LEDToggle(LED3);
+
     }
 
-    //from here on the flightplanner switch is processed.
-    // NOTE: MAXATTEMPTS, RCHIGH and RCLOW are still trivial, give them actual values
-
-
-
-    if ( StepCount == 0 && DutyCyclePC > RCHIGH && Newstate == OFF ) //first up
-    {
-        StepCount++;
-        Attempts = 0;
-    }
-    else if ( StepCount == 1 && DutyCyclePC < RCLOW && Attempts < MAXATTEMPTS && Newstate == OFF ) //then down
-    {
-        StepCount++;
-        Attempts = 0;
-    }
-    else if ( StepCount == 2 && DutyCyclePC > RCHIGH && Attempts < MAXATTEMPTS && Newstate == OFF ) //up again, enable Flightplanner
-    {
-        Newstate = ON;
-        Attempts = 0;
-        StepCount = 0;
-    }
-    else if ( Newstate == ON && Attempts > MAXATTEMPTS && DutyCyclePC < RCLOW ) //down when Flightplanner is active, disable it
-    {
-        Newstate = OFF;
-        Attempts = 0;
+    if(Color == LEDYELLOW){
+        if(GPIO_ReadOutputDataBit(GPIOA, GPIO_Pin_11) != GPIO_ReadOutputDataBit(GPIOA, GPIO_Pin_12)){
+            GPIO_ResetBits(GPIOA, GPIO_Pin_11);
+            GPIO_ResetBits(GPIOA, GPIO_Pin_12);
+        }
+        else if(!GPIO_ReadOutputDataBit(GPIOA, GPIO_Pin_11)){
+            GPIO_SetBits(GPIOA, GPIO_Pin_11);
+            GPIO_SetBits(GPIOA, GPIO_Pin_12);
+        }
+        else {
+            GPIO_ResetBits(GPIOA, GPIO_Pin_11);
+            GPIO_ResetBits(GPIOA, GPIO_Pin_12);
+        }
+        STM_EVAL_LEDToggle(LED3);
     }
 
-    Attempts++;
+    if(Color == LEDRED){
+        GPIO_ResetBits(GPIOA, GPIO_Pin_11);
+        if(!GPIO_ReadOutputDataBit(GPIOA, GPIO_Pin_12)){
+            GPIO_SetBits(GPIOA, GPIO_Pin_12);
+        }
+        else {
+            GPIO_ResetBits(GPIOA, GPIO_Pin_12);
+        }
+        STM_EVAL_LEDToggle(LED3);
+    }
 }

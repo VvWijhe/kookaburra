@@ -4,6 +4,7 @@
 #include <airplane.h>
 #include <stm32f0_discovery.h>
 #include <counter.h>
+#include <stm32f0xx_tim.h>
 #include "stm32f0xx_it.h"
 
 /******************************************************************************/
@@ -73,8 +74,6 @@ void USART1_IRQHandler() {
         indexBuffer = 0;
 
         /// TBD: convert string to number
-//        Flash memory;
-//        memory.write32(EEPROM_START_ADDRESS, 1);
     }
 }
 
@@ -83,13 +82,20 @@ void USART1_IRQHandler() {
   * @param  None
   * @retval None
   */
+int count = 0;
 void TIM3_IRQHandler() {
     if (TIM_GetITStatus(TIM3, TIM_IT_Update) != RESET) {
         TIM_ClearITPendingBit(TIM3, TIM_IT_Update);
+//        previousAltitude = currentAltitude;
+//        currentAltitude = Airplane::getAltitude();
+//        verticalSpeed = (float) ((currentAltitude - previousAltitude) / 0.2);
 
-        previousAltitude = currentAltitude;
-        //currentAltitude = Airplane::getAltitude();
-        verticalSpeed = (float) ((currentAltitude - previousAltitude) / 0.2);
+        // Delay = (count - 1) / TIM3 freq
+        if(count++ == 4){
+            Timer::setTim17(1);
+
+            count = 0;
+        }
     }
 }
 
@@ -102,8 +108,7 @@ void TIM14_IRQHandler() {
     if (TIM_GetITStatus(TIM14, TIM_IT_Update) != RESET) {
         TIM_ClearITPendingBit(TIM14, TIM_IT_Update);
 
-        Timer::incrementTime(Time::hours, Time::minutes, Time::seconds);
-        STM_EVAL_LEDToggle(LED4);
+        Timer::incrementTime(Time::seconds);
     }
 }
 
@@ -117,7 +122,30 @@ void TIM16_IRQHandler(void) {
         TIM_ClearITPendingBit(TIM16, TIM_IT_Update);
 
         //currentAltitude = Airplane::getPitch();
-        STM_EVAL_LEDToggle(LED3);
+        //STM_EVAL_LEDToggle(LED3);
+    }
+}
+
+void TIM17_IRQHandler(void) {
+    if (TIM_GetITStatus(TIM17, TIM_IT_Update) != RESET) {
+        TIM_ClearITPendingBit(TIM17, TIM_IT_Update);
+
+        switch (ledColor) {
+            case LEDGREEN:
+                Airplane::setColor(LEDGREEN);
+                break;
+
+            case LEDYELLOW:
+                Airplane::setColor(LEDYELLOW);
+                break;
+
+            case LEDRED:
+                Airplane::setColor(LEDRED);
+                break;
+
+            default:
+                break;
+        }
     }
 }
 

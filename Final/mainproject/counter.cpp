@@ -22,7 +22,7 @@ void Timer::setTim3(uint16_t p) {
     //(#) Fill the TIM_TimeBaseInitStruct with the desired parameters.
     TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;
     TIM_TimeBaseStructure.TIM_Period = 1000 - 1;
-    TIM_TimeBaseStructure.TIM_Prescaler = (uint16_t) ((SystemCoreClock / (p * 2000)) - 1);
+    TIM_TimeBaseStructure.TIM_Prescaler = (uint16_t) ((SystemCoreClock / (p * 1000)) - 1);
 
     //(#) Call TIM_TimeBaseInit(TIMx, &TIM_TimeBaseInitStruct) to configure
     //    the Timer Base unit with the corresponding configuration.
@@ -56,7 +56,7 @@ void Timer::setTim14(uint16_t p) {
     //(#) Fill the TIM_TimeBaseInitStruct with the desired parameters.
     TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;
     TIM_TimeBaseStructure.TIM_Period = 1000 - 1;
-    TIM_TimeBaseStructure.TIM_Prescaler = (uint16_t) ((SystemCoreClock / (p * 2000)) - 1);
+    TIM_TimeBaseStructure.TIM_Prescaler = (uint16_t) ((SystemCoreClock / (p * 1000)) - 1);
 
     //(#) Call TIM_TimeBaseInit(TIMx, &TIM_TimeBaseInitStruct) to configure
     //    the Timer Base unit with the corresponding configuration.
@@ -74,7 +74,7 @@ void Timer::setTim14(uint16_t p) {
     TIM_ITConfig(TIM14, TIM_IT_Update, ENABLE);
 
     //(#) Call the TIM_Cmd(ENABLE) function to enable the TIM counter.
-    TIM_Cmd(TIM14, ENABLE);
+
 }
 
 void Timer::setTim16(uint16_t p) {
@@ -90,7 +90,7 @@ void Timer::setTim16(uint16_t p) {
     //(#) Fill the TIM_TimeBaseInitStruct with the desired parameters.
     TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;
     TIM_TimeBaseStructure.TIM_Period = 1000 - 1;
-    TIM_TimeBaseStructure.TIM_Prescaler = (uint16_t) ((SystemCoreClock / (p * 2000)) - 1);
+    TIM_TimeBaseStructure.TIM_Prescaler = (uint16_t) ((SystemCoreClock / (p * 1000)) - 1);
     TIM_TimeBaseStructure.TIM_ClockDivision = TIM_CKD_DIV1;
 
     //(#) Call TIM_TimeBaseInit(TIMx, &TIM_TimeBaseInitStruct) to configure
@@ -112,14 +112,41 @@ void Timer::setTim16(uint16_t p) {
     TIM_Cmd(TIM16, ENABLE);
 }
 
-void Timer::incrementTime(int &hours, int &minutes, int &seconds) {
-    if (seconds++ == 60) {
-        if (minutes++ == 60) {
-            if (hours++ == 24) {
-                hours = 0;
-            }
-            minutes = 0;
-        }
-        seconds = 0;
-    }
+void Timer::setTim17(uint32_t p) {
+    TIM_TimeBaseInitTypeDef TIM_TimeBaseStructure;
+    NVIC_InitTypeDef NVIC_InitStructure;
+
+    TIM_DeInit(TIM17);
+
+    //(#) Enable TIM clock using
+    //    RCC_APBxPeriphClockCmd(RCC_APBxPeriph_TIMx, ENABLE) function.
+    RCC_APB2PeriphClockCmd(RCC_APB2Periph_TIM17, ENABLE);
+
+    //(#) Fill the TIM_TimeBaseInitStruct with the desired parameters.
+    TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;
+    TIM_TimeBaseStructure.TIM_Period = 1000 - 1;
+    TIM_TimeBaseStructure.TIM_Prescaler = (uint16_t) ((SystemCoreClock / (p * 1000)) - 1);
+    TIM_TimeBaseStructure.TIM_ClockDivision = TIM_CKD_DIV1;
+
+    //(#) Call TIM_TimeBaseInit(TIMx, &TIM_TimeBaseInitStruct) to configure
+    //    the Timer Base unit with the corresponding configuration.
+    TIM_TimeBaseInit(TIM17, &TIM_TimeBaseStructure);
+
+    //(#) Enable the NVIC if you need to generate the update interrupt.
+    //    Enable the TIM3 global Interrupt
+    NVIC_InitStructure.NVIC_IRQChannel = TIM17_IRQn;
+    NVIC_InitStructure.NVIC_IRQChannelPriority = 2;
+    NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+    NVIC_Init(&NVIC_InitStructure);
+
+    //(#) Enable the corresponding interrupt using the function
+    //    TIM_ITConfig(TIMx, TIM_IT_Update).
+    TIM_ITConfig(TIM17, TIM_IT_Update, ENABLE);
+
+    //(#) Call the TIM_Cmd(ENABLE) function to enable the TIM counter.
+    TIM_Cmd(TIM17, ENABLE);
+}
+
+void Timer::incrementTime(int &seconds) {
+    seconds++;
 }
