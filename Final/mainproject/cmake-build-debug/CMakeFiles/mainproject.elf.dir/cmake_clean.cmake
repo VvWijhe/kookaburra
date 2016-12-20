@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/mainproject.elf.dir/main.cpp.obj"
-  "CMakeFiles/mainproject.elf.dir/071a669750a45ed53df10b62e73f6c8d/github_map/kookaburra/Final/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj"
+  "CMakeFiles/mainproject.elf.dir/071a669750a45ed53df10b62e73f6c8d/GithubMap/kookaburra/Final/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj"
   "CMakeFiles/mainproject.elf.dir/stm32f0xx_it.c.obj"
   "CMakeFiles/mainproject.elf.dir/airplane.cpp.obj"
   "CMakeFiles/mainproject.elf.dir/mpu6050.cpp.obj"

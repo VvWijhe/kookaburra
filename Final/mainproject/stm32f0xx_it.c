@@ -7,6 +7,12 @@
 #include <stm32f0xx_tim.h>
 #include "stm32f0xx_it.h"
 
+#define RCHIGH 5.0
+#define RCLOW 4.0
+#define MAXATTEMPTS 10
+
+
+
 /******************************************************************************/
 /*            Cortex-M0 Processor Exceptions Handlers                         */
 /******************************************************************************/
@@ -124,6 +130,67 @@ void TIM16_IRQHandler(void) {
         //currentAltitude = Airplane::getPitch();
         //STM_EVAL_LEDToggle(LED3);
     }
+}
+
+/**
+  * @brief  This function handles TIM15 interrupt for the PWM capture compare and the switch for the autopilot.
+  * @param  None
+  * @retval None
+  */
+void TIM15_IRQHandler(void)
+{
+    __IO uint32_t IC2Value = 0;
+    __IO uint32_t DutyCycle = 0;
+    typedef enum { OFF = 0, ON } FlightPlanner;
+    FlightPlanner Newstate = OFF; //the mode the plane should work with, auto or manual.
+
+    /* Clear TIM2 Capture compare interrupt pending bit */
+    TIM_ClearITPendingBit(TIM15, TIM_IT_CC1);
+
+    /* Get the Input Capture value */
+    IC2Value = TIM_GetCapture2(TIM15);
+
+    if ( IC2Value > TIM_GetCapture1(TIM15) )
+    {
+        /* Duty cycle computation */
+        DutyCycle = IC2Value - TIM_GetCapture1(TIM15);
+        PrevDutyCycle = DutyCycle;
+        DutyCyclePC = (float)( DutyCycle - 49200 ) / 163.2;
+        if ( DutyCyclePC < 0 )
+        {
+            DutyCyclePC += 301.9;
+        }
+    }
+    else
+    {
+        DutyCycle = PrevDutyCycle;
+    }
+
+    //from here on the flightplanner switch is processed.
+    // NOTE: MAXATTEMPTS, RCHIGH and RCLOW are still trivial, give them actual values.
+    if ( StepCount == 0 && DutyCyclePC > RCHIGH && Newstate == OFF ) //first up
+    {
+        StepCount++;
+        Attempts = 0;
+    }
+    else if ( StepCount == 1 && DutyCyclePC < RCLOW && Attempts < MAXATTEMPTS && Newstate == OFF ) //then down
+    {
+        StepCount++;
+        Attempts = 0;
+    }
+    else if ( StepCount == 2 && DutyCyclePC > RCHIGH && Attempts < MAXATTEMPTS && Newstate == OFF ) //up again, enable Flightplanner
+    {
+        Newstate = ON;
+        Attempts = 0;
+        StepCount = 0;
+    }
+    else if ( Newstate == ON && Attempts > MAXATTEMPTS && DutyCyclePC < RCLOW ) //down when Flightplanner is active, disable it
+    {
+        Newstate = OFF;
+        Attempts = 0;
+    }
+
+    Attempts++;
 }
 
 void TIM17_IRQHandler(void) {

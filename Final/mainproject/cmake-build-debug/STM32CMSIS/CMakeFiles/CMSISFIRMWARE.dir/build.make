@@ -42,10 +42,10 @@ RM = "C:\Program Files (x86)\JetBrains\CLion 2016.2.2\bin\cmake\bin\cmake.exe" -
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "C:\Users\Martijn\Desktop\school\Pr3Kookaburra\github map\kookaburra\Final\mainproject"
+CMAKE_SOURCE_DIR = C:\Users\Martijn\Desktop\school\Pr3Kookaburra\GithubMap\kookaburra\Final\mainproject
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "C:\Users\Martijn\Desktop\school\Pr3Kookaburra\github map\kookaburra\Final\mainproject\cmake-build-debug"
+CMAKE_BINARY_DIR = C:\Users\Martijn\Desktop\school\Pr3Kookaburra\GithubMap\kookaburra\Final\mainproject\cmake-build-debug
 
 # Include any dependencies generated for this target.
 include STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/depend.make
@@ -58,17 +58,17 @@ include STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/flags.make
 
 STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/Source/Templates/system_stm32f0xx.c.obj: STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/flags.make
 STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/Source/Templates/system_stm32f0xx.c.obj: STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/includes_C.rsp
-STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/Source/Templates/system_stm32f0xx.c.obj: C:/Users/Martijn/Desktop/school/Pr3Kookaburra/github\ map/kookaburra/Final/gemeenschappelijk/Libraries/CMSIS/Device/ST/STM32F0xx/Source/Templates/system_stm32f0xx.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Martijn\Desktop\school\Pr3Kookaburra\github map\kookaburra\Final\mainproject\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building C object STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/Source/Templates/system_stm32f0xx.c.obj"
-	cd /d C:\Users\Martijn\Desktop\school\PR3KOO~1\GITHUB~1\KOOKAB~1\Final\MAINPR~1\CMAKE-~1\STM32C~1 && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\CMSISFIRMWARE.dir\Source\Templates\system_stm32f0xx.c.obj   -c "C:\Users\Martijn\Desktop\school\Pr3Kookaburra\github map\kookaburra\Final\gemeenschappelijk\Libraries\CMSIS\Device\ST\STM32F0xx\Source\Templates\system_stm32f0xx.c"
+STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/Source/Templates/system_stm32f0xx.c.obj: C:/Users/Martijn/Desktop/school/Pr3Kookaburra/GithubMap/kookaburra/Final/gemeenschappelijk/Libraries/CMSIS/Device/ST/STM32F0xx/Source/Templates/system_stm32f0xx.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Martijn\Desktop\school\Pr3Kookaburra\GithubMap\kookaburra\Final\mainproject\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/Source/Templates/system_stm32f0xx.c.obj"
+	cd /d C:\Users\Martijn\Desktop\school\Pr3Kookaburra\GithubMap\kookaburra\Final\mainproject\cmake-build-debug\STM32CMSIS && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\CMSISFIRMWARE.dir\Source\Templates\system_stm32f0xx.c.obj   -c C:\Users\Martijn\Desktop\school\Pr3Kookaburra\GithubMap\kookaburra\Final\gemeenschappelijk\Libraries\CMSIS\Device\ST\STM32F0xx\Source\Templates\system_stm32f0xx.c
 
 STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/Source/Templates/system_stm32f0xx.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/CMSISFIRMWARE.dir/Source/Templates/system_stm32f0xx.c.i"
-	cd /d C:\Users\Martijn\Desktop\school\PR3KOO~1\GITHUB~1\KOOKAB~1\Final\MAINPR~1\CMAKE-~1\STM32C~1 && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\Martijn\Desktop\school\Pr3Kookaburra\github map\kookaburra\Final\gemeenschappelijk\Libraries\CMSIS\Device\ST\STM32F0xx\Source\Templates\system_stm32f0xx.c" > CMakeFiles\CMSISFIRMWARE.dir\Source\Templates\system_stm32f0xx.c.i
+	cd /d C:\Users\Martijn\Desktop\school\Pr3Kookaburra\GithubMap\kookaburra\Final\mainproject\cmake-build-debug\STM32CMSIS && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Martijn\Desktop\school\Pr3Kookaburra\GithubMap\kookaburra\Final\gemeenschappelijk\Libraries\CMSIS\Device\ST\STM32F0xx\Source\Templates\system_stm32f0xx.c > CMakeFiles\CMSISFIRMWARE.dir\Source\Templates\system_stm32f0xx.c.i
 
 STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/Source/Templates/system_stm32f0xx.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/CMSISFIRMWARE.dir/Source/Templates/system_stm32f0xx.c.s"
-	cd /d C:\Users\Martijn\Desktop\school\PR3KOO~1\GITHUB~1\KOOKAB~1\Final\MAINPR~1\CMAKE-~1\STM32C~1 && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\Martijn\Desktop\school\Pr3Kookaburra\github map\kookaburra\Final\gemeenschappelijk\Libraries\CMSIS\Device\ST\STM32F0xx\Source\Templates\system_stm32f0xx.c" -o CMakeFiles\CMSISFIRMWARE.dir\Source\Templates\system_stm32f0xx.c.s
+	cd /d C:\Users\Martijn\Desktop\school\Pr3Kookaburra\GithubMap\kookaburra\Final\mainproject\cmake-build-debug\STM32CMSIS && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Martijn\Desktop\school\Pr3Kookaburra\GithubMap\kookaburra\Final\gemeenschappelijk\Libraries\CMSIS\Device\ST\STM32F0xx\Source\Templates\system_stm32f0xx.c -o CMakeFiles\CMSISFIRMWARE.dir\Source\Templates\system_stm32f0xx.c.s
 
 STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/Source/Templates/system_stm32f0xx.c.obj.requires:
 
@@ -82,9 +82,9 @@ STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/Source/Templates/system_stm32f0xx.c.obj.
 
 
 STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/Source/Templates/gcc/startup_stm32f0xx.s.obj: STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/flags.make
-STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/Source/Templates/gcc/startup_stm32f0xx.s.obj: C:/Users/Martijn/Desktop/school/Pr3Kookaburra/github\ map/kookaburra/Final/gemeenschappelijk/Libraries/CMSIS/Device/ST/STM32F0xx/Source/Templates/gcc/startup_stm32f0xx.s
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Martijn\Desktop\school\Pr3Kookaburra\github map\kookaburra\Final\mainproject\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building ASM-ATT object STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/Source/Templates/gcc/startup_stm32f0xx.s.obj"
-	cd /d C:\Users\Martijn\Desktop\school\PR3KOO~1\GITHUB~1\KOOKAB~1\Final\MAINPR~1\CMAKE-~1\STM32C~1 && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(ASM-ATT_INCLUDES) $(ASM-ATT_FLAGS) -o CMakeFiles\CMSISFIRMWARE.dir\Source\Templates\gcc\startup_stm32f0xx.s.obj "C:\Users\Martijn\Desktop\school\Pr3Kookaburra\github map\kookaburra\Final\gemeenschappelijk\Libraries\CMSIS\Device\ST\STM32F0xx\Source\Templates\gcc\startup_stm32f0xx.s"
+STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/Source/Templates/gcc/startup_stm32f0xx.s.obj: C:/Users/Martijn/Desktop/school/Pr3Kookaburra/GithubMap/kookaburra/Final/gemeenschappelijk/Libraries/CMSIS/Device/ST/STM32F0xx/Source/Templates/gcc/startup_stm32f0xx.s
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Martijn\Desktop\school\Pr3Kookaburra\GithubMap\kookaburra\Final\mainproject\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building ASM-ATT object STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/Source/Templates/gcc/startup_stm32f0xx.s.obj"
+	cd /d C:\Users\Martijn\Desktop\school\Pr3Kookaburra\GithubMap\kookaburra\Final\mainproject\cmake-build-debug\STM32CMSIS && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(ASM-ATT_INCLUDES) $(ASM-ATT_FLAGS) -o CMakeFiles\CMSISFIRMWARE.dir\Source\Templates\gcc\startup_stm32f0xx.s.obj C:\Users\Martijn\Desktop\school\Pr3Kookaburra\GithubMap\kookaburra\Final\gemeenschappelijk\Libraries\CMSIS\Device\ST\STM32F0xx\Source\Templates\gcc\startup_stm32f0xx.s
 
 STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/Source/Templates/gcc/startup_stm32f0xx.s.obj.requires:
 
@@ -109,9 +109,9 @@ STM32CMSIS/libCMSISFIRMWARE.a: STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/Source/Te
 STM32CMSIS/libCMSISFIRMWARE.a: STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/Source/Templates/gcc/startup_stm32f0xx.s.obj
 STM32CMSIS/libCMSISFIRMWARE.a: STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/build.make
 STM32CMSIS/libCMSISFIRMWARE.a: STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\Martijn\Desktop\school\Pr3Kookaburra\github map\kookaburra\Final\mainproject\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Linking C static library libCMSISFIRMWARE.a"
-	cd /d C:\Users\Martijn\Desktop\school\PR3KOO~1\GITHUB~1\KOOKAB~1\Final\MAINPR~1\CMAKE-~1\STM32C~1 && $(CMAKE_COMMAND) -P CMakeFiles\CMSISFIRMWARE.dir\cmake_clean_target.cmake
-	cd /d C:\Users\Martijn\Desktop\school\PR3KOO~1\GITHUB~1\KOOKAB~1\Final\MAINPR~1\CMAKE-~1\STM32C~1 && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\CMSISFIRMWARE.dir\link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Martijn\Desktop\school\Pr3Kookaburra\GithubMap\kookaburra\Final\mainproject\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C static library libCMSISFIRMWARE.a"
+	cd /d C:\Users\Martijn\Desktop\school\Pr3Kookaburra\GithubMap\kookaburra\Final\mainproject\cmake-build-debug\STM32CMSIS && $(CMAKE_COMMAND) -P CMakeFiles\CMSISFIRMWARE.dir\cmake_clean_target.cmake
+	cd /d C:\Users\Martijn\Desktop\school\Pr3Kookaburra\GithubMap\kookaburra\Final\mainproject\cmake-build-debug\STM32CMSIS && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\CMSISFIRMWARE.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/build: STM32CMSIS/libCMSISFIRMWARE.a
@@ -124,10 +124,10 @@ STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/requires: STM32CMSIS/CMakeFiles/CMSISFIR
 .PHONY : STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/requires
 
 STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/clean:
-	cd /d C:\Users\Martijn\Desktop\school\PR3KOO~1\GITHUB~1\KOOKAB~1\Final\MAINPR~1\CMAKE-~1\STM32C~1 && $(CMAKE_COMMAND) -P CMakeFiles\CMSISFIRMWARE.dir\cmake_clean.cmake
+	cd /d C:\Users\Martijn\Desktop\school\Pr3Kookaburra\GithubMap\kookaburra\Final\mainproject\cmake-build-debug\STM32CMSIS && $(CMAKE_COMMAND) -P CMakeFiles\CMSISFIRMWARE.dir\cmake_clean.cmake
 .PHONY : STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/clean
 
 STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" "C:\Users\Martijn\Desktop\school\Pr3Kookaburra\github map\kookaburra\Final\mainproject" "C:\Users\Martijn\Desktop\school\Pr3Kookaburra\github map\kookaburra\Final\gemeenschappelijk\Libraries\CMSIS\Device\ST\STM32F0xx" "C:\Users\Martijn\Desktop\school\Pr3Kookaburra\github map\kookaburra\Final\mainproject\cmake-build-debug" "C:\Users\Martijn\Desktop\school\Pr3Kookaburra\github map\kookaburra\Final\mainproject\cmake-build-debug\STM32CMSIS" "C:\Users\Martijn\Desktop\school\Pr3Kookaburra\github map\kookaburra\Final\mainproject\cmake-build-debug\STM32CMSIS\CMakeFiles\CMSISFIRMWARE.dir\DependInfo.cmake" --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\Martijn\Desktop\school\Pr3Kookaburra\GithubMap\kookaburra\Final\mainproject C:\Users\Martijn\Desktop\school\Pr3Kookaburra\GithubMap\kookaburra\Final\gemeenschappelijk\Libraries\CMSIS\Device\ST\STM32F0xx C:\Users\Martijn\Desktop\school\Pr3Kookaburra\GithubMap\kookaburra\Final\mainproject\cmake-build-debug C:\Users\Martijn\Desktop\school\Pr3Kookaburra\GithubMap\kookaburra\Final\mainproject\cmake-build-debug\STM32CMSIS C:\Users\Martijn\Desktop\school\Pr3Kookaburra\GithubMap\kookaburra\Final\mainproject\cmake-build-debug\STM32CMSIS\CMakeFiles\CMSISFIRMWARE.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/depend
 

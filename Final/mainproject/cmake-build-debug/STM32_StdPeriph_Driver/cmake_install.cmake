@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/Martijn/Desktop/school/Pr3Kookaburra/github map/kookaburra/Final/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver
+# Install script for directory: C:/Users/Martijn/Desktop/school/Pr3Kookaburra/GithubMap/kookaburra/Final/gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

@@ -30,6 +30,11 @@ extern uint32_t altitude1, altitude2;
 extern float verticalSpeed;
 extern LEDColor_t ledColor;
 
+extern __IO int32_t PrevDutyCycle; //logging duty cycle in case of bizarre values
+extern float DutyCyclePC; // the duty cycle in %
+extern uint8_t Attempts; // to make the autopilot switch time-based
+extern uint8_t StepCount; // to log every step of said switch
+
 class Airplane {
 public:
     typedef enum {
@@ -57,6 +62,8 @@ private:
     static MS5611 barometer;
 
     flightMode_t mode;
+
+    void CapCompInit ( void );
 
 };
 
