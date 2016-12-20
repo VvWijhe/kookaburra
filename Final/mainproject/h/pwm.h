@@ -17,14 +17,13 @@ public:
     AirplaneControl();
 
     void setOnTime(pwmFunction_t function, uint32_t time);
-<<<<<<< HEAD
     void initServo();
     void initMotor();
     void InitCapComp( void );
-=======
+
 
     void init();
->>>>>>> 80fdd64c8a563e8aeec6aa71b5f1b12d7335c70a
+
 
 private:
     bool isEnabled;

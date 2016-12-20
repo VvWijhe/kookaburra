@@ -394,10 +394,13 @@
 		<Unit filename="C:/Users/Martijn/Desktop/school/Pr3Kookaburra/github map/kookaburra/Final/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c">
 			<Option target="mainproject.elf"/>
 		</Unit>
+		<Unit filename="C:/Users/Martijn/Desktop/school/Pr3Kookaburra/github map/kookaburra/Final/mainproject/MS5611.cpp">
+			<Option target="mainproject.elf"/>
+		</Unit>
 		<Unit filename="C:/Users/Martijn/Desktop/school/Pr3Kookaburra/github map/kookaburra/Final/mainproject/airplane.cpp">
 			<Option target="mainproject.elf"/>
 		</Unit>
-		<Unit filename="C:/Users/Martijn/Desktop/school/Pr3Kookaburra/github map/kookaburra/Final/mainproject/flash.cpp">
+		<Unit filename="C:/Users/Martijn/Desktop/school/Pr3Kookaburra/github map/kookaburra/Final/mainproject/counter.cpp">
 			<Option target="mainproject.elf"/>
 		</Unit>
 		<Unit filename="C:/Users/Martijn/Desktop/school/Pr3Kookaburra/github map/kookaburra/Final/mainproject/main.cpp">

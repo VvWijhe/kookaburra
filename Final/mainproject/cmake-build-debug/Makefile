@@ -188,6 +188,33 @@ STM32F0DiscoveryLib/fast:
 	$(MAKE) -f CMakeFiles\mainproject.elf.dir\build.make CMakeFiles/mainproject.elf.dir/071a669750a45ed53df10b62e73f6c8d/github_map/kookaburra/Final/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.s
 .PHONY : 071a669750a45ed53df10b62e73f6c8d/github_map/kookaburra/Final/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.s
 
+MS5611.obj: MS5611.cpp.obj
+
+.PHONY : MS5611.obj
+
+# target to build an object file
+MS5611.cpp.obj:
+	$(MAKE) -f CMakeFiles\mainproject.elf.dir\build.make CMakeFiles/mainproject.elf.dir/MS5611.cpp.obj
+.PHONY : MS5611.cpp.obj
+
+MS5611.i: MS5611.cpp.i
+
+.PHONY : MS5611.i
+
+# target to preprocess a source file
+MS5611.cpp.i:
+	$(MAKE) -f CMakeFiles\mainproject.elf.dir\build.make CMakeFiles/mainproject.elf.dir/MS5611.cpp.i
+.PHONY : MS5611.cpp.i
+
+MS5611.s: MS5611.cpp.s
+
+.PHONY : MS5611.s
+
+# target to generate assembly for a file
+MS5611.cpp.s:
+	$(MAKE) -f CMakeFiles\mainproject.elf.dir\build.make CMakeFiles/mainproject.elf.dir/MS5611.cpp.s
+.PHONY : MS5611.cpp.s
+
 airplane.obj: airplane.cpp.obj
 
 .PHONY : airplane.obj
@@ -215,32 +242,32 @@ airplane.cpp.s:
 	$(MAKE) -f CMakeFiles\mainproject.elf.dir\build.make CMakeFiles/mainproject.elf.dir/airplane.cpp.s
 .PHONY : airplane.cpp.s
 
-flash.obj: flash.cpp.obj
+counter.obj: counter.cpp.obj
 
-.PHONY : flash.obj
+.PHONY : counter.obj
 
 # target to build an object file
-flash.cpp.obj:
-	$(MAKE) -f CMakeFiles\mainproject.elf.dir\build.make CMakeFiles/mainproject.elf.dir/flash.cpp.obj
-.PHONY : flash.cpp.obj
+counter.cpp.obj:
+	$(MAKE) -f CMakeFiles\mainproject.elf.dir\build.make CMakeFiles/mainproject.elf.dir/counter.cpp.obj
+.PHONY : counter.cpp.obj
 
-flash.i: flash.cpp.i
+counter.i: counter.cpp.i
 
-.PHONY : flash.i
+.PHONY : counter.i
 
 # target to preprocess a source file
-flash.cpp.i:
-	$(MAKE) -f CMakeFiles\mainproject.elf.dir\build.make CMakeFiles/mainproject.elf.dir/flash.cpp.i
-.PHONY : flash.cpp.i
+counter.cpp.i:
+	$(MAKE) -f CMakeFiles\mainproject.elf.dir\build.make CMakeFiles/mainproject.elf.dir/counter.cpp.i
+.PHONY : counter.cpp.i
 
-flash.s: flash.cpp.s
+counter.s: counter.cpp.s
 
-.PHONY : flash.s
+.PHONY : counter.s
 
 # target to generate assembly for a file
-flash.cpp.s:
-	$(MAKE) -f CMakeFiles\mainproject.elf.dir\build.make CMakeFiles/mainproject.elf.dir/flash.cpp.s
-.PHONY : flash.cpp.s
+counter.cpp.s:
+	$(MAKE) -f CMakeFiles\mainproject.elf.dir\build.make CMakeFiles/mainproject.elf.dir/counter.cpp.s
+.PHONY : counter.cpp.s
 
 main.obj: main.cpp.obj
 
@@ -419,12 +446,15 @@ help:
 	@echo ... 071a669750a45ed53df10b62e73f6c8d/github_map/kookaburra/Final/gemeenschappelijk/basis/stm32f0/syscalls_cm0.obj
 	@echo ... 071a669750a45ed53df10b62e73f6c8d/github_map/kookaburra/Final/gemeenschappelijk/basis/stm32f0/syscalls_cm0.i
 	@echo ... 071a669750a45ed53df10b62e73f6c8d/github_map/kookaburra/Final/gemeenschappelijk/basis/stm32f0/syscalls_cm0.s
+	@echo ... MS5611.obj
+	@echo ... MS5611.i
+	@echo ... MS5611.s
 	@echo ... airplane.obj
 	@echo ... airplane.i
 	@echo ... airplane.s
-	@echo ... flash.obj
-	@echo ... flash.i
-	@echo ... flash.s
+	@echo ... counter.obj
+	@echo ... counter.i
+	@echo ... counter.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

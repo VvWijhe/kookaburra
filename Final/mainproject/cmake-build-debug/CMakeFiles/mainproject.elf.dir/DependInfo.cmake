@@ -31,8 +31,9 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   "../../gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/inc"
   )
 set(CMAKE_DEPENDS_CHECK_CXX
+  "C:/Users/Martijn/Desktop/school/Pr3Kookaburra/github map/kookaburra/Final/mainproject/MS5611.cpp" "C:/Users/Martijn/Desktop/school/Pr3Kookaburra/github map/kookaburra/Final/mainproject/cmake-build-debug/CMakeFiles/mainproject.elf.dir/MS5611.cpp.obj"
   "C:/Users/Martijn/Desktop/school/Pr3Kookaburra/github map/kookaburra/Final/mainproject/airplane.cpp" "C:/Users/Martijn/Desktop/school/Pr3Kookaburra/github map/kookaburra/Final/mainproject/cmake-build-debug/CMakeFiles/mainproject.elf.dir/airplane.cpp.obj"
-  "C:/Users/Martijn/Desktop/school/Pr3Kookaburra/github map/kookaburra/Final/mainproject/flash.cpp" "C:/Users/Martijn/Desktop/school/Pr3Kookaburra/github map/kookaburra/Final/mainproject/cmake-build-debug/CMakeFiles/mainproject.elf.dir/flash.cpp.obj"
+  "C:/Users/Martijn/Desktop/school/Pr3Kookaburra/github map/kookaburra/Final/mainproject/counter.cpp" "C:/Users/Martijn/Desktop/school/Pr3Kookaburra/github map/kookaburra/Final/mainproject/cmake-build-debug/CMakeFiles/mainproject.elf.dir/counter.cpp.obj"
   "C:/Users/Martijn/Desktop/school/Pr3Kookaburra/github map/kookaburra/Final/mainproject/main.cpp" "C:/Users/Martijn/Desktop/school/Pr3Kookaburra/github map/kookaburra/Final/mainproject/cmake-build-debug/CMakeFiles/mainproject.elf.dir/main.cpp.obj"
   "C:/Users/Martijn/Desktop/school/Pr3Kookaburra/github map/kookaburra/Final/mainproject/mpu6050.cpp" "C:/Users/Martijn/Desktop/school/Pr3Kookaburra/github map/kookaburra/Final/mainproject/cmake-build-debug/CMakeFiles/mainproject.elf.dir/mpu6050.cpp.obj"
   "C:/Users/Martijn/Desktop/school/Pr3Kookaburra/github map/kookaburra/Final/mainproject/pid.cpp" "C:/Users/Martijn/Desktop/school/Pr3Kookaburra/github map/kookaburra/Final/mainproject/cmake-build-debug/CMakeFiles/mainproject.elf.dir/pid.cpp.obj"
