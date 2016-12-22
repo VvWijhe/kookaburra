@@ -222,7 +222,7 @@ void Airplane::controlMotor(uint32_t setPoint) {
     altitudeControlValue *= 0.4;
 
     if (altitudeControlValue < 0) altitudeControlValue = 0;
-    if (altitudeControlValue > 1000) altitudeControlValue = 1000;
+    if (altitudeControlValue > 2000) altitudeControlValue = 2000;
 
     control.setOnTime(PWM_MOTOR, (uint32_t) (1000 + altitudeControlValue));
 }
