@@ -62,9 +62,6 @@ private:
     static MS5611 barometer;
 
     flightMode_t mode;
-
-    void CapCompInit ( void );
-
 };
 
 #ifdef __cplusplus

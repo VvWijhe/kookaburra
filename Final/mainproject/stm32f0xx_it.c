@@ -2,9 +2,6 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include <airplane.h>
-#include <stm32f0_discovery.h>
-#include <counter.h>
-#include <stm32f0xx_tim.h>
 #include "stm32f0xx_it.h"
 
 #define RCHIGH 5.0
@@ -89,6 +86,7 @@ void USART1_IRQHandler() {
   * @retval None
   */
 int count = 0;
+
 void TIM3_IRQHandler() {
     if (TIM_GetITStatus(TIM3, TIM_IT_Update) != RESET) {
         TIM_ClearITPendingBit(TIM3, TIM_IT_Update);
@@ -97,7 +95,7 @@ void TIM3_IRQHandler() {
 //        verticalSpeed = (float) ((currentAltitude - previousAltitude) / 0.2);
 
         // Delay = (count - 1) / TIM3 freq
-        if(count++ == 4){
+        if (count++ == 4) {
             Timer::setTim17(1);
 
             count = 0;
@@ -137,11 +135,12 @@ void TIM16_IRQHandler(void) {
   * @param  None
   * @retval None
   */
-void TIM15_IRQHandler(void)
-{
+void TIM15_IRQHandler(void) {
     __IO uint32_t IC2Value = 0;
     __IO uint32_t DutyCycle = 0;
-    typedef enum { OFF = 0, ON } FlightPlanner;
+    typedef enum {
+        OFF = 0, ON
+    } FlightPlanner;
     FlightPlanner Newstate = OFF; //the mode the plane should work with, auto or manual.
 
     /* Clear TIM2 Capture compare interrupt pending bit */
@@ -150,40 +149,35 @@ void TIM15_IRQHandler(void)
     /* Get the Input Capture value */
     IC2Value = TIM_GetCapture2(TIM15);
 
-    if ( IC2Value > TIM_GetCapture1(TIM15) )
-    {
+    if (IC2Value > TIM_GetCapture1(TIM15)) {
         /* Duty cycle computation */
         DutyCycle = IC2Value - TIM_GetCapture1(TIM15);
         PrevDutyCycle = DutyCycle;
-        DutyCyclePC = (float)( DutyCycle - 49200 ) / 163.2;
-        if ( DutyCyclePC < 0 )
-        {
+        DutyCyclePC = (float) (DutyCycle - 49200) / 163.2;
+        if (DutyCyclePC < 0) {
             DutyCyclePC += 301.9;
         }
-    }
-    else
-    {
+    } else {
         DutyCycle = PrevDutyCycle;
     }
 
     //from here on the flightplanner switch is processed.
     // NOTE: MAXATTEMPTS, RCHIGH and RCLOW are still trivial, give them actual values.
-    if ( StepCount == 0 && DutyCyclePC > RCHIGH && Newstate == OFF ) //first up
+    if (StepCount == 0 && DutyCyclePC > RCHIGH && Newstate == OFF) //first up
     {
         StepCount++;
         Attempts = 0;
-    }
-    else if ( StepCount == 1 && DutyCyclePC < RCLOW && Attempts < MAXATTEMPTS && Newstate == OFF ) //then down
+    } else if (StepCount == 1 && DutyCyclePC < RCLOW && Attempts < MAXATTEMPTS && Newstate == OFF) //then down
     {
         StepCount++;
         Attempts = 0;
-    }
-    else if ( StepCount == 2 && DutyCyclePC > RCHIGH && Attempts < MAXATTEMPTS && Newstate == OFF ) //up again, enable Flightplanner
+    } else if (StepCount == 2 && DutyCyclePC > RCHIGH && Attempts < MAXATTEMPTS &&
+               Newstate == OFF) //up again, enable Flightplanner
     {
         Newstate = ON;
         Attempts = 0;
-    }
-    else if ( Newstate == ON && Attempts > MAXATTEMPTS && DutyCyclePC < RCLOW ) //down when Flightplanner is active disables it
+    } else if (Newstate == ON && Attempts > MAXATTEMPTS &&
+               DutyCyclePC < RCLOW) //down when Flightplanner is active disables it
     {
         Newstate = OFF;
         Attempts = 0;

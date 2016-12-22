@@ -17,10 +17,8 @@ public:
     AirplaneControl();
 
     void setOnTime(pwmFunction_t function, uint32_t time);
-    void initServo();
-    void initMotor();
-    void InitCapComp( void );
 
+    void InitCapComp();
 
     void init();
 

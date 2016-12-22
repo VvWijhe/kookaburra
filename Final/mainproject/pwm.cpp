@@ -62,55 +62,41 @@ void AirplaneControl::init() {
     //(#) Call the TIM_Cmd(ENABLE) function to enable the TIM counter.
     TIM_Cmd(TIM2, ENABLE);
 
+    InitCapComp();
+
     isEnabled = true;
-}
-
-/// @brief sets pwm on time.
-/// @param time: on time in ms
-void AirplaneControl::setOnTime(pwmFunction_t function, uint32_t time) {
-    if (function == PWM_SERVO_ELEVATOR && isEnabled) {
-        TIM_SetCompare1(TIM2, time);
-    } else if (function == PWM_SERVO_RUDDER && isEnabled) {
-        TIM_SetCompare2(TIM2, time);
-    } else if (function == PWM_MOTOR && isEnabled) {
-        TIM_SetCompare3(TIM2, time);
-    } else {
-        while (1) {};
-    }
-
 }
 
 /// @brief PWM Capture Compare Init.
 /// @param None
-void AirplaneControl::InitCapComp( void )
-{
+void AirplaneControl::InitCapComp() {
     // GPIOB Periph clock enable
     RCC->AHBENR |= RCC_AHBENR_GPIOBEN;
     // PB14 in input mode
-    GPIOB->MODER |= (GPIO_MODER_MODER14_1) ;
+    GPIOB->MODER |= (GPIO_MODER_MODER14_1);
     // Push pull mode selected
-    GPIOB->OTYPER &= ~(GPIO_OTYPER_OT_14) ;
+    GPIOB->OTYPER &= ~(GPIO_OTYPER_OT_14);
     // Maximum speed setting
     GPIOB->OSPEEDR |= (GPIO_OSPEEDER_OSPEEDR14);
     // Pull-up and pull-down resistors disabled
     GPIOB->PUPDR &= ~(GPIO_PUPDR_PUPDR14);
 
-    TIM_ICInitTypeDef  TIM_ICInitStructure;
+    TIM_ICInitTypeDef TIM_ICInitStructure;
     GPIO_InitTypeDef GPIO_InitStructure;
     NVIC_InitTypeDef NVIC_InitStructure;
 
     /* TIM15 clock enable */
-    RCC_APB2PeriphClockCmd( RCC_APB2Periph_TIM15 , ENABLE );
+    RCC_APB2PeriphClockCmd(RCC_APB2Periph_TIM15, ENABLE);
 
     /* GPIOB clock enable */
     RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOB, ENABLE);
 
     /* TIM15 channel 1 configuration : PB.014 */
-    GPIO_InitStructure.GPIO_Pin   = GPIO_Pin_14;
-    GPIO_InitStructure.GPIO_Mode  = GPIO_Mode_AF;
+    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_14;
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;
     GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
     GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
-    GPIO_InitStructure.GPIO_PuPd  = GPIO_PuPd_UP ;
+    GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;
     GPIO_Init(GPIOB, &GPIO_InitStructure);
 
     /* Connect TIM pin to AF1 */
@@ -150,11 +136,25 @@ void AirplaneControl::InitCapComp( void )
 
     /* Select the slave Mode: Reset Mode */
     TIM_SelectSlaveMode(TIM15, TIM_SlaveMode_Reset);
-    TIM_SelectMasterSlaveMode(TIM15,TIM_MasterSlaveMode_Enable);
+    TIM_SelectMasterSlaveMode(TIM15, TIM_MasterSlaveMode_Enable);
 
     /* TIM enable counter */
     TIM_Cmd(TIM15, ENABLE);
 
     /* Enable the CC1 Interrupt Request */
     TIM_ITConfig(TIM15, TIM_IT_CC1, ENABLE);
+}
+
+/// @brief sets pwm on time.
+/// @param time: on time in ms
+void AirplaneControl::setOnTime(pwmFunction_t function, uint32_t time) {
+    if (function == PWM_SERVO_ELEVATOR && isEnabled) {
+        TIM_SetCompare1(TIM2, time);
+    } else if (function == PWM_SERVO_RUDDER && isEnabled) {
+        TIM_SetCompare2(TIM2, time);
+    } else if (function == PWM_MOTOR && isEnabled) {
+        TIM_SetCompare3(TIM2, time);
+    } else {
+        while (1) {};
+    }
 }
