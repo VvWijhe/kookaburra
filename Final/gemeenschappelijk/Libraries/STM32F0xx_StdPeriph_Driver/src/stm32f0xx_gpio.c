@@ -182,17 +182,17 @@ void GPIO_Init(GPIO_TypeDef* GPIOx, GPIO_InitTypeDef* GPIO_InitStruct)
     {
       if ((GPIO_InitStruct->GPIO_Mode == GPIO_Mode_OUT) || (GPIO_InitStruct->GPIO_Mode == GPIO_Mode_AF))
       {
-        /* Check Speed mode parameters */
+        /* Check Speed flightMode parameters */
         assert_param(IS_GPIO_SPEED(GPIO_InitStruct->GPIO_Speed));
 
-        /* Speed mode configuration */
+        /* Speed flightMode configuration */
         GPIOx->OSPEEDR &= ~(GPIO_OSPEEDER_OSPEEDR0 << (pinpos * 2));
         GPIOx->OSPEEDR |= ((uint32_t)(GPIO_InitStruct->GPIO_Speed) << (pinpos * 2));
 
-        /* Check Output mode parameters */
+        /* Check Output flightMode parameters */
         assert_param(IS_GPIO_OTYPE(GPIO_InitStruct->GPIO_OType));
 
-        /* Output mode configuration */
+        /* Output flightMode configuration */
         GPIOx->OTYPER &= ~((GPIO_OTYPER_OT_0) << ((uint16_t)pinpos));
         GPIOx->OTYPER |= (uint16_t)(((uint16_t)GPIO_InitStruct->GPIO_OType) << ((uint16_t)pinpos));
       }

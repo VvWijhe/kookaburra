@@ -12,7 +12,7 @@
 ;*                      - Configure the clock system
 ;*                      - Branches to __main in the C library (which eventually
 ;*                        calls main()).
-;*                      After Reset the CortexM3 processor is in Thread mode,
+;*                      After Reset the CortexM3 processor is in Thread flightMode,
 ;*                      priority is Privileged, and the Stack is set to Main.
 ;* <<< Use Configuration Wizard in Context Menu >>>   
 ;*******************************************************************************

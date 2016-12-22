@@ -373,7 +373,7 @@ static void SetSysClock(void)
 
   if (HSEStatus == (uint32_t)0x01)
   {
-    /* Select regulator voltage output Scale 1 mode, System frequency up to 168 MHz */
+    /* Select regulator voltage output Scale 1 flightMode, System frequency up to 168 MHz */
     RCC->APB1ENR |= RCC_APB1ENR_PWREN;
     PWR->CR |= PWR_CR_VOS;
 
@@ -460,7 +460,7 @@ void SystemInit_ExtMemCtl(void)
   /* Connect PDx pins to FSMC Alternate function */
   GPIOD->AFR[0]  = 0x00cc00cc;
   GPIOD->AFR[1]  = 0xcc0ccccc;
-  /* Configure PDx pins in Alternate function mode */  
+  /* Configure PDx pins in Alternate function flightMode */
   GPIOD->MODER   = 0xaaaa0a0a;
   /* Configure PDx pins speed to 100 MHz */  
   GPIOD->OSPEEDR = 0xffff0f0f;
@@ -472,7 +472,7 @@ void SystemInit_ExtMemCtl(void)
   /* Connect PEx pins to FSMC Alternate function */
   GPIOE->AFR[0]  = 0xc00cc0cc;
   GPIOE->AFR[1]  = 0xcccccccc;
-  /* Configure PEx pins in Alternate function mode */ 
+  /* Configure PEx pins in Alternate function flightMode */
   GPIOE->MODER   = 0xaaaa828a;
   /* Configure PEx pins speed to 100 MHz */ 
   GPIOE->OSPEEDR = 0xffffc3cf;
@@ -484,7 +484,7 @@ void SystemInit_ExtMemCtl(void)
   /* Connect PFx pins to FSMC Alternate function */
   GPIOF->AFR[0]  = 0x00cccccc;
   GPIOF->AFR[1]  = 0xcccc0000;
-  /* Configure PFx pins in Alternate function mode */   
+  /* Configure PFx pins in Alternate function flightMode */
   GPIOF->MODER   = 0xaa000aaa;
   /* Configure PFx pins speed to 100 MHz */ 
   GPIOF->OSPEEDR = 0xff000fff;
@@ -496,7 +496,7 @@ void SystemInit_ExtMemCtl(void)
   /* Connect PGx pins to FSMC Alternate function */
   GPIOG->AFR[0]  = 0x00cccccc;
   GPIOG->AFR[1]  = 0x000000c0;
-  /* Configure PGx pins in Alternate function mode */ 
+  /* Configure PGx pins in Alternate function flightMode */
   GPIOG->MODER   = 0x00080aaa;
   /* Configure PGx pins speed to 100 MHz */ 
   GPIOG->OSPEEDR = 0x000c0fff;

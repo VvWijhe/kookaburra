@@ -231,7 +231,7 @@ void USART_Init(USART_TypeDef* USARTx, USART_InitTypeDef* USART_InitStruct)
   /* Clear M, PCE, PS, TE and RE bits */
   tmpreg &= (uint32_t)~((uint32_t)CR1_CLEAR_MASK);
   
-  /* Configure the USART Word Length, Parity and mode ----------------------- */
+  /* Configure the USART Word Length, Parity and flightMode ----------------------- */
   /* Set the M bits according to USART_WordLength value */
   /* Set PCE and PS bits according to USART_Parity value */
   /* Set TE and RE bits according to USART_Mode value */
@@ -269,13 +269,13 @@ void USART_Init(USART_TypeDef* USARTx, USART_InitTypeDef* USART_InitStruct)
   /* Determine the integer part */
   if ((USARTx->CR1 & USART_CR1_OVER8) != 0)
   {
-    /* (divider * 10) computing in case Oversampling mode is 8 Samples */
+    /* (divider * 10) computing in case Oversampling flightMode is 8 Samples */
     divider = (uint32_t)((2 * apbclock) / (USART_InitStruct->USART_BaudRate));
     tmpreg  = (uint32_t)((2 * apbclock) % (USART_InitStruct->USART_BaudRate));
   }
   else /* if ((USARTx->CR1 & CR1_OVER8_Set) == 0) */
   {
-    /* (divider * 10) computing in case Oversampling mode is 16 Samples */
+    /* (divider * 10) computing in case Oversampling flightMode is 16 Samples */
     divider = (uint32_t)((apbclock) / (USART_InitStruct->USART_BaudRate));
     tmpreg  = (uint32_t)((apbclock) % (USART_InitStruct->USART_BaudRate));
   }
@@ -286,7 +286,7 @@ void USART_Init(USART_TypeDef* USARTx, USART_InitTypeDef* USART_InitStruct)
     divider++;
   } 
   
-  /* Implement the divider in case Oversampling mode is 8 Samples */
+  /* Implement the divider in case Oversampling flightMode is 8 Samples */
   if ((USARTx->CR1 & USART_CR1_OVER8) != 0)
   {
     /* get the LSB of divider and shift it to the right by 1 bit */
@@ -439,12 +439,12 @@ void USART_OverSampling8Cmd(USART_TypeDef* USARTx, FunctionalState NewState)
   
   if (NewState != DISABLE)
   {
-    /* Enable the 8x Oversampling mode by setting the OVER8 bit in the CR1 register */
+    /* Enable the 8x Oversampling flightMode by setting the OVER8 bit in the CR1 register */
     USARTx->CR1 |= USART_CR1_OVER8;
   }
   else
   {
-    /* Disable the 8x Oversampling mode by clearing the OVER8 bit in the CR1 register */
+    /* Disable the 8x Oversampling flightMode by clearing the OVER8 bit in the CR1 register */
     USARTx->CR1 &= (uint32_t)~((uint32_t)USART_CR1_OVER8);
   }
 }  
@@ -709,13 +709,13 @@ void USART_STOPModeCmd(USART_TypeDef* USARTx, FunctionalState NewState)
   
   if (NewState != DISABLE)
   {
-    /* Enable the selected USART in STOP mode by setting the UESM bit in the CR1
+    /* Enable the selected USART in STOP flightMode by setting the UESM bit in the CR1
        register */
     USARTx->CR1 |= USART_CR1_UESM;
   }
   else
   {
-    /* Disable the selected USART in STOP mode by clearing the UE bit in the CR1
+    /* Disable the selected USART in STOP flightMode by clearing the UE bit in the CR1
        register */
     USARTx->CR1 &= (uint32_t)~((uint32_t)USART_CR1_UESM);
   }
@@ -944,12 +944,12 @@ void USART_MuteModeCmd(USART_TypeDef* USARTx, FunctionalState NewState)
   
   if (NewState != DISABLE)
   {
-    /* Enable the USART mute mode by setting the MME bit in the CR1 register */
+    /* Enable the USART mute flightMode by setting the MME bit in the CR1 register */
     USARTx->CR1 |= USART_CR1_MME;
   }
   else
   {
-    /* Disable the USART mute mode by clearing the MME bit in the CR1 register */
+    /* Disable the USART mute flightMode by clearing the MME bit in the CR1 register */
     USARTx->CR1 &= (uint32_t)~((uint32_t)USART_CR1_MME);
   }
 }
@@ -1070,12 +1070,12 @@ void USART_LINCmd(USART_TypeDef* USARTx, FunctionalState NewState)
 
   if (NewState != DISABLE)
   {
-    /* Enable the LIN mode by setting the LINEN bit in the CR2 register */
+    /* Enable the LIN flightMode by setting the LINEN bit in the CR2 register */
     USARTx->CR2 |= USART_CR2_LINEN;
   }
   else
   {
-    /* Disable the LIN mode by clearing the LINEN bit in the CR2 register */
+    /* Disable the LIN flightMode by clearing the LINEN bit in the CR2 register */
     USARTx->CR2 &= (uint32_t)~((uint32_t)USART_CR2_LINEN);
   }
 }
@@ -1126,12 +1126,12 @@ void USART_HalfDuplexCmd(USART_TypeDef* USARTx, FunctionalState NewState)
   
   if (NewState != DISABLE)
   {
-    /* Enable the Half-Duplex mode by setting the HDSEL bit in the CR3 register */
+    /* Enable the Half-Duplex flightMode by setting the HDSEL bit in the CR3 register */
     USARTx->CR3 |= USART_CR3_HDSEL;
   }
   else
   {
-    /* Disable the Half-Duplex mode by clearing the HDSEL bit in the CR3 register */
+    /* Disable the Half-Duplex flightMode by clearing the HDSEL bit in the CR3 register */
     USARTx->CR3 &= (uint32_t)~((uint32_t)USART_CR3_HDSEL);
   }
 }
@@ -1223,12 +1223,12 @@ void USART_SmartCardCmd(USART_TypeDef* USARTx, FunctionalState NewState)
   assert_param(IS_FUNCTIONAL_STATE(NewState));
   if (NewState != DISABLE)
   {
-    /* Enable the SC mode by setting the SCEN bit in the CR3 register */
+    /* Enable the SC flightMode by setting the SCEN bit in the CR3 register */
     USARTx->CR3 |= USART_CR3_SCEN;
   }
   else
   {
-    /* Disable the SC mode by clearing the SCEN bit in the CR3 register */
+    /* Disable the SC flightMode by clearing the SCEN bit in the CR3 register */
     USARTx->CR3 &= (uint32_t)~((uint32_t)USART_CR3_SCEN);
   }
 }
@@ -1367,12 +1367,12 @@ void USART_IrDACmd(USART_TypeDef* USARTx, FunctionalState NewState)
 
   if (NewState != DISABLE)
   {
-    /* Enable the IrDA mode by setting the IREN bit in the CR3 register */
+    /* Enable the IrDA flightMode by setting the IREN bit in the CR3 register */
     USARTx->CR3 |= USART_CR3_IREN;
   }
   else
   {
-    /* Disable the IrDA mode by clearing the IREN bit in the CR3 register */
+    /* Disable the IrDA flightMode by clearing the IREN bit in the CR3 register */
     USARTx->CR3 &= (uint32_t)~((uint32_t)USART_CR3_IREN);
   }
 }

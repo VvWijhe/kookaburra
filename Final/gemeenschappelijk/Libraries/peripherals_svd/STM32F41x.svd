@@ -1307,7 +1307,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>KEYSIZE</name>
-              <description>Key size selection (AES mode
+              <description>Key size selection (AES flightMode
               only)</description>
               <bitOffset>8</bitOffset>
               <bitWidth>2</bitWidth>
@@ -1322,7 +1322,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>ALGOMODE</name>
-              <description>Algorithm mode</description>
+              <description>Algorithm flightMode</description>
               <bitOffset>3</bitOffset>
               <bitWidth>3</bitWidth>
               <access>read-write</access>
@@ -3986,7 +3986,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>EDM</name>
-              <description>Extended data mode</description>
+              <description>Extended data flightMode</description>
               <bitOffset>10</bitOffset>
               <bitWidth>2</bitWidth>
             </field>
@@ -4037,7 +4037,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>CM</name>
-              <description>Capture mode</description>
+              <description>Capture flightMode</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -6177,7 +6177,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>DMEIF3</name>
-              <description>Stream x direct mode error interrupt
+              <description>Stream x direct flightMode error interrupt
               flag (x=3..0)</description>
               <bitOffset>24</bitOffset>
               <bitWidth>1</bitWidth>
@@ -6212,7 +6212,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>DMEIF2</name>
-              <description>Stream x direct mode error interrupt
+              <description>Stream x direct flightMode error interrupt
               flag (x=3..0)</description>
               <bitOffset>18</bitOffset>
               <bitWidth>1</bitWidth>
@@ -6247,7 +6247,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>DMEIF1</name>
-              <description>Stream x direct mode error interrupt
+              <description>Stream x direct flightMode error interrupt
               flag (x=3..0)</description>
               <bitOffset>8</bitOffset>
               <bitWidth>1</bitWidth>
@@ -6282,7 +6282,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>DMEIF0</name>
-              <description>Stream x direct mode error interrupt
+              <description>Stream x direct flightMode error interrupt
               flag (x=3..0)</description>
               <bitOffset>2</bitOffset>
               <bitWidth>1</bitWidth>
@@ -6328,7 +6328,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>DMEIF7</name>
-              <description>Stream x direct mode error interrupt
+              <description>Stream x direct flightMode error interrupt
               flag (x=7..4)</description>
               <bitOffset>24</bitOffset>
               <bitWidth>1</bitWidth>
@@ -6363,7 +6363,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>DMEIF6</name>
-              <description>Stream x direct mode error interrupt
+              <description>Stream x direct flightMode error interrupt
               flag (x=7..4)</description>
               <bitOffset>18</bitOffset>
               <bitWidth>1</bitWidth>
@@ -6398,7 +6398,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>DMEIF5</name>
-              <description>Stream x direct mode error interrupt
+              <description>Stream x direct flightMode error interrupt
               flag (x=7..4)</description>
               <bitOffset>8</bitOffset>
               <bitWidth>1</bitWidth>
@@ -6433,7 +6433,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>DMEIF4</name>
-              <description>Stream x direct mode error interrupt
+              <description>Stream x direct flightMode error interrupt
               flag (x=7..4)</description>
               <bitOffset>2</bitOffset>
               <bitWidth>1</bitWidth>
@@ -6480,7 +6480,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>CDMEIF3</name>
-              <description>Stream x clear direct mode error
+              <description>Stream x clear direct flightMode error
               interrupt flag (x = 3..0)</description>
               <bitOffset>24</bitOffset>
               <bitWidth>1</bitWidth>
@@ -6515,7 +6515,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>CDMEIF2</name>
-              <description>Stream x clear direct mode error
+              <description>Stream x clear direct flightMode error
               interrupt flag (x = 3..0)</description>
               <bitOffset>18</bitOffset>
               <bitWidth>1</bitWidth>
@@ -6550,7 +6550,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>CDMEIF1</name>
-              <description>Stream x clear direct mode error
+              <description>Stream x clear direct flightMode error
               interrupt flag (x = 3..0)</description>
               <bitOffset>8</bitOffset>
               <bitWidth>1</bitWidth>
@@ -6585,7 +6585,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>CDMEIF0</name>
-              <description>Stream x clear direct mode error
+              <description>Stream x clear direct flightMode error
               interrupt flag (x = 3..0)</description>
               <bitOffset>2</bitOffset>
               <bitWidth>1</bitWidth>
@@ -6632,7 +6632,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>CDMEIF7</name>
-              <description>Stream x clear direct mode error
+              <description>Stream x clear direct flightMode error
               interrupt flag (x = 7..4)</description>
               <bitOffset>24</bitOffset>
               <bitWidth>1</bitWidth>
@@ -6667,7 +6667,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>CDMEIF6</name>
-              <description>Stream x clear direct mode error
+              <description>Stream x clear direct flightMode error
               interrupt flag (x = 7..4)</description>
               <bitOffset>18</bitOffset>
               <bitWidth>1</bitWidth>
@@ -6702,7 +6702,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>CDMEIF5</name>
-              <description>Stream x clear direct mode error
+              <description>Stream x clear direct flightMode error
               interrupt flag (x = 7..4)</description>
               <bitOffset>8</bitOffset>
               <bitWidth>1</bitWidth>
@@ -6737,7 +6737,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>CDMEIF4</name>
-              <description>Stream x clear direct mode error
+              <description>Stream x clear direct flightMode error
               interrupt flag (x = 7..4)</description>
               <bitOffset>2</bitOffset>
               <bitWidth>1</bitWidth>
@@ -6784,13 +6784,13 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             <field>
               <name>CT</name>
               <description>Current target (only in double buffer
-              mode)</description>
+              flightMode)</description>
               <bitOffset>19</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>DBM</name>
-              <description>Double buffer mode</description>
+              <description>Double buffer flightMode</description>
               <bitOffset>18</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -6821,19 +6821,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>MINC</name>
-              <description>Memory increment mode</description>
+              <description>Memory increment flightMode</description>
               <bitOffset>10</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>PINC</name>
-              <description>Peripheral increment mode</description>
+              <description>Peripheral increment flightMode</description>
               <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>CIRC</name>
-              <description>Circular mode</description>
+              <description>Circular flightMode</description>
               <bitOffset>8</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -6872,7 +6872,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>DMEIE</name>
-              <description>Direct mode error interrupt
+              <description>Direct flightMode error interrupt
               enable</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
@@ -6954,7 +6954,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             <field>
               <name>M1A</name>
               <description>Memory 1 address (used in case of Double
-              buffer mode)</description>
+              buffer flightMode)</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
             </field>
@@ -6985,7 +6985,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>DMDIS</name>
-              <description>Direct mode disable</description>
+              <description>Direct flightMode disable</description>
               <bitOffset>2</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -7038,13 +7038,13 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             <field>
               <name>CT</name>
               <description>Current target (only in double buffer
-              mode)</description>
+              flightMode)</description>
               <bitOffset>19</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>DBM</name>
-              <description>Double buffer mode</description>
+              <description>Double buffer flightMode</description>
               <bitOffset>18</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -7075,19 +7075,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>MINC</name>
-              <description>Memory increment mode</description>
+              <description>Memory increment flightMode</description>
               <bitOffset>10</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>PINC</name>
-              <description>Peripheral increment mode</description>
+              <description>Peripheral increment flightMode</description>
               <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>CIRC</name>
-              <description>Circular mode</description>
+              <description>Circular flightMode</description>
               <bitOffset>8</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -7126,7 +7126,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>DMEIE</name>
-              <description>Direct mode error interrupt
+              <description>Direct flightMode error interrupt
               enable</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
@@ -7208,7 +7208,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             <field>
               <name>M1A</name>
               <description>Memory 1 address (used in case of Double
-              buffer mode)</description>
+              buffer flightMode)</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
             </field>
@@ -7239,7 +7239,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>DMDIS</name>
-              <description>Direct mode disable</description>
+              <description>Direct flightMode disable</description>
               <bitOffset>2</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -7292,13 +7292,13 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             <field>
               <name>CT</name>
               <description>Current target (only in double buffer
-              mode)</description>
+              flightMode)</description>
               <bitOffset>19</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>DBM</name>
-              <description>Double buffer mode</description>
+              <description>Double buffer flightMode</description>
               <bitOffset>18</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -7329,19 +7329,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>MINC</name>
-              <description>Memory increment mode</description>
+              <description>Memory increment flightMode</description>
               <bitOffset>10</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>PINC</name>
-              <description>Peripheral increment mode</description>
+              <description>Peripheral increment flightMode</description>
               <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>CIRC</name>
-              <description>Circular mode</description>
+              <description>Circular flightMode</description>
               <bitOffset>8</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -7380,7 +7380,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>DMEIE</name>
-              <description>Direct mode error interrupt
+              <description>Direct flightMode error interrupt
               enable</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
@@ -7462,7 +7462,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             <field>
               <name>M1A</name>
               <description>Memory 1 address (used in case of Double
-              buffer mode)</description>
+              buffer flightMode)</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
             </field>
@@ -7493,7 +7493,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>DMDIS</name>
-              <description>Direct mode disable</description>
+              <description>Direct flightMode disable</description>
               <bitOffset>2</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -7546,13 +7546,13 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             <field>
               <name>CT</name>
               <description>Current target (only in double buffer
-              mode)</description>
+              flightMode)</description>
               <bitOffset>19</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>DBM</name>
-              <description>Double buffer mode</description>
+              <description>Double buffer flightMode</description>
               <bitOffset>18</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -7583,19 +7583,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>MINC</name>
-              <description>Memory increment mode</description>
+              <description>Memory increment flightMode</description>
               <bitOffset>10</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>PINC</name>
-              <description>Peripheral increment mode</description>
+              <description>Peripheral increment flightMode</description>
               <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>CIRC</name>
-              <description>Circular mode</description>
+              <description>Circular flightMode</description>
               <bitOffset>8</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -7634,7 +7634,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>DMEIE</name>
-              <description>Direct mode error interrupt
+              <description>Direct flightMode error interrupt
               enable</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
@@ -7716,7 +7716,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             <field>
               <name>M1A</name>
               <description>Memory 1 address (used in case of Double
-              buffer mode)</description>
+              buffer flightMode)</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
             </field>
@@ -7747,7 +7747,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>DMDIS</name>
-              <description>Direct mode disable</description>
+              <description>Direct flightMode disable</description>
               <bitOffset>2</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -7800,13 +7800,13 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             <field>
               <name>CT</name>
               <description>Current target (only in double buffer
-              mode)</description>
+              flightMode)</description>
               <bitOffset>19</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>DBM</name>
-              <description>Double buffer mode</description>
+              <description>Double buffer flightMode</description>
               <bitOffset>18</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -7837,19 +7837,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>MINC</name>
-              <description>Memory increment mode</description>
+              <description>Memory increment flightMode</description>
               <bitOffset>10</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>PINC</name>
-              <description>Peripheral increment mode</description>
+              <description>Peripheral increment flightMode</description>
               <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>CIRC</name>
-              <description>Circular mode</description>
+              <description>Circular flightMode</description>
               <bitOffset>8</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -7888,7 +7888,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>DMEIE</name>
-              <description>Direct mode error interrupt
+              <description>Direct flightMode error interrupt
               enable</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
@@ -7970,7 +7970,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             <field>
               <name>M1A</name>
               <description>Memory 1 address (used in case of Double
-              buffer mode)</description>
+              buffer flightMode)</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
             </field>
@@ -8001,7 +8001,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>DMDIS</name>
-              <description>Direct mode disable</description>
+              <description>Direct flightMode disable</description>
               <bitOffset>2</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -8054,13 +8054,13 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             <field>
               <name>CT</name>
               <description>Current target (only in double buffer
-              mode)</description>
+              flightMode)</description>
               <bitOffset>19</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>DBM</name>
-              <description>Double buffer mode</description>
+              <description>Double buffer flightMode</description>
               <bitOffset>18</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -8091,19 +8091,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>MINC</name>
-              <description>Memory increment mode</description>
+              <description>Memory increment flightMode</description>
               <bitOffset>10</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>PINC</name>
-              <description>Peripheral increment mode</description>
+              <description>Peripheral increment flightMode</description>
               <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>CIRC</name>
-              <description>Circular mode</description>
+              <description>Circular flightMode</description>
               <bitOffset>8</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -8142,7 +8142,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>DMEIE</name>
-              <description>Direct mode error interrupt
+              <description>Direct flightMode error interrupt
               enable</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
@@ -8224,7 +8224,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             <field>
               <name>M1A</name>
               <description>Memory 1 address (used in case of Double
-              buffer mode)</description>
+              buffer flightMode)</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
             </field>
@@ -8255,7 +8255,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>DMDIS</name>
-              <description>Direct mode disable</description>
+              <description>Direct flightMode disable</description>
               <bitOffset>2</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -8308,13 +8308,13 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             <field>
               <name>CT</name>
               <description>Current target (only in double buffer
-              mode)</description>
+              flightMode)</description>
               <bitOffset>19</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>DBM</name>
-              <description>Double buffer mode</description>
+              <description>Double buffer flightMode</description>
               <bitOffset>18</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -8345,19 +8345,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>MINC</name>
-              <description>Memory increment mode</description>
+              <description>Memory increment flightMode</description>
               <bitOffset>10</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>PINC</name>
-              <description>Peripheral increment mode</description>
+              <description>Peripheral increment flightMode</description>
               <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>CIRC</name>
-              <description>Circular mode</description>
+              <description>Circular flightMode</description>
               <bitOffset>8</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -8396,7 +8396,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>DMEIE</name>
-              <description>Direct mode error interrupt
+              <description>Direct flightMode error interrupt
               enable</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
@@ -8478,7 +8478,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             <field>
               <name>M1A</name>
               <description>Memory 1 address (used in case of Double
-              buffer mode)</description>
+              buffer flightMode)</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
             </field>
@@ -8509,7 +8509,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>DMDIS</name>
-              <description>Direct mode disable</description>
+              <description>Direct flightMode disable</description>
               <bitOffset>2</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -8562,13 +8562,13 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             <field>
               <name>CT</name>
               <description>Current target (only in double buffer
-              mode)</description>
+              flightMode)</description>
               <bitOffset>19</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>DBM</name>
-              <description>Double buffer mode</description>
+              <description>Double buffer flightMode</description>
               <bitOffset>18</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -8599,19 +8599,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>MINC</name>
-              <description>Memory increment mode</description>
+              <description>Memory increment flightMode</description>
               <bitOffset>10</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>PINC</name>
-              <description>Peripheral increment mode</description>
+              <description>Peripheral increment flightMode</description>
               <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>CIRC</name>
-              <description>Circular mode</description>
+              <description>Circular flightMode</description>
               <bitOffset>8</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -8650,7 +8650,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>DMEIE</name>
-              <description>Direct mode error interrupt
+              <description>Direct flightMode error interrupt
               enable</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
@@ -8732,7 +8732,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             <field>
               <name>M1A</name>
               <description>Memory 1 address (used in case of Double
-              buffer mode)</description>
+              buffer flightMode)</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
             </field>
@@ -8763,7 +8763,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>DMDIS</name>
-              <description>Direct mode disable</description>
+              <description>Direct flightMode disable</description>
               <bitOffset>2</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -10194,7 +10194,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <name>AHB1LPENR</name>
           <displayName>AHB1LPENR</displayName>
           <description>AHB1 peripheral clock enable in low power
-          mode register</description>
+          flightMode register</description>
           <addressOffset>0x50</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -10203,154 +10203,154 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             <field>
               <name>OTGHSULPILPEN</name>
               <description>USB OTG HS ULPI clock enable during
-              Sleep mode</description>
+              Sleep flightMode</description>
               <bitOffset>30</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>OTGHSLPEN</name>
               <description>USB OTG HS clock enable during Sleep
-              mode</description>
+              flightMode</description>
               <bitOffset>29</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>ETHMACPTPLPEN</name>
               <description>Ethernet PTP clock enable during Sleep
-              mode</description>
+              flightMode</description>
               <bitOffset>28</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>ETHMACRXLPEN</name>
               <description>Ethernet reception clock enable during
-              Sleep mode</description>
+              Sleep flightMode</description>
               <bitOffset>27</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>ETHMACTXLPEN</name>
               <description>Ethernet transmission clock enable
-              during Sleep mode</description>
+              during Sleep flightMode</description>
               <bitOffset>26</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>ETHMACLPEN</name>
               <description>Ethernet MAC clock enable during Sleep
-              mode</description>
+              flightMode</description>
               <bitOffset>25</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>DMA2LPEN</name>
               <description>DMA2 clock enable during Sleep
-              mode</description>
+              flightMode</description>
               <bitOffset>22</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>DMA1LPEN</name>
               <description>DMA1 clock enable during Sleep
-              mode</description>
+              flightMode</description>
               <bitOffset>21</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>BKPSRAMLPEN</name>
               <description>Backup SRAM interface clock enable
-              during Sleep mode</description>
+              during Sleep flightMode</description>
               <bitOffset>18</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>SRAM2LPEN</name>
               <description>SRAM 2 interface clock enable during
-              Sleep mode</description>
+              Sleep flightMode</description>
               <bitOffset>17</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>SRAM1LPEN</name>
               <description>SRAM 1interface clock enable during
-              Sleep mode</description>
+              Sleep flightMode</description>
               <bitOffset>16</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>FLITFLPEN</name>
               <description>Flash interface clock enable during
-              Sleep mode</description>
+              Sleep flightMode</description>
               <bitOffset>15</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>CRCLPEN</name>
               <description>CRC clock enable during Sleep
-              mode</description>
+              flightMode</description>
               <bitOffset>12</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>GPIOILPEN</name>
               <description>IO port I clock enable during Sleep
-              mode</description>
+              flightMode</description>
               <bitOffset>8</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>GPIOHLPEN</name>
               <description>IO port H clock enable during Sleep
-              mode</description>
+              flightMode</description>
               <bitOffset>7</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>GPIOGLPEN</name>
               <description>IO port G clock enable during Sleep
-              mode</description>
+              flightMode</description>
               <bitOffset>6</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>GPIOFLPEN</name>
               <description>IO port F clock enable during Sleep
-              mode</description>
+              flightMode</description>
               <bitOffset>5</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>GPIOELPEN</name>
               <description>IO port E clock enable during Sleep
-              mode</description>
+              flightMode</description>
               <bitOffset>4</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>GPIODLPEN</name>
               <description>IO port D clock enable during Sleep
-              mode</description>
+              flightMode</description>
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>GPIOCLPEN</name>
               <description>IO port C clock enable during Sleep
-              mode</description>
+              flightMode</description>
               <bitOffset>2</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>GPIOBLPEN</name>
               <description>IO port B clock enable during Sleep
-              mode</description>
+              flightMode</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>GPIOALPEN</name>
               <description>IO port A clock enable during sleep
-              mode</description>
+              flightMode</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -10360,7 +10360,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <name>AHB2LPENR</name>
           <displayName>AHB2LPENR</displayName>
           <description>AHB2 peripheral clock enable in low power
-          mode register</description>
+          flightMode register</description>
           <addressOffset>0x54</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -10369,35 +10369,35 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             <field>
               <name>OTGFSLPEN</name>
               <description>USB OTG FS clock enable during Sleep
-              mode</description>
+              flightMode</description>
               <bitOffset>7</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>RNGLPEN</name>
               <description>Random number generator clock enable
-              during Sleep mode</description>
+              during Sleep flightMode</description>
               <bitOffset>6</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>HASHLPEN</name>
               <description>Hash modules clock enable during Sleep
-              mode</description>
+              flightMode</description>
               <bitOffset>5</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>CRYPLPEN</name>
               <description>Cryptography modules clock enable during
-              Sleep mode</description>
+              Sleep flightMode</description>
               <bitOffset>4</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>DCMILPEN</name>
               <description>Camera interface enable during Sleep
-              mode</description>
+              flightMode</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -10407,7 +10407,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <name>AHB3LPENR</name>
           <displayName>AHB3LPENR</displayName>
           <description>AHB3 peripheral clock enable in low power
-          mode register</description>
+          flightMode register</description>
           <addressOffset>0x58</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -10416,7 +10416,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             <field>
               <name>FSMCLPEN</name>
               <description>Flexible static memory controller module
-              clock enable during Sleep mode</description>
+              clock enable during Sleep flightMode</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -10426,7 +10426,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <name>APB1LPENR</name>
           <displayName>APB1LPENR</displayName>
           <description>APB1 peripheral clock enable in low power
-          mode register</description>
+          flightMode register</description>
           <addressOffset>0x60</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -10435,161 +10435,161 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             <field>
               <name>DACLPEN</name>
               <description>DAC interface clock enable during Sleep
-              mode</description>
+              flightMode</description>
               <bitOffset>29</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>PWRLPEN</name>
               <description>Power interface clock enable during
-              Sleep mode</description>
+              Sleep flightMode</description>
               <bitOffset>28</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>CAN2LPEN</name>
               <description>CAN 2 clock enable during Sleep
-              mode</description>
+              flightMode</description>
               <bitOffset>26</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>CAN1LPEN</name>
               <description>CAN 1 clock enable during Sleep
-              mode</description>
+              flightMode</description>
               <bitOffset>25</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>I2C3LPEN</name>
               <description>I2C3 clock enable during Sleep
-              mode</description>
+              flightMode</description>
               <bitOffset>23</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>I2C2LPEN</name>
               <description>I2C2 clock enable during Sleep
-              mode</description>
+              flightMode</description>
               <bitOffset>22</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>I2C1LPEN</name>
               <description>I2C1 clock enable during Sleep
-              mode</description>
+              flightMode</description>
               <bitOffset>21</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>UART5LPEN</name>
               <description>UART5 clock enable during Sleep
-              mode</description>
+              flightMode</description>
               <bitOffset>20</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>UART4LPEN</name>
               <description>UART4 clock enable during Sleep
-              mode</description>
+              flightMode</description>
               <bitOffset>19</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>USART3LPEN</name>
               <description>USART3 clock enable during Sleep
-              mode</description>
+              flightMode</description>
               <bitOffset>18</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>USART2LPEN</name>
               <description>USART2 clock enable during Sleep
-              mode</description>
+              flightMode</description>
               <bitOffset>17</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>SPI3LPEN</name>
               <description>SPI3 clock enable during Sleep
-              mode</description>
+              flightMode</description>
               <bitOffset>15</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>SPI2LPEN</name>
               <description>SPI2 clock enable during Sleep
-              mode</description>
+              flightMode</description>
               <bitOffset>14</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>WWDGLPEN</name>
               <description>Window watchdog clock enable during
-              Sleep mode</description>
+              Sleep flightMode</description>
               <bitOffset>11</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TIM14LPEN</name>
               <description>TIM14 clock enable during Sleep
-              mode</description>
+              flightMode</description>
               <bitOffset>8</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TIM13LPEN</name>
               <description>TIM13 clock enable during Sleep
-              mode</description>
+              flightMode</description>
               <bitOffset>7</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TIM12LPEN</name>
               <description>TIM12 clock enable during Sleep
-              mode</description>
+              flightMode</description>
               <bitOffset>6</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TIM7LPEN</name>
               <description>TIM7 clock enable during Sleep
-              mode</description>
+              flightMode</description>
               <bitOffset>5</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TIM6LPEN</name>
               <description>TIM6 clock enable during Sleep
-              mode</description>
+              flightMode</description>
               <bitOffset>4</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TIM5LPEN</name>
               <description>TIM5 clock enable during Sleep
-              mode</description>
+              flightMode</description>
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TIM4LPEN</name>
               <description>TIM4 clock enable during Sleep
-              mode</description>
+              flightMode</description>
               <bitOffset>2</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TIM3LPEN</name>
               <description>TIM3 clock enable during Sleep
-              mode</description>
+              flightMode</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TIM2LPEN</name>
               <description>TIM2 clock enable during Sleep
-              mode</description>
+              flightMode</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -10599,7 +10599,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <name>APB2LPENR</name>
           <displayName>APB2LPENR</displayName>
           <description>APB2 peripheral clock enabled in low power
-          mode register</description>
+          flightMode register</description>
           <addressOffset>0x64</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -10608,91 +10608,91 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             <field>
               <name>TIM11LPEN</name>
               <description>TIM11 clock enable during Sleep
-              mode</description>
+              flightMode</description>
               <bitOffset>18</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TIM10LPEN</name>
               <description>TIM10 clock enable during Sleep
-              mode</description>
+              flightMode</description>
               <bitOffset>17</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TIM9LPEN</name>
               <description>TIM9 clock enable during sleep
-              mode</description>
+              flightMode</description>
               <bitOffset>16</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>SYSCFGLPEN</name>
               <description>System configuration controller clock
-              enable during Sleep mode</description>
+              enable during Sleep flightMode</description>
               <bitOffset>14</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>SPI1LPEN</name>
               <description>SPI 1 clock enable during Sleep
-              mode</description>
+              flightMode</description>
               <bitOffset>12</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>SDIOLPEN</name>
               <description>SDIO clock enable during Sleep
-              mode</description>
+              flightMode</description>
               <bitOffset>11</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>ADC3LPEN</name>
               <description>ADC 3 clock enable during Sleep
-              mode</description>
+              flightMode</description>
               <bitOffset>10</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>ADC2LPEN</name>
               <description>ADC2 clock enable during Sleep
-              mode</description>
+              flightMode</description>
               <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>ADC1LPEN</name>
               <description>ADC1 clock enable during Sleep
-              mode</description>
+              flightMode</description>
               <bitOffset>8</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>USART6LPEN</name>
               <description>USART6 clock enable during Sleep
-              mode</description>
+              flightMode</description>
               <bitOffset>5</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>USART1LPEN</name>
               <description>USART1 clock enable during Sleep
-              mode</description>
+              flightMode</description>
               <bitOffset>4</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TIM8LPEN</name>
               <description>TIM8 clock enable during Sleep
-              mode</description>
+              flightMode</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TIM1LPEN</name>
               <description>TIM1 clock enable during Sleep
-              mode</description>
+              flightMode</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -10923,7 +10923,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <register>
           <name>MODER</name>
           <displayName>MODER</displayName>
-          <description>GPIO port mode register</description>
+          <description>GPIO port flightMode register</description>
           <addressOffset>0x0</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -12203,7 +12203,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <register>
           <name>MODER</name>
           <displayName>MODER</displayName>
-          <description>GPIO port mode register</description>
+          <description>GPIO port flightMode register</description>
           <addressOffset>0x0</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -13459,7 +13459,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <register>
           <name>MODER</name>
           <displayName>MODER</displayName>
-          <description>GPIO port mode register</description>
+          <description>GPIO port flightMode register</description>
           <addressOffset>0x0</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -14732,7 +14732,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <register>
           <name>PMC</name>
           <displayName>PMC</displayName>
-          <description>peripheral mode configuration
+          <description>peripheral flightMode configuration
           register</description>
           <addressOffset>0x4</addressOffset>
           <size>0x20</size>
@@ -14961,7 +14961,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>BIDIMODE</name>
-              <description>Bidirectional data mode
+              <description>Bidirectional data flightMode
               enable</description>
               <bitOffset>15</bitOffset>
               <bitWidth>1</bitWidth>
@@ -14969,7 +14969,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             <field>
               <name>BIDIOE</name>
               <description>Output enable in bidirectional
-              mode</description>
+              flightMode</description>
               <bitOffset>14</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -15255,7 +15255,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>I2SMOD</name>
-              <description>I2S mode selection</description>
+              <description>I2S flightMode selection</description>
               <bitOffset>11</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -15267,7 +15267,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>I2SCFG</name>
-              <description>I2S configuration mode</description>
+              <description>I2S configuration flightMode</description>
               <bitOffset>8</bitOffset>
               <bitWidth>2</bitWidth>
             </field>
@@ -15422,7 +15422,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>WIDBUS</name>
-              <description>Wide bus mode enable bit</description>
+              <description>Wide bus flightMode enable bit</description>
               <bitOffset>11</bitOffset>
               <bitWidth>2</bitWidth>
             </field>
@@ -15675,7 +15675,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>RWMOD</name>
-              <description>Read wait mode</description>
+              <description>Read wait flightMode</description>
               <bitOffset>10</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -15705,7 +15705,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>DTMODE</name>
-              <description>Data transfer mode selection 1: Stream
+              <description>Data transfer flightMode selection 1: Stream
               or SDIO multibyte data transfer.</description>
               <bitOffset>2</bitOffset>
               <bitWidth>1</bitWidth>
@@ -15845,7 +15845,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             <field>
               <name>STBITERR</name>
               <description>Start bit not detected on all data
-              signals in wide bus mode</description>
+              signals in wide bus flightMode</description>
               <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -16019,7 +16019,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>SDIOITIE</name>
-              <description>SDIO mode interrupt received interrupt
+              <description>SDIO flightMode interrupt received interrupt
               enable</description>
               <bitOffset>22</bitOffset>
               <bitWidth>1</bitWidth>
@@ -16320,21 +16320,21 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>DISCNUM</name>
-              <description>Discontinuous mode channel
+              <description>Discontinuous flightMode channel
               count</description>
               <bitOffset>13</bitOffset>
               <bitWidth>3</bitWidth>
             </field>
             <field>
               <name>JDISCEN</name>
-              <description>Discontinuous mode on injected
+              <description>Discontinuous flightMode on injected
               channels</description>
               <bitOffset>12</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>DISCEN</name>
-              <description>Discontinuous mode on regular
+              <description>Discontinuous flightMode on regular
               channels</description>
               <bitOffset>11</bitOffset>
               <bitWidth>1</bitWidth>
@@ -16349,13 +16349,13 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             <field>
               <name>AWDSGL</name>
               <description>Enable the watchdog on a single channel
-              in scan mode</description>
+              in scan flightMode</description>
               <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>SCAN</name>
-              <description>Scan mode</description>
+              <description>Scan flightMode</description>
               <bitOffset>8</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -16455,14 +16455,14 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             <field>
               <name>DDS</name>
               <description>DMA disable selection (for single ADC
-              mode)</description>
+              flightMode)</description>
               <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>DMA</name>
-              <description>Direct memory access mode (for single
-              ADC mode)</description>
+              <description>Direct memory access flightMode (for single
+              ADC flightMode)</description>
               <bitOffset>8</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -17080,7 +17080,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>OVER8</name>
-              <description>Oversampling mode</description>
+              <description>Oversampling flightMode</description>
               <bitOffset>15</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -17182,7 +17182,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>LINEN</name>
-              <description>LIN mode enable</description>
+              <description>LIN flightMode enable</description>
               <bitOffset>14</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -17285,7 +17285,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>SCEN</name>
-              <description>Smartcard mode enable</description>
+              <description>Smartcard flightMode enable</description>
               <bitOffset>5</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -17309,7 +17309,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>IREN</name>
-              <description>IrDA mode enable</description>
+              <description>IrDA flightMode enable</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -17817,7 +17817,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             <field>
               <name>FPDS</name>
               <description>Flash power down in Stop
-              mode</description>
+              flightMode</description>
               <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -18005,7 +18005,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             <field>
               <name>NOSTRETCH</name>
               <description>Clock stretching disable (Slave
-              mode)</description>
+              flightMode)</description>
               <bitOffset>7</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -18035,7 +18035,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>SMBUS</name>
-              <description>SMBus mode</description>
+              <description>SMBus flightMode</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -18105,8 +18105,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>ADDMODE</name>
-              <description>Addressing mode (slave
-              mode)</description>
+              <description>Addressing flightMode (slave
+              flightMode)</description>
               <bitOffset>15</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -18147,7 +18147,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>ENDUAL</name>
-              <description>Dual addressing mode
+              <description>Dual addressing flightMode
               enable</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
@@ -18217,7 +18217,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             <field>
               <name>ARLO</name>
               <description>Arbitration lost (master
-              mode)</description>
+              flightMode)</description>
               <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -18248,7 +18248,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             <field>
               <name>STOPF</name>
               <description>Stop detection (slave
-              mode)</description>
+              flightMode)</description>
               <bitOffset>4</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
@@ -18256,7 +18256,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             <field>
               <name>ADD10</name>
               <description>10-bit header sent (Master
-              mode)</description>
+              flightMode)</description>
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
@@ -18270,15 +18270,15 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>ADDR</name>
-              <description>Address sent (master mode)/matched
-              (slave mode)</description>
+              <description>Address sent (master flightMode)/matched
+              (slave flightMode)</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
             </field>
             <field>
               <name>SB</name>
-              <description>Start bit (Master mode)</description>
+              <description>Start bit (Master flightMode)</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
@@ -18303,28 +18303,28 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>DUALF</name>
-              <description>Dual flag (Slave mode)</description>
+              <description>Dual flag (Slave flightMode)</description>
               <bitOffset>7</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>SMBHOST</name>
               <description>SMBus host header (Slave
-              mode)</description>
+              flightMode)</description>
               <bitOffset>6</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>SMBDEFAULT</name>
               <description>SMBus device default address (Slave
-              mode)</description>
+              flightMode)</description>
               <bitOffset>5</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>GENCALL</name>
               <description>General call address (Slave
-              mode)</description>
+              flightMode)</description>
               <bitOffset>4</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -18359,20 +18359,20 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>F_S</name>
-              <description>I2C master mode selection</description>
+              <description>I2C master flightMode selection</description>
               <bitOffset>15</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>DUTY</name>
-              <description>Fast mode duty cycle</description>
+              <description>Fast flightMode duty cycle</description>
               <bitOffset>14</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>CCR</name>
               <description>Clock control register in Fast/Standard
-              mode (Master mode)</description>
+              flightMode (Master flightMode)</description>
               <bitOffset>0</bitOffset>
               <bitWidth>12</bitWidth>
             </field>
@@ -18389,8 +18389,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>TRISE</name>
-              <description>Maximum rise time in Fast/Standard mode
-              (Master mode)</description>
+              <description>Maximum rise time in Fast/Standard flightMode
+              (Master flightMode)</description>
               <bitOffset>0</bitOffset>
               <bitWidth>6</bitWidth>
             </field>
@@ -18933,7 +18933,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>INIT</name>
-              <description>Initialization mode</description>
+              <description>Initialization flightMode</description>
               <bitOffset>7</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -20079,7 +20079,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>OVER8</name>
-              <description>Oversampling mode</description>
+              <description>Oversampling flightMode</description>
               <bitOffset>15</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -20181,7 +20181,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>LINEN</name>
-              <description>LIN mode enable</description>
+              <description>LIN flightMode enable</description>
               <bitOffset>14</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -20254,7 +20254,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>IREN</name>
-              <description>IrDA mode enable</description>
+              <description>IrDA flightMode enable</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -20449,15 +20449,15 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>DMA</name>
-              <description>Direct memory access mode for multi ADC
-              mode</description>
+              <description>Direct memory access flightMode for multi ADC
+              flightMode</description>
               <bitOffset>14</bitOffset>
               <bitWidth>2</bitWidth>
             </field>
             <field>
               <name>DDS</name>
               <description>DMA disable selection for multi-ADC
-              mode</description>
+              flightMode</description>
               <bitOffset>13</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -20470,7 +20470,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>MULT</name>
-              <description>Multi ADC mode selection</description>
+              <description>Multi ADC flightMode selection</description>
               <bitOffset>0</bitOffset>
               <bitWidth>5</bitWidth>
             </field>
@@ -20561,7 +20561,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>CMS</name>
-              <description>Center-aligned mode
+              <description>Center-aligned flightMode
               selection</description>
               <bitOffset>5</bitOffset>
               <bitWidth>2</bitWidth>
@@ -20574,7 +20574,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>OPM</name>
-              <description>One-pulse mode</description>
+              <description>One-pulse flightMode</description>
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -20657,7 +20657,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>MMS</name>
-              <description>Master mode selection</description>
+              <description>Master flightMode selection</description>
               <bitOffset>4</bitOffset>
               <bitWidth>3</bitWidth>
             </field>
@@ -20687,7 +20687,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <register>
           <name>SMCR</name>
           <displayName>SMCR</displayName>
-          <description>slave mode control register</description>
+          <description>slave flightMode control register</description>
           <addressOffset>0x8</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -20719,7 +20719,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>MSM</name>
-              <description>Master/Slave mode</description>
+              <description>Master/Slave flightMode</description>
               <bitOffset>7</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -20731,7 +20731,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>SMS</name>
-              <description>Slave mode selection</description>
+              <description>Slave flightMode selection</description>
               <bitOffset>0</bitOffset>
               <bitWidth>3</bitWidth>
             </field>
@@ -21004,8 +21004,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <register>
           <name>CCMR1_Output</name>
           <displayName>CCMR1_Output</displayName>
-          <description>capture/compare mode register 1 (output
-          mode)</description>
+          <description>capture/compare flightMode register 1 (output
+          flightMode)</description>
           <addressOffset>0x18</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -21020,7 +21020,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>OC2M</name>
-              <description>Output Compare 2 mode</description>
+              <description>Output Compare 2 flightMode</description>
               <bitOffset>12</bitOffset>
               <bitWidth>3</bitWidth>
             </field>
@@ -21054,7 +21054,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>OC1M</name>
-              <description>Output Compare 1 mode</description>
+              <description>Output Compare 1 flightMode</description>
               <bitOffset>4</bitOffset>
               <bitWidth>3</bitWidth>
             </field>
@@ -21084,8 +21084,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <register>
           <name>CCMR1_Input</name>
           <displayName>CCMR1_Input</displayName>
-          <description>capture/compare mode register 1 (input
-          mode)</description>
+          <description>capture/compare flightMode register 1 (input
+          flightMode)</description>
           <alternateRegister>CCMR1_Output</alternateRegister>
           <addressOffset>0x18</addressOffset>
           <size>0x20</size>
@@ -21135,8 +21135,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <register>
           <name>CCMR2_Output</name>
           <displayName>CCMR2_Output</displayName>
-          <description>capture/compare mode register 2 (output
-          mode)</description>
+          <description>capture/compare flightMode register 2 (output
+          flightMode)</description>
           <addressOffset>0x1C</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -21151,7 +21151,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>OC4M</name>
-              <description>Output compare 4 mode</description>
+              <description>Output compare 4 flightMode</description>
               <bitOffset>12</bitOffset>
               <bitWidth>3</bitWidth>
             </field>
@@ -21185,7 +21185,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>OC3M</name>
-              <description>Output compare 3 mode</description>
+              <description>Output compare 3 flightMode</description>
               <bitOffset>4</bitOffset>
               <bitWidth>3</bitWidth>
             </field>
@@ -21215,8 +21215,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <register>
           <name>CCMR2_Input</name>
           <displayName>CCMR2_Input</displayName>
-          <description>capture/compare mode register 2 (input
-          mode)</description>
+          <description>capture/compare flightMode register 2 (input
+          flightMode)</description>
           <alternateRegister>CCMR2_Output</alternateRegister>
           <addressOffset>0x1C</addressOffset>
           <size>0x20</size>
@@ -21586,14 +21586,14 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             <field>
               <name>OSSR</name>
               <description>Off-state selection for Run
-              mode</description>
+              flightMode</description>
               <bitOffset>11</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>OSSI</name>
               <description>Off-state selection for Idle
-              mode</description>
+              flightMode</description>
               <bitOffset>10</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -21679,7 +21679,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>CMS</name>
-              <description>Center-aligned mode
+              <description>Center-aligned flightMode
               selection</description>
               <bitOffset>5</bitOffset>
               <bitWidth>2</bitWidth>
@@ -21692,7 +21692,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>OPM</name>
-              <description>One-pulse mode</description>
+              <description>One-pulse flightMode</description>
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -21733,7 +21733,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>MMS</name>
-              <description>Master mode selection</description>
+              <description>Master flightMode selection</description>
               <bitOffset>4</bitOffset>
               <bitWidth>3</bitWidth>
             </field>
@@ -21749,7 +21749,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <register>
           <name>SMCR</name>
           <displayName>SMCR</displayName>
-          <description>slave mode control register</description>
+          <description>slave flightMode control register</description>
           <addressOffset>0x8</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -21781,7 +21781,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>MSM</name>
-              <description>Master/Slave mode</description>
+              <description>Master/Slave flightMode</description>
               <bitOffset>7</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -21793,7 +21793,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>SMS</name>
-              <description>Slave mode selection</description>
+              <description>Slave flightMode selection</description>
               <bitOffset>0</bitOffset>
               <bitWidth>3</bitWidth>
             </field>
@@ -22023,8 +22023,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <register>
           <name>CCMR1_Output</name>
           <displayName>CCMR1_Output</displayName>
-          <description>capture/compare mode register 1 (output
-          mode)</description>
+          <description>capture/compare flightMode register 1 (output
+          flightMode)</description>
           <addressOffset>0x18</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -22095,8 +22095,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <register>
           <name>CCMR1_Input</name>
           <displayName>CCMR1_Input</displayName>
-          <description>capture/compare mode register 1 (input
-          mode)</description>
+          <description>capture/compare flightMode register 1 (input
+          flightMode)</description>
           <alternateRegister>CCMR1_Output</alternateRegister>
           <addressOffset>0x18</addressOffset>
           <size>0x20</size>
@@ -22146,8 +22146,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <register>
           <name>CCMR2_Output</name>
           <displayName>CCMR2_Output</displayName>
-          <description>capture/compare mode register 2 (output
-          mode)</description>
+          <description>capture/compare flightMode register 2 (output
+          flightMode)</description>
           <addressOffset>0x1C</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -22218,8 +22218,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <register>
           <name>CCMR2_Input</name>
           <displayName>CCMR2_Input</displayName>
-          <description>capture/compare mode register 2 (input
-          mode)</description>
+          <description>capture/compare flightMode register 2 (input
+          flightMode)</description>
           <alternateRegister>CCMR2_Output</alternateRegister>
           <addressOffset>0x1C</addressOffset>
           <size>0x20</size>
@@ -22620,7 +22620,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>CMS</name>
-              <description>Center-aligned mode
+              <description>Center-aligned flightMode
               selection</description>
               <bitOffset>5</bitOffset>
               <bitWidth>2</bitWidth>
@@ -22633,7 +22633,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>OPM</name>
-              <description>One-pulse mode</description>
+              <description>One-pulse flightMode</description>
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -22674,7 +22674,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>MMS</name>
-              <description>Master mode selection</description>
+              <description>Master flightMode selection</description>
               <bitOffset>4</bitOffset>
               <bitWidth>3</bitWidth>
             </field>
@@ -22690,7 +22690,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <register>
           <name>SMCR</name>
           <displayName>SMCR</displayName>
-          <description>slave mode control register</description>
+          <description>slave flightMode control register</description>
           <addressOffset>0x8</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -22722,7 +22722,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>MSM</name>
-              <description>Master/Slave mode</description>
+              <description>Master/Slave flightMode</description>
               <bitOffset>7</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -22734,7 +22734,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>SMS</name>
-              <description>Slave mode selection</description>
+              <description>Slave flightMode selection</description>
               <bitOffset>0</bitOffset>
               <bitWidth>3</bitWidth>
             </field>
@@ -22964,8 +22964,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <register>
           <name>CCMR1_Output</name>
           <displayName>CCMR1_Output</displayName>
-          <description>capture/compare mode register 1 (output
-          mode)</description>
+          <description>capture/compare flightMode register 1 (output
+          flightMode)</description>
           <addressOffset>0x18</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -23036,8 +23036,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <register>
           <name>CCMR1_Input</name>
           <displayName>CCMR1_Input</displayName>
-          <description>capture/compare mode register 1 (input
-          mode)</description>
+          <description>capture/compare flightMode register 1 (input
+          flightMode)</description>
           <alternateRegister>CCMR1_Output</alternateRegister>
           <addressOffset>0x18</addressOffset>
           <size>0x20</size>
@@ -23087,8 +23087,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <register>
           <name>CCMR2_Output</name>
           <displayName>CCMR2_Output</displayName>
-          <description>capture/compare mode register 2 (output
-          mode)</description>
+          <description>capture/compare flightMode register 2 (output
+          flightMode)</description>
           <addressOffset>0x1C</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -23159,8 +23159,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <register>
           <name>CCMR2_Input</name>
           <displayName>CCMR2_Input</displayName>
-          <description>capture/compare mode register 2 (input
-          mode)</description>
+          <description>capture/compare flightMode register 2 (input
+          flightMode)</description>
           <alternateRegister>CCMR2_Output</alternateRegister>
           <addressOffset>0x1C</addressOffset>
           <size>0x20</size>
@@ -23553,7 +23553,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>CMS</name>
-              <description>Center-aligned mode
+              <description>Center-aligned flightMode
               selection</description>
               <bitOffset>5</bitOffset>
               <bitWidth>2</bitWidth>
@@ -23566,7 +23566,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>OPM</name>
-              <description>One-pulse mode</description>
+              <description>One-pulse flightMode</description>
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -23607,7 +23607,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>MMS</name>
-              <description>Master mode selection</description>
+              <description>Master flightMode selection</description>
               <bitOffset>4</bitOffset>
               <bitWidth>3</bitWidth>
             </field>
@@ -23623,7 +23623,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <register>
           <name>SMCR</name>
           <displayName>SMCR</displayName>
-          <description>slave mode control register</description>
+          <description>slave flightMode control register</description>
           <addressOffset>0x8</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -23655,7 +23655,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>MSM</name>
-              <description>Master/Slave mode</description>
+              <description>Master/Slave flightMode</description>
               <bitOffset>7</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -23667,7 +23667,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>SMS</name>
-              <description>Slave mode selection</description>
+              <description>Slave flightMode selection</description>
               <bitOffset>0</bitOffset>
               <bitWidth>3</bitWidth>
             </field>
@@ -23897,8 +23897,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <register>
           <name>CCMR1_Output</name>
           <displayName>CCMR1_Output</displayName>
-          <description>capture/compare mode register 1 (output
-          mode)</description>
+          <description>capture/compare flightMode register 1 (output
+          flightMode)</description>
           <addressOffset>0x18</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -23969,8 +23969,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <register>
           <name>CCMR1_Input</name>
           <displayName>CCMR1_Input</displayName>
-          <description>capture/compare mode register 1 (input
-          mode)</description>
+          <description>capture/compare flightMode register 1 (input
+          flightMode)</description>
           <alternateRegister>CCMR1_Output</alternateRegister>
           <addressOffset>0x18</addressOffset>
           <size>0x20</size>
@@ -24020,8 +24020,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <register>
           <name>CCMR2_Output</name>
           <displayName>CCMR2_Output</displayName>
-          <description>capture/compare mode register 2 (output
-          mode)</description>
+          <description>capture/compare flightMode register 2 (output
+          flightMode)</description>
           <addressOffset>0x1C</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -24092,8 +24092,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <register>
           <name>CCMR2_Input</name>
           <displayName>CCMR2_Input</displayName>
-          <description>capture/compare mode register 2 (input
-          mode)</description>
+          <description>capture/compare flightMode register 2 (input
+          flightMode)</description>
           <alternateRegister>CCMR2_Output</alternateRegister>
           <addressOffset>0x1C</addressOffset>
           <size>0x20</size>
@@ -24495,7 +24495,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>OPM</name>
-              <description>One-pulse mode</description>
+              <description>One-pulse flightMode</description>
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -24530,7 +24530,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>MMS</name>
-              <description>Master mode selection</description>
+              <description>Master flightMode selection</description>
               <bitOffset>4</bitOffset>
               <bitWidth>3</bitWidth>
             </field>
@@ -24539,7 +24539,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <register>
           <name>SMCR</name>
           <displayName>SMCR</displayName>
-          <description>slave mode control register</description>
+          <description>slave flightMode control register</description>
           <addressOffset>0x8</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -24547,7 +24547,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>MSM</name>
-              <description>Master/Slave mode</description>
+              <description>Master/Slave flightMode</description>
               <bitOffset>7</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -24559,7 +24559,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>SMS</name>
-              <description>Slave mode selection</description>
+              <description>Slave flightMode selection</description>
               <bitOffset>0</bitOffset>
               <bitWidth>3</bitWidth>
             </field>
@@ -24693,8 +24693,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <register>
           <name>CCMR1_Output</name>
           <displayName>CCMR1_Output</displayName>
-          <description>capture/compare mode register 1 (output
-          mode)</description>
+          <description>capture/compare flightMode register 1 (output
+          flightMode)</description>
           <addressOffset>0x18</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -24702,7 +24702,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>OC2M</name>
-              <description>Output Compare 2 mode</description>
+              <description>Output Compare 2 flightMode</description>
               <bitOffset>12</bitOffset>
               <bitWidth>3</bitWidth>
             </field>
@@ -24729,7 +24729,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>OC1M</name>
-              <description>Output Compare 1 mode</description>
+              <description>Output Compare 1 flightMode</description>
               <bitOffset>4</bitOffset>
               <bitWidth>3</bitWidth>
             </field>
@@ -24759,8 +24759,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <register>
           <name>CCMR1_Input</name>
           <displayName>CCMR1_Input</displayName>
-          <description>capture/compare mode register 1 (input
-          mode)</description>
+          <description>capture/compare flightMode register 1 (input
+          flightMode)</description>
           <alternateRegister>CCMR1_Output</alternateRegister>
           <addressOffset>0x18</addressOffset>
           <size>0x20</size>
@@ -25098,8 +25098,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <register>
           <name>CCMR1_Output</name>
           <displayName>CCMR1_Output</displayName>
-          <description>capture/compare mode register 1 (output
-          mode)</description>
+          <description>capture/compare flightMode register 1 (output
+          flightMode)</description>
           <addressOffset>0x18</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -25107,7 +25107,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>OC1M</name>
-              <description>Output Compare 1 mode</description>
+              <description>Output Compare 1 flightMode</description>
               <bitOffset>4</bitOffset>
               <bitWidth>3</bitWidth>
             </field>
@@ -25137,8 +25137,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <register>
           <name>CCMR1_Input</name>
           <displayName>CCMR1_Input</displayName>
-          <description>capture/compare mode register 1 (input
-          mode)</description>
+          <description>capture/compare flightMode register 1 (input
+          flightMode)</description>
           <alternateRegister>CCMR1_Output</alternateRegister>
           <addressOffset>0x18</addressOffset>
           <size>0x20</size>
@@ -25429,8 +25429,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <register>
           <name>CCMR1_Output</name>
           <displayName>CCMR1_Output</displayName>
-          <description>capture/compare mode register 1 (output
-          mode)</description>
+          <description>capture/compare flightMode register 1 (output
+          flightMode)</description>
           <addressOffset>0x18</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -25438,7 +25438,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>OC1M</name>
-              <description>Output Compare 1 mode</description>
+              <description>Output Compare 1 flightMode</description>
               <bitOffset>4</bitOffset>
               <bitWidth>3</bitWidth>
             </field>
@@ -25468,8 +25468,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <register>
           <name>CCMR1_Input</name>
           <displayName>CCMR1_Input</displayName>
-          <description>capture/compare mode register 1 (input
-          mode)</description>
+          <description>capture/compare flightMode register 1 (input
+          flightMode)</description>
           <alternateRegister>CCMR1_Output</alternateRegister>
           <addressOffset>0x18</addressOffset>
           <size>0x20</size>
@@ -25652,7 +25652,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>OPM</name>
-              <description>One-pulse mode</description>
+              <description>One-pulse flightMode</description>
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -25687,7 +25687,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>MMS</name>
-              <description>Master mode selection</description>
+              <description>Master flightMode selection</description>
               <bitOffset>4</bitOffset>
               <bitWidth>3</bitWidth>
             </field>
@@ -27198,7 +27198,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <register>
           <name>DMABMR</name>
           <displayName>DMABMR</displayName>
-          <description>Ethernet DMA bus mode register</description>
+          <description>Ethernet DMA bus flightMode register</description>
           <addressOffset>0x0</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -27510,7 +27510,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <register>
           <name>DMAOMR</name>
           <displayName>DMAOMR</displayName>
-          <description>Ethernet DMA operation mode
+          <description>Ethernet DMA operation flightMode
           register</description>
           <addressOffset>0x18</addressOffset>
           <size>0x20</size>
@@ -28117,14 +28117,14 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>FHMOD</name>
-              <description>Force host mode</description>
+              <description>Force host flightMode</description>
               <bitOffset>29</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>FDMOD</name>
-              <description>Force device mode</description>
+              <description>Force device flightMode</description>
               <bitOffset>30</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -28209,7 +28209,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>CMOD</name>
-              <description>Current mode of operation</description>
+              <description>Current flightMode of operation</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
@@ -28333,8 +28333,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             <field>
               <name>IPXFR_INCOMPISOOUT</name>
               <description>Incomplete periodic transfer(Host
-              mode)/Incomplete isochronous OUT transfer(Device
-              mode)</description>
+              flightMode)/Incomplete isochronous OUT transfer(Device
+              flightMode)</description>
               <bitOffset>21</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -28535,8 +28535,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             <field>
               <name>IPXFRM_IISOOXFRM</name>
               <description>Incomplete periodic transfer mask(Host
-              mode)/Incomplete isochronous OUT transfer mask(Device
-              mode)</description>
+              flightMode)/Incomplete isochronous OUT transfer mask(Device
+              flightMode)</description>
               <bitOffset>21</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -28601,7 +28601,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <name>FS_GRXSTSR_Device</name>
           <displayName>FS_GRXSTSR_Device</displayName>
           <description>OTG_FS Receive status debug read(Device
-          mode)</description>
+          flightMode)</description>
           <addressOffset>0x1C</addressOffset>
           <size>0x20</size>
           <access>read-only</access>
@@ -28643,7 +28643,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <name>FS_GRXSTSR_Host</name>
           <displayName>FS_GRXSTSR_Host</displayName>
           <description>OTG_FS Receive status debug read(Host
-          mode)</description>
+          flightMode)</description>
           <alternateRegister>FS_GRXSTSR_Device</alternateRegister>
           <addressOffset>0x1C</addressOffset>
           <size>0x20</size>
@@ -28704,7 +28704,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <name>FS_GNPTXFSIZ_Device</name>
           <displayName>FS_GNPTXFSIZ_Device</displayName>
           <description>OTG_FS non-periodic transmit FIFO size
-          register (Device mode)</description>
+          register (Device flightMode)</description>
           <addressOffset>0x28</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -28729,7 +28729,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <name>FS_GNPTXFSIZ_Host</name>
           <displayName>FS_GNPTXFSIZ_Host</displayName>
           <description>OTG_FS non-periodic transmit FIFO size
-          register (Host mode)</description>
+          register (Host flightMode)</description>
           <alternateRegister>FS_GNPTXFSIZ_Device</alternateRegister>
           <addressOffset>0x28</addressOffset>
           <size>0x20</size>
@@ -34380,7 +34380,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <register>
           <name>FM1R</name>
           <displayName>FM1R</displayName>
-          <description>filter mode register</description>
+          <description>filter flightMode register</description>
           <addressOffset>0x204</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -34388,169 +34388,169 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>FBM0</name>
-              <description>Filter mode</description>
+              <description>Filter flightMode</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>FBM1</name>
-              <description>Filter mode</description>
+              <description>Filter flightMode</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>FBM2</name>
-              <description>Filter mode</description>
+              <description>Filter flightMode</description>
               <bitOffset>2</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>FBM3</name>
-              <description>Filter mode</description>
+              <description>Filter flightMode</description>
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>FBM4</name>
-              <description>Filter mode</description>
+              <description>Filter flightMode</description>
               <bitOffset>4</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>FBM5</name>
-              <description>Filter mode</description>
+              <description>Filter flightMode</description>
               <bitOffset>5</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>FBM6</name>
-              <description>Filter mode</description>
+              <description>Filter flightMode</description>
               <bitOffset>6</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>FBM7</name>
-              <description>Filter mode</description>
+              <description>Filter flightMode</description>
               <bitOffset>7</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>FBM8</name>
-              <description>Filter mode</description>
+              <description>Filter flightMode</description>
               <bitOffset>8</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>FBM9</name>
-              <description>Filter mode</description>
+              <description>Filter flightMode</description>
               <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>FBM10</name>
-              <description>Filter mode</description>
+              <description>Filter flightMode</description>
               <bitOffset>10</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>FBM11</name>
-              <description>Filter mode</description>
+              <description>Filter flightMode</description>
               <bitOffset>11</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>FBM12</name>
-              <description>Filter mode</description>
+              <description>Filter flightMode</description>
               <bitOffset>12</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>FBM13</name>
-              <description>Filter mode</description>
+              <description>Filter flightMode</description>
               <bitOffset>13</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>FBM14</name>
-              <description>Filter mode</description>
+              <description>Filter flightMode</description>
               <bitOffset>14</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>FBM15</name>
-              <description>Filter mode</description>
+              <description>Filter flightMode</description>
               <bitOffset>15</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>FBM16</name>
-              <description>Filter mode</description>
+              <description>Filter flightMode</description>
               <bitOffset>16</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>FBM17</name>
-              <description>Filter mode</description>
+              <description>Filter flightMode</description>
               <bitOffset>17</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>FBM18</name>
-              <description>Filter mode</description>
+              <description>Filter flightMode</description>
               <bitOffset>18</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>FBM19</name>
-              <description>Filter mode</description>
+              <description>Filter flightMode</description>
               <bitOffset>19</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>FBM20</name>
-              <description>Filter mode</description>
+              <description>Filter flightMode</description>
               <bitOffset>20</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>FBM21</name>
-              <description>Filter mode</description>
+              <description>Filter flightMode</description>
               <bitOffset>21</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>FBM22</name>
-              <description>Filter mode</description>
+              <description>Filter flightMode</description>
               <bitOffset>22</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>FBM23</name>
-              <description>Filter mode</description>
+              <description>Filter flightMode</description>
               <bitOffset>23</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>FBM24</name>
-              <description>Filter mode</description>
+              <description>Filter flightMode</description>
               <bitOffset>24</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>FBM25</name>
-              <description>Filter mode</description>
+              <description>Filter flightMode</description>
               <bitOffset>25</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>FBM26</name>
-              <description>Filter mode</description>
+              <description>Filter flightMode</description>
               <bitOffset>26</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>FBM27</name>
-              <description>Filter mode</description>
+              <description>Filter flightMode</description>
               <bitOffset>27</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -49216,14 +49216,14 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>FHMOD</name>
-              <description>Forced host mode</description>
+              <description>Forced host flightMode</description>
               <bitOffset>29</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>FDMOD</name>
-              <description>Forced peripheral mode</description>
+              <description>Forced peripheral flightMode</description>
               <bitOffset>30</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -49313,7 +49313,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>CMOD</name>
-              <description>Current mode of operation</description>
+              <description>Current flightMode of operation</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
@@ -49715,7 +49715,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <name>OTG_HS_GRXSTSR_Host</name>
           <displayName>OTG_HS_GRXSTSR_Host</displayName>
           <description>OTG_HS Receive status debug read register
-          (host mode)</description>
+          (host flightMode)</description>
           <addressOffset>0x1C</addressOffset>
           <size>32</size>
           <access>read-only</access>
@@ -49751,7 +49751,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <name>OTG_HS_GRXSTSP_Host</name>
           <displayName>OTG_HS_GRXSTSP_Host</displayName>
           <description>OTG_HS status read and pop register (host
-          mode)</description>
+          flightMode)</description>
           <addressOffset>0x20</addressOffset>
           <size>32</size>
           <access>read-only</access>
@@ -49805,7 +49805,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <name>OTG_HS_GNPTXFSIZ_Host</name>
           <displayName>OTG_HS_GNPTXFSIZ_Host</displayName>
           <description>OTG_HS nonperiodic transmit FIFO size
-          register (host mode)</description>
+          register (host flightMode)</description>
           <addressOffset>0x28</addressOffset>
           <size>32</size>
           <access>read-write</access>
@@ -49830,7 +49830,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <name>OTG_HS_TX0FSIZ_Peripheral</name>
           <displayName>OTG_HS_TX0FSIZ_Peripheral</displayName>
           <description>Endpoint 0 transmit FIFO size (peripheral
-          mode)</description>
+          flightMode)</description>
           <alternateRegister>OTG_HS_GNPTXFSIZ_Host</alternateRegister>
           <addressOffset>0x28</addressOffset>
           <size>32</size>
@@ -50157,7 +50157,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <name>OTG_HS_GRXSTSR_Peripheral</name>
           <displayName>OTG_HS_GRXSTSR_Peripheral</displayName>
           <description>OTG_HS Receive status debug read register
-          (peripheral mode mode)</description>
+          (peripheral flightMode flightMode)</description>
           <alternateRegister>OTG_HS_GRXSTSR_Host</alternateRegister>
           <addressOffset>0x1C</addressOffset>
           <size>32</size>
@@ -50200,7 +50200,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <name>OTG_HS_GRXSTSP_Peripheral</name>
           <displayName>OTG_HS_GRXSTSP_Peripheral</displayName>
           <description>OTG_HS status read and pop register
-          (peripheral mode)</description>
+          (peripheral flightMode)</description>
           <alternateRegister>OTG_HS_GRXSTSP_Host</alternateRegister>
           <addressOffset>0x20</addressOffset>
           <size>32</size>
@@ -57044,7 +57044,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>SNPM</name>
-              <description>Snoop mode</description>
+              <description>Snoop flightMode</description>
               <bitOffset>20</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -57133,7 +57133,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>SNPM</name>
-              <description>Snoop mode</description>
+              <description>Snoop flightMode</description>
               <bitOffset>20</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -57237,7 +57237,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>SNPM</name>
-              <description>Snoop mode</description>
+              <description>Snoop flightMode</description>
               <bitOffset>20</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -57341,7 +57341,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>SNPM</name>
-              <description>Snoop mode</description>
+              <description>Snoop flightMode</description>
               <bitOffset>20</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>

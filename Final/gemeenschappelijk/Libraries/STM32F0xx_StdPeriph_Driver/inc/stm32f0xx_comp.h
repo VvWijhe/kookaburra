@@ -220,7 +220,7 @@ void COMP_Cmd(uint32_t COMP_Selection, FunctionalState NewState);
 void COMP_SwitchCmd(FunctionalState NewState);
 uint32_t COMP_GetOutputLevel(uint32_t COMP_Selection);
 
-/* Window mode control function ***********************************************/
+/* Window flightMode control function ***********************************************/
 void COMP_WindowCmd(FunctionalState NewState);
 
 /* COMP configuration locking function ****************************************/

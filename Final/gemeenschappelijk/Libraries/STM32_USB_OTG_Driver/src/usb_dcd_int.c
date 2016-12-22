@@ -211,7 +211,7 @@ uint32_t USBD_OTG_ISR_Handler (USB_OTG_CORE_HANDLE *pdev)
   USB_OTG_GINTSTS_TypeDef  gintr_status;
   uint32_t retval = 0;
   
-  if (USB_OTG_IsDeviceMode(pdev)) /* ensure that we are in device mode */
+  if (USB_OTG_IsDeviceMode(pdev)) /* ensure that we are in device flightMode */
   {
     gintr_status.d32 = USB_OTG_ReadCoreItr(pdev);
     if (!gintr_status.d32) /* avoid spurious interrupt */
@@ -409,7 +409,7 @@ static uint32_t DCD_HandleUSBSuspend_ISR(USB_OTG_CORE_HANDLE *pdev)
     power.b.gatehclk = 1;
     USB_OTG_MODIFY_REG32(pdev->regs.PCGCCTL, 0, power.d32);
     
-    /* Request to enter Sleep mode after exit from current ISR */
+    /* Request to enter Sleep flightMode after exit from current ISR */
     SCB->SCR |= (SCB_SCR_SLEEPDEEP_Msk | SCB_SCR_SLEEPONEXIT_Msk);
   }
   return 1;

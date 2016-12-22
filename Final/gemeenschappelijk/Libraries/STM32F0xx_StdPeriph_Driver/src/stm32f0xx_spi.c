@@ -245,7 +245,7 @@ void SPI_Init(SPI_TypeDef* SPIx, SPI_InitTypeDef* SPI_InitStruct)
   /* Clear BIDIMode, BIDIOE, RxONLY, SSM, SSI, LSBFirst, BR, CPOL and CPHA bits */
   tmpreg &= CR1_CLEAR_MASK;
   /* Configure SPIx: direction, NSS management, first transmitted bit, BaudRate prescaler
-  master/slave mode, CPOL and CPHA */
+  master/slave flightMode, CPOL and CPHA */
   /* Set BIDImode, BIDIOE and RxONLY bits according to SPI_Direction value */
   /* Set SSM, SSI bit according to SPI_NSS values */
   /* Set LSBFirst bit according to SPI_FirstBit value */
@@ -276,13 +276,13 @@ void SPI_Init(SPI_TypeDef* SPIx, SPI_InitTypeDef* SPI_InitStruct)
   tmpreg = SPIx->CR1;
   /* Clear MSTR bit */
   tmpreg &= CR1_CLEAR_MASK2;
-  /* Configure SPIx: master/slave mode */  
+  /* Configure SPIx: master/slave flightMode */
   /* Set MSTR bit according to SPI_Mode */
   tmpreg |= (uint16_t)((uint32_t)SPI_InitStruct->SPI_Mode);  
   /* Write to SPIx CR1 */
   SPIx->CR1 = tmpreg;  
   
-  /* Activate the SPI mode (Reset I2SMOD bit in I2SCFGR register) */
+  /* Activate the SPI flightMode (Reset I2SMOD bit in I2SCFGR register) */
   SPIx->I2SCFGR &= (uint16_t)~((uint16_t)SPI_I2SCFGR_I2SMOD);
 }
 
@@ -469,12 +469,12 @@ void SPI_TIModeCmd(SPI_TypeDef* SPIx, FunctionalState NewState)
 
   if (NewState != DISABLE)
   {
-    /* Enable the TI mode for the selected SPI peripheral */
+    /* Enable the TI flightMode for the selected SPI peripheral */
     SPIx->CR2 |= SPI_CR2_FRF;
   }
   else
   {
-    /* Disable the TI mode for the selected SPI peripheral */
+    /* Disable the TI flightMode for the selected SPI peripheral */
     SPIx->CR2 &= (uint16_t)~((uint16_t)SPI_CR2_FRF);
   }
 }
@@ -493,12 +493,12 @@ void I2S_Cmd(SPI_TypeDef* SPIx, FunctionalState NewState)
   assert_param(IS_FUNCTIONAL_STATE(NewState));
   if (NewState != DISABLE)
   {
-    /* Enable the selected SPI peripheral in I2S mode */
+    /* Enable the selected SPI peripheral in I2S flightMode */
     SPIx->I2SCFGR |= SPI_I2SCFGR_I2SE;
   }
   else
   {
-    /* Disable the selected SPI peripheral in I2S mode */
+    /* Disable the selected SPI peripheral in I2S flightMode */
     SPIx->I2SCFGR &= (uint16_t)~((uint16_t)SPI_I2SCFGR_I2SE);
   }
 }
@@ -579,12 +579,12 @@ void SPI_BiDirectionalLineConfig(SPI_TypeDef* SPIx, uint16_t SPI_Direction)
   assert_param(IS_SPI_DIRECTION(SPI_Direction));
   if (SPI_Direction == SPI_Direction_Tx)
   {
-    /* Set the Tx only mode */
+    /* Set the Tx only flightMode */
     SPIx->CR1 |= SPI_Direction_Tx;
   }
   else
   {
-    /* Set the Rx only mode */
+    /* Set the Rx only flightMode */
     SPIx->CR1 &= SPI_Direction_Rx;
   }
 }
@@ -664,12 +664,12 @@ void SPI_NSSPulseModeCmd(SPI_TypeDef* SPIx, FunctionalState NewState)
 
   if (NewState != DISABLE)
   {
-    /* Enable the NSS pulse management mode */
+    /* Enable the NSS pulse management flightMode */
     SPIx->CR2 |= SPI_CR2_NSSP;
   }
   else
   {
-    /* Disable the NSS pulse management mode */
+    /* Disable the NSS pulse management flightMode */
     SPIx->CR2 &= (uint16_t)~((uint16_t)SPI_CR2_NSSP);    
   }
 }

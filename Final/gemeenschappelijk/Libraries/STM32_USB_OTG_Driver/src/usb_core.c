@@ -226,7 +226,7 @@ USB_OTG_STS USB_OTG_SelectCore(USB_OTG_CORE_HANDLE *pdev,
   
   pdev->cfg.dma_enable       = 0;
   
-  /* at startup the core is in FS mode */
+  /* at startup the core is in FS flightMode */
   pdev->cfg.speed            = USB_OTG_SPEED_FULL;
   pdev->cfg.mps              = USB_OTG_FS_MAX_PACKET_SIZE ;    
   
@@ -380,7 +380,7 @@ USB_OTG_STS USB_OTG_CoreInit(USB_OTG_CORE_HANDLE *pdev)
     usbcfg.d32 = USB_OTG_READ_REG32(&pdev->regs.GREGS->GUSBCFG);;
     usbcfg.b.physel  = 1; /* FS Interface */
     USB_OTG_WRITE_REG32 (&pdev->regs.GREGS->GUSBCFG, usbcfg.d32);
-    /* Reset after a PHY select and set Host mode */
+    /* Reset after a PHY select and set Host flightMode */
     USB_OTG_CoreReset(pdev);
     /* Deactivate the power down*/
     gccfg.d32 = 0;
@@ -400,7 +400,7 @@ USB_OTG_STS USB_OTG_CoreInit(USB_OTG_CORE_HANDLE *pdev)
     USB_OTG_WRITE_REG32 (&pdev->regs.GREGS->GCCFG, gccfg.d32);
     USB_OTG_BSP_mDelay(20);
   }
-  /* case the HS core is working in FS mode */
+  /* case the HS core is working in FS flightMode */
   if(pdev->cfg.dma_enable == 1)
   {
     
@@ -605,7 +605,7 @@ uint32_t USB_OTG_ReadOtgItr (USB_OTG_CORE_HANDLE *pdev)
 
 #ifdef USE_HOST_MODE
 /**
-* @brief  USB_OTG_CoreInitHost : Initializes USB_OTG controller for host mode
+* @brief  USB_OTG_CoreInitHost : Initializes USB_OTG controller for host flightMode
 * @param  pdev : Selected device
 * @retval status
 */
@@ -749,7 +749,7 @@ void USB_OTG_DriveVbus (USB_OTG_CORE_HANDLE *pdev, uint8_t state)
   USB_OTG_BSP_mDelay(200);
 }
 /**
-* @brief  USB_OTG_EnableHostInt: Enables the Host mode interrupts
+* @brief  USB_OTG_EnableHostInt: Enables the Host flightMode interrupts
 * @param  pdev : Selected device
 * @retval USB_OTG_STS : status
 */
@@ -1024,7 +1024,7 @@ USB_OTG_STS USB_OTG_HC_StartXfer(USB_OTG_CORE_HANDLE *pdev , uint8_t hc_num)
   hcchar.b.chdis = 0;
   USB_OTG_WRITE_REG32(&pdev->regs.HC_REGS[hc_num]->HCCHAR, hcchar.d32);
   
-  if (pdev->cfg.dma_enable == 0) /* Slave mode */
+  if (pdev->cfg.dma_enable == 0) /* Slave flightMode */
   {  
     if((pdev->host.hc[hc_num].ep_is_in == 0) && 
        (pdev->host.hc[hc_num].xfer_len > 0))
@@ -1187,7 +1187,7 @@ void USB_OTG_InitDevSpeed(USB_OTG_CORE_HANDLE *pdev , uint8_t speed)
 
 /**
 * @brief  USB_OTG_CoreInitDev : Initializes the USB_OTG controller registers 
-*         for device mode
+*         for device flightMode
 * @param  pdev : Selected device
 * @retval USB_OTG_STS : status
 */
@@ -1259,7 +1259,7 @@ USB_OTG_STS USB_OTG_CoreInitDev (USB_OTG_CORE_HANDLE *pdev)
     {
       USB_OTG_InitDevSpeed (pdev , USB_OTG_SPEED_PARAM_HIGH);
     }
-    else /* set High speed phy in Full speed mode */
+    else /* set High speed phy in Full speed flightMode */
     {
       USB_OTG_InitDevSpeed (pdev , USB_OTG_SPEED_PARAM_HIGH_IN_FULL);
     }
@@ -1366,7 +1366,7 @@ USB_OTG_STS USB_OTG_CoreInitDev (USB_OTG_CORE_HANDLE *pdev)
 
 
 /**
-* @brief  USB_OTG_EnableDevInt : Enables the Device mode interrupts
+* @brief  USB_OTG_EnableDevInt : Enables the Device flightMode interrupts
 * @param  pdev : Selected device
 * @retval USB_OTG_STS : status
 */
@@ -1389,7 +1389,7 @@ USB_OTG_STS USB_OTG_EnableDevInt(USB_OTG_CORE_HANDLE *pdev)
     intmsk.b.rxstsqlvl = 1;
   }
   
-  /* Enable interrupts matching to the Device mode ONLY */
+  /* Enable interrupts matching to the Device flightMode ONLY */
   intmsk.b.usbsuspend = 1;
   intmsk.b.usbreset   = 1;
   intmsk.b.enumdone   = 1;

@@ -366,7 +366,7 @@ void PWR_EnterSleepMode(uint8_t PWR_SLEEPEntry)
   /* Clear SLEEPDEEP bit of Cortex-M0 System Control Register */
   SCB->SCR &= (uint32_t)~((uint32_t)SCB_SCR_SLEEPDEEP_Msk);
   
-  /* Select SLEEP mode entry -------------------------------------------------*/
+  /* Select SLEEP flightMode entry -------------------------------------------------*/
   if(PWR_SLEEPEntry == PWR_SLEEPEntry_WFI)
   {
     /* Request Wait For Interrupt */
@@ -406,7 +406,7 @@ void PWR_EnterSTOPMode(uint32_t PWR_Regulator, uint8_t PWR_STOPEntry)
   assert_param(IS_PWR_REGULATOR(PWR_Regulator));
   assert_param(IS_PWR_STOP_ENTRY(PWR_STOPEntry));
 
-  /* Select the regulator state in STOP mode ---------------------------------*/
+  /* Select the regulator state in STOP flightMode ---------------------------------*/
   tmpreg = PWR->CR;
   /* Clear PDDS and LPDSR bits */
   tmpreg &= CR_DS_MASK;
@@ -420,7 +420,7 @@ void PWR_EnterSTOPMode(uint32_t PWR_Regulator, uint8_t PWR_STOPEntry)
   /* Set SLEEPDEEP bit of Cortex-M0 System Control Register */
   SCB->SCR |= SCB_SCR_SLEEPDEEP_Msk;
 
-  /* Select STOP mode entry --------------------------------------------------*/
+  /* Select STOP flightMode entry --------------------------------------------------*/
   if(PWR_STOPEntry == PWR_STOPEntry_WFI)
   {
     /* Request Wait For Interrupt */
@@ -450,7 +450,7 @@ void PWR_EnterSTANDBYMode(void)
   /* Clear Wakeup flag */
   PWR->CR |= PWR_CR_CWUF;
 
-  /* Select STANDBY mode */
+  /* Select STANDBY flightMode */
   PWR->CR |= PWR_CR_PDDS;
 
   /* Set SLEEPDEEP bit of Cortex-M0 System Control Register */

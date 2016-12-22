@@ -234,7 +234,7 @@ void (* const g_pfnVectors[])(void) =
     RTCAlarm_IRQHandler,        /* RTC Alarm through EXTI Line */
     USBWakeUp_IRQHandler,       /* USB Wakeup from suspend */
     0,0,0,0,0,0,0,
-    (intfunc)0xF108F85F          /* @0x108. This is for boot in RAM mode for
+    (intfunc)0xF108F85F          /* @0x108. This is for boot in RAM flightMode for
                                    STM32F10x Medium Density devices. */
 };
 

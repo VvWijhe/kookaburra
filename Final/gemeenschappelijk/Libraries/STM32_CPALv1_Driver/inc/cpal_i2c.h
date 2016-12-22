@@ -151,10 +151,10 @@ typedef enum
 
 uint32_t  CPAL_I2C_Init         (CPAL_InitTypeDef* pDevInitStruct); /*<!This function Initializes the selected I2C device 
                                                                         and all needed resources (GPIOs, clocks, DMA, 
-                                                                        interrupts …) */
+                                                                        interrupts ï¿½) */
                                                        
 uint32_t  CPAL_I2C_DeInit       (CPAL_InitTypeDef* pDevInitStruct); /*<!This function free the resources used by the I2C 
-                                                                        device (GPIOs, clocks, DMA, interrupts …) and 
+                                                                        device (GPIOs, clocks, DMA, interrupts ï¿½) and 
                                                                         deinitialize the device itself */
                                                        
 uint32_t  CPAL_I2C_StructInit   (CPAL_InitTypeDef* pDevInitStruct); /*<!This function Initializes I2C device structure 
@@ -180,7 +180,7 @@ uint32_t  CPAL_I2C_Read         (CPAL_InitTypeDef* pDevInitStruct); /*<!This fun
 
 
 #if defined (CPAL_I2C_LISTEN_MODE) && defined (CPAL_I2C_SLAVE_MODE)
-uint32_t  CPAL_I2C_Listen       (CPAL_InitTypeDef* pDevInitStruct); /*<!This function allows the specified I2C device to enter listen mode 
+uint32_t  CPAL_I2C_Listen       (CPAL_InitTypeDef* pDevInitStruct); /*<!This function allows the specified I2C device to enter listen flightMode
                                                                         All information relative to the read or write transfer parameters and
                                                                         current status are extracted from fields defined in @ref CPAL_Transfer_TypeDef */
 #endif /* CPAL_I2C_LISTEN_MODE && CPAL_I2C_SLAVE_MODE */
@@ -212,59 +212,59 @@ uint32_t CPAL_I2C_Enable_DMA_IT (CPAL_InitTypeDef* pDevInitStruct, CPAL_Directio
    Each callback is called in a particular situation detailed in the callback description. */
 
 #ifndef CPAL_I2C_TX_UserCallback
-void CPAL_I2C_TX_UserCallback   (CPAL_InitTypeDef* pDevInitStruct); /*<!This function is called when (in Interrupt mode) 
+void CPAL_I2C_TX_UserCallback   (CPAL_InitTypeDef* pDevInitStruct); /*<!This function is called when (in Interrupt flightMode)
                                                                         the peripheral is preparing to send data */ 
 #endif
 
 #ifndef CPAL_I2C_RX_UserCallback
-void CPAL_I2C_RX_UserCallback   (CPAL_InitTypeDef* pDevInitStruct); /*<!This function is called when (in Interrupt mode) 
+void CPAL_I2C_RX_UserCallback   (CPAL_InitTypeDef* pDevInitStruct); /*<!This function is called when (in Interrupt flightMode)
                                                                         the peripheral has received data */ 
 #endif
 
 #ifndef CPAL_I2C_TXTC_UserCallback
-void CPAL_I2C_TXTC_UserCallback(CPAL_InitTypeDef* pDevInitStruct); /*<!This function is called when (in DMA or Interrupt mode)
-                                                                      TX Transfer is complete (to use in DMA mode, Transfer complete 
+void CPAL_I2C_TXTC_UserCallback(CPAL_InitTypeDef* pDevInitStruct); /*<!This function is called when (in DMA or Interrupt flightMode)
+                                                                      TX Transfer is complete (to use in DMA flightMode, Transfer complete
                                                                       interrupt must be enabled) */ 
 #endif
 
 #ifndef CPAL_I2C_RXTC_UserCallback
-void CPAL_I2C_RXTC_UserCallback(CPAL_InitTypeDef* pDevInitStruct); /*<!This function is called when (in DMA or Interrupt mode)
-                                                                       RX Transfer is complete (to use in DMA mode, Transfer complete 
+void CPAL_I2C_RXTC_UserCallback(CPAL_InitTypeDef* pDevInitStruct); /*<!This function is called when (in DMA or Interrupt flightMode)
+                                                                       RX Transfer is complete (to use in DMA flightMode, Transfer complete
                                                                        interrupt must be enabled) */ 
 #endif
 
 #ifndef CPAL_I2C_DMATXTC_UserCallback
-void CPAL_I2C_DMATXTC_UserCallback(CPAL_InitTypeDef* pDevInitStruct); /*<!This function is called (in DMA mode) when 
+void CPAL_I2C_DMATXTC_UserCallback(CPAL_InitTypeDef* pDevInitStruct); /*<!This function is called (in DMA flightMode) when
                                                                           DMA Transmission is finished (If Transfer Complete 
                                                                           interrupt is enabled) */
 #endif
 
 #ifndef CPAL_I2C_DMATXHT_UserCallback
-void CPAL_I2C_DMATXHT_UserCallback(CPAL_InitTypeDef* pDevInitStruct); /*<!This function is called (in DMA mode) when the 
+void CPAL_I2C_DMATXHT_UserCallback(CPAL_InitTypeDef* pDevInitStruct); /*<!This function is called (in DMA flightMode) when the
                                                                           DMA Transmission has reached the half of the 
                                                                           buffer (If Half Transfer interrupt is enabled) */
 #endif
 
 #ifndef CPAL_I2C_DMATXTE_UserCallback
-void CPAL_I2C_DMATXTE_UserCallback(CPAL_InitTypeDef* pDevInitStruct); /*<!This function is called when (in DMA mode) a 
+void CPAL_I2C_DMATXTE_UserCallback(CPAL_InitTypeDef* pDevInitStruct); /*<!This function is called when (in DMA flightMode) a
                                                                           DMA Transmission transfer error has occurred 
                                                                           (If Transfer Error interrupt is enabled ) */
 #endif
 
 #ifndef CPAL_I2C_DMARXTC_UserCallback
-void CPAL_I2C_DMARXTC_UserCallback(CPAL_InitTypeDef* pDevInitStruct); /*<!This function is called when (in DMA mode) when 
+void CPAL_I2C_DMARXTC_UserCallback(CPAL_InitTypeDef* pDevInitStruct); /*<!This function is called when (in DMA flightMode) when
                                                                           DMA Reception is finished (If Transfer Complete 
                                                                           interrupt is enabled) */
 #endif
 
 #ifndef CPAL_I2C_DMARXHT_UserCallback
-void CPAL_I2C_DMARXHT_UserCallback(CPAL_InitTypeDef* pDevInitStruct); /*<!This function is called when (in DMA mode) the
+void CPAL_I2C_DMARXHT_UserCallback(CPAL_InitTypeDef* pDevInitStruct); /*<!This function is called when (in DMA flightMode) the
                                                                           DMA Reception has reached the half of the 
                                                                           buffer (If Half Transfer interrupt is enabled) */
 #endif
 
 #ifndef CPAL_I2C_DMARXTE_UserCallback
-void CPAL_I2C_DMARXTE_UserCallback(CPAL_InitTypeDef* pDevInitStruct); /*<!This function is called when (in DMA mode) a 
+void CPAL_I2C_DMARXTE_UserCallback(CPAL_InitTypeDef* pDevInitStruct); /*<!This function is called when (in DMA flightMode) a
                                                                           DMA Reception transfer error has occurred 
                                                                           (If Transfer Error interrupt is enabled ) */
 #endif
@@ -281,12 +281,12 @@ void CPAL_I2C_DUALF_UserCallback(CPAL_InitTypeDef* pDevInitStruct); /*<!This fun
 
 #ifndef CPAL_I2C_SLAVE_READ_UserCallback
 void CPAL_I2C_SLAVE_READ_UserCallback(CPAL_InitTypeDef* pDevInitStruct); /*<!This function is called when a read operation is
-                                                                             requested in Listen mode only */
+                                                                             requested in Listen flightMode only */
 #endif
 
 #ifndef CPAL_I2C_SLAVE_WRITE_UserCallback
 void CPAL_I2C_SLAVE_WRITE_UserCallback(CPAL_InitTypeDef* pDevInitStruct); /*<!This function is called when a write operation is
-                                                                              requested in Listen mode only */
+                                                                              requested in Listen flightMode only */
 #endif
 
 /*========= CPAL_User_ErrorCallback_Prototypes =========*/

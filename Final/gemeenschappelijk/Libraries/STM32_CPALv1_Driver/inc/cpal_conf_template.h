@@ -148,7 +148,7 @@
       Call the function CPAL_PPP_Write() or CPAL_PPP_Read() to perform transfer operations. 
       These functions handle communication events using device event interrupts (independently of programming model used: DMA, 
       Interrupt). These functions start preparing communication (send start condition, send salve address in case of 
-      master mode ...) if connection is established between devices CPAL_State is set CPAL_STATE_BUSY_XX and data transfer starts. 
+      master flightMode ...) if connection is established between devices CPAL_State is set CPAL_STATE_BUSY_XX and data transfer starts.
       By default, Error interrupts are enabled to manage device errors (Error interrupts can be disabled by affecting 
       CPAL_OPT_I2C_ERRIT_DISABLE to wCPAL_Options). When transfer is completed successfully, CPAL_State is set to CPAL_STATE_READY 
       and another operation can be started.
@@ -159,13 +159,13 @@
       or DMA. 
 
       -3- 2- Listen Mode for Slave
-      This mode allows slave device to start a communication without knowing in advance the nature of the operation (read or write).
+      This flightMode allows slave device to start a communication without knowing in advance the nature of the operation (read or write).
       Slave enter in idle state and wait until it receive its own address, CPAL_State is set CPAL_STATE_BUSY. In accordance to the type 
       of received request from master device, the slave device state is changed to CPAL_STATE_BUSY_RX and CPAL_I2C_SLAVE_READ_UserCallback 
       is called for a read request or state is changed to CPAL_STATE_BUSY_TX and CPAL_I2C_SLAVE_WRITE_UserCallback for a write request.
       In these callbacks user must configure DMA, interrupts (Prepare DMA channel, DMA request and I2C interrupts) and transfer parameters.
       To configure DMA and Interrupts user can call "CPAL_I2C_Enable_DMA_IT" function which is implemented in Communication layer of CPAL Library. 
-      Listen mode is enabled by uncommenting "CPAL_I2C_LISTEN_MODE" define in "cpal_conf.h" file. When this mode is enabled "CPAL_I2C_Read" and 
+      Listen flightMode is enabled by uncommenting "CPAL_I2C_LISTEN_MODE" define in "cpal_conf.h" file. When this flightMode is enabled "CPAL_I2C_Read" and
       "CPAL_I2C_Write" functions are replaced by one function "CPAL_I2C_Listen".
     
       -4- DEVICE DEINITIALIZATION 
@@ -209,17 +209,17 @@
 
           ** CPAL_I2C_GENCALL_UserCallback(CPAL_InitTypeDef* pDevInitStruct) 
                This function is called when an Address Event interrupt occurred and General Call Address Flag is set 
-               (available in Slave mode only and when the option CPAL_OPT_I2C_GENCALL is enabled).
+               (available in Slave flightMode only and when the option CPAL_OPT_I2C_GENCALL is enabled).
 
           ** CPAL_I2C_DUALF_UserCallback(CPAL_InitTypeDef* pDevInitStruct) 
                This function is called when an Address Event interrupt occurred and Dual Address Flag is set 
-              (available in Slave mode only and when the option CPAL_OPT_I2C_DUALADDR is enabled).
+              (available in Slave flightMode only and when the option CPAL_OPT_I2C_DUALADDR is enabled).
 
           ** CPAL_I2C_SLAVE_WRITE_UserCallback(CPAL_InitTypeDef* pDevInitStruct)
-               This function is called when a write operation is requested in Listen mode only.
+               This function is called when a write operation is requested in Listen flightMode only.
                 
           ** CPAL_I2C_SLAVE_READ_UserCallback(CPAL_InitTypeDef* pDevInitStruct)
-               This function is called when a read operation is requested in Listen mode only.
+               This function is called when a read operation is requested in Listen flightMode only.
                
                
         -b- Error User Callbacks : 
@@ -355,7 +355,7 @@
 #define CPAL_I2C_SLAVE_MODE
 
 
-/* Enable Listen mode for slave device */
+/* Enable Listen flightMode for slave device */
 //#define CPAL_I2C_LISTEN_MODE
 
 
@@ -448,7 +448,7 @@
 #define CPAL_EnterCriticalSection_UserCallback        __disable_irq
 #define CPAL_ExitCriticalSection_UserCallback         __enable_irq
 
-/* Listen mode Callback : Used to handle communication in listen mode */
+/* Listen flightMode Callback : Used to handle communication in listen flightMode */
 #define CPAL_I2C_SLAVE_READ_UserCallback        (void)    
 #define CPAL_I2C_SLAVE_WRITE_UserCallback       (void)
 

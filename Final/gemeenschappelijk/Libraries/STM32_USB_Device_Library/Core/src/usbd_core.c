@@ -225,7 +225,7 @@ static uint8_t USBD_DataOutStage(USB_OTG_CORE_HANDLE *pdev , uint8_t epnum)
         
         if(pdev->cfg.dma_enable == 1)
         {
-          /* in slave mode this, is handled by the RxSTSQLvl ISR */
+          /* in slave flightMode this, is handled by the RxSTSQLvl ISR */
           ep->xfer_buff += ep->maxpacket; 
         }        
         USBD_CtlContinueRx (pdev, 
@@ -272,7 +272,7 @@ static uint8_t USBD_DataInStage(USB_OTG_CORE_HANDLE *pdev , uint8_t epnum)
         ep->rem_data_len -=  ep->maxpacket;
         if(pdev->cfg.dma_enable == 1)
         {
-          /* in slave mode this, is handled by the TxFifoEmpty ISR */
+          /* in slave flightMode this, is handled by the TxFifoEmpty ISR */
           ep->xfer_buff += ep->maxpacket;
         }
         USBD_CtlContinueSendData (pdev, 

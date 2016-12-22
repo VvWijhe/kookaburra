@@ -2,6 +2,8 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include <airplane.h>
+#include <counter.h>
+#include <stm32f0_discovery.h>
 #include "stm32f0xx_it.h"
 
 #define RCHIGH 5.0
@@ -96,8 +98,11 @@ void TIM3_IRQHandler() {
 
         // Delay = (count - 1) / TIM3 freq
         if (count++ == 4) {
-            Timer::setTim17(1);
-
+            if(verticalSpeed == 0){
+                TIM_Cmd(TIM17, DISABLE);
+            } else {
+                Timer::setTim17(10);
+            }
             count = 0;
         }
     }
@@ -113,6 +118,7 @@ void TIM14_IRQHandler() {
         TIM_ClearITPendingBit(TIM14, TIM_IT_Update);
 
         Timer::incrementTime(Time::seconds);
+        STM_EVAL_LEDToggle(LED4);
     }
 }
 
@@ -126,7 +132,6 @@ void TIM16_IRQHandler(void) {
         TIM_ClearITPendingBit(TIM16, TIM_IT_Update);
 
         //currentAltitude = Airplane::getPitch();
-        //STM_EVAL_LEDToggle(LED3);
     }
 }
 
@@ -138,10 +143,8 @@ void TIM16_IRQHandler(void) {
 void TIM15_IRQHandler(void) {
     __IO uint32_t IC2Value = 0;
     __IO uint32_t DutyCycle = 0;
-    typedef enum {
-        OFF = 0, ON
-    } FlightPlanner;
-    FlightPlanner Newstate = OFF; //the mode the plane should work with, auto or manual.
+
+    flightMode = MANUAL_M; //the flightMode the plane should work with, auto or manual.
 
     /* Clear TIM2 Capture compare interrupt pending bit */
     TIM_ClearITPendingBit(TIM15, TIM_IT_CC1);
@@ -153,33 +156,33 @@ void TIM15_IRQHandler(void) {
         /* Duty cycle computation */
         DutyCycle = IC2Value - TIM_GetCapture1(TIM15);
         PrevDutyCycle = DutyCycle;
-        DutyCyclePC = (float) (DutyCycle - 49200) / 163.2;
-        if (DutyCyclePC < 0) {
-            DutyCyclePC += 301.9;
+        currentDutyCycle = (float) ((DutyCycle - 49200) / 163.2);
+        if (currentDutyCycle < 0) {
+            currentDutyCycle += 301.9;
         }
     } else {
-        DutyCycle = PrevDutyCycle;
+        DutyCycle = (uint32_t) PrevDutyCycle;
     }
 
     //from here on the flightplanner switch is processed.
     // NOTE: MAXATTEMPTS, RCHIGH and RCLOW are still trivial, give them actual values.
-    if (StepCount == 0 && DutyCyclePC > RCHIGH && Newstate == OFF) //first up
+    if (StepCount == 0 && currentDutyCycle > RCHIGH && flightMode == MANUAL_M) //first up
     {
         StepCount++;
         Attempts = 0;
-    } else if (StepCount == 1 && DutyCyclePC < RCLOW && Attempts < MAXATTEMPTS && Newstate == OFF) //then down
+    } else if (StepCount == 1 && currentDutyCycle < RCLOW && Attempts < MAXATTEMPTS && flightMode == MANUAL_M) //then down
     {
         StepCount++;
         Attempts = 0;
-    } else if (StepCount == 2 && DutyCyclePC > RCHIGH && Attempts < MAXATTEMPTS &&
-               Newstate == OFF) //up again, enable Flightplanner
+    } else if (StepCount == 2 && currentDutyCycle > RCHIGH && Attempts < MAXATTEMPTS &&
+               flightMode == MANUAL_M) //up again, enable Flightplanner
     {
-        Newstate = ON;
+        flightMode = AUTOPILOT_M;
         Attempts = 0;
-    } else if (Newstate == ON && Attempts > MAXATTEMPTS &&
-               DutyCyclePC < RCLOW) //down when Flightplanner is active disables it
+    } else if (flightMode == AUTOPILOT_M && Attempts > MAXATTEMPTS &&
+               currentDutyCycle < RCLOW) //down when Flightplanner is active disables it
     {
-        Newstate = OFF;
+        flightMode = MANUAL_M;
         Attempts = 0;
         StepCount = 0;
     }

@@ -148,7 +148,7 @@
       Call the function CPAL_PPP_Write() or CPAL_PPP_Read() to perform transfer operations.
       These functions handle communication events using device event interrupts (independently of programming model used: DMA,
       Interrupt). These functions start preparing communication (send start condition, send salve address in case of
-      master mode ...) if connection is established between devices CPAL_State is set CPAL_STATE_BUSY_XX and data transfer starts.
+      master flightMode ...) if connection is established between devices CPAL_State is set CPAL_STATE_BUSY_XX and data transfer starts.
       By default, Error interrupts are enabled to manage device errors (Error interrupts can be disabled by affecting
       CPAL_OPT_I2C_ERRIT_DISABLE to wCPAL_Options). When transfer is completed successfully, CPAL_State is set to CPAL_STATE_READY
       and another operation can be started.
@@ -199,11 +199,11 @@
 
           ** CPAL_I2C_GENCALL_UserCallback(CPAL_InitTypeDef* pDevInitStruct)
                This function is called when an Address Event interrupt occurred and General Call Address Flag is set
-               (available in Slave mode only and when the option CPAL_OPT_I2C_GENCALL is enabled).
+               (available in Slave flightMode only and when the option CPAL_OPT_I2C_GENCALL is enabled).
 
           ** CPAL_I2C_DUALF_UserCallback(CPAL_InitTypeDef* pDevInitStruct) 
                This function is called when an Address Event interrupt occurred and Dual Address Flag is set
-              (available in Slave mode only and when the option CPAL_OPT_I2C_DUALADDR is enabled).
+              (available in Slave flightMode only and when the option CPAL_OPT_I2C_DUALADDR is enabled).
 
 
         -b- Error User Callbacks :

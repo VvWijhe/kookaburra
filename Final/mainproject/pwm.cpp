@@ -35,7 +35,7 @@ void AirplaneControl::init() {
     //    configuration:
     //    (++) Autoreload value = 0xFFFF.
     //    (++) Prescaler value = 0x0000.
-    //    (++) Counter mode = Up counting.
+    //    (++) Counter flightMode = Up counting.
     //    (++) Clock Division = TIM_CKD_DIV1.
     TIM_TimeBaseStructure.TIM_ClockDivision = TIM_CKD_DIV1;
     TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;
@@ -44,7 +44,7 @@ void AirplaneControl::init() {
     TIM_TimeBaseInit(TIM2, &TIM_TimeBaseStructure);
 
     //(#) Fill the TIM_OCInitStruct with the desired parameters including:
-    //    (++) The TIM Output Compare mode: TIM_OCMode.
+    //    (++) The TIM Output Compare flightMode: TIM_OCMode.
     //    (++) TIM Output State: TIM_OutputState.
     //    (++) TIM Pulse value: TIM_Pulse.
     //    (++) TIM Output Compare Polarity : TIM_OCPolarity.
@@ -72,9 +72,9 @@ void AirplaneControl::init() {
 void AirplaneControl::InitCapComp() {
     // GPIOB Periph clock enable
     RCC->AHBENR |= RCC_AHBENR_GPIOBEN;
-    // PB14 in input mode
+    // PB14 in input flightMode
     GPIOB->MODER |= (GPIO_MODER_MODER14_1);
-    // Push pull mode selected
+    // Push pull flightMode selected
     GPIOB->OTYPER &= ~(GPIO_OTYPER_OT_14);
     // Maximum speed setting
     GPIOB->OSPEEDR |= (GPIO_OSPEEDER_OSPEEDR14);
@@ -109,7 +109,7 @@ void AirplaneControl::InitCapComp() {
     NVIC_Init(&NVIC_InitStructure);
 
     /* ---------------------------------------------------------------------------
-       TIM15 configuration: PWM Input mode
+       TIM15 configuration: PWM Input flightMode
         The external signal is connected to TIM15 CH1 pin (PB.014)
         TIM15 CCR2 is used to compute the frequency value
         TIM15 CCR1 is used to compute the duty cycle value

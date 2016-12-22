@@ -538,25 +538,25 @@ void USART_SetAddress(USART_TypeDef* USARTx, uint8_t USART_Address);
 void USART_MuteModeWakeUpConfig(USART_TypeDef* USARTx, uint32_t USART_WakeUp);
 void USART_MuteModeCmd(USART_TypeDef* USARTx, FunctionalState NewState);
 void USART_AddressDetectionConfig(USART_TypeDef* USARTx, uint32_t USART_AddressLength);
-/* LIN mode functions *********************************************************/
+/* LIN flightMode functions *********************************************************/
 void USART_LINBreakDetectLengthConfig(USART_TypeDef* USARTx, uint32_t USART_LINBreakDetectLength);
 void USART_LINCmd(USART_TypeDef* USARTx, FunctionalState NewState);
 
-/* Half-duplex mode function **************************************************/
+/* Half-duplex flightMode function **************************************************/
 void USART_HalfDuplexCmd(USART_TypeDef* USARTx, FunctionalState NewState);
 
-/* Smartcard mode functions ***************************************************/
+/* Smartcard flightMode functions ***************************************************/
 void USART_SmartCardCmd(USART_TypeDef* USARTx, FunctionalState NewState);
 void USART_SmartCardNACKCmd(USART_TypeDef* USARTx, FunctionalState NewState);
 void USART_SetGuardTime(USART_TypeDef* USARTx, uint8_t USART_GuardTime);
 void USART_SetAutoRetryCount(USART_TypeDef* USARTx, uint8_t USART_AutoCount);
 void USART_SetBlockLength(USART_TypeDef* USARTx, uint8_t USART_BlockLength);
 
-/* IrDA mode functions ********************************************************/
+/* IrDA flightMode functions ********************************************************/
 void USART_IrDAConfig(USART_TypeDef* USARTx, uint32_t USART_IrDAMode);
 void USART_IrDACmd(USART_TypeDef* USARTx, FunctionalState NewState);
 
-/* RS485 mode functions *******************************************************/
+/* RS485 flightMode functions *******************************************************/
 void USART_DECmd(USART_TypeDef* USARTx, FunctionalState NewState);
 void USART_DEPolarityConfig(USART_TypeDef* USARTx, uint32_t USART_DEPolarity);
 void USART_SetDEAssertionTime(USART_TypeDef* USARTx, uint32_t USART_DEAssertionTime);

@@ -53,7 +53,7 @@
   
                 - Section 1 : Select the pins to be used for each device instance.
   
-                - Section 2 : Select TX and RX DMA Channels (if DMA mode will be used).
+                - Section 2 : Select TX and RX DMA Channels (if DMA flightMode will be used).
   
                 - Section 3 : Set device's Events, Errors and DMA Interrupts Priorities.                   */
   

@@ -725,12 +725,12 @@ void ADC_ContinuousModeCmd(ADC_TypeDef* ADCx, FunctionalState NewState)
 
     if (NewState != DISABLE)
   {
-    /* Enable the Continuous mode*/
+    /* Enable the Continuous flightMode*/
     ADCx->CFGR1 |= (uint32_t)ADC_CFGR1_CONT;
   }
   else
   {
-    /* Disable the Continuous mode */
+    /* Disable the Continuous flightMode */
     ADCx->CFGR1 &= (uint32_t)(~ADC_CFGR1_CONT);
   }
 }
@@ -753,12 +753,12 @@ void ADC_DiscModeCmd(ADC_TypeDef* ADCx, FunctionalState NewState)
 
     if (NewState != DISABLE)
   {
-    /* Enable the Discontinuous mode */
+    /* Enable the Discontinuous flightMode */
     ADCx->CFGR1 |= (uint32_t)ADC_CFGR1_DISCEN;
   }
   else
   {
-    /* Disable the Discontinuous mode */
+    /* Disable the Discontinuous flightMode */
     ADCx->CFGR1 &= (uint32_t)(~ADC_CFGR1_DISCEN);
   }
 }
@@ -778,12 +778,12 @@ void ADC_OverrunModeCmd(ADC_TypeDef* ADCx, FunctionalState NewState)
 
     if (NewState != DISABLE)
   {
-    /* Enable the Overrun mode */
+    /* Enable the Overrun flightMode */
     ADCx->CFGR1 |= (uint32_t)ADC_CFGR1_OVRMOD;
   }
   else
   {
-    /* Disable the Overrun mode */
+    /* Disable the Overrun flightMode */
     ADCx->CFGR1 &= (uint32_t)(~ADC_CFGR1_OVRMOD);
   }
 }

@@ -227,7 +227,7 @@ void I2C_Init(I2C_TypeDef* I2Cx, I2C_InitTypeDef* I2C_InitStruct)
   I2Cx->OAR1 |= I2C_OAR1_OA1EN;
 
   /*---------------------------- I2Cx MODE Configuration ---------------------*/
-  /* Configure I2Cx: mode */
+  /* Configure I2Cx: flightMode */
   /* Set SMBDEN and SMBHEN bits according to I2C_Mode value */
   tmpreg = I2C_InitStruct->I2C_Mode;
   /* Write to I2Cx CR1 */
@@ -392,12 +392,12 @@ void I2C_StopModeCmd(I2C_TypeDef* I2Cx, FunctionalState NewState)
   
   if (NewState != DISABLE)
   {
-    /* Enable wakeup from stop mode */
+    /* Enable wakeup from stop flightMode */
     I2Cx->CR1 |= I2C_CR1_WUPEN;   
   }
   else
   {
-    /* Disable wakeup from stop mode */    
+    /* Disable wakeup from stop flightMode */
     I2Cx->CR1 &= (uint32_t)~((uint32_t)I2C_CR1_WUPEN); 
   }
 }
@@ -481,12 +481,12 @@ void I2C_GeneralCallCmd(I2C_TypeDef* I2Cx, FunctionalState NewState)
   
   if (NewState != DISABLE)
   {
-    /* Enable general call mode */
+    /* Enable general call flightMode */
     I2Cx->CR1 |= I2C_CR1_GCEN;
   }
   else
   {
-    /* Disable general call mode */
+    /* Disable general call flightMode */
     I2Cx->CR1 &= (uint32_t)~((uint32_t)I2C_CR1_GCEN);
   }
 } 
@@ -560,12 +560,12 @@ void I2C_10BitAddressingModeCmd(I2C_TypeDef* I2Cx, FunctionalState NewState)
   
   if (NewState != DISABLE)
   {
-    /* Enable 10-bit addressing mode */
+    /* Enable 10-bit addressing flightMode */
     I2Cx->CR2 |= I2C_CR2_ADD10;
   }
   else
   {
-    /* Disable 10-bit addressing mode */
+    /* Disable 10-bit addressing flightMode */
     I2Cx->CR2 &= (uint32_t)~((uint32_t)I2C_CR2_ADD10);
   }
 } 
@@ -625,12 +625,12 @@ void I2C_AutoEndCmd(I2C_TypeDef* I2Cx, FunctionalState NewState)
   
   if (NewState != DISABLE)
   {
-    /* Enable Auto end mode */
+    /* Enable Auto end flightMode */
     I2Cx->CR2 |= I2C_CR2_AUTOEND;
   }
   else
   {
-    /* Disable Auto end mode */
+    /* Disable Auto end flightMode */
     I2Cx->CR2 &= (uint32_t)~((uint32_t)I2C_CR2_AUTOEND);
   }
 } 
@@ -650,12 +650,12 @@ void I2C_ReloadCmd(I2C_TypeDef* I2Cx, FunctionalState NewState)
   
   if (NewState != DISABLE)
   {
-    /* Enable Auto Reload mode */
+    /* Enable Auto Reload flightMode */
     I2Cx->CR2 |= I2C_CR2_RELOAD;
   }
   else
   {
-    /* Disable Auto Reload mode */
+    /* Disable Auto Reload flightMode */
     I2Cx->CR2 &= (uint32_t)~((uint32_t)I2C_CR2_RELOAD);
   }
 }
@@ -781,12 +781,12 @@ void I2C_10BitAddressHeaderCmd(I2C_TypeDef* I2Cx, FunctionalState NewState)
   
   if (NewState != DISABLE)
   {
-    /* Enable 10-bit header only mode */
+    /* Enable 10-bit header only flightMode */
     I2Cx->CR2 |= I2C_CR2_HEAD10R;
   }
   else
   {
-    /* Disable 10-bit header only mode */
+    /* Disable 10-bit header only flightMode */
     I2Cx->CR2 &= (uint32_t)~((uint32_t)I2C_CR2_HEAD10R);
   }
 }    

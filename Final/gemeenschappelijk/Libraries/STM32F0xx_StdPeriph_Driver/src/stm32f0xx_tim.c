@@ -830,7 +830,7 @@ void TIM_OC2Init(TIM_TypeDef* TIMx, TIM_OCInitTypeDef* TIM_OCInitStruct)
   /* Get the TIMx CCMR1 register value */
   tmpccmrx = TIMx->CCMR1;
     
-  /* Reset the Output Compare mode and Capture/Compare selection Bits */
+  /* Reset the Output Compare flightMode and Capture/Compare selection Bits */
   tmpccmrx &= (uint16_t)(~((uint16_t)TIM_CCMR1_OC2M));
   tmpccmrx &= (uint16_t)(~((uint16_t)TIM_CCMR1_CC2S));
   
@@ -913,7 +913,7 @@ void TIM_OC3Init(TIM_TypeDef* TIMx, TIM_OCInitTypeDef* TIM_OCInitStruct)
   /* Get the TIMx CCMR2 register value */
   tmpccmrx = TIMx->CCMR2;
     
-  /* Reset the Output Compare mode and Capture/Compare selection Bits */
+  /* Reset the Output Compare flightMode and Capture/Compare selection Bits */
   tmpccmrx &= (uint16_t)(~((uint16_t)TIM_CCMR2_OC3M));
   tmpccmrx &= (uint16_t)(~((uint16_t)TIM_CCMR2_CC3S));  
   /* Select the Output Compare Mode */
@@ -993,7 +993,7 @@ void TIM_OC4Init(TIM_TypeDef* TIMx, TIM_OCInitTypeDef* TIM_OCInitStruct)
   /* Get the TIMx CCMR2 register value */
   tmpccmrx = TIMx->CCMR2;
     
-  /* Reset the Output Compare mode and Capture/Compare selection Bits */
+  /* Reset the Output Compare flightMode and Capture/Compare selection Bits */
   tmpccmrx &= (uint16_t)(~((uint16_t)TIM_CCMR2_OC4M));
   tmpccmrx &= (uint16_t)(~((uint16_t)TIM_CCMR2_CC4S));
   
@@ -2592,7 +2592,7 @@ void TIM_InternalClockConfig(TIM_TypeDef* TIMx)
 {
   /* Check the parameters */
   assert_param(IS_TIM_LIST6_PERIPH(TIMx));
-  /* Disable slave mode to clock the prescaler directly with the internal clock */
+  /* Disable slave flightMode to clock the prescaler directly with the internal clock */
   TIMx->SMCR &=  (uint16_t)(~((uint16_t)TIM_SMCR_SMS));
 }
 

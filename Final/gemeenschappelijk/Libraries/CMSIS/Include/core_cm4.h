@@ -68,7 +68,7 @@
 
 #elif defined ( __ICCARM__ )
   #define __ASM            __asm                                      /*!< asm keyword for IAR Compiler          */
-  #define __INLINE         inline                                     /*!< inline keyword for IAR Compiler. Only available in High optimization mode! */
+  #define __INLINE         inline                                     /*!< inline keyword for IAR Compiler. Only available in High optimization flightMode! */
   #define __STATIC_INLINE  static inline
 
 #elif defined ( __TMS470__ )
@@ -1177,8 +1177,8 @@ typedef struct
 #define FPU_FPCCR_HFRDY_Pos                 4                                             /*!< FPCCR: HFRDY Position */
 #define FPU_FPCCR_HFRDY_Msk                (1UL << FPU_FPCCR_HFRDY_Pos)                   /*!< FPCCR: HFRDY bit Mask */
 
-#define FPU_FPCCR_THREAD_Pos                3                                             /*!< FPCCR: processor mode bit Position */
-#define FPU_FPCCR_THREAD_Msk               (1UL << FPU_FPCCR_THREAD_Pos)                  /*!< FPCCR: processor mode active bit Mask */
+#define FPU_FPCCR_THREAD_Pos                3                                             /*!< FPCCR: processor flightMode bit Position */
+#define FPU_FPCCR_THREAD_Msk               (1UL << FPU_FPCCR_THREAD_Pos)                  /*!< FPCCR: processor flightMode active bit Mask */
 
 #define FPU_FPCCR_USER_Pos                  1                                             /*!< FPCCR: privilege level bit Position */
 #define FPU_FPCCR_USER_Msk                 (1UL << FPU_FPCCR_USER_Pos)                    /*!< FPCCR: privilege level bit Mask */
@@ -1235,11 +1235,11 @@ typedef struct
 #define FPU_MVFR1_FP_HPFP_Pos              24                                             /*!< MVFR1: FP HPFP bits Position */
 #define FPU_MVFR1_FP_HPFP_Msk              (0xFUL << FPU_MVFR1_FP_HPFP_Pos)               /*!< MVFR1: FP HPFP bits Mask */
 
-#define FPU_MVFR1_D_NaN_mode_Pos            4                                             /*!< MVFR1: D_NaN mode bits Position */
-#define FPU_MVFR1_D_NaN_mode_Msk           (0xFUL << FPU_MVFR1_D_NaN_mode_Pos)            /*!< MVFR1: D_NaN mode bits Mask */
+#define FPU_MVFR1_D_NaN_mode_Pos            4                                             /*!< MVFR1: D_NaN flightMode bits Position */
+#define FPU_MVFR1_D_NaN_mode_Msk           (0xFUL << FPU_MVFR1_D_NaN_mode_Pos)            /*!< MVFR1: D_NaN flightMode bits Mask */
 
-#define FPU_MVFR1_FtZ_mode_Pos              0                                             /*!< MVFR1: FtZ mode bits Position */
-#define FPU_MVFR1_FtZ_mode_Msk             (0xFUL << FPU_MVFR1_FtZ_mode_Pos)              /*!< MVFR1: FtZ mode bits Mask */
+#define FPU_MVFR1_FtZ_mode_Pos              0                                             /*!< MVFR1: FtZ flightMode bits Position */
+#define FPU_MVFR1_FtZ_mode_Msk             (0xFUL << FPU_MVFR1_FtZ_mode_Pos)              /*!< MVFR1: FtZ flightMode bits Mask */
 
 /*@} end of group CMSIS_FPU */
 #endif

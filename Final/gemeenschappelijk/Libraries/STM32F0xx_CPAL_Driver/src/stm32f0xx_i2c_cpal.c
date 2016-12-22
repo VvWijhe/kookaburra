@@ -220,16 +220,16 @@ uint32_t CPAL_I2C_Init(CPAL_InitTypeDef* pDevInitStruct)
 
     CPAL_LOG("\n\rLOG : I2C Device Config");
 
-    /* If General Call mode option bit selected */
+    /* If General Call flightMode option bit selected */
     if ((pDevInitStruct->wCPAL_Options & CPAL_OPT_I2C_GENCALL) != 0)
     {
-      /* Enable GENERAL CALL address mode */
+      /* Enable GENERAL CALL address flightMode */
       __CPAL_I2C_HAL_ENABLE_GENCALL(pDevInitStruct->CPAL_Dev);
 
       CPAL_LOG("\n\rLOG : I2C Device GENCALL Mode Enabled");
     }
     
-    /* If OA2 Address mode option bit selected */
+    /* If OA2 Address flightMode option bit selected */
     if ((pDevInitStruct->wCPAL_Options & CPAL_OPT_I2C_DUALADDR) != 0)
     {
       /* Configure OA2 */
@@ -238,7 +238,7 @@ uint32_t CPAL_I2C_Init(CPAL_InitTypeDef* pDevInitStruct)
       /* Configure OA2 masks */
       __CPAL_I2C_HAL_OA2_MASK_CONF(pDevInitStruct->CPAL_Dev, (uint32_t)((pDevInitStruct->wCPAL_Options & CPAL_OPT_I2C_OA2_MASK) >> 25));
 
-      /* Enable OA2 address mode */
+      /* Enable OA2 address flightMode */
       __CPAL_I2C_HAL_ENABLE_OA2(pDevInitStruct->CPAL_Dev);
 
       CPAL_LOG("\n\rLOG : I2C Device OA2 ADDR Mode Enabled");
@@ -247,14 +247,14 @@ uint32_t CPAL_I2C_Init(CPAL_InitTypeDef* pDevInitStruct)
     /* If WakeUp from STOP option bit selected */
     if ((pDevInitStruct->wCPAL_Options & CPAL_OPT_I2C_WAKEUP_STOP) != 0)
     {
-      /* Enable WakeUp from STOP mode */
+      /* Enable WakeUp from STOP flightMode */
       __CPAL_I2C_HAL_ENABLE_WAKEUP(pDevInitStruct->CPAL_Dev);
 
       CPAL_LOG("\n\rLOG : I2C Device WakeUp from Stop Mode Enabled");
     }
     else
     {
-      /* Disable WakeUp from STOP mode */
+      /* Disable WakeUp from STOP flightMode */
       __CPAL_I2C_HAL_DISABLE_WAKEUP(pDevInitStruct->CPAL_Dev);
     }
     
@@ -461,20 +461,20 @@ uint32_t CPAL_I2C_Write(CPAL_InitTypeDef* pDevInitStruct)
                       *- Update CPAL_State to CPAL_STATE_READY_TX
                       *- If DMA Prog Model : 
                          - Configure and enable DMA
-                      *- If Master mode : 
+                      *- If Master flightMode :
                          - If 10Bit Mode : Enable ADD10
                          - Configure Slave address
-                      *- If Memory Address mode (master)
+                      *- If Memory Address flightMode (master)
                          - Send target and memory address
                       *- Update CPAL_State to CPAL_STATE_BUSY_TX
-                      *- If Master mode : 
+                      *- If Master flightMode :
                          - Configure AUTOEND, RELOAD and NBYTES
                          - If Interrupt Prog Model :
                              - Generate start and enable interrupts
                          - If DMA Prog Model :
                              - Enable TX DMA request
                              - Generate start and enable interrupts
-                      *- If Slave mode :
+                      *- If Slave flightMode :
                          - If Interrupt Prog Model :
                              - Enable interrupts
                          - If DMA Prog Model :
@@ -533,14 +533,14 @@ uint32_t CPAL_I2C_Write(CPAL_InitTypeDef* pDevInitStruct)
 #endif /* CPAL_I2C_DMA_PROGMODEL */
     
 #ifdef CPAL_I2C_MASTER_MODE
-    /* If master mode selected */
+    /* If master flightMode selected */
     if (pDevInitStruct->CPAL_Mode == CPAL_MODE_MASTER)
     {
   #ifdef CPAL_I2C_10BIT_ADDR_MODE
-      /* If 10 Bit addressing mode */
+      /* If 10 Bit addressing flightMode */
       if (pDevInitStruct->pCPAL_I2C_Struct->I2C_AcknowledgedAddress == I2C_AcknowledgedAddress_10bit)
       {
-        /* Enable 10Bit addressing mode */
+        /* Enable 10Bit addressing flightMode */
         CR2_tmp |= I2C_CR2_ADD10;
       }      
   #endif /* CPAL_I2C_10BIT_ADDR_MODE */
@@ -550,7 +550,7 @@ uint32_t CPAL_I2C_Write(CPAL_InitTypeDef* pDevInitStruct)
     }
     
   #ifdef CPAL_I2C_MEM_ADDR
-    /* If CPAL_OPT_NO_MEM_ADDR is not selected and master mode selected */
+    /* If CPAL_OPT_NO_MEM_ADDR is not selected and master flightMode selected */
     if (((pDevInitStruct->wCPAL_Options & CPAL_OPT_NO_MEM_ADDR) == 0)
         && (pDevInitStruct->CPAL_Mode == CPAL_MODE_MASTER ))
     {
@@ -559,7 +559,7 @@ uint32_t CPAL_I2C_Write(CPAL_InitTypeDef* pDevInitStruct)
       /* Enable reload */
       CR2_tmp |= I2C_CR2_RELOAD;
       
-      /* If 8 Bit register mode */
+      /* If 8 Bit register flightMode */
       if ((pDevInitStruct->wCPAL_Options & CPAL_OPT_16BIT_REG) == 0)
       {        
         /* Configure Nbytes */
@@ -578,7 +578,7 @@ uint32_t CPAL_I2C_Write(CPAL_InitTypeDef* pDevInitStruct)
         __CPAL_I2C_HAL_SEND(pDevInitStruct->CPAL_Dev, (uint8_t)(pDevInitStruct->pCPAL_TransferTx->wAddr2));
       }
     #ifdef CPAL_16BIT_REG_OPTION
-      /* If 16 Bit register mode */
+      /* If 16 Bit register flightMode */
       else
       {
         /* Configure Nbytes */
@@ -618,15 +618,15 @@ uint32_t CPAL_I2C_Write(CPAL_InitTypeDef* pDevInitStruct)
     CPAL_LOG("\n\rLOG : I2C Device Busy TX");
     
 #ifdef CPAL_I2C_MASTER_MODE
-    /* If master mode selected */
+    /* If master flightMode selected */
     if (pDevInitStruct->CPAL_Mode == CPAL_MODE_MASTER)
     {
       CPAL_LOG("\n\rLOG : I2C Device Master");
       
-      /* If automatic end mode is selected */   
+      /* If automatic end flightMode is selected */
       if ((pDevInitStruct->wCPAL_Options & CPAL_OPT_I2C_AUTOMATIC_END) != 0)
       {
-        /* Enable automatic end mode */
+        /* Enable automatic end flightMode */
         CR2_tmp |= I2C_CR2_AUTOEND;
       }
       
@@ -682,7 +682,7 @@ uint32_t CPAL_I2C_Write(CPAL_InitTypeDef* pDevInitStruct)
         __CPAL_I2C_HAL_ENABLE_MASTER_IT(pDevInitStruct->CPAL_Dev);
       }
     }
-    /* If slave mode selected */
+    /* If slave flightMode selected */
     else
 #endif /* CPAL_I2C_MASTER_MODE */
     {
@@ -744,20 +744,20 @@ uint32_t CPAL_I2C_Read(CPAL_InitTypeDef* pDevInitStruct)
                       *- Update CPAL_State to CPAL_STATE_READY_RX
                       *- If DMA Prog Model :
                          - Configure and enable DMA
-                      *- If Master mode : 
+                      *- If Master flightMode :
                          - If 10Bit Mode : Enable ADD10
                          - Configure Slave address
-                      *- If Memory Address mode (master)
+                      *- If Memory Address flightMode (master)
                          - Send target and memory address
                       *- Update CPAL_State to CPAL_STATE_BUSY_RX
-                      *- If Master mode :
+                      *- If Master flightMode :
                          - Configure HEADR10, AUTOEND, RELOAD and NBYTES
                          - If Interrupt Prog Model :
                              - Generate start and enable interrupts
                          - If DMA Prog Model :
                              - Enable RX DMA request
                              - Generate start and enable interrupts
-                      *- If Slave mode :
+                      *- If Slave flightMode :
                          - If Interrupt Prog Model :
                              - Enable interrupts
                          - If DMA Prog Model :
@@ -816,14 +816,14 @@ uint32_t CPAL_I2C_Read(CPAL_InitTypeDef* pDevInitStruct)
 #endif /* CPAL_I2C_DMA_PROGMODEL */
     
 #ifdef CPAL_I2C_MASTER_MODE
-    /* If master mode selected */
+    /* If master flightMode selected */
     if (pDevInitStruct->CPAL_Mode == CPAL_MODE_MASTER)
     {
   #ifdef CPAL_I2C_10BIT_ADDR_MODE
-      /* If 10 Bit addressing mode */
+      /* If 10 Bit addressing flightMode */
       if (pDevInitStruct->pCPAL_I2C_Struct->I2C_AcknowledgedAddress == I2C_AcknowledgedAddress_10bit)
       {
-        /* Enable 10Bit addressing mode */
+        /* Enable 10Bit addressing flightMode */
         CR2_tmp |= I2C_CR2_ADD10;
       }
   #endif /* CPAL_I2C_10BIT_ADDR_MODE */
@@ -833,13 +833,13 @@ uint32_t CPAL_I2C_Read(CPAL_InitTypeDef* pDevInitStruct)
     }
     
   #ifdef CPAL_I2C_MEM_ADDR
-    /* If No Memory Address option bit is not selected and master mode selected */
+    /* If No Memory Address option bit is not selected and master flightMode selected */
     if (((pDevInitStruct->wCPAL_Options & CPAL_OPT_NO_MEM_ADDR) == 0)
         && (pDevInitStruct->CPAL_Mode == CPAL_MODE_MASTER ))
     {
       CPAL_LOG("\n\rLOG : I2C Device Master Mem Addr Mode");
       
-      /* If 8 Bit register mode */
+      /* If 8 Bit register flightMode */
       if ((pDevInitStruct->wCPAL_Options & CPAL_OPT_16BIT_REG) == 0)
       {
         /* Configure Nbytes */
@@ -858,7 +858,7 @@ uint32_t CPAL_I2C_Read(CPAL_InitTypeDef* pDevInitStruct)
         __CPAL_I2C_HAL_SEND(pDevInitStruct->CPAL_Dev, (uint8_t)(pDevInitStruct->pCPAL_TransferRx->wAddr2));        
       }
     #ifdef CPAL_16BIT_REG_OPTION
-      /* If 16 Bit register mode */
+      /* If 16 Bit register flightMode */
       else
       {
         /* Configure Nbytes */
@@ -899,7 +899,7 @@ uint32_t CPAL_I2C_Read(CPAL_InitTypeDef* pDevInitStruct)
     CPAL_LOG("\n\rLOG : I2C Device Busy RX");
     
 #ifdef CPAL_I2C_MASTER_MODE
-    /* If master mode selected */
+    /* If master flightMode selected */
     if (pDevInitStruct->CPAL_Mode == CPAL_MODE_MASTER)
     {
       CPAL_LOG("\n\rLOG : I2C Device Master");
@@ -908,7 +908,7 @@ uint32_t CPAL_I2C_Read(CPAL_InitTypeDef* pDevInitStruct)
       CR2_tmp |= I2C_CR2_RD_WRN;
       
   #ifdef CPAL_I2C_10BIT_ADDR_MODE
-      /* If 10 Bit addressing mode */
+      /* If 10 Bit addressing flightMode */
       if (pDevInitStruct->pCPAL_I2C_Struct->I2C_AcknowledgedAddress == I2C_AcknowledgedAddress_10bit)
       {
         /* If CPAL_OPT_NO_MEM_ADDR is not selected and CPAL_OPT_I2C_10BIT_HEADR option enabled */
@@ -920,10 +920,10 @@ uint32_t CPAL_I2C_Read(CPAL_InitTypeDef* pDevInitStruct)
       }
   #endif /* CPAL_I2C_10BIT_ADDR_MODE */
       
-      /* If automatic end mode is selected */
+      /* If automatic end flightMode is selected */
       if ((pDevInitStruct->wCPAL_Options & CPAL_OPT_I2C_AUTOMATIC_END) != 0)
       {
-        /* Enable automatic end mode */
+        /* Enable automatic end flightMode */
         CR2_tmp |= I2C_CR2_AUTOEND;
       }      
       
@@ -978,7 +978,7 @@ uint32_t CPAL_I2C_Read(CPAL_InitTypeDef* pDevInitStruct)
         __CPAL_I2C_HAL_ENABLE_MASTER_IT(pDevInitStruct->CPAL_Dev);          
       }
     }
-    /* If slave mode selected */
+    /* If slave flightMode selected */
     else
 #endif /* CPAL_I2C_MASTER_MODE */
     {
@@ -1310,7 +1310,7 @@ uint32_t CPAL_I2C_DMA_TX_IRQHandler(CPAL_InitTypeDef* pDevInitStruct)
   {
     CPAL_LOG("\n\rLOG : I2C Device TX Complete");
 
-    /* If DMA normal mode */
+    /* If DMA normal flightMode */
     if ((pDevInitStruct->wCPAL_Options & CPAL_OPT_DMATX_CIRCULAR) == 0)
     {
       /* Update remaining number of data */
@@ -1325,7 +1325,7 @@ uint32_t CPAL_I2C_DMA_TX_IRQHandler(CPAL_InitTypeDef* pDevInitStruct)
 
       CPAL_LOG("\n\rLOG : I2C Device TX DMA Disabled");
     }
-    /* If DMA circular mode */
+    /* If DMA circular flightMode */
     else
     {
       /* Call DMA TX TC UserCallback */
@@ -1381,7 +1381,7 @@ uint32_t CPAL_I2C_DMA_RX_IRQHandler(CPAL_InitTypeDef* pDevInitStruct)
   {
     CPAL_LOG("\n\rLOG : I2C Device RX Complete");
     
-    /* If DMA normal mode */
+    /* If DMA normal flightMode */
     if ((pDevInitStruct->wCPAL_Options & CPAL_OPT_DMARX_CIRCULAR) == 0)
     {
       /* Update remaining number of data */
@@ -1409,7 +1409,7 @@ uint32_t CPAL_I2C_DMA_RX_IRQHandler(CPAL_InitTypeDef* pDevInitStruct)
         CPAL_I2C_TXTC_UserCallback(pDevInitStruct);
       }
     }
-    /* If DMA circular mode */
+    /* If DMA circular flightMode */
     else
     {
       /* Call DMA RX TC UserCallback */
@@ -1829,7 +1829,7 @@ static uint32_t I2C_SLAVE_ADDR_Handle(CPAL_InitTypeDef* pDevInitStruct)
     /* if matched address is not equal to OA1 */
     if (slaveaddr !=__CPAL_I2C_HAL_GET_OA1(pDevInitStruct->CPAL_Dev))
     {
-      /* If General Call addressing mode selected */
+      /* If General Call addressing flightMode selected */
       if ( slaveaddr == 0x00000000)
       {
         CPAL_LOG("\n\rLOG : I2C Device GENCALL Mode");
@@ -1837,7 +1837,7 @@ static uint32_t I2C_SLAVE_ADDR_Handle(CPAL_InitTypeDef* pDevInitStruct)
         /* Call GENCALL UserCallback */
         CPAL_I2C_GENCALL_UserCallback(pDevInitStruct);
       }
-      /* If DUAL addressing mode selected */
+      /* If DUAL addressing flightMode selected */
       else
       {
         CPAL_LOG("\n\rLOG : I2C Device DUAL ADDR Mode Selected");

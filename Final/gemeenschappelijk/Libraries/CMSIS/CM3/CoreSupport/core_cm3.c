@@ -30,7 +30,7 @@
 
 #elif defined ( __ICCARM__ )
   #define __ASM           __asm                                       /*!< asm keyword for IAR Compiler          */
-  #define __INLINE        inline                                      /*!< inline keyword for IAR Compiler. Only avaiable in High optimization mode! */
+  #define __INLINE        inline                                      /*!< inline keyword for IAR Compiler. Only avaiable in High optimization flightMode! */
 
 #elif defined   (  __GNUC__  )
   #define __ASM            __asm                                      /*!< asm keyword for GNU Compiler          */

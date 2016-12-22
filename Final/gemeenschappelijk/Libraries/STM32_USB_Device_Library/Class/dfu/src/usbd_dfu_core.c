@@ -279,7 +279,7 @@ __ALIGN_BEGIN uint8_t usbd_dfu_CfgDesc[USB_DFU_CONFIG_DESC_SIZ] __ALIGN_END =
                 bitAcceleratedST         = 0      (bit 7)*/
   0xFF,   /*DetachTimeOut= 255 ms*/
   0x00,
-  /*WARNING: In DMA mode the multiple MPS packets feature is still not supported
+  /*WARNING: In DMA flightMode the multiple MPS packets feature is still not supported
    ==> In this case, when using DMA XFERSIZE should be set to 64 in usbd_conf.h */
   TRANSFER_SIZE_BYTES(XFERSIZE),       /* TransferSize = 1024 Byte*/         
   0x1A,                                /* bcdDFUVersion*/
@@ -353,7 +353,7 @@ __ALIGN_BEGIN uint8_t usbd_dfu_OtherCfgDesc[USB_DFU_CONFIG_DESC_SIZ] __ALIGN_END
                 bitAcceleratedST         = 0      (bit 7)*/
   0xFF,   /*DetachTimeOut= 255 ms*/
   0x00,
-  /*WARNING: In DMA mode the multiple MPS packets feature is still not supported
+  /*WARNING: In DMA flightMode the multiple MPS packets feature is still not supported
    ==> In this case, when using DMA XFERSIZE should be set to 64 in usbd_conf.h */
   TRANSFER_SIZE_BYTES(XFERSIZE),       /* TransferSize = 1024 Byte*/         
   0x1A,                                /* bcdDFUVersion*/
@@ -381,7 +381,7 @@ __ALIGN_BEGIN static uint8_t usbd_dfu_Desc[USB_DFU_DESC_SIZ] __ALIGN_END =
                 bitAcceleratedST         = 0      (bit 7)*/
   0xFF,   /*DetachTimeOut= 255 ms*/
   0x00,
-  /*WARNING: In DMA mode the multiple MPS packets feature is still not supported
+  /*WARNING: In DMA flightMode the multiple MPS packets feature is still not supported
    ==> In this case, when using DMA XFERSIZE should be set to 64 in usbd_conf.h */
   TRANSFER_SIZE_BYTES(XFERSIZE),  /* TransferSize = 1024 Byte*/
   0x1A,                     /* bcdDFUVersion*/
@@ -603,7 +603,7 @@ static uint8_t  EP0_TxSent (void  *pdev)
   }
   else if (DeviceState == STATE_dfuMANIFEST)/* Manifestation in progress*/
   {
-    /* Start leaving DFU mode */
+    /* Start leaving DFU flightMode */
     DFU_LeaveDFUMode(pdev);
   }
   

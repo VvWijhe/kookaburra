@@ -221,7 +221,7 @@ static uint32_t USB_OTG_HandleOTG_ISR(USB_OTG_CORE_HANDLE *pdev)
 
     if (gotgctl.b.hstnegscs)                                    /* Host negotiation success                                         */
     {
-      if (USB_OTG_IsHostMode(pdev))                              /* The core AUTOMATICALLY sets the Host mode                        */
+      if (USB_OTG_IsHostMode(pdev))                              /* The core AUTOMATICALLY sets the Host flightMode                        */
       {
 
       }
@@ -235,7 +235,7 @@ static uint32_t USB_OTG_HandleOTG_ISR(USB_OTG_CORE_HANDLE *pdev)
   /* ----> HOST NEGOTIATION DETECTED INTERRUPT <---- */
   if (gotgint.b.hstnegdet)
   {
-    if (USB_OTG_IsDeviceMode(pdev))                              /* The core AUTOMATICALLY sets the Host mode                        */
+    if (USB_OTG_IsDeviceMode(pdev))                              /* The core AUTOMATICALLY sets the Host flightMode                        */
     {
 
     }
@@ -367,7 +367,7 @@ void USB_OTG_InitiateHNP(USB_OTG_CORE_HANDLE *pdev , uint8_t state, uint8_t mode
 
   otgctl.d32 = USB_OTG_READ_REG32( &pdev->regs.GREGS->GOTGCTL );
   if (mode)
-  { /* Device mode */
+  { /* Device flightMode */
     if (state)
     {
 
@@ -377,7 +377,7 @@ void USB_OTG_InitiateHNP(USB_OTG_CORE_HANDLE *pdev , uint8_t state, uint8_t mode
     }
   }
   else
-  { /* Host mode */
+  { /* Host flightMode */
     if (state)
     {
       otgctl.b.hstsethnpen = 1; /* A-Dev has enabled B-device for HNP       */

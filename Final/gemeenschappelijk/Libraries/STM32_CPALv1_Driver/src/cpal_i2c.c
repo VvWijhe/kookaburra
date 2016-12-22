@@ -448,7 +448,7 @@ uint32_t CPAL_I2C_Write(CPAL_InitTypeDef* pDevInitStruct)
                               - If DMA Programming Model        --> enable TX DMA Channel.
                               - If Interrupt Programming Model  --> enable Buffer Interrupt.
                       - Update CPAL_STATE to CPAL_STATE_READY_TX.
-                      - If Master mode selected --> generate start condition 
+                      - If Master flightMode selected --> generate start condition
                       - Enable Event Interrupt                                                 */
   
   CPAL_LOG("\n\r\n\rLOG <CPAL_I2C_Write> : I2C Device Write OP");
@@ -570,7 +570,7 @@ uint32_t CPAL_I2C_Read(CPAL_InitTypeDef* pDevInitStruct)
               - If DMA Programming Model        --> enable RX DMA Channel 
               - If Interrupt Programming Model  --> enable Buffer Interrupt 
           - Update CPAL_STATE to CPAL_STATE_READY_RX.
-          - If Master mode selected --> generate start condition 
+          - If Master flightMode selected --> generate start condition
           - Enable Event Interrupt                                               */
   
   CPAL_LOG("\n\r\n\rLOG <CPAL_I2C_Read> : I2C Device Perform Read OP");
@@ -679,7 +679,7 @@ uint32_t CPAL_I2C_Read(CPAL_InitTypeDef* pDevInitStruct)
       /* Wait until TXE flag is set */ 
       __CPAL_I2C_TIMEOUT(__CPAL_I2C_HAL_GET_TXE(pDevInitStruct->CPAL_Dev), CPAL_I2C_TIMEOUT_TXE); 
       
-      /* If 8 Bit register mode */
+      /* If 8 Bit register flightMode */
       if ((pDevInitStruct->wCPAL_Options & CPAL_OPT_16BIT_REG) == 0)
       {
         /* Send Register Address */
@@ -689,7 +689,7 @@ uint32_t CPAL_I2C_Read(CPAL_InitTypeDef* pDevInitStruct)
         __CPAL_I2C_TIMEOUT(__CPAL_I2C_HAL_GET_TXE(pDevInitStruct->CPAL_Dev), CPAL_I2C_TIMEOUT_TXE); 
       }      
   #ifdef CPAL_16BIT_REG_OPTION
-      /* If 16 Bit register mode */
+      /* If 16 Bit register flightMode */
       else
       {
         /* Send MSB Register Address */
@@ -792,7 +792,7 @@ uint32_t CPAL_I2C_Listen(CPAL_InitTypeDef* pDevInitStruct)
   - If ready      --> 
           - Enable Event Interrupt                                               */
   
-  CPAL_LOG("\n\r\n\rLOG <CPAL_I2C_Listen> : I2C Device in listen mode");
+  CPAL_LOG("\n\r\n\rLOG <CPAL_I2C_Listen> : I2C Device in listen flightMode");
   
   /* If Device is Busy (a transaction is still on going) Exit function */
   if (((pDevInitStruct->CPAL_State & CPAL_STATE_BUSY) != 0)
@@ -820,7 +820,7 @@ uint32_t CPAL_I2C_Listen(CPAL_InitTypeDef* pDevInitStruct)
   /* If CPAL_State is CPAL_STATE_READY */
   else
   {
-    /* Set device to slave mode */
+    /* Set device to slave flightMode */
     pDevInitStruct->CPAL_Mode = CPAL_MODE_SLAVE; 
     
     /* Update CPAL_State to CPAL_STATE_BUSY */
@@ -1049,7 +1049,7 @@ uint32_t CPAL_I2C_EV_IRQHandler( CPAL_InitTypeDef* pDevInitStruct)
   */
 uint32_t CPAL_I2C_ER_IRQHandler(CPAL_InitTypeDef* pDevInitStruct)
 {  
-  /* If AF detected in Slave mode transmitter */
+  /* If AF detected in Slave flightMode transmitter */
   if ((pDevInitStruct->CPAL_Mode == CPAL_MODE_SLAVE) && (pDevInitStruct->pCPAL_TransferTx->wNumData == 0) &&
       ((pDevInitStruct->CPAL_State == CPAL_STATE_READY) || (pDevInitStruct->CPAL_State == CPAL_STATE_BUSY_TX)))
   {      
@@ -1192,7 +1192,7 @@ uint32_t CPAL_I2C_DMA_TX_IRQHandler(CPAL_InitTypeDef* pDevInitStruct)
     /* Call DMA TX TC UserCallback */
     CPAL_I2C_DMATXTC_UserCallback(pDevInitStruct);
     
-    /* If DMA Normal mode */
+    /* If DMA Normal flightMode */
     if ((pDevInitStruct->wCPAL_Options & CPAL_OPT_DMATX_CIRCULAR) == 0)
     {           
       /* If Master Mode selected */
@@ -1588,12 +1588,12 @@ static uint32_t I2C_MASTER_ADDR_Handle(CPAL_InitTypeDef* pDevInitStruct)
   }  
   else if (pDevInitStruct->CPAL_State == CPAL_STATE_BUSY_TX)
   {
-    /* Set 1ms timeout for each data transfer in case of DMA Tx mode */
+    /* Set 1ms timeout for each data transfer in case of DMA Tx flightMode */
     pDevInitStruct->wCPAL_Timeout = CPAL_I2C_TIMEOUT_MIN + pDevInitStruct->pCPAL_TransferTx->wNumData;
   }  
   else if (pDevInitStruct->CPAL_State == CPAL_STATE_BUSY_RX)
   {
-    /* Set 1ms timeout for each data transfer in case of DMA Rx mode */ 
+    /* Set 1ms timeout for each data transfer in case of DMA Rx flightMode */
     pDevInitStruct->wCPAL_Timeout = CPAL_I2C_TIMEOUT_MIN + pDevInitStruct->pCPAL_TransferRx->wNumData;
   }  
   else
@@ -1740,7 +1740,7 @@ static uint32_t I2C_MASTER_ADDR_Handle(CPAL_InitTypeDef* pDevInitStruct)
         /* If CPAL_State is CPAL_STATE_BUSY_TX */  
         if (pDevInitStruct->CPAL_State == CPAL_STATE_BUSY_TX)
         {         
-          /* If 8 Bit register mode */
+          /* If 8 Bit register flightMode */
           if ((pDevInitStruct->wCPAL_Options & CPAL_OPT_16BIT_REG) == 0)
           {
             /* Send Register Address */
@@ -1750,7 +1750,7 @@ static uint32_t I2C_MASTER_ADDR_Handle(CPAL_InitTypeDef* pDevInitStruct)
             __CPAL_I2C_TIMEOUT(__CPAL_I2C_HAL_GET_TXE(pDevInitStruct->CPAL_Dev), CPAL_I2C_TIMEOUT_TXE);              
           }          
 #ifdef CPAL_16BIT_REG_OPTION
-          /* If 16 Bit register mode */
+          /* If 16 Bit register flightMode */
           else
           {
             /* Send MSB Register Address */
@@ -2481,7 +2481,7 @@ uint32_t CPAL_I2C_Enable_DMA_IT (CPAL_InitTypeDef* pDevInitStruct, CPAL_Directio
     
 #if defined (CPAL_I2C_IT_PROGMODEL) || defined (CPAL_I2C_DMA_1BYTE_CASE)
     /*----------------------------------------------------------------------------
-    Interrupt mode : if CPAL_ProgModel = CPAL_PROGMODEL_INTERRUPT
+    Interrupt flightMode : if CPAL_ProgModel = CPAL_PROGMODEL_INTERRUPT
     ---------------------------------------------------------------------------*/            
   case CPAL_PROGMODEL_INTERRUPT:
    
@@ -2495,7 +2495,7 @@ uint32_t CPAL_I2C_Enable_DMA_IT (CPAL_InitTypeDef* pDevInitStruct, CPAL_Directio
     
 #ifdef CPAL_I2C_DMA_PROGMODEL
     /*----------------------------------------------------------------------------
-    DMA mode : if CPAL_ProgModel = CPAL_PROGMODEL_DMA
+    DMA flightMode : if CPAL_ProgModel = CPAL_PROGMODEL_DMA
     ---------------------------------------------------------------------------*/      
     case CPAL_PROGMODEL_DMA:
     

@@ -89,10 +89,10 @@ typedef enum
 
 
 /*========= CPAL_Mode_TypeDef =========*/
-/* CPAL device Mode enumeration is used to select in which mode the 
-   device will proceed : in master mode or slave mode.
-   When an I2C device is used in master mode, it will initiate communication 
-   by sending start bit. When it is used in slave mode, it will wait till 
+/* CPAL device Mode enumeration is used to select in which flightMode the
+   device will proceed : in master flightMode or slave flightMode.
+   When an I2C device is used in master flightMode, it will initiate communication
+   by sending start bit. When it is used in slave flightMode, it will wait till
    receiving its own address to start communication.*/
 
 typedef enum

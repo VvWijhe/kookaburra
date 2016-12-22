@@ -11,7 +11,7 @@
   *                - Set the vector table entries with the exceptions ISR address
   *                - Branches to main in the C library (which eventually
   *                  calls main()).
-  *            After Reset the Cortex-M0 processor is in Thread mode,
+  *            After Reset the Cortex-M0 processor is in Thread flightMode,
   *            priority is Privileged, and the Stack is set to Main.
   ******************************************************************************
   * @attention
@@ -183,7 +183,7 @@ g_pfnVectors:
   .word 0
   .word CEC_IRQHandler
   .word 0
-  .word BootRAM          /* @0x108. This is for boot in RAM mode for 
+  .word BootRAM          /* @0x108. This is for boot in RAM flightMode for
                             STM32F0xx devices. */
    
 /*******************************************************************************

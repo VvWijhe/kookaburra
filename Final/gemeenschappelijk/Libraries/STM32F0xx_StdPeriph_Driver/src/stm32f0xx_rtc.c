@@ -315,7 +315,7 @@ ErrorStatus RTC_DeInit(void)
   RTC->WPR = 0xCA;
   RTC->WPR = 0x53;
 
-  /* Set Initialization mode */
+  /* Set Initialization flightMode */
   if (RTC_EnterInitMode() == ERROR)
   {
     status = ERROR;
@@ -332,7 +332,7 @@ ErrorStatus RTC_DeInit(void)
     RTC->CAL       = (uint32_t)0x00000000;
     RTC->ALRMASSR  = (uint32_t)0x00000000;
 
-    /* Reset ISR register and exit initialization mode */
+    /* Reset ISR register and exit initialization flightMode */
     RTC->ISR = (uint32_t)0x00000000;
     
     /* Reset Tamper and alternate functions configuration register */
@@ -380,7 +380,7 @@ ErrorStatus RTC_Init(RTC_InitTypeDef* RTC_InitStruct)
   RTC->WPR = 0xCA;
   RTC->WPR = 0x53;
 
-  /* Set Initialization mode */
+  /* Set Initialization flightMode */
   if (RTC_EnterInitMode() == ERROR)
   {
     status = ERROR;
@@ -396,7 +396,7 @@ ErrorStatus RTC_Init(RTC_InitTypeDef* RTC_InitStruct)
     RTC->PRER = (uint32_t)(RTC_InitStruct->RTC_SynchPrediv);
     RTC->PRER |= (uint32_t)(RTC_InitStruct->RTC_AsynchPrediv << 16);
 
-    /* Exit Initialization mode */
+    /* Exit Initialization flightMode */
     RTC_ExitInitMode();
 
     status = SUCCESS;
@@ -468,10 +468,10 @@ ErrorStatus RTC_EnterInitMode(void)
   ErrorStatus status = ERROR;
   uint32_t initstatus = 0x00;
 
-  /* Check if the Initialization mode is set */
+  /* Check if the Initialization flightMode is set */
   if ((RTC->ISR & RTC_ISR_INITF) == (uint32_t)RESET)
   {
-    /* Set the Initialization mode */
+    /* Set the Initialization flightMode */
     RTC->ISR = (uint32_t)RTC_INIT_MASK;
     
     /* Wait till RTC is in INIT state and if Timer out is reached exit */
@@ -509,7 +509,7 @@ ErrorStatus RTC_EnterInitMode(void)
   */
 void RTC_ExitInitMode(void)
 {
-  /* Exit Initialization mode */
+  /* Exit Initialization flightMode */
   RTC->ISR &= (uint32_t)~RTC_ISR_INIT;
 }
 
@@ -537,7 +537,7 @@ ErrorStatus RTC_WaitForSynchro(void)
 
   if ((RTC->CR & RTC_CR_BYPSHAD) != RESET)
   {
-    /* Bypass shadow mode */
+    /* Bypass shadow flightMode */
     status = SUCCESS;
   }
   else
@@ -591,7 +591,7 @@ ErrorStatus RTC_RefClockCmd(FunctionalState NewState)
   RTC->WPR = 0xCA;
   RTC->WPR = 0x53;
 
-  /* Set Initialization mode */
+  /* Set Initialization flightMode */
   if (RTC_EnterInitMode() == ERROR)
   {
     status = ERROR;
@@ -608,7 +608,7 @@ ErrorStatus RTC_RefClockCmd(FunctionalState NewState)
       /* Disable the RTC reference clock detection */
       RTC->CR &= ~RTC_CR_REFCKON;
     }
-    /* Exit Initialization mode */
+    /* Exit Initialization flightMode */
     RTC_ExitInitMode();
 
     status = SUCCESS;
@@ -742,7 +742,7 @@ ErrorStatus RTC_SetTime(uint32_t RTC_Format, RTC_TimeTypeDef* RTC_TimeStruct)
   RTC->WPR = 0xCA;
   RTC->WPR = 0x53;
 
-  /* Set Initialization mode */
+  /* Set Initialization flightMode */
   if (RTC_EnterInitMode() == ERROR)
   {
     status = ERROR;
@@ -752,7 +752,7 @@ ErrorStatus RTC_SetTime(uint32_t RTC_Format, RTC_TimeTypeDef* RTC_TimeStruct)
     /* Set the RTC_TR register */
     RTC->TR = (uint32_t)(tmpreg & RTC_TR_RESERVED_MASK);
 
-    /* Exit Initialization mode */
+    /* Exit Initialization flightMode */
     RTC_ExitInitMode(); 
 
     /* If  RTC_CR_BYPSHAD bit = 0, wait for synchro else this check is not needed */
@@ -911,7 +911,7 @@ ErrorStatus RTC_SetDate(uint32_t RTC_Format, RTC_DateTypeDef* RTC_DateStruct)
   RTC->WPR = 0xCA;
   RTC->WPR = 0x53;
 
-  /* Set Initialization mode */
+  /* Set Initialization flightMode */
   if (RTC_EnterInitMode() == ERROR)
   {
     status = ERROR;
@@ -921,7 +921,7 @@ ErrorStatus RTC_SetDate(uint32_t RTC_Format, RTC_DateTypeDef* RTC_DateStruct)
     /* Set the RTC_DR register */
     RTC->DR = (uint32_t)(tmpreg & RTC_DR_RESERVED_MASK);
 
-    /* Exit Initialization mode */
+    /* Exit Initialization flightMode */
     RTC_ExitInitMode(); 
 
     /* If  RTC_CR_BYPSHAD bit = 0, wait for synchro else this check is not needed */

@@ -196,7 +196,7 @@ void CPAL_I2C_HAL_GPIOInit(CPAL_DevTypeDef Device)
   /* Set GPIO frequency to 40MHz */
   GPIO_InitStructure.GPIO_Speed = GPIO_Speed_40MHz;
   
-  /* Select Alternate function mode */
+  /* Select Alternate function flightMode */
   GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;
   
   /* Select output Open Drain type */
@@ -230,7 +230,7 @@ void CPAL_I2C_HAL_GPIODeInit(CPAL_DevTypeDef Device)
   /* Set GPIO frequency to 40MHz */
   GPIO_InitStructure.GPIO_Speed = GPIO_Speed_40MHz;
   
-  /* Select Input floating mode */
+  /* Select Input floating flightMode */
   GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN;
    
   /* Deinitialize I2Cx SCL Pin */ 

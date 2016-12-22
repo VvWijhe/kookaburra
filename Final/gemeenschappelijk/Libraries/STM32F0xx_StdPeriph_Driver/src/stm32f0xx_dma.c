@@ -205,7 +205,7 @@ void DMA_Init(DMA_Channel_TypeDef* DMAy_Channelx, DMA_InitTypeDef* DMA_InitStruc
   /* Clear MEM2MEM, PL, MSIZE, PSIZE, MINC, PINC, CIRC and DIR bits */
   tmpreg &= CCR_CLEAR_MASK;
 
-  /* Configure DMAy Channelx: data transfer, data size, priority level and mode */
+  /* Configure DMAy Channelx: data transfer, data size, priority level and flightMode */
   /* Set DIR bit according to DMA_DIR value */
   /* Set CIRC bit according to DMA_Mode value */
   /* Set PINC bit according to DMA_PeripheralInc value */

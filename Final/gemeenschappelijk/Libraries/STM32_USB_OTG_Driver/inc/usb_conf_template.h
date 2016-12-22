@@ -225,7 +225,7 @@
 #endif
 
 /****************** C Compilers dependant keywords ****************************/
-/* In HS mode and when the DMA is used, all variables and data structures dealing
+/* In HS flightMode and when the DMA is used, all variables and data structures dealing
    with the DMA during the transaction process should be 4-bytes aligned */    
 #ifdef USB_OTG_HS_INTERNAL_DMA_ENABLED
   #if defined   (__GNUC__)        /* GNU Compiler */

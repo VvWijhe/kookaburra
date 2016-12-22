@@ -341,12 +341,12 @@ void COMP_WindowCmd(FunctionalState NewState)
   
   if (NewState != DISABLE)
   {
-    /* Enable the window mode */
+    /* Enable the window flightMode */
     COMP->CSR |= (uint32_t) COMP_CSR_WNDWEN;
   }
   else
   {
-    /* Disable the window mode */
+    /* Disable the window flightMode */
     COMP->CSR &= (uint32_t)(~COMP_CSR_WNDWEN);
   }
 }

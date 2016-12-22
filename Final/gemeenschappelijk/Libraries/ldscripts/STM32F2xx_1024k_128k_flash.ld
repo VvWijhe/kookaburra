@@ -26,7 +26,7 @@ MEMORY
   EXTMEMB3 (RX)  : ORIGIN = 0x90000000, LENGTH = 256M
 }
 
-/* higher address of the user mode stack */
+/* higher address of the user flightMode stack */
 _estack = ORIGIN(RAM)+LENGTH(RAM);
 __TOP_STACK = ORIGIN(RAM) + LENGTH(RAM);
 
@@ -223,7 +223,7 @@ SECTIONS
    PROVIDE (end = .);    /* einde intern flash geheugen */
 
     /* This is the user stack section 
-    This is just to check that there is enough RAM left for the User mode stack
+    This is just to check that there is enough RAM left for the User flightMode stack
     It should generate an error if it's full.
      */
     ._usrstack (NOLOAD):

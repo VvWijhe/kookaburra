@@ -191,12 +191,12 @@ void SYSCFG_I2CFastModePlusConfig(uint32_t SYSCFG_I2CFastModePlus, FunctionalSta
 
   if (NewState != DISABLE)
   {
-    /* Enable fast mode plus driving capability for selected pin */
+    /* Enable fast flightMode plus driving capability for selected pin */
     SYSCFG->CFGR1 |= (uint32_t)SYSCFG_I2CFastModePlus;
   }
   else
   {
-    /* Disable fast mode plus driving capability for selected pin */
+    /* Disable fast flightMode plus driving capability for selected pin */
     SYSCFG->CFGR1 &= (uint32_t)(~SYSCFG_I2CFastModePlus);
   }
 }
