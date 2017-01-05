@@ -5,12 +5,12 @@
 #include <stm32f0_discovery.h>
 #include <pid.h>
 
-uint16_t currentPitch = 0;
-uint16_t currentAltitude = 0;
-uint16_t previousAltitude = 0;
+int currentPitch = 0;
+int currentAltitude = 0;
+int previousAltitude = 0;
 float verticalSpeed = 0;
 LEDColor_t ledColor = LEDRED;
-uint32_t altitude1 = 0, altitude2 = 0;
+int altitude1 = 0, altitude2 = 0;
 flightMode_t flightMode = MANUAL_M;
 
 MPU6050 Airplane::accelerometer;
@@ -55,8 +55,7 @@ Airplane::Airplane() {
     STM_EVAL_LEDInit(LED3);
 }
 
-void Airplane::loop() {
-    /***************************************
+/***************************************
      * Start of the main loop there are 2 states:
      *
      * State 1 MANUAL:
@@ -66,7 +65,9 @@ void Airplane::loop() {
      * Follows the flightpath.
      *
      *
-     ***************************************/
+     **************************************
+     * */
+void Airplane::loop() {
     while (true) {
         while (flightMode == MANUAL_M) {
 
@@ -212,7 +213,7 @@ void Airplane::controlElevator(int minAngle, int maxAngle) {
     }
 }
 
-void Airplane::controlMotor(uint32_t setPoint) {
+void Airplane::controlMotor(int setPoint) {
     PID pid(0.02, 1, 0, 0);
     double altitudeControlValue = 0;
 

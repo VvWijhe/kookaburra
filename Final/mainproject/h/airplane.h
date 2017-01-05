@@ -8,7 +8,6 @@
 #define MAX_ANGLE 10
 #define MIN_ANGLE -10
 
-// Include self made drivers
 #include "mpu6050.h"
 #include "usart.h"
 #include "pwm.h"
@@ -31,10 +30,10 @@ typedef enum {
 } flightMode_t;
 
 // Global variables, used in interrupt handlers
-extern uint16_t currentPitch;
-extern uint16_t currentAltitude;
-extern uint16_t previousAltitude;
-extern uint32_t altitude1, altitude2;
+extern int currentPitch;
+extern int currentAltitude;
+extern int previousAltitude;
+extern int altitude1, altitude2;
 extern float verticalSpeed;
 extern LEDColor_t ledColor;
 extern flightMode_t flightMode;
@@ -55,7 +54,7 @@ public:
 
     void controlElevator(int minAngle, int maxAngle);
 
-    void controlMotor(uint32_t setPoint);
+    void controlMotor(int setPoint);
 
 private:
     UART uart;
