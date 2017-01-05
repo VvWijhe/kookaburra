@@ -98,10 +98,10 @@ void TIM3_IRQHandler() {
 
         // Delay = (count - 1) / TIM3 freq
         if (count++ == 4) {
-            if(verticalSpeed == 0){
+            if(verticalSpeed != 0){
                 TIM_Cmd(TIM17, DISABLE);
             } else {
-                Timer::setTim17(10);
+                Timer::setTim17((int)1000*10);
             }
             count = 0;
         }

@@ -47,8 +47,8 @@ Airplane::Airplane() {
 
     // Set initiate flight parameters
     flightMode = MANUAL_M;
-    TIM_Cmd(TIM14, DISABLE);
-    TIM_Cmd(TIM17, DISABLE);
+    //TIM_Cmd(TIM14, DISABLE);
+    //TIM_Cmd(TIM17, DISABLE);
 
     // Test
     STM_EVAL_LEDInit(LED4);
@@ -162,7 +162,7 @@ void Airplane::setColor(LEDColor_t Color) {
         } else {
             GPIO_ResetBits(GPIOA, GPIO_Pin_11);
         }
-        STM_EVAL_LEDToggle(LED3);
+        STM_EVAL_LEDToggle(LED4);
     }
 
     if (Color == LEDYELLOW) {
@@ -176,7 +176,7 @@ void Airplane::setColor(LEDColor_t Color) {
             GPIO_ResetBits(GPIOA, GPIO_Pin_11);
             GPIO_ResetBits(GPIOA, GPIO_Pin_12);
         }
-        STM_EVAL_LEDToggle(LED3);
+        STM_EVAL_LEDToggle(LED4);
     }
 
     if (Color == LEDRED) {
@@ -186,7 +186,7 @@ void Airplane::setColor(LEDColor_t Color) {
         } else {
             GPIO_ResetBits(GPIOA, GPIO_Pin_12);
         }
-        STM_EVAL_LEDToggle(LED3);
+        STM_EVAL_LEDToggle(LED4);
     }
 }
 
