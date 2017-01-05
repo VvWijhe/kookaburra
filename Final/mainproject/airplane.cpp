@@ -9,7 +9,6 @@ int currentPitch = 0;
 int currentAltitude = 0;
 int previousAltitude = 0;
 float verticalSpeed = 0;
-LEDColor_t ledColor = LEDRED;
 int altitude1 = 0, altitude2 = 0;
 flightMode_t flightMode = MANUAL_M;
 
@@ -31,24 +30,13 @@ Airplane::Airplane() {
     timer.setTim3(5);
     timer.setTim14(1);
     timer.setTim16(20);
-    timer.setTim17(5);
 
-    // Initialize leds
-    // GPIOC Periph clock enable
-    RCC->AHBENR |= RCC_AHBENR_GPIOAEN;
-    // PC8 and PC9 in output flightMode
-    GPIOA->MODER |= (GPIO_MODER_MODER11_0 | GPIO_MODER_MODER12_0);
-    // Push pull flightMode selected
-    GPIOA->OTYPER &= ~(GPIO_OTYPER_OT_11 | GPIO_OTYPER_OT_12);
-    // Maximum speed setting
-    GPIOA->OSPEEDR |= (GPIO_OSPEEDER_OSPEEDR11 | GPIO_OSPEEDER_OSPEEDR12);
-    // Pull-up and pull-down resistors disabled
-    GPIOA->PUPDR &= ~(GPIO_PUPDR_PUPDR11 | GPIO_PUPDR_PUPDR12);
+    // Initialize RGB led
+    RGB::init();
 
     // Set initiate flight parameters
     flightMode = MANUAL_M;
-    //TIM_Cmd(TIM14, DISABLE);
-    //TIM_Cmd(TIM17, DISABLE);
+    TIM_Cmd(TIM14, DISABLE);
 
     // Test
     STM_EVAL_LEDInit(LED4);
@@ -63,10 +51,11 @@ Airplane::Airplane() {
      *
      * State 2 AUTOPILOT:
      * Follows the flightpath.
+     *  1. Fly 10 seconds on altitude 1
+     *  2. Fly 10 seconds on altitude 2
+     *  3. Land
      *
-     *
-     **************************************
-     * */
+     ************************************/
 void Airplane::loop() {
     while (true) {
         while (flightMode == MANUAL_M) {
@@ -74,26 +63,26 @@ void Airplane::loop() {
         }
 
         while (flightMode == AUTOPILOT_M) {
-            // Follow altitude 1 for 10 seconds
+            // --------------------------- 1 ------------------------------
             while (Time::seconds < 10) {
                 // ------------ Control Leds ------------
                 // 1. Altitude is OK
                 if (currentAltitude < altitude1 + 3 && currentAltitude > altitude1 - 3) {
-                    ledColor = LEDGREEN;
+                    RGB::setColor(LEDGREEN);
                     //ENABLE TIM14
                     TIM_Cmd(TIM14, ENABLE);
                 }
 
                 // 2. Altitude is too high
                 if (currentAltitude > altitude1 + 3) {
-                    ledColor = LEDYELLOW;
+                    RGB::setColor(LEDYELLOW);
                     //DISABLE TIM14
                     TIM_Cmd(TIM14, DISABLE);
                 }
 
-                // 2. Altitude is too low
+                // 3. Altitude is too low
                 if (currentAltitude < altitude1 - 3) {
-                    ledColor = LEDRED;
+                    RGB::setColor(LEDRED);
                     //DISABLE TIM14
                     TIM_Cmd(TIM14, DISABLE);
                 }
@@ -105,21 +94,26 @@ void Airplane::loop() {
                 controlElevator(MIN_ANGLE, MAX_ANGLE);
             }
 
-            // Follow altitude 2 for 10 seconds
+            // --------------------------- 2 ------------------------------
             while (Time::seconds < 20) {
+                // ------------ Control Leds ------------
+                // 1. Altitude is OK
                 if (currentAltitude < altitude2 + 3 && currentAltitude > altitude2 - 3) {
-
-                    ledColor = LEDGREEN;
+                    RGB::setColor(LEDGREEN);
                     //ENABLE TIM14
                     TIM_Cmd(TIM14, ENABLE);
                 }
+
+                // 2. Altitude is too high
                 if (currentAltitude > altitude2 + 3) {
-                    ledColor = LEDYELLOW;
+                    RGB::setColor(LEDYELLOW);
                     //DISABLE TIM14
                     TIM_Cmd(TIM14, DISABLE);
                 }
+
+                // 3. Altitude is too low
                 if (currentAltitude < altitude2 - 3) {
-                    ledColor = LEDRED;
+                    RGB::setColor(LEDRED);
                     //DISABLE TIM14
                     TIM_Cmd(TIM14, DISABLE);
                 }
@@ -131,9 +125,12 @@ void Airplane::loop() {
                 controlElevator(MIN_ANGLE, MAX_ANGLE);
             }
 
+            // --------------------------- 2 ------------------------------
+
             // Reset values
             TIM_Cmd(TIM14, DISABLE);
             Time::seconds = 0;
+            RGB::disable();
         }
     }
 }
@@ -143,51 +140,14 @@ uint32_t Airplane::getAltitude() {
 }
 
 uint32_t Airplane::getPitch() {
-    const double CONVERSIONG = 3.9;
+    const double gConversion = 3.9;
     accelGyroDataRaw_t accelGyroDataRaw;
 
     accelerometer.getRawAccelGyro(&accelGyroDataRaw);
 
-    return (uint32_t) (accelGyroDataRaw.Ax * CONVERSIONG);
-    //double accelerationY = (accelGyroDataRaw.Ay * CONVERSIONG);
-    //double accelerationZ = (accelGyroDataRaw.Az * CONVERSIONG);
-}
-
-// Toggle GPIO ports for the leds
-void Airplane::setColor(LEDColor_t Color) {
-    if (Color == LEDGREEN) {
-        GPIO_ResetBits(GPIOA, GPIO_Pin_12);
-        if (!GPIO_ReadOutputDataBit(GPIOA, GPIO_Pin_11)) {
-            GPIO_SetBits(GPIOA, GPIO_Pin_11);
-        } else {
-            GPIO_ResetBits(GPIOA, GPIO_Pin_11);
-        }
-        STM_EVAL_LEDToggle(LED4);
-    }
-
-    if (Color == LEDYELLOW) {
-        if (GPIO_ReadOutputDataBit(GPIOA, GPIO_Pin_11) != GPIO_ReadOutputDataBit(GPIOA, GPIO_Pin_12)) {
-            GPIO_ResetBits(GPIOA, GPIO_Pin_11);
-            GPIO_ResetBits(GPIOA, GPIO_Pin_12);
-        } else if (!GPIO_ReadOutputDataBit(GPIOA, GPIO_Pin_11)) {
-            GPIO_SetBits(GPIOA, GPIO_Pin_11);
-            GPIO_SetBits(GPIOA, GPIO_Pin_12);
-        } else {
-            GPIO_ResetBits(GPIOA, GPIO_Pin_11);
-            GPIO_ResetBits(GPIOA, GPIO_Pin_12);
-        }
-        STM_EVAL_LEDToggle(LED4);
-    }
-
-    if (Color == LEDRED) {
-        GPIO_ResetBits(GPIOA, GPIO_Pin_11);
-        if (!GPIO_ReadOutputDataBit(GPIOA, GPIO_Pin_12)) {
-            GPIO_SetBits(GPIOA, GPIO_Pin_12);
-        } else {
-            GPIO_ResetBits(GPIOA, GPIO_Pin_12);
-        }
-        STM_EVAL_LEDToggle(LED4);
-    }
+    return (uint32_t) (accelGyroDataRaw.Ax * gConversion);
+    //double accelerationY = (accelGyroDataRaw.Ay * gConversion);
+    //double accelerationZ = (accelGyroDataRaw.Az * gConversion);
 }
 
 void Airplane::controlElevator(int minAngle, int maxAngle) {
@@ -219,7 +179,6 @@ void Airplane::controlMotor(int setPoint) {
 
     altitudeControlValue = pid.calculate(currentAltitude, setPoint);
 
-    // Set to PWM
     altitudeControlValue *= 0.4;
 
     if (altitudeControlValue < 0) altitudeControlValue = 0;

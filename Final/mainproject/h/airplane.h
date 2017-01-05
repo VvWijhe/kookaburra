@@ -13,16 +13,11 @@
 #include "pwm.h"
 #include "MS5611.h"
 #include "counter.h"
+#include "rgbdriver.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
-
-typedef enum {
-    LEDGREEN,
-    LEDRED,
-    LEDYELLOW
-}LEDColor_t;
 
 typedef enum {
     MANUAL_M,
@@ -35,7 +30,6 @@ extern int currentAltitude;
 extern int previousAltitude;
 extern int altitude1, altitude2;
 extern float verticalSpeed;
-extern LEDColor_t ledColor;
 extern flightMode_t flightMode;
 
 class Airplane {
@@ -49,8 +43,6 @@ public:
     static uint32_t getAltitude();
 
     static uint32_t getPitch();
-
-    static void setColor(LEDColor_t Color);
 
     void controlElevator(int minAngle, int maxAngle);
 

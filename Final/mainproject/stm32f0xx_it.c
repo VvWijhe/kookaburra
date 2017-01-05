@@ -2,8 +2,8 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include <airplane.h>
-#include <counter.h>
 #include <stm32f0_discovery.h>
+#include <rgbdriver.h>
 #include "stm32f0xx_it.h"
 
 #define RCHIGH 5.0
@@ -98,10 +98,10 @@ void TIM3_IRQHandler() {
 
         // Delay = (count - 1) / TIM3 freq
         if (count++ == 4) {
-            if(verticalSpeed != 0){
-                TIM_Cmd(TIM17, DISABLE);
+            if (verticalSpeed < 0.2) {
+                RGB::disable();
             } else {
-                Timer::setTim17((int)1000*10);
+                RGB::setFrequency(verticalSpeed);
             }
             count = 0;
         }
@@ -170,7 +170,8 @@ void TIM15_IRQHandler(void) {
     {
         StepCount++;
         Attempts = 0;
-    } else if (StepCount == 1 && currentDutyCycle < RCLOW && Attempts < MAXATTEMPTS && flightMode == MANUAL_M) //then down
+    } else if (StepCount == 1 && currentDutyCycle < RCLOW && Attempts < MAXATTEMPTS &&
+               flightMode == MANUAL_M) //then down
     {
         StepCount++;
         Attempts = 0;
@@ -190,28 +191,6 @@ void TIM15_IRQHandler(void) {
     Attempts++;
 }
 
-void TIM17_IRQHandler(void) {
-    if (TIM_GetITStatus(TIM17, TIM_IT_Update) != RESET) {
-        TIM_ClearITPendingBit(TIM17, TIM_IT_Update);
-
-        switch (ledColor) {
-            case LEDGREEN:
-                Airplane::setColor(LEDGREEN);
-                break;
-
-            case LEDYELLOW:
-                Airplane::setColor(LEDYELLOW);
-                break;
-
-            case LEDRED:
-                Airplane::setColor(LEDRED);
-                break;
-
-            default:
-                break;
-        }
-    }
-}
 
 /**
   * @}

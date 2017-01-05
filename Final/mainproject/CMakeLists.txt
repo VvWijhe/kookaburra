@@ -29,7 +29,8 @@ set(SRCS main.cpp ${BasisBestanden}
         pid.cpp
         pwm.cpp
         MS5611.cpp
-        counter.cpp)
+        counter.cpp
+        rgbdriver.cpp)
 
 add_subdirectory(${F0DISCOVERYDIR} ${CMAKE_CURRENT_BINARY_DIR}/F0DiscoveryDir)
 
