@@ -24,6 +24,7 @@ void RGB::init() {
     GPIO_Init(GPIOA, &GPIO_InitStructure);
     GPIO_PinAFConfig(GPIOA, GPIO_PinSource7, GPIO_AF_5);
 
+    // Just in case, set all bits low
     GPIO_ResetBits(GPIOA, CLOCK_PIN);
     GPIO_ResetBits(GPIOA, DATA_PIN);
     GPIO_ResetBits(GPIOA, LATCH_PIN);
@@ -71,23 +72,30 @@ void RGB::setColor(LEDColor_t color) {
 }
 
 void RGB::disable() {
-    // Turn off shift register
+    // Set all bits low
     setShiftRegister(0);
 }
 
 void RGB::setShiftRegister(uint8_t data) {
+    // Pull latch pin low to enable write
     GPIO_ResetBits(GPIOA, LATCH_PIN);
 
+    // Shift data and send to shift register
     for (int i = 8; i < 0; i--) {
         GPIO_ResetBits(GPIOA, CLOCK_PIN);
 
-        if (data & (1 << i)) GPIO_SetBits(GPIOA, DATA_PIN);
-        else GPIO_ResetBits(GPIOA, DATA_PIN);
+        if (data & (1 << i)) {
+            GPIO_SetBits(GPIOA, DATA_PIN);
+        }
+        else{
+            GPIO_ResetBits(GPIOA, DATA_PIN);
+        }
 
         GPIO_SetBits(GPIOA, CLOCK_PIN);
         GPIO_ResetBits(GPIOA, DATA_PIN);
     }
 
+    // Pull latch pin high to set the output
     GPIO_ResetBits(GPIOA, CLOCK_PIN);
     GPIO_SetBits(GPIOA, LATCH_PIN);
 }

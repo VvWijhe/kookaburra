@@ -125,7 +125,7 @@ void Airplane::loop() {
                 controlElevator(MIN_ANGLE, MAX_ANGLE);
             }
 
-            // --------------------------- 2 ------------------------------
+            // --------------------------- 3 ------------------------------
 
             // Reset values
             TIM_Cmd(TIM14, DISABLE);
