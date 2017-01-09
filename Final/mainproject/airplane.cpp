@@ -11,6 +11,7 @@ int previousAltitude = 0;
 float verticalSpeed = 0;
 int altitude1 = 0, altitude2 = 0;
 flightMode_t flightMode = MANUAL_M;
+ppmData_t ppmData;
 
 MPU6050 Airplane::accelerometer;
 MS5611 Airplane::barometer;
@@ -22,6 +23,7 @@ Airplane::Airplane() {
 
     // Initialize PWM and capture compare input
     control.init();
+    control.InitCapComp();
 
     // Initialize serial with interrupts
     serial::cout.init();

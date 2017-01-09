@@ -16,6 +16,13 @@ typedef enum {
     PWM_SERVO_RUDDER
 } pwmFunction_t;
 
+typedef struct {
+    int channel1;
+    int channel2;
+    int channel3;
+    int channel4;
+} ppmData_t;
+
 class AirplaneControl {
 public:
 

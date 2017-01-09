@@ -67,8 +67,6 @@ void AirplaneControl::init() {
     //(#) Call the TIM_Cmd(ENABLE) function to enable the TIM counter.
     TIM_Cmd(TIM2, ENABLE);
 
-    InitCapComp();
-
     isEnabled = true;
 }
 

@@ -3,6 +3,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "airplane.h"
 #include <stm32f0_discovery.h>
+#include <pwm.h>
 #include "stm32f0xx_it.h"
 
 #define RCHIGH 5.0
@@ -139,28 +140,53 @@ void TIM16_IRQHandler(void) {
   * @param  None
   * @retval None
   */
+int nChannel = 0;
+
 void TIM15_IRQHandler() {
-    __IO uint32_t IC2Value = 0;
-    __IO uint32_t DutyCycle = 0;
-
-    flightMode = MANUAL_M; //the flightMode the plane should work with, auto or manual.
-
     /* Clear TIM2 Capture compare interrupt pending bit */
     TIM_ClearITPendingBit(TIM15, TIM_IT_CC1);
 
-    /* Get the Input Capture value */
-    IC2Value = TIM_GetCapture2(TIM15);
+//    __IO uint32_t IC2Value = 0;
+//    __IO uint32_t DutyCycle = 0;
 
-    if (IC2Value > TIM_GetCapture1(TIM15)) {
-        /* Duty cycle computation */
-        DutyCycle = IC2Value - TIM_GetCapture1(TIM15);
-        PrevDutyCycle = DutyCycle;
-        currentDutyCycle = (float) ((DutyCycle - 49200) / 163.2);
-        if (currentDutyCycle < 0) {
-            currentDutyCycle += 301.9;
+    float f = SystemCoreClock / TIM_GetCapture2(TIM15);
+    float T = 1 / f;
+
+    flightMode = MANUAL_M; //the flightMode the plane should work with, auto or manual.
+
+//    /* Get the Input Capture value */
+//    IC2Value = TIM_GetCapture2(TIM15);
+//
+//    if (IC2Value > TIM_GetCapture1(TIM15)) {
+//        /* Duty cycle computation */
+//        DutyCycle = IC2Value - TIM_GetCapture1(TIM15);
+//        PrevDutyCycle = DutyCycle;
+//        currentDutyCycle = (float) ((DutyCycle - 49200) / 163.2);
+//        if (currentDutyCycle < 0) {
+//            currentDutyCycle += 301.9;
+//        }
+//    } else {
+//        DutyCycle = (uint32_t) PrevDutyCycle;
+//    }
+
+    // TSync > 12 ms
+    // Set channel data if period is smaller than 10 ms
+    if(T < 0.01) {
+        if (nChannel == 0) {
+            ppmData.channel1 = (int) (T * 1000000);
+            nChannel++;
+        } else if(nChannel == 1){
+            ppmData.channel2 = (int) (T * 1000000);
+            nChannel++;
+        } else if(nChannel == 2){
+            ppmData.channel3 = (int) (T * 1000000);
+            nChannel++;
+        } else if(nChannel == 3){
+            ppmData.channel4 = (int) (T * 1000000);
+            nChannel++;
         }
     } else {
-        DutyCycle = (uint32_t) PrevDutyCycle;
+        nChannel = 0;
     }
 
     //from here on the flightplanner switch is processed.

@@ -31,6 +31,7 @@ extern int previousAltitude;
 extern int altitude1, altitude2;
 extern float verticalSpeed;
 extern flightMode_t flightMode;
+extern ppmData_t ppmData;
 
 class Airplane {
 public:
