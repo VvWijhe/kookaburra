@@ -2,8 +2,8 @@
 // Created by Jamie on 8-12-2016.
 //
 #include <airplane.h>
-#include <stm32f0_discovery.h>
 #include <pid.h>
+#include <stm32f0_discovery.h>
 
 int currentPitch = 0;
 int currentAltitude = 0;
