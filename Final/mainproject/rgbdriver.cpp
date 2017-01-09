@@ -8,49 +8,52 @@
 void RGB::init() {
     GPIO_InitTypeDef GPIO_InitStructure;
 
-    // Init PWM gpio
     RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOA, ENABLE);
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;
     GPIO_InitStructure.GPIO_Pin = GPIO_Pin_7;
+    GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;
     GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
     GPIO_Init(GPIOA, &GPIO_InitStructure);
     GPIO_PinAFConfig(GPIOA, GPIO_PinSource7, GPIO_AF_5);
 
     // Init shift register gpio
-    RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOA, ENABLE);
+    RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOC, ENABLE);
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
     GPIO_InitStructure.GPIO_Pin = LATCH_PIN | CLOCK_PIN | DATA_PIN;
+    GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
     GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-    GPIO_Init(GPIOA, &GPIO_InitStructure);
-    GPIO_PinAFConfig(GPIOA, GPIO_PinSource7, GPIO_AF_5);
+    GPIO_Init(GPIOC, &GPIO_InitStructure);
 
     // Just in case, set all bits low
-    GPIO_ResetBits(GPIOA, CLOCK_PIN);
-    GPIO_ResetBits(GPIOA, DATA_PIN);
-    GPIO_ResetBits(GPIOA, LATCH_PIN);
+    GPIO_ResetBits(GPIOC, CLOCK_PIN);
+    GPIO_ResetBits(GPIOC, DATA_PIN);
+    GPIO_ResetBits(GPIOC, LATCH_PIN);
     disable();
 }
 
 void RGB::setFrequency(float pulse) {
-    TIM_TimeBaseInitTypeDef TIM_TimeBaseStructure;
-    TIM_OCInitTypeDef TIM_OCInitStructure;
-
-    RCC_APB2PeriphClockCmd(RCC_APB2Periph_TIM17, ENABLE);
-
-    TIM_TimeBaseStructure.TIM_ClockDivision = TIM_CKD_DIV1;
-    TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;
-    TIM_TimeBaseStructure.TIM_Period = (uint32_t) (((1 / pulse) * 400) - 1);
-    TIM_TimeBaseStructure.TIM_Prescaler = (uint16_t) (20000 - 1);
-    TIM_TimeBaseInit(TIM17, &TIM_TimeBaseStructure);
-
-    TIM_OCInitStructure.TIM_OCMode = TIM_OCMode_PWM1;
-    TIM_OCInitStructure.TIM_OutputState = TIM_OutputState_Enable;
-    TIM_OCInitStructure.TIM_Pulse = (uint32_t) 20;
-    TIM_OCInitStructure.TIM_OCPolarity = TIM_OCPolarity_High;
-
-    TIM_OC1Init(TIM17, &TIM_OCInitStructure);
-
-    TIM_Cmd(TIM17, ENABLE);
+    //Enable clock for the timer
+    RCC->APB2ENR |= RCC_APB2ENR_TIM17EN;
+    // Enable ARR preloading
+    TIM17->CR1 |= TIM_CR1_ARPE;
+    // Enable CCR1 preloading
+    TIM17->CCMR1 |= TIM_CCMR1_OC2PE;
+    // PWM mode 1: OC1M = 110
+    TIM17->CCMR1 |= (TIM_CCMR1_OC1M_2 | TIM_CCMR1_OC1M_1);
+    // Prescaler keeps zero to allow control PWM frequency
+    TIM17->PSC = (uint16_t) (20000 - 1);
+    // PWM Frequency 36 kHz
+    TIM17->ARR = (uint32_t) (((1 / pulse) * 400) - 1);
+    // Duty cycle: 33%
+    TIM17->CCR1 = (uint32_t) (((1 / pulse) * 400) * 0.9);
+    // Uncomment to change polarity
+    //TIM2->CCER |= TIM_CCER_CC2P;
+    // Enable Capture/Compare output 1, ie PB9
+    TIM17->CCER |= TIM_CCER_CC1E;
+    // Main Output enable
+    TIM17->BDTR |= TIM_BDTR_MOE;
+    // Start timer
+    TIM17->CR1 |= TIM_CR1_CEN;
 }
 
 /**
@@ -77,25 +80,34 @@ void RGB::disable() {
 }
 
 void RGB::setShiftRegister(uint8_t data) {
-    // Pull latch pin low to enable write
-    GPIO_ResetBits(GPIOA, LATCH_PIN);
+    GPIO_ResetBits(GPIOC, LATCH_PIN);
 
     // Shift data and send to shift register
-    for (int i = 8; i < 0; i--) {
-        GPIO_ResetBits(GPIOA, CLOCK_PIN);
-
-        if (data & (1 << i)) {
-            GPIO_SetBits(GPIOA, DATA_PIN);
-        }
-        else{
-            GPIO_ResetBits(GPIOA, DATA_PIN);
+    for (int i = 0; i < 8; i++) {
+        if ((data & 0b10000000) == 0b10000000) {
+            GPIO_SetBits(GPIOC, DATA_PIN);
+        } else {
+            GPIO_ResetBits(GPIOC, DATA_PIN);
         }
 
-        GPIO_SetBits(GPIOA, CLOCK_PIN);
-        GPIO_ResetBits(GPIOA, DATA_PIN);
+        // Clock the register
+        GPIO_SetBits(GPIOC, CLOCK_PIN);
+        delay(SystemCoreClock / 8 / 500);
+        GPIO_ResetBits(GPIOC, CLOCK_PIN);
+
+        data <<= 1;
     }
 
     // Pull latch pin high to set the output
-    GPIO_ResetBits(GPIOA, CLOCK_PIN);
-    GPIO_SetBits(GPIOA, LATCH_PIN);
+    GPIO_ResetBits(GPIOC, DATA_PIN);
+    delay(SystemCoreClock / 8 / 500);
+    GPIO_SetBits(GPIOC, LATCH_PIN);
+}
+
+void RGB::delay(const int d) {
+    volatile int i;
+
+    for (i = d; i > 0; i--) { ; }
+
+    return;
 }

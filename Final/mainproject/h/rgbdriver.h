@@ -7,9 +7,9 @@
 
 #include <stm32f0xx_gpio.h>
 
-#define LATCH_PIN GPIO_Pin_11
-#define CLOCK_PIN GPIO_Pin_12
-#define DATA_PIN GPIO_Pin_13
+#define LATCH_PIN GPIO_Pin_0
+#define CLOCK_PIN GPIO_Pin_1
+#define DATA_PIN GPIO_Pin_2
 
 typedef enum {
     LEDGREEN,
@@ -23,6 +23,7 @@ namespace RGB {
     void setColor(LEDColor_t color);
     void setShiftRegister(uint8_t data);
     void disable();
+    void delay(const int d);
 }
 
 

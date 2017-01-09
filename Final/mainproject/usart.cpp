@@ -7,6 +7,12 @@
 uint8_t rxBuffer[10] = "";
 uint8_t indexBuffer = 0;
 
+UART serial::cout;
+
+UART::UART():isInitialized(false){
+
+}
+
 void UART::init() {
     GPIO_InitTypeDef GPIO_InitStructure;
     USART_InitTypeDef USART_InitStructure;
@@ -37,26 +43,29 @@ void UART::init() {
 
     USART_ITConfig(USART1, USART_IT_RXNE, ENABLE);
     NVIC_EnableIRQ(USART1_IRQn);
+
+    isInitialized = true;
 }
 
-void UART::operator<<(const char *str) {
+UART &UART::operator<<(const char *str) {
+    assert_param(isInitialized);
+
     puts(str);
+    return *this;
 }
 
-void UART::operator<(char c) {
-    /// TODO: replace cout with usart_putc
-    while (USART_GetFlagStatus(USART1, USART_FLAG_TXE) == RESET) { ; }
-    USART_SendData(USART1, (uint16_t) c);
-}
+UART &UART::operator<<(uint32_t number) {
+    assert_param(isInitialized);
 
-void UART::operator<<(uint32_t number) {
     char buffer[30];
 
-    itoa(number, buffer, 10);
+    itoa((int) number, buffer, 10);
     puts(buffer);
+    return *this;
 }
 
 void UART::puts(const char *str) {
+    assert_param(isInitialized);
     while (*str) {
         if (*str == '\n') {
             while (USART_GetFlagStatus(USART1, USART_FLAG_TXE) == RESET) { ; }
@@ -64,25 +73,23 @@ void UART::puts(const char *str) {
         }
 
         while (USART_GetFlagStatus(USART1, USART_FLAG_TXE) == RESET) { ; }
-        USART_SendData(USART1, *str++);
+        USART_SendData(USART1, (uint16_t) *str++);
     }
 }
 
-void UART::operator>(char &c) {
-    //cin >> c;
-}
-
 void UART::operator>>(char c[]) {
+    assert_param(isInitialized);
     //fflush(stdin);
     //cin.get(c, 10);
 }
 
-void UART::Clearscreen()
-{
-    char cmd1[5] = {0x1B, '[', '2', 'J', '\0'}; // Clear screen
-    char cmd2[4] = {0x1B, '[', 'f', '\0'}; // Cursor home
+void UART::Clearscreen() {
+    assert_param(isInitialized);
 
-    puts(cmd1);
-    puts(cmd2);
+    char clr[] = {0x1B, '[', '2', 'J', '\0'};
+    char crsh[] = {0x1B, '[', 'f', '\0'};
+
+    puts(clr);
+    puts(crsh);
 }
 

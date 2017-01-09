@@ -1,16 +1,13 @@
 
 
 /* Includes ------------------------------------------------------------------*/
-#include <airplane.h>
+#include "airplane.h"
 #include <stm32f0_discovery.h>
-#include <rgbdriver.h>
 #include "stm32f0xx_it.h"
 
 #define RCHIGH 5.0
 #define RCLOW 4.0
 #define MAXATTEMPTS 10
-
-
 
 /******************************************************************************/
 /*            Cortex-M0 Processor Exceptions Handlers                         */
@@ -98,8 +95,10 @@ void TIM3_IRQHandler() {
 
         // Delay = (count - 1) / TIM3 freq
         if (count++ == 4) {
-            if (verticalSpeed < 0.2) {
-                RGB::disable();
+            if (verticalSpeed < 0.2 && verticalSpeed > -0.2) {
+                //RGB::disable();
+            } else if(verticalSpeed < 0) {
+                verticalSpeed *= -1;
             } else {
                 RGB::setFrequency(verticalSpeed);
             }
@@ -117,7 +116,7 @@ void TIM14_IRQHandler() {
     if (TIM_GetITStatus(TIM14, TIM_IT_Update) != RESET) {
         TIM_ClearITPendingBit(TIM14, TIM_IT_Update);
 
-        Timer::incrementTime(Time::seconds);
+        Time::seconds++;
         STM_EVAL_LEDToggle(LED4);
     }
 }
@@ -140,7 +139,7 @@ void TIM16_IRQHandler(void) {
   * @param  None
   * @retval None
   */
-void TIM15_IRQHandler(void) {
+void TIM15_IRQHandler() {
     __IO uint32_t IC2Value = 0;
     __IO uint32_t DutyCycle = 0;
 

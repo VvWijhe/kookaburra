@@ -32,23 +32,26 @@ extern uint8_t indexBuffer;
 
 class UART {
 public:
+    UART();
+
     void init();
 
-    void operator<<(const char *str);
+    UART &operator<<(const char *str);
 
-    void operator<(char c);
-
-    void operator<<(uint32_t number);
+    UART &operator<<(uint32_t number);
 
     void puts(const char *str);
-
-    void operator>(char &c);
 
     void operator>>(char c[]);
 
     void Clearscreen();
 
 private:
+    bool isInitialized;
 };
+
+namespace serial {
+    extern UART cout;
+}
 
 #endif //USART_H

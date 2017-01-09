@@ -49,9 +49,6 @@ public:
     void controlMotor(int setPoint);
 
 private:
-    UART uart;
-    Timer timer;
-
     AirplaneControl control;
     static MPU6050 accelerometer;
     static MS5611 barometer;

@@ -8,29 +8,17 @@
 #include <stm32f0xx_tim.h>
 #include <stdint.h>
 
+void setTim3(uint16_t p);
+
+void setTim14(uint16_t p);
+
+void setTim16(uint16_t p);
+
+void setTim17(int p);
+
 namespace Time {
-    extern int hours;
-    extern int minutes;
     extern int seconds;
 }
-
-class Timer {
-public:
-    Timer();
-
-    static void setTim3(uint16_t p);
-
-    static void setTim14(uint16_t p);
-
-    static void setTim16(uint16_t p);
-
-    static void setTim17(int p);
-
-    static void incrementTime(int &seconds);
-
-private:
-
-};
 
 
 #endif //KOOKABURRA_COUNTER_H

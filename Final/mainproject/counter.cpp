@@ -1,15 +1,9 @@
 #include <stm32f0xx_tim.h>
 #include "h/counter.h"
 
-int Time::hours = 0;
-int Time::minutes = 0;
 int Time::seconds = 0;
 
-Timer::Timer() {
-
-}
-
-void Timer::setTim3(uint16_t p) {
+void setTim3(uint16_t p) {
     TIM_TimeBaseInitTypeDef TIM_TimeBaseStructure;
     NVIC_InitTypeDef NVIC_InitStructure;
 
@@ -43,7 +37,7 @@ void Timer::setTim3(uint16_t p) {
     TIM_Cmd(TIM3, ENABLE);
 }
 
-void Timer::setTim14(uint16_t p) {
+void setTim14(uint16_t p) {
     TIM_TimeBaseInitTypeDef TIM_TimeBaseStructure;
     NVIC_InitTypeDef NVIC_InitStructure;
 
@@ -77,7 +71,7 @@ void Timer::setTim14(uint16_t p) {
 
 }
 
-void Timer::setTim16(uint16_t p) {
+void setTim16(uint16_t p) {
     TIM_TimeBaseInitTypeDef TIM_TimeBaseStructure;
     NVIC_InitTypeDef NVIC_InitStructure;
 
@@ -112,7 +106,7 @@ void Timer::setTim16(uint16_t p) {
     TIM_Cmd(TIM16, ENABLE);
 }
 
-void Timer::setTim17(int p) {
+void setTim17(int p) {
     TIM_TimeBaseInitTypeDef TIM_TimeBaseStructure;
     NVIC_InitTypeDef NVIC_InitStructure;
 
@@ -147,6 +141,6 @@ void Timer::setTim17(int p) {
     TIM_Cmd(TIM17, ENABLE);
 }
 
-void Timer::incrementTime(int &seconds) {
+void incrementTime(int &seconds) {
     seconds++;
 }

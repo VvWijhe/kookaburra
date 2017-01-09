@@ -23,13 +23,13 @@ Airplane::Airplane() {
     // Initialize PWM and capture compare input
     control.init();
 
-    // Initialize uart with interupts
-    uart.init();
+    // Initialize serial with interrupts
+    serial::cout.init();
 
     // Initialize timers
-    timer.setTim3(5);
-    timer.setTim14(1);
-    timer.setTim16(20);
+    setTim3(5);
+    setTim14(1);
+    setTim16(20);
 
     // Initialize RGB led
     RGB::init();
@@ -59,7 +59,7 @@ Airplane::Airplane() {
 void Airplane::loop() {
     while (true) {
         while (flightMode == MANUAL_M) {
-
+            STM_EVAL_LEDOn(LED4);
         }
 
         while (flightMode == AUTOPILOT_M) {

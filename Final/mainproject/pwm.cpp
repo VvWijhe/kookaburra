@@ -4,6 +4,11 @@
 #include <stm32f0xx_conf.h>
 #include "pwm.h"
 
+__IO int32_t PrevDutyCycle = 0; //logging duty cycle in case of bizarre values
+float currentDutyCycle = 0; // the duty cycle in %
+uint8_t Attempts = 0; // to make the autopilot switch time-based
+uint8_t StepCount = 0; // to log every step of said switch
+
 AirplaneControl::AirplaneControl() :
         isEnabled(false) {
 
@@ -70,17 +75,6 @@ void AirplaneControl::init() {
 /// @brief PWM Capture Compare Init.
 /// @param None
 void AirplaneControl::InitCapComp() {
-    // GPIOB Periph clock enable
-    RCC->AHBENR |= RCC_AHBENR_GPIOBEN;
-    // PB14 in input flightMode
-    GPIOB->MODER |= (GPIO_MODER_MODER14_1);
-    // Push pull flightMode selected
-    GPIOB->OTYPER &= ~(GPIO_OTYPER_OT_14);
-    // Maximum speed setting
-    GPIOB->OSPEEDR |= (GPIO_OSPEEDER_OSPEEDR14);
-    // Pull-up and pull-down resistors disabled
-    GPIOB->PUPDR &= ~(GPIO_PUPDR_PUPDR14);
-
     TIM_ICInitTypeDef TIM_ICInitStructure;
     GPIO_InitTypeDef GPIO_InitStructure;
     NVIC_InitTypeDef NVIC_InitStructure;
