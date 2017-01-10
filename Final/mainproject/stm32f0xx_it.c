@@ -6,9 +6,9 @@
 #include <pwm.h>
 #include "stm32f0xx_it.h"
 
-#define RCHIGH 5.0
-#define RCLOW 4.0
-#define MAXATTEMPTS 10
+#define RCHIGH 9.2
+#define RCLOW 5.0
+#define MAXATTEMPTS 20
 
 /******************************************************************************/
 /*            Cortex-M0 Processor Exceptions Handlers                         */
@@ -146,28 +146,28 @@ void TIM15_IRQHandler() {
     /* Clear TIM2 Capture compare interrupt pending bit */
     TIM_ClearITPendingBit(TIM15, TIM_IT_CC1);
 
-//    __IO uint32_t IC2Value = 0;
-//    __IO uint32_t DutyCycle = 0;
+    __IO uint32_t IC2Value = 0;
+    __IO uint32_t DutyCycle = 0;
 
     float f = SystemCoreClock / TIM_GetCapture2(TIM15);
     float T = 1 / f;
 
     flightMode = MANUAL_M; //the flightMode the plane should work with, auto or manual.
 
-//    /* Get the Input Capture value */
-//    IC2Value = TIM_GetCapture2(TIM15);
-//
-//    if (IC2Value > TIM_GetCapture1(TIM15)) {
-//        /* Duty cycle computation */
-//        DutyCycle = IC2Value - TIM_GetCapture1(TIM15);
-//        PrevDutyCycle = DutyCycle;
-//        currentDutyCycle = (float) ((DutyCycle - 49200) / 163.2);
-//        if (currentDutyCycle < 0) {
-//            currentDutyCycle += 301.9;
-//        }
-//    } else {
-//        DutyCycle = (uint32_t) PrevDutyCycle;
-//    }
+    /* Get the Input Capture value */
+    IC2Value = TIM_GetCapture2(TIM15);
+
+    if (IC2Value > TIM_GetCapture1(TIM15)) {
+        /* Duty cycle computation */
+        DutyCycle = IC2Value - TIM_GetCapture1(TIM15);
+        PrevDutyCycle = DutyCycle;
+        currentDutyCycle = (float) ((DutyCycle - 49200) / 163.2);
+        if (currentDutyCycle < 0) {
+            currentDutyCycle += 301.9;
+        }
+    } else {
+        DutyCycle = (uint32_t) PrevDutyCycle;
+    }
 
     // TSync > 12 ms
     // Set channel data if period is smaller than 10 ms

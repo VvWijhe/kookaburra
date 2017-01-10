@@ -377,6 +377,33 @@ pwm.cpp.s:
 	$(MAKE) -f CMakeFiles\mainproject.elf.dir\build.make CMakeFiles/mainproject.elf.dir/pwm.cpp.s
 .PHONY : pwm.cpp.s
 
+rgbdriver.obj: rgbdriver.cpp.obj
+
+.PHONY : rgbdriver.obj
+
+# target to build an object file
+rgbdriver.cpp.obj:
+	$(MAKE) -f CMakeFiles\mainproject.elf.dir\build.make CMakeFiles/mainproject.elf.dir/rgbdriver.cpp.obj
+.PHONY : rgbdriver.cpp.obj
+
+rgbdriver.i: rgbdriver.cpp.i
+
+.PHONY : rgbdriver.i
+
+# target to preprocess a source file
+rgbdriver.cpp.i:
+	$(MAKE) -f CMakeFiles\mainproject.elf.dir\build.make CMakeFiles/mainproject.elf.dir/rgbdriver.cpp.i
+.PHONY : rgbdriver.cpp.i
+
+rgbdriver.s: rgbdriver.cpp.s
+
+.PHONY : rgbdriver.s
+
+# target to generate assembly for a file
+rgbdriver.cpp.s:
+	$(MAKE) -f CMakeFiles\mainproject.elf.dir\build.make CMakeFiles/mainproject.elf.dir/rgbdriver.cpp.s
+.PHONY : rgbdriver.cpp.s
+
 stm32f0xx_it.obj: stm32f0xx_it.c.obj
 
 .PHONY : stm32f0xx_it.obj
@@ -467,6 +494,9 @@ help:
 	@echo ... pwm.obj
 	@echo ... pwm.i
 	@echo ... pwm.s
+	@echo ... rgbdriver.obj
+	@echo ... rgbdriver.i
+	@echo ... rgbdriver.s
 	@echo ... stm32f0xx_it.obj
 	@echo ... stm32f0xx_it.i
 	@echo ... stm32f0xx_it.s

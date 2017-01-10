@@ -415,6 +415,9 @@
 		<Unit filename="C:/Users/Martijn/Desktop/school/Pr3Kookaburra/GithubMap/kookaburra/Final/mainproject/pwm.cpp">
 			<Option target="mainproject.elf"/>
 		</Unit>
+		<Unit filename="C:/Users/Martijn/Desktop/school/Pr3Kookaburra/GithubMap/kookaburra/Final/mainproject/rgbdriver.cpp">
+			<Option target="mainproject.elf"/>
+		</Unit>
 		<Unit filename="C:/Users/Martijn/Desktop/school/Pr3Kookaburra/GithubMap/kookaburra/Final/mainproject/stm32f0xx_it.c">
 			<Option target="mainproject.elf"/>
 		</Unit>
