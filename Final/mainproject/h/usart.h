@@ -50,8 +50,7 @@ private:
     bool isInitialized;
 };
 
-namespace serial {
-    extern UART cout;
-}
+extern UART uart;
+
 
 #endif //USART_H

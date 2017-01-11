@@ -7,7 +7,7 @@
 uint8_t rxBuffer[10] = "";
 uint8_t indexBuffer = 0;
 
-UART serial::cout;
+UART uart;
 
 UART::UART():isInitialized(false){
 

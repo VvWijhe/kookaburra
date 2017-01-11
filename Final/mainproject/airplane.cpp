@@ -26,7 +26,7 @@ Airplane::Airplane() {
     control.InitCapComp();
 
     // Initialize serial with interrupts
-    serial::cout.init();
+    uart.init();
 
     // Initialize timers
     setTim3(5);
@@ -186,5 +186,5 @@ void Airplane::controlMotor(int setPoint) {
     if (altitudeControlValue < 0) altitudeControlValue = 0;
     if (altitudeControlValue > 2000) altitudeControlValue = 2000;
 
-    control.setOnTime(PWM_MOTOR, (uint32_t) (1000 + altitudeControlValue));
+    control.setOnTime(PWM_MOTOR, (uint32_t) altitudeControlValue);
 }
