@@ -403,6 +403,12 @@
 		<Unit filename="C:/Users/Martijn/Desktop/school/Pr3Kookaburra/GithubMap/kookaburra/Final/mainproject/counter.cpp">
 			<Option target="mainproject.elf"/>
 		</Unit>
+		<Unit filename="C:/Users/Martijn/Desktop/school/Pr3Kookaburra/GithubMap/kookaburra/Final/mainproject/flash.cpp">
+			<Option target="mainproject.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/Martijn/Desktop/school/Pr3Kookaburra/GithubMap/kookaburra/Final/mainproject/flash.h">
+			<Option target="mainproject.elf"/>
+		</Unit>
 		<Unit filename="C:/Users/Martijn/Desktop/school/Pr3Kookaburra/GithubMap/kookaburra/Final/mainproject/main.cpp">
 			<Option target="mainproject.elf"/>
 		</Unit>

@@ -331,6 +331,31 @@ CMakeFiles/mainproject.elf.dir/rgbdriver.cpp.obj.provides: CMakeFiles/mainprojec
 CMakeFiles/mainproject.elf.dir/rgbdriver.cpp.obj.provides.build: CMakeFiles/mainproject.elf.dir/rgbdriver.cpp.obj
 
 
+CMakeFiles/mainproject.elf.dir/flash.cpp.obj: CMakeFiles/mainproject.elf.dir/flags.make
+CMakeFiles/mainproject.elf.dir/flash.cpp.obj: CMakeFiles/mainproject.elf.dir/includes_CXX.rsp
+CMakeFiles/mainproject.elf.dir/flash.cpp.obj: ../flash.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Martijn\Desktop\school\Pr3Kookaburra\GithubMap\kookaburra\Final\mainproject\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/mainproject.elf.dir/flash.cpp.obj"
+	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\mainproject.elf.dir\flash.cpp.obj -c C:\Users\Martijn\Desktop\school\Pr3Kookaburra\GithubMap\kookaburra\Final\mainproject\flash.cpp
+
+CMakeFiles/mainproject.elf.dir/flash.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mainproject.elf.dir/flash.cpp.i"
+	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Martijn\Desktop\school\Pr3Kookaburra\GithubMap\kookaburra\Final\mainproject\flash.cpp > CMakeFiles\mainproject.elf.dir\flash.cpp.i
+
+CMakeFiles/mainproject.elf.dir/flash.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mainproject.elf.dir/flash.cpp.s"
+	C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Martijn\Desktop\school\Pr3Kookaburra\GithubMap\kookaburra\Final\mainproject\flash.cpp -o CMakeFiles\mainproject.elf.dir\flash.cpp.s
+
+CMakeFiles/mainproject.elf.dir/flash.cpp.obj.requires:
+
+.PHONY : CMakeFiles/mainproject.elf.dir/flash.cpp.obj.requires
+
+CMakeFiles/mainproject.elf.dir/flash.cpp.obj.provides: CMakeFiles/mainproject.elf.dir/flash.cpp.obj.requires
+	$(MAKE) -f CMakeFiles\mainproject.elf.dir\build.make CMakeFiles/mainproject.elf.dir/flash.cpp.obj.provides.build
+.PHONY : CMakeFiles/mainproject.elf.dir/flash.cpp.obj.provides
+
+CMakeFiles/mainproject.elf.dir/flash.cpp.obj.provides.build: CMakeFiles/mainproject.elf.dir/flash.cpp.obj
+
+
 # Object files for target mainproject.elf
 mainproject_elf_OBJECTS = \
 "CMakeFiles/mainproject.elf.dir/main.cpp.obj" \
@@ -343,7 +368,8 @@ mainproject_elf_OBJECTS = \
 "CMakeFiles/mainproject.elf.dir/pwm.cpp.obj" \
 "CMakeFiles/mainproject.elf.dir/MS5611.cpp.obj" \
 "CMakeFiles/mainproject.elf.dir/counter.cpp.obj" \
-"CMakeFiles/mainproject.elf.dir/rgbdriver.cpp.obj"
+"CMakeFiles/mainproject.elf.dir/rgbdriver.cpp.obj" \
+"CMakeFiles/mainproject.elf.dir/flash.cpp.obj"
 
 # External object files for target mainproject.elf
 mainproject_elf_EXTERNAL_OBJECTS =
@@ -359,6 +385,7 @@ mainproject_elf_EXTERNAL_OBJECTS =
 ../CLionBuildOutput/Debug/mainproject.elf.exe: CMakeFiles/mainproject.elf.dir/MS5611.cpp.obj
 ../CLionBuildOutput/Debug/mainproject.elf.exe: CMakeFiles/mainproject.elf.dir/counter.cpp.obj
 ../CLionBuildOutput/Debug/mainproject.elf.exe: CMakeFiles/mainproject.elf.dir/rgbdriver.cpp.obj
+../CLionBuildOutput/Debug/mainproject.elf.exe: CMakeFiles/mainproject.elf.dir/flash.cpp.obj
 ../CLionBuildOutput/Debug/mainproject.elf.exe: CMakeFiles/mainproject.elf.dir/build.make
 ../CLionBuildOutput/Debug/mainproject.elf.exe: F0DiscoveryDir/libSTM32F0DiscoveryLib.a
 ../CLionBuildOutput/Debug/mainproject.elf.exe: STM32CMSIS/libCMSISFIRMWARE.a
@@ -366,7 +393,7 @@ mainproject_elf_EXTERNAL_OBJECTS =
 ../CLionBuildOutput/Debug/mainproject.elf.exe: CMakeFiles/mainproject.elf.dir/linklibs.rsp
 ../CLionBuildOutput/Debug/mainproject.elf.exe: CMakeFiles/mainproject.elf.dir/objects1.rsp
 ../CLionBuildOutput/Debug/mainproject.elf.exe: CMakeFiles/mainproject.elf.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Martijn\Desktop\school\Pr3Kookaburra\GithubMap\kookaburra\Final\mainproject\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable ..\CLionBuildOutput\Debug\mainproject.elf.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Martijn\Desktop\school\Pr3Kookaburra\GithubMap\kookaburra\Final\mainproject\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable ..\CLionBuildOutput\Debug\mainproject.elf.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\mainproject.elf.dir\link.txt --verbose=$(VERBOSE)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Windows post-aktie: mainproject.elf.exe naar mainproject.elf gekopieerd."
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "STM32 mainproject.elf is gemaakt."
@@ -389,6 +416,7 @@ CMakeFiles/mainproject.elf.dir/requires: CMakeFiles/mainproject.elf.dir/pwm.cpp.
 CMakeFiles/mainproject.elf.dir/requires: CMakeFiles/mainproject.elf.dir/MS5611.cpp.obj.requires
 CMakeFiles/mainproject.elf.dir/requires: CMakeFiles/mainproject.elf.dir/counter.cpp.obj.requires
 CMakeFiles/mainproject.elf.dir/requires: CMakeFiles/mainproject.elf.dir/rgbdriver.cpp.obj.requires
+CMakeFiles/mainproject.elf.dir/requires: CMakeFiles/mainproject.elf.dir/flash.cpp.obj.requires
 
 .PHONY : CMakeFiles/mainproject.elf.dir/requires
 

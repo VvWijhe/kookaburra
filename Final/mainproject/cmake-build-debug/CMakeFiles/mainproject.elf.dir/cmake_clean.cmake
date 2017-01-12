@@ -10,6 +10,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/mainproject.elf.dir/MS5611.cpp.obj"
   "CMakeFiles/mainproject.elf.dir/counter.cpp.obj"
   "CMakeFiles/mainproject.elf.dir/rgbdriver.cpp.obj"
+  "CMakeFiles/mainproject.elf.dir/flash.cpp.obj"
   "../CLionBuildOutput/Debug/mainproject.elf.pdb"
   "../CLionBuildOutput/Debug/mainproject.elf.exe"
   "../CLionBuildOutput/Debug/mainproject.elf.exe.manifest"

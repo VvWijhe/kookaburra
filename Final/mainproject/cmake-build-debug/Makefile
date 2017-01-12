@@ -269,6 +269,33 @@ counter.cpp.s:
 	$(MAKE) -f CMakeFiles\mainproject.elf.dir\build.make CMakeFiles/mainproject.elf.dir/counter.cpp.s
 .PHONY : counter.cpp.s
 
+flash.obj: flash.cpp.obj
+
+.PHONY : flash.obj
+
+# target to build an object file
+flash.cpp.obj:
+	$(MAKE) -f CMakeFiles\mainproject.elf.dir\build.make CMakeFiles/mainproject.elf.dir/flash.cpp.obj
+.PHONY : flash.cpp.obj
+
+flash.i: flash.cpp.i
+
+.PHONY : flash.i
+
+# target to preprocess a source file
+flash.cpp.i:
+	$(MAKE) -f CMakeFiles\mainproject.elf.dir\build.make CMakeFiles/mainproject.elf.dir/flash.cpp.i
+.PHONY : flash.cpp.i
+
+flash.s: flash.cpp.s
+
+.PHONY : flash.s
+
+# target to generate assembly for a file
+flash.cpp.s:
+	$(MAKE) -f CMakeFiles\mainproject.elf.dir\build.make CMakeFiles/mainproject.elf.dir/flash.cpp.s
+.PHONY : flash.cpp.s
+
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -482,6 +509,9 @@ help:
 	@echo ... counter.obj
 	@echo ... counter.i
 	@echo ... counter.s
+	@echo ... flash.obj
+	@echo ... flash.i
+	@echo ... flash.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
