@@ -176,15 +176,16 @@ void Airplane::controlElevator(int minAngle, int maxAngle) {
 }
 
 void Airplane::controlMotor(int setPoint) {
-    PID pid(0.02, 1, 0, 0);
+    PID pid(0.02, 1100, 0, 0);
     double altitudeControlValue = 0;
 
     altitudeControlValue = pid.calculate(currentAltitude, setPoint);
 
-    altitudeControlValue *= 0.4;
+    altitudeControlValue += 5000;
+    altitudeControlValue *= 20;
 
     if (altitudeControlValue < 0) altitudeControlValue = 0;
-    if (altitudeControlValue > 2000) altitudeControlValue = 2000;
+    if (altitudeControlValue > 19000) altitudeControlValue = 19000;
 
     control.setOnTime(PWM_MOTOR, (uint32_t) altitudeControlValue);
 }
