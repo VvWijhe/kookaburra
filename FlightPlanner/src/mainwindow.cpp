@@ -20,13 +20,15 @@ MainWindow::MainWindow(QWidget *parent) :
    ui->Height2->setSuffix("m");
    setWindowTitle("Flightplanner");
 
-   if ( port->SerialIsOpen == true )
+   ui->statusBar->setStyleSheet("color: blue;");
+
+   if ( port->SerialIsOpen )
    {
       ui->statusBar->showMessage("Connected with COM3");
    }
    else
    {
-      ui->statusBar->showMessage("WARNING: Connection failed.");
+      ui->statusBar->showMessage("Disconnected");
       ui->pushButton_3->setEnabled(false);
    }
 
@@ -51,9 +53,11 @@ void MainWindow::on_pushButton_3_clicked() //Send heightdata
    qDebug() << DataToSend;
    port->SetData(DataToSend);
    port->send();
-   qDebug() << port->ERROR << "error in MW:";
 
-   SerialSucceed = port->ERROR > 0 ? true : false;
+   if(!(SerialSucceed = port->ERROR > 0 ? true : false)){
+      ui->statusBar->showMessage("Failed to send altitudes");
+      return;
+   }
 
 
    // Send Alt 1
@@ -62,12 +66,21 @@ void MainWindow::on_pushButton_3_clicked() //Send heightdata
    port->SetData(DataToSend);
    port->send();
 
-   SerialSucceed = port->ERROR > 0 ? true : false;
+   if(!(SerialSucceed = port->ERROR > 0 ? true : false)){
+      ui->statusBar->showMessage("Failed to send altitudes");
+      return;
+   }
 
-   SerialSucceed == true ? ui->statusBar->showMessage("Altitudes sent!") : ui->statusBar->showMessage("Failed to send altitudes");
-
+   ui->statusBar->showMessage("Altitudes uploaded!");
 //   SendCompleted sendcompleted;
 //   sendcompleted.setModal(true);
 //   sendcompleted.SendSucceed = SerialSucceed;
 //   sendcompleted.exec();
+}
+
+void MainWindow::on_connectButton_clicked()
+{
+    if(!port->open()){
+       ui->statusBar->showMessage("Failed to connect");
+    }
 }

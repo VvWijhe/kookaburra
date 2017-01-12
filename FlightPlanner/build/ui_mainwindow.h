@@ -45,6 +45,7 @@ public:
     QSpinBox *Height1;
     QVBoxLayout *verticalLayout;
     QPushButton *pushButton_3;
+    QPushButton *connectButton;
     QSplitter *splitter_3;
     QPushButton *pushButton_2;
     QMenuBar *menuBar;
@@ -127,6 +128,11 @@ public:
 
         verticalLayout->addWidget(pushButton_3);
 
+        connectButton = new QPushButton(centralWidget);
+        connectButton->setObjectName(QStringLiteral("connectButton"));
+
+        verticalLayout->addWidget(connectButton);
+
         splitter_3 = new QSplitter(centralWidget);
         splitter_3->setObjectName(QStringLiteral("splitter_3"));
         splitter_3->setOrientation(Qt::Vertical);
@@ -165,6 +171,7 @@ public:
         label_2->setText(QApplication::translate("MainWindow", "Altitude 1", 0));
         label->setText(QApplication::translate("MainWindow", "Altitude 2", 0));
         pushButton_3->setText(QApplication::translate("MainWindow", "Send to Kookaburra", 0));
+        connectButton->setText(QApplication::translate("MainWindow", "Connect", 0));
         pushButton_2->setText(QApplication::translate("MainWindow", "About", 0));
     } // retranslateUi
 
