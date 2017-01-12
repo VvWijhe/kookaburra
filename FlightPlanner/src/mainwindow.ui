@@ -6,9 +6,21 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>463</width>
-    <height>490</height>
+    <width>400</width>
+    <height>500</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>400</width>
+    <height>500</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>400</width>
+    <height>500</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
@@ -35,67 +47,81 @@
      </widget>
     </item>
     <item>
-     <widget class="QSplitter" name="splitter_5">
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <property name="topMargin">
+       <number>0</number>
       </property>
-      <widget class="QSplitter" name="splitter_2">
-       <property name="orientation">
-        <enum>Qt::Vertical</enum>
-       </property>
-       <widget class="QSplitter" name="splitter">
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
-        </property>
-       </widget>
-      </widget>
-      <widget class="QSpinBox" name="Height1">
-       <property name="maximumSize">
-        <size>
-         <width>16777215</width>
-         <height>34</height>
-        </size>
-       </property>
-       <property name="maximum">
-        <number>200</number>
-       </property>
-       <property name="value">
-        <number>0</number>
-       </property>
-      </widget>
-      <widget class="QSpinBox" name="Height2">
-       <property name="maximumSize">
-        <size>
-         <width>16777215</width>
-         <height>34</height>
-        </size>
-       </property>
-       <property name="maximum">
-        <number>200</number>
-       </property>
-      </widget>
-      <widget class="QSplitter" name="splitter_4">
-       <property name="orientation">
-        <enum>Qt::Vertical</enum>
-       </property>
-       <widget class="QLabel" name="label">
-        <property name="text">
-         <string>Height 1</string>
-        </property>
-       </widget>
+      <item>
        <widget class="QLabel" name="label_2">
+        <property name="maximumSize">
+         <size>
+          <width>67</width>
+          <height>16777215</height>
+         </size>
+        </property>
         <property name="text">
-         <string>Height 2</string>
+         <string>Altitude 1</string>
         </property>
        </widget>
-      </widget>
-     </widget>
+      </item>
+      <item>
+       <widget class="QSpinBox" name="Height2"/>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>67</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Altitude 2</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QSpinBox" name="Height1"/>
+      </item>
+     </layout>
     </item>
     <item>
      <layout class="QVBoxLayout" name="verticalLayout">
       <property name="sizeConstraint">
-       <enum>QLayout::SetNoConstraint</enum>
+       <enum>QLayout::SetFixedSize</enum>
       </property>
+      <item>
+       <widget class="QPushButton" name="pushButton_3">
+        <property name="minimumSize">
+         <size>
+          <width>280</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>34</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Send to Kookaburra</string>
+        </property>
+       </widget>
+      </item>
       <item>
        <widget class="QSplitter" name="splitter_3">
         <property name="orientation">
@@ -114,38 +140,7 @@
         </widget>
        </widget>
       </item>
-      <item>
-       <widget class="QPushButton" name="pushButton_3">
-        <property name="maximumSize">
-         <size>
-          <width>16777215</width>
-          <height>34</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>Send to Kookaburra</string>
-        </property>
-       </widget>
-      </item>
      </layout>
-    </item>
-    <item>
-     <widget class="QSplitter" name="splitter_6">
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
-      <widget class="QLabel" name="Serialconnectedlabel">
-       <property name="text">
-        <string>TextLabel</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_3">
-       <property name="text">
-        <string>Height minimum value is 10.
-Height maximum value is 200.</string>
-       </property>
-      </widget>
-     </widget>
     </item>
    </layout>
   </widget>
@@ -154,7 +149,7 @@ Height maximum value is 200.</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>463</width>
+     <width>400</width>
      <height>25</height>
     </rect>
    </property>
