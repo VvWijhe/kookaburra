@@ -15,9 +15,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e0d6b131-ced9-40dd-8c0b-6aad02db3346" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CLionBuildOutput/Debug/mainproject.elf" afterPath="$PROJECT_DIR$/CLionBuildOutput/Debug/mainproject.elf" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stm32f0xx_it.c" afterPath="$PROJECT_DIR$/stm32f0xx_it.c" />
     </list>
     <ignored path="mainproject.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -520,7 +518,7 @@
       <workItem from="1483619558083" duration="1914000" />
       <workItem from="1484057635884" duration="1057000" />
       <workItem from="1484061509836" duration="701000" />
-      <workItem from="1484221618771" duration="1571000" />
+      <workItem from="1484221618771" duration="1604000" />
     </task>
     <task id="LOCAL-00001" summary="daar is ie dan, PWM Cap Comp + trigger.">
       <created>1482245967908</created>
@@ -543,11 +541,18 @@
       <option name="project" value="LOCAL" />
       <updated>1484059962676</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Flash Memory toegevoegd">
+      <created>1484223399092</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1484223399092</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19654000" />
+    <option name="totallyTimeSpent" value="19687000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -600,7 +605,8 @@
     <MESSAGE value="daar is ie dan, PWM Cap Comp + trigger." />
     <MESSAGE value="Daar is ie dan, PWM Cap Comp + trigger. (updated lol)" />
     <MESSAGE value="PWM Cap Comp met werkelijke waardes" />
-    <option name="LAST_COMMIT_MESSAGE" value="PWM Cap Comp met werkelijke waardes" />
+    <MESSAGE value="Flash Memory toegevoegd" />
+    <option name="LAST_COMMIT_MESSAGE" value="Flash Memory toegevoegd" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
