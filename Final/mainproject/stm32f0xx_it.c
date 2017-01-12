@@ -2,6 +2,7 @@
 #include "airplane.h"
 #include <stm32f0_discovery.h>
 #include <pwm.h>
+#include "rgbdriver.h"
 #include "stm32f0xx_it.h"
 
 #define RCHIGH 9.2
