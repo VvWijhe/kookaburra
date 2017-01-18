@@ -28,5 +28,3 @@ HEADERS  += mainwindow.h \
 FORMS    += mainwindow.ui \
     secondwindow.ui \
     sendcompleted.ui
-
-RC_FILE = flightplanner.rc
