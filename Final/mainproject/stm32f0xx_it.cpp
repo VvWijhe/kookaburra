@@ -1,10 +1,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "airplane.h"
 #include <stm32f0_discovery.h>
-#include <pwm.h>
-#include "rgbdriver.h"
 #include "stm32f0xx_it.h"
-#include "flash.h"
 
 #define RCHIGH 9.2
 #define RCLOW 5.0
@@ -100,7 +97,7 @@ void TIM3_IRQHandler() {
         // Delay = (count - 1) / TIM3 freq
         if (count++ == 4) {
             if (verticalSpeed < 0.2 && verticalSpeed > -0.2) {
-                //RGB::disable();
+                RGB::disable();
             } else if(verticalSpeed < 0) {
                 verticalSpeed *= -1;
             } else {

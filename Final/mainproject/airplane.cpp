@@ -61,7 +61,7 @@ Airplane::Airplane() {
 void Airplane::loop() {
     while (true) {
         while (flightMode == MANUAL_M) {
-            STM_EVAL_LEDOn(LED4);
+            STM_EVAL_LEDOn(LED3);
         }
 
         while (flightMode == AUTOPILOT_M) {

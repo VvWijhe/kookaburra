@@ -12,8 +12,7 @@ __IO TestStatus MemoryProgramStatus = PASSED;
 
 
 //function that writes the heights to flash
-uint8_t WriteToFlash( uint16_t HeightOne, uint16_t HeightTwo )
-{
+uint8_t WriteToFlash(uint16_t HeightOne, uint16_t HeightTwo) {
     uint8_t SuccessCode = 0;
     uint32_t DATA_32;
 
@@ -35,10 +34,8 @@ uint8_t WriteToFlash( uint16_t HeightOne, uint16_t HeightTwo )
     NbrOfPage = (FLASH_USER_END_ADDR - FLASH_USER_START_ADDR) / FLASH_PAGE_SIZE;
 
     /* Erase the FLASH pages */
-    for(EraseCounter = 0; (EraseCounter < NbrOfPage) && (FLASHStatus == FLASH_COMPLETE); EraseCounter++)
-    {
-        if (FLASH_ErasePage(FLASH_USER_START_ADDR + (FLASH_PAGE_SIZE * EraseCounter))!= FLASH_COMPLETE)
-        {
+    for (EraseCounter = 0; (EraseCounter < NbrOfPage) && (FLASHStatus == FLASH_COMPLETE); EraseCounter++) {
+        if (FLASH_ErasePage(FLASH_USER_START_ADDR + (FLASH_PAGE_SIZE * EraseCounter)) != FLASH_COMPLETE) {
             SuccessCode = 1; /* Error occurred while sector erase. */
         }
     }
@@ -47,14 +44,10 @@ uint8_t WriteToFlash( uint16_t HeightOne, uint16_t HeightTwo )
 
     Address = FLASH_USER_START_ADDR;
 
-    while (Address < FLASH_USER_END_ADDR)
-    {
-        if (FLASH_ProgramWord(Address, DATA_32) == FLASH_COMPLETE)
-        {
+    while (Address < FLASH_USER_END_ADDR) {
+        if (FLASH_ProgramWord(Address, DATA_32) == FLASH_COMPLETE) {
             Address = Address + 4;
-        }
-        else
-        {
+        } else {
             SuccessCode = 2; /* Error occurred while writing data in Flash memory. */
         }
     }
@@ -69,12 +62,10 @@ uint8_t WriteToFlash( uint16_t HeightOne, uint16_t HeightTwo )
     Address = FLASH_USER_START_ADDR;
     MemoryProgramStatus = PASSED;
 
-    while (Address < FLASH_USER_END_ADDR)
-    {
-        Data = *(__IO uint32_t *)Address;
+    while (Address < FLASH_USER_END_ADDR) {
+        Data = *(__IO uint32_t *) Address;
 
-        if (Data != DATA_32)
-        {
+        if (Data != DATA_32) {
             SuccessCode = 3;
         }
 
@@ -82,23 +73,21 @@ uint8_t WriteToFlash( uint16_t HeightOne, uint16_t HeightTwo )
     }
 
     return SuccessCode; //value 0: all well. value 1: problem during clearing flash.
-}											//value 2: problem during writing. value 3: flash wasnt written with the right value
+}                                            //value 2: problem during writing. value 3: flash wasnt written with the right value
 
 //function to read from flash
-uint16_t ReadFromFlash( uint8_t H1orH2 )
-{
+uint16_t ReadFromFlash(uint8_t H1orH2) {
     uint16_t Height;
     uint32_t Value;
 
     Address = FLASH_USER_START_ADDR;
-    Value = *(__IO uint32_t *)Address;
+    Value = *(__IO uint32_t *) Address;
 
-    if( H1orH2 == 1 ) //return Height One
+    if (H1orH2 == 1) //return Height One
     {
         Value = Value >> 16;
         Height = Value;
-    }
-    else //return Height Two
+    } else //return Height Two
     {
         Value = Value & 0x0000FFFF;
         Height = Value;

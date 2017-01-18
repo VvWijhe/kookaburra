@@ -22,7 +22,7 @@ include(${CMAKESCRIPTDIR}/STM32F0.cmake)
 
 file(GLOB BasisBestanden ${BASISDIR}/stm32f0/*.c)
 set(SRCS main.cpp ${BasisBestanden}
-        stm32f0xx_it.c
+        stm32f0xx_it.cpp
         airplane.cpp
         mpu6050.cpp
         usart.cpp
@@ -30,7 +30,8 @@ set(SRCS main.cpp ${BasisBestanden}
         pwm.cpp
         MS5611.cpp
         counter.cpp
-        rgbdriver.cpp flash.h flash.cpp)
+        rgbdriver.cpp
+        flash.cpp)
 
 add_subdirectory(${F0DISCOVERYDIR} ${CMAKE_CURRENT_BINARY_DIR}/F0DiscoveryDir)
 
