@@ -32,28 +32,31 @@ void RGB::init() {
 }
 
 void RGB::setFrequency(float pulse) {
-    //Enable clock for the timer
-    RCC->APB2ENR |= RCC_APB2ENR_TIM17EN;
-    // Enable ARR preloading
-    TIM17->CR1 |= TIM_CR1_ARPE;
-    // Enable CCR1 preloading
-    TIM17->CCMR1 |= TIM_CCMR1_OC2PE;
-    // PWM mode 1: OC1M = 110
-    TIM17->CCMR1 |= (TIM_CCMR1_OC1M_2 | TIM_CCMR1_OC1M_1);
-    // Prescaler keeps zero to allow control PWM frequency
-    TIM17->PSC = (uint16_t) (20000 - 1);
-    // PWM Frequency 36 kHz
-    TIM17->ARR = (uint32_t) (((1 / pulse) * 400) - 1);
-    // Duty cycle: 33%
-    TIM17->CCR1 = (uint32_t) (((1 / pulse) * 400) * 0.9);
-    // Uncomment to change polarity
-    //TIM2->CCER |= TIM_CCER_CC2P;
-    // Enable Capture/Compare output 1, ie PB9
-    TIM17->CCER |= TIM_CCER_CC1E;
-    // Main Output enable
-    TIM17->BDTR |= TIM_BDTR_MOE;
-    // Start timer
-    TIM17->CR1 |= TIM_CR1_CEN;
+    if(pulse > 0.01 && pulse < 30) {
+
+        //Enable clock for the timer
+        RCC->APB2ENR |= RCC_APB2ENR_TIM17EN;
+        // Enable ARR preloading
+        TIM17->CR1 |= TIM_CR1_ARPE;
+        // Enable CCR1 preloading
+        TIM17->CCMR1 |= TIM_CCMR1_OC2PE;
+        // PWM mode 1: OC1M = 110
+        TIM17->CCMR1 |= (TIM_CCMR1_OC1M_2 | TIM_CCMR1_OC1M_1);
+        // Prescaler keeps zero to allow control PWM frequency
+        TIM17->PSC = (uint16_t) (20000 - 1);
+        // PWM Frequency 36 kHz
+        TIM17->ARR = (uint32_t) (((1 / pulse) * 400) - 1);
+        // Duty cycle: 33%
+        TIM17->CCR1 = (uint32_t) (((1 / pulse) * 400) * 0.9);
+        // Uncomment to change polarity
+        //TIM2->CCER |= TIM_CCER_CC2P;
+        // Enable Capture/Compare output 1, ie PB9
+        TIM17->CCER |= TIM_CCER_CC1E;
+        // Main Output enable
+        TIM17->BDTR |= TIM_BDTR_MOE;
+        // Start timer
+        TIM17->CR1 |= TIM_CR1_CEN;
+    }
 }
 
 /**

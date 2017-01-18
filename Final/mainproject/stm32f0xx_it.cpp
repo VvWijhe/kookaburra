@@ -98,9 +98,10 @@ void TIM3_IRQHandler() {
         if (count++ == 4) {
             if (verticalSpeed < 0.2 && verticalSpeed > -0.2) {
                 RGB::disable();
-            } else if(verticalSpeed < 0) {
-                verticalSpeed *= -1;
             } else {
+                if (verticalSpeed < 0) {
+                    verticalSpeed *= -1;
+                }
                 RGB::setFrequency(verticalSpeed);
             }
             count = 0;
@@ -171,17 +172,17 @@ void TIM15_IRQHandler() {
 
     // TSync > 12 ms
     // Set channel data if period is smaller than 10 ms
-    if(T < 0.01) {
+    if (T < 0.01) {
         if (nChannel == 0) {
             ppmData.channel1 = (int) (T * 1000000);
             nChannel++;
-        } else if(nChannel == 1){
+        } else if (nChannel == 1) {
             ppmData.channel2 = (int) (T * 1000000);
             nChannel++;
-        } else if(nChannel == 2){
+        } else if (nChannel == 2) {
             ppmData.channel3 = (int) (T * 1000000);
             nChannel++;
-        } else if(nChannel == 3){
+        } else if (nChannel == 3) {
             ppmData.channel4 = (int) (T * 1000000);
             nChannel++;
         }
