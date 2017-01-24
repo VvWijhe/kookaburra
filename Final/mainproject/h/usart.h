@@ -40,6 +40,8 @@ public:
 
     UART &operator<<(uint32_t number);
 
+    UART &operator<<(bool boolean);
+
     void puts(const char *str);
 
     void operator>>(char c[]);

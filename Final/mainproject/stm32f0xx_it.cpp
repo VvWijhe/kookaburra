@@ -1,6 +1,5 @@
 /* Includes ------------------------------------------------------------------*/
 #include "airplane.h"
-#include <stm32f0_discovery.h>
 #include "stm32f0xx_it.h"
 
 #define RCHIGH 9.2
@@ -90,9 +89,9 @@ int count = 0;
 void TIM3_IRQHandler() {
     if (TIM_GetITStatus(TIM3, TIM_IT_Update) != RESET) {
         TIM_ClearITPendingBit(TIM3, TIM_IT_Update);
-//        previousAltitude = currentAltitude;
-//        currentAltitude = Airplane::getAltitude();
-//        verticalSpeed = (float) ((currentAltitude - previousAltitude) / 0.2);
+        previousAltitude = currentAltitude;
+        currentAltitude = (int) Airplane::getAltitude();
+        verticalSpeed = (float) ((currentAltitude - previousAltitude) / 0.2);
 
         // Delay = (count - 1) / TIM3 freq
         if (count++ == 4) {
@@ -119,7 +118,6 @@ void TIM14_IRQHandler() {
         TIM_ClearITPendingBit(TIM14, TIM_IT_Update);
 
         Time::seconds++;
-        STM_EVAL_LEDToggle(LED4);
     }
 }
 
@@ -150,9 +148,6 @@ void TIM15_IRQHandler() {
     __IO uint32_t IC2Value = 0;
     __IO uint32_t DutyCycle = 0;
 
-    float f = SystemCoreClock / TIM_GetCapture2(TIM15);
-    float T = 1 / f;
-
     flightMode = MANUAL_M; //the flightMode the plane should work with, auto or manual.
 
     /* Get the Input Capture value */
@@ -170,25 +165,6 @@ void TIM15_IRQHandler() {
         DutyCycle = (uint32_t) PrevDutyCycle;
     }
 
-    // TSync > 12 ms
-    // Set channel data if period is smaller than 10 ms
-    if (T < 0.01) {
-        if (nChannel == 0) {
-            ppmData.channel1 = (int) (T * 1000000);
-            nChannel++;
-        } else if (nChannel == 1) {
-            ppmData.channel2 = (int) (T * 1000000);
-            nChannel++;
-        } else if (nChannel == 2) {
-            ppmData.channel3 = (int) (T * 1000000);
-            nChannel++;
-        } else if (nChannel == 3) {
-            ppmData.channel4 = (int) (T * 1000000);
-            nChannel++;
-        }
-    } else {
-        nChannel = 0;
-    }
 
     //from here on the flightplanner switch is processed.
     // NOTE: MAXATTEMPTS, RCHIGH and RCLOW are still trivial, give them actual values.

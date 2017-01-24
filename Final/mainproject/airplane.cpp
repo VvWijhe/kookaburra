@@ -3,15 +3,12 @@
 //
 #include <airplane.h>
 #include <pid.h>
-#include <stm32f0_discovery.h>
 
 int currentPitch = 0;
 int currentAltitude = 0;
 int previousAltitude = 0;
 float verticalSpeed = 0;
-int altitude1 = 0, altitude2 = 0;
 flightMode_t flightMode = MANUAL_M;
-ppmData_t ppmData;
 
 MPU6050 Airplane::accelerometer;
 MS5611 Airplane::barometer;
@@ -40,9 +37,15 @@ Airplane::Airplane() {
     flightMode = MANUAL_M;
     TIM_Cmd(TIM14, DISABLE);
 
-    // Test
-    STM_EVAL_LEDInit(LED4);
-    STM_EVAL_LEDInit(LED3);
+    //writeFlash(120, 230);
+
+    // Report sensor status via the usart
+    uart << "Accelerometer  : " << accelerometer.getStatus() << "\n";
+    uart << "Barometer      : " << barometer.getStatus() << "\n";
+    uart << "Flightmode     : " << (flightMode == MANUAL_M ? "Manual" : "Autopilot") << "\n";
+    uart << "Altitude 1     : " << (uint32_t)readFlash(1) << "\n";
+    uart << "Altitude 2     : " << (uint32_t)readFlash(2) << "\n";
+    uart << "Program initialized\n";
 }
 
 /***************************************
@@ -61,12 +64,12 @@ Airplane::Airplane() {
 void Airplane::loop() {
     while (true) {
         while (flightMode == MANUAL_M) {
-            STM_EVAL_LEDOn(LED3);
+
         }
 
         while (flightMode == AUTOPILOT_M) {
             // --------------------------- 1 ------------------------------
-            while (Time::seconds < 10) {
+            while (Time::seconds < FLIGHT_TIME1) {
                 // ------------ Control Leds ------------
                 // 1. Altitude is OK
                 if (currentAltitude < altitude1 + 3 && currentAltitude > altitude1 - 3) {
@@ -97,7 +100,7 @@ void Airplane::loop() {
             }
 
             // --------------------------- 2 ------------------------------
-            while (Time::seconds < 20) {
+            while (Time::seconds < FLIGHT_TIME2) {
                 // ------------ Control Leds ------------
                 // 1. Altitude is OK
                 if (currentAltitude < altitude2 + 3 && currentAltitude > altitude2 - 3) {
@@ -128,6 +131,10 @@ void Airplane::loop() {
             }
 
             // --------------------------- 3 ------------------------------
+            while(currentAltitude > 2){
+                control.setOnTime(PWM_MOTOR, 10000);
+                controlElevator(0, MAX_ANGLE);
+            }
 
             // Reset values
             TIM_Cmd(TIM14, DISABLE);

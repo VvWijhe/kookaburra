@@ -33,7 +33,6 @@ void RGB::init() {
 
 void RGB::setFrequency(float pulse) {
     if(pulse > 0.01 && pulse < 30) {
-
         //Enable clock for the timer
         RCC->APB2ENR |= RCC_APB2ENR_TIM17EN;
         // Enable ARR preloading

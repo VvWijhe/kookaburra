@@ -446,3 +446,7 @@ void MPU6050::waitForI2CFlag(uint32_t flag) {
         }
     }
 }
+
+bool MPU6050::getStatus() {
+    return commStatus;
+}

@@ -5,6 +5,9 @@
 #ifndef _AIRPLANE_H
 #define _AIRPLANE_H
 
+#define FLIGHT_TIME1 10
+#define FLIGHT_TIME2 (FLIGHT_TIME1 + 10)
+
 #define MAX_ANGLE 10
 #define MIN_ANGLE -10
 
@@ -14,6 +17,7 @@
 #include "MS5611.h"
 #include "counter.h"
 #include "rgbdriver.h"
+#include "flash.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -28,10 +32,8 @@ typedef enum {
 extern int currentPitch;
 extern int currentAltitude;
 extern int previousAltitude;
-extern int altitude1, altitude2;
 extern float verticalSpeed;
 extern flightMode_t flightMode;
-extern ppmData_t ppmData;
 
 class Airplane {
 public:
@@ -53,6 +55,8 @@ private:
     AirplaneControl control;
     static MPU6050 accelerometer;
     static MS5611 barometer;
+
+    int altitude1, altitude2;
 };
 
 #ifdef __cplusplus

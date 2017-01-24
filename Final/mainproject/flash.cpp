@@ -12,7 +12,7 @@ __IO TestStatus MemoryProgramStatus = PASSED;
 
 
 //function that writes the heights to flash
-uint8_t WriteToFlash(uint16_t HeightOne, uint16_t HeightTwo) {
+uint8_t writeFlash(uint16_t HeightOne, uint16_t HeightTwo) {
     uint8_t SuccessCode = 0;
     uint32_t DATA_32;
 
@@ -76,7 +76,7 @@ uint8_t WriteToFlash(uint16_t HeightOne, uint16_t HeightTwo) {
 }                                            //value 2: problem during writing. value 3: flash wasnt written with the right value
 
 //function to read from flash
-uint16_t ReadFromFlash(uint8_t H1orH2) {
+int readFlash(uint8_t H1orH2) {
     uint16_t Height;
     uint32_t Value;
 

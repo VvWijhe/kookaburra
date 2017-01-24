@@ -422,7 +422,7 @@ public:
 
     void waitForI2CFlag(uint32_t flag);
 
-    uint32_t readStatus(uint8_t bf);
+    bool getStatus();
 
 private:
     bool commStatus;

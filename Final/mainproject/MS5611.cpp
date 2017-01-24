@@ -350,3 +350,7 @@ void MS5611::delay(const int d)
 
     return;
 }
+
+bool MS5611::getStatus() {
+    return deviceStatus;
+}
