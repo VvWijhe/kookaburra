@@ -28,19 +28,21 @@
 /* Includes ------------------------------------------------------------------*/
 #include <mpu6050.h>
 #include "main.h"
-#include "mpu6050.h"
 #include "usart.h"
 #include "math.h"
+#include "MS5611.h"
 
-#define CONVERSIONG 3.9
+MPU6050 accelerometer;
+MS5611 baro;
 
 /* Private variables ---------------------------------------------------------*/
 static __IO uint32_t TimingDelay;
 
 USART_1 usart;
-MPU6050 accelerometer;
 accelGyroDataRaw_t accelGyroDataRaw;
 double pitch, roll, yaw;
+
+const double CONVERSIONG =  3.9;
 
 /* Private function prototypes -----------------------------------------------*/
 /* Private functions ---------------------------------------------------------*/
@@ -54,8 +56,8 @@ int main(void) {
     RCC_ClocksTypeDef RCC_Clocks;
 
     // Configure LED3 and LED4 on STM32F0-Discovery
-    STM_EVAL_LEDInit(LED3);
-    STM_EVAL_LEDInit(LED4);
+//    STM_EVAL_LEDInit(LED3);
+//    STM_EVAL_LEDInit(LED4);
 
     // SysTick end of count event each 1ms
     RCC_GetClocksFreq(&RCC_Clocks);
@@ -64,6 +66,7 @@ int main(void) {
     // Initialize MPU6050
     // Power ON, Clock source X Gyro, Highest sensivity
     accelerometer.init();
+    baro.initialize();
 
     //initialize usart
     usart.init();
@@ -72,9 +75,9 @@ int main(void) {
 
     while (1) {
         if (accelerometer.testConnection()) {
-            STM_EVAL_LEDToggle(LED3);
+            //STM_EVAL_LEDToggle(LED3);
         } else {
-            STM_EVAL_LEDToggle(LED4);
+            //STM_EVAL_LEDToggle(LED4);
         }
 
         accelerometer.getRawAccelGyro(&accelGyroDataRaw);
@@ -89,8 +92,8 @@ int main(void) {
 
         usart << "Pitch: ";
         usart << pitch;
-        usart << "\nRoll: ";
-        usart << roll;
+        usart << "\nAltitude: ";
+        usart << baro.getAltitude();
         usart << "\n\n";
         delay(50);
     }

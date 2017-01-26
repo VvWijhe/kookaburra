@@ -21,7 +21,7 @@ include_directories(h ${BASISDIR} ${F0DISCOVERYDIR})
 include(${CMAKESCRIPTDIR}/STM32F0.cmake)
 
 file(GLOB BasisBestanden ${BASISDIR}/stm32f0/*.c)
-set(SRCS main.cpp mpu6050.cpp usart.cpp ${BasisBestanden} stm32f0xx_it.c)
+set(SRCS main.cpp mpu6050.cpp usart.cpp ${BasisBestanden} stm32f0xx_it.c MS5611.cpp)
 
 add_subdirectory(${F0DISCOVERYDIR} ${CMAKE_CURRENT_BINARY_DIR}/F0DiscoveryDir)
 

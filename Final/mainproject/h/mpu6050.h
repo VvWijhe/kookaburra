@@ -385,45 +385,34 @@ public:
     void init();
 
     uint8_t getDeviceID();
-
     bool testConnection();
 
     // Clock config
     bool getSleepModeStatus();
-
     void setSleepModeStatus(FunctionalState NewState);
-
     void setClockSource(uint8_t source);
 
     // Gyro config
     uint8_t getFullScaleGyroRange();
-
     void setFullScaleGyroRange(uint8_t range);
 
     // Accel config
     uint8_t getFullScaleAccelRange();
-
     void setFullScaleAccelRange(uint8_t range);
 
     void getRawAccelGyro(accelGyroDataRaw_t *AccelGyro);
 
     // Read and Write functions
     void writeBits(uint8_t slaveAddr, uint8_t regAddr, uint8_t bitStart, uint8_t length, uint8_t data);
-
     void writeBit(uint8_t slaveAddr, uint8_t regAddr, uint8_t bitNum, uint8_t data);
-
     void readBits(uint8_t slaveAddr, uint8_t regAddr, uint8_t bitStart, uint8_t length, uint8_t *data);
-
-    void readBit(uint8_t slaveAddr, uint8_t regAddr, uint8_t bitNum, uint8_t *data);
+    void readBit(uint8_t slaveAddr, uint8_t regAddr, uint8_t bitNum, uint8_t *data) ;
 
     void writeByte(u8 slaveAddr, u8 *pBuffer, u8 writeAddr);
-
     void readToBuffer(u8 slaveAddr, u8 *pBuffer, u8 readAddr, u16 NumByteToRead);
 
     void waitForI2CFlag(uint32_t flag);
-
-    bool getStatus();
-
+    uint32_t readStatus(uint8_t bf);
 private:
     bool commStatus;
 };

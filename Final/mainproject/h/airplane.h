@@ -29,11 +29,14 @@ typedef enum {
 } flightMode_t;
 
 // Global variables, used in interrupt handlers
-extern int currentPitch;
-extern int currentAltitude;
-extern int previousAltitude;
+extern double currentPitch;
+extern float currentAltitude;
+extern float previousAltitude;
 extern float verticalSpeed;
 extern flightMode_t flightMode;
+
+extern MPU6050 accelerometer;
+extern MS5611 barometer;
 
 class Airplane {
 public:
@@ -43,7 +46,7 @@ public:
     void loop();
 
     // Called in timer interrupt
-    static uint32_t getAltitude();
+    static float getAltitude();
 
     static uint32_t getPitch();
 
@@ -53,8 +56,6 @@ public:
 
 private:
     AirplaneControl control;
-    static MPU6050 accelerometer;
-    static MS5611 barometer;
 
     int altitude1, altitude2;
 };

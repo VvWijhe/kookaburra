@@ -64,10 +64,10 @@ UART &UART::operator<<(uint32_t number) {
     return *this;
 }
 
-UART &UART::operator<<(bool boolean) {
-    boolean ? this->puts("True") : this->puts("false");
-    return *this;
-}
+//UART &UART::operator<<(bool boolean) {
+//    boolean ? this->puts("True") : this->puts("false");
+//    return *this;
+//}
 
 void UART::puts(const char *str) {
     assert_param(isInitialized);

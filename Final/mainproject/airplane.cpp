@@ -4,14 +4,14 @@
 #include <airplane.h>
 #include <pid.h>
 
-int currentPitch = 0;
-int currentAltitude = 0;
-int previousAltitude = 0;
+double currentPitch = 0;
+float currentAltitude = 0;
+float previousAltitude = 0;
 float verticalSpeed = 0;
 flightMode_t flightMode = MANUAL_M;
 
-MPU6050 Airplane::accelerometer;
-MS5611 Airplane::barometer;
+MPU6050 accelerometer;
+MS5611 barometer;
 
 Airplane::Airplane() {
     // Initialize sensors
@@ -40,11 +40,11 @@ Airplane::Airplane() {
     //writeFlash(120, 230);
 
     // Report sensor status via the usart
-    uart << "Accelerometer  : " << accelerometer.getStatus() << "\n";
-    uart << "Barometer      : " << barometer.getStatus() << "\n";
+//    uart << "Accelerometer  : " << accelerometer.getStatus() << "\n";
+//    uart << "Barometer      : " << barometer.getStatus() << "\n";
     uart << "Flightmode     : " << (flightMode == MANUAL_M ? "Manual" : "Autopilot") << "\n";
-    uart << "Altitude 1     : " << (uint32_t)readFlash(1) << "\n";
-    uart << "Altitude 2     : " << (uint32_t)readFlash(2) << "\n";
+    //uart << "Altitude 1     : " << (uint32_t)readFlash(1) << "\n";
+    //uart << "Altitude 2     : " << (uint32_t)readFlash(2) << "\n";
     uart << "Program initialized\n";
 }
 
@@ -64,7 +64,8 @@ Airplane::Airplane() {
 void Airplane::loop() {
     while (true) {
         while (flightMode == MANUAL_M) {
-
+            uart << "Altitude        : " << currentAltitude << "\n";
+            uart << "Pitch           : " << currentPitch << "\n";
         }
 
         while (flightMode == AUTOPILOT_M) {
@@ -144,8 +145,8 @@ void Airplane::loop() {
     }
 }
 
-uint32_t Airplane::getAltitude() {
-    return (uint32_t) barometer.getAltitude();
+float Airplane::getAltitude() {
+    return barometer.getAltitude();
 }
 
 uint32_t Airplane::getPitch() {

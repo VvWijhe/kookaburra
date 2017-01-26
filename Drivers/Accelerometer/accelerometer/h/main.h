@@ -32,10 +32,15 @@
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f0xx.h"
 #include "stm32f0_discovery.h"
+#include "MS5611.h"
+#include "mpu6050.h"
 
 /* Exported types ------------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
 /* Exported constants --------------------------------------------------------*/
+extern MPU6050 accelerometer;
+extern MS5611 baro;
+extern double pitch, roll, yaw;
 /* Exported macro ------------------------------------------------------------*/
 /* Exported functions ------------------------------------------------------- */
 

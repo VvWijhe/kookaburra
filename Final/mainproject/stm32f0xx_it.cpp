@@ -90,7 +90,7 @@ void TIM3_IRQHandler() {
     if (TIM_GetITStatus(TIM3, TIM_IT_Update) != RESET) {
         TIM_ClearITPendingBit(TIM3, TIM_IT_Update);
         previousAltitude = currentAltitude;
-        currentAltitude = (int) Airplane::getAltitude();
+        currentAltitude = barometer.getAltitude();
         verticalSpeed = (float) ((currentAltitude - previousAltitude) / 0.2);
 
         // Delay = (count - 1) / TIM3 freq
@@ -129,8 +129,16 @@ void TIM14_IRQHandler() {
 void TIM16_IRQHandler(void) {
     if (TIM_GetITStatus(TIM16, TIM_IT_Update) != RESET) {
         TIM_ClearITPendingBit(TIM16, TIM_IT_Update);
+        const double gConversion = 3.9;
+        accelGyroDataRaw_t accelGyroDataRaw;
 
-        //currentAltitude = Airplane::getPitch();
+        accelerometer.getRawAccelGyro(&accelGyroDataRaw);
+
+        double accelerationX = (accelGyroDataRaw.Ax * gConversion);
+        double accelerationY = (accelGyroDataRaw.Ay * gConversion);
+        double accelerationZ = (accelGyroDataRaw.Az * gConversion);
+
+        currentPitch = (int) (180 * atan (accelerationX / sqrt(accelerationY * accelerationY + accelerationZ * accelerationZ)) / M_PI);
     }
 }
 

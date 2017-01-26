@@ -58,7 +58,7 @@ void MPU6050::init() {
     GPIO_StructInit(&GPIO_InitStructure);
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;
     GPIO_InitStructure.GPIO_Pin = MPU6050_I2C_SCL_Pin | MPU6050_I2C_SDA_Pin;
-    GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;
+    GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
     GPIO_InitStructure.GPIO_OType = GPIO_OType_OD;
     GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
     GPIO_Init(GPIOB, &GPIO_InitStructure);
@@ -431,8 +431,6 @@ void MPU6050::waitForI2CFlag(uint32_t flag) {
             if (timeout-- == 0) {
                 commStatus = MPU6050_COMM_STATUS_ERROR;
                 return;
-            } else {
-                commStatus = MPU6050_COMM_STATUS_OK;
             }
         }
     } else {
@@ -440,13 +438,7 @@ void MPU6050::waitForI2CFlag(uint32_t flag) {
             if (timeout-- == 0) {
                 commStatus = MPU6050_COMM_STATUS_ERROR;
                 return;
-            } else {
-                commStatus = MPU6050_COMM_STATUS_OK;
             }
         }
     }
-}
-
-bool MPU6050::getStatus() {
-    return commStatus;
 }
