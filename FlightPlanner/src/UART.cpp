@@ -11,7 +11,7 @@ UART::UART(QObject *parent) : QObject(parent)
    serialPort->setParity(QSerialPort::NoParity);
    serialPort->setStopBits(QSerialPort::OneStop);
    //m_serialPort->setPortName("ttyAMA0");
-   serialPort->setPortName("COM3");
+   serialPort->setPortName("COM10");
 
    serialPort->setFlowControl(QSerialPort::NoFlowControl);
 
@@ -59,7 +59,7 @@ bool UART::isSerialOpen()
 void UART::dataIn()
 {
    qDebug()<<"datain started";
-   data = serialPort->readAll();
+   qDebug() << serialPort->readAll();
 
 }
 
@@ -82,8 +82,12 @@ void UART::send()
 {
    ERROR = serialPort->write(data);
    qDebug()<<ERROR<<"error:";
-   serialPort->flush();
-   serialPort->waitForBytesWritten(1000);
+//   serialPort->flush();
+//   serialPort->waitForBytesWritten(1000);
+}
+
+void UART::sendString(QString str){
+   serialPort->write(str.toStdString().c_str(), str.size());
 }
 
 void UART::SetData(QByteArray value)

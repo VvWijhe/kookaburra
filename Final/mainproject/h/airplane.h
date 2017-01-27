@@ -19,6 +19,8 @@
 #include "rgbdriver.h"
 #include "flash.h"
 
+#define AUTOPILOT_ENABLE_PIN GPIO_Pin_10
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -34,6 +36,7 @@ extern float currentAltitude;
 extern float previousAltitude;
 extern float verticalSpeed;
 extern flightMode_t flightMode;
+extern int altitude1, altitude2;
 
 extern MPU6050 accelerometer;
 extern MS5611 barometer;
@@ -56,8 +59,6 @@ public:
 
 private:
     AirplaneControl control;
-
-    int altitude1, altitude2;
 };
 
 #ifdef __cplusplus

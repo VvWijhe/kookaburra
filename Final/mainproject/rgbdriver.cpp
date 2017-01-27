@@ -19,7 +19,7 @@ void RGB::init() {
     // Init shift register gpio
     RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOC, ENABLE);
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
-    GPIO_InitStructure.GPIO_Pin = LATCH_PIN | CLOCK_PIN | DATA_PIN;
+    GPIO_InitStructure.GPIO_Pin = LATCH_PIN | CLOCK_PIN | DATA_PIN | GPIO_Pin_10;
     GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
     GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
     GPIO_Init(GPIOC, &GPIO_InitStructure);

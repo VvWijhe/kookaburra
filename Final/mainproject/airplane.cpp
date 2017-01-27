@@ -4,6 +4,7 @@
 #include <airplane.h>
 #include <pid.h>
 
+int altitude1 = 0, altitude2 = 0;
 double currentPitch = 0;
 float currentAltitude = 0;
 float previousAltitude = 0;
@@ -40,8 +41,6 @@ Airplane::Airplane() {
     //writeFlash(120, 230);
 
     // Report sensor status via the usart
-//    uart << "Accelerometer  : " << accelerometer.getStatus() << "\n";
-//    uart << "Barometer      : " << barometer.getStatus() << "\n";
     uart << "Flightmode     : " << (flightMode == MANUAL_M ? "Manual" : "Autopilot") << "\n";
     //uart << "Altitude 1     : " << (uint32_t)readFlash(1) << "\n";
     //uart << "Altitude 2     : " << (uint32_t)readFlash(2) << "\n";
@@ -64,33 +63,35 @@ Airplane::Airplane() {
 void Airplane::loop() {
     while (true) {
         while (flightMode == MANUAL_M) {
-            uart << "Altitude        : " << currentAltitude << "\n";
-            uart << "Pitch           : " << currentPitch << "\n";
+//            uart << "Altitude        : " << currentAltitude << "\n";
+//            uart << "Pitch           : " << currentPitch << "\n";
         }
 
         while (flightMode == AUTOPILOT_M) {
+            TIM_Cmd(TIM14, ENABLE);
+
             // --------------------------- 1 ------------------------------
-            while (Time::seconds < FLIGHT_TIME1) {
+            while (Time::seconds < FLIGHT_TIME1 && flightMode == AUTOPILOT_M) {
                 // ------------ Control Leds ------------
                 // 1. Altitude is OK
                 if (currentAltitude < altitude1 + 3 && currentAltitude > altitude1 - 3) {
                     RGB::setColor(LEDGREEN);
                     //ENABLE TIM14
-                    TIM_Cmd(TIM14, ENABLE);
+                    //TIM_Cmd(TIM14, ENABLE);
                 }
 
                 // 2. Altitude is too high
                 if (currentAltitude > altitude1 + 3) {
                     RGB::setColor(LEDYELLOW);
                     //DISABLE TIM14
-                    TIM_Cmd(TIM14, DISABLE);
+                    //TIM_Cmd(TIM14, DISABLE);
                 }
 
                 // 3. Altitude is too low
                 if (currentAltitude < altitude1 - 3) {
                     RGB::setColor(LEDRED);
                     //DISABLE TIM14
-                    TIM_Cmd(TIM14, DISABLE);
+                    //TIM_Cmd(TIM14, DISABLE);
                 }
 
                 // ----------- Control motor ------------
@@ -101,27 +102,27 @@ void Airplane::loop() {
             }
 
             // --------------------------- 2 ------------------------------
-            while (Time::seconds < FLIGHT_TIME2) {
+            while (Time::seconds < FLIGHT_TIME2 && flightMode == AUTOPILOT_M) {
                 // ------------ Control Leds ------------
                 // 1. Altitude is OK
                 if (currentAltitude < altitude2 + 3 && currentAltitude > altitude2 - 3) {
                     RGB::setColor(LEDGREEN);
                     //ENABLE TIM14
-                    TIM_Cmd(TIM14, ENABLE);
+                    //TIM_Cmd(TIM14, ENABLE);
                 }
 
                 // 2. Altitude is too high
                 if (currentAltitude > altitude2 + 3) {
                     RGB::setColor(LEDYELLOW);
                     //DISABLE TIM14
-                    TIM_Cmd(TIM14, DISABLE);
+                    //TIM_Cmd(TIM14, DISABLE);
                 }
 
                 // 3. Altitude is too low
                 if (currentAltitude < altitude2 - 3) {
                     RGB::setColor(LEDRED);
                     //DISABLE TIM14
-                    TIM_Cmd(TIM14, DISABLE);
+                    //TIM_Cmd(TIM14, DISABLE);
                 }
 
                 // ----------- Control motor ------------
@@ -131,15 +132,16 @@ void Airplane::loop() {
                 controlElevator(MIN_ANGLE, MAX_ANGLE);
             }
 
+            TIM_Cmd(TIM14, DISABLE);
+            Time::seconds = 0;
+
             // --------------------------- 3 ------------------------------
-            while(currentAltitude > 2){
-                control.setOnTime(PWM_MOTOR, 10000);
+            while(currentAltitude > 2 && flightMode == AUTOPILOT_M){
+                control.setOnTime(PWM_MOTOR, 1300);
                 controlElevator(0, MAX_ANGLE);
             }
 
             // Reset values
-            TIM_Cmd(TIM14, DISABLE);
-            Time::seconds = 0;
             RGB::disable();
         }
     }
@@ -162,7 +164,7 @@ uint32_t Airplane::getPitch() {
 
 void Airplane::controlElevator(int minAngle, int maxAngle) {
     if (currentPitch > maxAngle || currentPitch < minAngle) {
-        PID pidPitch(0.02, 15.0, 0.0, 0.0);
+        PID pidPitch(0.02, 20.0, 0.0, 0.0);
         double pitchControlValue = 0;
 
         // Error and control value
@@ -177,23 +179,22 @@ void Airplane::controlElevator(int minAngle, int maxAngle) {
         else if (pitchControlValue < -500) pitchControlValue = -495;
 
         // Set servo
-        control.setOnTime(PWM_SERVO_ELEVATOR, (uint32_t) (pitchControlValue + 1500));
+        control.setOnTime(PWM_SERVO_ELEVATOR, (uint32_t) (1500 - pitchControlValue));
     } else {
         control.setOnTime(PWM_SERVO_ELEVATOR, (uint32_t) 1500);
     }
 }
 
 void Airplane::controlMotor(int setPoint) {
-    PID pid(0.02, 1100, 0, 0);
+    PID pid(0.02, 160, 0, 0);
     double altitudeControlValue = 0;
 
     altitudeControlValue = pid.calculate(currentAltitude, setPoint);
 
-    altitudeControlValue += 5000;
-    altitudeControlValue *= 20;
+    altitudeControlValue += 1300;
 
-    if (altitudeControlValue < 0) altitudeControlValue = 0;
-    if (altitudeControlValue > 19000) altitudeControlValue = 19000;
+    if (altitudeControlValue < 1300) altitudeControlValue = 1300;
+    if (altitudeControlValue > 2000) altitudeControlValue = 2000;
 
     control.setOnTime(PWM_MOTOR, (uint32_t) altitudeControlValue);
 }

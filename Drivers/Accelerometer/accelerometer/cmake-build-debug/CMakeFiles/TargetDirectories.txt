@@ -1,0 +1,12 @@
+C:/Users/Jamie/Documents/GitHub/kookaburra/Drivers/Accelerometer/accelerometer/cmake-build-debug/CMakeFiles/accelerometer.elf.dir
+C:/Users/Jamie/Documents/GitHub/kookaburra/Drivers/Accelerometer/accelerometer/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Jamie/Documents/GitHub/kookaburra/Drivers/Accelerometer/accelerometer/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/Jamie/Documents/GitHub/kookaburra/Drivers/Accelerometer/accelerometer/cmake-build-debug/STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir
+C:/Users/Jamie/Documents/GitHub/kookaburra/Drivers/Accelerometer/accelerometer/cmake-build-debug/STM32CMSIS/CMakeFiles/edit_cache.dir
+C:/Users/Jamie/Documents/GitHub/kookaburra/Drivers/Accelerometer/accelerometer/cmake-build-debug/STM32CMSIS/CMakeFiles/rebuild_cache.dir
+C:/Users/Jamie/Documents/GitHub/kookaburra/Drivers/Accelerometer/accelerometer/cmake-build-debug/STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir
+C:/Users/Jamie/Documents/GitHub/kookaburra/Drivers/Accelerometer/accelerometer/cmake-build-debug/STM32_StdPeriph_Driver/CMakeFiles/edit_cache.dir
+C:/Users/Jamie/Documents/GitHub/kookaburra/Drivers/Accelerometer/accelerometer/cmake-build-debug/STM32_StdPeriph_Driver/CMakeFiles/rebuild_cache.dir
+C:/Users/Jamie/Documents/GitHub/kookaburra/Drivers/Accelerometer/accelerometer/cmake-build-debug/F0DiscoveryDir/CMakeFiles/STM32F0DiscoveryLib.dir
+C:/Users/Jamie/Documents/GitHub/kookaburra/Drivers/Accelerometer/accelerometer/cmake-build-debug/F0DiscoveryDir/CMakeFiles/edit_cache.dir
+C:/Users/Jamie/Documents/GitHub/kookaburra/Drivers/Accelerometer/accelerometer/cmake-build-debug/F0DiscoveryDir/CMakeFiles/rebuild_cache.dir

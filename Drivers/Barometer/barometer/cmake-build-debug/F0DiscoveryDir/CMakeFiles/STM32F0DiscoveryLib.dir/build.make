@@ -33,19 +33,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files (x86)\JetBrains\CLion 2016.2.2\bin\cmake\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Program Files (x86)\JetBrains\CLion 2016.3\bin\cmake\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files (x86)\JetBrains\CLion 2016.2.2\bin\cmake\bin\cmake.exe" -E remove -f
+RM = "C:\Program Files (x86)\JetBrains\CLion 2016.3\bin\cmake\bin\cmake.exe" -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer
+CMAKE_SOURCE_DIR = C:\Users\Jamie\Documents\GitHub\kookaburra\Drivers\Barometer\barometer
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\Jamie\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug
 
 # Include any dependencies generated for this target.
 include F0DiscoveryDir/CMakeFiles/STM32F0DiscoveryLib.dir/depend.make
@@ -58,17 +58,17 @@ include F0DiscoveryDir/CMakeFiles/STM32F0DiscoveryLib.dir/flags.make
 
 F0DiscoveryDir/CMakeFiles/STM32F0DiscoveryLib.dir/stm32f0_discovery.c.obj: F0DiscoveryDir/CMakeFiles/STM32F0DiscoveryLib.dir/flags.make
 F0DiscoveryDir/CMakeFiles/STM32F0DiscoveryLib.dir/stm32f0_discovery.c.obj: F0DiscoveryDir/CMakeFiles/STM32F0DiscoveryLib.dir/includes_C.rsp
-F0DiscoveryDir/CMakeFiles/STM32F0DiscoveryLib.dir/stm32f0_discovery.c.obj: C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/STM32F0Discovery/stm32f0_discovery.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object F0DiscoveryDir/CMakeFiles/STM32F0DiscoveryLib.dir/stm32f0_discovery.c.obj"
-	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\F0DiscoveryDir && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\STM32F0DiscoveryLib.dir\stm32f0_discovery.c.obj   -c C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\STM32F0Discovery\stm32f0_discovery.c
+F0DiscoveryDir/CMakeFiles/STM32F0DiscoveryLib.dir/stm32f0_discovery.c.obj: C:/Users/Jamie/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/STM32F0Discovery/stm32f0_discovery.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Jamie\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object F0DiscoveryDir/CMakeFiles/STM32F0DiscoveryLib.dir/stm32f0_discovery.c.obj"
+	cd /d C:\Users\Jamie\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\F0DiscoveryDir && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\STM32F0DiscoveryLib.dir\stm32f0_discovery.c.obj   -c C:\Users\Jamie\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\STM32F0Discovery\stm32f0_discovery.c
 
 F0DiscoveryDir/CMakeFiles/STM32F0DiscoveryLib.dir/stm32f0_discovery.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/STM32F0DiscoveryLib.dir/stm32f0_discovery.c.i"
-	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\F0DiscoveryDir && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\STM32F0Discovery\stm32f0_discovery.c > CMakeFiles\STM32F0DiscoveryLib.dir\stm32f0_discovery.c.i
+	cd /d C:\Users\Jamie\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\F0DiscoveryDir && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Jamie\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\STM32F0Discovery\stm32f0_discovery.c > CMakeFiles\STM32F0DiscoveryLib.dir\stm32f0_discovery.c.i
 
 F0DiscoveryDir/CMakeFiles/STM32F0DiscoveryLib.dir/stm32f0_discovery.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/STM32F0DiscoveryLib.dir/stm32f0_discovery.c.s"
-	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\F0DiscoveryDir && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\STM32F0Discovery\stm32f0_discovery.c -o CMakeFiles\STM32F0DiscoveryLib.dir\stm32f0_discovery.c.s
+	cd /d C:\Users\Jamie\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\F0DiscoveryDir && C:\PROGRA~2\GNUTOO~1\550B0~1.420\bin\AR10B2~1.EXE  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Jamie\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\STM32F0Discovery\stm32f0_discovery.c -o CMakeFiles\STM32F0DiscoveryLib.dir\stm32f0_discovery.c.s
 
 F0DiscoveryDir/CMakeFiles/STM32F0DiscoveryLib.dir/stm32f0_discovery.c.obj.requires:
 
@@ -91,9 +91,9 @@ STM32F0DiscoveryLib_EXTERNAL_OBJECTS =
 F0DiscoveryDir/libSTM32F0DiscoveryLib.a: F0DiscoveryDir/CMakeFiles/STM32F0DiscoveryLib.dir/stm32f0_discovery.c.obj
 F0DiscoveryDir/libSTM32F0DiscoveryLib.a: F0DiscoveryDir/CMakeFiles/STM32F0DiscoveryLib.dir/build.make
 F0DiscoveryDir/libSTM32F0DiscoveryLib.a: F0DiscoveryDir/CMakeFiles/STM32F0DiscoveryLib.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libSTM32F0DiscoveryLib.a"
-	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\F0DiscoveryDir && $(CMAKE_COMMAND) -P CMakeFiles\STM32F0DiscoveryLib.dir\cmake_clean_target.cmake
-	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\F0DiscoveryDir && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\STM32F0DiscoveryLib.dir\link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Jamie\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libSTM32F0DiscoveryLib.a"
+	cd /d C:\Users\Jamie\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\F0DiscoveryDir && $(CMAKE_COMMAND) -P CMakeFiles\STM32F0DiscoveryLib.dir\cmake_clean_target.cmake
+	cd /d C:\Users\Jamie\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\F0DiscoveryDir && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\STM32F0DiscoveryLib.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 F0DiscoveryDir/CMakeFiles/STM32F0DiscoveryLib.dir/build: F0DiscoveryDir/libSTM32F0DiscoveryLib.a
@@ -105,10 +105,10 @@ F0DiscoveryDir/CMakeFiles/STM32F0DiscoveryLib.dir/requires: F0DiscoveryDir/CMake
 .PHONY : F0DiscoveryDir/CMakeFiles/STM32F0DiscoveryLib.dir/requires
 
 F0DiscoveryDir/CMakeFiles/STM32F0DiscoveryLib.dir/clean:
-	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\F0DiscoveryDir && $(CMAKE_COMMAND) -P CMakeFiles\STM32F0DiscoveryLib.dir\cmake_clean.cmake
+	cd /d C:\Users\Jamie\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\F0DiscoveryDir && $(CMAKE_COMMAND) -P CMakeFiles\STM32F0DiscoveryLib.dir\cmake_clean.cmake
 .PHONY : F0DiscoveryDir/CMakeFiles/STM32F0DiscoveryLib.dir/clean
 
 F0DiscoveryDir/CMakeFiles/STM32F0DiscoveryLib.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\STM32F0Discovery C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\F0DiscoveryDir C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\F0DiscoveryDir\CMakeFiles\STM32F0DiscoveryLib.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\Jamie\Documents\GitHub\kookaburra\Drivers\Barometer\barometer C:\Users\Jamie\Documents\GitHub\kookaburra\Drivers\Barometer\gemeenschappelijk\STM32F0Discovery C:\Users\Jamie\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug C:\Users\Jamie\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\F0DiscoveryDir C:\Users\Jamie\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\F0DiscoveryDir\CMakeFiles\STM32F0DiscoveryLib.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : F0DiscoveryDir/CMakeFiles/STM32F0DiscoveryLib.dir/depend
 

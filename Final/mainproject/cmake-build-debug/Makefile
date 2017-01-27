@@ -38,19 +38,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files (x86)\JetBrains\CLion 2016.2.2\bin\cmake\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Program Files (x86)\JetBrains\CLion 2016.3\bin\cmake\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files (x86)\JetBrains\CLion 2016.2.2\bin\cmake\bin\cmake.exe" -E remove -f
+RM = "C:\Program Files (x86)\JetBrains\CLion 2016.3\bin\cmake\bin\cmake.exe" -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\Martijn\Desktop\school\Pr3Kookaburra\GithubMap\kookaburra\Final\mainproject
+CMAKE_SOURCE_DIR = C:\Users\Jamie\Documents\GitHub\kookaburra\Final\mainproject
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\Martijn\Desktop\school\Pr3Kookaburra\GithubMap\kookaburra\Final\mainproject\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\Jamie\Documents\GitHub\kookaburra\Final\mainproject\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -58,7 +58,7 @@ CMAKE_BINARY_DIR = C:\Users\Martijn\Desktop\school\Pr3Kookaburra\GithubMap\kooka
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	"C:\Program Files (x86)\JetBrains\CLion 2016.2.2\bin\cmake\bin\cmake.exe" -E echo "No interactive CMake dialog available."
+	"C:\Program Files (x86)\JetBrains\CLion 2016.3\bin\cmake\bin\cmake.exe" -E echo "No interactive CMake dialog available."
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -69,7 +69,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	"C:\Program Files (x86)\JetBrains\CLion 2016.2.2\bin\cmake\bin\cmake.exe" -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	"C:\Program Files (x86)\JetBrains\CLion 2016.3\bin\cmake\bin\cmake.exe" -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -79,9 +79,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Martijn\Desktop\school\Pr3Kookaburra\GithubMap\kookaburra\Final\mainproject\cmake-build-debug\CMakeFiles C:\Users\Martijn\Desktop\school\Pr3Kookaburra\GithubMap\kookaburra\Final\mainproject\cmake-build-debug\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Jamie\Documents\GitHub\kookaburra\Final\mainproject\cmake-build-debug\CMakeFiles C:\Users\Jamie\Documents\GitHub\kookaburra\Final\mainproject\cmake-build-debug\CMakeFiles\progress.marks
 	$(MAKE) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Martijn\Desktop\school\Pr3Kookaburra\GithubMap\kookaburra\Final\mainproject\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Jamie\Documents\GitHub\kookaburra\Final\mainproject\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -161,32 +161,32 @@ STM32F0DiscoveryLib/fast:
 	$(MAKE) -f F0DiscoveryDir\CMakeFiles\STM32F0DiscoveryLib.dir\build.make F0DiscoveryDir/CMakeFiles/STM32F0DiscoveryLib.dir/build
 .PHONY : STM32F0DiscoveryLib/fast
 
-071a669750a45ed53df10b62e73f6c8d/GithubMap/kookaburra/Final/gemeenschappelijk/basis/stm32f0/syscalls_cm0.obj: 071a669750a45ed53df10b62e73f6c8d/GithubMap/kookaburra/Final/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
+C_/Users/Jamie/Documents/GitHub/kookaburra/Final/gemeenschappelijk/basis/stm32f0/syscalls_cm0.obj: C_/Users/Jamie/Documents/GitHub/kookaburra/Final/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
 
-.PHONY : 071a669750a45ed53df10b62e73f6c8d/GithubMap/kookaburra/Final/gemeenschappelijk/basis/stm32f0/syscalls_cm0.obj
+.PHONY : C_/Users/Jamie/Documents/GitHub/kookaburra/Final/gemeenschappelijk/basis/stm32f0/syscalls_cm0.obj
 
 # target to build an object file
-071a669750a45ed53df10b62e73f6c8d/GithubMap/kookaburra/Final/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj:
-	$(MAKE) -f CMakeFiles\mainproject.elf.dir\build.make CMakeFiles/mainproject.elf.dir/071a669750a45ed53df10b62e73f6c8d/GithubMap/kookaburra/Final/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
-.PHONY : 071a669750a45ed53df10b62e73f6c8d/GithubMap/kookaburra/Final/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
+C_/Users/Jamie/Documents/GitHub/kookaburra/Final/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj:
+	$(MAKE) -f CMakeFiles\mainproject.elf.dir\build.make CMakeFiles/mainproject.elf.dir/C_/Users/Jamie/Documents/GitHub/kookaburra/Final/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
+.PHONY : C_/Users/Jamie/Documents/GitHub/kookaburra/Final/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj
 
-071a669750a45ed53df10b62e73f6c8d/GithubMap/kookaburra/Final/gemeenschappelijk/basis/stm32f0/syscalls_cm0.i: 071a669750a45ed53df10b62e73f6c8d/GithubMap/kookaburra/Final/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.i
+C_/Users/Jamie/Documents/GitHub/kookaburra/Final/gemeenschappelijk/basis/stm32f0/syscalls_cm0.i: C_/Users/Jamie/Documents/GitHub/kookaburra/Final/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.i
 
-.PHONY : 071a669750a45ed53df10b62e73f6c8d/GithubMap/kookaburra/Final/gemeenschappelijk/basis/stm32f0/syscalls_cm0.i
+.PHONY : C_/Users/Jamie/Documents/GitHub/kookaburra/Final/gemeenschappelijk/basis/stm32f0/syscalls_cm0.i
 
 # target to preprocess a source file
-071a669750a45ed53df10b62e73f6c8d/GithubMap/kookaburra/Final/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.i:
-	$(MAKE) -f CMakeFiles\mainproject.elf.dir\build.make CMakeFiles/mainproject.elf.dir/071a669750a45ed53df10b62e73f6c8d/GithubMap/kookaburra/Final/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.i
-.PHONY : 071a669750a45ed53df10b62e73f6c8d/GithubMap/kookaburra/Final/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.i
+C_/Users/Jamie/Documents/GitHub/kookaburra/Final/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.i:
+	$(MAKE) -f CMakeFiles\mainproject.elf.dir\build.make CMakeFiles/mainproject.elf.dir/C_/Users/Jamie/Documents/GitHub/kookaburra/Final/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.i
+.PHONY : C_/Users/Jamie/Documents/GitHub/kookaburra/Final/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.i
 
-071a669750a45ed53df10b62e73f6c8d/GithubMap/kookaburra/Final/gemeenschappelijk/basis/stm32f0/syscalls_cm0.s: 071a669750a45ed53df10b62e73f6c8d/GithubMap/kookaburra/Final/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.s
+C_/Users/Jamie/Documents/GitHub/kookaburra/Final/gemeenschappelijk/basis/stm32f0/syscalls_cm0.s: C_/Users/Jamie/Documents/GitHub/kookaburra/Final/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.s
 
-.PHONY : 071a669750a45ed53df10b62e73f6c8d/GithubMap/kookaburra/Final/gemeenschappelijk/basis/stm32f0/syscalls_cm0.s
+.PHONY : C_/Users/Jamie/Documents/GitHub/kookaburra/Final/gemeenschappelijk/basis/stm32f0/syscalls_cm0.s
 
 # target to generate assembly for a file
-071a669750a45ed53df10b62e73f6c8d/GithubMap/kookaburra/Final/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.s:
-	$(MAKE) -f CMakeFiles\mainproject.elf.dir\build.make CMakeFiles/mainproject.elf.dir/071a669750a45ed53df10b62e73f6c8d/GithubMap/kookaburra/Final/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.s
-.PHONY : 071a669750a45ed53df10b62e73f6c8d/GithubMap/kookaburra/Final/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.s
+C_/Users/Jamie/Documents/GitHub/kookaburra/Final/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.s:
+	$(MAKE) -f CMakeFiles\mainproject.elf.dir\build.make CMakeFiles/mainproject.elf.dir/C_/Users/Jamie/Documents/GitHub/kookaburra/Final/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.s
+.PHONY : C_/Users/Jamie/Documents/GitHub/kookaburra/Final/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.s
 
 MS5611.obj: MS5611.cpp.obj
 
@@ -431,32 +431,32 @@ rgbdriver.cpp.s:
 	$(MAKE) -f CMakeFiles\mainproject.elf.dir\build.make CMakeFiles/mainproject.elf.dir/rgbdriver.cpp.s
 .PHONY : rgbdriver.cpp.s
 
-stm32f0xx_it.obj: stm32f0xx_it.c.obj
+stm32f0xx_it.obj: stm32f0xx_it.cpp.obj
 
 .PHONY : stm32f0xx_it.obj
 
 # target to build an object file
-stm32f0xx_it.c.obj:
-	$(MAKE) -f CMakeFiles\mainproject.elf.dir\build.make CMakeFiles/mainproject.elf.dir/stm32f0xx_it.c.obj
-.PHONY : stm32f0xx_it.c.obj
+stm32f0xx_it.cpp.obj:
+	$(MAKE) -f CMakeFiles\mainproject.elf.dir\build.make CMakeFiles/mainproject.elf.dir/stm32f0xx_it.cpp.obj
+.PHONY : stm32f0xx_it.cpp.obj
 
-stm32f0xx_it.i: stm32f0xx_it.c.i
+stm32f0xx_it.i: stm32f0xx_it.cpp.i
 
 .PHONY : stm32f0xx_it.i
 
 # target to preprocess a source file
-stm32f0xx_it.c.i:
-	$(MAKE) -f CMakeFiles\mainproject.elf.dir\build.make CMakeFiles/mainproject.elf.dir/stm32f0xx_it.c.i
-.PHONY : stm32f0xx_it.c.i
+stm32f0xx_it.cpp.i:
+	$(MAKE) -f CMakeFiles\mainproject.elf.dir\build.make CMakeFiles/mainproject.elf.dir/stm32f0xx_it.cpp.i
+.PHONY : stm32f0xx_it.cpp.i
 
-stm32f0xx_it.s: stm32f0xx_it.c.s
+stm32f0xx_it.s: stm32f0xx_it.cpp.s
 
 .PHONY : stm32f0xx_it.s
 
 # target to generate assembly for a file
-stm32f0xx_it.c.s:
-	$(MAKE) -f CMakeFiles\mainproject.elf.dir\build.make CMakeFiles/mainproject.elf.dir/stm32f0xx_it.c.s
-.PHONY : stm32f0xx_it.c.s
+stm32f0xx_it.cpp.s:
+	$(MAKE) -f CMakeFiles\mainproject.elf.dir\build.make CMakeFiles/mainproject.elf.dir/stm32f0xx_it.cpp.s
+.PHONY : stm32f0xx_it.cpp.s
 
 usart.obj: usart.cpp.obj
 
@@ -497,9 +497,9 @@ help:
 	@echo ... CMSISFIRMWARE
 	@echo ... F0StdPerifDriver
 	@echo ... STM32F0DiscoveryLib
-	@echo ... 071a669750a45ed53df10b62e73f6c8d/GithubMap/kookaburra/Final/gemeenschappelijk/basis/stm32f0/syscalls_cm0.obj
-	@echo ... 071a669750a45ed53df10b62e73f6c8d/GithubMap/kookaburra/Final/gemeenschappelijk/basis/stm32f0/syscalls_cm0.i
-	@echo ... 071a669750a45ed53df10b62e73f6c8d/GithubMap/kookaburra/Final/gemeenschappelijk/basis/stm32f0/syscalls_cm0.s
+	@echo ... C_/Users/Jamie/Documents/GitHub/kookaburra/Final/gemeenschappelijk/basis/stm32f0/syscalls_cm0.obj
+	@echo ... C_/Users/Jamie/Documents/GitHub/kookaburra/Final/gemeenschappelijk/basis/stm32f0/syscalls_cm0.i
+	@echo ... C_/Users/Jamie/Documents/GitHub/kookaburra/Final/gemeenschappelijk/basis/stm32f0/syscalls_cm0.s
 	@echo ... MS5611.obj
 	@echo ... MS5611.i
 	@echo ... MS5611.s

@@ -4,7 +4,7 @@
 
 #include "usart.h"
 
-uint8_t rxBuffer[10] = "";
+char rxBuffer[30] = "";
 uint8_t indexBuffer = 0;
 
 UART uart;

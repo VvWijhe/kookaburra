@@ -8,6 +8,11 @@ __IO int32_t PrevDutyCycle = 0; //logging duty cycle in case of bizarre values
 float currentDutyCycle = 0; // the duty cycle in %
 uint8_t Attempts = 0; // to make the autopilot switch time-based
 uint8_t StepCount = 0; // to log every step of said switch
+__IO uint32_t IC2Value = 0;
+__IO uint32_t IC1Value = 0;
+float temp = 0;
+float DutyCyclePC = 0;
+__IO uint32_t DutyCycle;
 
 AirplaneControl::AirplaneControl() :
         isEnabled(false) {
@@ -73,22 +78,22 @@ void AirplaneControl::init() {
 /// @brief PWM Capture Compare Init.
 /// @param None
 void AirplaneControl::InitCapComp() {
-    TIM_ICInitTypeDef TIM_ICInitStructure;
+    TIM_ICInitTypeDef  TIM_ICInitStructure;
     GPIO_InitTypeDef GPIO_InitStructure;
     NVIC_InitTypeDef NVIC_InitStructure;
 
     /* TIM15 clock enable */
-    RCC_APB2PeriphClockCmd(RCC_APB2Periph_TIM15, ENABLE);
+    RCC_APB2PeriphClockCmd( RCC_APB2Periph_TIM15 , ENABLE );
 
     /* GPIOB clock enable */
     RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOB, ENABLE);
 
     /* TIM15 channel 1 configuration : PB.014 */
-    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_14;
-    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;
+    GPIO_InitStructure.GPIO_Pin   = GPIO_Pin_14;
+    GPIO_InitStructure.GPIO_Mode  = GPIO_Mode_AF;
     GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
     GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
-    GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;
+    GPIO_InitStructure.GPIO_PuPd  = GPIO_PuPd_UP ;
     GPIO_Init(GPIOB, &GPIO_InitStructure);
 
     /* Connect TIM pin to AF1 */
@@ -101,7 +106,7 @@ void AirplaneControl::InitCapComp() {
     NVIC_Init(&NVIC_InitStructure);
 
     /* ---------------------------------------------------------------------------
-       TIM15 configuration: PWM Input flightMode
+       TIM15 configuration: PWM Input mode
         The external signal is connected to TIM15 CH1 pin (PB.014)
         TIM15 CCR2 is used to compute the frequency value
         TIM15 CCR1 is used to compute the duty cycle value
@@ -116,7 +121,7 @@ void AirplaneControl::InitCapComp() {
      --------------------------------------------------------------------------- */
 
     TIM_ICInitStructure.TIM_Channel = TIM_Channel_1;
-    TIM_ICInitStructure.TIM_ICPolarity = TIM_ICPolarity_Rising;
+    TIM_ICInitStructure.TIM_ICPolarity = TIM_ICPolarity_Falling;
     TIM_ICInitStructure.TIM_ICSelection = TIM_ICSelection_DirectTI;
     TIM_ICInitStructure.TIM_ICPrescaler = TIM_ICPSC_DIV1;
     TIM_ICInitStructure.TIM_ICFilter = 0x0;
@@ -128,13 +133,14 @@ void AirplaneControl::InitCapComp() {
 
     /* Select the slave Mode: Reset Mode */
     TIM_SelectSlaveMode(TIM15, TIM_SlaveMode_Reset);
-    TIM_SelectMasterSlaveMode(TIM15, TIM_MasterSlaveMode_Enable);
+    TIM_SelectMasterSlaveMode(TIM15,TIM_MasterSlaveMode_Enable);
 
     /* TIM enable counter */
     TIM_Cmd(TIM15, ENABLE);
 
     /* Enable the CC1 Interrupt Request */
     TIM_ITConfig(TIM15, TIM_IT_CC1, ENABLE);
+
 }
 
 /// @brief sets pwm on time.

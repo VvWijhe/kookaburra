@@ -7,8 +7,13 @@
 
 extern __IO int32_t PrevDutyCycle; //logging duty cycle in case of bizarre values
 extern float currentDutyCycle; // the duty cycle in %
+extern float DutyCyclePC;
 extern uint8_t Attempts; // to make the autopilot switch time-based
 extern uint8_t StepCount; // to log every step of said switch
+extern __IO uint32_t IC2Value;
+extern __IO uint32_t IC1Value;
+extern __IO uint32_t DutyCycle;
+extern float temp;
 
 typedef enum {
     PWM_MOTOR,

@@ -20,6 +20,7 @@ public:
    bool open();
    int ERROR;
    bool SerialIsOpen;
+   void sendString(QString str);
 
 public slots:
    void dataIn();

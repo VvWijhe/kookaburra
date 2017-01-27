@@ -11,7 +11,7 @@
 #ifndef USART_H
 #define USART_H
 
-extern uint8_t rxBuffer[10];
+extern char rxBuffer[30];
 extern uint8_t indexBuffer;
 
 /**

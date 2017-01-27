@@ -38,19 +38,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files (x86)\JetBrains\CLion 2016.2.2\bin\cmake\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Program Files (x86)\JetBrains\CLion 2016.3\bin\cmake\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files (x86)\JetBrains\CLion 2016.2.2\bin\cmake\bin\cmake.exe" -E remove -f
+RM = "C:\Program Files (x86)\JetBrains\CLion 2016.3\bin\cmake\bin\cmake.exe" -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer
+CMAKE_SOURCE_DIR = C:\Users\Jamie\Documents\GitHub\kookaburra\Drivers\Barometer\barometer
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\Jamie\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -58,7 +58,7 @@ CMAKE_BINARY_DIR = C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\b
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	"C:\Program Files (x86)\JetBrains\CLion 2016.2.2\bin\cmake\bin\cmake.exe" -E echo "No interactive CMake dialog available."
+	"C:\Program Files (x86)\JetBrains\CLion 2016.3\bin\cmake\bin\cmake.exe" -E echo "No interactive CMake dialog available."
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -69,7 +69,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	"C:\Program Files (x86)\JetBrains\CLion 2016.2.2\bin\cmake\bin\cmake.exe" -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	"C:\Program Files (x86)\JetBrains\CLion 2016.3\bin\cmake\bin\cmake.exe" -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -79,14 +79,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug && $(CMAKE_COMMAND) -E cmake_progress_start C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\CMakeFiles C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\F0DiscoveryDir\CMakeFiles\progress.marks
-	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug && $(MAKE) -f CMakeFiles\Makefile2 F0DiscoveryDir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\CMakeFiles 0
+	cd /d C:\Users\Jamie\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug && $(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Jamie\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\CMakeFiles C:\Users\Jamie\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\F0DiscoveryDir\CMakeFiles\progress.marks
+	cd /d C:\Users\Jamie\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug && $(MAKE) -f CMakeFiles\Makefile2 F0DiscoveryDir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Jamie\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug && $(MAKE) -f CMakeFiles\Makefile2 F0DiscoveryDir/clean
+	cd /d C:\Users\Jamie\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug && $(MAKE) -f CMakeFiles\Makefile2 F0DiscoveryDir/clean
 .PHONY : clean
 
 # The main clean target
@@ -96,22 +96,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug && $(MAKE) -f CMakeFiles\Makefile2 F0DiscoveryDir/preinstall
+	cd /d C:\Users\Jamie\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug && $(MAKE) -f CMakeFiles\Makefile2 F0DiscoveryDir/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug && $(MAKE) -f CMakeFiles\Makefile2 F0DiscoveryDir/preinstall
+	cd /d C:\Users\Jamie\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug && $(MAKE) -f CMakeFiles\Makefile2 F0DiscoveryDir/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
+	cd /d C:\Users\Jamie\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 F0DiscoveryDir/CMakeFiles/STM32F0DiscoveryLib.dir/rule:
-	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug && $(MAKE) -f CMakeFiles\Makefile2 F0DiscoveryDir/CMakeFiles/STM32F0DiscoveryLib.dir/rule
+	cd /d C:\Users\Jamie\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug && $(MAKE) -f CMakeFiles\Makefile2 F0DiscoveryDir/CMakeFiles/STM32F0DiscoveryLib.dir/rule
 .PHONY : F0DiscoveryDir/CMakeFiles/STM32F0DiscoveryLib.dir/rule
 
 # Convenience name for target.
@@ -121,7 +121,7 @@ STM32F0DiscoveryLib: F0DiscoveryDir/CMakeFiles/STM32F0DiscoveryLib.dir/rule
 
 # fast build rule for target.
 STM32F0DiscoveryLib/fast:
-	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug && $(MAKE) -f F0DiscoveryDir\CMakeFiles\STM32F0DiscoveryLib.dir\build.make F0DiscoveryDir/CMakeFiles/STM32F0DiscoveryLib.dir/build
+	cd /d C:\Users\Jamie\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug && $(MAKE) -f F0DiscoveryDir\CMakeFiles\STM32F0DiscoveryLib.dir\build.make F0DiscoveryDir/CMakeFiles/STM32F0DiscoveryLib.dir/build
 .PHONY : STM32F0DiscoveryLib/fast
 
 stm32f0_discovery.obj: stm32f0_discovery.c.obj
@@ -130,7 +130,7 @@ stm32f0_discovery.obj: stm32f0_discovery.c.obj
 
 # target to build an object file
 stm32f0_discovery.c.obj:
-	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug && $(MAKE) -f F0DiscoveryDir\CMakeFiles\STM32F0DiscoveryLib.dir\build.make F0DiscoveryDir/CMakeFiles/STM32F0DiscoveryLib.dir/stm32f0_discovery.c.obj
+	cd /d C:\Users\Jamie\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug && $(MAKE) -f F0DiscoveryDir\CMakeFiles\STM32F0DiscoveryLib.dir\build.make F0DiscoveryDir/CMakeFiles/STM32F0DiscoveryLib.dir/stm32f0_discovery.c.obj
 .PHONY : stm32f0_discovery.c.obj
 
 stm32f0_discovery.i: stm32f0_discovery.c.i
@@ -139,7 +139,7 @@ stm32f0_discovery.i: stm32f0_discovery.c.i
 
 # target to preprocess a source file
 stm32f0_discovery.c.i:
-	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug && $(MAKE) -f F0DiscoveryDir\CMakeFiles\STM32F0DiscoveryLib.dir\build.make F0DiscoveryDir/CMakeFiles/STM32F0DiscoveryLib.dir/stm32f0_discovery.c.i
+	cd /d C:\Users\Jamie\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug && $(MAKE) -f F0DiscoveryDir\CMakeFiles\STM32F0DiscoveryLib.dir\build.make F0DiscoveryDir/CMakeFiles/STM32F0DiscoveryLib.dir/stm32f0_discovery.c.i
 .PHONY : stm32f0_discovery.c.i
 
 stm32f0_discovery.s: stm32f0_discovery.c.s
@@ -148,7 +148,7 @@ stm32f0_discovery.s: stm32f0_discovery.c.s
 
 # target to generate assembly for a file
 stm32f0_discovery.c.s:
-	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug && $(MAKE) -f F0DiscoveryDir\CMakeFiles\STM32F0DiscoveryLib.dir\build.make F0DiscoveryDir/CMakeFiles/STM32F0DiscoveryLib.dir/stm32f0_discovery.c.s
+	cd /d C:\Users\Jamie\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug && $(MAKE) -f F0DiscoveryDir\CMakeFiles\STM32F0DiscoveryLib.dir\build.make F0DiscoveryDir/CMakeFiles/STM32F0DiscoveryLib.dir/stm32f0_discovery.c.s
 .PHONY : stm32f0_discovery.c.s
 
 # Help Target
@@ -174,6 +174,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /d C:\Users\User\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 0
+	cd /d C:\Users\Jamie\Documents\GitHub\kookaburra\Drivers\Barometer\barometer\cmake-build-debug && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/STM32F0Discovery
+# Install script for directory: C:/Users/Jamie/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/STM32F0Discovery
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

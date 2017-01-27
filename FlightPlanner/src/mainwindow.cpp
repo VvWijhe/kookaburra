@@ -24,7 +24,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
    if ( port->SerialIsOpen )
    {
-      ui->statusBar->showMessage("Connected with COM3");
+      ui->statusBar->showMessage("Connected");
    }
    else
    {
@@ -48,28 +48,36 @@ void MainWindow::on_pushButton_2_clicked() //About
 
 void MainWindow::on_pushButton_3_clicked() //Send heightdata
 {
+   QString str;
    // Send Alt2
-   DataToSend.setNum(ui->Height1->value());
-   qDebug() << DataToSend;
-   port->SetData(DataToSend);
-   port->send();
+//   DataToSend.setNum(ui->Height1->value());
+//   qDebug() << DataToSend;
+//   port->SetData(DataToSend);
+//   port->send();
+   str.append(QString::number(ui->Height2->value()));
+   str.append('\r');
+//   str.append(QString::number(ui->Height2->value()));
+//   str.append('\r');
 
-   if(!(SerialSucceed = port->ERROR > 0 ? true : false)){
-      ui->statusBar->showMessage("Failed to send altitudes");
-      return;
-   }
+   port->sendString(str);
+//   port->sendString(QString::number(ui->Height1->value()).append('\r'));
 
+//   if(!(SerialSucceed = port->ERROR > 0 ? true : false)){
+//      ui->statusBar->showMessage("Failed to send altitudes");
+//      return;
+//   }
 
    // Send Alt 1
-   DataToSend.setNum(ui->Height2->value());
-   qDebug() << DataToSend;
-   port->SetData(DataToSend);
-   port->send();
+//   DataToSend.setNum(ui->Height2->value());
+//   qDebug() << DataToSend;
+//   port->SetData(DataToSend);
+//   port->send();
+//   port->sendString(QString::number(ui->Height2->value()).append('\r'));
 
-   if(!(SerialSucceed = port->ERROR > 0 ? true : false)){
-      ui->statusBar->showMessage("Failed to send altitudes");
-      return;
-   }
+//   if(!(SerialSucceed = port->ERROR > 0 ? true : false)){
+//      ui->statusBar->showMessage("Failed to send altitudes");
+//      return;
+//   }
 
    ui->statusBar->showMessage("Altitudes uploaded!");
 //   SendCompleted sendcompleted;

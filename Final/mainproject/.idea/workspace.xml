@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="CMakeRunConfigurationManager" shouldGenerate="true" assignedExecutableTargets="true" buildAllGenerated="true">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" buildAllGenerated="true">
     <generated>
       <config projectName="mainproject" targetName="STM32F0DiscoveryLib" />
       <config projectName="mainproject" targetName="CMSISFIRMWARE" />
@@ -8,15 +8,150 @@
       <config projectName="mainproject" targetName="mainproject.elf" />
     </generated>
   </component>
-  <component name="CMakeSettings" AUTO_RELOAD="false" GENERATION_PASS_SYSTEM_ENVIRONMENT="true">
-    <ADDITIONAL_GENERATION_ENVIRONMENT>
-      <envs />
-    </ADDITIONAL_GENERATION_ENVIRONMENT>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration CONFIG_NAME="Debug" />
+    </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e0d6b131-ced9-40dd-8c0b-6aad02db3346" name="Default" comment="">
+    <list default="true" id="e0d6b131-ced9-40dd-8c0b-6aad02db3346" name="Default" comment="Fixed motor control">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Drivers/Accelerometer/accelerometer/.idea/discoveryf0demo.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Drivers/Accelerometer/accelerometer/.idea/inspectionProfiles/Project_Default.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Drivers/Accelerometer/accelerometer/.idea/inspectionProfiles/profiles_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Drivers/Accelerometer/accelerometer/.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Drivers/Accelerometer/accelerometer/.idea/vcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Drivers/Accelerometer/accelerometer/.idea/workspace.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/CMakeFiles/3.6.2/CMakeASM-ATTCompiler.cmake" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/CMakeFiles/3.6.2/CMakeCCompiler.cmake" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/CMakeFiles/3.6.2/CMakeCXXCompiler.cmake" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/CMakeFiles/3.6.2/CMakeDetermineCompilerABI_C.bin" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/CMakeFiles/3.6.2/CMakeDetermineCompilerABI_CXX.bin" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/CMakeFiles/3.6.2/CMakeRCCompiler.cmake" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/CMakeFiles/3.6.2/CMakeSystem.cmake" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/CMakeFiles/3.6.2/CompilerIdC/CMakeCCompilerId.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/CMakeFiles/3.6.2/CompilerIdC/a.exe" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/CMakeFiles/3.6.2/CompilerIdCXX/CMakeCXXCompilerId.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/CMakeFiles/3.6.2/CompilerIdCXX/a.exe" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/CMakeFiles/barometer.elf.dir/C_/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c.obj" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Drivers/Accelerometer/accelerometer/CLionBuildOutput/Debug/accelerometer.elf" afterPath="$PROJECT_DIR$/../../Drivers/Accelerometer/accelerometer/CLionBuildOutput/Debug/accelerometer.elf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/CLionBuildOutput/Debug/barometer.elf" afterPath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/CLionBuildOutput/Debug/barometer.elf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/CMakeFiles/barometer.elf.dir/MS5611.cpp.obj" afterPath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/CMakeFiles/barometer.elf.dir/MS5611.cpp.obj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/CMakeFiles/barometer.elf.dir/main.cpp.obj" afterPath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/CMakeFiles/barometer.elf.dir/main.cpp.obj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/CMakeFiles/barometer.elf.dir/stm32f0xx_it.c.obj" afterPath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/CMakeFiles/barometer.elf.dir/stm32f0xx_it.c.obj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/CMakeFiles/barometer.elf.dir/usart.cpp.obj" afterPath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/CMakeFiles/barometer.elf.dir/usart.cpp.obj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/CMakeFiles/feature_tests.bin" afterPath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/CMakeFiles/feature_tests.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/F0DiscoveryDir/CMakeFiles/STM32F0DiscoveryLib.dir/stm32f0_discovery.c.obj" afterPath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/F0DiscoveryDir/CMakeFiles/STM32F0DiscoveryLib.dir/stm32f0_discovery.c.obj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/F0DiscoveryDir/libSTM32F0DiscoveryLib.a" afterPath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/F0DiscoveryDir/libSTM32F0DiscoveryLib.a" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/Source/Templates/gcc/startup_stm32f0xx.s.obj" afterPath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/Source/Templates/gcc/startup_stm32f0xx.s.obj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/Source/Templates/system_stm32f0xx.c.obj" afterPath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/Source/Templates/system_stm32f0xx.c.obj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/STM32CMSIS/libCMSISFIRMWARE.a" afterPath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/STM32CMSIS/libCMSISFIRMWARE.a" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/STM32_StdPeriph_Driver/libF0StdPerifDriver.a" afterPath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/STM32_StdPeriph_Driver/libF0StdPerifDriver.a" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CLionBuildOutput/Debug/mainproject.bin" afterPath="$PROJECT_DIR$/CLionBuildOutput/Debug/mainproject.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CLionBuildOutput/Debug/mainproject.elf" afterPath="$PROJECT_DIR$/CLionBuildOutput/Debug/mainproject.elf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.bin" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Drivers/Accelerometer/accelerometer/.idea/misc.xml" afterPath="$PROJECT_DIR$/../../Drivers/Accelerometer/accelerometer/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/CMakeCache.txt" afterPath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/CMakeCache.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterPath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterPath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/CMakeFiles/CMakeOutput.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/CMakeFiles/Makefile.cmake" afterPath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/CMakeFiles/Makefile.cmake" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/CMakeFiles/Makefile2" afterPath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/CMakeFiles/Makefile2" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterPath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/CMakeFiles/TargetDirectories.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/CMakeFiles/barometer.elf.dir/C.includecache" afterPath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/CMakeFiles/barometer.elf.dir/C.includecache" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/CMakeFiles/barometer.elf.dir/CXX.includecache" afterPath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/CMakeFiles/barometer.elf.dir/CXX.includecache" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/CMakeFiles/barometer.elf.dir/DependInfo.cmake" afterPath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/CMakeFiles/barometer.elf.dir/DependInfo.cmake" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/CMakeFiles/barometer.elf.dir/build.make" afterPath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/CMakeFiles/barometer.elf.dir/build.make" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/CMakeFiles/barometer.elf.dir/cmake_clean.cmake" afterPath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/CMakeFiles/barometer.elf.dir/cmake_clean.cmake" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/CMakeFiles/barometer.elf.dir/depend.internal" afterPath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/CMakeFiles/barometer.elf.dir/depend.internal" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/CMakeFiles/barometer.elf.dir/depend.make" afterPath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/CMakeFiles/barometer.elf.dir/depend.make" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/CMakeFiles/barometer.elf.dir/includes_C.rsp" afterPath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/CMakeFiles/barometer.elf.dir/includes_C.rsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/CMakeFiles/barometer.elf.dir/includes_CXX.rsp" afterPath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/CMakeFiles/barometer.elf.dir/includes_CXX.rsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/CMakeFiles/barometer.elf.dir/link.txt" afterPath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/CMakeFiles/barometer.elf.dir/link.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/CMakeFiles/barometer.elf.dir/objects1.rsp" afterPath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/CMakeFiles/barometer.elf.dir/objects1.rsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/CMakeFiles/clion-environment.txt" afterPath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/CMakeFiles/clion-environment.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/CMakeFiles/clion-log.txt" afterPath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/CMakeFiles/clion-log.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/F0DiscoveryDir/CMakeFiles/CMakeDirectoryInformation.cmake" afterPath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/F0DiscoveryDir/CMakeFiles/CMakeDirectoryInformation.cmake" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/F0DiscoveryDir/CMakeFiles/STM32F0DiscoveryLib.dir/C.includecache" afterPath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/F0DiscoveryDir/CMakeFiles/STM32F0DiscoveryLib.dir/C.includecache" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/F0DiscoveryDir/CMakeFiles/STM32F0DiscoveryLib.dir/DependInfo.cmake" afterPath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/F0DiscoveryDir/CMakeFiles/STM32F0DiscoveryLib.dir/DependInfo.cmake" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/F0DiscoveryDir/CMakeFiles/STM32F0DiscoveryLib.dir/build.make" afterPath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/F0DiscoveryDir/CMakeFiles/STM32F0DiscoveryLib.dir/build.make" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/F0DiscoveryDir/CMakeFiles/STM32F0DiscoveryLib.dir/depend.internal" afterPath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/F0DiscoveryDir/CMakeFiles/STM32F0DiscoveryLib.dir/depend.internal" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/F0DiscoveryDir/CMakeFiles/STM32F0DiscoveryLib.dir/depend.make" afterPath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/F0DiscoveryDir/CMakeFiles/STM32F0DiscoveryLib.dir/depend.make" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/F0DiscoveryDir/CMakeFiles/STM32F0DiscoveryLib.dir/includes_C.rsp" afterPath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/F0DiscoveryDir/CMakeFiles/STM32F0DiscoveryLib.dir/includes_C.rsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/F0DiscoveryDir/Makefile" afterPath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/F0DiscoveryDir/Makefile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/F0DiscoveryDir/cmake_install.cmake" afterPath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/F0DiscoveryDir/cmake_install.cmake" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/Makefile" afterPath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/Makefile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/C.includecache" afterPath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/C.includecache" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/DependInfo.cmake" afterPath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/DependInfo.cmake" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/build.make" afterPath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/build.make" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/depend.internal" afterPath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/depend.internal" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/depend.make" afterPath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/depend.make" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/flags.make" afterPath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/flags.make" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/includes_C.rsp" afterPath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/includes_C.rsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/STM32CMSIS/CMakeFiles/CMakeDirectoryInformation.cmake" afterPath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/STM32CMSIS/CMakeFiles/CMakeDirectoryInformation.cmake" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/STM32CMSIS/Makefile" afterPath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/STM32CMSIS/Makefile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/STM32CMSIS/cmake_install.cmake" afterPath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/STM32CMSIS/cmake_install.cmake" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/STM32_StdPeriph_Driver/CMakeFiles/CMakeDirectoryInformation.cmake" afterPath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/STM32_StdPeriph_Driver/CMakeFiles/CMakeDirectoryInformation.cmake" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/C.includecache" afterPath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/C.includecache" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/DependInfo.cmake" afterPath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/DependInfo.cmake" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/build.make" afterPath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/build.make" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/depend.internal" afterPath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/depend.internal" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/depend.make" afterPath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/depend.make" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/includes_C.rsp" afterPath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/includes_C.rsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/STM32_StdPeriph_Driver/Makefile" afterPath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/STM32_StdPeriph_Driver/Makefile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/STM32_StdPeriph_Driver/cmake_install.cmake" afterPath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/STM32_StdPeriph_Driver/cmake_install.cmake" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/barometer.cbp" afterPath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/barometer.cbp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/barometer.map" afterPath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/barometer.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/cmake_install.cmake" afterPath="$PROJECT_DIR$/../../Drivers/Barometer/barometer/cmake-build-debug/cmake_install.cmake" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stm32f0xx_it.c" afterPath="$PROJECT_DIR$/stm32f0xx_it.c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/airplane.cpp" afterPath="$PROJECT_DIR$/airplane.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/mainproject.elf.dir/DependInfo.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/mainproject.elf.dir/DependInfo.cmake" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/mainproject.elf.dir/build.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/mainproject.elf.dir/build.make" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/mainproject.elf.dir/cmake_clean.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/mainproject.elf.dir/cmake_clean.cmake" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/mainproject.elf.dir/depend.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/mainproject.elf.dir/depend.make" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/mainproject.elf.dir/includes_C.rsp" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/mainproject.elf.dir/includes_C.rsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/mainproject.elf.dir/includes_CXX.rsp" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/mainproject.elf.dir/includes_CXX.rsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/mainproject.elf.dir/link.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/mainproject.elf.dir/link.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/mainproject.elf.dir/objects1.rsp" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/mainproject.elf.dir/objects1.rsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/F0DiscoveryDir/CMakeFiles/CMakeDirectoryInformation.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/F0DiscoveryDir/CMakeFiles/CMakeDirectoryInformation.cmake" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/F0DiscoveryDir/CMakeFiles/STM32F0DiscoveryLib.dir/DependInfo.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/F0DiscoveryDir/CMakeFiles/STM32F0DiscoveryLib.dir/DependInfo.cmake" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/F0DiscoveryDir/CMakeFiles/STM32F0DiscoveryLib.dir/build.make" afterPath="$PROJECT_DIR$/cmake-build-debug/F0DiscoveryDir/CMakeFiles/STM32F0DiscoveryLib.dir/build.make" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/F0DiscoveryDir/CMakeFiles/STM32F0DiscoveryLib.dir/depend.make" afterPath="$PROJECT_DIR$/cmake-build-debug/F0DiscoveryDir/CMakeFiles/STM32F0DiscoveryLib.dir/depend.make" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/F0DiscoveryDir/CMakeFiles/STM32F0DiscoveryLib.dir/includes_C.rsp" afterPath="$PROJECT_DIR$/cmake-build-debug/F0DiscoveryDir/CMakeFiles/STM32F0DiscoveryLib.dir/includes_C.rsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/F0DiscoveryDir/Makefile" afterPath="$PROJECT_DIR$/cmake-build-debug/F0DiscoveryDir/Makefile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/F0DiscoveryDir/cmake_install.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/F0DiscoveryDir/cmake_install.cmake" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/DependInfo.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/DependInfo.cmake" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/build.make" afterPath="$PROJECT_DIR$/cmake-build-debug/STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/build.make" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/depend.make" afterPath="$PROJECT_DIR$/cmake-build-debug/STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/depend.make" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/flags.make" afterPath="$PROJECT_DIR$/cmake-build-debug/STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/flags.make" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/includes_C.rsp" afterPath="$PROJECT_DIR$/cmake-build-debug/STM32CMSIS/CMakeFiles/CMSISFIRMWARE.dir/includes_C.rsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/STM32CMSIS/CMakeFiles/CMakeDirectoryInformation.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/STM32CMSIS/CMakeFiles/CMakeDirectoryInformation.cmake" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/STM32CMSIS/Makefile" afterPath="$PROJECT_DIR$/cmake-build-debug/STM32CMSIS/Makefile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/STM32CMSIS/cmake_install.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/STM32CMSIS/cmake_install.cmake" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/STM32_StdPeriph_Driver/CMakeFiles/CMakeDirectoryInformation.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/STM32_StdPeriph_Driver/CMakeFiles/CMakeDirectoryInformation.cmake" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/DependInfo.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/DependInfo.cmake" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/build.make" afterPath="$PROJECT_DIR$/cmake-build-debug/STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/build.make" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/depend.make" afterPath="$PROJECT_DIR$/cmake-build-debug/STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/depend.make" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/includes_C.rsp" afterPath="$PROJECT_DIR$/cmake-build-debug/STM32_StdPeriph_Driver/CMakeFiles/F0StdPerifDriver.dir/includes_C.rsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/STM32_StdPeriph_Driver/Makefile" afterPath="$PROJECT_DIR$/cmake-build-debug/STM32_StdPeriph_Driver/Makefile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/STM32_StdPeriph_Driver/cmake_install.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/STM32_StdPeriph_Driver/cmake_install.cmake" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/mainproject.cbp" afterPath="$PROJECT_DIR$/cmake-build-debug/mainproject.cbp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/h/airplane.h" afterPath="$PROJECT_DIR$/h/airplane.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/h/pwm.h" afterPath="$PROJECT_DIR$/h/pwm.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/h/usart.h" afterPath="$PROJECT_DIR$/h/usart.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pwm.cpp" afterPath="$PROJECT_DIR$/pwm.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rgbdriver.cpp" afterPath="$PROJECT_DIR$/rgbdriver.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stm32f0xx_it.cpp" afterPath="$PROJECT_DIR$/stm32f0xx_it.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/usart.cpp" afterPath="$PROJECT_DIR$/usart.cpp" />
     </list>
     <ignored path="mainproject.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,46 +172,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="pwm.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pwm.cpp">
+      <file leaf-file-name="airplane.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/h/airplane.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2712">
-              <caret line="113" column="25" selection-start-line="113" selection-start-column="25" selection-end-line="113" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="airplane.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/airplane.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="912">
-              <caret line="38" column="37" selection-start-line="38" selection-start-column="37" selection-end-line="38" selection-end-column="37" />
+            <state relative-caret-position="336">
+              <caret line="55" column="4" lean-forward="false" selection-start-line="55" selection-start-column="4" selection-end-line="55" selection-end-column="4" />
               <folding>
-                <element signature="e#40#61#0" expanded="true" />
+                <element signature="e#192#212#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="airplane.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/h/airplane.h">
+      <file leaf-file-name="airplane.cpp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/airplane.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="22" column="11" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="stm32f0xx_it.c" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/stm32f0xx_it.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
+            <state relative-caret-position="286">
+              <caret line="63" column="18" lean-forward="false" selection-start-line="63" selection-start-column="18" selection-end-line="63" selection-end-column="18" />
               <folding>
-                <element signature="e#497#755#0" expanded="true" />
-                <element signature="e#782#1040#0" expanded="true" />
+                <element signature="e#40#61#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -85,22 +199,29 @@
       <file leaf-file-name="rgbdriver.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rgbdriver.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="696">
+              <caret line="30" column="14" lean-forward="false" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="stm32f0xx_it.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/h/stm32f0xx_it.h">
+      <file leaf-file-name="rgbdriver.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/h/rgbdriver.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1176">
-              <caret line="49" column="10" selection-start-line="49" selection-start-column="10" selection-end-line="49" selection-end-column="10" />
-              <folding>
-                <element signature="e#1277#1289#0" expanded="true" />
-                <element signature="e#2033#2034#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="264">
+              <caret line="11" column="27" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="stm32f0xx_it.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/stm32f0xx_it.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1078">
+              <caret line="165" column="0" lean-forward="false" selection-start-line="165" selection-start-column="0" selection-end-line="165" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -108,8 +229,8 @@
       <file leaf-file-name="pwm.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/h/pwm.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="960">
-              <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+            <state relative-caret-position="210">
+              <caret line="18" column="4" lean-forward="false" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -123,12 +244,31 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/main.cpp" />
-        <option value="$PROJECT_DIR$/pwm.cpp" />
-        <option value="$PROJECT_DIR$/h/airplane.h" />
-        <option value="$PROJECT_DIR$/airplane.cpp" />
-        <option value="$PROJECT_DIR$/h/pwm.h" />
+        <option value="$PROJECT_DIR$/h/counter.h" />
+        <option value="$PROJECT_DIR$/../gemeenschappelijk/Libraries/CMSIS/Device/ST/STM32F0xx/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/counter.cpp" />
+        <option value="$PROJECT_DIR$/h/stm32f0xx_it.h" />
         <option value="$PROJECT_DIR$/stm32f0xx_it.c" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/flash.h" />
+        <option value="$PROJECT_DIR$/h/flash.h" />
+        <option value="$PROJECT_DIR$/flash.cpp" />
+        <option value="$PROJECT_DIR$/mpu6050.cpp" />
+        <option value="$PROJECT_DIR$/h/main.h" />
+        <option value="$PROJECT_DIR$/h/MS5611.h" />
+        <option value="$PROJECT_DIR$/h/mpu6050.h" />
+        <option value="$PROJECT_DIR$/main.cpp" />
+        <option value="$PROJECT_DIR$/MS5611.cpp" />
+        <option value="$PROJECT_DIR$/../gemeenschappelijk/Libraries/CMSIS/Device/ST/STM32F0xx/Source/Templates/system_stm32f0xx.c" />
+        <option value="$PROJECT_DIR$/h/usart.h" />
+        <option value="$PROJECT_DIR$/usart.cpp" />
+        <option value="$PROJECT_DIR$/h/pwm.h" />
+        <option value="$PROJECT_DIR$/h/rgbdriver.h" />
+        <option value="$PROJECT_DIR$/pwm.cpp" />
+        <option value="$PROJECT_DIR$/rgbdriver.cpp" />
+        <option value="$PROJECT_DIR$/h/airplane.h" />
+        <option value="$PROJECT_DIR$/stm32f0xx_it.cpp" />
+        <option value="$PROJECT_DIR$/airplane.cpp" />
       </list>
     </option>
   </component>
@@ -138,22 +278,14 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+  <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectFrameBounds">
     <option name="x" value="-9" />
     <option name="y" value="-9" />
     <option name="width" value="1938" />
-    <option name="height" value="1060" />
+    <option name="height" value="1048" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <OptionsSetting value="true" id="Add" />
-    <OptionsSetting value="true" id="Remove" />
-    <OptionsSetting value="true" id="Checkout" />
-    <OptionsSetting value="true" id="Update" />
-    <OptionsSetting value="true" id="Status" />
-    <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="0" id="Add" />
-    <ConfirmationsSetting value="0" id="Remove" />
-  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -176,6 +308,14 @@
               <option name="myItemId" value="mainproject" />
               <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Final" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mainproject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -188,6 +328,170 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="mainproject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="h" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mainproject" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Final" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gemeenschappelijk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mainproject" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Final" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gemeenschappelijk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mainproject" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Final" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gemeenschappelijk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CMSIS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mainproject" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Final" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gemeenschappelijk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CMSIS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Device" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ST" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mainproject" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Final" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gemeenschappelijk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CMSIS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Device" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ST" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="STM32F0xx" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mainproject" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Final" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gemeenschappelijk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CMSIS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Device" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ST" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="STM32F0xx" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Source" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Templates" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -207,11 +511,20 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/CMakeLists.txt" />
+    <property name="settings.editor.selected.configurable" value="CPPToolchains" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="js.eslint.eslintPackage" value="" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Jamie\Documents\GitHub\kookaburra\Final\mainproject\h" />
+    </key>
+  </component>
   <component name="RunManager" selected="Application.Build All">
+    <configuration default="true" type="CLion_Remote" factoryName="GDB Remote Debug" remoteCommand="" symbolFile="" sysroot="">
+      <method />
+    </configuration>
     <configuration default="true" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" PASS_PARENT_ENVS_2="true" PROJECT_NAME="mainproject" TARGET_NAME="mainproject.elf" CONFIG_NAME="Debug" TEST_MODE="SUITE_TEST">
       <envs />
       <method />
@@ -221,6 +534,12 @@
       <method />
     </configuration>
     <configuration default="true" type="ChromiumRemoteDebugType" factoryName="Chromium Remote">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
@@ -265,7 +584,7 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
-      <command value="run-script" />
+      <command value="run" />
       <scripts />
       <node-interpreter value="project" />
       <envs />
@@ -376,7 +695,7 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" EXPLICIT_BUILD_TARGET_NAME="all">
+    <configuration default="false" name="Build All" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="c:\Users\Jamie\Documents\GitHub\kookaburra\Final\mainproject\CLionBuildOutput\Debug\mainproject.elf c:\Users\Jamie\Documents\GitHub\kookaburra\Final\mainproject\CLionBuildOutput\Debug\qjlink-generated.jlink" WORKING_DIR="" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_PATH="C:\Program Files (x86)\SEGGER\JLink_V600i\qjlink.exe" EXPLICIT_BUILD_TARGET_NAME="all">
       <envs />
       <method />
     </configuration>
@@ -396,12 +715,16 @@
       <envs />
       <method />
     </configuration>
-    <list size="5">
+    <configuration default="false" name="Debug" type="CLion_Remote" factoryName="GDB Remote Debug" debugger="C:/Program Files (x86)/GNU Tools ARM Embedded/5.4 2016q2/bin/arm-none-eabi-gdb.exe" remoteCommand="localhost:2331" symbolFile="$PROJECT_DIR$/CLionBuildOutput/Debug/mainproject.elf" sysroot="">
+      <method />
+    </configuration>
+    <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Application.Build All" />
       <item index="1" class="java.lang.String" itemvalue="Application.mainproject.elf" />
       <item index="2" class="java.lang.String" itemvalue="Application.CMSISFIRMWARE" />
       <item index="3" class="java.lang.String" itemvalue="Application.F0StdPerifDriver" />
       <item index="4" class="java.lang.String" itemvalue="Application.STM32F0DiscoveryLib" />
+      <item index="5" class="java.lang.String" itemvalue="GDB Remote Debug.Debug" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
@@ -420,49 +743,170 @@
       <workItem from="1481716306906" duration="258000" />
       <workItem from="1481716644844" duration="1301000" />
       <workItem from="1481807180641" duration="166000" />
-      <workItem from="1482242389428" duration="4317000" />
-      <workItem from="1482402152191" duration="936000" />
-      <workItem from="1483618934205" duration="189000" />
-      <workItem from="1483619558083" duration="1914000" />
-      <workItem from="1484057635884" duration="1057000" />
-      <workItem from="1484061509836" duration="701000" />
-      <workItem from="1484221618771" duration="1604000" />
-      <workItem from="1484223661018" duration="169000" />
-      <workItem from="1484228606611" duration="13000" />
+      <workItem from="1482241944739" duration="288000" />
+      <workItem from="1482322732308" duration="1194000" />
+      <workItem from="1482401875217" duration="55000" />
+      <workItem from="1482403544580" duration="13506000" />
+      <workItem from="1483610515254" duration="222000" />
+      <workItem from="1483610982719" duration="16915000" />
+      <workItem from="1483636747650" duration="2947000" />
+      <workItem from="1483881423324" duration="3950000" />
+      <workItem from="1483895716637" duration="1616000" />
+      <workItem from="1483898102471" duration="3626000" />
+      <workItem from="1483901841416" duration="7148000" />
+      <workItem from="1483909617257" duration="245000" />
+      <workItem from="1483954313172" duration="19036000" />
+      <workItem from="1483984322977" duration="4052000" />
+      <workItem from="1484126923673" duration="2401000" />
+      <workItem from="1484168894665" duration="381000" />
+      <workItem from="1484214814937" duration="2945000" />
+      <workItem from="1484228592139" duration="591000" />
+      <workItem from="1484238242657" duration="1021000" />
+      <workItem from="1484665197071" duration="2945000" />
+      <workItem from="1484736752770" duration="413000" />
+      <workItem from="1484738098854" duration="3654000" />
+      <workItem from="1484910976789" duration="1721000" />
+      <workItem from="1484936220246" duration="1516000" />
+      <workItem from="1485284168691" duration="6241000" />
+      <workItem from="1485338033258" duration="12464000" />
+      <workItem from="1485361372772" duration="1887000" />
+      <workItem from="1485363477490" duration="4154000" />
+      <workItem from="1485368864680" duration="1496000" />
+      <workItem from="1485423353228" duration="2787000" />
+      <workItem from="1485426855434" duration="966000" />
+      <workItem from="1485428399511" duration="23650000" />
     </task>
-    <task id="LOCAL-00001" summary="daar is ie dan, PWM Cap Comp + trigger.">
-      <created>1482245967908</created>
+    <task id="LOCAL-00001" summary="Refactoring">
+      <created>1482409977446</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1482245967908</updated>
+      <updated>1482409977446</updated>
     </task>
-    <task id="LOCAL-00002" summary="Daar is ie dan, PWM Cap Comp + trigger. (updated lol)">
-      <created>1482246313059</created>
+    <task id="LOCAL-00002" summary="Added PID">
+      <created>1482419852137</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1482246313059</updated>
+      <updated>1482419852137</updated>
     </task>
-    <task id="LOCAL-00003" summary="PWM Cap Comp met werkelijke waardes">
-      <created>1484059962676</created>
+    <task id="LOCAL-00003" summary="Fixed motor control">
+      <created>1482435790300</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1484059962676</updated>
+      <updated>1482435790300</updated>
     </task>
-    <task id="LOCAL-00004" summary="Flash Memory toegevoegd">
-      <created>1484223399092</created>
+    <task id="LOCAL-00004" summary="Fixed motor control">
+      <created>1483613060817</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1484223399092</updated>
+      <updated>1483613060817</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added shift register driver">
+      <created>1483644888434</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1483644888434</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Updated rgbdriver">
+      <created>1483892352002</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1483892352002</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Completed RGB driver and refactored usart">
+      <created>1483968418531</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1483968418531</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Header changes">
+      <created>1483969618848</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1483969618849</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Added ppm decoder">
+      <created>1483987110253</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1483987110253</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Fixed motor control">
+      <created>1484129576079</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1484129576079</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Fixed motor control">
+      <created>1484219183687</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1484219183687</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Refactored flightplanner">
+      <created>1484240769376</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1484240769376</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Refactored flightplanner">
+      <created>1484245368690</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1484245368690</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Flightplanner and barometer code updated">
+      <created>1484738347496</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1484738347496</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Interrupt and flash changes">
+      <created>1484739993083</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1484739993083</updated>
+    </task>
+    <task id="LOCAL-00016" summary="RGB code changes">
+      <created>1484740339978</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1484740339978</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Removed ppm decoder, added logging">
+      <created>1485290128090</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1485290128090</updated>
+    </task>
+    <task id="LOCAL-00018" summary="ALMOST FINAL 0.9">
+      <created>1485429548059</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1485429548059</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19869000" />
+    <option name="totallyTimeSpent" value="155002000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -474,27 +918,27 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1060" extended-state="6" />
-    <editor active="false" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24907456" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37485844" sideWeight="0.48545742" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32849163" sideWeight="0.133687" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33333334" sideWeight="0.48965517" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20412481" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17821783" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24575311" sideWeight="0.48863035" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37485844" sideWeight="0.48545742" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24801812" sideWeight="0.51136965" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32842582" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25028312" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24960339" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32875144" sideWeight="0.866313" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29898074" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42582107" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -512,468 +956,426 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="daar is ie dan, PWM Cap Comp + trigger." />
-    <MESSAGE value="Daar is ie dan, PWM Cap Comp + trigger. (updated lol)" />
-    <MESSAGE value="PWM Cap Comp met werkelijke waardes" />
-    <MESSAGE value="Flash Memory toegevoegd" />
-    <option name="LAST_COMMIT_MESSAGE" value="Flash Memory toegevoegd" />
+    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="false" />
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="Refactoring" />
+    <MESSAGE value="Added PID" />
+    <MESSAGE value="Added shift register driver" />
+    <MESSAGE value="Updated rgbdriver" />
+    <MESSAGE value="Completed RGB driver and refactored usart" />
+    <MESSAGE value="Header changes" />
+    <MESSAGE value="Added ppm decoder" />
+    <MESSAGE value="Fixed motor control" />
+    <MESSAGE value="Refactored flightplanner" />
+    <MESSAGE value="Flightplanner and barometer code updated" />
+    <MESSAGE value="Interrupt and flash changes" />
+    <MESSAGE value="RGB code changes" />
+    <MESSAGE value="Removed ppm decoder, added logging" />
+    <MESSAGE value="ALMOST FINAL 0.9" />
+    <option name="LAST_COMMIT_MESSAGE" value="ALMOST FINAL 0.9" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/flash.cpp</url>
+          <line>36</line>
+          <option name="timeStamp" value="90" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="102" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/h/pwm.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pwm.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2948">
-          <caret line="134" column="25" selection-start-line="134" selection-start-column="25" selection-end-line="134" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/airplane.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1012">
-          <caret line="46" column="37" selection-start-line="46" selection-start-column="37" selection-end-line="46" selection-end-column="37" />
-          <folding>
-            <element signature="e#40#61#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/h/airplane.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="20" column="11" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stm32f0xx_it.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4180">
-          <caret line="190" column="5" selection-start-line="190" selection-start-column="5" selection-end-line="190" selection-end-column="5" />
-          <folding>
-            <element signature="e#497#755#0" expanded="true" />
-            <element signature="e#782#1040#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/h/stm32f0xx_it.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1166">
-          <caret line="53" column="5" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
-          <folding>
-            <element signature="e#1277#1289#0" expanded="true" />
-            <element signature="e#2033#2034#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/h/pwm.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pwm.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2948">
-          <caret line="134" column="25" selection-start-line="134" selection-start-column="25" selection-end-line="134" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/airplane.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1012">
-          <caret line="46" column="37" selection-start-line="46" selection-start-column="37" selection-end-line="46" selection-end-column="37" />
-          <folding>
-            <element signature="e#40#61#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/h/airplane.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="20" column="11" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stm32f0xx_it.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#497#755#0" expanded="true" />
-            <element signature="e#782#1040#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/h/stm32f0xx_it.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1166">
-          <caret line="53" column="5" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
-          <folding>
-            <element signature="e#1277#1289#0" expanded="true" />
-            <element signature="e#2033#2034#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/h/pwm.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pwm.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2948">
-          <caret line="134" column="25" selection-start-line="134" selection-start-column="25" selection-end-line="134" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/airplane.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#40#61#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/h/airplane.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
-          <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stm32f0xx_it.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <caret line="7" column="28" lean-forward="true" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
           <folding>
-            <element signature="e#497#755#0" expanded="true" />
-            <element signature="e#782#1040#0" expanded="true" />
+            <element signature="e#192#212#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/h/pwm.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pwm.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/airplane.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#40#61#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/h/airplane.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stm32f0xx_it.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding>
-            <element signature="e#497#755#0" expanded="true" />
-            <element signature="e#782#1040#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/h/pwm.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pwm.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2772">
-          <caret line="126" column="1" selection-start-line="126" selection-start-column="1" selection-end-line="126" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/airplane.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
-          <folding>
-            <element signature="e#40#61#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/h/airplane.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/readme.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/stm32f0xx_it.c">
+    <entry file="file://$PROJECT_DIR$/stm32f0xx_it.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#497#755#0" expanded="true" />
-            <element signature="e#782#1040#0" expanded="true" />
-          </folding>
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/h/pwm.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
-          <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pwm.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2772">
-          <caret line="126" column="1" selection-start-line="126" selection-start-column="1" selection-end-line="126" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/airplane.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
-          <folding>
-            <element signature="e#40#61#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/h/airplane.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/readme.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stm32f0xx_it.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#497#755#0" expanded="true" />
-            <element signature="e#782#1040#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/h/pwm.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
-          <folding />
+          <caret line="12" column="24" lean-forward="true" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../buildsystem/BasisSTM32.cmake">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../buildsystem/BasisSTM32.cmake">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/flash.cpp" />
-    <entry file="file://$PROJECT_DIR$/mpu6050.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../buildsystem/BasisSTM32.cmake">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="261">
-          <caret line="109" column="4" selection-start-line="109" selection-start-column="4" selection-end-line="109" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/usart.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1549">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="109" column="4" lean-forward="true" selection-start-line="109" selection-start-column="4" selection-end-line="109" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/readme.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pwm.cpp">
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/Makefile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2712">
-          <caret line="113" column="25" selection-start-line="113" selection-start-column="25" selection-end-line="113" selection-end-column="25" />
-          <folding />
+        <state relative-caret-position="325">
+          <caret line="486" column="0" lean-forward="false" selection-start-line="486" selection-start-column="0" selection-end-line="486" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake">
+    <entry file="file://$PROJECT_DIR$/CLionBuildOutput/Debug/qjlink-generated.jlink">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="4" column="9" lean-forward="true" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="108" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Program Files (x86)/GNU Tools ARM Embedded/5.4 2016q2/arm-none-eabi/include/sys/_stdint.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="49" column="6" lean-forward="true" selection-start-line="49" selection-start-column="6" selection-end-line="49" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Program Files (x86)/GNU Tools ARM Embedded/5.4 2016q2/arm-none-eabi/include/c++/5.4.1/iostream">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="751">
+          <caret line="60" column="17" lean-forward="false" selection-start-line="60" selection-start-column="17" selection-end-line="60" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h/stm32f0xx_conf.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="607">
+          <caret line="74" column="13" lean-forward="false" selection-start-line="74" selection-start-column="13" selection-end-line="74" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/inc/stm32f0xx_rcc.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="365" column="8" lean-forward="false" selection-start-line="365" selection-start-column="8" selection-end-line="365" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_rcc.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="542">
+          <caret line="1159" column="5" lean-forward="false" selection-start-line="1159" selection-start-column="5" selection-end-line="1159" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/inc/stm32f0xx_gpio.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="216" column="8" lean-forward="false" selection-start-line="216" selection-start-column="8" selection-end-line="216" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../gemeenschappelijk/Libraries/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="2915" column="9" lean-forward="false" selection-start-line="2915" selection-start-column="9" selection-end-line="2915" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_gpio.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="326">
+          <caret line="385" column="12" lean-forward="false" selection-start-line="385" selection-start-column="2" selection-end-line="385" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Program Files (x86)/GNU Tools ARM Embedded/5.4 2016q2/arm-none-eabi/include/sys/cdefs.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="363" column="8" lean-forward="false" selection-start-line="363" selection-start-column="8" selection-end-line="363" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_tim.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="2781" column="15" lean-forward="true" selection-start-line="2781" selection-start-column="15" selection-end-line="2781" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../gemeenschappelijk/Libraries/STM32F0xx_StdPeriph_Driver/inc/stm32f0xx_tim.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1102">
+          <caret line="738" column="8" lean-forward="false" selection-start-line="738" selection-start-column="8" selection-end-line="738" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../gemeenschappelijk/Libraries/CMSIS/CM3/DeviceSupport/ST/STM32F10x/startup/arm/startup_stm32f10x_hd_vl.s">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="299" column="0" lean-forward="false" selection-start-line="299" selection-start-column="0" selection-end-line="299" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../gemeenschappelijk/Libraries/CMSIS/CM3/DeviceSupport/ST/STM32F10x/startup/gcc/startup_stm32f10x_md.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="176" column="4" lean-forward="false" selection-start-line="176" selection-start-column="4" selection-end-line="176" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../gemeenschappelijk/Libraries/CMSIS/Device/ST/STM32F0xx/Source/Templates/arm/startup_stm32f0xx.s">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/h/airplane.h">
+    <entry file="file://$PROJECT_DIR$/../gemeenschappelijk/Libraries/CMSIS/Device/ST/STM32F0xx/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="22" column="11" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
-          <folding />
+        <state relative-caret-position="48">
+          <caret line="2" column="43" lean-forward="false" selection-start-line="2" selection-start-column="43" selection-end-line="2" selection-end-column="43" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/airplane.cpp">
+    <entry file="file://$PROJECT_DIR$/../gemeenschappelijk/Libraries/CMSIS/Device/ST/STM32F0xx/Source/Templates/gcc/startup_stm32f0xx.s">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="912">
-          <caret line="38" column="37" selection-start-line="38" selection-start-column="37" selection-end-line="38" selection-end-column="37" />
+        <state relative-caret-position="4056">
+          <caret line="169" column="8" lean-forward="false" selection-start-line="169" selection-start-column="8" selection-end-line="169" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h/counter.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="18" column="16" lean-forward="false" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
           <folding>
-            <element signature="e#40#61#0" expanded="true" />
+            <element signature="e#102#128#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/h/pwm.h">
+    <entry file="file://$PROJECT_DIR$/counter.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="960">
-          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="912">
+          <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/h/stm32f0xx_it.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1176">
-          <caret line="49" column="10" selection-start-line="49" selection-start-column="10" selection-end-line="49" selection-end-column="10" />
+        <state relative-caret-position="-222">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../gemeenschappelijk/Libraries/CMSIS/Include/core_cm0.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="153" column="12" lean-forward="false" selection-start-line="153" selection-start-column="12" selection-end-line="153" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h/flash.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h/flash.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pid.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="696">
+          <caret line="29" column="21" lean-forward="false" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flash.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="426">
+          <caret line="82" column="0" lean-forward="false" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
           <folding>
-            <element signature="e#1277#1289#0" expanded="true" />
-            <element signature="e#2033#2034#0" expanded="true" />
+            <element signature="e#42#72#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="583">
+          <caret line="33" column="8" lean-forward="false" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h/main.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-26">
+          <caret line="36" column="17" lean-forward="false" selection-start-line="36" selection-start-column="17" selection-end-line="36" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h/MS5611.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="583">
+          <caret line="110" column="18" lean-forward="false" selection-start-line="110" selection-start-column="18" selection-end-line="110" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h/mpu6050.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="583">
+          <caret line="423" column="24" lean-forward="false" selection-start-line="423" selection-start-column="24" selection-end-line="423" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MS5611.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-648">
+          <caret line="32" column="42" lean-forward="false" selection-start-line="32" selection-start-column="42" selection-end-line="32" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../gemeenschappelijk/Libraries/CMSIS/Device/ST/STM32F0xx/Source/Templates/system_stm32f0xx.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1817">
+          <caret line="130" column="30" lean-forward="false" selection-start-line="130" selection-start-column="30" selection-end-line="130" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mpu6050.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="583">
+          <caret line="444" column="0" lean-forward="false" selection-start-line="444" selection-start-column="0" selection-end-line="444" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h/usart.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-312">
+          <caret line="13" column="22" lean-forward="false" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/usart.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="6" column="15" lean-forward="false" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h/rgbdriver.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="11" column="27" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h/pwm.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="18" column="4" lean-forward="false" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pwm.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="147" column="22" lean-forward="false" selection-start-line="147" selection-start-column="22" selection-end-line="147" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h/airplane.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="55" column="4" lean-forward="false" selection-start-line="55" selection-start-column="4" selection-end-line="55" selection-end-column="4" />
+          <folding>
+            <element signature="e#192#212#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rgbdriver.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="696">
+          <caret line="30" column="14" lean-forward="false" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/stm32f0xx_it.c">
+    <entry file="file://$PROJECT_DIR$/stm32f0xx_it.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
+        <state relative-caret-position="-1078">
+          <caret line="165" column="0" lean-forward="false" selection-start-line="165" selection-start-column="0" selection-end-line="165" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/airplane.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="63" column="18" lean-forward="false" selection-start-line="63" selection-start-column="18" selection-end-line="63" selection-end-column="18" />
           <folding>
-            <element signature="e#497#755#0" expanded="true" />
-            <element signature="e#782#1040#0" expanded="true" />
+            <element signature="e#40#61#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ScopeChooserConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
   </component>
 </project>

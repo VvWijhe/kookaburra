@@ -182,13 +182,13 @@ stdint.h
 comm.h
 ../h/comm.h
 
-C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/barometer/stm32f0xx_it.c
+C:/Users/Jamie/Documents/GitHub/kookaburra/Drivers/Barometer/barometer/stm32f0xx_it.c
 stm32f0xx_it.h
-C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/barometer/stm32f0xx_it.h
+C:/Users/Jamie/Documents/GitHub/kookaburra/Drivers/Barometer/barometer/stm32f0xx_it.h
 main.h
-C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/barometer/main.h
+C:/Users/Jamie/Documents/GitHub/kookaburra/Drivers/Barometer/barometer/main.h
 
-C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c
+C:/Users/Jamie/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/basis/stm32f0/syscalls_cm0.c
 reent.h
 -
 errno.h
@@ -204,7 +204,7 @@ unistd.h
 reent.h
 -
 term_io.h
-C:/Users/User/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/basis/stm32f0/term_io.h
+C:/Users/Jamie/Documents/GitHub/kookaburra/Drivers/Barometer/gemeenschappelijk/basis/stm32f0/term_io.h
 stm32f0xx.h
 -
 

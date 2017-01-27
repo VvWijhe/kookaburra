@@ -2,12 +2,16 @@
 #include "airplane.h"
 #include "stm32f0xx_it.h"
 
-#define RCHIGH 9.2
-#define RCLOW 5.0
-#define MAXATTEMPTS 20
+#define RCHIGH 86
+#define RCLOW 61
+#define MAXATTEMPTS 100
 
+typedef enum {
+    OFF,
+    ON
+} FlightPlanner;
 
-
+FlightPlanner Newstate = OFF;
 
 /******************************************************************************/
 /*            Cortex-M0 Processor Exceptions Handlers                         */
@@ -69,13 +73,33 @@ void SysTick_Handler(void) {
   * @param  None
   * @retval None
   */
-void USART1_IRQHandler() {
-    if ((rxBuffer[indexBuffer] = (uint8_t) (USART_ReceiveData(USART1))) != '\r') {
-        indexBuffer++;
-    } else {
-        indexBuffer = 0;
+int whichAltitutde = 0;
 
-        /// TBD: convert string to number
+void USART1_IRQHandler() {
+    if (USART_GetITStatus(USART1, USART_IT_RXNE)) {
+        rxBuffer[indexBuffer] = (char) USART_ReceiveData(USART1);
+        if (rxBuffer[indexBuffer] != '\r') {
+            indexBuffer++;
+        } else {
+            rxBuffer[indexBuffer] = '\0';
+            uart << "String is: " << rxBuffer << "\n";
+
+            if(whichAltitutde == 0){
+                altitude1 = atoi(rxBuffer);
+                whichAltitutde = 1;
+            } else if(whichAltitutde == 1){
+                altitude2 = atoi(rxBuffer);
+                whichAltitutde = 0;
+            }
+
+
+            // clear buffer
+            memset(&rxBuffer[0], 0, sizeof(rxBuffer));
+            indexBuffer = 0;
+            /// TBD: convert string to number
+        }
+
+        USART_ClearITPendingBit(USART1, USART_IT_RXNE);
     }
 }
 
@@ -153,49 +177,62 @@ void TIM15_IRQHandler() {
     /* Clear TIM2 Capture compare interrupt pending bit */
     TIM_ClearITPendingBit(TIM15, TIM_IT_CC1);
 
-    __IO uint32_t IC2Value = 0;
-    __IO uint32_t DutyCycle = 0;
-
-    flightMode = MANUAL_M; //the flightMode the plane should work with, auto or manual.
-
     /* Get the Input Capture value */
     IC2Value = TIM_GetCapture2(TIM15);
-
-    if (IC2Value > TIM_GetCapture1(TIM15)) {
-        /* Duty cycle computation */
-        DutyCycle = IC2Value - TIM_GetCapture1(TIM15);
-        PrevDutyCycle = DutyCycle;
-        currentDutyCycle = (float) ((DutyCycle - 49200) / 163.2);
-        if (currentDutyCycle < 0) {
-            currentDutyCycle += 301.9;
+    IC1Value = TIM_GetCapture1(TIM15);
+    if ( /*IC1Value - IC2Value < 10000*/ 1 )
+    {
+        temp = IC1Value - IC2Value;
+        /* Duty Cycle computation */
+        DutyCycle = IC1Value - IC2Value;
+        if ( DutyCycle > 50000 )
+        {
+            DutyCyclePC = (float)( DutyCycle - 49200 ) / 163.2;
         }
-    } else {
-        DutyCycle = (uint32_t) PrevDutyCycle;
+        else
+        {
+            DutyCyclePC = (float)DutyCycle / 163.2;
+        }
+        if ( DutyCyclePC < 0 || DutyCyclePC > 99 )
+        {
+            DutyCyclePC = PrevDutyCycle;
+        }
+        PrevDutyCycle = DutyCyclePC;
+    }
+    else
+    {
+        DutyCyclePC = PrevDutyCycle;
     }
 
-
     //from here on the flightplanner switch is processed.
-    // NOTE: MAXATTEMPTS, RCHIGH and RCLOW are still trivial, give them actual values.
-    if (StepCount == 0 && currentDutyCycle > RCHIGH && flightMode == MANUAL_M) //first up
+    // NOTE: MAXATTEMPTS, RCHIGH and RCLOW are still trivial, give them actual values
+
+
+
+    if ( StepCount == 0 && DutyCyclePC < RCLOW && Newstate == OFF ) //first up
     {
         StepCount++;
         Attempts = 0;
-    } else if (StepCount == 1 && currentDutyCycle < RCLOW && Attempts < MAXATTEMPTS &&
-               flightMode == MANUAL_M) //then down
+    }
+    else if ( StepCount == 1 && DutyCyclePC > RCHIGH && Attempts < MAXATTEMPTS && Newstate == OFF ) //then down
     {
         StepCount++;
         Attempts = 0;
-    } else if (StepCount == 2 && currentDutyCycle > RCHIGH && Attempts < MAXATTEMPTS &&
-               flightMode == MANUAL_M) //up again, enable Flightplanner
+    }
+    else if ( StepCount == 2 && DutyCyclePC < RCLOW && Attempts < MAXATTEMPTS && Newstate == OFF ) //up again, enable Flightplanner
     {
-        flightMode = AUTOPILOT_M;
-        Attempts = 0;
-    } else if (flightMode == AUTOPILOT_M && Attempts > MAXATTEMPTS &&
-               currentDutyCycle < RCLOW) //down when Flightplanner is active disables it
-    {
-        flightMode = MANUAL_M;
+        Newstate = ON;
         Attempts = 0;
         StepCount = 0;
+        flightMode = AUTOPILOT_M;
+        GPIO_SetBits(GPIOC, AUTOPILOT_ENABLE_PIN);
+    }
+    else if ( Newstate == ON && Attempts > MAXATTEMPTS && DutyCyclePC > RCHIGH ) //down when Flightplanner is active, disable it
+    {
+        flightMode = MANUAL_M;
+        Newstate = OFF;
+        Attempts = 0;
+        GPIO_ResetBits(GPIOC, AUTOPILOT_ENABLE_PIN);
     }
 
     Attempts++;
